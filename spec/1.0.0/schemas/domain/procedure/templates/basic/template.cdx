@@ -1,0 +1,2 @@
+[A named procedure. name is required; procedureKind and procedureStatus are optional. Step children are wired by the composing schema.]
+<Procedure name="Procedure Name" />

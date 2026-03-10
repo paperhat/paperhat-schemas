@@ -17,9 +17,15 @@
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-citation" packagePath="spec/1.0.0/schemas/domain/citation" />
 
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-clause" packagePath="spec/1.0.0/schemas/domain/clause" />
+
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-code" packagePath="spec/1.0.0/schemas/domain/code" />
 
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-contract" packagePath="spec/1.0.0/schemas/domain/contract" />
+
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-bio" packagePath="spec/1.0.0/schemas/domain/bio" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-brand" packagePath="spec/1.0.0/schemas/domain/brand" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-contact-point" packagePath="spec/1.0.0/schemas/domain/contact-point" />
 
@@ -48,6 +54,8 @@
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-identifier" packagePath="spec/1.0.0/schemas/domain/identifier" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-jurisdiction" packagePath="spec/1.0.0/schemas/domain/jurisdiction" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-learning-offering" packagePath="spec/1.0.0/schemas/domain/learning-offering" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-linguistic-annotation" packagePath="spec/1.0.0/schemas/domain/linguistic-annotation" />
 
@@ -97,17 +105,25 @@
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-person-name" packagePath="spec/1.0.0/schemas/domain/person-name" />
 
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-procedure" packagePath="spec/1.0.0/schemas/domain/procedure" />
+
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-product" packagePath="spec/1.0.0/schemas/domain/product" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-policy" packagePath="spec/1.0.0/schemas/domain/policy" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-privacy-policy" packagePath="spec/1.0.0/schemas/domain/privacy-policy" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-project" packagePath="spec/1.0.0/schemas/domain/project" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-publication" packagePath="spec/1.0.0/schemas/domain/publication" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-rating" packagePath="spec/1.0.0/schemas/domain/rating" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-recipe" packagePath="spec/1.0.0/schemas/domain/recipe" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-relation" packagePath="spec/1.0.0/schemas/domain/relation" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-release" packagePath="spec/1.0.0/schemas/domain/release" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-repository" packagePath="spec/1.0.0/schemas/domain/repository" />
 
@@ -127,9 +143,13 @@
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-specification-rfc2119" packagePath="spec/1.0.0/schemas/domain/specification-rfc2119" />
 
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-step" packagePath="spec/1.0.0/schemas/domain/step" />
+
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-summary" packagePath="spec/1.0.0/schemas/domain/summary" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-tags" packagePath="spec/1.0.0/schemas/domain/tags" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-tier" packagePath="spec/1.0.0/schemas/domain/tier" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-terms-of-use" packagePath="spec/1.0.0/schemas/domain/terms-of-use" />
 

@@ -1,0 +1,15 @@
+<LocalizationBundle
+	schema=codex:domain:clause
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Clause" label="Clause" labelOther="Clauses" />
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		The clause identifier.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="clauseKind" label="Clause Kind" labelOther="Clause Kinds">
+		The type of clause, such as operative, grant, obligation, or limitation.
+	</TraitLocalization>
+</LocalizationBundle>

@@ -1,0 +1,35 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A single action in a procedure — an instruction to be performed, with optional metadata indicating whether the step is required or optional."
+	id=codex:domain:step
+	namespace="step"
+	title="Step Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:step:Step
+			name="Step"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<AllowsTrait name="isOptional" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Boolean
+			id=codex:domain:step:trait:isOptional
+			name="isOptional"
+		/>
+	</TraitDefinitions>
+</Schema>

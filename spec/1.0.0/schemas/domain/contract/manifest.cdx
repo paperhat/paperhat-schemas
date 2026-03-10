@@ -1,0 +1,18 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="PENDING-HASH"
+	copyright="Copyright 2026 Paperhat"
+	description="A named binding agreement between parties — a software license, support agreement, consulting contract, partnership memorandum, or other commercial/legal commitment."
+	license="Apache-2.0"
+	packageName="paperhat-contract"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+>
+	<PackageDependency
+		packageName="paperhat-jurisdiction"
+		closureHash="62c2a4021c878aca795cba7eaea0a8e561af5716550635051ee578c10eb87d35"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</DomainPackageManifest>

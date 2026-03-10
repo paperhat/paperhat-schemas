@@ -1,0 +1,19 @@
+<LocalizationBundle
+	schema=codex:domain:publication
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Publication" label="Publication" labelOther="Publications" />
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		The title of the publication.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="publicationKind" label="Publication Kind" labelOther="Publication Kinds">
+		The type of publication, such as book, journal, or manual.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="publicationStatus" label="Publication Status" labelOther="Publication Statuses">
+		The lifecycle status of the publication.
+	</TraitLocalization>
+</LocalizationBundle>

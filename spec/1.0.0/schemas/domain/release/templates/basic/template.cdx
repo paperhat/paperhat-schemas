@@ -1,0 +1,2 @@
+[A versioned product release. version is required; releaseKind, releaseStatus, releaseDate, and product are optional.]
+<Release version="1.0.0" />

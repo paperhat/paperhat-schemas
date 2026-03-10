@@ -1,0 +1,23 @@
+<LocalizationBundle
+	schema=codex:domain:tier
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Tier" label="Tier" labelOther="Tiers" />
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		The name of the tier.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="tierKind" label="Tier Kind" labelOther="Tier Kinds">
+		The type of tier, such as free, standard, or enterprise.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="product" label="Product" labelOther="Products">
+		The product this tier belongs to.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="tierStatus" label="Tier Status" labelOther="Tier Statuses">
+		The lifecycle status of the tier.
+	</TraitLocalization>
+</LocalizationBundle>

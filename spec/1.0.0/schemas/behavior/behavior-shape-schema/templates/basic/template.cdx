@@ -1,0 +1,10 @@
+[A value shape with a constraint. id, name, and baseValueType are required; description is optional.]
+<ValueShapeDefinition
+	id=urn:example:shape:ShapeName
+	name="ShapeName"
+	baseValueType=$Text
+>
+	<Constraint name="ConstraintName" message="Validation failed.">
+		<IsPresent><Input /></IsPresent>
+	</Constraint>
+</ValueShapeDefinition>

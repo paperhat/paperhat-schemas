@@ -1,0 +1,2 @@
+[A named institutional policy. name is required; policyKind, policyStatus, effectiveDate, and Jurisdiction children are optional.]
+<Policy name="Policy Name" />

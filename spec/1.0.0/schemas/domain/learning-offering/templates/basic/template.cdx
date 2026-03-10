@@ -1,0 +1,2 @@
+[A training offering. name is required; offeringKind, offeringStatus, deliveryMode, and product are optional.]
+<LearningOffering name="Offering Name" />

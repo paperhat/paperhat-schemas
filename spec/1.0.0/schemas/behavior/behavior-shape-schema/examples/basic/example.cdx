@@ -1,0 +1,13 @@
+<ValueShapeDefinition
+	id=urn:example:shape:PositiveNumber
+	name="PositiveNumber"
+	baseValueType=$Number
+	description="A number that must be greater than zero."
+>
+	<Constraint name="MustBePositive" message="Value must be greater than zero.">
+		<IsMoreThan>
+			<Referent><Input /></Referent>
+			<Comparator><Literal value=0 /></Comparator>
+		</IsMoreThan>
+	</Constraint>
+</ValueShapeDefinition>

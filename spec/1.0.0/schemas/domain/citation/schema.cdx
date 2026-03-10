@@ -9,7 +9,7 @@
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=person reference=urn:cdx:sha256:d70dce3909118dc4c887f76cc42fa4cb89cb2b5276f0f2324df72345fdcbd9d2 />
+		<SchemaImport namespace=person reference=urn:cdx:sha256:08e64ca8d7215574fcebb8e37c8a716042c7486a67d35e6e3d3fc65064b99327 />
 
 		<SchemaImport namespace=org reference=urn:cdx:sha256:6bfa72a2e5434fc639924667cc3572cf2b1fe8261d3630d2e26fc1755d5473ac />
 

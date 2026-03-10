@@ -92,6 +92,15 @@ Provide the common semantic substrate used by specifications, white papers, poli
 | organizational-unit | UNLOCKED | Complete — 6 artifacts |
 | repository | UNLOCKED | Complete — 6 artifacts |
 | media-asset | UNLOCKED | Complete — 6 artifacts |
+| policy | UNLOCKED | Complete — 6 artifacts. Imports: jurisdiction |
+| tier | UNLOCKED | Complete — 6 artifacts |
+| procedure | UNLOCKED | Complete — 6 artifacts |
+| step | UNLOCKED | Complete — 6 artifacts |
+| contract | UNLOCKED | Complete — 6 artifacts. Imports: jurisdiction |
+| clause | UNLOCKED | Complete — 6 artifacts |
+| publication | UNLOCKED | Complete — 6 artifacts |
+| release | UNLOCKED | Complete — 6 artifacts |
+| learning-offering | UNLOCKED | Complete — 6 artifacts |
 
 ### Proposed Concepts — Triage Results
 
@@ -171,9 +180,9 @@ Represent normative and explanatory technical specifications as governed semanti
 
 | Schema | Lock State | Status |
 |---|---|---|
-| specification | UNLOCKED | Complete — 6 artifacts. Has: Specification, Section, Paragraph, OrderedList, UnorderedList, ListItem, CodeBlock, Requirement, Definition, Note, SectionReference, ExternalReference. Uncommitted changes in working tree. |
-| specification-foundation | UNLOCKED | Complete — 6 artifacts. Shared traits and enumerations for specification schemas. Uncommitted changes in working tree. |
-| specification-rfc2119 | UNLOCKED | Complete — 6 artifacts. Full RFC 2119 variant with all modality keywords. Uncommitted changes in working tree. |
+| specification | UNLOCKED | Complete — 6 artifacts. Has: Specification, Section, Paragraph, OrderedList, UnorderedList, ListItem, CodeBlock, Requirement, RequirementSet, Definition, Note, TermBinding, Issue, OpenQuestion, SectionReference, ExternalReference. Imports: citation, admonition, code, example, figure, list, relation, text, specbase. |
+| specification-foundation | UNLOCKED | Complete — 6 artifacts. Shared traits and enumerations for specification schemas. Includes DraftItemStatus enum and traits for source, status, resolution, answer. |
+| specification-rfc2119 | UNLOCKED | Complete — 6 artifacts. Full RFC 2119 variant with all modality keywords. Same concept set as specification. |
 
 ### Proposed Concepts — Gap Analysis
 
@@ -182,25 +191,25 @@ Represent normative and explanatory technical specifications as governed semanti
 | Specification | Exists in `specification` | Covered |
 | NormativeStatement | Requirement concept with modality trait | Covered |
 | DefinitionEntry | Definition concept with `term` trait | Covered |
-| RequirementSet | Uncommitted changes add this concept | In progress |
-| Example | `example` schema exists (separate package, LOCKED) | Covered via import |
+| RequirementSet | RequirementSet concept in both specification schemas | Covered |
+| Example | `example` schema exists (separate package, LOCKED), imported by specification schemas | Covered via import |
 | Appendix / Annex | Section with `division=$Appendix` trait | Covered |
-| Reference / BibliographyEntry | ExternalReference + Reference leaf + Citation leaf | NEEDS DECISION — is BibliographyEntry still needed? |
-| ConformanceRequirement | Requirement with specific modality | NEEDS DECISION — separate concept or just a Requirement? |
+| Reference / BibliographyEntry | ExternalReference + Reference leaf + Citation (imported as `cite:Citation` child of Section) | REJECTED — Citation covers bibliographic references fully. A bibliography is a Section containing Citation children. |
+| ConformanceRequirement | Requirement with `modality` trait + Section's `conformance` trait | REJECTED — Requirement with modality covers this. Conformance is a property of context (Section), not a separate concept type. |
 | FormalNote / InformativeNote | Note concept exists | Covered |
-| TermBinding | Uncommitted changes add this concept | In progress |
-| Issue / OpenQuestion | Uncommitted changes add these concepts | In progress |
+| TermBinding | TermBinding concept in both specification schemas | Covered |
+| Issue / OpenQuestion | Issue and OpenQuestion concepts in both specification schemas, with DraftItemStatus enum | Covered |
 
 ### Stage 2 Checklist
 
 - [x] specification — exists, UNLOCKED, 6/6
 - [x] specification-foundation — exists, UNLOCKED, 6/6
 - [x] specification-rfc2119 — exists, UNLOCKED, 6/6
-- [ ] RequirementSet — in progress (uncommitted)
-- [ ] TermBinding — in progress (uncommitted)
-- [ ] Issue / OpenQuestion — in progress (uncommitted)
-- [ ] Reference / BibliographyEntry — needs decision
-- [ ] ConformanceRequirement — needs decision
+- [x] RequirementSet — committed
+- [x] TermBinding — committed
+- [x] Issue / OpenQuestion — committed
+- [x] ~~Reference / BibliographyEntry~~ — rejected (Citation covers this)
+- [x] ~~ConformanceRequirement~~ — rejected (Requirement with modality covers this)
 - [ ] Gate: author, validate, and project a real Paperhat specification end-to-end
 
 ### Dependencies
@@ -249,11 +258,11 @@ Represent long-form persuasive, explanatory, and analytical publications.
 | Claim / SupportingArgument / Evidence | Not present. WhitePaper design notes explicitly state these are rhetorical patterns within prose, not structural units. | Likely intentionally excluded |
 | Citation / BibliographyEntry | Citation exists. Reference exists. Notes handles footnotes. | Covered |
 | Figure | Exists, LOCKED | Covered |
-| Table | Relation exists (UNLOCKED) for tabular data | NEEDS DECISION |
+| Table | Relation (RelationType + RelationInstance) models tabular data semantically | REJECTED — "Table" is a presentation surface. Relation handles structured data. |
 | Footnote / Endnote | Notes/Note exists, LOCKED | Covered |
 | Series | Exists, LOCKED | Covered |
-| PublicationEvent | Not present | NEEDS DECISION |
-| Contributor | Person exists. Work has `author` trait. | NEEDS DECISION |
+| PublicationEvent | Event exists (LOCKED, 6/6) with `eventKind` trait | REJECTED — A publication event is an Event with `eventKind=$Publication`. |
+| Contributor | Citation:Contributor exists. Work has `author`. Role handles named functions. | REJECTED — Already covered by existing schemas. |
 
 ### Stage 3 Checklist
 
@@ -265,9 +274,9 @@ Represent long-form persuasive, explanatory, and analytical publications.
 - [x] figure — LOCKED, 6/6
 - [x] series — LOCKED, 6/6
 - [x] citation — LOCKED, 6/6
-- [ ] Table — needs decision (Relation exists but is it sufficient?)
-- [ ] PublicationEvent — needs decision
-- [ ] Contributor — needs decision
+- [x] ~~Table~~ — rejected (Relation covers tabular data; "Table" is a presentation surface)
+- [x] ~~PublicationEvent~~ — rejected (Event with `eventKind=$Publication`)
+- [x] ~~Contributor~~ — rejected (Citation:Contributor + Work + Role cover this)
 - [ ] Gate: represent existing Paperhat white papers semantically and project to web/PDF
 
 ### Dependencies
@@ -303,17 +312,18 @@ Represent Paperhat as an institution: entities, projects, roles, ownership, auth
 | role | LOCKED | Complete — 6 artifacts. |
 | organizational-unit | UNLOCKED | Complete — 6 artifacts. Leaf from Stage 1 triage. |
 | repository | UNLOCKED | Complete — 6 artifacts. Leaf from Stage 1 triage. |
+| brand | UNLOCKED | Complete — 6 artifacts. |
 
-### Missing Schemas
+### Proposed Concepts — Triage Results
 
-These do not exist and were proposed in the original roadmap:
-
-* Brand
-* ProductLine
-* AuthorityAssignment
-* Membership / Assignment
-* Relationship (cross-entity)
-* Domain / Property / Asset
+| Proposed Concept | Decision | Rationale |
+|---|---|---|
+| Brand | CREATED | `brand` package exists (6/6). Real entity with identity referenced by products, marketing, and legal documents. |
+| ProductLine | REJECTED | Defer to Stage 6. Grouping handled by Series and Tags. If Stage 6 needs it, create it then. |
+| AuthorityAssignment | REJECTED | Role with `roleKind` and `scope` covers authority assignment. If Stage 5 policy modeling reveals a gap, create a policy-specific concept there. |
+| Membership / Assignment | REJECTED | Role with `roleKind=$member` or `$assignee` and scope handles this. Higher-level composers will compose Role + Temporal as children of Organization. |
+| Relationship (cross-entity) | REJECTED | Too generic. Specific relationships are better expressed through Role, Reference, or domain-specific traits. |
+| Domain / Property / Asset | REJECTED | Too broad. Domain names are Identifiers. Physical/digital assets are covered by MediaAsset and Product. Create focused leaves if a specific asset type proves necessary. |
 
 ### Stage 4 Checklist
 
@@ -323,12 +333,12 @@ These do not exist and were proposed in the original roadmap:
 - [x] role — complete, 6/6
 - [x] OrganizationalUnit — created as `organizational-unit` (Stage 1 leaf)
 - [x] Repository — created as `repository` (Stage 1 leaf)
-- [ ] Brand — needs decision
-- [ ] ProductLine — needs decision
-- [ ] AuthorityAssignment — needs decision
-- [ ] Membership / Assignment — needs decision
-- [ ] Relationship (cross-entity) — needs decision
-- [ ] Domain / Property / Asset — needs decision
+- [x] Brand — created as `brand`
+- [x] ~~ProductLine~~ — rejected (defer to Stage 6)
+- [x] ~~AuthorityAssignment~~ — rejected (Role covers this)
+- [x] ~~Membership / Assignment~~ — rejected (Role covers this)
+- [x] ~~Relationship (cross-entity)~~ — rejected (too generic)
+- [x] ~~Domain / Property / Asset~~ — rejected (too broad)
 - [ ] Gate: represent Paperhat's organizational and project structure canonically
 
 ### Dependencies
@@ -360,38 +370,40 @@ Represent institutional rules and operational commitments as first-class semanti
 |---|---|---|
 | jurisdiction | LOCKED | Complete — 6 artifacts. Jurisdictional authority and scope. |
 
-### Proposed Concepts
+### Proposed Concepts — Triage Results
 
-* PolicyDocument
-* Policy
-* Rule
-* Obligation
-* Permission
-* Prohibition
-* Condition
-* Exception
-* Scope
-* ResponsibleParty
-* Enforcement / Consequence
-* ReviewRequirement
-* ApprovalRequirement
+| Proposed Concept | Decision | Rationale |
+|---|---|---|
+| Policy | CREATED | `policy` package exists (6/6). Core institutional concept with stable identity. Imports jurisdiction as child. |
+| PolicyDocument | REJECTED | `Work` already models documents; a policy document is a Work with `workKind=$Policy`. |
+| Rule | REJECTED | Rules are structured content within a Policy, not standalone entities. |
+| Obligation | REJECTED | A kind of rule (`statementKind=$Obligation`), not a separate concept. Enumerated token value. |
+| Permission | REJECTED | A kind of rule (`statementKind=$Permission`), not a separate concept. Enumerated token value. |
+| Prohibition | REJECTED | A kind of rule (`statementKind=$Prohibition`), not a separate concept. Enumerated token value. |
+| Condition | REJECTED | Too abstract. Preconditions are prose content within a policy, not domain entities. |
+| Exception | REJECTED | Content within a policy, not a standalone entity. |
+| Scope | REJECTED | A trait on Policy (jurisdiction + prose), not a standalone concept. Jurisdiction already exists for geographic/legal scope. |
+| ResponsibleParty | REJECTED | Covered by Role + Relation patterns. A role assignment with `roleKind=$PolicyOwner` handles this. |
+| Enforcement / Consequence | REJECTED | Content within a policy describing what happens on violation, not a standalone entity. |
+| ReviewRequirement | REJECTED | A property of a policy (trait-level), not its own entity. |
+| ApprovalRequirement | REJECTED | A property of a policy (trait-level), not its own entity. Role covers who approves. |
 
 ### Stage 5 Checklist
 
 - [x] jurisdiction — LOCKED, 6/6
-- [ ] PolicyDocument — needs creation
-- [ ] Policy — needs creation
-- [ ] Rule — needs creation
-- [ ] Obligation — needs creation
-- [ ] Permission — needs creation
-- [ ] Prohibition — needs creation
-- [ ] Condition — needs creation
-- [ ] Exception — needs creation
-- [ ] Scope — needs creation
-- [ ] ResponsibleParty — needs creation
-- [ ] Enforcement / Consequence — needs creation
-- [ ] ReviewRequirement — needs creation
-- [ ] ApprovalRequirement — needs creation
+- [x] Policy — CREATED, 6/6
+- [x] ~~PolicyDocument~~ — rejected
+- [x] ~~Rule~~ — rejected
+- [x] ~~Obligation~~ — rejected
+- [x] ~~Permission~~ — rejected
+- [x] ~~Prohibition~~ — rejected
+- [x] ~~Condition~~ — rejected
+- [x] ~~Exception~~ — rejected
+- [x] ~~Scope~~ — rejected
+- [x] ~~ResponsibleParty~~ — rejected
+- [x] ~~Enforcement / Consequence~~ — rejected
+- [x] ~~ReviewRequirement~~ — rejected
+- [x] ~~ApprovalRequirement~~ — rejected
 - [ ] Gate: model Paperhat's own policies as semantic entities
 
 ### Dependencies
@@ -424,35 +436,37 @@ Represent what Paperhat offers in a way that is reusable across web, documentati
 | product | LOCKED | Complete — 6 artifacts. General-purpose product schema. Has: name, brand, category, color, material, model, releaseDate. Children: Description, Offer, Identifier, Rating, Measure, MonetaryAmount, Tags, Work, Audience, Accessibility, NutritionInformation. |
 | offer | LOCKED | Complete — 6 artifacts. Pricing and availability. |
 
-### Proposed Additional Concepts
+### Proposed Concepts — Triage Results
 
-* Service (distinct from Product)
-* Offering (abstract product-or-service)
-* Tier / Plan
-* Feature
-* Capability
-* Eligibility
-* Dependency / Prerequisite
-* Deliverable
-* SupportEntitlement
-* PriceModel
-* SubscriptionTerm
+| Proposed Concept | Decision | Rationale |
+|---|---|---|
+| Tier / Plan | CREATED | `tier` package exists (6/6). Named packaging level (FOSS/Pro/Premium) with stable identity, distinct from Product. |
+| Service | REJECTED | Product with `productKind=$Service` covers this. No unique trait set that warrants a separate schema. |
+| Offering | REJECTED | Union type over product-or-service. Same reasoning as Party rejection — adds indirection without semantic value. |
+| Feature | REJECTED | Descriptive content within a tier or product. Express as Description/List children, not a standalone entity. |
+| Capability | REJECTED | Synonym for Feature. Same reasoning. |
+| Eligibility | REJECTED | A trait or prose within Tier/Product/Offer, not a standalone entity. Too abstract. |
+| Dependency / Prerequisite | REJECTED | Relation with `relationKind=$Requires` covers inter-tier/inter-product dependencies. |
+| Deliverable | REJECTED | A deliverable is a Product, Work, or prose content. No distinct identity or trait set. |
+| SupportEntitlement | REJECTED | A Tier with `tierKind=$Support` or Product with `productKind=$Support`. No unique trait set. |
+| PriceModel | REJECTED | Offer already models pricing. Price model type is a trait on Offer, not a standalone entity. |
+| SubscriptionTerm | REJECTED | A trait on Offer or Tier (`billingPeriod=$Monthly`). Duration already exists for time spans. |
 
 ### Stage 6 Checklist
 
 - [x] product — LOCKED, 6/6
 - [x] offer — LOCKED, 6/6
-- [ ] Service — needs creation
-- [ ] Offering — needs creation
-- [ ] Tier / Plan — needs creation
-- [ ] Feature — needs creation
-- [ ] Capability — needs creation
-- [ ] Eligibility — needs creation
-- [ ] Dependency / Prerequisite — needs creation
-- [ ] Deliverable — needs creation
-- [ ] SupportEntitlement — needs creation
-- [ ] PriceModel — needs creation
-- [ ] SubscriptionTerm — needs creation
+- [x] Tier / Plan — CREATED, 6/6
+- [x] ~~Service~~ — rejected
+- [x] ~~Offering~~ — rejected
+- [x] ~~Feature~~ — rejected
+- [x] ~~Capability~~ — rejected
+- [x] ~~Eligibility~~ — rejected
+- [x] ~~Dependency / Prerequisite~~ — rejected
+- [x] ~~Deliverable~~ — rejected
+- [x] ~~SupportEntitlement~~ — rejected
+- [x] ~~PriceModel~~ — rejected
+- [x] ~~SubscriptionTerm~~ — rejected
 - [ ] Gate: describe Paperhat offerings consistently across sales pages, docs, proposals, agreements
 
 ### Dependencies
@@ -483,33 +497,35 @@ Represent practical documentation, procedures, setup guides, and troubleshooting
 
 None specific to documentation/guides. Will import from Stage 1 leaves, narrative, section, text, list, and other structural schemas.
 
-### Proposed Concepts
+### Proposed Concepts — Triage Results
 
-* Guide
-* Procedure
-* Task
-* Step
-* Prerequisite
-* Outcome
-* TroubleshootingItem
-* KnownIssue
-* ReferenceEntry
-* Environment / Platform
-* ChecklistItem
+| Proposed Concept | Decision | Rationale |
+|---|---|---|
+| Procedure | CREATED | `procedure` package exists (6/6). Distinct semantic concept: an executable instruction sequence, not a narrative work. `$MustBeEntity`. |
+| Step | CREATED | `step` package exists (6/6). Semantically distinct from ListItem: an action in a procedure, not a typographic bullet. `$MustNotBeEntity`, `RequiresContent`. |
+| Guide | REJECTED | Work with `workKind=$Guide`. No unique traits beyond what Work provides. Structural content comes from composing Section, Paragraph, Step, etc. |
+| Task | REJECTED | Overlaps with Procedure. A task is a goal; a procedure is its execution. One concept suffices. |
+| Prerequisite | REJECTED | Content within a procedure (a section or admonition), not a standalone concept. |
+| Outcome | REJECTED | A trait on Step or content within a procedure. No independent identity needed. |
+| TroubleshootingItem | REJECTED | Pattern (symptom/cause/resolution) is thin — three text traits. KB articles are Works; troubleshooting entries are content within them. |
+| KnownIssue | REJECTED | Specification schema already defines Issue and OpenQuestion. If standalone known-issue tracking is needed, extract later. |
+| ReferenceEntry | REJECTED | TermEntry covers term + definition pairs. API-specific reference structure is too specialized for a generic schema. |
+| Environment / Platform | REJECTED | Borderline — has version constraints Tags can't model. But too specialized for v1.0.0. Can be added later if platform requirements become a recurring pattern. |
+| ChecklistItem | REJECTED | Checked/unchecked is runtime state, not schema structure. A checklist is a List with semantic annotation. |
 
 ### Stage 7 Checklist
 
-- [ ] Guide — needs creation
-- [ ] Procedure — needs creation
-- [ ] Task — needs creation
-- [ ] Step — needs creation
-- [ ] Prerequisite — needs creation
-- [ ] Outcome — needs creation
-- [ ] TroubleshootingItem — needs creation
-- [ ] KnownIssue — needs creation
-- [ ] ReferenceEntry — needs creation
-- [ ] Environment / Platform — needs creation
-- [ ] ChecklistItem — needs creation
+- [x] Procedure — CREATED, 6/6
+- [x] Step — CREATED, 6/6
+- [x] ~~Guide~~ — rejected
+- [x] ~~Task~~ — rejected
+- [x] ~~Prerequisite~~ — rejected
+- [x] ~~Outcome~~ — rejected
+- [x] ~~TroubleshootingItem~~ — rejected
+- [x] ~~KnownIssue~~ — rejected
+- [x] ~~ReferenceEntry~~ — rejected
+- [x] ~~Environment / Platform~~ — rejected
+- [x] ~~ChecklistItem~~ — rejected
 - [ ] Gate: maintain real user and internal operational documentation in Lexis
 
 ### Dependencies
@@ -541,48 +557,50 @@ Represent binding agreements and commercial/legal commitments semantically.
 
 None.
 
-### Proposed Concepts
+### Proposed Concepts — Triage Results
 
-* Contract
-* Agreement
-* Party (rejected as Stage 1 leaf — import Person and Organization directly)
-* Clause
-* Definition (legal definitions within a contract)
-* Obligation
-* Right
-* Condition
-* Exception
-* Deliverable
-* PaymentTerm
-* ServiceLevel
-* Term
-* Renewal
-* Termination
-* Jurisdiction (from Stage 1 — exists)
-* ApprovalState
-* ClauseLibraryEntry
-* Variant
+| Proposed Concept | Decision | Rationale |
+|---|---|---|
+| Contract | CREATED | `contract` package exists (6/6). Core institutional entity for binding agreements. Imports jurisdiction. `$MustBeEntity`. |
+| Clause | CREATED | `clause` package exists (6/6). Fundamental semantic building block of contracts. `clauseKind` absorbs Obligation, Right, PaymentTerm, ServiceLevel, Renewal, Termination. `$MayBeEntity`, `RequiresContent`. |
+| Agreement | REJECTED | `contractKind=$MOU` or `$LetterOfIntent` covers non-binding agreements. Having both Contract and Agreement creates ambiguity. |
+| Party | REJECTED | Union type. Import Person and Organization directly where needed. |
+| Definition (legal) | REJECTED | TermEntry already models term + definition pairs. Legal definitions are term entries. |
+| Obligation | REJECTED | A Clause with `clauseKind=$Obligation`. Deontic modality expressed in clause text, not as separate entity. |
+| Right | REJECTED | A Clause with `clauseKind=$Grant`. Mirror of Obligation. |
+| Condition | REJECTED | Content within a Clause ("If X, then Y"). Prose, not entity. |
+| Exception | REJECTED | Content within a Clause ("Except for..."). Prose, not entity. |
+| Deliverable | REJECTED | A Product, Tier, or Work. No distinct trait set. Same reasoning as Stage 6. |
+| PaymentTerm | REJECTED | A Clause with `clauseKind=$Payment`. MonetaryAmount and Duration exist for structured parts. |
+| ServiceLevel | REJECTED | A Clause with `clauseKind=$ServiceLevel`. SLA metrics expressed in clause content. |
+| Term | REJECTED | Duration already exists. Contract term is a Duration child or trait. |
+| Renewal | REJECTED | A Clause with `clauseKind=$Renewal`. |
+| Termination | REJECTED | A Clause with `clauseKind=$Termination`. |
+| Jurisdiction | EXISTS | Already exists from Stage 1. Imported by Contract as child. |
+| ApprovalState | REJECTED | This is `contractStatus` on Contract — an enumerated token value, not a concept. |
+| ClauseLibraryEntry | REJECTED | Application-level concept (template management), not a schema concept. |
+| Variant | REJECTED | Application-level versioning/templating, not a schema concern. |
 
 ### Stage 8 Checklist
 
-- [ ] Contract — needs creation
-- [ ] Agreement — needs creation
-- [x] ~~Party~~ — rejected (import Person and Organization directly)
-- [ ] Clause — needs creation
-- [ ] Definition (legal) — needs creation
-- [ ] Obligation — needs creation
-- [ ] Right — needs creation
-- [ ] Condition — needs creation
-- [ ] Exception — needs creation
-- [ ] Deliverable — needs creation
-- [ ] PaymentTerm — needs creation
-- [ ] ServiceLevel — needs creation
-- [ ] Term — needs creation
-- [ ] Renewal — needs creation
-- [ ] Termination — needs creation
-- [ ] ApprovalState — needs creation
-- [ ] ClauseLibraryEntry — needs creation
-- [ ] Variant — needs creation
+- [x] Contract — CREATED, 6/6
+- [x] Clause — CREATED, 6/6
+- [x] ~~Agreement~~ — rejected
+- [x] ~~Party~~ — rejected
+- [x] ~~Definition (legal)~~ — rejected
+- [x] ~~Obligation~~ — rejected
+- [x] ~~Right~~ — rejected
+- [x] ~~Condition~~ — rejected
+- [x] ~~Exception~~ — rejected
+- [x] ~~Deliverable~~ — rejected
+- [x] ~~PaymentTerm~~ — rejected
+- [x] ~~ServiceLevel~~ — rejected
+- [x] ~~Term~~ — rejected
+- [x] ~~Renewal~~ — rejected
+- [x] ~~Termination~~ — rejected
+- [x] ~~ApprovalState~~ — rejected
+- [x] ~~ClauseLibraryEntry~~ — rejected
+- [x] ~~Variant~~ — rejected
 - [ ] Gate: author and manage basic internal agreements through Lexis
 
 ### Dependencies
@@ -616,33 +634,34 @@ Represent books, series, releases, downloadable assets, and publication metadata
 | media-reference | LOCKED | Complete — 6 artifacts. Reference to a media resource by URI. |
 | media-asset | UNLOCKED | Complete — 6 artifacts. The asset itself with identity. Leaf from Stage 1 triage. |
 
-### Proposed Additional Concepts
+### Proposed Concepts — Triage Results
 
-* Publication
-* Book
-* Edition
-* Release
-* Contributor
-* FormatVariant
-* RightsStatement
-* MediaAsset (exists as Stage 1 leaf — may need additional composition here)
-* CoverAsset
-* PublicationEvent
+| Proposed Concept | Decision | Rationale |
+|---|---|---|
+| Publication | CREATED | `publication` package exists (6/6). General published work entity. Fills gap between Work (descriptor, $MustNotBeEntity) and WhitePaper/Essay (specialized composers). `$MustBeEntity`. |
+| Release | CREATED | `release` package exists (6/6). Versioned product artifact snapshot. Unique traits: releaseKind, releaseStatus, product reference. Distinct from Publication. `$MustBeEntity`. |
+| Book | REJECTED | `publicationKind=$Book` on Publication. No unique structural requirements that warrant a separate schema. |
+| Edition | REJECTED | Separate Publication instances linked by Relation. Work.version + Identifier (ISBN) handle edition metadata. |
+| Contributor | REJECTED | Citation:Contributor + Role + DocumentMetadata already cover authorship/contribution three ways. |
+| FormatVariant | REJECTED | MediaAsset children on Publication. Different-ISBN variants are separate Publication instances linked by Relation. |
+| RightsStatement | REJECTED | Work.license for simple cases. Policy + Clause for complex licensing terms. Description for prose notices. |
+| CoverAsset | REJECTED | MediaAsset with `assetKind=$Cover`. No unique traits. |
+| PublicationEvent | REJECTED | Already rejected in Stage 3. Event with `eventKind=$Publication`. |
 
 ### Stage 9 Checklist
 
 - [x] series — LOCKED, 6/6
 - [x] media-reference — LOCKED, 6/6
-- [ ] Publication — needs creation
-- [ ] Book — needs creation
-- [ ] Edition — needs creation
-- [ ] Release — needs creation
-- [ ] Contributor — needs creation
-- [ ] FormatVariant — needs creation
-- [ ] RightsStatement — needs creation
-- [x] MediaAsset — created as `media-asset` (Stage 1 leaf)
-- [ ] CoverAsset — needs creation
-- [ ] PublicationEvent — needs creation
+- [x] media-asset — UNLOCKED, 6/6 (Stage 1 leaf)
+- [x] Publication — CREATED, 6/6
+- [x] Release — CREATED, 6/6
+- [x] ~~Book~~ — rejected
+- [x] ~~Edition~~ — rejected
+- [x] ~~Contributor~~ — rejected
+- [x] ~~FormatVariant~~ — rejected
+- [x] ~~RightsStatement~~ — rejected
+- [x] ~~CoverAsset~~ — rejected
+- [x] ~~PublicationEvent~~ — rejected
 - [ ] Gate: represent books and publication assets as first-class semantic entities
 
 ### Dependencies
@@ -673,29 +692,31 @@ Represent training offerings, learning materials, and public learning descriptio
 
 None.
 
-### Proposed Concepts
+### Proposed Concepts — Triage Results
 
-* LearningOffering
-* Module
-* LearningObjective
-* Prerequisite
-* Artifact
-* Assessment
-* CompetencyReference / CapabilityReference
-* Duration / EffortEstimate (Duration schema exists for time durations)
-* CertificationPreparation
+| Proposed Concept | Decision | Rationale |
+|---|---|---|
+| LearningOffering | CREATED | `learning-offering` package exists (6/6). Training catalog entity with unique `deliveryMode` trait. Product can't cover this (wrong traits, LOCKED). `$MustBeEntity`. |
+| Module | REJECTED | Section with `sectionKind=$Module`. Deeper module semantics belong in Praxis. |
+| LearningObjective | REJECTED | List items for the descriptive layer. Pedagogical metadata (Bloom's taxonomy) belongs in Praxis. |
+| Prerequisite | REJECTED | Description for text prerequisites. Relation with `relationKind=$Requires` for structured references. Already rejected in Stage 7. |
+| Artifact | REJECTED | MediaAsset with appropriate `assetKind` values. Work/Publication for metadata. |
+| Assessment | REJECTED | Description content for the catalog layer. Assessment structure belongs in Praxis. |
+| CompetencyReference / CapabilityReference | REJECTED | Tags for skill labels. Reference for links to Praxis competency entities. |
+| Duration / EffortEstimate | REJECTED | Duration already exists (LOCKED, 6/6). Context (elapsed vs. effort) provided by composition. |
+| CertificationPreparation | REJECTED | Relation with `relationKind=$PreparesFor` + Description content. |
 
 ### Stage 10 Checklist
 
-- [ ] LearningOffering — needs creation
-- [ ] Module — needs creation
-- [ ] LearningObjective — needs creation
-- [ ] Prerequisite — needs creation
-- [ ] Artifact — needs creation
-- [ ] Assessment — needs creation
-- [ ] CompetencyReference / CapabilityReference — needs creation
-- [ ] Duration / EffortEstimate — needs decision (Duration exists)
-- [ ] CertificationPreparation — needs creation
+- [x] LearningOffering — CREATED, 6/6
+- [x] ~~Module~~ — rejected
+- [x] ~~LearningObjective~~ — rejected
+- [x] ~~Prerequisite~~ — rejected
+- [x] ~~Artifact~~ — rejected
+- [x] ~~Assessment~~ — rejected
+- [x] ~~CompetencyReference / CapabilityReference~~ — rejected
+- [x] ~~Duration / EffortEstimate~~ — rejected
+- [x] ~~CertificationPreparation~~ — rejected
 - [ ] Gate: describe training and learning offerings in Lexis
 
 ### Dependencies
@@ -761,21 +782,21 @@ These are strategically important but depend on earlier coherence.
 
 ## Domain Packages
 
-All 69 committed domain packages are complete (6/6 artifacts). No domain package gaps remain.
+All 79 committed domain packages are complete (6/6 artifacts). No domain package gaps remain.
 
 ## Vocabulary Packages
 
 All 21 vocabulary packages are complete per the amended Package Completeness Definition (4 artifacts: manifest.cdx, vocabulary.cdx, README.md, localizations/en.cdx). No vocabulary package gaps remain.
 
-## Behavior Packages (2 of 2 incomplete)
+## Behavior Packages (0 incomplete)
 
 | Package | manifest | schema | README | localizations | examples | templates | Score |
 |---|---|---|---|---|---|---|---|
-| behavior-expression-schema | Y | Y | N | Y | N | N | 3/6 |
-| behavior-shape-schema | Y | Y | N | Y | N | N | 3/6 |
+| behavior-expression-schema | Y | Y | Y | Y | Y | Y | 6/6 |
+| behavior-shape-schema | Y | Y | Y | Y | Y | Y | 6/6 |
 
-- [ ] behavior-expression-schema — add README.md, examples/, templates/
-- [ ] behavior-shape-schema — add README.md, examples/, templates/
+- [x] behavior-expression-schema — added README.md, examples/basic/example.cdx, templates/basic/template.cdx
+- [x] behavior-shape-schema — added README.md, examples/basic/example.cdx, templates/basic/template.cdx
 
 ---
 

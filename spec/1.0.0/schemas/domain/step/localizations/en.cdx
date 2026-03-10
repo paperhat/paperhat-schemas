@@ -1,0 +1,11 @@
+<LocalizationBundle
+	schema=codex:domain:step
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Step" label="Step" labelOther="Steps" />
+
+	<TraitLocalization identifier="isOptional" label="Optional" labelOther="Optional">
+		Whether this step is optional.
+	</TraitLocalization>
+</LocalizationBundle>

@@ -1,0 +1,7 @@
+[A validation expression. Replace the comparison operator and operands as needed.]
+<Validation>
+	<IsEqualTo>
+		<Referent><Field name="fieldName" /></Referent>
+		<Comparator><Literal value="expected" /></Comparator>
+	</IsEqualTo>
+</Validation>

@@ -9,9 +9,9 @@
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=docmeta reference=urn:cdx:sha256:fd3e4301a17155cbb211afb156d45ca16d131d56d8f3ed7466e4bcd5c5c8cfd8 />
+		<SchemaImport namespace=docmeta reference=urn:cdx:sha256:cd9a05f04ecb4f87bf24b281579f7aa34c9824e32bf7ccb479de90b1d96cc8bf />
 
-		<SchemaImport namespace=narrative reference=urn:cdx:sha256:cdcc813d007020903ab76d95760a4123f679c59dfa08aac83c02b35cec547be7 />
+		<SchemaImport namespace=narrative reference=urn:cdx:sha256:c42b9c50502b251eeced0b04405dd5d10d98c4b40ef3129f7e0477f23361a9c4 />
 
 		<SchemaImport namespace=notes reference=urn:cdx:sha256:9d3ab9c299e532776ee07bbdd56c58dc18347be6e9712c1def71a0fc8f399352 />
 

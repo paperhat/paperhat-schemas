@@ -1,0 +1,27 @@
+<LocalizationBundle
+	schema=codex:domain:release
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Release" label="Release" labelOther="Releases" />
+
+	<TraitLocalization identifier="version" label="Version" labelOther="Versions">
+		The version identifier of the release.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="releaseKind" label="Release Kind" labelOther="Release Kinds">
+		The type of release, such as major, minor, or patch.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="releaseStatus" label="Release Status" labelOther="Release Statuses">
+		The lifecycle status of the release.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="releaseDate" label="Release Date" labelOther="Release Dates">
+		The date this release was published.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="product" label="Product" labelOther="Products">
+		The product this release belongs to.
+	</TraitLocalization>
+</LocalizationBundle>

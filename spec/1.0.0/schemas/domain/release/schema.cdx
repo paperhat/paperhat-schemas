@@ -1,0 +1,68 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A versioned artifact snapshot of a product — a specific release such as v2.3.1 of a software system, carrying version, lifecycle status, and a back-reference to the product it belongs to."
+	id=codex:domain:release
+	namespace="release"
+	title="Release Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=codex:domain:release:Release
+			name="Release"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="version" />
+
+				<AllowsTrait name="releaseKind" />
+
+				<AllowsTrait name="releaseStatus" />
+
+				<AllowsTrait name="releaseDate" />
+
+				<AllowsTrait name="product" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:release:trait:version
+			name="version"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:release:trait:releaseKind
+			name="releaseKind"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:release:trait:releaseStatus
+			name="releaseStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Date
+			id=codex:domain:release:trait:releaseDate
+			name="releaseDate"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=codex:domain:release:trait:product
+			isReferenceTrait=true
+			name="product"
+		/>
+	</TraitDefinitions>
+</Schema>

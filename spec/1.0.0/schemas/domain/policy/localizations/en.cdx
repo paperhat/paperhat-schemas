@@ -1,0 +1,23 @@
+<LocalizationBundle
+	schema=codex:domain:policy
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Policy" label="Policy" labelOther="Policies" />
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		The name of the policy.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="policyKind" label="Policy Kind" labelOther="Policy Kinds">
+		The type of policy, such as privacy, terms of use, or licensing.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="policyStatus" label="Policy Status" labelOther="Policy Statuses">
+		The lifecycle status of the policy.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="effectiveDate" label="Effective Date" labelOther="Effective Dates">
+		The date the policy takes effect.
+	</TraitLocalization>
+</LocalizationBundle>

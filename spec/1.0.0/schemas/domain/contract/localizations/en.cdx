@@ -1,0 +1,27 @@
+<LocalizationBundle
+	schema=codex:domain:contract
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Contract" label="Contract" labelOther="Contracts" />
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		The name of the contract.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="contractKind" label="Contract Kind" labelOther="Contract Kinds">
+		The type of contract, such as license, support, or consulting.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="contractStatus" label="Contract Status" labelOther="Contract Statuses">
+		The lifecycle status of the contract.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="effectiveDate" label="Effective Date" labelOther="Effective Dates">
+		The date the contract takes effect.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="expirationDate" label="Expiration Date" labelOther="Expiration Dates">
+		The date the contract expires.
+	</TraitLocalization>
+</LocalizationBundle>

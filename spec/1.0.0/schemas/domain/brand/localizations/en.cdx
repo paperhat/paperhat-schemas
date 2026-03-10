@@ -1,0 +1,23 @@
+<LocalizationBundle
+	schema=codex:domain:brand
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Brand" label="Brand" labelOther="Brands" />
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		The name of the brand.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="brandKind" label="Brand Kind" labelOther="Brand Kinds">
+		The type of brand, such as institutional, product, or sub-brand.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="owner" label="Owner" labelOther="Owners">
+		The organization that owns the brand.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="brandStatus" label="Brand Status" labelOther="Brand Statuses">
+		The lifecycle status of the brand.
+	</TraitLocalization>
+</LocalizationBundle>

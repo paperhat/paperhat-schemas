@@ -1,0 +1,3 @@
+<Policy name="Paperhat Privacy Policy" policyKind=$Privacy policyStatus=$Active effectiveDate="2026-01-15">
+	<Jurisdiction name="New Zealand" jurisdictionKind=$Country countryCode=$NZ />
+</Policy>

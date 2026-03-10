@@ -1,0 +1,19 @@
+<LocalizationBundle
+	schema=codex:domain:procedure
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Procedure" label="Procedure" labelOther="Procedures" />
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		The name of the procedure.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="procedureKind" label="Procedure Kind" labelOther="Procedure Kinds">
+		The type of procedure, such as release, deployment, or setup.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="procedureStatus" label="Procedure Status" labelOther="Procedure Statuses">
+		The lifecycle status of the procedure.
+	</TraitLocalization>
+</LocalizationBundle>

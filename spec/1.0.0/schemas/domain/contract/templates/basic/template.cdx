@@ -1,0 +1,2 @@
+[A named contract. name is required; contractKind, contractStatus, effectiveDate, expirationDate, and Jurisdiction children are optional.]
+<Contract name="Contract Name" />

@@ -9,12 +9,12 @@
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=docmeta reference=urn:cdx:sha256:fd3e4301a17155cbb211afb156d45ca16d131d56d8f3ed7466e4bcd5c5c8cfd8 />
+		<SchemaImport namespace=docmeta reference=urn:cdx:sha256:cd9a05f04ecb4f87bf24b281579f7aa34c9824e32bf7ccb479de90b1d96cc8bf />
 		<SchemaImport namespace=jurisdiction reference=urn:cdx:sha256:12fa171849ee9c6dd633d59e48483057461cf8b80fee17985e59aafd8ec1bfd8 />
 		<SchemaImport namespace=contact reference=urn:cdx:sha256:f66ac6b540b849d0f20bed2452630e2a5d0ee961e286b2b30f07d6a6aa122fe2 />
 		<SchemaImport namespace=text reference=urn:cdx:sha256:0d835975e6ccabdab7c2204e9b1d4e19baf24108e45a8f240adea3a2684a5fd0 />
 		<SchemaImport namespace=list reference=urn:cdx:sha256:47b1e8725dfbf226ac7dd20ffe8b0fb77c1e444735895c24b2225b317d2185cd />
-		<SchemaImport namespace=section reference=urn:cdx:sha256:a92f63828dfc96c89a569483e6da8ef3e20c0daa4ae3f0c552d57d4c68d57304 />
+		<SchemaImport namespace=section reference=urn:cdx:sha256:1b7f37c5a3731a1f47c10e75ed73a905b76780f0df02f48b7fa9bfdf77317bb9 />
 		<SchemaImport namespace=notes reference=urn:cdx:sha256:9d3ab9c299e532776ee07bbdd56c58dc18347be6e9712c1def71a0fc8f399352 />
 		<SchemaImport namespace=term reference=urn:cdx:sha256:419ff92b0dc13cc22534c4385da43bd7e93bcb65fcd3da07cb1ff442c048afdc />
 	</SchemaImports>

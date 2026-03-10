@@ -19,9 +19,9 @@
 
 		<SchemaImport namespace=audience reference=urn:cdx:sha256:96d1ab313b9cf2a357f05cfdaaf0f9dd4869f42d623f3de28abea92af787a053 />
 
-		<SchemaImport namespace=person reference=urn:cdx:sha256:d70dce3909118dc4c887f76cc42fa4cb89cb2b5276f0f2324df72345fdcbd9d2 />
+		<SchemaImport namespace=person reference=urn:cdx:sha256:08e64ca8d7215574fcebb8e37c8a716042c7486a67d35e6e3d3fc65064b99327 />
 
-		<SchemaImport namespace=pname reference=urn:cdx:sha256:9799fb14ae695fdfbf6ba13f5e71a9b9b0a6863e4d75822e42e14e5adcf9b538 />
+		<SchemaImport namespace=pname reference=urn:cdx:sha256:e58e42b071716e7b96987e607a01420b597e302bf3ee228c35339c7efabf22a7 />
 
 		<SchemaImport namespace=contact reference=urn:cdx:sha256:f66ac6b540b849d0f20bed2452630e2a5d0ee961e286b2b30f07d6a6aa122fe2 />
 

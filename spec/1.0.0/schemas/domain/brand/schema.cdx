@@ -1,0 +1,60 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A named brand identity owned by an organization, such as a product brand, institutional brand, or sub-brand."
+	id=codex:domain:brand
+	namespace="brand"
+	title="Brand Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=codex:domain:brand:Brand
+			name="Brand"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<AllowsTrait name="brandKind" />
+
+				<AllowsTrait name="owner" />
+
+				<AllowsTrait name="brandStatus" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:brand:trait:name
+			name="name"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:brand:trait:brandKind
+			name="brandKind"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=codex:domain:brand:trait:owner
+			isReferenceTrait=true
+			name="owner"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:brand:trait:brandStatus
+			name="brandStatus"
+		/>
+	</TraitDefinitions>
+</Schema>

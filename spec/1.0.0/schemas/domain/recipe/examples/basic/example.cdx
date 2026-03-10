@@ -1,7 +1,11 @@
-<Recipe id="urn:recipe:soft-scrambled-eggs">
-	<text:Title>Soft Scrambled Eggs</text:Title>
+<Recipe id=urn:recipe:soft-scrambled-eggs>
+	<text:Title>
+		Soft Scrambled Eggs
+	</text:Title>
 
-	<text:Teaser>Creamy scrambled eggs with gentle heat and simple seasoning.</text:Teaser>
+	<text:Teaser>
+		Creamy scrambled eggs with gentle heat and simple seasoning.
+	</text:Teaser>
 
 	<Servings amount=2 unit="people" />
 
@@ -20,25 +24,33 @@
 	</Times>
 
 	<Ingredients>
-		<Ingredient food="urn:food:egg" />
+		<Ingredient food=urn:food:egg />
 
 		<IngredientSet>
-			<text:Title>To serve</text:Title>
+			<text:Title>
+				To serve
+			</text:Title>
 
-			<Ingredient food="urn:food:chive" optional=true />
+			<Ingredient food=urn:food:chive optional=true />
 
-			<Ingredient food="urn:food:black-pepper" toTaste=true />
+			<Ingredient food=urn:food:black-pepper toTaste=true />
 		</IngredientSet>
 	</Ingredients>
 
 	<Instructions>
-		<Step>Beat the eggs gently and season lightly.</Step>
+		<Step>
+			Beat the eggs gently and season lightly.
+		</Step>
 
-		<Step>Cook over low heat, stirring slowly until softly set.</Step>
+		<Step>
+			Cook over low heat, stirring slowly until softly set.
+		</Step>
 	</Instructions>
 
 	<ServingSuggestions>
-		<ServingSuggestion>Serve immediately on warm toast.</ServingSuggestion>
+		<ServingSuggestion>
+			Serve immediately on warm toast.
+		</ServingSuggestion>
 	</ServingSuggestions>
 
 	<tips:Tips>
@@ -48,8 +60,12 @@
 	</tips:Tips>
 
 	<notes:Notes>
-		<notes:Note key="a">Adapted from the author's weeknight breakfast method.</notes:Note>
+		<notes:Note key="a">
+			Adapted from the author's weeknight breakfast method.
+		</notes:Note>
 	</notes:Notes>
 
-	<Source>Adapted from a home cooking notebook.</Source>
+	<Source>
+		Adapted from a home cooking notebook.
+	</Source>
 </Recipe>

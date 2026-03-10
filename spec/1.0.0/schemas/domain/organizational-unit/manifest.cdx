@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="PENDING-HASH"
+	copyright="Copyright 2026 Paperhat"
+	description="A named subdivision within an organization, such as a department, division, team, bureau, or working group."
+	license="Apache-2.0"
+	packageName="paperhat-organizational-unit"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

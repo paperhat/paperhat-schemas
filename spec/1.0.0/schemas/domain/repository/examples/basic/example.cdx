@@ -1,0 +1,6 @@
+<Repository
+	name="paperhat-schemas"
+	repositoryKind=$Git
+	url=url("https://github.com/paperhat/paperhat-schemas")
+	repositoryStatus=$Active
+/>

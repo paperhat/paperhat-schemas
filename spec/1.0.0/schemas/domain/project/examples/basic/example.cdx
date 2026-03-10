@@ -1,15 +1,23 @@
 <Project
 	name="Codex"
-	projectKind=$specification
+	projectKind=$Specification
 	repositoryUrl=url("https://github.com/paperhat/codex-lang")
 	websiteUrl=url("https://codex-lang.dev")
-	projectStatus=$active
+	projectStatus=$Active
 >
-	<desc:Description>A declarative semantic markup language for structured authoring.</desc:Description>
-	<work:Work author="Charles F. Munat" license=$Apache2 dateCreated={2024-01-01} />
+	<desc:Description>
+		A declarative semantic markup language for structured authoring.
+	</desc:Description>
+	<work:Work author="Charles F. Munat" license="Apache-2.0" dateCreated={2024-01-01} />
 	<tags:Tags>
-		<tags:Tag value=$semanticMarkup />
-		<tags:Tag value=$declarative />
-		<tags:Tag value=$authoring />
+		<tags:Tag>
+			semantic markup
+		</tags:Tag>
+		<tags:Tag>
+			declarative
+		</tags:Tag>
+		<tags:Tag>
+			authoring
+		</tags:Tag>
 	</tags:Tags>
 </Project>

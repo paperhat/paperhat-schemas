@@ -1,0 +1,60 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="0892795eeae7127f2181f5a2aa3f5686ec37ba7cd618a0cbea2cf5a32294140e"
+	copyright="Copyright 2026 Paperhat"
+	description="A structured terms of use document defining acceptance, permitted use, prohibited use, disclaimers, liability limits, termination, governing law, and contact information."
+	license="Apache-2.0"
+	packageName="paperhat-terms-of-use"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+>
+	<PackageDependency
+		packageName="paperhat-document-metadata"
+		closureHash="7f60a626867d8008adb8b8414526601759539a037d040ff2d96699ab486785ff"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-jurisdiction"
+		closureHash="62c2a4021c878aca795cba7eaea0a8e561af5716550635051ee578c10eb87d35"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-contact-point"
+		closureHash="9e02926fb7fa310c44ecc6d3d3dcf540d96854175ed1f07e0782ac1a5a048b08"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-text"
+		closureHash="703472ba80a5f88685e7a6d604b16d31dfb06a81186c58bdd378aac55a53e897"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-list"
+		closureHash="37316dfe7f2d350765a454f11b475d85a7bf5c09a7b89f0398418725a86ea088"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-section"
+		closureHash="9c49168789d463f8f021f890afca78b78044f0b02de75dd724e286faeaf8704a"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-notes"
+		closureHash="22c5d0faccd4a541f902916b0b479d5d3417b4e4412f72dd65e24d7650ffae1c"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-term-entry"
+		closureHash="6cf3b4727790702289833570fb6cb46bcf6e2bebe0fad83520216b60538fa773"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</DomainPackageManifest>

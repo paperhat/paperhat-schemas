@@ -1,5 +1,7 @@
 [A project with identity. name is required; all other traits and children are optional.]
-<Project name="">
-	<desc:Description></desc:Description>
-	<work:Work author="" />
+<Project name="Example Project">
+	<desc:Description>
+		Describe the project here.
+	</desc:Description>
+	<work:Work author="Example Author" />
 </Project>

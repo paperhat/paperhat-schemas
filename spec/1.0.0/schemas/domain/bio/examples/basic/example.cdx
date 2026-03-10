@@ -1,0 +1,7 @@
+<Bio id=urn:bio:owen-thomas title="About Owen Thomas" subject=urn:person:owen-thomas>
+	<narrative:Narrative>
+		<text:Paragraph>
+			Owen Thomas documents the design and development of human-centered semantic systems.
+		</text:Paragraph>
+	</narrative:Narrative>
+</Bio>

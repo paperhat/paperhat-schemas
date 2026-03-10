@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="PENDING-HASH"
+	copyright="Copyright 2026 Paperhat"
+	description="A discrete media file or object with identity, such as an image, video, audio recording, or document file, carrying technical metadata about the asset itself."
+	license="Apache-2.0"
+	packageName="paperhat-media-asset"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

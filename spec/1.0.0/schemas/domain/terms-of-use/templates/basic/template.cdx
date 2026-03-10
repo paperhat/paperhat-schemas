@@ -1,0 +1,25 @@
+<TermsOfUse id=urn:terms:example title="Terms Of Use Title">
+	<GoverningEntity target=urn:organization:example governingRole=$Owner />
+	<AppliesTo target=urn:service:example scopeKind=$Service />
+	<RelatedDocument target=urn:policy:privacy:example relationshipKind=$PairedWith />
+	<Definitions>
+		<term:TermEntry term="Defined Term" key=~definedTerm>
+			<Sense>
+				State the formal meaning of the defined term.
+			</Sense>
+		</term:TermEntry>
+	</Definitions>
+	<Acceptance>
+		<text:Paragraph>
+			Describe the acceptance basis.
+		</text:Paragraph>
+	</Acceptance>
+	<PermittedUse>
+		<text:Paragraph>
+			Describe permitted use.
+		</text:Paragraph>
+	</PermittedUse>
+	<TermsContact>
+		<contact:ContactPoint contactKind=$Legal emailAddress="legal@example.com" />
+	</TermsContact>
+</TermsOfUse>

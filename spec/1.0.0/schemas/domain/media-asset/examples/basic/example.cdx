@@ -1,0 +1,7 @@
+<MediaAsset
+	name="Paperhat Logo"
+	assetKind=$Image
+	url=url("https://paperhat.dev/assets/logo.png")
+	encodingFormat=media("image/png")
+	altText="Paperhat company logo"
+/>

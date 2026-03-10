@@ -1,0 +1,34 @@
+<LocalizationBundle
+	schema=codex:domain:terms-of-use
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="TermsOfUse" label="Terms Of Use" />
+	<ConceptLocalization identifier="GoverningEntity" label="Governing Entity" labelOther="Governing Entities" />
+	<ConceptLocalization identifier="AppliesTo" label="Applies To" />
+	<ConceptLocalization identifier="RelatedDocument" label="Related Document" labelOther="Related Documents" />
+	<ConceptLocalization identifier="Definitions" label="Definitions" />
+	<ConceptLocalization identifier="Acceptance" label="Acceptance" />
+	<ConceptLocalization identifier="PermittedUse" label="Permitted Use" />
+	<ConceptLocalization identifier="ProhibitedUse" label="Prohibited Use" />
+	<ConceptLocalization identifier="Disclaimer" label="Disclaimer" />
+	<ConceptLocalization identifier="LimitationOfLiability" label="Limitation Of Liability" />
+	<ConceptLocalization identifier="Termination" label="Termination" />
+	<ConceptLocalization identifier="GoverningLaw" label="Governing Law" />
+	<ConceptLocalization identifier="TermsContact" label="Terms Contact" />
+	<TraitLocalization identifier="title" label="Title" labelOther="Titles">
+		The title of the terms document.
+	</TraitLocalization>
+	<TraitLocalization identifier="target" label="Target" labelOther="Targets">
+		The referenced entity target.
+	</TraitLocalization>
+	<TraitLocalization identifier="governingRole" label="Governing Role" labelOther="Governing Roles">
+		The role of the governing entity.
+	</TraitLocalization>
+	<TraitLocalization identifier="scopeKind" label="Scope Kind" labelOther="Scope Kinds">
+		The covered target kind.
+	</TraitLocalization>
+	<TraitLocalization identifier="relationshipKind" label="Relationship Kind" labelOther="Relationship Kinds">
+		The relationship kind for a related legal document.
+	</TraitLocalization>
+</LocalizationBundle>

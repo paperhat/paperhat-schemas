@@ -1,0 +1,33 @@
+<LocalizationBundle
+	schema=codex:domain:cookie-policy
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="CookiePolicy" label="Cookie Policy" labelOther="Cookie Policies" />
+	<ConceptLocalization identifier="GoverningEntity" label="Governing Entity" labelOther="Governing Entities" />
+	<ConceptLocalization identifier="AppliesTo" label="Applies To" />
+	<ConceptLocalization identifier="RelatedDocument" label="Related Document" labelOther="Related Documents" />
+	<ConceptLocalization identifier="Definitions" label="Definitions" />
+	<ConceptLocalization identifier="CookieCategory" label="Cookie Category" labelOther="Cookie Categories" />
+	<ConceptLocalization identifier="CookieControl" label="Cookie Control" />
+	<ConceptLocalization identifier="ThirdPartyUse" label="Third-Party Use" />
+	<ConceptLocalization identifier="Retention" label="Retention" />
+	<TraitLocalization identifier="title" label="Title" labelOther="Titles">
+		The title of the cookie policy document.
+	</TraitLocalization>
+	<TraitLocalization identifier="category" label="Category" labelOther="Categories">
+		The semantic cookie category.
+	</TraitLocalization>
+	<TraitLocalization identifier="target" label="Target" labelOther="Targets">
+		The referenced entity target.
+	</TraitLocalization>
+	<TraitLocalization identifier="governingRole" label="Governing Role" labelOther="Governing Roles">
+		The role of the governing entity.
+	</TraitLocalization>
+	<TraitLocalization identifier="scopeKind" label="Scope Kind" labelOther="Scope Kinds">
+		The covered target kind.
+	</TraitLocalization>
+	<TraitLocalization identifier="relationshipKind" label="Relationship Kind" labelOther="Relationship Kinds">
+		The relationship kind for a related legal document.
+	</TraitLocalization>
+</LocalizationBundle>

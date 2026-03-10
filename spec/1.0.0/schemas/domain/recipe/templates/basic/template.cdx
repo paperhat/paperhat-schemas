@@ -1,12 +1,15 @@
-<Recipe id="">
-	<text:Title></text:Title>
+<Recipe id=urn:recipe:example>
+	<text:Title>
+		Example Recipe Title
+	</text:Title>
 
 	<Ingredients>
-		<Ingredient food="">
-		</Ingredient>
+		<Ingredient food=urn:food:example />
 	</Ingredients>
 
 	<Instructions>
-		<Step></Step>
+		<Step>
+			Describe the first step.
+		</Step>
 	</Instructions>
 </Recipe>

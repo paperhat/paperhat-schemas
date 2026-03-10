@@ -1,0 +1,2 @@
+[A media asset with identity. name is required; assetKind, url, encodingFormat, and altText are optional.]
+<MediaAsset name="Asset Name" />

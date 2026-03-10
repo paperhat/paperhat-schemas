@@ -1,0 +1,2 @@
+[An organizational unit. name is required; unitKind and parentUnit are optional.]
+<OrganizationalUnit name="Unit Name" />

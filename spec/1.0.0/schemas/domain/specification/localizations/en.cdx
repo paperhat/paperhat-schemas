@@ -17,6 +17,14 @@
 
 	<ConceptLocalization identifier="ExternalReference" label="External Reference" labelOther="External References" />
 
+	<ConceptLocalization identifier="RequirementSet" label="Requirement Set" labelOther="Requirement Sets" />
+
+	<ConceptLocalization identifier="TermBinding" label="Term Binding" labelOther="Term Bindings" />
+
+	<ConceptLocalization identifier="Issue" label="Issue" labelOther="Issues" />
+
+	<ConceptLocalization identifier="OpenQuestion" label="Open Question" labelOther="Open Questions" />
+
 	<ConstraintLocalization
 		identifier="codex:domain:specification:section-reference-target-type"
 		label="Section reference target type"

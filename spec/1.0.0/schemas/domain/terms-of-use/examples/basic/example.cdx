@@ -1,0 +1,26 @@
+<TermsOfUse id=urn:terms:recipe-library title="Recipe Library Terms Of Use">
+	<GoverningEntity target=urn:organization:recipe-library governingRole=$Owner />
+	<AppliesTo target=urn:service:recipe-library scopeKind=$Service />
+	<RelatedDocument target=urn:policy:privacy:recipe-library relationshipKind=$PairedWith />
+	<RelatedDocument target=urn:policy:cookie:recipe-library relationshipKind=$Supplements />
+	<Definitions>
+		<term:TermEntry term="Service" key=~service>
+			<Sense>
+				The recipe library service and all directly related site materials.
+			</Sense>
+		</term:TermEntry>
+	</Definitions>
+	<Acceptance>
+		<text:Paragraph>
+			Use of the service constitutes acceptance of these terms.
+		</text:Paragraph>
+	</Acceptance>
+	<PermittedUse>
+		<text:Paragraph>
+			Users may browse, search, and save recipes for personal use.
+		</text:Paragraph>
+	</PermittedUse>
+	<TermsContact>
+		<contact:ContactPoint contactKind=$Legal emailAddress="legal@recipe-library.example" />
+	</TermsContact>
+</TermsOfUse>

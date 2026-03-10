@@ -1,0 +1,117 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A biography document about a referenced entity, composed from metadata, ordered narrative content, and referenced annotations."
+	id=codex:domain:bio
+	namespace="bio"
+	title="Bio Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace=docmeta reference=urn:cdx:sha256:fd3e4301a17155cbb211afb156d45ca16d131d56d8f3ed7466e4bcd5c5c8cfd8 />
+
+		<SchemaImport namespace=narrative reference=urn:cdx:sha256:cdcc813d007020903ab76d95760a4123f679c59dfa08aac83c02b35cec547be7 />
+
+		<SchemaImport namespace=notes reference=urn:cdx:sha256:9d3ab9c299e532776ee07bbdd56c58dc18347be6e9712c1def71a0fc8f399352 />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			defaultLabelSource="title"
+			entityEligibility=$MustBeEntity
+			id=codex:domain:bio:Bio
+			name="Bio"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="title" />
+
+				<RequiresTrait name="subject" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="docmeta:DocumentMetadata" max=1 />
+
+				<AllowsChildConcept conceptSelector="narrative:Narrative" max=1 min=1 />
+
+				<AllowsChildConcept conceptSelector="notes:Notes" max=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:bio:trait:title
+			name="title"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=codex:domain:bio:trait:subject
+			isReferenceTrait=true
+			name="subject"
+		/>
+	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=codex:domain:bio:subject-reference-trait-allowed
+			title="Bio allows only subject as a reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Bio" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTraitAllowed traitName="subject" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:domain:bio:subject-reference-singleton
+			title="Bio must declare at most one reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Bio" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceSingleton />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:domain:bio:subject-targets-entity
+			title="Bio subject must target an entity"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Bio" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTargetsEntity />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:domain:bio:subject-must-resolve
+			title="Bio subject must resolve"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Bio" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceMustResolve />
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

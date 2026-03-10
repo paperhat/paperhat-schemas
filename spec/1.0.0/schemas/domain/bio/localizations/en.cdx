@@ -1,0 +1,22 @@
+<LocalizationBundle
+	schema=codex:domain:bio
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Bio" label="Bio" labelOther="Bios" />
+
+	<TraitLocalization identifier="title" label="Title" labelOther="Titles">
+		The title of the biography document.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="subject" label="Subject" labelOther="Subjects">
+		The referenced entity the biography is about.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:bio:subject-targets-entity"
+		label="Subject must target an entity"
+	>
+		The Bio subject reference must resolve to an entity.
+	</ConstraintLocalization>
+</LocalizationBundle>

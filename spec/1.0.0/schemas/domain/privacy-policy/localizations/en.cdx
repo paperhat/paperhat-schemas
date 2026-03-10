@@ -1,0 +1,41 @@
+<LocalizationBundle
+	schema=codex:domain:privacy-policy
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="PrivacyPolicy" label="Privacy Policy" labelOther="Privacy Policies" />
+	<ConceptLocalization identifier="GoverningEntity" label="Governing Entity" labelOther="Governing Entities" />
+	<ConceptLocalization identifier="AppliesTo" label="Applies To" />
+	<ConceptLocalization identifier="RelatedDocument" label="Related Document" labelOther="Related Documents" />
+	<ConceptLocalization identifier="Controller" label="Controller" labelOther="Controllers" />
+	<ConceptLocalization identifier="DataCollection" label="Data Collection" />
+	<ConceptLocalization identifier="DataUse" label="Data Use" />
+	<ConceptLocalization identifier="DataSharing" label="Data Sharing" />
+	<ConceptLocalization identifier="Retention" label="Retention" />
+	<ConceptLocalization identifier="DataRights" label="Data Rights" />
+	<ConceptLocalization identifier="PrivacyContact" label="Privacy Contact" labelOther="Privacy Contacts" />
+
+	<TraitLocalization identifier="title" label="Title" labelOther="Titles">
+		The title of the privacy policy document.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="target" label="Target" labelOther="Targets">
+		The referenced entity target.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="governingRole" label="Governing Role" labelOther="Governing Roles">
+		The role of the governing entity.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="scopeKind" label="Scope Kind" labelOther="Scope Kinds">
+		The covered target kind.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="relationshipKind" label="Relationship Kind" labelOther="Relationship Kinds">
+		The relationship kind for a related legal document.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="controllerKind" label="Controller Kind" labelOther="Controller Kinds">
+		The role of the referenced controller.
+	</TraitLocalization>
+</LocalizationBundle>

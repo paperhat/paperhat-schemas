@@ -1,0 +1,59 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A storage and retrieval system for artifacts, such as a source code repository, document archive, package registry, or artifact store."
+	id=codex:domain:repository
+	namespace="repo"
+	title="Repository Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=codex:domain:repository:Repository
+			name="Repository"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<AllowsTrait name="repositoryKind" />
+
+				<AllowsTrait name="url" />
+
+				<AllowsTrait name="repositoryStatus" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:repository:trait:name
+			name="name"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:repository:trait:repositoryKind
+			name="repositoryKind"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Url
+			id=codex:domain:repository:trait:url
+			name="url"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:repository:trait:repositoryStatus
+			name="repositoryStatus"
+		/>
+	</TraitDefinitions>
+</Schema>

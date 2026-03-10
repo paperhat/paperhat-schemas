@@ -9,21 +9,23 @@
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=admonition reference=urn:cdx:sha256:31678c88cd6e0a8b64991b39efb46aa4e97a569046deb4d6d57f235891a3a7c2 />
+		<SchemaImport namespace=admonition reference=urn:cdx:sha256:302ea04fd765f5f783d10a17d8ce599b8fa4dd4743e161db48cdc52e5883690e />
 
-		<SchemaImport namespace=code reference=urn:cdx:sha256:6f6e27c71484bc9bb78eb52f401521597afe5e220fda09112c6af67bdaf21e9e />
+		<SchemaImport namespace=code reference=urn:cdx:sha256:31678c88cd6e0a8b64991b39efb46aa4e97a569046deb4d6d57f235891a3a7c2 />
 
-		<SchemaImport namespace=example reference=urn:cdx:sha256:2d88426a3cf5e22d7a64bff7accefab4519ba34c26eb48227cd846f8ecc85a33 />
+		<SchemaImport namespace=example reference=urn:cdx:sha256:6f6e27c71484bc9bb78eb52f401521597afe5e220fda09112c6af67bdaf21e9e />
 
-		<SchemaImport namespace=figure reference=urn:cdx:sha256:7f7660dd097a9a8879541f45cbd28def9478ae94d85df0c467b1d6d82a108da2 />
+		<SchemaImport namespace=figure reference=urn:cdx:sha256:2d88426a3cf5e22d7a64bff7accefab4519ba34c26eb48227cd846f8ecc85a33 />
 
-		<SchemaImport namespace=list reference=urn:cdx:sha256:47b1e8725dfbf226ac7dd20ffe8b0fb77c1e444735895c24b2225b317d2185cd />
+		<SchemaImport namespace=list reference=urn:cdx:sha256:7f7660dd097a9a8879541f45cbd28def9478ae94d85df0c467b1d6d82a108da2 />
 
-		<SchemaImport namespace=specbase reference=urn:cdx:sha256:a4840e1e965d7f6dcde5382f51f757ec18bd0505bc28aca03295e9c48012281a />
+		<SchemaImport namespace=specbase reference=urn:cdx:sha256:47b1e8725dfbf226ac7dd20ffe8b0fb77c1e444735895c24b2225b317d2185cd />
 
-		<SchemaImport namespace=relation reference=urn:cdx:sha256:9f68d4f9a5421a5c1b506c7b0b05550a2bf08a83379ef53d081ba84b11018769 />
+		<SchemaImport namespace=relation reference=urn:cdx:sha256:b3c9fe844e31f66ff7cbbb8a3d8d6c68a53717f8a1365748d1d577cc6769210f />
 
-		<SchemaImport namespace=text reference=urn:cdx:sha256:0d835975e6ccabdab7c2204e9b1d4e19baf24108e45a8f240adea3a2684a5fd0 />
+		<SchemaImport namespace=text reference=urn:cdx:sha256:9f68d4f9a5421a5c1b506c7b0b05550a2bf08a83379ef53d081ba84b11018769 />
+
+		<SchemaImport namespace=cite reference=urn:cdx:sha256:0d835975e6ccabdab7c2204e9b1d4e19baf24108e45a8f240adea3a2684a5fd0 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
@@ -118,6 +120,16 @@
 				<AllowsChildConcept conceptSelector=admonition:Informational />
 
 				<AllowsChildConcept conceptSelector=admonition:Tip />
+
+				<AllowsChildConcept conceptSelector=RequirementSet />
+
+				<AllowsChildConcept conceptSelector=TermBinding />
+
+				<AllowsChildConcept conceptSelector=Issue />
+
+				<AllowsChildConcept conceptSelector=OpenQuestion />
+
+				<AllowsChildConcept conceptSelector=cite:Citation />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
@@ -203,6 +215,94 @@
 				<ForbidsContent />
 			</ContentRules>
 		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:specification:RequirementSet
+			name=RequirementSet
+		>
+			<TraitRules>
+				<RequiresTrait name=title />
+
+				<AllowsTrait name=key />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector=Requirement min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:specification:TermBinding
+			name=TermBinding
+		>
+			<TraitRules>
+				<RequiresTrait name=specbase:term />
+
+				<RequiresTrait name=specbase:source />
+
+				<AllowsTrait name=label />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MayBeEntity
+			id=codex:domain:specification:Issue
+			name=Issue
+		>
+			<TraitRules>
+				<RequiresTrait name=key />
+
+				<AllowsTrait name=specbase:status>
+					<AllowedValues>
+						<EnumeratedConstraint set=IssueStatus />
+					</AllowedValues>
+				</AllowsTrait>
+
+				<AllowsTrait name=specbase:resolution />
+			</TraitRules>
+
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MayBeEntity
+			id=codex:domain:specification:OpenQuestion
+			name=OpenQuestion
+		>
+			<TraitRules>
+				<RequiresTrait name=key />
+
+				<AllowsTrait name=specbase:status>
+					<AllowedValues>
+						<EnumeratedConstraint set=OpenQuestionStatus />
+					</AllowedValues>
+				</AllowsTrait>
+
+				<AllowsTrait name=specbase:answer />
+			</TraitRules>
+
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+		</ConceptDefinition>
 	</ConceptDefinitions>
 
 	<EnumeratedValueSets>
@@ -210,6 +310,22 @@
 			<Member value=Must />
 
 			<Member value=MustNot />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet id=codex:domain:specification:set:IssueStatus name=IssueStatus>
+			<Member value=Open />
+
+			<Member value=Resolved />
+
+			<Member value=Deferred />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet id=codex:domain:specification:set:OpenQuestionStatus name=OpenQuestionStatus>
+			<Member value=Open />
+
+			<Member value=Answered />
+
+			<Member value=Deferred />
 		</EnumeratedValueSet>
 	</EnumeratedValueSets>
 

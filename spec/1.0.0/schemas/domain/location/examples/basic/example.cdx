@@ -1,1 +1,1 @@
-<Location locationKind=$setting locality="Christchurch" region="Canterbury" country=$NewZealand />
+<Location locationKind=$Setting locality="Christchurch" region="Canterbury" country=$NewZealand />

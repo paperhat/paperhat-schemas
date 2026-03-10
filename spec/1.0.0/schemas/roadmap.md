@@ -19,7 +19,7 @@ A complete schema package has all of the following artifacts:
 5. `examples/<name>/example.cdx` — At least one realistic example
 6. `templates/<name>/template.cdx` — At least one authoring template
 
-Vocabulary packages follow the same pattern but use VocabularyPackageManifest and `vocabulary.cdx` instead of schema.cdx.
+Vocabulary packages are reference token sets, not authoring schemas. They require manifest.cdx, vocabulary.cdx, README.md, and localizations/en.cdx. They do not require examples/ or templates/ — tokens are referenced from within other schemas, not authored as standalone instances.
 
 ### Hash Policy
 
@@ -78,33 +78,66 @@ Provide the common semantic substrate used by specifications, white papers, poli
 | narrative | LOCKED | Complete — 6 artifacts |
 | measure | LOCKED | Complete — 6 artifacts |
 | event | LOCKED | Complete — 6 artifacts |
+| project | LOCKED | Complete — 6 artifacts |
+| role | LOCKED | Complete — 6 artifacts |
+| jurisdiction | LOCKED | Complete — 6 artifacts |
+| citation | LOCKED | Complete — 6 artifacts |
+| term-entry | LOCKED | Complete — 6 artifacts |
+| document-metadata | LOCKED | Complete — 6 artifacts |
+| energy-measure | LOCKED | Complete — 6 artifacts |
+| mass-measure | LOCKED | Complete — 6 artifacts |
+| time-measure | LOCKED | Complete — 6 artifacts |
+| volume-measure | LOCKED | Complete — 6 artifacts |
+| material | UNLOCKED | Complete — 6 artifacts |
+| organizational-unit | UNLOCKED | Complete — 6 artifacts |
+| repository | UNLOCKED | Complete — 6 artifacts |
+| media-asset | UNLOCKED | Complete — 6 artifacts |
 
-### Proposed Concepts — Needing Triage
+### Proposed Concepts — Triage Results
 
-These concepts were proposed in the original roadmap but do not exist as schema packages. Each must be triaged as: **create** (new leaf), **fold** (into an existing or new composite), or **reject** (not needed as standalone).
-
-| Proposed Concept | Triage Decision | Rationale |
+| Proposed Concept | Decision | Rationale |
 |---|---|---|
-| OrganizationalUnit | NEEDS DECISION | Does not exist. Could be a leaf or a child within Organization. |
-| Project | NEEDS DECISION | Does not exist. Needed for representing Codex, Gloss, Lexis, etc. |
-| Repository | NEEDS DECISION | Does not exist. Could be a trait on Project or standalone. |
-| Role | NEEDS DECISION | Does not exist. Needed for author/editor/maintainer assignments. |
-| Responsibility | NEEDS DECISION | Does not exist. Could fold into Role. |
-| Authority | NEEDS DECISION | Does not exist. Could fold into Role. |
-| Party | NEEDS DECISION | Abstract person-or-organization. Could be a union concept or unnecessary if Person and Organization are imported separately. |
-| Jurisdiction | NEEDS DECISION | Does not exist. Needed by Policy and Contract stages. |
-| EffectivePeriod | NEEDS DECISION | Does not exist. Temporal exists (dates and ranges) — is it sufficient? |
-| Status | NEEDS DECISION | Work already has a `status` trait. Is a standalone Status schema needed? |
-| Document | NEEDS DECISION | Abstract base for all document types. Might be unnecessary given DocumentMetadata. |
-| StructuralUnit | NEEDS DECISION | Section already exists and is LOCKED. Is a separate abstract concept needed? |
-| Name / Label | NEEDS DECISION | PersonName exists. Is a general-purpose Name leaf needed for non-person names? |
-| Definition | NEEDS DECISION | Description exists. Is a separate Definition concept needed (term + definition pair)? |
-| MediaAsset | NEEDS DECISION | MediaReference exists (LOCKED). Is a separate MediaAsset (the asset itself vs. a reference to it) needed? |
-| Reference / Citation | NEEDS DECISION | Reference exists (LOCKED). Is a separate Citation concept needed for bibliographic references? |
+| Project | CREATED | `project` package exists (6/6). |
+| Role | CREATED | `role` package exists (6/6). |
+| Jurisdiction | CREATED | `jurisdiction` package exists (6/6). |
+| Definition | CREATED | `term-entry` package exists (6/6). Provides term + definition pair. |
+| Reference / Citation | CREATED | `citation` package exists (6/6). Reference also exists. |
+| OrganizationalUnit | CREATED | `organizational-unit` package exists (6/6). |
+| Repository | CREATED | `repository` package exists (6/6). |
+| MediaAsset | CREATED | `media-asset` package exists (6/6). |
+| Responsibility | REJECTED | Descriptive, not structural. Responsibilities are expressed through Description children on Role instances. |
+| Authority | REJECTED | A property of a role assignment, not a standalone entity. If Stage 5 needs permission/prohibition modeling, that belongs in policy concepts. |
+| Party | REJECTED | Union type that adds indirection without semantic value. Import Person and Organization separately where needed. |
+| EffectivePeriod | REJECTED | Temporal already handles date ranges. A separate concept for start/end date pairs would duplicate existing capability. |
+| Status | REJECTED | Status is a trait pattern, not an entity. Work has a `status` trait. Schemas define their own status trait with domain-appropriate tokens. |
+| Document | REJECTED | DocumentMetadata already serves as the shared metadata container. An abstract Document base adds no compositional value. |
+| StructuralUnit | REJECTED | Section covers hierarchical document structure. An abstraction over Section/Paragraph/ListItem carries no meaning of its own. |
+| Name / Label | REJECTED | Non-person names are simple text traits. PersonName's complexity exists because person names have genuine internal structure. |
 
-### Existing Vocabularies (all LOCKED)
+### Triage Checklist
+
+- [x] Project — created as `project`
+- [x] Role — created as `role`
+- [x] Jurisdiction — created as `jurisdiction`
+- [x] Definition — created as `term-entry`
+- [x] Reference / Citation — created as `citation`
+- [x] OrganizationalUnit — created as `organizational-unit`
+- [x] Repository — created as `repository`
+- [x] MediaAsset — created as `media-asset`
+- [x] ~~Responsibility~~ — rejected
+- [x] ~~Authority~~ — rejected
+- [x] ~~Party~~ — rejected
+- [x] ~~EffectivePeriod~~ — rejected
+- [x] ~~Status~~ — rejected
+- [x] ~~Document~~ — rejected
+- [x] ~~StructuralUnit~~ — rejected
+- [x] ~~Name / Label~~ — rejected
+
+### Existing Vocabularies (all complete)
 
 bcp-47-languages, e164-calling-codes, iana-time-zones, iso-3166-countries, iso-4217-currencies, food-categories, preparations, units-angle, units-area, units-data, units-electrical, units-energy, units-force, units-frequency, units-length, units-mass, units-pressure, units-speed, units-temperature, units-time, units-volume.
+
+All 21 vocabulary packages have manifest.cdx, vocabulary.cdx, README.md, and localizations/en.cdx. Per the Package Completeness Definition, vocabulary packages do not require examples/ or templates/.
 
 ### Vocabulary Needs
 
@@ -138,34 +171,42 @@ Represent normative and explanatory technical specifications as governed semanti
 
 | Schema | Lock State | Status |
 |---|---|---|
-| specification | UNLOCKED | Complete — 6 artifacts. Has: Specification, Section, Paragraph, OrderedList, UnorderedList, ListItem, CodeBlock, Requirement, Definition, Note, SectionReference, ExternalReference. |
-| specification-foundation | UNLOCKED | Complete — 6 artifacts. Shared traits and enumerations for specification schemas. |
-| specification-rfc2119 | UNLOCKED | Complete — 6 artifacts. Full RFC 2119 variant with all modality keywords. |
+| specification | UNLOCKED | Complete — 6 artifacts. Has: Specification, Section, Paragraph, OrderedList, UnorderedList, ListItem, CodeBlock, Requirement, Definition, Note, SectionReference, ExternalReference. Uncommitted changes in working tree. |
+| specification-foundation | UNLOCKED | Complete — 6 artifacts. Shared traits and enumerations for specification schemas. Uncommitted changes in working tree. |
+| specification-rfc2119 | UNLOCKED | Complete — 6 artifacts. Full RFC 2119 variant with all modality keywords. Uncommitted changes in working tree. |
 
-### Proposed Concepts — Needing Gap Analysis
+### Proposed Concepts — Gap Analysis
 
 | Proposed Concept | Existing Coverage | Gap Status |
 |---|---|---|
 | Specification | Exists in `specification` | Covered |
-| NormativeStatement | Requirement concept with modality trait | Likely covered |
-| DefinitionEntry | Definition concept with `term` trait | Likely covered |
-| RequirementSet | No grouping concept exists | NEEDS DECISION |
-| Example | `example` schema exists (separate package, LOCKED) | Likely covered via import |
-| Appendix / Annex | Section with `division=$Appendix` trait | Likely covered |
-| Reference / BibliographyEntry | ExternalReference + Reference leaf | NEEDS DECISION — is BibliographyEntry needed? |
+| NormativeStatement | Requirement concept with modality trait | Covered |
+| DefinitionEntry | Definition concept with `term` trait | Covered |
+| RequirementSet | Uncommitted changes add this concept | In progress |
+| Example | `example` schema exists (separate package, LOCKED) | Covered via import |
+| Appendix / Annex | Section with `division=$Appendix` trait | Covered |
+| Reference / BibliographyEntry | ExternalReference + Reference leaf + Citation leaf | NEEDS DECISION — is BibliographyEntry still needed? |
 | ConformanceRequirement | Requirement with specific modality | NEEDS DECISION — separate concept or just a Requirement? |
-| FormalNote / InformativeNote | Note concept exists | Likely covered |
-| TermBinding | No explicit concept | NEEDS DECISION |
-| Issue / OpenQuestion | Not present | NEEDS DECISION |
+| FormalNote / InformativeNote | Note concept exists | Covered |
+| TermBinding | Uncommitted changes add this concept | In progress |
+| Issue / OpenQuestion | Uncommitted changes add these concepts | In progress |
+
+### Stage 2 Checklist
+
+- [x] specification — exists, UNLOCKED, 6/6
+- [x] specification-foundation — exists, UNLOCKED, 6/6
+- [x] specification-rfc2119 — exists, UNLOCKED, 6/6
+- [ ] RequirementSet — in progress (uncommitted)
+- [ ] TermBinding — in progress (uncommitted)
+- [ ] Issue / OpenQuestion — in progress (uncommitted)
+- [ ] Reference / BibliographyEntry — needs decision
+- [ ] ConformanceRequirement — needs decision
+- [ ] Gate: author, validate, and project a real Paperhat specification end-to-end
 
 ### Dependencies
 
 * Stage 1 foundational vocabulary
 * Any new Stage 1 leaves identified during triage
-
-### Gate
-
-A real Paperhat specification can be authored, validated, and projected end-to-end in Lexis.
 
 ### First Paperhat Examples
 
@@ -196,8 +237,9 @@ Represent long-form persuasive, explanatory, and analytical publications.
 | notes | LOCKED | Complete — 6 artifacts. Footnote/endnote support via keyed Notes/Note. |
 | figure | LOCKED | Complete — 6 artifacts. Figure with caption. |
 | series | LOCKED | Complete — 6 artifacts. SeriesInfo for series membership. |
+| citation | LOCKED | Complete — 6 artifacts. Bibliographic citation support. |
 
-### Proposed Concepts — Needing Gap Analysis
+### Proposed Concepts — Gap Analysis
 
 | Proposed Concept | Existing Coverage | Gap Status |
 |---|---|---|
@@ -205,7 +247,7 @@ Represent long-form persuasive, explanatory, and analytical publications.
 | Article / Essay | Essay exists, LOCKED | Covered |
 | Abstract | Exists in WhitePaper | Covered |
 | Claim / SupportingArgument / Evidence | Not present. WhitePaper design notes explicitly state these are rhetorical patterns within prose, not structural units. | Likely intentionally excluded |
-| Citation / BibliographyEntry | Reference exists (LOCKED). Notes handles footnotes. | NEEDS DECISION |
+| Citation / BibliographyEntry | Citation exists. Reference exists. Notes handles footnotes. | Covered |
 | Figure | Exists, LOCKED | Covered |
 | Table | Relation exists (UNLOCKED) for tabular data | NEEDS DECISION |
 | Footnote / Endnote | Notes/Note exists, LOCKED | Covered |
@@ -213,14 +255,25 @@ Represent long-form persuasive, explanatory, and analytical publications.
 | PublicationEvent | Not present | NEEDS DECISION |
 | Contributor | Person exists. Work has `author` trait. | NEEDS DECISION |
 
+### Stage 3 Checklist
+
+- [x] white-paper — LOCKED, 6/6
+- [x] essay — LOCKED, 6/6
+- [x] narrative — LOCKED, 6/6
+- [x] document-metadata — LOCKED, 6/6
+- [x] notes — LOCKED, 6/6
+- [x] figure — LOCKED, 6/6
+- [x] series — LOCKED, 6/6
+- [x] citation — LOCKED, 6/6
+- [ ] Table — needs decision (Relation exists but is it sufficient?)
+- [ ] PublicationEvent — needs decision
+- [ ] Contributor — needs decision
+- [ ] Gate: represent existing Paperhat white papers semantically and project to web/PDF
+
 ### Dependencies
 
 * Stage 1 foundational vocabulary
 * WhitePaper and Essay are LOCKED — new concepts must be new packages, not modifications
-
-### Gate
-
-Existing Paperhat white papers can be represented semantically and projected to web/PDF cleanly.
 
 ### First Paperhat Examples
 
@@ -246,30 +299,41 @@ Represent Paperhat as an institution: entities, projects, roles, ownership, auth
 |---|---|---|
 | organization | LOCKED | Complete — 6 artifacts. Has: Organization with name, organizationKind, foundingDate, dissolutionDate traits. Children: Description, ContactPoint, Identifier, Location, Tags. |
 | person | LOCKED | Complete — 6 artifacts. |
+| project | LOCKED | Complete — 6 artifacts. |
+| role | LOCKED | Complete — 6 artifacts. |
+| organizational-unit | UNLOCKED | Complete — 6 artifacts. Leaf from Stage 1 triage. |
+| repository | UNLOCKED | Complete — 6 artifacts. Leaf from Stage 1 triage. |
 
 ### Missing Schemas
 
 These do not exist and were proposed in the original roadmap:
 
-* OrganizationalUnit
-* Project
 * Brand
 * ProductLine
-* Repository
-* Role
-* Responsibility
 * AuthorityAssignment
 * Membership / Assignment
 * Relationship (cross-entity)
 * Domain / Property / Asset
 
+### Stage 4 Checklist
+
+- [x] organization — complete, 6/6
+- [x] person — complete, 6/6
+- [x] project — complete, 6/6
+- [x] role — complete, 6/6
+- [x] OrganizationalUnit — created as `organizational-unit` (Stage 1 leaf)
+- [x] Repository — created as `repository` (Stage 1 leaf)
+- [ ] Brand — needs decision
+- [ ] ProductLine — needs decision
+- [ ] AuthorityAssignment — needs decision
+- [ ] Membership / Assignment — needs decision
+- [ ] Relationship (cross-entity) — needs decision
+- [ ] Domain / Property / Asset — needs decision
+- [ ] Gate: represent Paperhat's organizational and project structure canonically
+
 ### Dependencies
 
-* Stage 1 foundational vocabulary (especially Role, Project, and other new leaves from Stage 1 triage)
-
-### Gate
-
-Paperhat's organizational and project structure can be represented canonically and reused elsewhere.
+* Stage 1 foundational vocabulary (Role, Project, Jurisdiction, OrganizationalUnit, Repository all exist)
 
 ### First Paperhat Examples
 
@@ -292,7 +356,9 @@ Represent institutional rules and operational commitments as first-class semanti
 
 ### Existing Schemas
 
-None specific to policy. Will import from Stage 1 leaves and Stage 4 organizational schemas.
+| Schema | Lock State | Status |
+|---|---|---|
+| jurisdiction | LOCKED | Complete — 6 artifacts. Jurisdictional authority and scope. |
 
 ### Proposed Concepts
 
@@ -306,20 +372,32 @@ None specific to policy. Will import from Stage 1 leaves and Stage 4 organizatio
 * Exception
 * Scope
 * ResponsibleParty
-* Jurisdiction (from Stage 1)
-* EffectivePeriod (from Stage 1, or use Temporal)
 * Enforcement / Consequence
 * ReviewRequirement
 * ApprovalRequirement
+
+### Stage 5 Checklist
+
+- [x] jurisdiction — LOCKED, 6/6
+- [ ] PolicyDocument — needs creation
+- [ ] Policy — needs creation
+- [ ] Rule — needs creation
+- [ ] Obligation — needs creation
+- [ ] Permission — needs creation
+- [ ] Prohibition — needs creation
+- [ ] Condition — needs creation
+- [ ] Exception — needs creation
+- [ ] Scope — needs creation
+- [ ] ResponsibleParty — needs creation
+- [ ] Enforcement / Consequence — needs creation
+- [ ] ReviewRequirement — needs creation
+- [ ] ApprovalRequirement — needs creation
+- [ ] Gate: model Paperhat's own policies as semantic entities
 
 ### Dependencies
 
 * Stage 1 foundational vocabulary
 * Stage 4 organization/authority model
-
-### Gate
-
-Paperhat can model its own policies as semantic entities rather than prose pages.
 
 ### First Paperhat Examples
 
@@ -360,14 +438,27 @@ Represent what Paperhat offers in a way that is reusable across web, documentati
 * PriceModel
 * SubscriptionTerm
 
+### Stage 6 Checklist
+
+- [x] product — LOCKED, 6/6
+- [x] offer — LOCKED, 6/6
+- [ ] Service — needs creation
+- [ ] Offering — needs creation
+- [ ] Tier / Plan — needs creation
+- [ ] Feature — needs creation
+- [ ] Capability — needs creation
+- [ ] Eligibility — needs creation
+- [ ] Dependency / Prerequisite — needs creation
+- [ ] Deliverable — needs creation
+- [ ] SupportEntitlement — needs creation
+- [ ] PriceModel — needs creation
+- [ ] SubscriptionTerm — needs creation
+- [ ] Gate: describe Paperhat offerings consistently across sales pages, docs, proposals, agreements
+
 ### Dependencies
 
 * Stage 1 foundational vocabulary
 * Stage 4 organization/project model
-
-### Gate
-
-Paperhat offerings can be described once and reused consistently across sales pages, documentation, proposals, and agreements.
 
 ### First Paperhat Examples
 
@@ -406,15 +497,26 @@ None specific to documentation/guides. Will import from Stage 1 leaves, narrativ
 * Environment / Platform
 * ChecklistItem
 
+### Stage 7 Checklist
+
+- [ ] Guide — needs creation
+- [ ] Procedure — needs creation
+- [ ] Task — needs creation
+- [ ] Step — needs creation
+- [ ] Prerequisite — needs creation
+- [ ] Outcome — needs creation
+- [ ] TroubleshootingItem — needs creation
+- [ ] KnownIssue — needs creation
+- [ ] ReferenceEntry — needs creation
+- [ ] Environment / Platform — needs creation
+- [ ] ChecklistItem — needs creation
+- [ ] Gate: maintain real user and internal operational documentation in Lexis
+
 ### Dependencies
 
 * Stage 1 foundational vocabulary
 * Stage 6 product/offering model
 * Structural schemas (section, text, list, narrative)
-
-### Gate
-
-Paperhat can maintain real user and internal operational documentation in Lexis.
 
 ### First Paperhat Examples
 
@@ -443,7 +545,7 @@ None.
 
 * Contract
 * Agreement
-* Party (imports from Stage 1 if created)
+* Party (rejected as Stage 1 leaf — import Person and Organization directly)
 * Clause
 * Definition (legal definitions within a contract)
 * Obligation
@@ -456,20 +558,38 @@ None.
 * Term
 * Renewal
 * Termination
-* Jurisdiction (from Stage 1)
+* Jurisdiction (from Stage 1 — exists)
 * ApprovalState
 * ClauseLibraryEntry
 * Variant
+
+### Stage 8 Checklist
+
+- [ ] Contract — needs creation
+- [ ] Agreement — needs creation
+- [x] ~~Party~~ — rejected (import Person and Organization directly)
+- [ ] Clause — needs creation
+- [ ] Definition (legal) — needs creation
+- [ ] Obligation — needs creation
+- [ ] Right — needs creation
+- [ ] Condition — needs creation
+- [ ] Exception — needs creation
+- [ ] Deliverable — needs creation
+- [ ] PaymentTerm — needs creation
+- [ ] ServiceLevel — needs creation
+- [ ] Term — needs creation
+- [ ] Renewal — needs creation
+- [ ] Termination — needs creation
+- [ ] ApprovalState — needs creation
+- [ ] ClauseLibraryEntry — needs creation
+- [ ] Variant — needs creation
+- [ ] Gate: author and manage basic internal agreements through Lexis
 
 ### Dependencies
 
 * Stage 5 policy/governance schema family
 * Stage 4 organization/party/role models
 * Stage 6 product/service/offering schema family
-
-### Gate
-
-Paperhat can author and manage at least basic internal agreements through Lexis.
 
 ### First Paperhat Examples
 
@@ -494,6 +614,7 @@ Represent books, series, releases, downloadable assets, and publication metadata
 |---|---|---|
 | series | LOCKED | Complete — 6 artifacts. SeriesInfo (title, position, track). |
 | media-reference | LOCKED | Complete — 6 artifacts. Reference to a media resource by URI. |
+| media-asset | UNLOCKED | Complete — 6 artifacts. The asset itself with identity. Leaf from Stage 1 triage. |
 
 ### Proposed Additional Concepts
 
@@ -504,18 +625,30 @@ Represent books, series, releases, downloadable assets, and publication metadata
 * Contributor
 * FormatVariant
 * RightsStatement
-* MediaAsset (the asset itself, vs. MediaReference which is a pointer)
+* MediaAsset (exists as Stage 1 leaf — may need additional composition here)
 * CoverAsset
 * PublicationEvent
+
+### Stage 9 Checklist
+
+- [x] series — LOCKED, 6/6
+- [x] media-reference — LOCKED, 6/6
+- [ ] Publication — needs creation
+- [ ] Book — needs creation
+- [ ] Edition — needs creation
+- [ ] Release — needs creation
+- [ ] Contributor — needs creation
+- [ ] FormatVariant — needs creation
+- [ ] RightsStatement — needs creation
+- [x] MediaAsset — created as `media-asset` (Stage 1 leaf)
+- [ ] CoverAsset — needs creation
+- [ ] PublicationEvent — needs creation
+- [ ] Gate: represent books and publication assets as first-class semantic entities
 
 ### Dependencies
 
 * Stage 3 white paper/article/publication model
 * Stage 1 foundational vocabulary
-
-### Gate
-
-Books and other publication assets can be represented as first-class semantic entities and projected consistently.
 
 ### First Paperhat Examples
 
@@ -552,14 +685,23 @@ None.
 * Duration / EffortEstimate (Duration schema exists for time durations)
 * CertificationPreparation
 
+### Stage 10 Checklist
+
+- [ ] LearningOffering — needs creation
+- [ ] Module — needs creation
+- [ ] LearningObjective — needs creation
+- [ ] Prerequisite — needs creation
+- [ ] Artifact — needs creation
+- [ ] Assessment — needs creation
+- [ ] CompetencyReference / CapabilityReference — needs creation
+- [ ] Duration / EffortEstimate — needs decision (Duration exists)
+- [ ] CertificationPreparation — needs creation
+- [ ] Gate: describe training and learning offerings in Lexis
+
 ### Dependencies
 
 * Stage 6 product/offering model
 * Stage 3 publication model
-
-### Gate
-
-Paperhat can describe training and learning offerings in Lexis even before Praxis fully operationalizes them.
 
 ### First Paperhat Examples
 
@@ -615,20 +757,25 @@ These are strategically important but depend on earlier coherence.
 
 ---
 
-# Incomplete Packages in Existing Corpus
+# Corpus Hygiene
 
-The following existing packages are missing one or more of the six required artifacts:
+## Domain Packages
 
-| Schema | Missing Artifacts |
-|---|---|
-| paperhat-energy-measure | examples/, templates/ |
-| paperhat-mass-measure | examples/, templates/ |
-| paperhat-time-measure | examples/, templates/ |
-| paperhat-volume-measure | examples/, templates/ |
-| material | README.md, examples/, templates/ |
-| sensory-profile | README.md, localizations/, examples/, templates/ |
+All 69 committed domain packages are complete (6/6 artifacts). No domain package gaps remain.
 
-These must be completed as part of general corpus hygiene, independent of stage progression.
+## Vocabulary Packages
+
+All 21 vocabulary packages are complete per the amended Package Completeness Definition (4 artifacts: manifest.cdx, vocabulary.cdx, README.md, localizations/en.cdx). No vocabulary package gaps remain.
+
+## Behavior Packages (2 of 2 incomplete)
+
+| Package | manifest | schema | README | localizations | examples | templates | Score |
+|---|---|---|---|---|---|---|---|
+| behavior-expression-schema | Y | Y | N | Y | N | N | 3/6 |
+| behavior-shape-schema | Y | Y | N | Y | N | N | 3/6 |
+
+- [ ] behavior-expression-schema — add README.md, examples/, templates/
+- [ ] behavior-shape-schema — add README.md, examples/, templates/
 
 ---
 

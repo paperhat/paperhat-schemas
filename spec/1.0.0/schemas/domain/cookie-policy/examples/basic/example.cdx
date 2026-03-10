@@ -1,0 +1,27 @@
+<CookiePolicy id=urn:policy:cookie:recipe-library title="Recipe Library Cookie Policy">
+	<GoverningEntity target=urn:organization:recipe-library governingRole=$Owner />
+	<AppliesTo target=urn:service:recipe-library scopeKind=$Service />
+	<RelatedDocument target=urn:policy:privacy:recipe-library relationshipKind=$PairedWith />
+	<Definitions>
+		<term:TermEntry term="Cookie" key=~cookie>
+			<Sense>
+				A small browser-stored value used to support the service.
+			</Sense>
+		</term:TermEntry>
+	</Definitions>
+	<CookieCategory category=$Essential>
+		<text:Paragraph>
+			Essential cookies are used to provide basic service operation.
+		</text:Paragraph>
+	</CookieCategory>
+	<CookieControl>
+		<text:Paragraph>
+			Users may manage cookies through browser settings.
+		</text:Paragraph>
+	</CookieControl>
+	<Retention>
+		<text:Paragraph>
+			Cookie retention depends on purpose and browser storage policy.
+		</text:Paragraph>
+	</Retention>
+</CookiePolicy>

@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="PENDING-HASH"
+	copyright="Copyright 2026 Paperhat"
+	description="A storage and retrieval system for artifacts, such as a source code repository, document archive, package registry, or artifact store."
+	license="Apache-2.0"
+	packageName="paperhat-repository"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

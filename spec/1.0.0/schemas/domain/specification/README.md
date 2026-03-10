@@ -17,7 +17,7 @@ Use `Specification` when the document is normative or policy-defining and requir
 | Concept | Kind | Content | Children | Description |
 |---|---|---|---|---|
 | Specification | Semantic | ForbidsContent | Section (1+) | Root specification concept with required front-matter traits. |
-| Section | Semantic (Entity) | ForbidsContent | Paragraph, OrderedList, UnorderedList, CodeBlock, Section, Requirement, Definition, Note, SectionReference, ExternalReference | Recursive section block with stable identity and semantic heading traits. |
+| Section | Semantic (Entity) | ForbidsContent | Paragraph, OrderedList, UnorderedList, CodeBlock, Section, Requirement, RequirementSet, Definition, Note, TermBinding, Issue, OpenQuestion, SectionReference, ExternalReference, Citation | Recursive section block with stable identity and semantic heading traits. |
 | Paragraph | Semantic | RequiresContent (Flow) | -- | Standard paragraph block for prose content. |
 | OrderedList | Structural | ForbidsContent | ListItem (1+) | Ordered list container. |
 | UnorderedList | Structural | ForbidsContent | ListItem (1+) | Unordered list container. |
@@ -28,6 +28,24 @@ Use `Specification` when the document is normative or policy-defining and requir
 | Note | Semantic | RequiresContent (Flow) | -- | Explicit note block for side remarks and clarifications. |
 | SectionReference | Semantic | ForbidsContent | -- | Internal cross-reference to a `Section` entity via reference trait `target`. |
 | ExternalReference | Semantic | ForbidsContent | -- | Reference to a non-entity external IRI via `uri`. |
+| RequirementSet | Semantic | ForbidsContent | Requirement (1+, ordered) | A named group of related requirements, independent of section structure. |
+| TermBinding | Semantic | ForbidsContent | -- | Formal declaration binding a term to a definition source (internal entity or external IRI). |
+| Issue | Semantic (MayBeEntity) | RequiresContent (Flow) | -- | A tracked issue in a draft specification. Typically resolved or removed before locking. |
+| OpenQuestion | Semantic (MayBeEntity) | RequiresContent (Flow) | -- | A tracked open question in a draft specification. Typically answered or removed before locking. |
+
+## Imports
+
+| Namespace | Schema | Provides |
+|---|---|---|
+| cite | `codex:domain:citation` | Citation, Contributor (bibliographic references within specification sections) |
+| admonition | `codex:domain:admonition` | Warning, Danger, Critical, Notice, Informational, Tip |
+| code | `codex:domain:code` | CodeBlock |
+| example | `codex:domain:example` | Example |
+| figure | `codex:domain:figure` | Figure |
+| list | `codex:domain:list` | OrderedList, UnorderedList, ListItem |
+| specbase | `codex:domain:specification-foundation` | Shared traits and enumerated value sets |
+| relation | `codex:domain:relation` | RelationType, RelationInstance |
+| text | `codex:domain:text` | Paragraph |
 
 ## Front Matter Traits
 
@@ -62,6 +80,59 @@ Required on `Requirement` (imported from `specbase`):
 - `modality` (`$EnumeratedToken`: `Must` | `MustNot`)
 
 The `modality` trait is narrowed at concept level to strict modality only. The foundation trait-level constraint allows the full RFC 2119 set, but this schema's concept-level AllowedValues restricts to `Must` and `MustNot`.
+
+## RequirementSet Traits
+
+Required:
+
+- `title` (`$Text`) — names the requirement set (e.g., "Serialization Conformance Requirements")
+
+Optional:
+
+- `key` (`$LookupToken`) — stable lookup key for cross-referencing the set
+
+## TermBinding Traits
+
+Required (imported from `specbase`):
+
+- `term` (`$Text`) — the term being bound
+- `source` (`$Iri`) — reference to the definition (internal Definition entity IRI or external IRI)
+
+Optional:
+
+- `label` (`$Text`) — human-readable source description (e.g., "RFC 2119, §1")
+
+TermBinding declares formal term-definition associations at the document structure level. Use TermBinding when a specification declares which terms govern a section — especially when the definition lives outside the current document. For inline term references within prose, use Gloss `{~term-key | display text}` instead.
+
+## Issue Traits
+
+Required:
+
+- `key` (`$LookupToken`) — stable reference for the issue
+
+Optional (imported from `specbase`):
+
+- `status` (`$EnumeratedToken`: `Open` | `Resolved` | `Deferred`)
+- `resolution` (`$Text`) — how the issue was resolved
+
+Issues are draft-phase items. They are typically resolved or removed before a specification is locked.
+
+## OpenQuestion Traits
+
+Required:
+
+- `key` (`$LookupToken`) — stable reference for the question
+
+Optional (imported from `specbase`):
+
+- `status` (`$EnumeratedToken`: `Open` | `Answered` | `Deferred`)
+- `answer` (`$Text`) — the answer once decided
+
+OpenQuestions are draft-phase items. They are typically answered or removed before a specification is locked.
+
+## Citation
+
+Sections may contain `cite:Citation` children from the imported citation schema. This enables structured bibliographic references within specifications. See the Citation schema documentation for full details.
 
 ## Gloss Binding Patterns
 

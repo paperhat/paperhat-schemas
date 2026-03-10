@@ -1,0 +1,52 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A named subdivision within an organization, such as a department, division, team, bureau, or working group."
+	id=codex:domain:organizational-unit
+	namespace="orgunit"
+	title="Organizational Unit Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=codex:domain:organizational-unit:OrganizationalUnit
+			name="OrganizationalUnit"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<AllowsTrait name="unitKind" />
+
+				<AllowsTrait name="parentUnit" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:organizational-unit:trait:name
+			name="name"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:organizational-unit:trait:unitKind
+			name="unitKind"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=codex:domain:organizational-unit:trait:parentUnit
+			isReferenceTrait=true
+			name="parentUnit"
+		/>
+	</TraitDefinitions>
+</Schema>

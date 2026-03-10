@@ -1,0 +1,148 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A structured cookie policy document defining governing entities, covered targets, cookie categories, controls, third-party use, retention semantics, defined terms, and related legal document references."
+	id=codex:domain:cookie-policy
+	namespace="cookie"
+	title="Cookie Policy Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace=docmeta reference=urn:cdx:sha256:fd3e4301a17155cbb211afb156d45ca16d131d56d8f3ed7466e4bcd5c5c8cfd8 />
+		<SchemaImport namespace=jurisdiction reference=urn:cdx:sha256:12fa171849ee9c6dd633d59e48483057461cf8b80fee17985e59aafd8ec1bfd8 />
+		<SchemaImport namespace=text reference=urn:cdx:sha256:0d835975e6ccabdab7c2204e9b1d4e19baf24108e45a8f240adea3a2684a5fd0 />
+		<SchemaImport namespace=list reference=urn:cdx:sha256:47b1e8725dfbf226ac7dd20ffe8b0fb77c1e444735895c24b2225b317d2185cd />
+		<SchemaImport namespace=section reference=urn:cdx:sha256:a92f63828dfc96c89a569483e6da8ef3e20c0daa4ae3f0c552d57d4c68d57304 />
+		<SchemaImport namespace=notes reference=urn:cdx:sha256:9d3ab9c299e532776ee07bbdd56c58dc18347be6e9712c1def71a0fc8f399352 />
+		<SchemaImport namespace=term reference=urn:cdx:sha256:419ff92b0dc13cc22534c4385da43bd7e93bcb65fcd3da07cb1ff442c048afdc />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition conceptKind=$Semantic defaultLabelSource="title" entityEligibility=$MustBeEntity id=codex:domain:cookie-policy:CookiePolicy name="CookiePolicy">
+			<ContentRules><ForbidsContent /></ContentRules>
+			<TraitRules><RequiresTrait name="title" /></TraitRules>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="docmeta:DocumentMetadata" max=1 />
+				<AllowsChildConcept conceptSelector="jurisdiction:Jurisdiction" />
+				<AllowsChildConcept conceptSelector="GoverningEntity" />
+				<AllowsChildConcept conceptSelector="AppliesTo" />
+				<AllowsChildConcept conceptSelector="RelatedDocument" />
+				<AllowsChildConcept conceptSelector="Definitions" max=1 />
+				<AllowsChildConcept conceptSelector="CookieCategory" min=1 />
+				<AllowsChildConcept conceptSelector="CookieControl" max=1 />
+				<AllowsChildConcept conceptSelector="ThirdPartyUse" max=1 />
+				<AllowsChildConcept conceptSelector="Retention" max=1 />
+				<AllowsChildConcept conceptSelector="notes:Notes" max=1 />
+			</ChildRules>
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition conceptKind=$Structural entityEligibility=$MustNotBeEntity id=codex:domain:cookie-policy:GoverningEntity name="GoverningEntity">
+			<ContentRules><ForbidsContent /></ContentRules>
+			<TraitRules><RequiresTrait name="target" /><AllowsTrait name="governingRole" /></TraitRules>
+		</ConceptDefinition>
+		<ConceptDefinition conceptKind=$Structural entityEligibility=$MustNotBeEntity id=codex:domain:cookie-policy:AppliesTo name="AppliesTo">
+			<ContentRules><ForbidsContent /></ContentRules>
+			<TraitRules><RequiresTrait name="target" /><AllowsTrait name="scopeKind" /></TraitRules>
+		</ConceptDefinition>
+		<ConceptDefinition conceptKind=$Structural entityEligibility=$MustNotBeEntity id=codex:domain:cookie-policy:RelatedDocument name="RelatedDocument">
+			<ContentRules><ForbidsContent /></ContentRules>
+			<TraitRules><RequiresTrait name="target" /><RequiresTrait name="relationshipKind" /></TraitRules>
+		</ConceptDefinition>
+		<ConceptDefinition conceptKind=$Structural entityEligibility=$MustNotBeEntity id=codex:domain:cookie-policy:Definitions name="Definitions">
+			<ContentRules><ForbidsContent /></ContentRules>
+			<ChildRules><AllowsChildConcept conceptSelector="term:TermEntry" min=1 /></ChildRules>
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=codex:domain:cookie-policy:CookieCategory name="CookieCategory">
+			<ContentRules><ForbidsContent /></ContentRules>
+			<TraitRules><RequiresTrait name="category" /></TraitRules>
+			<ChildRules><AllowsChildConcept conceptSelector="text:Paragraph" /><AllowsChildConcept conceptSelector="list:OrderedList" /><AllowsChildConcept conceptSelector="list:UnorderedList" /><AllowsChildConcept conceptSelector="section:Section" /><AllowsChildConcept conceptSelector="notes:Notes" /></ChildRules>
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=codex:domain:cookie-policy:CookieControl name="CookieControl">
+			<ContentRules><ForbidsContent /></ContentRules>
+			<ChildRules><AllowsChildConcept conceptSelector="text:Paragraph" /><AllowsChildConcept conceptSelector="list:OrderedList" /><AllowsChildConcept conceptSelector="list:UnorderedList" /><AllowsChildConcept conceptSelector="section:Section" /><AllowsChildConcept conceptSelector="notes:Notes" /></ChildRules>
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=codex:domain:cookie-policy:ThirdPartyUse name="ThirdPartyUse">
+			<ContentRules><ForbidsContent /></ContentRules>
+			<ChildRules><AllowsChildConcept conceptSelector="text:Paragraph" /><AllowsChildConcept conceptSelector="list:OrderedList" /><AllowsChildConcept conceptSelector="list:UnorderedList" /><AllowsChildConcept conceptSelector="section:Section" /><AllowsChildConcept conceptSelector="notes:Notes" /></ChildRules>
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=codex:domain:cookie-policy:Retention name="Retention">
+			<ContentRules><ForbidsContent /></ContentRules>
+			<ChildRules><AllowsChildConcept conceptSelector="text:Paragraph" /><AllowsChildConcept conceptSelector="list:OrderedList" /><AllowsChildConcept conceptSelector="list:UnorderedList" /><AllowsChildConcept conceptSelector="section:Section" /><AllowsChildConcept conceptSelector="notes:Notes" /></ChildRules>
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition defaultValueType=$Text id=codex:domain:cookie-policy:trait:title name="title" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=codex:domain:cookie-policy:trait:category name="category" />
+		<TraitDefinition defaultValueType=$Iri id=codex:domain:cookie-policy:trait:target isReferenceTrait=true name="target" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=codex:domain:cookie-policy:trait:governingRole name="governingRole" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=codex:domain:cookie-policy:trait:scopeKind name="scopeKind" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=codex:domain:cookie-policy:trait:relationshipKind name="relationshipKind" />
+	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition id=codex:domain:cookie-policy:governing-entity-reference-trait-allowed title="GoverningEntity allows only target as a reference trait">
+			<Targets><TargetConcept conceptSelector="GoverningEntity" /></Targets>
+			<Rule><ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" /></Rule>
+		</ConstraintDefinition>
+		<ConstraintDefinition id=codex:domain:cookie-policy:governing-entity-reference-singleton title="GoverningEntity must declare at most one reference trait">
+			<Targets><TargetConcept conceptSelector="GoverningEntity" /></Targets>
+			<Rule><ReferenceConstraint type=$ReferenceSingleton /></Rule>
+		</ConstraintDefinition>
+		<ConstraintDefinition id=codex:domain:cookie-policy:governing-entity-targets-entity title="GoverningEntity target must resolve to an entity">
+			<Targets><TargetConcept conceptSelector="GoverningEntity" /></Targets>
+			<Rule><ReferenceConstraint type=$ReferenceTargetsEntity /></Rule>
+		</ConstraintDefinition>
+		<ConstraintDefinition id=codex:domain:cookie-policy:governing-entity-must-resolve title="GoverningEntity target must resolve">
+			<Targets><TargetConcept conceptSelector="GoverningEntity" /></Targets>
+			<Rule><ReferenceConstraint type=$ReferenceMustResolve /></Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition id=codex:domain:cookie-policy:applies-to-reference-trait-allowed title="AppliesTo allows only target as a reference trait">
+			<Targets><TargetConcept conceptSelector="AppliesTo" /></Targets>
+			<Rule><ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" /></Rule>
+		</ConstraintDefinition>
+		<ConstraintDefinition id=codex:domain:cookie-policy:applies-to-reference-singleton title="AppliesTo must declare at most one reference trait">
+			<Targets><TargetConcept conceptSelector="AppliesTo" /></Targets>
+			<Rule><ReferenceConstraint type=$ReferenceSingleton /></Rule>
+		</ConstraintDefinition>
+		<ConstraintDefinition id=codex:domain:cookie-policy:applies-to-targets-entity title="AppliesTo target must resolve to an entity">
+			<Targets><TargetConcept conceptSelector="AppliesTo" /></Targets>
+			<Rule><ReferenceConstraint type=$ReferenceTargetsEntity /></Rule>
+		</ConstraintDefinition>
+		<ConstraintDefinition id=codex:domain:cookie-policy:applies-to-must-resolve title="AppliesTo target must resolve">
+			<Targets><TargetConcept conceptSelector="AppliesTo" /></Targets>
+			<Rule><ReferenceConstraint type=$ReferenceMustResolve /></Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition id=codex:domain:cookie-policy:related-document-reference-trait-allowed title="RelatedDocument allows only target as a reference trait">
+			<Targets><TargetConcept conceptSelector="RelatedDocument" /></Targets>
+			<Rule><ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" /></Rule>
+		</ConstraintDefinition>
+		<ConstraintDefinition id=codex:domain:cookie-policy:related-document-reference-singleton title="RelatedDocument must declare at most one reference trait">
+			<Targets><TargetConcept conceptSelector="RelatedDocument" /></Targets>
+			<Rule><ReferenceConstraint type=$ReferenceSingleton /></Rule>
+		</ConstraintDefinition>
+		<ConstraintDefinition id=codex:domain:cookie-policy:related-document-targets-entity title="RelatedDocument target must resolve to an entity">
+			<Targets><TargetConcept conceptSelector="RelatedDocument" /></Targets>
+			<Rule><ReferenceConstraint type=$ReferenceTargetsEntity /></Rule>
+		</ConstraintDefinition>
+		<ConstraintDefinition id=codex:domain:cookie-policy:related-document-must-resolve title="RelatedDocument target must resolve">
+			<Targets><TargetConcept conceptSelector="RelatedDocument" /></Targets>
+			<Rule><ReferenceConstraint type=$ReferenceMustResolve /></Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition id=codex:domain:cookie-policy:definitions-requires-term-entry title="Definitions must contain at least one TermEntry">
+			<Targets><TargetConcept conceptSelector="Definitions" /></Targets>
+			<Rule><ChildConstraint conceptSelector="term:TermEntry" type=$RequiresChildConcept /></Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

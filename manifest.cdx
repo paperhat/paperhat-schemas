@@ -1,6 +1,6 @@
 <LexisRepositoryManifest
 	author="Paperhat"
-	closureHash="19d257ab994f33ab8967f680513a4e5fa6ec674b9017e0576c773d0f9780b1d8"
+	closureHash="05394398bfaf69feecdcf8883e04ab4d56620e551ace5d74d771741c6703f68e"
 	copyright="Copyright 2026 Paperhat"
 	description="Paperhat schema repository. Contains universal schema packages, behavior definitions, and reference vocabularies consumed by Paperhat systems."
 	license="Apache-2.0"
@@ -19,7 +19,11 @@
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-code" packagePath="spec/1.0.0/schemas/domain/code" />
 
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-bio" packagePath="spec/1.0.0/schemas/domain/bio" />
+
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-contact-point" packagePath="spec/1.0.0/schemas/domain/contact-point" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-cookie-policy" packagePath="spec/1.0.0/schemas/domain/cookie-policy" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-description" packagePath="spec/1.0.0/schemas/domain/description" />
 
@@ -69,6 +73,8 @@
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-equipment" packagePath="spec/1.0.0/schemas/domain/equipment" />
 
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-media-asset" packagePath="spec/1.0.0/schemas/domain/media-asset" />
+
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-media-reference" packagePath="spec/1.0.0/schemas/domain/media-reference" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-monetary-amount" packagePath="spec/1.0.0/schemas/domain/monetary-amount" />
@@ -83,6 +89,8 @@
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-operating-schedule" packagePath="spec/1.0.0/schemas/domain/operating-schedule" />
 
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-organizational-unit" packagePath="spec/1.0.0/schemas/domain/organizational-unit" />
+
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-organization" packagePath="spec/1.0.0/schemas/domain/organization" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-person" packagePath="spec/1.0.0/schemas/domain/person" />
@@ -91,6 +99,8 @@
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-product" packagePath="spec/1.0.0/schemas/domain/product" />
 
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-privacy-policy" packagePath="spec/1.0.0/schemas/domain/privacy-policy" />
+
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-project" packagePath="spec/1.0.0/schemas/domain/project" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-rating" packagePath="spec/1.0.0/schemas/domain/rating" />
@@ -98,6 +108,8 @@
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-recipe" packagePath="spec/1.0.0/schemas/domain/recipe" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-relation" packagePath="spec/1.0.0/schemas/domain/relation" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-repository" packagePath="spec/1.0.0/schemas/domain/repository" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-reference" packagePath="spec/1.0.0/schemas/domain/reference" />
 
@@ -118,6 +130,8 @@
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-summary" packagePath="spec/1.0.0/schemas/domain/summary" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-tags" packagePath="spec/1.0.0/schemas/domain/tags" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-terms-of-use" packagePath="spec/1.0.0/schemas/domain/terms-of-use" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-temporal" packagePath="spec/1.0.0/schemas/domain/temporal" />
 

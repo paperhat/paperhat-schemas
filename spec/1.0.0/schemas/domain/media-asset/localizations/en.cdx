@@ -1,0 +1,27 @@
+<LocalizationBundle
+	schema=codex:domain:media-asset
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="MediaAsset" label="Media Asset" labelOther="Media Assets" />
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		The name of the media asset.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="assetKind" label="Asset Kind" labelOther="Asset Kinds">
+		The type of media asset, such as image, video, or audio.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="url" label="URL" labelOther="URLs">
+		The canonical URL of the media asset.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="encodingFormat" label="Encoding Format" labelOther="Encoding Formats">
+		The MIME type of the media asset.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="altText" label="Alt Text" labelOther="Alt Texts">
+		Alternative text description for accessibility.
+	</TraitLocalization>
+</LocalizationBundle>

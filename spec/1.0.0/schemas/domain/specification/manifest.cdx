@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="b53a740d66a8b8e8df91ded1034f4f697e9c6a9623d8de31fdb2ff8370bf8d60"
+	closureHash="c430f88a9dc4698fb833773341b32290421be9ddfb76138bcbd825127897a162"
 	copyright="Copyright 2026 Paperhat"
 	description="Strict specification schema for authoring formal specifications in Codex. Narrows requirement modality to Must and MustNot only."
 	license="Apache-2.0"
@@ -10,6 +10,12 @@
 	requiredCodexVersion=">=1.0.0 <2.0.0"
 	requiredLexisVersion=">=1.0.0 <2.0.0"
 >
+	<PackageDependency
+		packageName="paperhat-citation"
+		closureHash="cbf717eb12f675d50fff56524cd8d437d6ec098cbcf36c1d9ff63b5aab00ced3"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
 	<PackageDependency
 		packageName="paperhat-admonition"
 		closureHash="1d9c6ecd481869d111748a9329e539c9e1745b32e1aceb1b41b8fd957980300b"
@@ -42,7 +48,7 @@
 
 	<PackageDependency
 		packageName="paperhat-specification-foundation"
-		closureHash="7e15defc9d762c7c902396ac27fb2da86b34034df76aaa5c68126b1ae3c17024"
+		closureHash="a0f9f1c1cf49c852148f6e5a4a2aa97ab28950d7ca4bbd7d1cce63fca9e37e24"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 

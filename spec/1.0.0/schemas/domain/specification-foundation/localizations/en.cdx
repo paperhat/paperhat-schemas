@@ -34,4 +34,20 @@
 	<TraitLocalization identifier="uri" label="URI" />
 
 	<TraitLocalization identifier="version" label="Version" />
+
+	<TraitLocalization identifier="source" label="Source">
+		Reference to the definition source, either an internal entity or an external IRI.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="status" label="Status">
+		The current status of a draft item.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="resolution" label="Resolution">
+		How an issue was resolved.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="answer" label="Answer">
+		The answer to an open question once decided.
+	</TraitLocalization>
 </LocalizationBundle>

@@ -1,5 +1,5 @@
 <Location
-	locationKind=$residence
+	locationKind=$Residence
 	locality="Portland"
 	region="Oregon"
 	country="United States"

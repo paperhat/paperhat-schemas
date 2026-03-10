@@ -1,0 +1,27 @@
+<CookiePolicy id=urn:policy:cookie:example title="Cookie Policy Title">
+	<GoverningEntity target=urn:organization:example governingRole=$Owner />
+	<AppliesTo target=urn:service:example scopeKind=$Service />
+	<RelatedDocument target=urn:policy:privacy:example relationshipKind=$PairedWith />
+	<Definitions>
+		<term:TermEntry term="Defined Cookie Term" key=~definedCookieTerm>
+			<Sense>
+				State the formal meaning of the cookie-related term.
+			</Sense>
+		</term:TermEntry>
+	</Definitions>
+	<CookieCategory category=$Essential>
+		<text:Paragraph>
+			Describe this cookie category.
+		</text:Paragraph>
+	</CookieCategory>
+	<CookieControl>
+		<text:Paragraph>
+			Describe available cookie controls.
+		</text:Paragraph>
+	</CookieControl>
+	<Retention>
+		<text:Paragraph>
+			Describe cookie retention duration.
+		</text:Paragraph>
+	</Retention>
+</CookiePolicy>

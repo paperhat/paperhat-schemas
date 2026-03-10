@@ -76,9 +76,37 @@
 		/>
 
 		<TraitDefinition
-			defaultValueType=$IriReference
+			defaultValueType=$Iri
 			id=codex:domain:specification-foundation:trait:uri
 			name="uri"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=codex:domain:specification-foundation:trait:source
+			name="source"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:specification-foundation:trait:status
+			name="status"
+		>
+			<AllowedValues>
+				<EnumeratedConstraint set=DraftItemStatus />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:specification-foundation:trait:resolution
+			name="resolution"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:specification-foundation:trait:answer
+			name="answer"
 		/>
 	</TraitDefinitions>
 
@@ -119,6 +147,15 @@
 			<Member value=Recommended />
 
 			<Member value=Optional />
+		</EnumeratedValueSet>
+		<EnumeratedValueSet id=codex:domain:specification-foundation:set:DraftItemStatus name="DraftItemStatus">
+			<Member value=Open />
+
+			<Member value=Resolved />
+
+			<Member value=Answered />
+
+			<Member value=Deferred />
 		</EnumeratedValueSet>
 	</EnumeratedValueSets>
 </Schema>

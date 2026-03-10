@@ -1,0 +1,7 @@
+<Bio id=urn:bio:example title="Example Bio" subject=urn:person:example>
+	<narrative:Narrative>
+		<text:Paragraph>
+			Write the biography here.
+		</text:Paragraph>
+	</narrative:Narrative>
+</Bio>

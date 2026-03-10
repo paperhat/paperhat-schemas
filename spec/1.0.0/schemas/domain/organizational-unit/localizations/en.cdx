@@ -1,0 +1,19 @@
+<LocalizationBundle
+	schema=codex:domain:organizational-unit
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="OrganizationalUnit" label="Organizational Unit" labelOther="Organizational Units" />
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		The name of the organizational unit.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="unitKind" label="Unit Kind" labelOther="Unit Kinds">
+		The type of organizational unit, such as department, division, or team.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="parentUnit" label="Parent Unit" labelOther="Parent Units">
+		The parent organizational unit in the hierarchy.
+	</TraitLocalization>
+</LocalizationBundle>

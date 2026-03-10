@@ -25,11 +25,15 @@ The foundation package exists so that both specification schema variants share i
 | `modality` | `$EnumeratedToken` | RequirementModality | Requirement modality keyword. |
 | `normative` | `$Boolean` | -- | Whether the specification is normative. |
 | `requirementId` | `$LookupToken` | -- | Stable identifier for a specific requirement. |
-| `target` | `$IriReference` | -- | Reference trait pointing to a target entity. |
+| `target` | `$Iri` | -- | Reference trait pointing to a target entity. |
 | `term` | `$Text` | -- | The term being defined in a definition block. |
 | `title` | `$Text` | -- | Title of a specification or section. |
-| `uri` | `$IriReference` | -- | External IRI for an external reference. |
+| `uri` | `$Iri` | -- | External IRI for an external reference. |
 | `version` | `$Semver` | -- | Semantic version of the specification. |
+| `source` | `$Iri` | -- | Reference to a definition source (internal entity or external IRI). |
+| `status` | `$EnumeratedToken` | DraftItemStatus | Current status of a draft item (Issue or OpenQuestion). |
+| `resolution` | `$Text` | -- | How an issue was resolved. |
+| `answer` | `$Text` | -- | The answer to an open question once decided. |
 
 ## Enumerated Value Sets
 
@@ -65,6 +69,17 @@ The full RFC 2119 keyword set. Consuming schemas may narrow this set at concept 
 | `Required` | REQUIRED |
 | `Recommended` | RECOMMENDED |
 | `Optional` | OPTIONAL |
+
+### DraftItemStatus
+
+Status values for draft-phase items (Issues and OpenQuestions). These items are typically removed or resolved before a specification is locked.
+
+| Member | Description |
+|---|---|
+| `Open` | The item is unresolved and requires attention. |
+| `Resolved` | The issue has been resolved (used with Issue). |
+| `Answered` | The question has been answered (used with OpenQuestion). |
+| `Deferred` | The item has been deferred to a future revision. |
 
 ## Design Decisions
 

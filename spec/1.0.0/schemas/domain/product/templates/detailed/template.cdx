@@ -1,0 +1,22 @@
+[Detailed product. Duplicate or remove child concepts freely.]
+<Product name="" brand="" category=$ color="" material="" model="" releaseDate={}>
+	[Optional: describe the product.]
+	<Description></Description>
+
+	[Optional: pricing and availability. Duplicate for multiple offers.]
+	<Offer price=0 priceCurrency=$USD availability=$InStock itemCondition=$New />
+
+	[Optional: product identifier such as GTIN, SKU, or MPN.]
+	<Identifier scheme=$ value="" />
+
+	[Optional: aggregate rating.]
+	<Rating ratingValue=0 bestRating=5 />
+
+	[Optional: physical measurement such as weight or dimensions. Duplicate for multiple measurements.]
+	<Measure value=0 unit=$ />
+
+	[Optional: categorize with tags.]
+	<Tags>
+		<Tag></Tag>
+	</Tags>
+</Product>

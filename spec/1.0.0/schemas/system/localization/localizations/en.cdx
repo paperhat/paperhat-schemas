@@ -1,0 +1,59 @@
+<LocalizationBundle
+	schema=codex:system:localization
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="LocalizationBundle" label="Localization Bundle" labelOther="Localization Bundles" />
+
+	<ConceptLocalization identifier="ConceptLocalization" label="Concept Localization" labelOther="Concept Localizations" />
+
+	<ConceptLocalization identifier="TraitLocalization" label="Trait Localization" labelOther="Trait Localizations" />
+
+	<ConceptLocalization identifier="TokenLocalization" label="Token Localization" labelOther="Token Localizations" />
+
+	<ConceptLocalization identifier="ConstraintLocalization" label="Constraint Localization" labelOther="Constraint Localizations" />
+
+	<TraitLocalization identifier="schema" label="Schema" labelOther="Schemas">
+		IRI of the schema this bundle localizes.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="schemaVersion" label="Schema Version" labelOther="Schema Versions">
+		Version of the schema this bundle localizes.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="language" label="Language" labelOther="Languages">
+		BCP 47 language tag for this bundle.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="identifier" label="Identifier" labelOther="Identifiers">
+		Schema element identifier being localized.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="label" label="Label" labelOther="Labels">
+		Human-readable singular label.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="labelZero" label="Label Zero" labelOther="Label Zero Forms">
+		Plural form for zero quantity.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="labelTwo" label="Label Two" labelOther="Label Two Forms">
+		Plural form for two quantity.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="labelFew" label="Label Few" labelOther="Label Few Forms">
+		Plural form for few quantity.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="labelMany" label="Label Many" labelOther="Label Many Forms">
+		Plural form for many quantity.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="labelOther" label="Label Other" labelOther="Label Other Forms">
+		Plural form for other quantity (general plural).
+	</TraitLocalization>
+
+	<TraitLocalization identifier="grammaticalGender" label="Grammatical Gender" labelOther="Grammatical Genders">
+		Grammatical gender for languages with gender agreement.
+	</TraitLocalization>
+</LocalizationBundle>

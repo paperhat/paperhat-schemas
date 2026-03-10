@@ -1,0 +1,5 @@
+[Set scheme to a token defined by the consuming schema, e.g. $isbn, $doi, $passport.]
+<Identifier
+	scheme=$
+	value=""
+/>

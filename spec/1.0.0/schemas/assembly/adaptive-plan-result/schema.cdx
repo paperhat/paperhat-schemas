@@ -1,0 +1,313 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Deterministic Stage C assembly exchange envelope; foundry handoff semantics are defined by AdaptivePlanPackage."
+	id=codex:assembly:adaptive-plan-result
+	namespace="adaptive-plan-result"
+	title="Adaptive Plan Result Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:assembly:adaptive-plan-result:AdaptivePlanResult
+			name="AdaptivePlanResult"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="status" />
+
+				<AllowsTrait name="error" />
+
+				<AllowsTrait name="failedStage" />
+
+				<AllowsTrait name="intentId" />
+
+				<AllowsTrait name="targetFoundry" />
+
+				<AllowsTrait name="policySetRef" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="PlanScope" />
+
+				<AllowsChildConcept conceptSelector="StageAOutcome" />
+
+				<AllowsChildConcept conceptSelector="StageBOutcome" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:assembly:adaptive-plan-result:PlanScope
+			name="PlanScope"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="compositionIri" />
+
+				<AllowsTrait name="viewIri" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:assembly:adaptive-plan-result:StageAOutcome
+			name="StageAOutcome"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="SelectedActions" />
+
+				<AllowsChildConcept conceptSelector="Delta" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:assembly:adaptive-plan-result:SelectedActions
+			name="SelectedActions"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Action" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:assembly:adaptive-plan-result:Action
+			name="Action"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="iri" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:assembly:adaptive-plan-result:Delta
+			name="Delta"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Remove" />
+
+				<AllowsChildConcept conceptSelector="Add" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:assembly:adaptive-plan-result:Remove
+			name="Remove"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="triple" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:assembly:adaptive-plan-result:Add
+			name="Add"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="triple" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:assembly:adaptive-plan-result:StageBOutcome
+			name="StageBOutcome"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="selectedCandidate" />
+
+				<RequiresTrait name="selectedScore" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="AppliedRelaxation" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:assembly:adaptive-plan-result:AppliedRelaxation
+			name="AppliedRelaxation"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="relaxOrder" />
+
+				<AllowsTrait name="relaxWeightClass" />
+
+				<RequiresTrait name="relaxationAction" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:assembly:adaptive-plan-result:trait:status
+			name="status"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values="$ok,$error" />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:assembly:adaptive-plan-result:trait:error
+			name="error"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:assembly:adaptive-plan-result:trait:failedStage
+			name="failedStage"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values="$stageA,$stageB" />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$IriReference
+			id=codex:assembly:adaptive-plan-result:trait:intentId
+			isReferenceTrait=true
+			name="intentId"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:assembly:adaptive-plan-result:trait:targetFoundry
+			name="targetFoundry"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values="$web,$app,$pdf,$epub,$print" />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$IriReference
+			id=codex:assembly:adaptive-plan-result:trait:policySetRef
+			isReferenceTrait=true
+			name="policySetRef"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$IriReference
+			id=codex:assembly:adaptive-plan-result:trait:compositionIri
+			isReferenceTrait=true
+			name="compositionIri"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$IriReference
+			id=codex:assembly:adaptive-plan-result:trait:viewIri
+			isReferenceTrait=true
+			name="viewIri"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$IriReference
+			id=codex:assembly:adaptive-plan-result:trait:iri
+			isReferenceTrait=true
+			name="iri"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:assembly:adaptive-plan-result:trait:triple
+			name="triple"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:assembly:adaptive-plan-result:trait:selectedCandidate
+			name="selectedCandidate"
+		/>
+
+			<TraitDefinition
+				defaultValueType=$Number
+				id=codex:assembly:adaptive-plan-result:trait:selectedScore
+				name="selectedScore"
+			/>
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=codex:assembly:adaptive-plan-result:trait:relaxOrder
+			name="relaxOrder"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:assembly:adaptive-plan-result:trait:relaxWeightClass
+			name="relaxWeightClass"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values="$critical,$high,$medium,$low" />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:assembly:adaptive-plan-result:trait:relaxationAction
+			name="relaxationAction"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values="$dropTerm,$widenThreshold,$allowGroupSplit" />
+			</AllowedValues>
+		</TraitDefinition>
+	</TraitDefinitions>
+</Schema>

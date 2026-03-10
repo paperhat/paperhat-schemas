@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="7460ed89db9b5749b1be28962fbf1996092be3a59ab4e3c5a8b0e11afc9b48ab"
+	copyright="Copyright 2026 Paperhat"
+	description="An unordered set of keyword labels for categorisation and discovery."
+	license="Apache-2.0"
+	packageName="paperhat-tags"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

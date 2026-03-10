@@ -1,0 +1,74 @@
+<LocalizationBundle
+	schema=codex:domain:editorial-markup
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="EditorialMarkup" label="Editorial Markup" />
+
+	<ConceptLocalization identifier="Emphasis" label="Emphasis" />
+
+	<ConceptLocalization identifier="Important" label="Important" />
+
+	<ConceptLocalization identifier="Highlight" label="Highlight" />
+
+	<ConceptLocalization identifier="Deletion" label="Deletion" labelOther="Deletions" />
+
+	<ConceptLocalization identifier="Insertion" label="Insertion" labelOther="Insertions" />
+
+	<ConceptLocalization identifier="MoveFrom" label="Move From" />
+
+	<ConceptLocalization identifier="MoveTo" label="Move To" />
+
+	<ConceptLocalization identifier="Annotation" label="Annotation" labelOther="Annotations" />
+
+	<ConceptLocalization identifier="Redaction" label="Redaction" labelOther="Redactions" />
+
+	<ConceptLocalization identifier="Spoiler" label="Spoiler" labelOther="Spoilers" />
+
+	<ConceptLocalization identifier="Correction" label="Correction" labelOther="Corrections" />
+
+	<ConceptLocalization identifier="Quote" label="Quote" labelOther="Quotes" />
+
+	<ConceptLocalization identifier="BlockQuotation" label="Block Quotation" labelOther="Block Quotations" />
+
+	<ConceptLocalization identifier="PullQuote" label="Pull Quote" labelOther="Pull Quotes" />
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		The lookup token used for Gloss span binding.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="text" label="Text">
+		Display text for label-less Gloss references (Pattern B).
+	</TraitLocalization>
+
+	<TraitLocalization identifier="author" label="Author" labelOther="Authors">
+		The creator of the annotation, quotation, or comment.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="source" label="Source" labelOther="Sources">
+		The origin or attribution of a quotation.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="language" label="Language" labelOther="Languages">
+		The language of the quoted or annotated text.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="moveIdentifier" label="Move Identifier" labelOther="Move Identifiers">
+		Links a MoveFrom and MoveTo pair.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="reason" label="Reason" labelOther="Reasons">
+		The reason text was redacted.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="original" label="Original">
+		The pre-correction text.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:editorial-markup:requires-child"
+		label="Requires at least one editorial markup concept"
+	>
+		An EditorialMarkup container must contain at least one child concept.
+	</ConstraintLocalization>
+</LocalizationBundle>

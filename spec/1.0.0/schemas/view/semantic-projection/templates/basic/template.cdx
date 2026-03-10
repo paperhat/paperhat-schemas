@@ -1,0 +1,14 @@
+[Minimal semantic projection. Exactly one SelectRule is required.]
+<SemanticProjectionDefinition
+	id=codex:view:NAMESPACE:PROJECTION_NAME
+	name=""
+>
+	[Required: exactly one SelectRule.]
+	<SelectRule ruleIdentifier=codex:view:NAMESPACE:PROJECTION_NAME:select>
+		<RuleSelectors>
+			<ConceptTypeSelector selectorConceptType="" />
+		</RuleSelectors>
+	</SelectRule>
+
+	[Optional: PruneRule, CollapseRule, or DeriveAnnotationRule.]
+</SemanticProjectionDefinition>

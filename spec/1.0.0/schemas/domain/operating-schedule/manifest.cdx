@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="d6eccf298662164e127e4501c8174e58d61167615a0c38e55681eec725a818af"
+	copyright="Copyright 2026 Paperhat"
+	description="Operating hours for a specific day of the week, with optional seasonal validity."
+	license="Apache-2.0"
+	packageName="paperhat-operating-schedule"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

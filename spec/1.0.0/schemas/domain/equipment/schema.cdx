@@ -1,0 +1,64 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Kitchen and general-purpose equipment, with canonical name, category, and physical characteristics."
+	id=codex:domain:equipment
+	namespace="equip"
+	title="Equipment Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:5e9c6ba4654a0b013b65fc38fde033d2b6fc281d7eb791e57b207b42d80ae7da />
+
+		<SchemaImport namespace="measure" reference=urn:cdx:sha256:a728956784520455efba12110f7fa1d573f81b94fab61ee9279ea07dbab1e2fe />
+
+		<SchemaImport namespace="tags" reference=urn:cdx:sha256:79f0baf3512b1d7c2730608a6796155017c30096f2f4ffde74b0deafc1eae775 />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=codex:domain:equipment:Equipment
+			name="Equipment"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<AllowsTrait name="category" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+
+				<AllowsChildConcept conceptSelector="measure:Measure" />
+
+				<AllowsChildConcept conceptSelector="tags:Tags" />
+			</ChildRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:equipment:trait:name
+			name="name"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:equipment:trait:category
+			name="category"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Appliance, $Bakeware, $Cookware, $Cutlery, $Gadget, $Servingware, $Utensil] />
+			</AllowedValues>
+		</TraitDefinition>
+	</TraitDefinitions>
+</Schema>

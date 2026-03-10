@@ -1,0 +1,11 @@
+<LocalizationBundle
+	schema=codex:domain:summary
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Summary" label="Summary" labelOther="Summaries" />
+
+	<TraitLocalization identifier="language" label="Language" labelOther="Languages">
+		The natural language of the summary content.
+	</TraitLocalization>
+</LocalizationBundle>

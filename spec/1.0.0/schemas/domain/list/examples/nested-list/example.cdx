@@ -1,0 +1,18 @@
+<UnorderedList>
+	<ListItem>
+		<Paragraph>Front-end frameworks</Paragraph>
+		<UnorderedList>
+			<ListItem>React</ListItem>
+			<ListItem>Vue</ListItem>
+			<ListItem>Svelte</ListItem>
+		</UnorderedList>
+	</ListItem>
+	<ListItem>
+		<Paragraph>Back-end languages</Paragraph>
+		<UnorderedList>
+			<ListItem>Go</ListItem>
+			<ListItem>Rust</ListItem>
+			<ListItem>Python</ListItem>
+		</UnorderedList>
+	</ListItem>
+</UnorderedList>

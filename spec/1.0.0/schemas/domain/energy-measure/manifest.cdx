@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="392e4c211161c4208255737065a9f9ef0baa03d31e9c07f1fb3d7d81a3a48c33"
+	copyright="Copyright 2026 Paperhat"
+	description="A quantitative measurement of energy, work, heat, or power, with unit constrained to the units-energy vocabulary."
+	license="Apache-2.0"
+	packageName="paperhat-energy-measure"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

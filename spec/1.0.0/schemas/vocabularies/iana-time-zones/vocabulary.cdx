@@ -1,0 +1,229 @@
+<TokenVocabulary
+	id=codex:vocabulary:iana-tz
+	version="1.0.0"
+	title="IANA Time Zone Database Identifiers"
+	description="Canonical time zone identifiers from the IANA Time Zone Database (tzdata)."
+	closedVocabulary=true
+>
+	<TokenDefinition token=$Africa_Abidjan label="Africa/Abidjan" />
+
+	<TokenDefinition token=$Africa_Accra label="Africa/Accra" />
+
+	<TokenDefinition token=$Africa_AddisAbaba label="Africa/Addis_Ababa" />
+
+	<TokenDefinition token=$Africa_Algiers label="Africa/Algiers" />
+
+	<TokenDefinition token=$Africa_Cairo label="Africa/Cairo" />
+
+	<TokenDefinition token=$Africa_Casablanca label="Africa/Casablanca" />
+
+	<TokenDefinition token=$Africa_DarEsSalaam label="Africa/Dar_es_Salaam" />
+
+	<TokenDefinition token=$Africa_Johannesburg label="Africa/Johannesburg" />
+
+	<TokenDefinition token=$Africa_Khartoum label="Africa/Khartoum" />
+
+	<TokenDefinition token=$Africa_Lagos label="Africa/Lagos" />
+
+	<TokenDefinition token=$Africa_Nairobi label="Africa/Nairobi" />
+
+	<TokenDefinition token=$Africa_Tunis label="Africa/Tunis" />
+
+	<TokenDefinition token=$America_Anchorage label="America/Anchorage" />
+
+	<TokenDefinition token=$America_Argentina_BuenosAires label="America/Argentina/Buenos_Aires" />
+
+	<TokenDefinition token=$America_Bogota label="America/Bogota" />
+
+	<TokenDefinition token=$America_Chicago label="America/Chicago" />
+
+	<TokenDefinition token=$America_Denver label="America/Denver" />
+
+	<TokenDefinition token=$America_Halifax label="America/Halifax" />
+
+	<TokenDefinition token=$America_Havana label="America/Havana" />
+
+	<TokenDefinition token=$America_Lima label="America/Lima" />
+
+	<TokenDefinition token=$America_LosAngeles label="America/Los_Angeles" />
+
+	<TokenDefinition token=$America_MexicoCity label="America/Mexico_City" />
+
+	<TokenDefinition token=$America_NewYork label="America/New_York" />
+
+	<TokenDefinition token=$America_Panama label="America/Panama" />
+
+	<TokenDefinition token=$America_Phoenix label="America/Phoenix" />
+
+	<TokenDefinition token=$America_Santiago label="America/Santiago" />
+
+	<TokenDefinition token=$America_SaoPaulo label="America/Sao_Paulo" />
+
+	<TokenDefinition token=$America_StJohns label="America/St_Johns" />
+
+	<TokenDefinition token=$America_Toronto label="America/Toronto" />
+
+	<TokenDefinition token=$America_Vancouver label="America/Vancouver" />
+
+	<TokenDefinition token=$America_Winnipeg label="America/Winnipeg" />
+
+	<TokenDefinition token=$Asia_Almaty label="Asia/Almaty" />
+
+	<TokenDefinition token=$Asia_Amman label="Asia/Amman" />
+
+	<TokenDefinition token=$Asia_Baghdad label="Asia/Baghdad" />
+
+	<TokenDefinition token=$Asia_Baku label="Asia/Baku" />
+
+	<TokenDefinition token=$Asia_Bangkok label="Asia/Bangkok" />
+
+	<TokenDefinition token=$Asia_Beirut label="Asia/Beirut" />
+
+	<TokenDefinition token=$Asia_Colombo label="Asia/Colombo" />
+
+	<TokenDefinition token=$Asia_Damascus label="Asia/Damascus" />
+
+	<TokenDefinition token=$Asia_Dhaka label="Asia/Dhaka" />
+
+	<TokenDefinition token=$Asia_Dubai label="Asia/Dubai" />
+
+	<TokenDefinition token=$Asia_HoChiMinh label="Asia/Ho_Chi_Minh" />
+
+	<TokenDefinition token=$Asia_HongKong label="Asia/Hong_Kong" />
+
+	<TokenDefinition token=$Asia_Istanbul label="Asia/Istanbul" />
+
+	<TokenDefinition token=$Asia_Jakarta label="Asia/Jakarta" />
+
+	<TokenDefinition token=$Asia_Jerusalem label="Asia/Jerusalem" />
+
+	<TokenDefinition token=$Asia_Kabul label="Asia/Kabul" />
+
+	<TokenDefinition token=$Asia_Karachi label="Asia/Karachi" />
+
+	<TokenDefinition token=$Asia_Kathmandu label="Asia/Kathmandu" />
+
+	<TokenDefinition token=$Asia_Kolkata label="Asia/Kolkata" />
+
+	<TokenDefinition token=$Asia_KualaLumpur label="Asia/Kuala_Lumpur" />
+
+	<TokenDefinition token=$Asia_Manila label="Asia/Manila" />
+
+	<TokenDefinition token=$Asia_Novosibirsk label="Asia/Novosibirsk" />
+
+	<TokenDefinition token=$Asia_Riyadh label="Asia/Riyadh" />
+
+	<TokenDefinition token=$Asia_Seoul label="Asia/Seoul" />
+
+	<TokenDefinition token=$Asia_Shanghai label="Asia/Shanghai" />
+
+	<TokenDefinition token=$Asia_Singapore label="Asia/Singapore" />
+
+	<TokenDefinition token=$Asia_Taipei label="Asia/Taipei" />
+
+	<TokenDefinition token=$Asia_Tashkent label="Asia/Tashkent" />
+
+	<TokenDefinition token=$Asia_Tehran label="Asia/Tehran" />
+
+	<TokenDefinition token=$Asia_Tokyo label="Asia/Tokyo" />
+
+	<TokenDefinition token=$Asia_Vladivostok label="Asia/Vladivostok" />
+
+	<TokenDefinition token=$Asia_Yangon label="Asia/Yangon" />
+
+	<TokenDefinition token=$Asia_Yekaterinburg label="Asia/Yekaterinburg" />
+
+	<TokenDefinition token=$Atlantic_Azores label="Atlantic/Azores" />
+
+	<TokenDefinition token=$Atlantic_Canary label="Atlantic/Canary" />
+
+	<TokenDefinition token=$Atlantic_CapeVerde label="Atlantic/Cape_Verde" />
+
+	<TokenDefinition token=$Atlantic_Reykjavik label="Atlantic/Reykjavik" />
+
+	<TokenDefinition token=$Australia_Adelaide label="Australia/Adelaide" />
+
+	<TokenDefinition token=$Australia_Brisbane label="Australia/Brisbane" />
+
+	<TokenDefinition token=$Australia_Darwin label="Australia/Darwin" />
+
+	<TokenDefinition token=$Australia_Hobart label="Australia/Hobart" />
+
+	<TokenDefinition token=$Australia_Melbourne label="Australia/Melbourne" />
+
+	<TokenDefinition token=$Australia_Perth label="Australia/Perth" />
+
+	<TokenDefinition token=$Australia_Sydney label="Australia/Sydney" />
+
+	<TokenDefinition token=$Europe_Amsterdam label="Europe/Amsterdam" />
+
+	<TokenDefinition token=$Europe_Athens label="Europe/Athens" />
+
+	<TokenDefinition token=$Europe_Belgrade label="Europe/Belgrade" />
+
+	<TokenDefinition token=$Europe_Berlin label="Europe/Berlin" />
+
+	<TokenDefinition token=$Europe_Brussels label="Europe/Brussels" />
+
+	<TokenDefinition token=$Europe_Bucharest label="Europe/Bucharest" />
+
+	<TokenDefinition token=$Europe_Budapest label="Europe/Budapest" />
+
+	<TokenDefinition token=$Europe_Copenhagen label="Europe/Copenhagen" />
+
+	<TokenDefinition token=$Europe_Dublin label="Europe/Dublin" />
+
+	<TokenDefinition token=$Europe_Helsinki label="Europe/Helsinki" />
+
+	<TokenDefinition token=$Europe_Kyiv label="Europe/Kyiv" />
+
+	<TokenDefinition token=$Europe_Lisbon label="Europe/Lisbon" />
+
+	<TokenDefinition token=$Europe_London label="Europe/London" />
+
+	<TokenDefinition token=$Europe_Madrid label="Europe/Madrid" />
+
+	<TokenDefinition token=$Europe_Moscow label="Europe/Moscow" />
+
+	<TokenDefinition token=$Europe_Oslo label="Europe/Oslo" />
+
+	<TokenDefinition token=$Europe_Paris label="Europe/Paris" />
+
+	<TokenDefinition token=$Europe_Prague label="Europe/Prague" />
+
+	<TokenDefinition token=$Europe_Rome label="Europe/Rome" />
+
+	<TokenDefinition token=$Europe_Stockholm label="Europe/Stockholm" />
+
+	<TokenDefinition token=$Europe_Vienna label="Europe/Vienna" />
+
+	<TokenDefinition token=$Europe_Warsaw label="Europe/Warsaw" />
+
+	<TokenDefinition token=$Europe_Zurich label="Europe/Zurich" />
+
+	<TokenDefinition token=$Indian_Maldives label="Indian/Maldives" />
+
+	<TokenDefinition token=$Indian_Mauritius label="Indian/Mauritius" />
+
+	<TokenDefinition token=$Pacific_Auckland label="Pacific/Auckland" />
+
+	<TokenDefinition token=$Pacific_Chatham label="Pacific/Chatham" />
+
+	<TokenDefinition token=$Pacific_Easter label="Pacific/Easter" />
+
+	<TokenDefinition token=$Pacific_Fiji label="Pacific/Fiji" />
+
+	<TokenDefinition token=$Pacific_Guam label="Pacific/Guam" />
+
+	<TokenDefinition token=$Pacific_Honolulu label="Pacific/Honolulu" />
+
+	<TokenDefinition token=$Pacific_Noumea label="Pacific/Noumea" />
+
+	<TokenDefinition token=$Pacific_PagoPago label="Pacific/Pago_Pago" />
+
+	<TokenDefinition token=$Pacific_PortMoresby label="Pacific/Port_Moresby" />
+
+	<TokenDefinition token=$Pacific_Tongatapu label="Pacific/Tongatapu" />
+
+	<TokenDefinition token=$UTC label="UTC" />
+</TokenVocabulary>

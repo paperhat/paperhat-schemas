@@ -1,0 +1,7 @@
+<CodeNotation>
+	<Code key=~git language=$bash text="git commit" />
+	<KeyboardInput key=~ctrlc text="Ctrl+C" />
+	<KeyboardInput key=~enter text="Enter" />
+	<SampleOutput key=~ok text="200 OK" />
+	<Variable key=~branch text="branch-name" />
+</CodeNotation>

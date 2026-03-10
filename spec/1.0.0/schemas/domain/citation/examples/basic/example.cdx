@@ -1,0 +1,14 @@
+<Citation
+	title="Key words for use in RFCs to Indicate Requirement Levels"
+	citationKind=$rfc
+	number="2119"
+	datePublished={1997-03}
+	key=~rfc2119
+	uri=url("https://www.rfc-editor.org/rfc/rfc2119")
+>
+	<Contributor contributorKind=$author>
+		<person:Person>
+			<pname:PersonName given="Scott" family="Bradner" />
+		</person:Person>
+	</Contributor>
+</Citation>

@@ -1,0 +1,10 @@
+[Full document metadata. Remove children you do not need.]
+<DocumentMetadata>
+	<Work author="" dateCreated={} datePublished={} language=$ status=$ license="" />
+	<Description language=$></Description>
+	<Summary language=$></Summary>
+	<Tags>
+		<Tag></Tag>
+	</Tags>
+	<Audience audienceType=$ />
+</DocumentMetadata>

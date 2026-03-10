@@ -1,0 +1,7 @@
+<LocalizationBundle
+	schema=codex:domain:narrative
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Narrative" label="Narrative" labelOther="Narratives" />
+</LocalizationBundle>

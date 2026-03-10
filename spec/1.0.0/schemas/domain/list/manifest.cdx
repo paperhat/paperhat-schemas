@@ -1,0 +1,18 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="37316dfe7f2d350765a454f11b475d85a7bf5c09a7b89f0398418725a86ea088"
+	copyright="Copyright 2026 Paperhat"
+	description="Ordered and unordered lists with nestable items."
+	license="Apache-2.0"
+	packageName="paperhat-list"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+>
+	<PackageDependency
+		packageName="paperhat-text"
+		closureHash="703472ba80a5f88685e7a6d604b16d31dfb06a81186c58bdd378aac55a53e897"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</DomainPackageManifest>

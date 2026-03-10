@@ -1,0 +1,23 @@
+<Specification
+	editor=""
+	locked=false
+	normative=true
+	title=""
+	version=0.1.0
+>
+	<Section
+		conformance=$Normative
+		division=$Body
+		id=urn:example:template#section/scope
+		key=~scope
+		title="Scope"
+	>
+		<Paragraph>
+			Describe the scope of the specification here.
+		</Paragraph>
+
+		<Requirement modality=$Must>
+			State a mandatory requirement here.
+		</Requirement>
+	</Section>
+</Specification>

@@ -1,0 +1,27 @@
+<EntityShapeDefinition
+	id=urn:example:shape:OrderWithValidTotal
+	targetConcept="Order"
+	description="Validates that the total trait matches the sum of line item prices times quantities."
+>
+	<Constraint name="TotalMatchesLineItems" message="Order total must equal sum of line items.">
+		<IsEqualTo>
+			<Referent><Field name="total" /></Referent>
+			<Comparator>
+				<Sum>
+					<Collection>
+						<MapElements>
+							<Collection><Field name="lineItems" /></Collection>
+							<Transform>
+								<Multiply>
+									<Multiplicand><Field name="price" for=~element /></Multiplicand>
+									<Multiplier><Field name="quantity" for=~element /></Multiplier>
+								</Multiply>
+							</Transform>
+						</MapElements>
+					</Collection>
+				</Sum>
+			</Comparator>
+		</IsEqualTo>
+	</Constraint>
+
+</EntityShapeDefinition>

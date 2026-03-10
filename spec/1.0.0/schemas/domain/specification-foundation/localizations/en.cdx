@@ -1,0 +1,37 @@
+<LocalizationBundle
+	language=$En
+	schema=codex:domain:specification-foundation
+	schemaVersion="1.0.0"
+>
+	<TraitLocalization identifier="conformance" label="Conformance" />
+
+	<TraitLocalization identifier="designation" label="Designation" />
+
+	<TraitLocalization identifier="division" label="Division" />
+
+	<TraitLocalization identifier="editor" label="Editor" />
+
+	<TraitLocalization identifier="key" label="Key" />
+
+	<TraitLocalization identifier="label" label="Label" />
+
+	<TraitLocalization identifier="language" label="Language" />
+
+	<TraitLocalization identifier="locked" label="Locked" />
+
+	<TraitLocalization identifier="modality" label="Modality" />
+
+	<TraitLocalization identifier="normative" label="Normative" />
+
+	<TraitLocalization identifier="requirementId" label="Requirement Identifier" />
+
+	<TraitLocalization identifier="target" label="Target" />
+
+	<TraitLocalization identifier="term" label="Term" />
+
+	<TraitLocalization identifier="title" label="Title" />
+
+	<TraitLocalization identifier="uri" label="URI" />
+
+	<TraitLocalization identifier="version" label="Version" />
+</LocalizationBundle>

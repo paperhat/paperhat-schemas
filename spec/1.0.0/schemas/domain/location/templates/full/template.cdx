@@ -1,0 +1,8 @@
+[Full location. Remove traits you do not need; at least one location part is required.]
+<Location
+	locationKind=$
+	name=""
+	locality=""
+	region=""
+	country=""
+/>

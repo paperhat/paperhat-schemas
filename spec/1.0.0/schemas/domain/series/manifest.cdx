@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="51df941a656bb440be21a1fc06cb6e9bf88bc4ad516a0b306827c1ea7f8f0623"
+	copyright="Copyright 2026 Paperhat"
+	description="Series membership metadata for a document that belongs to an ordered, multi-part publication."
+	license="Apache-2.0"
+	packageName="paperhat-series"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

@@ -1,0 +1,50 @@
+[Full recipe with all sections. Remove sections you do not need.]
+<Recipe>
+	<Title>
+		Recipe title
+	</Title>
+
+	<Teaser>
+		One sentence teaser.
+	</Teaser>
+
+	<Description>
+		Describe the recipe in one or two short paragraphs.
+	</Description>
+
+	<Servings amount=0 unit="" />
+
+	<PreparationTime duration=0 unit="minutes" />
+
+	<CookingTime duration=0 unit="minutes" />
+
+	<Ingredients>
+		[Add one Ingredient per item. The name trait is required; others are optional.]
+		<Ingredient name="" amount=0 unit="" preparation="" />
+	</Ingredients>
+
+	<Equipment>
+		[List each piece of equipment as an Item.]
+		<Item>
+			Example tool
+		</Item>
+	</Equipment>
+
+	<Instructions>
+		[Add one Step per instruction. Steps are ordered. Set optional=true for optional steps.]
+		<Step>
+			First instruction step.
+		</Step>
+	</Instructions>
+
+	<Tags>
+		[Categorize the recipe with freeform tags.]
+		<Tag>
+			example
+		</Tag>
+	</Tags>
+
+	<Source>
+		Source or attribution.
+	</Source>
+</Recipe>

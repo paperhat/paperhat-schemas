@@ -1,0 +1,29 @@
+[Minimal deterministic relation template. Replace IRIs and values.]
+<RelationType
+	id="urn:example:relation-type:sample"
+	name="Sample Relation"
+>
+	<text:Title>
+		Sample relation type
+	</text:Title>
+
+	<Attribute
+		id="urn:example:relation-type:sample:attribute:id"
+		name="id"
+		valueType=$Text
+		required=true
+	/>
+</RelationType>
+
+<RelationInstance
+	id="urn:example:relation:sample"
+	for="urn:example:relation-type:sample"
+	name="Sample relation instance"
+>
+	<Tuple id="urn:example:relation:sample:tuple:1">
+		<Binding
+			target="urn:example:relation-type:sample:attribute:id"
+			value="A-001"
+		/>
+	</Tuple>
+</RelationInstance>

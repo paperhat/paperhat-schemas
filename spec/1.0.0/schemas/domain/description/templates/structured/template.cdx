@@ -1,0 +1,7 @@
+[Structured mode with paragraphs and lists. Remove elements you do not need.]
+<Description>
+	<Paragraph>Opening paragraph.</Paragraph>
+	<UnorderedList>
+		<ListItem>First point</ListItem>
+	</UnorderedList>
+</Description>

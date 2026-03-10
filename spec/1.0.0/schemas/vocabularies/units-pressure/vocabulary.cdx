@@ -1,0 +1,27 @@
+<TokenVocabulary
+	id=codex:vocabulary:units-pressure
+	version="1.0.0"
+	title="Units of Pressure"
+	description="Units of measurement for pressure and stress."
+	closedVocabulary=true
+>
+	<TokenDefinition token=$Atmosphere label="atm" />
+
+	<TokenDefinition token=$Bar label="bar" />
+
+	<TokenDefinition token=$InchOfMercury label="inHg" />
+
+	<TokenDefinition token=$Kilopascal label="kPa" />
+
+	<TokenDefinition token=$Megapascal label="MPa" />
+
+	<TokenDefinition token=$Millibar label="mbar" />
+
+	<TokenDefinition token=$MillimeterOfMercury label="mmHg" />
+
+	<TokenDefinition token=$Pascal label="Pa" />
+
+	<TokenDefinition token=$PoundsPerSquareInch label="psi" />
+
+	<TokenDefinition token=$Torr label="Torr" />
+</TokenVocabulary>

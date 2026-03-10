@@ -1,0 +1,6 @@
+<Location
+	locationKind=$setting
+	name="The Shire"
+	region="Eriador"
+	country="Middle-earth"
+/>

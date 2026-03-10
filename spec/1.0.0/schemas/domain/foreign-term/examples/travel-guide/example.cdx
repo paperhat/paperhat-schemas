@@ -1,0 +1,4 @@
+<ForeignTerms>
+	<ForeignTerm key=~sushi language=$ja pronunciation="sɯɕi" translation="vinegared rice">寿司</ForeignTerm>
+	<ForeignTerm key=~izakaya language=$ja pronunciation="izakaja" translation="Japanese pub">居酒屋</ForeignTerm>
+</ForeignTerms>

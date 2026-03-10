@@ -1,0 +1,50 @@
+<LocalizationBundle
+	schema=codex:domain:media-reference
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization
+		identifier="MediaReference"
+		label="Media Reference"
+		labelOther="Media References"
+	/>
+
+	<TraitLocalization identifier="url" label="URL" labelOther="URLs">
+		The URL of the media resource.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="mediaKind" label="Media Kind" labelOther="Media Kinds">
+		The type of media being referenced.
+	</TraitLocalization>
+
+	<TraitLocalization
+		identifier="encodingFormat"
+		label="Encoding Format"
+		labelOther="Encoding Formats"
+	>
+		The MIME type or encoding format of the media.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="caption" label="Caption" labelOther="Captions">
+		A textual description or caption for the media.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="width" label="Width" labelOther="Widths">
+		The width of the media in pixels.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="height" label="Height" labelOther="Heights">
+		The height of the media in pixels.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="contentSize" label="Content Size" labelOther="Content Sizes">
+		The file size of the media resource.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:media-reference:requires-media-trait"
+		label="Requires at least one media trait"
+	>
+		A MediaReference must specify at least one trait.
+	</ConstraintLocalization>
+</LocalizationBundle>

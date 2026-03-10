@@ -1,0 +1,29 @@
+<LocalizationBundle
+	schema=codex:domain:sensory-profile
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="SensoryProfile" label="Sensory Profile" labelOther="Sensory Profiles" />
+
+	<ConceptLocalization identifier="TasteNote" label="Taste Note" labelOther="Taste Notes" />
+
+	<ConceptLocalization identifier="AromaNote" label="Aroma Note" labelOther="Aroma Notes" />
+
+	<ConceptLocalization identifier="MouthfeelNote" label="Mouthfeel Note" labelOther="Mouthfeel Notes" />
+
+	<TraitLocalization identifier="taste" label="Taste" labelOther="Tastes">
+		The taste class for the note.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="aroma" label="Aroma" labelOther="Aromas">
+		The aroma class for the note.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="mouthfeel" label="Mouthfeel" labelOther="Mouthfeel Notes">
+		The mouthfeel class for the note.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="intensity" label="Intensity" labelOther="Intensity Values">
+		The relative intensity of the note.
+	</TraitLocalization>
+</LocalizationBundle>

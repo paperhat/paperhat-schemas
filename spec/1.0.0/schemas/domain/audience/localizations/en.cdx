@@ -1,0 +1,50 @@
+<LocalizationBundle
+	schema=codex:domain:audience
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Audience" label="Audience" labelOther="Audiences" />
+
+	<TraitLocalization identifier="audienceKind" label="Audience Kind" labelOther="Audience Kinds">
+		The type or category of the intended audience.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="suggestedMinAge" label="Suggested Minimum Age">
+		The minimum recommended age for the target audience.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="suggestedMaxAge" label="Suggested Maximum Age">
+		The maximum recommended age for the target audience.
+	</TraitLocalization>
+
+	<TraitLocalization
+		identifier="suggestedGender"
+		label="Suggested Gender"
+		labelOther="Suggested Genders"
+	>
+		The suggested gender of the intended audience.
+	</TraitLocalization>
+
+	<TraitLocalization
+		identifier="geographicArea"
+		label="Geographic Area"
+		labelOther="Geographic Areas"
+	>
+		The geographic region for which the content is intended.
+	</TraitLocalization>
+
+	<TraitLocalization
+		identifier="audienceDescription"
+		label="Audience Description"
+		labelOther="Audience Descriptions"
+	>
+		A free-text description of the intended audience.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:audience:requires-audience-trait"
+		label="Requires at least one audience trait"
+	>
+		An Audience element must specify at least one audience trait.
+	</ConstraintLocalization>
+</LocalizationBundle>

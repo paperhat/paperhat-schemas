@@ -1,0 +1,146 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A rich example container supporting explanatory narrative, code blocks, figures, relation schemas/instances, and admonitions as children. No nested examples."
+	id=codex:domain:example
+	namespace=example
+	title="Example Schema"
+	version=1.0.0
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace=admonition reference=urn:cdx:sha256:31678c88cd6e0a8b64991b39efb46aa4e97a569046deb4d6d57f235891a3a7c2 />
+
+		<SchemaImport namespace=code reference=urn:cdx:sha256:6f6e27c71484bc9bb78eb52f401521597afe5e220fda09112c6af67bdaf21e9e />
+
+		<SchemaImport namespace=figure reference=urn:cdx:sha256:7f7660dd097a9a8879541f45cbd28def9478ae94d85df0c467b1d6d82a108da2 />
+
+		<SchemaImport namespace=list reference=urn:cdx:sha256:47b1e8725dfbf226ac7dd20ffe8b0fb77c1e444735895c24b2225b317d2185cd />
+
+		<SchemaImport namespace=relation reference=urn:cdx:sha256:9f68d4f9a5421a5c1b506c7b0b05550a2bf08a83379ef53d081ba84b11018769 />
+
+		<SchemaImport namespace=text reference=urn:cdx:sha256:0d835975e6ccabdab7c2204e9b1d4e19baf24108e45a8f240adea3a2684a5fd0 />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:example:Example
+			name="Example"
+		>
+			<TraitRules>
+				<AllowsTrait name="key" />
+
+				<AllowsTrait name="label" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector=text:Title max=1 />
+
+				<AllowsChildConcept conceptSelector=text:Paragraph />
+
+				<AllowsChildConcept conceptSelector=list:OrderedList />
+
+				<AllowsChildConcept conceptSelector=list:UnorderedList />
+
+				<AllowsChildConcept conceptSelector=code:CodeBlock />
+
+				<AllowsChildConcept conceptSelector=figure:Figure />
+
+				<AllowsChildConcept conceptSelector=relation:RelationType />
+
+				<AllowsChildConcept conceptSelector=relation:RelationInstance />
+
+				<AllowsChildConcept conceptSelector=admonition:Critical />
+
+				<AllowsChildConcept conceptSelector=admonition:Danger />
+
+				<AllowsChildConcept conceptSelector=admonition:Informational />
+
+				<AllowsChildConcept conceptSelector=admonition:Notice />
+
+				<AllowsChildConcept conceptSelector=admonition:Tip />
+
+				<AllowsChildConcept conceptSelector=admonition:Warning />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=codex:domain:example:requires-child
+			title="Example must contain at least one child"
+		>
+			<Targets>
+				<TargetConcept conceptSelector=Example />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<ChildConstraint conceptSelector=text:Title type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector=text:Paragraph type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector=list:OrderedList type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector=list:UnorderedList type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector=code:CodeBlock type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector=figure:Figure type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector=relation:RelationType type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector=relation:RelationInstance type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector=admonition:Critical type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector=admonition:Danger type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector=admonition:Informational type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector=admonition:Notice type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector=admonition:Tip type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector=admonition:Warning type=$RequiresChildConcept />
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

@@ -1,0 +1,47 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A quantitative measurement of energy, work, heat, or power, with unit constrained to the units-energy vocabulary."
+	id=codex:domain:paperhat-energy-measure
+	namespace="energymeasure"
+	title="Energy Measure Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:paperhat-energy-measure:EnergyMeasure
+			name="EnergyMeasure"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="value" />
+
+				<RequiresTrait name="unit" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueTypes=[$Number, $Range<$Number>]
+			id=codex:domain:paperhat-energy-measure:trait:value
+			name="value"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:paperhat-energy-measure:trait:unit
+			name="unit"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$BritishThermalUnit, $BritishThermalUnitsPerHour, $Calorie, $Electronvolt, $Erg, $FootPound, $FootPoundsPerSecond, $Gigajoule, $Gigawatt, $Horsepower, $Joule, $Kilocalorie, $Kilojoule, $Kilowatt, $KilowattHour, $Megajoule, $Megawatt, $MegawattHour, $MetricHorsepower, $Therm, $Watt, $WattHour] />
+			</AllowedValues>
+		</TraitDefinition>
+	</TraitDefinitions>
+</Schema>

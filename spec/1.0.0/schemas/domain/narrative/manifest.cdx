@@ -1,0 +1,24 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="cd5fc4db03887984608f811a66d9c77e473a14d63f360d3a4c0324d9c7ad7d20"
+	copyright="Copyright 2026 Paperhat"
+	description="An ordered container for the body content of a document, holding sections and paragraphs in reading order."
+	license="Apache-2.0"
+	packageName="paperhat-narrative"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+>
+	<PackageDependency
+		packageName="paperhat-section"
+		closureHash="9c49168789d463f8f021f890afca78b78044f0b02de75dd724e286faeaf8704a"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-text"
+		closureHash="703472ba80a5f88685e7a6d604b16d31dfb06a81186c58bdd378aac55a53e897"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</DomainPackageManifest>

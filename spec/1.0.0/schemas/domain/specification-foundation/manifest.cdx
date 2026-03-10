@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="7e15defc9d762c7c902396ac27fb2da86b34034df76aaa5c68126b1ae3c17024"
+	copyright="Copyright 2026 Paperhat"
+	description="Shared foundation traits and enumerated value sets for specification schemas."
+	license="Apache-2.0"
+	packageName="paperhat-specification-foundation"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

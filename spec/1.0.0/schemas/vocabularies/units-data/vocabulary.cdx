@@ -1,0 +1,39 @@
+<TokenVocabulary
+	id=codex:vocabulary:units-data
+	version="1.0.0"
+	title="Units of Digital Data"
+	description="Units of measurement for digital data storage and transfer rate."
+	closedVocabulary=true
+>
+	<TokenDefinition token=$Bit label="b" />
+
+	<TokenDefinition token=$BitsPerSecond label="bps" />
+
+	<TokenDefinition token=$Byte label="B" />
+
+	<TokenDefinition token=$Gibibyte label="GiB" />
+
+	<TokenDefinition token=$Gigabyte label="GB" />
+
+	<TokenDefinition token=$GigabitsPerSecond label="Gbps" />
+
+	<TokenDefinition token=$Kibibyte label="KiB" />
+
+	<TokenDefinition token=$Kilobyte label="KB" />
+
+	<TokenDefinition token=$KilobitsPerSecond label="kbps" />
+
+	<TokenDefinition token=$Mebibyte label="MiB" />
+
+	<TokenDefinition token=$Megabyte label="MB" />
+
+	<TokenDefinition token=$MegabitsPerSecond label="Mbps" />
+
+	<TokenDefinition token=$Pebibyte label="PiB" />
+
+	<TokenDefinition token=$Petabyte label="PB" />
+
+	<TokenDefinition token=$Tebibyte label="TiB" />
+
+	<TokenDefinition token=$Terabyte label="TB" />
+</TokenVocabulary>

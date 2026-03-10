@@ -1,0 +1,13 @@
+<ValueShapeDefinition
+	id=urn:example:shape:EmailAddress
+	name="EmailAddress"
+	baseValueType=$Text
+	description="A string that must match basic email format."
+>
+	<Constraint name="ValidEmailFormat" message="Value must be a valid email address.">
+		<MatchesPattern pattern="^[^@]+@[^@]+\.[^@]+$">
+			<Input />
+		</MatchesPattern>
+	</Constraint>
+
+</ValueShapeDefinition>

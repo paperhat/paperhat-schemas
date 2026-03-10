@@ -1,0 +1,42 @@
+<LocalizationBundle
+	schema=codex:domain:contact-point
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization
+		identifier="ContactPoint"
+		label="Contact Point"
+		labelOther="Contact Points"
+	/>
+
+	<TraitLocalization identifier="contactKind" label="Contact Kind" labelOther="Contact Kinds">
+		The type or purpose of this contact point.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="emailAddress" label="Email Address" labelOther="Email Addresses">
+		An email address for the contact.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="phoneNumber" label="Phone Number" labelOther="Phone Numbers">
+		A telephone number for the contact.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="website" label="Website" labelOther="Websites">
+		A website URL for the contact.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="effectiveFrom" label="Effective From">
+		The date from which this contact point is valid.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="effectiveTo" label="Effective To">
+		The date after which this contact point is no longer valid.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:contact-point:requires-contact-method"
+		label="Requires at least one contact method"
+	>
+		A ContactPoint must include at least one contact method.
+	</ConstraintLocalization>
+</LocalizationBundle>

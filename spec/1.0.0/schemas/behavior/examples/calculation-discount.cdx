@@ -1,0 +1,42 @@
+<EntityShapeDefinition
+	id=urn:example:shape:OrderWithDiscount
+	targetConcept="Order"
+	description="Derives a discountedTotal based on order amount thresholds."
+>
+	<Derivation name="ApplyDiscount" targetTrait="discountedTotal" outputShape=$Number derivationClass=$Materialize>
+		<Ternary>
+			<Condition>
+				<IsMoreThan>
+					<Referent><Field name="subtotal" /></Referent>
+					<Comparator><Literal value=1000 /></Comparator>
+				</IsMoreThan>
+			</Condition>
+			<Then>
+				<Multiply>
+					<Multiplicand><Field name="subtotal" /></Multiplicand>
+					<Multiplier><Literal value=0.9 /></Multiplier>
+				</Multiply>
+			</Then>
+			<Else>
+				<Ternary>
+					<Condition>
+						<IsMoreThan>
+							<Referent><Field name="subtotal" /></Referent>
+							<Comparator><Literal value=500 /></Comparator>
+						</IsMoreThan>
+					</Condition>
+					<Then>
+						<Multiply>
+							<Multiplicand><Field name="subtotal" /></Multiplicand>
+							<Multiplier><Literal value=0.95 /></Multiplier>
+						</Multiply>
+					</Then>
+					<Else>
+						<Field name="subtotal" />
+					</Else>
+				</Ternary>
+			</Else>
+		</Ternary>
+	</Derivation>
+
+</EntityShapeDefinition>

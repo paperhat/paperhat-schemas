@@ -1,0 +1,98 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A named geographic or fictional location with optional administrative subdivisions."
+	id=codex:domain:location
+	namespace="loc"
+	title="Location Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:location:Location
+			name="Location"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<AllowsTrait name="locationKind" />
+
+				<AllowsTrait name="name" />
+
+				<AllowsTrait name="locality" />
+
+				<AllowsTrait name="region" />
+
+				<AllowsTrait name="country" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:location:trait:locationKind
+			name="locationKind"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:location:trait:name
+			name="name"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:location:trait:locality
+			name="locality"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:location:trait:region
+			name="region"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:location:trait:country
+			name="country"
+		/>
+	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=codex:domain:location:requires-location-part
+			title="Location must have at least one location part"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Location" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<TraitExists trait="name" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="locality" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="region" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="country" />
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

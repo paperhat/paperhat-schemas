@@ -1,0 +1,4 @@
+[Define foreign terms with language, pronunciation, and translation.]
+<ForeignTerms>
+	<ForeignTerm key=~term language=$en>term</ForeignTerm>
+</ForeignTerms>

@@ -1,0 +1,8 @@
+<Figure key=~fig-system-overview caption="High-level system overview">
+	<Title>System Overview</Title>
+	<MediaReference
+		url="https://example.com/images/system-overview.svg"
+		mediaKind=$image
+		encodingFormat="image/svg+xml"
+	/>
+</Figure>

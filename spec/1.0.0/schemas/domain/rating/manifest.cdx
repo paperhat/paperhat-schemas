@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="e0644542b191821180e7aad0976e4021ee3ad960be0cb650a11349580f5cf482"
+	copyright="Copyright 2026 Paperhat"
+	description="A numeric rating on a defined scale."
+	license="Apache-2.0"
+	packageName="paperhat-rating"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

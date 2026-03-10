@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="48be7fba6defcfd821475e49e9fcecd053957bc5183881d89dfae2abcfd6fafc"
+	copyright="Copyright 2026 Paperhat"
+	description="A currency-qualified monetary value."
+	license="Apache-2.0"
+	packageName="paperhat-monetary-amount"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

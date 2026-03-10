@@ -1,0 +1,24 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="8a6c1a383e84796c18cb6c612ec676134930c3192dfd8bfe93bd0263cd8b5d65"
+	copyright="Copyright 2026 Paperhat"
+	description="A dual-mode description: plain text for simple cases, or paragraphs and lists for structured descriptions."
+	license="Apache-2.0"
+	packageName="paperhat-description"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+>
+	<PackageDependency
+		packageName="paperhat-text"
+		closureHash="703472ba80a5f88685e7a6d604b16d31dfb06a81186c58bdd378aac55a53e897"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-list"
+		closureHash="37316dfe7f2d350765a454f11b475d85a7bf5c09a7b89f0398418725a86ea088"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</DomainPackageManifest>

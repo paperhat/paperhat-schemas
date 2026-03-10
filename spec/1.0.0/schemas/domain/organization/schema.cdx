@@ -1,0 +1,99 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="An organization such as a company, nonprofit, government body, or educational institution, composed from leaf concepts for contact points, identifiers, and locations."
+	id=codex:domain:organization
+	namespace="org"
+	title="Organization Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace=desc reference=urn:cdx:sha256:5e9c6ba4654a0b013b65fc38fde033d2b6fc281d7eb791e57b207b42d80ae7da />
+
+		<SchemaImport namespace=contact reference=urn:cdx:sha256:f66ac6b540b849d0f20bed2452630e2a5d0ee961e286b2b30f07d6a6aa122fe2 />
+
+		<SchemaImport namespace=ident reference=urn:cdx:sha256:a220d2034a4faa1a81d8102265c1fef36576871a0ba25ac31500abac7afd5907 />
+
+		<SchemaImport namespace=loc reference=urn:cdx:sha256:df456110f9e2cb2b0524011e6fd6892f345dadc412a7b078699f9aab4fd5bf55 />
+
+		<SchemaImport namespace=tags reference=urn:cdx:sha256:79f0baf3512b1d7c2730608a6796155017c30096f2f4ffde74b0deafc1eae775 />
+
+		<SchemaImport namespace=work reference=urn:cdx:sha256:1a180843230548cc38ddcde65df88bb025fd9a3feff6cdc6da19e8c3a8823dcd />
+
+		<SchemaImport namespace=schedule reference=urn:cdx:sha256:73e1baa06ad4267464ca64e3e67eddea0b617959ebc44d297239ab558623be8e />
+
+		<SchemaImport namespace=audience reference=urn:cdx:sha256:96d1ab313b9cf2a357f05cfdaaf0f9dd4869f42d623f3de28abea92af787a053 />
+
+		<SchemaImport namespace=a11y reference=urn:cdx:sha256:ae60550e29ddf4d762fb537f99572d040d0146f49485a5497de2d12f878bb962 />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=codex:domain:organization:Organization
+			name="Organization"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<AllowsTrait name="organizationKind" />
+
+				<AllowsTrait name="foundingDate" />
+
+				<AllowsTrait name="dissolutionDate" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+
+				<AllowsChildConcept conceptSelector="contact:ContactPoint" />
+
+				<AllowsChildConcept conceptSelector="ident:Identifier" />
+
+				<AllowsChildConcept conceptSelector="loc:Location" />
+
+				<AllowsChildConcept conceptSelector="tags:Tags" />
+
+				<AllowsChildConcept conceptSelector="work:Work" />
+
+				<AllowsChildConcept conceptSelector="schedule:OperatingSchedule" />
+
+				<AllowsChildConcept conceptSelector="audience:Audience" />
+
+				<AllowsChildConcept conceptSelector="a11y:Accessibility" />
+			</ChildRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:organization:trait:name
+			name="name"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:organization:trait:organizationKind
+			name="organizationKind"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Date
+			id=codex:domain:organization:trait:foundingDate
+			name="foundingDate"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Date
+			id=codex:domain:organization:trait:dissolutionDate
+			name="dissolutionDate"
+		/>
+	</TraitDefinitions>
+</Schema>

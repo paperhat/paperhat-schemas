@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="d555b18c777db80fabd8aebf12c6b79bcc2fa0cf6aea572a01e8beefa246599c"
+	copyright="Copyright 2026 Paperhat"
+	description="A term in a language other than the document's primary language, with pronunciation, translation, and language identification."
+	license="Apache-2.0"
+	packageName="paperhat-foreign-term"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

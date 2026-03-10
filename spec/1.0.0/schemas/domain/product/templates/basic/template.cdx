@@ -1,0 +1,4 @@
+[Minimal product with name and one offer.]
+<Product name="" brand="">
+	<Offer price=0 priceCurrency=$USD />
+</Product>

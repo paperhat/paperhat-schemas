@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="7d9a4898e6f5d24c5faeb200458e196178a73fee5d77b86ea2adb1b07455fab1"
+	copyright="Copyright 2026 Paperhat"
+	description="A quantitative measurement of time or duration, with unit constrained to the units-time vocabulary."
+	license="Apache-2.0"
+	packageName="paperhat-time-measure"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

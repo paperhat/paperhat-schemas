@@ -1,0 +1,35 @@
+<TokenVocabulary
+	id=codex:vocabulary:units-mass
+	version="1.0.0"
+	title="Units of Mass"
+	description="Units of measurement for mass and weight."
+	closedVocabulary=true
+>
+	<TokenDefinition token=$AtomicMassUnit label="u" />
+
+	<TokenDefinition token=$Carat label="ct" />
+
+	<TokenDefinition token=$Grain label="gr" />
+
+	<TokenDefinition token=$Gram label="g" />
+
+	<TokenDefinition token=$Kilogram label="kg" />
+
+	<TokenDefinition token=$LongTon label="long ton" />
+
+	<TokenDefinition token=$MetricTon label="t" />
+
+	<TokenDefinition token=$Microgram label="ug" />
+
+	<TokenDefinition token=$Milligram label="mg" />
+
+	<TokenDefinition token=$Ounce label="oz" />
+
+	<TokenDefinition token=$Pound label="lb" />
+
+	<TokenDefinition token=$ShortTon label="short ton" />
+
+	<TokenDefinition token=$Stone label="st" />
+
+	<TokenDefinition token=$TroyOunce label="ozt" />
+</TokenVocabulary>

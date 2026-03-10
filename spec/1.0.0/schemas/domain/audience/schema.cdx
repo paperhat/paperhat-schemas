@@ -1,0 +1,114 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A target audience described by demographic criteria such as age range, geographic area, and audience type."
+	id=codex:domain:audience
+	namespace="audience"
+	title="Audience Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:audience:Audience
+			name="Audience"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<AllowsTrait name="audienceKind" />
+
+				<AllowsTrait name="suggestedMinAge" />
+
+				<AllowsTrait name="suggestedMaxAge" />
+
+				<AllowsTrait name="suggestedGender" />
+
+				<AllowsTrait name="geographicArea" />
+
+				<AllowsTrait name="audienceDescription" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:audience:trait:audienceKind
+			name="audienceKind"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=codex:domain:audience:trait:suggestedMinAge
+			name="suggestedMinAge"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=codex:domain:audience:trait:suggestedMaxAge
+			name="suggestedMaxAge"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:audience:trait:suggestedGender
+			name="suggestedGender"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:audience:trait:geographicArea
+			name="geographicArea"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:audience:trait:audienceDescription
+			name="audienceDescription"
+		/>
+	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=codex:domain:audience:requires-audience-trait
+			title="Audience must have at least one trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Audience" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<TraitExists trait="audienceKind" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="suggestedMinAge" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="suggestedMaxAge" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="suggestedGender" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="geographicArea" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="audienceDescription" />
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

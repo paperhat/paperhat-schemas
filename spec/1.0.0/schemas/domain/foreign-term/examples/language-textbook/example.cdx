@@ -1,0 +1,4 @@
+<ForeignTerms>
+	<ForeignTerm key=~danke language=$de pronunciation="ˈdaŋkə" translation="thank you">danke</ForeignTerm>
+	<ForeignTerm key=~bitte language=$de pronunciation="ˈbɪtə" translation="please" translation="you're welcome">bitte</ForeignTerm>
+</ForeignTerms>

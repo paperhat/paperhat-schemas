@@ -1,0 +1,42 @@
+<LocalizationBundle
+	schema=codex:domain:operating-schedule
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization
+		identifier="OperatingSchedule"
+		label="Operating Schedule"
+		labelOther="Operating Schedules"
+	/>
+
+	<TraitLocalization identifier="dayOfWeek" label="Day of Week" labelOther="Days of Week">
+		The day of the week this schedule entry applies to.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="opens" label="Opens">
+		The time the location or service opens.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="closes" label="Closes">
+		The time the location or service closes.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="validFrom" label="Valid From">
+		The date from which this schedule is effective.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="validThrough" label="Valid Through">
+		The date after which this schedule is no longer effective.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="scheduleNote" label="Schedule Note" labelOther="Schedule Notes">
+		A free-text note about this schedule entry.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:operating-schedule:requires-schedule-trait"
+		label="Requires at least one schedule trait"
+	>
+		An OperatingSchedule must specify at least one schedule trait.
+	</ConstraintLocalization>
+</LocalizationBundle>

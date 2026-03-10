@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="e6aa92b9f83fbacec3c75194647f4ccf40f6c06f6d07a7d6ae04a51abf0b9a8f"
+	copyright="Copyright 2026 Paperhat"
+	description="A general-purpose quantitative measurement expressed as a numeric value and a unit."
+	license="Apache-2.0"
+	packageName="paperhat-measure"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

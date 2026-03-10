@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="af7d5c9014f5caa1932c73b12617d277447b3ebdf10a305f7b215a75f917f7b7"
+	copyright="Copyright 2026 Paperhat"
+	description="A reference to a media resource such as an image, video, or audio file, with optional format and dimension details."
+	license="Apache-2.0"
+	packageName="paperhat-media-reference"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

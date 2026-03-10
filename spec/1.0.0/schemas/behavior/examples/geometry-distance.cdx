@@ -1,0 +1,23 @@
+<EntityShapeDefinition
+	id=urn:example:shape:RouteWithDistance
+	targetConcept="Route"
+	description="Derives the distance between two 2D points."
+>
+	<Derivation name="CalculateDistance" targetTrait="distance" outputShape=$Number derivationClass=$Materialize>
+		<DistanceBetweenPoints2D>
+			<PointA>
+				<Point2D>
+					<X><Field name="startX" /></X>
+					<Y><Field name="startY" /></Y>
+				</Point2D>
+			</PointA>
+			<PointB>
+				<Point2D>
+					<X><Field name="endX" /></X>
+					<Y><Field name="endY" /></Y>
+				</Point2D>
+			</PointB>
+		</DistanceBetweenPoints2D>
+	</Derivation>
+
+</EntityShapeDefinition>

@@ -1,0 +1,92 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A structured, argument-driven long-form document for technical or policy white papers. Composes imported building blocks for metadata, narrative structure, footnotes, and series membership."
+	id=codex:domain:white-paper
+	namespace="wpaper"
+	title="White Paper Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace=docmeta reference=urn:cdx:sha256:fd3e4301a17155cbb211afb156d45ca16d131d56d8f3ed7466e4bcd5c5c8cfd8 />
+
+		<SchemaImport namespace=narrative reference=urn:cdx:sha256:cdcc813d007020903ab76d95760a4123f679c59dfa08aac83c02b35cec547be7 />
+
+		<SchemaImport namespace=notes reference=urn:cdx:sha256:9d3ab9c299e532776ee07bbdd56c58dc18347be6e9712c1def71a0fc8f399352 />
+
+		<SchemaImport namespace=series reference=urn:cdx:sha256:6fcc7adf6d5bb55bc017a2b6d8887d1e581316cdc4d9fbf06d68e5ffaa87e1be />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			defaultLabelSource="title"
+			entityEligibility=$MustBeEntity
+			id=codex:domain:white-paper:WhitePaper
+			name="WhitePaper"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="title" />
+
+				<RequiresTrait name="coreThesis" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="docmeta:DocumentMetadata" max=1 />
+
+				<AllowsChildConcept conceptSelector="series:SeriesInfo" max=1 />
+
+				<RequiresChildConcept conceptSelector="Abstract" max=1 min=1 />
+
+				<AllowsChildConcept conceptSelector="narrative:Narrative" max=1 min=1 />
+
+				<AllowsChildConcept conceptSelector="Conclusion" max=1 />
+
+				<AllowsChildConcept conceptSelector="notes:Notes" max=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:white-paper:Abstract
+			name="Abstract"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:white-paper:Conclusion
+			name="Conclusion"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:white-paper:trait:title
+			name="title"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:white-paper:trait:coreThesis
+			name="coreThesis"
+		/>
+	</TraitDefinitions>
+</Schema>

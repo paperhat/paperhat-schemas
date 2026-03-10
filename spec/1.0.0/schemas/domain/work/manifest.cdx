@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="90bc5c9658e63056858e6c23d42b4b85fe1fa90076306a8a406fba06db305e1b"
+	copyright="Copyright 2026 Paperhat"
+	description="Creative work metadata: authorship, dates, versioning, licensing, and lifecycle status."
+	license="Apache-2.0"
+	packageName="paperhat-work"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

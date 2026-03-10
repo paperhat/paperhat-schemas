@@ -1,0 +1,14 @@
+[Minimal linked data mapping. At least one MapType is required.]
+<SchemaOrgMapping
+	id=codex:system:ld-mapping:MAPPING_NAME
+	version="1.0.0"
+>
+	[Required: one MapType per source concept.]
+	<MapType sourceConcept="" targetType="" />
+
+	[Optional: map trait values to target properties.]
+	<MapTraitToProperty sourceConcept="" sourceTrait="" targetProperty="" />
+
+	[Optional: map concept content to a target property.]
+	<MapContentToProperty sourceConcept="" targetProperty="" />
+</SchemaOrgMapping>

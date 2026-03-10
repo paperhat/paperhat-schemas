@@ -1,0 +1,6266 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Schema for authoring Behavior expressions in Codex surface form."
+	id=urn:codex:behavior:1.0.0
+	namespace="behavior"
+	title="Behavior Expression Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<EnumeratedValueSets>
+		<EnumeratedValueSet
+			id=urn:codex:behavior:enum:ArgumentPosition
+			key=~argumentPosition
+			name="ArgumentPosition"
+		>
+			<Member description="Generic first operand position." label="X" value="X" />
+
+			<Member description="Generic second operand position." label="Y" value="Y" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet
+			id=urn:codex:behavior:enum:RoundingMode
+			key=~roundingMode
+			name="RoundingMode"
+		>
+			<Member value="TowardZero" />
+
+			<Member value="TowardPositiveInfinity" />
+
+			<Member value="TowardNegativeInfinity" />
+
+			<Member value="TiesToEven" />
+
+			<Member value="TiesAwayFromZero" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet
+			id=urn:codex:behavior:enum:DisambiguationMode
+			key=~disambiguationMode
+			name="DisambiguationMode"
+		>
+			<Member description="Use earlier of two possible times during DST transition." value="Earlier" />
+
+			<Member description="Use later of two possible times during DST transition." value="Later" />
+
+			<Member description="Use behavior compatible with ECMAScript Date semantics." value="Compatible" />
+
+			<Member description="Return Invalid for ambiguous times." value="Reject" />
+		</EnumeratedValueSet>
+	</EnumeratedValueSets>
+
+	<ConceptDefinitions>
+
+		[GROUP: Expression Containers]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Calculation
+			key=~calculation
+			name="Calculation"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Validation
+			key=~validation
+			name="Validation"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Expression Containers]
+
+		[GROUP: Core Expression Nodes]
+
+		<ConceptDefinition
+			conceptKind=$ValueLike
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Argument
+			key=~argument
+			name="Argument"
+		>
+			<TraitRules>
+				<AllowsTrait name="index" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$ValueLike
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Variable
+			key=~variable
+			name="Variable"
+		>
+			<TraitRules>
+				<RequiresTrait name="name" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$ValueLike
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Constant
+			key=~constant
+			name="Constant"
+		>
+			<ContentRules>
+				<AllowsContent whitespaceMode=$Flow />
+			</ContentRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:FieldStep
+			key=~fieldStep
+			name="FieldStep"
+		>
+			<TraitRules>
+				<RequiresTrait name="name" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Index
+			key=~index
+			name="Index"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Source" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Position" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Source
+			key=~source
+			name="Source"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Position
+			key=~position
+			name="Position"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$ValueLike
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Absent
+			key=~absent
+			name="Absent"
+		/>
+
+		[END: Core Expression Nodes]
+
+		[GROUP: Context and Input Nodes]
+
+		<ConceptDefinition
+			conceptKind=$ValueLike
+			description="References the input value being validated in a ValueShape context."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Input
+			key=~input
+			name="Input"
+		/>
+
+		<ConceptDefinition
+			conceptKind=$ValueLike
+			description="References the current entity node in an EntityShape context."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ThisNode
+			key=~thisNode
+			name="ThisNode"
+		/>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Reads a trait value from the current node or a specified node."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Field
+			key=~field
+			name="Field"
+		>
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<AllowsTrait name="for" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$ValueLike
+			description="References the current element during collection iteration."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Element
+			key=~element
+			name="Element"
+		/>
+
+		<ConceptDefinition
+			conceptKind=$ValueLike
+			description="References a named parameter for parameterized behaviors."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Parameter
+			key=~parameter
+			name="Parameter"
+		>
+			<TraitRules>
+				<RequiresTrait name="name" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$ValueLike
+			description="A constant literal value."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Literal
+			key=~literal
+			name="Literal"
+		>
+			<TraitRules>
+				<RequiresTrait name="value" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		[END: Context and Input Nodes]
+
+		[GROUP: Generic Argument Wrappers]
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:X
+			key=~x
+			name="X"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Y
+			key=~y
+			name="Y"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Generic Argument Wrappers]
+
+		[GROUP: Semantic Argument Wrappers - Arithmetic]
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Augend
+			key=~augend
+			name="Augend"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Addend
+			key=~addend
+			name="Addend"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Minuend
+			key=~minuend
+			name="Minuend"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Subtrahend
+			key=~subtrahend
+			name="Subtrahend"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Multiplicand
+			key=~multiplicand
+			name="Multiplicand"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Multiplier
+			key=~multiplier
+			name="Multiplier"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Dividend
+			key=~dividend
+			name="Dividend"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Divisor
+			key=~divisor
+			name="Divisor"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Base
+			key=~base
+			name="Base"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Exponent
+			key=~exponent
+			name="Exponent"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Semantic Argument Wrappers - Arithmetic]
+
+		[GROUP: Semantic Argument Wrappers - Comparison]
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Referent
+			key=~referent
+			name="Referent"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Comparator
+			key=~comparator
+			name="Comparator"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Semantic Argument Wrappers - Comparison]
+
+		[GROUP: Semantic Argument Wrappers - Logical]
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Condition
+			key=~condition
+			name="Condition"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Then
+			key=~then
+			name="Then"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Else
+			key=~else
+			name="Else"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Operand
+			key=~operand
+			name="Operand"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Semantic Argument Wrappers - Logical]
+
+		[GROUP: Mathematical Constants]
+
+		<ConceptDefinition
+			conceptKind=$ValueLike
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Pi
+			key=~pi
+			name="Pi"
+		/>
+
+		<ConceptDefinition
+			conceptKind=$ValueLike
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Tau
+			key=~tau
+			name="Tau"
+		/>
+
+		<ConceptDefinition
+			conceptKind=$ValueLike
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:EulerNumber
+			key=~eulerNumber
+			name="EulerNumber"
+		/>
+
+		<ConceptDefinition
+			conceptKind=$ValueLike
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:GoldenRatio
+			key=~goldenRatio
+			name="GoldenRatio"
+		/>
+
+		<ConceptDefinition
+			conceptKind=$ValueLike
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ImaginaryUnit
+			key=~imaginaryUnit
+			name="ImaginaryUnit"
+		/>
+
+		<ConceptDefinition
+			conceptKind=$ValueLike
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:PositiveInfinity
+			key=~positiveInfinity
+			name="PositiveInfinity"
+		/>
+
+		<ConceptDefinition
+			conceptKind=$ValueLike
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:NegativeInfinity
+			key=~negativeInfinity
+			name="NegativeInfinity"
+		/>
+
+		<ConceptDefinition
+			conceptKind=$ValueLike
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:NegativeZero
+			key=~negativeZero
+			name="NegativeZero"
+		/>
+
+		[END: Mathematical Constants]
+
+		[GROUP: Complex Number Operations]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MakeComplex
+			key=~makeComplex
+			name="MakeComplex"
+		>
+			<TraitRules>
+				<RequiresTrait name="real" />
+
+				<RequiresTrait name="imaginary" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MakeImaginary
+			key=~makeImaginary
+			name="MakeImaginary"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MakeComplexFromPolar
+			key=~makeComplexFromPolar
+			name="MakeComplexFromPolar"
+		>
+			<TraitRules>
+				<RequiresTrait name="magnitude" />
+
+				<RequiresTrait name="phase" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:RealPart
+			key=~realPart
+			name="RealPart"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ImaginaryPart
+			key=~imaginaryPart
+			name="ImaginaryPart"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Conjugate
+			key=~conjugate
+			name="Conjugate"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Magnitude
+			key=~magnitude
+			name="Magnitude"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Phase
+			key=~phase
+			name="Phase"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Complex Number Operations]
+
+		[GROUP: Basic Arithmetic Operators]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Add
+			key=~add
+			name="Add"
+		>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Augend" max=1 />
+
+				<AllowsChildConcept conceptSelector="Addend" />
+
+				<AllowsChildConcept conceptSelector="X" max=1 />
+
+				<AllowsChildConcept conceptSelector="Y" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Subtract
+			key=~subtract
+			name="Subtract"
+		>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Minuend" max=1 />
+
+				<AllowsChildConcept conceptSelector="Subtrahend" max=1 />
+
+				<AllowsChildConcept conceptSelector="X" max=1 />
+
+				<AllowsChildConcept conceptSelector="Y" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Multiply
+			key=~multiply
+			name="Multiply"
+		>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Multiplicand" max=1 />
+
+				<AllowsChildConcept conceptSelector="Multiplier" />
+
+				<AllowsChildConcept conceptSelector="X" max=1 />
+
+				<AllowsChildConcept conceptSelector="Y" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:DivideBy
+			key=~divideBy
+			name="DivideBy"
+		>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Dividend" max=1 />
+
+				<AllowsChildConcept conceptSelector="Divisor" max=1 />
+
+				<AllowsChildConcept conceptSelector="X" max=1 />
+
+				<AllowsChildConcept conceptSelector="Y" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Negate
+			key=~negate
+			name="Negate"
+		>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Operand" max=1 />
+
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Reciprocal
+			key=~reciprocal
+			name="Reciprocal"
+		>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Operand" max=1 />
+
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Power
+			key=~power
+			name="Power"
+		>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Base" max=1 />
+
+				<AllowsChildConcept conceptSelector="Exponent" max=1 />
+
+				<AllowsChildConcept conceptSelector="X" max=1 />
+
+				<AllowsChildConcept conceptSelector="Y" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Basic Arithmetic Operators]
+
+		[GROUP: Integer Arithmetic Operators]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:QuotientTowardZero
+			key=~quotientTowardZero
+			name="QuotientTowardZero"
+		>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Dividend" max=1 />
+
+				<AllowsChildConcept conceptSelector="Divisor" max=1 />
+
+				<AllowsChildConcept conceptSelector="X" max=1 />
+
+				<AllowsChildConcept conceptSelector="Y" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:QuotientTowardNegativeInfinity
+			key=~quotientTowardNegativeInfinity
+			name="QuotientTowardNegativeInfinity"
+		>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Dividend" max=1 />
+
+				<AllowsChildConcept conceptSelector="Divisor" max=1 />
+
+				<AllowsChildConcept conceptSelector="X" max=1 />
+
+				<AllowsChildConcept conceptSelector="Y" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Remainder
+			key=~remainder
+			name="Remainder"
+		>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Dividend" max=1 />
+
+				<AllowsChildConcept conceptSelector="Divisor" max=1 />
+
+				<AllowsChildConcept conceptSelector="X" max=1 />
+
+				<AllowsChildConcept conceptSelector="Y" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Modulus
+			key=~modulus
+			name="Modulus"
+		>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Dividend" max=1 />
+
+				<AllowsChildConcept conceptSelector="Divisor" max=1 />
+
+				<AllowsChildConcept conceptSelector="X" max=1 />
+
+				<AllowsChildConcept conceptSelector="Y" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Integer Arithmetic Operators]
+
+		[GROUP: Value Operations]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:AbsoluteValue
+			key=~absoluteValue
+			name="AbsoluteValue"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Sign
+			key=~sign
+			name="Sign"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Minimum
+			key=~minimum
+			name="Minimum"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Maximum
+			key=~maximum
+			name="Maximum"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Clamp
+			key=~clamp
+			name="Clamp"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Value" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="MinimumBound" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="MaximumBound" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Value
+			key=~value
+			name="Value"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MinimumBound
+			key=~minimumBound
+			name="MinimumBound"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MaximumBound
+			key=~maximumBound
+			name="MaximumBound"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Value Operations]
+
+		[GROUP: Rounding Operations]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:RoundTowardNegativeInfinity
+			key=~roundTowardNegativeInfinity
+			name="RoundTowardNegativeInfinity"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:RoundTowardPositiveInfinity
+			key=~roundTowardPositiveInfinity
+			name="RoundTowardPositiveInfinity"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:RoundTowardZero
+			key=~roundTowardZero
+			name="RoundTowardZero"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:RoundToNearestTiesToEven
+			key=~roundToNearestTiesToEven
+			name="RoundToNearestTiesToEven"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:RoundToNearestTiesAwayFromZero
+			key=~roundToNearestTiesAwayFromZero
+			name="RoundToNearestTiesAwayFromZero"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:RoundToDecimalPlaces
+			key=~roundToDecimalPlaces
+			name="RoundToDecimalPlaces"
+		>
+			<TraitRules>
+				<RequiresTrait name="places" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:RoundToSignificantFigures
+			key=~roundToSignificantFigures
+			name="RoundToSignificantFigures"
+		>
+			<TraitRules>
+				<RequiresTrait name="figures" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Rounding Operations]
+
+		[GROUP: Powers Roots Exponentials]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:SquareRoot
+			key=~squareRoot
+			name="SquareRoot"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:CubeRoot
+			key=~cubeRoot
+			name="CubeRoot"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:NthRoot
+			key=~nthRoot
+			name="NthRoot"
+		>
+			<TraitRules>
+				<RequiresTrait name="n" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Exponential
+			key=~exponential
+			name="Exponential"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:NaturalLogarithm
+			key=~naturalLogarithm
+			name="NaturalLogarithm"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:BaseTwoLogarithm
+			key=~baseTwoLogarithm
+			name="BaseTwoLogarithm"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:BaseTenLogarithm
+			key=~baseTenLogarithm
+			name="BaseTenLogarithm"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Logarithm
+			key=~logarithm
+			name="Logarithm"
+		>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Base" max=1 />
+
+				<AllowsChildConcept conceptSelector="X" max=1 />
+
+				<AllowsChildConcept conceptSelector="Y" max=1 />
+
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Powers Roots Exponentials]
+
+		[GROUP: Trigonometry]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Sine
+			key=~sine
+			name="Sine"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Cosine
+			key=~cosine
+			name="Cosine"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Tangent
+			key=~tangent
+			name="Tangent"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ArcSine
+			key=~arcSine
+			name="ArcSine"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ArcCosine
+			key=~arcCosine
+			name="ArcCosine"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ArcTangent
+			key=~arcTangent
+			name="ArcTangent"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Trigonometry]
+
+		[GROUP: Additional Trigonometry]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Secant
+			key=~secant
+			name="Secant"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Cosecant
+			key=~cosecant
+			name="Cosecant"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Cotangent
+			key=~cotangent
+			name="Cotangent"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ArcSecant
+			key=~arcSecant
+			name="ArcSecant"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ArcCosecant
+			key=~arcCosecant
+			name="ArcCosecant"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ArcCotangent
+			key=~arcCotangent
+			name="ArcCotangent"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ArcTangentFromCoordinates
+			key=~arcTangentFromCoordinates
+			name="ArcTangentFromCoordinates"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Y" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="X" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:trigonometry:Y
+			key=~trigonometryY
+			name="Y"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:trigonometry:X
+			key=~trigonometryX
+			name="X"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Additional Trigonometry]
+
+		[GROUP: Angle Conversion]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:RadiansFromDegrees
+			key=~radiansFromDegrees
+			name="RadiansFromDegrees"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:DegreesFromRadians
+			key=~degreesFromRadians
+			name="DegreesFromRadians"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:RadiansFromGradians
+			key=~radiansFromGradians
+			name="RadiansFromGradians"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:GradiansFromRadians
+			key=~gradiansFromRadians
+			name="GradiansFromRadians"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Angle Conversion]
+
+		[GROUP: Hyperbolic Functions]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:HyperbolicSine
+			key=~hyperbolicSine
+			name="HyperbolicSine"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:HyperbolicCosine
+			key=~hyperbolicCosine
+			name="HyperbolicCosine"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:HyperbolicTangent
+			key=~hyperbolicTangent
+			name="HyperbolicTangent"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:HyperbolicSecant
+			key=~hyperbolicSecant
+			name="HyperbolicSecant"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:HyperbolicCosecant
+			key=~hyperbolicCosecant
+			name="HyperbolicCosecant"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:HyperbolicCotangent
+			key=~hyperbolicCotangent
+			name="HyperbolicCotangent"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:AreaHyperbolicSine
+			key=~areaHyperbolicSine
+			name="AreaHyperbolicSine"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:AreaHyperbolicCosine
+			key=~areaHyperbolicCosine
+			name="AreaHyperbolicCosine"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:AreaHyperbolicTangent
+			key=~areaHyperbolicTangent
+			name="AreaHyperbolicTangent"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:AreaHyperbolicSecant
+			key=~areaHyperbolicSecant
+			name="AreaHyperbolicSecant"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:AreaHyperbolicCosecant
+			key=~areaHyperbolicCosecant
+			name="AreaHyperbolicCosecant"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:AreaHyperbolicCotangent
+			key=~areaHyperbolicCotangent
+			name="AreaHyperbolicCotangent"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Hyperbolic Functions]
+
+		[GROUP: Comparison Operators]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsEqualTo
+			key=~isEqualTo
+			name="IsEqualTo"
+		>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Referent" max=1 />
+
+				<AllowsChildConcept conceptSelector="Comparator" max=1 />
+
+				<AllowsChildConcept conceptSelector="X" max=1 />
+
+				<AllowsChildConcept conceptSelector="Y" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsNotEqualTo
+			key=~isNotEqualTo
+			name="IsNotEqualTo"
+		>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Referent" max=1 />
+
+				<AllowsChildConcept conceptSelector="Comparator" max=1 />
+
+				<AllowsChildConcept conceptSelector="X" max=1 />
+
+				<AllowsChildConcept conceptSelector="Y" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsLessThan
+			key=~isLessThan
+			name="IsLessThan"
+		>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Referent" max=1 />
+
+				<AllowsChildConcept conceptSelector="Comparator" max=1 />
+
+				<AllowsChildConcept conceptSelector="X" max=1 />
+
+				<AllowsChildConcept conceptSelector="Y" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsGreaterThan
+			key=~isGreaterThan
+			name="IsGreaterThan"
+		>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Referent" max=1 />
+
+				<AllowsChildConcept conceptSelector="Comparator" max=1 />
+
+				<AllowsChildConcept conceptSelector="X" max=1 />
+
+				<AllowsChildConcept conceptSelector="Y" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsLessThanOrEqualTo
+			key=~isLessThanOrEqualTo
+			name="IsLessThanOrEqualTo"
+		>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Referent" max=1 />
+
+				<AllowsChildConcept conceptSelector="Comparator" max=1 />
+
+				<AllowsChildConcept conceptSelector="X" max=1 />
+
+				<AllowsChildConcept conceptSelector="Y" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsGreaterThanOrEqualTo
+			key=~isGreaterThanOrEqualTo
+			name="IsGreaterThanOrEqualTo"
+		>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Referent" max=1 />
+
+				<AllowsChildConcept conceptSelector="Comparator" max=1 />
+
+				<AllowsChildConcept conceptSelector="X" max=1 />
+
+				<AllowsChildConcept conceptSelector="Y" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Comparison Operators]
+
+		[GROUP: Logical Operators]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:And
+			key=~and
+			name="And"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Or
+			key=~or
+			name="Or"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Not
+			key=~not
+			name="Not"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Ternary
+			key=~ternary
+			name="Ternary"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Condition" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Then" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Else" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Logical Operators]
+
+		[GROUP: Type Guards]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsAbsent
+			key=~isAbsent
+			name="IsAbsent"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsPresent
+			key=~isPresent
+			name="IsPresent"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsInteger
+			key=~isInteger
+			name="IsInteger"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsNumber
+			key=~isNumber
+			name="IsNumber"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsText
+			key=~isText
+			name="IsText"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsList
+			key=~isList
+			name="IsList"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsBoolean
+			key=~isBoolean
+			name="IsBoolean"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Type Guards]
+
+		[GROUP: Text Operations - Basic]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:TextLength
+			key=~textLength
+			name="TextLength"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsEmptyText
+			key=~isEmptyText
+			name="IsEmptyText"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsBlankText
+			key=~isBlankText
+			name="IsBlankText"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ConcatenateText
+			key=~concatenateText
+			name="ConcatenateText"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:JoinText
+			key=~joinText
+			name="JoinText"
+		>
+			<TraitRules>
+				<RequiresTrait name="separator" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:RepeatText
+			key=~repeatText
+			name="RepeatText"
+		>
+			<TraitRules>
+				<RequiresTrait name="count" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Substring
+			key=~substring
+			name="Substring"
+		>
+			<TraitRules>
+				<RequiresTrait name="startIndex" />
+
+				<AllowsTrait name="endIndex" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Text Operations - Basic]
+
+		[GROUP: Text Operations - Trimming and Padding]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Trim
+			key=~trim
+			name="Trim"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:TrimStart
+			key=~trimStart
+			name="TrimStart"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:TrimEnd
+			key=~trimEnd
+			name="TrimEnd"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:PadStart
+			key=~padStart
+			name="PadStart"
+		>
+			<TraitRules>
+				<RequiresTrait name="targetLength" />
+
+				<AllowsTrait name="padString" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:PadEnd
+			key=~padEnd
+			name="PadEnd"
+		>
+			<TraitRules>
+				<RequiresTrait name="targetLength" />
+
+				<AllowsTrait name="padString" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Text Operations - Trimming and Padding]
+
+		[GROUP: Text Operations - Case]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ToUpperCase
+			key=~toUpperCase
+			name="ToUpperCase"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ToLowerCase
+			key=~toLowerCase
+			name="ToLowerCase"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ToTitleCase
+			key=~toTitleCase
+			name="ToTitleCase"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ToCamelCase
+			key=~toCamelCase
+			name="ToCamelCase"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ToPascalCase
+			key=~toPascalCase
+			name="ToPascalCase"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ToSnakeCase
+			key=~toSnakeCase
+			name="ToSnakeCase"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ToKebabCase
+			key=~toKebabCase
+			name="ToKebabCase"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Text Operations - Case]
+
+		[GROUP: Text Operations - Search]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IndexOf
+			key=~indexOf
+			name="IndexOf"
+		>
+			<TraitRules>
+				<RequiresTrait name="search" />
+
+				<AllowsTrait name="startIndex" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:LastIndexOf
+			key=~lastIndexOf
+			name="LastIndexOf"
+		>
+			<TraitRules>
+				<RequiresTrait name="search" />
+
+				<AllowsTrait name="startIndex" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ContainsSubstring
+			key=~containsSubstring
+			name="ContainsSubstring"
+		>
+			<TraitRules>
+				<RequiresTrait name="search" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:StartsWithSubstring
+			key=~startsWithSubstring
+			name="StartsWithSubstring"
+		>
+			<TraitRules>
+				<RequiresTrait name="prefix" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:EndsWithSubstring
+			key=~endsWithSubstring
+			name="EndsWithSubstring"
+		>
+			<TraitRules>
+				<RequiresTrait name="suffix" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Text Operations - Search]
+
+		[GROUP: Text Operations - Replace]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ReplaceFirst
+			key=~replaceFirst
+			name="ReplaceFirst"
+		>
+			<TraitRules>
+				<RequiresTrait name="search" />
+
+				<RequiresTrait name="replacement" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ReplaceAll
+			key=~replaceAll
+			name="ReplaceAll"
+		>
+			<TraitRules>
+				<RequiresTrait name="search" />
+
+				<RequiresTrait name="replacement" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Text Operations - Replace]
+
+		[GROUP: Text Operations - Split]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Split
+			key=~split
+			name="Split"
+		>
+			<TraitRules>
+				<RequiresTrait name="separator" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:SplitLines
+			key=~splitLines
+			name="SplitLines"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Text Operations - Split]
+
+		[GROUP: Text Operations - Pattern Matching]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MatchesPattern
+			key=~matchesPattern
+			name="MatchesPattern"
+		>
+			<TraitRules>
+				<RequiresTrait name="pattern" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Text Operations - Pattern Matching]
+
+		[GROUP: Text Operations - Validation]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsValidEmail
+			key=~isValidEmail
+			name="IsValidEmail"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsValidUrl
+			key=~isValidUrl
+			name="IsValidUrl"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsValidUuid
+			key=~isValidUuid
+			name="IsValidUuid"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Text Operations - Validation]
+
+		[GROUP: Temporal - Construction]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MakePlainDate
+			key=~makePlainDate
+			name="MakePlainDate"
+		>
+			<TraitRules>
+				<RequiresTrait name="year" />
+
+				<RequiresTrait name="month" />
+
+				<RequiresTrait name="day" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MakePlainTime
+			key=~makePlainTime
+			name="MakePlainTime"
+		>
+			<TraitRules>
+				<RequiresTrait name="hour" />
+
+				<RequiresTrait name="minute" />
+
+				<AllowsTrait name="second" />
+
+				<AllowsTrait name="millisecond" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MakePlainDateTime
+			key=~makePlainDateTime
+			name="MakePlainDateTime"
+		>
+			<TraitRules>
+				<RequiresTrait name="year" />
+
+				<RequiresTrait name="month" />
+
+				<RequiresTrait name="day" />
+
+				<RequiresTrait name="hour" />
+
+				<RequiresTrait name="minute" />
+
+				<AllowsTrait name="second" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MakeDuration
+			key=~makeDuration
+			name="MakeDuration"
+		>
+			<TraitRules>
+				<AllowsTrait name="years" />
+
+				<AllowsTrait name="months" />
+
+				<AllowsTrait name="weeks" />
+
+				<AllowsTrait name="days" />
+
+				<AllowsTrait name="hours" />
+
+				<AllowsTrait name="minutes" />
+
+				<AllowsTrait name="seconds" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		[END: Temporal - Construction]
+
+		[GROUP: Temporal - Decomposition]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:temporal:Year
+			key=~temporalYear
+			name="Year"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Month
+			key=~month
+			name="Month"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Day
+			key=~day
+			name="Day"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Hour
+			key=~hour
+			name="Hour"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Minute
+			key=~minute
+			name="Minute"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Second
+			key=~second
+			name="Second"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:DayOfWeek
+			key=~dayOfWeek
+			name="DayOfWeek"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:DayOfYear
+			key=~dayOfYear
+			name="DayOfYear"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Temporal - Decomposition]
+
+		[GROUP: Temporal - Arithmetic]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:AddDuration
+			key=~addDuration
+			name="AddDuration"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:SubtractDuration
+			key=~subtractDuration
+			name="SubtractDuration"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:DifferenceBetween
+			key=~differenceBetween
+			name="DifferenceBetween"
+		>
+			<TraitRules>
+				<AllowsTrait name="largestUnit" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:DaysBetween
+			key=~daysBetween
+			name="DaysBetween"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Temporal - Arithmetic]
+
+		[GROUP: Temporal - Comparison]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsAfter
+			key=~isAfter
+			name="IsAfter"
+		>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Referent" max=1 />
+
+				<AllowsChildConcept conceptSelector="Comparator" max=1 />
+
+				<AllowsChildConcept conceptSelector="X" max=1 />
+
+				<AllowsChildConcept conceptSelector="Y" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsBefore
+			key=~isBefore
+			name="IsBefore"
+		>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Referent" max=1 />
+
+				<AllowsChildConcept conceptSelector="Comparator" max=1 />
+
+				<AllowsChildConcept conceptSelector="X" max=1 />
+
+				<AllowsChildConcept conceptSelector="Y" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsSameInstant
+			key=~isSameInstant
+			name="IsSameInstant"
+		>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Referent" max=1 />
+
+				<AllowsChildConcept conceptSelector="Comparator" max=1 />
+
+				<AllowsChildConcept conceptSelector="X" max=1 />
+
+				<AllowsChildConcept conceptSelector="Y" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Temporal - Comparison]
+
+		[GROUP: Temporal - Calendar]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsWeekday
+			key=~isWeekday
+			name="IsWeekday"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsWeekend
+			key=~isWeekend
+			name="IsWeekend"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsLeapYear
+			key=~isLeapYear
+			name="IsLeapYear"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:DaysInMonth
+			key=~daysInMonth
+			name="DaysInMonth"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Temporal - Calendar]
+
+		[GROUP: Temporal - Formatting]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:FormatIso
+			key=~formatIso
+			name="FormatIso"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:FormatTemporal
+			key=~formatTemporal
+			name="FormatTemporal"
+		>
+			<TraitRules>
+				<RequiresTrait name="pattern" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Temporal - Formatting]
+
+		[GROUP: Temporal - Parsing]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ParsePlainDate
+			key=~parsePlainDate
+			name="ParsePlainDate"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ParsePlainTime
+			key=~parsePlainTime
+			name="ParsePlainTime"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ParsePlainDateTime
+			key=~parsePlainDateTime
+			name="ParsePlainDateTime"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ParseDuration
+			key=~parseDuration
+			name="ParseDuration"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Temporal - Parsing]
+
+		[GROUP: Temporal - Type Guards]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsPlainDate
+			key=~isPlainDate
+			name="IsPlainDate"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsPlainTime
+			key=~isPlainTime
+			name="IsPlainTime"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsPlainDateTime
+			key=~isPlainDateTime
+			name="IsPlainDateTime"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsDuration
+			key=~isDuration
+			name="IsDuration"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsTemporal
+			key=~isTemporal
+			name="IsTemporal"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Temporal - Type Guards]
+
+		[GROUP: Statistics - Central Tendency]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ArithmeticMean
+			key=~arithmeticMean
+			name="ArithmeticMean"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:GeometricMean
+			key=~geometricMean
+			name="GeometricMean"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:HarmonicMean
+			key=~harmonicMean
+			name="HarmonicMean"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Median
+			key=~median
+			name="Median"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Mode
+			key=~mode
+			name="Mode"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:WeightedMean
+			key=~weightedMean
+			name="WeightedMean"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Values" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Weights" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Values
+			key=~values
+			name="Values"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Weights
+			key=~weights
+			name="Weights"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Statistics - Central Tendency]
+
+		[GROUP: Statistics - Dispersion]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Range
+			key=~range
+			name="Range"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:InterquartileRange
+			key=~interquartileRange
+			name="InterquartileRange"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:PopulationVariance
+			key=~populationVariance
+			name="PopulationVariance"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:SampleVariance
+			key=~sampleVariance
+			name="SampleVariance"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:PopulationStandardDeviation
+			key=~populationStandardDeviation
+			name="PopulationStandardDeviation"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:SampleStandardDeviation
+			key=~sampleStandardDeviation
+			name="SampleStandardDeviation"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MeanAbsoluteDeviation
+			key=~meanAbsoluteDeviation
+			name="MeanAbsoluteDeviation"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MedianAbsoluteDeviation
+			key=~medianAbsoluteDeviation
+			name="MedianAbsoluteDeviation"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:CoefficientOfVariation
+			key=~coefficientOfVariation
+			name="CoefficientOfVariation"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Statistics - Dispersion]
+
+		[GROUP: Statistics - Position]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Quantile
+			key=~quantile
+			name="Quantile"
+		>
+			<TraitRules>
+				<RequiresTrait name="proportion" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Percentile
+			key=~percentile
+			name="Percentile"
+		>
+			<TraitRules>
+				<RequiresTrait name="percent" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Quartile
+			key=~quartile
+			name="Quartile"
+		>
+			<TraitRules>
+				<RequiresTrait name="q" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Statistics - Position]
+
+		[GROUP: Statistics - Correlation]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Covariance
+			key=~covariance
+			name="Covariance"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:SampleCovariance
+			key=~sampleCovariance
+			name="SampleCovariance"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:PearsonCorrelation
+			key=~pearsonCorrelation
+			name="PearsonCorrelation"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:SpearmanCorrelation
+			key=~spearmanCorrelation
+			name="SpearmanCorrelation"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Statistics - Correlation]
+
+		[GROUP: Combinatorics]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Factorial
+			key=~factorial
+			name="Factorial"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:DoubleFactorial
+			key=~doubleFactorial
+			name="DoubleFactorial"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:BinomialCoefficient
+			key=~binomialCoefficient
+			name="BinomialCoefficient"
+		>
+			<TraitRules>
+				<RequiresTrait name="n" />
+
+				<RequiresTrait name="k" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:PermutationCount
+			key=~permutationCount
+			name="PermutationCount"
+		>
+			<TraitRules>
+				<RequiresTrait name="n" />
+
+				<RequiresTrait name="k" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		[END: Combinatorics]
+
+		[GROUP: Number Theory]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:GreatestCommonDivisor
+			key=~greatestCommonDivisor
+			name="GreatestCommonDivisor"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:LeastCommonMultiple
+			key=~leastCommonMultiple
+			name="LeastCommonMultiple"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsPrime
+			key=~isPrime
+			name="IsPrime"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:PrimeFactorization
+			key=~primeFactorization
+			name="PrimeFactorization"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Divisors
+			key=~divisors
+			name="Divisors"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:DivisorCount
+			key=~divisorCount
+			name="DivisorCount"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:DivisorSum
+			key=~divisorSum
+			name="DivisorSum"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Number Theory]
+
+		[GROUP: Linear Algebra - Vectors]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:DotProduct
+			key=~dotProduct
+			name="DotProduct"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:CrossProduct
+			key=~crossProduct
+			name="CrossProduct"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:VectorLength
+			key=~vectorLength
+			name="VectorLength"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:NormalizeVector
+			key=~normalizeVector
+			name="NormalizeVector"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:VectorAngle
+			key=~vectorAngle
+			name="VectorAngle"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Linear Algebra - Vectors]
+
+		[GROUP: Linear Algebra - Matrices]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MatrixAdd
+			key=~matrixAdd
+			name="MatrixAdd"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MatrixSubtract
+			key=~matrixSubtract
+			name="MatrixSubtract"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MatrixMultiply
+			key=~matrixMultiply
+			name="MatrixMultiply"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MatrixTranspose
+			key=~matrixTranspose
+			name="MatrixTranspose"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MatrixDeterminant
+			key=~matrixDeterminant
+			name="MatrixDeterminant"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MatrixInverse
+			key=~matrixInverse
+			name="MatrixInverse"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MatrixTrace
+			key=~matrixTrace
+			name="MatrixTrace"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IdentityMatrix
+			key=~identityMatrix
+			name="IdentityMatrix"
+		>
+			<TraitRules>
+				<RequiresTrait name="size" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		[END: Linear Algebra - Matrices]
+
+		[GROUP: Classification]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsFinite
+			key=~isFinite
+			name="IsFinite"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsInfinite
+			key=~isInfinite
+			name="IsInfinite"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsPositive
+			key=~isPositive
+			name="IsPositive"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsNegative
+			key=~isNegative
+			name="IsNegative"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsZero
+			key=~isZero
+			name="IsZero"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsEven
+			key=~isEven
+			name="IsEven"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsOdd
+			key=~isOdd
+			name="IsOdd"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Classification]
+
+		[GROUP: Interpolation]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:LinearInterpolation
+			key=~linearInterpolation
+			name="LinearInterpolation"
+		>
+			<TraitRules>
+				<RequiresTrait name="t" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Start" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="End" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Start
+			key=~start
+			name="Start"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:End
+			key=~end
+			name="End"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:InverseLinearInterpolation
+			key=~inverseLinearInterpolation
+			name="InverseLinearInterpolation"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Start" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="End" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Value" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Remap
+			key=~remap
+			name="Remap"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Value" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="FromRange" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="ToRange" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:FromRange
+			key=~fromRange
+			name="FromRange"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Start" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="End" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ToRange
+			key=~toRange
+			name="ToRange"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Start" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="End" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Interpolation]
+
+		[GROUP: Collection Operations - Transform]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MapElements
+			key=~mapElements
+			name="MapElements"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Collection" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Transform" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Collection
+			key=~collection
+			name="Collection"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Transform
+			key=~transform
+			name="Transform"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:FilterElements
+			key=~filterElements
+			name="FilterElements"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Collection" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Predicate" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Predicate
+			key=~predicate
+			name="Predicate"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ReduceElements
+			key=~reduceElements
+			name="ReduceElements"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Collection" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="InitialValue" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Reducer" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:InitialValue
+			key=~initialValue
+			name="InitialValue"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Reducer
+			key=~reducer
+			name="Reducer"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:FlatMapElements
+			key=~flatMapElements
+			name="FlatMapElements"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Collection" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Transform" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Collection Operations - Transform]
+
+		[GROUP: Collection Operations - Search]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:FindFirstElement
+			key=~findFirstElement
+			name="FindFirstElement"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Collection" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Predicate" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:FindLastElement
+			key=~findLastElement
+			name="FindLastElement"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Collection" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Predicate" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ContainsElement
+			key=~containsElement
+			name="ContainsElement"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Collection" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Element" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:collection:Element
+			key=~collectionElement
+			name="Element"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Collection Operations - Search]
+
+		[GROUP: Collection Operations - Order]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:SortElements
+			key=~sortElements
+			name="SortElements"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:SortElementsBy
+			key=~sortElementsBy
+			name="SortElementsBy"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Collection" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="KeyExpression" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:KeyExpression
+			key=~keyExpression
+			name="KeyExpression"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:SortElementsDescending
+			key=~sortElementsDescending
+			name="SortElementsDescending"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ReverseElements
+			key=~reverseElements
+			name="ReverseElements"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Collection Operations - Order]
+
+		[GROUP: Collection Operations - Slice]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:TakeFirstElements
+			key=~takeFirstElements
+			name="TakeFirstElements"
+		>
+			<TraitRules>
+				<RequiresTrait name="count" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:TakeLastElements
+			key=~takeLastElements
+			name="TakeLastElements"
+		>
+			<TraitRules>
+				<RequiresTrait name="count" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:DropFirstElements
+			key=~dropFirstElements
+			name="DropFirstElements"
+		>
+			<TraitRules>
+				<RequiresTrait name="count" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:DropLastElements
+			key=~dropLastElements
+			name="DropLastElements"
+		>
+			<TraitRules>
+				<RequiresTrait name="count" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:SliceElements
+			key=~sliceElements
+			name="SliceElements"
+		>
+			<TraitRules>
+				<RequiresTrait name="startIndex" />
+
+				<RequiresTrait name="endIndex" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Collection Operations - Slice]
+
+		[GROUP: Collection Operations - Combine]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ConcatenateElements
+			key=~concatenateElements
+			name="ConcatenateElements"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ZipElements
+			key=~zipElements
+			name="ZipElements"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:FlattenElements
+			key=~flattenElements
+			name="FlattenElements"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:DistinctElements
+			key=~distinctElements
+			name="DistinctElements"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Collection Operations - Combine]
+
+		[GROUP: Collection Operations - Aggregate]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:CountElements
+			key=~countElements
+			name="CountElements"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:SumElements
+			key=~sumElements
+			name="SumElements"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ProductElements
+			key=~productElements
+			name="ProductElements"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MinimumElement
+			key=~minimumElement
+			name="MinimumElement"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MaximumElement
+			key=~maximumElement
+			name="MaximumElement"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:AverageElements
+			key=~averageElements
+			name="AverageElements"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Collection Operations - Aggregate]
+
+		[GROUP: Collection Operations - Predicates]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:AnyElementSatisfies
+			key=~anyElementSatisfies
+			name="AnyElementSatisfies"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Collection" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Predicate" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:AllElementsSatisfy
+			key=~allElementsSatisfy
+			name="AllElementsSatisfy"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Collection" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Predicate" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:NoElementSatisfies
+			key=~noElementSatisfies
+			name="NoElementSatisfies"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Collection" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Predicate" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsEmpty
+			key=~isEmpty
+			name="IsEmpty"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsNotEmpty
+			key=~isNotEmpty
+			name="IsNotEmpty"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Collection Operations - Predicates]
+
+		[GROUP: List Operations]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:FirstElement
+			key=~firstElement
+			name="FirstElement"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:LastElement
+			key=~lastElement
+			name="LastElement"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:list:ElementAt
+			key=~listElementAt
+			name="ElementAt"
+		>
+			<TraitRules>
+				<RequiresTrait name="index" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: List Operations]
+
+		[GROUP: Set Operations]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:SetUnion
+			key=~setUnion
+			name="SetUnion"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:SetIntersection
+			key=~setIntersection
+			name="SetIntersection"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:SetDifference
+			key=~setDifference
+			name="SetDifference"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:SetContains
+			key=~setContains
+			name="SetContains"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Collection" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Element" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsSubsetOf
+			key=~isSubsetOf
+			name="IsSubsetOf"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsSupersetOf
+			key=~isSupersetOf
+			name="IsSupersetOf"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ListToSet
+			key=~listToSet
+			name="ListToSet"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:SetToList
+			key=~setToList
+			name="SetToList"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Set Operations]
+
+		[GROUP: Map Operations]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MapGet
+			key=~mapGet
+			name="MapGet"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Collection" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Key" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Key
+			key=~key
+			name="Key"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MapContainsKey
+			key=~mapContainsKey
+			name="MapContainsKey"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Collection" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Key" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MapKeys
+			key=~mapKeys
+			name="MapKeys"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MapValues
+			key=~mapValues
+			name="MapValues"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MapEntries
+			key=~mapEntries
+			name="MapEntries"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MapMerge
+			key=~mapMerge
+			name="MapMerge"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Map Operations]
+
+		[GROUP: Record Operations]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:RecordGet
+			key=~recordGet
+			name="RecordGet"
+		>
+			<TraitRules>
+				<RequiresTrait name="fieldName" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:RecordHasField
+			key=~recordHasField
+			name="RecordHasField"
+		>
+			<TraitRules>
+				<RequiresTrait name="fieldName" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:RecordKeys
+			key=~recordKeys
+			name="RecordKeys"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:RecordValues
+			key=~recordValues
+			name="RecordValues"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:RecordMerge
+			key=~recordMerge
+			name="RecordMerge"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Record Operations]
+
+		[GROUP: Tuple Operations]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:TupleFirst
+			key=~tupleFirst
+			name="TupleFirst"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:TupleSecond
+			key=~tupleSecond
+			name="TupleSecond"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:TupleGet
+			key=~tupleGet
+			name="TupleGet"
+		>
+			<TraitRules>
+				<RequiresTrait name="index" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:TupleLength
+			key=~tupleLength
+			name="TupleLength"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:TupleToList
+			key=~tupleToList
+			name="TupleToList"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ListToTuple
+			key=~listToTuple
+			name="ListToTuple"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Tuple Operations]
+
+		[GROUP: Collection Creation]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:EmptyList
+			key=~emptyList
+			name="EmptyList"
+		/>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:EmptySet
+			key=~emptySet
+			name="EmptySet"
+		/>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:EmptyMap
+			key=~emptyMap
+			name="EmptyMap"
+		/>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:EmptyRecord
+			key=~emptyRecord
+			name="EmptyRecord"
+		/>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MakeRange
+			key=~makeRange
+			name="MakeRange"
+		>
+			<TraitRules>
+				<AllowsTrait name="step" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Start" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="End" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:RangeToList
+			key=~rangeToList
+			name="RangeToList"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Collection Creation]
+
+		[GROUP: Calculus - Numerical Methods]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the numerical derivative of a function at a point using finite differences."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:NumericalDerivative
+			key=~numericalDerivative
+			name="NumericalDerivative"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Function" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Point" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the numerical second derivative of a function at a point."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:NumericalSecondDerivative
+			key=~numericalSecondDerivative
+			name="NumericalSecondDerivative"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Function" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Point" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the numerical definite integral of a function over an interval."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:NumericalIntegral
+			key=~numericalIntegral
+			name="NumericalIntegral"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Function" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="LowerBound" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="UpperBound" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Finds a root of a function near an initial guess using Newton's method or similar."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:FindRoot
+			key=~findRoot
+			name="FindRoot"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Function" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="InitialGuess" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Finds a root of a function within a bracket using bisection or Brent's method."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:FindRootBracketed
+			key=~findRootBracketed
+			name="FindRootBracketed"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Function" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="LowerBound" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="UpperBound" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Finds a local minimum of a function within a bracket."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:FindMinimum
+			key=~findMinimum
+			name="FindMinimum"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Function" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="LowerBound" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="UpperBound" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Finds a local maximum of a function within a bracket."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:FindMaximum
+			key=~findMaximum
+			name="FindMaximum"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Function" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="LowerBound" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="UpperBound" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Wrapper for a single-variable function expression (must reference a parameter)."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Function
+			key=~function
+			name="Function"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Wrapper for a point value at which to evaluate."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Point
+			key=~point
+			name="Point"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Wrapper for a lower bound of an interval."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:LowerBound
+			key=~lowerBound
+			name="LowerBound"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Wrapper for an upper bound of an interval."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:UpperBound
+			key=~upperBound
+			name="UpperBound"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Wrapper for an initial guess value for iterative methods."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:InitialGuess
+			key=~initialGuess
+			name="InitialGuess"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Calculus - Numerical Methods]
+
+		[GROUP: Special Functions]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the gamma function Γ(x), the extension of factorial to real/complex numbers."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:GammaFunction
+			key=~gammaFunction
+			name="GammaFunction"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the natural logarithm of the gamma function, ln(Γ(x))."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:LogGammaFunction
+			key=~logGammaFunction
+			name="LogGammaFunction"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the digamma function ψ(x), the logarithmic derivative of gamma."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:DigammaFunction
+			key=~digammaFunction
+			name="DigammaFunction"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the beta function B(a,b) = Γ(a)Γ(b)/Γ(a+b)."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:BetaFunction
+			key=~betaFunction
+			name="BetaFunction"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="X" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Y" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the regularized incomplete beta function I_x(a,b)."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IncompleteBetaFunction
+			key=~incompleteBetaFunction
+			name="IncompleteBetaFunction"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="X" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="A" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="B" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the regularized incomplete gamma function P(a,x) or Q(a,x)."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IncompleteGammaFunction
+			key=~incompleteGammaFunction
+			name="IncompleteGammaFunction"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="A" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="X" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the error function erf(x)."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ErrorFunction
+			key=~errorFunction
+			name="ErrorFunction"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the complementary error function erfc(x) = 1 - erf(x)."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ComplementaryErrorFunction
+			key=~complementaryErrorFunction
+			name="ComplementaryErrorFunction"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the inverse error function erf⁻¹(x)."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:InverseErrorFunction
+			key=~inverseErrorFunction
+			name="InverseErrorFunction"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the Bessel function of the first kind J_n(x)."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:BesselJ
+			key=~besselJ
+			name="BesselJ"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Order" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="X" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the Bessel function of the second kind Y_n(x)."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:BesselY
+			key=~besselY
+			name="BesselY"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Order" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="X" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the modified Bessel function of the first kind I_n(x)."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:BesselI
+			key=~besselI
+			name="BesselI"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Order" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="X" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the modified Bessel function of the second kind K_n(x)."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:BesselK
+			key=~besselK
+			name="BesselK"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Order" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="X" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the Riemann zeta function ζ(s)."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Zeta
+			key=~zeta
+			name="Zeta"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Wrapper for the x parameter in special functions."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:special:X
+			key=~specialX
+			name="X"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Wrapper for the a parameter in special functions."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:A
+			key=~a
+			name="A"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Wrapper for the b parameter in special functions."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:B
+			key=~b
+			name="B"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Wrapper for the order parameter in Bessel functions."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Order
+			key=~order
+			name="Order"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Special Functions]
+
+		[GROUP: Geometry - 2D]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the Euclidean distance between two points in 2D space."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:DistanceBetweenPoints2D
+			key=~distanceBetweenPoints2D
+			name="DistanceBetweenPoints2D"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Point1" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Point2" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the midpoint between two points in 2D space."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MidpointBetweenPoints2D
+			key=~midpointBetweenPoints2D
+			name="MidpointBetweenPoints2D"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Point1" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Point2" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the slope of the line between two points in 2D space."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:SlopeBetweenPoints
+			key=~slopeBetweenPoints
+			name="SlopeBetweenPoints"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Point1" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Point2" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the angle from point1 to point2 relative to the positive x-axis, in radians."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:AngleBetweenPoints
+			key=~angleBetweenPoints
+			name="AngleBetweenPoints"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Point1" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Point2" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the point on a circle at a given angle from the center."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:PointOnCircle
+			key=~pointOnCircle
+			name="PointOnCircle"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Center" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Radius" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Angle" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Rotates a point around an origin by a given angle in 2D space."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:RotatePoint2D
+			key=~rotatePoint2D
+			name="RotatePoint2D"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Point" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Origin" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Angle" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the area of a triangle given three vertices in 2D space."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:TriangleArea
+			key=~triangleArea
+			name="TriangleArea"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Point1" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Point2" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Point3" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Tests whether a point lies inside a triangle defined by three vertices."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsPointInTriangle
+			key=~isPointInTriangle
+			name="IsPointInTriangle"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Point" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Vertex1" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Vertex2" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Vertex3" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Tests whether a point lies inside a circle defined by center and radius."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsPointInCircle
+			key=~isPointInCircle
+			name="IsPointInCircle"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Point" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Center" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Radius" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Tests whether a point lies inside an axis-aligned rectangle."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsPointInRectangle
+			key=~isPointInRectangle
+			name="IsPointInRectangle"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Point" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="MinCorner" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="MaxCorner" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Wrapper for the first point in geometry operations."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Point1
+			key=~point1
+			name="Point1"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Wrapper for the second point in geometry operations."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Point2
+			key=~point2
+			name="Point2"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Wrapper for the third point in geometry operations."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Point3
+			key=~point3
+			name="Point3"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Wrapper for a center point in geometry operations."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Center
+			key=~center
+			name="Center"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Wrapper for a radius value in geometry operations."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Radius
+			key=~radius
+			name="Radius"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Wrapper for an angle value (in radians) in geometry operations."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Angle
+			key=~angle
+			name="Angle"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Wrapper for an origin point in rotation operations."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Origin
+			key=~origin
+			name="Origin"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Wrapper for the first vertex in polygon operations."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Vertex1
+			key=~vertex1
+			name="Vertex1"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Wrapper for the second vertex in polygon operations."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Vertex2
+			key=~vertex2
+			name="Vertex2"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Wrapper for the third vertex in polygon operations."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Vertex3
+			key=~vertex3
+			name="Vertex3"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Wrapper for the minimum corner point of a rectangle."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MinCorner
+			key=~minCorner
+			name="MinCorner"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Wrapper for the maximum corner point of a rectangle."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MaxCorner
+			key=~maxCorner
+			name="MaxCorner"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Geometry - 2D]
+
+		[GROUP: Geometry - 3D]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the Euclidean distance between two points in 3D space."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:DistanceBetweenPoints3D
+			key=~distanceBetweenPoints3D
+			name="DistanceBetweenPoints3D"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Point1" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Point2" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the midpoint between two points in 3D space."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:MidpointBetweenPoints3D
+			key=~midpointBetweenPoints3D
+			name="MidpointBetweenPoints3D"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Point1" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Point2" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Rotates a point around an arbitrary axis in 3D space."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:RotatePoint3DAroundAxis
+			key=~rotatePoint3DAroundAxis
+			name="RotatePoint3DAroundAxis"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Point" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="AxisOrigin" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="AxisDirection" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Angle" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the volume of a tetrahedron given four vertices in 3D space."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:TetrahedronVolume
+			key=~tetrahedronVolume
+			name="TetrahedronVolume"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Point1" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Point2" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Point3" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Point4" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Tests whether a point lies inside a sphere defined by center and radius."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsPointInSphere
+			key=~isPointInSphere
+			name="IsPointInSphere"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Point" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Center" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Radius" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Tests whether a point lies inside an axis-aligned box in 3D space."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:IsPointInBox
+			key=~isPointInBox
+			name="IsPointInBox"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Point" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="MinCorner" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="MaxCorner" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Wrapper for the fourth point in geometry operations."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Point4
+			key=~point4
+			name="Point4"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Wrapper for the origin point of a rotation axis."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:AxisOrigin
+			key=~axisOrigin
+			name="AxisOrigin"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Wrapper for the direction vector of a rotation axis."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:AxisDirection
+			key=~axisDirection
+			name="AxisDirection"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Geometry - 3D]
+
+		[GROUP: Angle Normalization]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Normalizes an angle in radians to the range [0, 2π)."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:NormalizeAngleRadians
+			key=~normalizeAngleRadians
+			name="NormalizeAngleRadians"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Normalizes an angle in radians to the range [-π, π)."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:NormalizeAngleRadiansSigned
+			key=~normalizeAngleRadiansSigned
+			name="NormalizeAngleRadiansSigned"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Normalizes an angle in degrees to the range [0, 360)."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:NormalizeAngleDegrees
+			key=~normalizeAngleDegrees
+			name="NormalizeAngleDegrees"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Normalizes an angle in degrees to the range [-180, 180)."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:NormalizeAngleDegreesSigned
+			key=~normalizeAngleDegreesSigned
+			name="NormalizeAngleDegreesSigned"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Computes the shortest signed difference between two angles (in radians)."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:ShortestAngleDifference
+			key=~shortestAngleDifference
+			name="ShortestAngleDifference"
+		>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="X" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="Y" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Angle Normalization]
+
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=urn:codex:behavior:trait:name
+			name="name"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$NonNegativeInteger
+			id=urn:codex:behavior:trait:index
+			name="index"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$NonNegativeInteger
+			id=urn:codex:behavior:trait:places
+			name="places"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$PositiveInteger
+			id=urn:codex:behavior:trait:figures
+			name="figures"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=urn:codex:behavior:trait:n
+			name="n"
+			priority=$Primary
+		/>
+
+		[GROUP: Text Traits]
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=urn:codex:behavior:trait:separator
+			name="separator"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$NonNegativeInteger
+			id=urn:codex:behavior:trait:count
+			name="count"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=urn:codex:behavior:trait:startIndex
+			name="startIndex"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=urn:codex:behavior:trait:endIndex
+			name="endIndex"
+			priority=$Secondary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$NonNegativeInteger
+			id=urn:codex:behavior:trait:targetLength
+			name="targetLength"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=urn:codex:behavior:trait:padString
+			name="padString"
+			priority=$Secondary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=urn:codex:behavior:trait:search
+			name="search"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=urn:codex:behavior:trait:prefix
+			name="prefix"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=urn:codex:behavior:trait:suffix
+			name="suffix"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=urn:codex:behavior:trait:replacement
+			name="replacement"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=urn:codex:behavior:trait:pattern
+			name="pattern"
+			priority=$Primary
+		/>
+
+		[END: Text Traits]
+
+		[GROUP: Temporal Traits]
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=urn:codex:behavior:trait:year
+			name="year"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=urn:codex:behavior:trait:month
+			name="month"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=urn:codex:behavior:trait:day
+			name="day"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=urn:codex:behavior:trait:hour
+			name="hour"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=urn:codex:behavior:trait:minute
+			name="minute"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=urn:codex:behavior:trait:second
+			name="second"
+			priority=$Secondary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=urn:codex:behavior:trait:millisecond
+			name="millisecond"
+			priority=$Secondary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=urn:codex:behavior:trait:years
+			name="years"
+			priority=$Secondary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=urn:codex:behavior:trait:months
+			name="months"
+			priority=$Secondary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=urn:codex:behavior:trait:weeks
+			name="weeks"
+			priority=$Secondary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=urn:codex:behavior:trait:days
+			name="days"
+			priority=$Secondary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=urn:codex:behavior:trait:hours
+			name="hours"
+			priority=$Secondary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=urn:codex:behavior:trait:minutes
+			name="minutes"
+			priority=$Secondary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=urn:codex:behavior:trait:seconds
+			name="seconds"
+			priority=$Secondary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=urn:codex:behavior:trait:largestUnit
+			name="largestUnit"
+			priority=$Secondary
+		/>
+
+		[END: Temporal Traits]
+
+		[GROUP: Complex Number Traits]
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=urn:codex:behavior:trait:real
+			name="real"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=urn:codex:behavior:trait:imaginary
+			name="imaginary"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=urn:codex:behavior:trait:magnitude
+			name="magnitude"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=urn:codex:behavior:trait:phase
+			name="phase"
+			priority=$Primary
+		/>
+
+		[END: Complex Number Traits]
+
+		[GROUP: Statistics Traits]
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=urn:codex:behavior:trait:proportion
+			name="proportion"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=urn:codex:behavior:trait:percent
+			name="percent"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=urn:codex:behavior:trait:q
+			name="q"
+			priority=$Primary
+		/>
+
+		[END: Statistics Traits]
+
+		[GROUP: Combinatorics Traits]
+
+		<TraitDefinition
+			defaultValueType=$NonNegativeInteger
+			id=urn:codex:behavior:trait:k
+			name="k"
+			priority=$Primary
+		/>
+
+		[END: Combinatorics Traits]
+
+		[GROUP: Linear Algebra Traits]
+
+		<TraitDefinition
+			defaultValueType=$PositiveInteger
+			id=urn:codex:behavior:trait:size
+			name="size"
+			priority=$Primary
+		/>
+
+		[END: Linear Algebra Traits]
+
+		[GROUP: Interpolation Traits]
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=urn:codex:behavior:trait:t
+			name="t"
+			priority=$Primary
+		/>
+
+		[END: Interpolation Traits]
+
+		[GROUP: Record Traits]
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=urn:codex:behavior:trait:fieldName
+			name="fieldName"
+			priority=$Primary
+		/>
+
+		[END: Record Traits]
+
+		[GROUP: Range Traits]
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=urn:codex:behavior:trait:step
+			name="step"
+			priority=$Secondary
+		/>
+
+		[END: Range Traits]
+
+	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+
+		[GROUP: Matched Pairs Constraints - Arithmetic]
+
+		<ConstraintDefinition
+			description="Add must use either Augend/Addend OR X/Y, but not mix them."
+			id=urn:codex:behavior:constraint:add-matched-pairs
+			title="Add requires matched argument pairs"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Add" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ChildConstraint conceptSelector="Augend" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="X" type=$ForbidsChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Y" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ChildConstraint conceptSelector="X" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Y" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Augend" type=$ForbidsChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Addend" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			description="Subtract must use either Minuend/Subtrahend OR X/Y, but not mix them."
+			id=urn:codex:behavior:constraint:subtract-matched-pairs
+			title="Subtract requires matched argument pairs"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Subtract" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ChildConstraint conceptSelector="Minuend" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Subtrahend" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="X" type=$ForbidsChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Y" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ChildConstraint conceptSelector="X" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Y" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Minuend" type=$ForbidsChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Subtrahend" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			description="Multiply must use either Multiplicand/Multiplier OR X/Y, but not mix them."
+			id=urn:codex:behavior:constraint:multiply-matched-pairs
+			title="Multiply requires matched argument pairs"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Multiply" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ChildConstraint conceptSelector="Multiplicand" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="X" type=$ForbidsChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Y" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ChildConstraint conceptSelector="X" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Y" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Multiplicand" type=$ForbidsChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Multiplier" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			description="DivideBy must use either Dividend/Divisor OR X/Y, but not mix them."
+			id=urn:codex:behavior:constraint:divide-matched-pairs
+			title="DivideBy requires matched argument pairs"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="DivideBy" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ChildConstraint conceptSelector="Dividend" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Divisor" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="X" type=$ForbidsChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Y" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ChildConstraint conceptSelector="X" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Y" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Dividend" type=$ForbidsChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Divisor" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			description="Power must use either Base/Exponent OR X/Y, but not mix them."
+			id=urn:codex:behavior:constraint:power-matched-pairs
+			title="Power requires matched argument pairs"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Power" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ChildConstraint conceptSelector="Base" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Exponent" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="X" type=$ForbidsChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Y" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ChildConstraint conceptSelector="X" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Y" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Base" type=$ForbidsChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Exponent" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		[END: Matched Pairs Constraints - Arithmetic]
+
+		[GROUP: Matched Pairs Constraints - Comparison]
+
+		<ConstraintDefinition
+			description="Comparison operators must use either Referent/Comparator OR X/Y, but not mix them."
+			id=urn:codex:behavior:constraint:comparison-matched-pairs
+			title="Comparison operators require matched argument pairs"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="IsEqualTo" />
+
+				<TargetConcept conceptSelector="IsNotEqualTo" />
+
+				<TargetConcept conceptSelector="IsLessThan" />
+
+				<TargetConcept conceptSelector="IsGreaterThan" />
+
+				<TargetConcept conceptSelector="IsLessThanOrEqualTo" />
+
+				<TargetConcept conceptSelector="IsGreaterThanOrEqualTo" />
+
+				<TargetConcept conceptSelector="IsAfter" />
+
+				<TargetConcept conceptSelector="IsBefore" />
+
+				<TargetConcept conceptSelector="IsSameInstant" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ChildConstraint conceptSelector="Referent" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Comparator" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="X" type=$ForbidsChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Y" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ChildConstraint conceptSelector="X" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Y" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Referent" type=$ForbidsChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Comparator" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		[END: Matched Pairs Constraints - Comparison]
+
+	</ConstraintDefinitions>
+</Schema>

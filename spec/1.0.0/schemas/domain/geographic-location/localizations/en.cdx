@@ -1,0 +1,23 @@
+<LocalizationBundle
+	schema=codex:domain:geographic-location
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization
+		identifier="GeographicLocation"
+		label="Geographic Location"
+		labelOther="Geographic Locations"
+	/>
+
+	<TraitLocalization identifier="latitude" label="Latitude" labelOther="Latitudes">
+		The angular distance north or south of the equator.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="longitude" label="Longitude" labelOther="Longitudes">
+		The angular distance east or west of the prime meridian.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="elevation" label="Elevation" labelOther="Elevations">
+		The height above or below a reference point, typically sea level.
+	</TraitLocalization>
+</LocalizationBundle>

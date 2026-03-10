@@ -1,0 +1,55 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="An unordered set of keyword labels for categorisation and discovery."
+	id=codex:domain:tags
+	namespace="tags"
+	title="Tags Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:tags:Tags
+			name="Tags"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Tag" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Unordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:tags:Tag
+			name="Tag"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=codex:domain:tags:requires-tag
+			title="Tags must contain at least one Tag"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Tags" />
+			</Targets>
+
+			<Rule>
+				<ChildConstraint conceptSelector="Tag" type=$RequiresChildConcept />
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

@@ -1,0 +1,19 @@
+<LocalizationBundle
+	schema=codex:domain:monetary-amount
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization
+		identifier="MonetaryAmount"
+		label="Monetary Amount"
+		labelOther="Monetary Amounts"
+	/>
+
+	<TraitLocalization identifier="amount" label="Amount" labelOther="Amounts">
+		The numeric monetary value.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="currency" label="Currency" labelOther="Currencies">
+		The currency of the monetary amount.
+	</TraitLocalization>
+</LocalizationBundle>

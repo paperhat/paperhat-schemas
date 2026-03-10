@@ -1,0 +1,73 @@
+<RelationType
+	id="urn:paperhat:relation-type:project"
+	name="Project"
+>
+	<Attribute
+		id="urn:paperhat:relation-type:project:attribute:name"
+		name="name"
+		valueType=$Text
+		required=true
+	/>
+
+	<Attribute
+		id="urn:paperhat:relation-type:project:attribute:budget"
+		name="budget"
+		valueType=$Number
+		required=true
+	/>
+</RelationType>
+
+<RelationType
+	id="urn:paperhat:relation-type:employee"
+	name="Employee"
+>
+	<Attribute
+		id="urn:paperhat:relation-type:employee:attribute:employeeId"
+		name="employeeId"
+		valueType=$Text
+		required=true
+	/>
+
+	<Attribute
+		id="urn:paperhat:relation-type:employee:attribute:projects"
+		name="projects"
+		valueType=$IriReference
+		required=true
+	/>
+</RelationType>
+
+<RelationInstance
+	id="urn:paperhat:relation:project:portfolio-a"
+	for="urn:paperhat:relation-type:project"
+	name="Project portfolio A"
+>
+	<Tuple id="urn:paperhat:relation:project:portfolio-a:tuple:1">
+		<Binding
+			target="urn:paperhat:relation-type:project:attribute:name"
+			value="Hydra"
+		/>
+
+		<Binding
+			target="urn:paperhat:relation-type:project:attribute:budget"
+			value=125000.0
+		/>
+	</Tuple>
+</RelationInstance>
+
+<RelationInstance
+	id="urn:paperhat:relation:employee:engineering"
+	for="urn:paperhat:relation-type:employee"
+	name="Engineering employees"
+>
+	<Tuple id="urn:paperhat:relation:employee:engineering:tuple:1">
+		<Binding
+			target="urn:paperhat:relation-type:employee:attribute:employeeId"
+			value="E-100"
+		/>
+
+		<Binding
+			target="urn:paperhat:relation-type:employee:attribute:projects"
+			value="urn:paperhat:relation:project:portfolio-a"
+		/>
+	</Tuple>
+</RelationInstance>

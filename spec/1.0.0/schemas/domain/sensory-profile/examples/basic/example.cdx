@@ -1,0 +1,9 @@
+<SensoryProfile>
+	<TasteNote taste=$Sweet intensity=$Moderate />
+
+	<AromaNote aroma=$Fruity intensity=$Pronounced />
+
+	<MouthfeelNote mouthfeel=$Silky intensity=$Mild />
+
+	<desc:Description>A bright fruit-driven profile with a smooth finish.</desc:Description>
+</SensoryProfile>

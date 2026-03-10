@@ -1,0 +1,187 @@
+<TokenVocabulary
+	id=codex:vocabulary:bcp-47-languages
+	version="1.0.0"
+	title="BCP 47 Language Tags"
+	description="Language identification tags from IETF BCP 47 (RFC 5646)."
+	closedVocabulary=true
+>
+	<TokenDefinition token=$af label="Afrikaans" />
+
+	<TokenDefinition token=$am label="Amharic" />
+
+	<TokenDefinition token=$ar label="Arabic" />
+
+	<TokenDefinition token=$az label="Azerbaijani" />
+
+	<TokenDefinition token=$be label="Belarusian" />
+
+	<TokenDefinition token=$bg label="Bulgarian" />
+
+	<TokenDefinition token=$bn label="Bengali" />
+
+	<TokenDefinition token=$bs label="Bosnian" />
+
+	<TokenDefinition token=$ca label="Catalan" />
+
+	<TokenDefinition token=$cs label="Czech" />
+
+	<TokenDefinition token=$cy label="Welsh" />
+
+	<TokenDefinition token=$da label="Danish" />
+
+	<TokenDefinition token=$de label="German" />
+
+	<TokenDefinition token=$el label="Greek" />
+
+	<TokenDefinition token=$en label="English" />
+
+	<TokenDefinition token=$en-AU label="English (Australia)" />
+
+	<TokenDefinition token=$en-CA label="English (Canada)" />
+
+	<TokenDefinition token=$en-GB label="English (United Kingdom)" />
+
+	<TokenDefinition token=$en-IN label="English (India)" />
+
+	<TokenDefinition token=$en-US label="English (United States)" />
+
+	<TokenDefinition token=$es label="Spanish" />
+
+	<TokenDefinition token=$es-419 label="Spanish (Latin America)" />
+
+	<TokenDefinition token=$et label="Estonian" />
+
+	<TokenDefinition token=$eu label="Basque" />
+
+	<TokenDefinition token=$fa label="Persian" />
+
+	<TokenDefinition token=$fi label="Finnish" />
+
+	<TokenDefinition token=$fil label="Filipino" />
+
+	<TokenDefinition token=$fr label="French" />
+
+	<TokenDefinition token=$fr-CA label="French (Canada)" />
+
+	<TokenDefinition token=$ga label="Irish" />
+
+	<TokenDefinition token=$gl label="Galician" />
+
+	<TokenDefinition token=$gu label="Gujarati" />
+
+	<TokenDefinition token=$ha label="Hausa" />
+
+	<TokenDefinition token=$he label="Hebrew" />
+
+	<TokenDefinition token=$hi label="Hindi" />
+
+	<TokenDefinition token=$hr label="Croatian" />
+
+	<TokenDefinition token=$hu label="Hungarian" />
+
+	<TokenDefinition token=$hy label="Armenian" />
+
+	<TokenDefinition token=$id label="Indonesian" />
+
+	<TokenDefinition token=$ig label="Igbo" />
+
+	<TokenDefinition token=$is label="Icelandic" />
+
+	<TokenDefinition token=$it label="Italian" />
+
+	<TokenDefinition token=$ja label="Japanese" />
+
+	<TokenDefinition token=$ka label="Georgian" />
+
+	<TokenDefinition token=$kk label="Kazakh" />
+
+	<TokenDefinition token=$km label="Khmer" />
+
+	<TokenDefinition token=$kn label="Kannada" />
+
+	<TokenDefinition token=$ko label="Korean" />
+
+	<TokenDefinition token=$lo label="Lao" />
+
+	<TokenDefinition token=$lt label="Lithuanian" />
+
+	<TokenDefinition token=$lv label="Latvian" />
+
+	<TokenDefinition token=$mk label="Macedonian" />
+
+	<TokenDefinition token=$ml label="Malayalam" />
+
+	<TokenDefinition token=$mn label="Mongolian" />
+
+	<TokenDefinition token=$mr label="Marathi" />
+
+	<TokenDefinition token=$ms label="Malay" />
+
+	<TokenDefinition token=$my label="Burmese" />
+
+	<TokenDefinition token=$nb label="Norwegian Bokmal" />
+
+	<TokenDefinition token=$ne label="Nepali" />
+
+	<TokenDefinition token=$nl label="Dutch" />
+
+	<TokenDefinition token=$nn label="Norwegian Nynorsk" />
+
+	<TokenDefinition token=$pa label="Punjabi" />
+
+	<TokenDefinition token=$pl label="Polish" />
+
+	<TokenDefinition token=$ps label="Pashto" />
+
+	<TokenDefinition token=$pt label="Portuguese" />
+
+	<TokenDefinition token=$pt-BR label="Portuguese (Brazil)" />
+
+	<TokenDefinition token=$pt-PT label="Portuguese (Portugal)" />
+
+	<TokenDefinition token=$ro label="Romanian" />
+
+	<TokenDefinition token=$ru label="Russian" />
+
+	<TokenDefinition token=$si label="Sinhala" />
+
+	<TokenDefinition token=$sk label="Slovak" />
+
+	<TokenDefinition token=$sl label="Slovenian" />
+
+	<TokenDefinition token=$so label="Somali" />
+
+	<TokenDefinition token=$sq label="Albanian" />
+
+	<TokenDefinition token=$sr label="Serbian" />
+
+	<TokenDefinition token=$sv label="Swedish" />
+
+	<TokenDefinition token=$sw label="Swahili" />
+
+	<TokenDefinition token=$ta label="Tamil" />
+
+	<TokenDefinition token=$te label="Telugu" />
+
+	<TokenDefinition token=$th label="Thai" />
+
+	<TokenDefinition token=$tr label="Turkish" />
+
+	<TokenDefinition token=$uk label="Ukrainian" />
+
+	<TokenDefinition token=$ur label="Urdu" />
+
+	<TokenDefinition token=$uz label="Uzbek" />
+
+	<TokenDefinition token=$vi label="Vietnamese" />
+
+	<TokenDefinition token=$yo label="Yoruba" />
+
+	<TokenDefinition token=$zh label="Chinese" />
+
+	<TokenDefinition token=$zh-Hans label="Chinese (Simplified)" />
+
+	<TokenDefinition token=$zh-Hant label="Chinese (Traditional)" />
+
+	<TokenDefinition token=$zu label="Zulu" />
+</TokenVocabulary>

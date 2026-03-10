@@ -1,0 +1,42 @@
+<Event
+	name="Summer Jazz in the Park"
+	startDate={2026-07-12}
+	eventStatus=$scheduled
+	eventAttendanceMode=$offline
+>
+	<Description>
+		Free outdoor jazz concert featuring local and international artists.
+	</Description>
+
+	<Location
+		locationKind=$venue
+		name="Stanley Park Pavilion"
+		locality="Vancouver"
+		region="British Columbia"
+		country="Canada"
+	/>
+
+	<MonetaryAmount amount=0 currency=$CAD />
+
+	<Duration value=3 unit=$hours />
+
+	<Rating ratingValue=4.7 bestRating=5 ratingCount=238 />
+
+	<Tags>
+		<Tag>
+			music
+		</Tag>
+
+		<Tag>
+			jazz
+		</Tag>
+
+		<Tag>
+			outdoor
+		</Tag>
+
+		<Tag>
+			free
+		</Tag>
+	</Tags>
+</Event>

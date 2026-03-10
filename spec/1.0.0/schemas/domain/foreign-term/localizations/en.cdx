@@ -1,0 +1,32 @@
+<LocalizationBundle
+	schema=codex:domain:foreign-term
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="ForeignTerms" label="Foreign Terms" />
+
+	<ConceptLocalization identifier="ForeignTerm" label="Foreign Term" labelOther="Foreign Terms" />
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		The lookup token used for Gloss span binding.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="language" label="Language" labelOther="Languages">
+		The BCP-47 language code of the foreign term.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="pronunciation" label="Pronunciation" labelOther="Pronunciations">
+		The IPA pronunciation of the term.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="translation" label="Translation" labelOther="Translations">
+		A translation of the term into the document's language.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:foreign-term:requires-term"
+		label="Requires at least one foreign term"
+	>
+		A ForeignTerms container must contain at least one ForeignTerm.
+	</ConstraintLocalization>
+</LocalizationBundle>

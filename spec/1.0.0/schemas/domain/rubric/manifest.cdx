@@ -1,0 +1,18 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="e7eedb3a3518e50430712ff9dbd4cd9f812a5b093a7c5797e9473695e6e8166d"
+	copyright="Copyright 2026 Paperhat"
+	description="A structured heading block containing title, subtitle, teaser, and difficulty metadata."
+	license="Apache-2.0"
+	packageName="paperhat-rubric"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+>
+	<PackageDependency
+		packageName="paperhat-text"
+		closureHash="703472ba80a5f88685e7a6d604b16d31dfb06a81186c58bdd378aac55a53e897"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</DomainPackageManifest>

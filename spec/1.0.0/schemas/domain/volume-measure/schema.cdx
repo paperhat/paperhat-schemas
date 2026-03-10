@@ -1,0 +1,47 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A quantitative measurement of volume or capacity, with unit constrained to the units-volume vocabulary."
+	id=codex:domain:paperhat-volume-measure
+	namespace="volumemeasure"
+	title="Volume Measure Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:paperhat-volume-measure:VolumeMeasure
+			name="VolumeMeasure"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="value" />
+
+				<RequiresTrait name="unit" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueTypes=[$Number, $Range<$Number>]
+			id=codex:domain:paperhat-volume-measure:trait:value
+			name="value"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:paperhat-volume-measure:trait:unit
+			name="unit"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Barrel, $Bushel, $Centiliter, $CubicCentimeter, $CubicFoot, $CubicInch, $CubicMeter, $CubicYard, $Cup, $FluidOunce, $Gallon, $ImperialFluidOunce, $ImperialGallon, $ImperialPint, $ImperialQuart, $Liter, $Milliliter, $Pint, $Quart, $Tablespoon, $Teaspoon] />
+			</AllowedValues>
+		</TraitDefinition>
+	</TraitDefinitions>
+</Schema>

@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="ed5d197af39344fca4c606ad8e4e3e1a78a253e7687682d07b28232a0a806ed5"
+	copyright="Copyright 2026 Paperhat"
+	description="A condensed restatement of what a document or resource says, distinct from a description of what it is about."
+	license="Apache-2.0"
+	packageName="paperhat-summary"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

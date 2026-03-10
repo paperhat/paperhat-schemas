@@ -1,0 +1,36 @@
+<LocalizationBundle
+	schema=codex:domain:code
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="CodeNotation" label="Code Notation" />
+
+	<ConceptLocalization identifier="Code" label="Code" />
+
+	<ConceptLocalization identifier="KeyboardInput" label="Keyboard Input" />
+
+	<ConceptLocalization identifier="SampleOutput" label="Sample Output" />
+
+	<ConceptLocalization identifier="Variable" label="Variable" labelOther="Variables" />
+
+	<ConceptLocalization identifier="CodeBlock" label="Code Block" labelOther="Code Blocks" />
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		The lookup token used for Gloss span binding.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="text" label="Text">
+		Display text for label-less Gloss references.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="language" label="Language" labelOther="Languages">
+		The programming or markup language.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:code:requires-child"
+		label="Requires at least one code notation concept"
+	>
+		A CodeNotation container must contain at least one child concept.
+	</ConstraintLocalization>
+</LocalizationBundle>

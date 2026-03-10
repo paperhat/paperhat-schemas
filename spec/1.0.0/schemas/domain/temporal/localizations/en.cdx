@@ -1,0 +1,52 @@
+<LocalizationBundle
+	schema=codex:domain:temporal
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="TemporalAnnotations" label="Temporal Annotations" />
+
+	<ConceptLocalization identifier="PlainDate" label="Date" labelOther="Dates" />
+
+	<ConceptLocalization identifier="PlainTime" label="Time" labelOther="Times" />
+
+	<ConceptLocalization identifier="PlainDateTime" label="Date and Time" labelOther="Dates and Times" />
+
+	<ConceptLocalization identifier="PlainYearMonth" label="Year and Month" />
+
+	<ConceptLocalization identifier="PlainMonthDay" label="Month and Day" />
+
+	<ConceptLocalization identifier="YearWeek" label="Year and Week" />
+
+	<ConceptLocalization identifier="Instant" label="Instant" labelOther="Instants" />
+
+	<ConceptLocalization identifier="ZonedDateTime" label="Zoned Date and Time" />
+
+	<ConceptLocalization identifier="Duration" label="Duration" labelOther="Durations" />
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		The lookup token used for Gloss span binding.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="value" label="Value" labelOther="Values">
+		The temporal value.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="text" label="Text">
+		Display text override for Gloss references.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="format" label="Format" labelOther="Formats">
+		The display format for the temporal value.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="language" label="Language" labelOther="Languages">
+		The locale for formatting the temporal value.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:temporal:requires-child"
+		label="Requires at least one temporal annotation"
+	>
+		A TemporalAnnotations container must contain at least one temporal concept.
+	</ConstraintLocalization>
+</LocalizationBundle>

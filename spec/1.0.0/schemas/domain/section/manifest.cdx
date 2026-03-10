@@ -1,0 +1,42 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="9c49168789d463f8f021f890afca78b78044f0b02de75dd724e286faeaf8704a"
+	copyright="Copyright 2026 Paperhat"
+	description="An ordered subdivision of a long-form document, with an optional heading. Sections nest recursively."
+	license="Apache-2.0"
+	packageName="paperhat-section"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+>
+	<PackageDependency
+		packageName="paperhat-text"
+		closureHash="703472ba80a5f88685e7a6d604b16d31dfb06a81186c58bdd378aac55a53e897"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-rubric"
+		closureHash="e7eedb3a3518e50430712ff9dbd4cd9f812a5b093a7c5797e9473695e6e8166d"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-description"
+		closureHash="8a6c1a383e84796c18cb6c612ec676134930c3192dfd8bfe93bd0263cd8b5d65"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-list"
+		closureHash="37316dfe7f2d350765a454f11b475d85a7bf5c09a7b89f0398418725a86ea088"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-notes"
+		closureHash="22c5d0faccd4a541f902916b0b479d5d3417b4e4412f72dd65e24d7650ffae1c"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</DomainPackageManifest>

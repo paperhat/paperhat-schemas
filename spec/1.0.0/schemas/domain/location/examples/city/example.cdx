@@ -1,0 +1,6 @@
+<Location
+	locationKind=$residence
+	locality="Portland"
+	region="Oregon"
+	country="United States"
+/>

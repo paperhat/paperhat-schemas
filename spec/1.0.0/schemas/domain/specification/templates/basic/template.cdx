@@ -1,0 +1,28 @@
+[Minimal specification template with one section and one normative requirement.]
+<Specification
+	title="Specification Title"
+	normative=true
+	locked=false
+	version=1.0.0
+	editor="Editor Name"
+>
+	<Section
+		id=urn:example:spec#section/introduction
+		key=~introduction
+		title="Introduction"
+		conformance=$Normative
+		division=$Body
+	>
+		<Paragraph>
+			State the purpose and scope of the specification.
+		</Paragraph>
+
+		<Requirement
+			id=urn:example:spec#requirement/deterministic-behavior
+			key=~deterministic-behavior
+			modality=$Must
+		>
+			Processors MUST produce deterministic output for identical inputs.
+		</Requirement>
+	</Section>
+</Specification>

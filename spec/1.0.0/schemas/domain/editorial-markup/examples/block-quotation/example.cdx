@@ -1,0 +1,13 @@
+<BlockQuotation author="William Shakespeare" source="Hamlet, Act 3, Scene 1">
+	To be, or not to be, that is the question.
+</BlockQuotation>
+
+<PullQuote source="paragraph 3">
+	The results exceeded all expectations.
+</PullQuote>
+
+<EditorialMarkup>
+	<Quote key=~q1 author="Marcus Aurelius" source="Meditations">You have power over your mind, not outside events. Realise this, and you will find strength.</Quote>
+	<Redaction key=~red1 reason="classified" />
+	<Spoiler key=~spoiler1 />
+</EditorialMarkup>

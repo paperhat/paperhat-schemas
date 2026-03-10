@@ -1,0 +1,13 @@
+<EntityShapeDefinition
+	id=urn:example:shape:PersonWithAge
+	targetConcept="Person"
+	description="Derives an age trait from birthDate."
+>
+	<Derivation name="DeriveAge" targetTrait="age" outputShape=$Number derivationClass=$Materialize>
+		<YearsBetween>
+			<X><Field name="birthDate" /></X>
+			<Y><NowInstant /></Y>
+		</YearsBetween>
+	</Derivation>
+
+</EntityShapeDefinition>

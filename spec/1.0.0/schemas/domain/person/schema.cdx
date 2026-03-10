@@ -1,0 +1,86 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A person, real or fictional, composed from leaf concepts for names, contact points, identifiers, and locations."
+	id=codex:domain:person
+	namespace="person"
+	title="Person Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace=pname reference=urn:cdx:sha256:9799fb14ae695fdfbf6ba13f5e71a9b9b0a6863e4d75822e42e14e5adcf9b538 />
+
+		<SchemaImport namespace=contact reference=urn:cdx:sha256:f66ac6b540b849d0f20bed2452630e2a5d0ee961e286b2b30f07d6a6aa122fe2 />
+
+		<SchemaImport namespace=ident reference=urn:cdx:sha256:a220d2034a4faa1a81d8102265c1fef36576871a0ba25ac31500abac7afd5907 />
+
+		<SchemaImport namespace=loc reference=urn:cdx:sha256:df456110f9e2cb2b0524011e6fd6892f345dadc412a7b078699f9aab4fd5bf55 />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=codex:domain:person:Person
+			name="Person"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<AllowsTrait name="gender" />
+
+				<AllowsTrait name="birthDate" />
+
+				<AllowsTrait name="deathDate" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="pname:PersonName" />
+
+				<AllowsChildConcept conceptSelector="contact:ContactPoint" />
+
+				<AllowsChildConcept conceptSelector="ident:Identifier" />
+
+				<AllowsChildConcept conceptSelector="loc:Location" />
+			</ChildRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:person:trait:gender
+			name="gender"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Date
+			id=codex:domain:person:trait:birthDate
+			name="birthDate"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Date
+			id=codex:domain:person:trait:deathDate
+			name="deathDate"
+		/>
+	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=codex:domain:person:requires-name
+			title="Person must have at least one PersonName"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Person" />
+			</Targets>
+
+			<Rule>
+				<ChildConstraint conceptSelector="pname:PersonName" type=$RequiresChildConcept />
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

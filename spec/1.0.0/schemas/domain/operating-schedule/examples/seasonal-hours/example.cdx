@@ -1,0 +1,8 @@
+<OperatingSchedule
+	dayOfWeek=$Monday
+	opens="08:00"
+	closes="20:00"
+	validFrom={2026-06-01}
+	validThrough={2026-08-31}
+	scheduleNote="Extended summer hours"
+/>

@@ -1,0 +1,335 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Temporal annotations for text spans: dates, times, datetimes, durations, and instants with formatting and internationalisation support."
+	id=codex:domain:temporal
+	namespace="temporal"
+	title="Temporal Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:temporal:TemporalAnnotations
+			name="TemporalAnnotations"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="PlainDate" />
+
+				<AllowsChildConcept conceptSelector="PlainTime" />
+
+				<AllowsChildConcept conceptSelector="PlainDateTime" />
+
+				<AllowsChildConcept conceptSelector="PlainYearMonth" />
+
+				<AllowsChildConcept conceptSelector="PlainMonthDay" />
+
+				<AllowsChildConcept conceptSelector="YearWeek" />
+
+				<AllowsChildConcept conceptSelector="Instant" />
+
+				<AllowsChildConcept conceptSelector="ZonedDateTime" />
+
+				<AllowsChildConcept conceptSelector="Duration" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Unordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:temporal:PlainDate
+			name="PlainDate"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="value" />
+
+				<AllowsTrait name="text" />
+
+				<AllowsTrait name="format" />
+
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:temporal:PlainTime
+			name="PlainTime"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="value" />
+
+				<AllowsTrait name="text" />
+
+				<AllowsTrait name="format" />
+
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:temporal:PlainDateTime
+			name="PlainDateTime"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="value" />
+
+				<AllowsTrait name="text" />
+
+				<AllowsTrait name="format" />
+
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:temporal:PlainYearMonth
+			name="PlainYearMonth"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="value" />
+
+				<AllowsTrait name="text" />
+
+				<AllowsTrait name="format" />
+
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:temporal:PlainMonthDay
+			name="PlainMonthDay"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="value" />
+
+				<AllowsTrait name="text" />
+
+				<AllowsTrait name="format" />
+
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:temporal:YearWeek
+			name="YearWeek"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="value" />
+
+				<AllowsTrait name="text" />
+
+				<AllowsTrait name="format" />
+
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:temporal:Instant
+			name="Instant"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="value" />
+
+				<AllowsTrait name="text" />
+
+				<AllowsTrait name="format" />
+
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:temporal:ZonedDateTime
+			name="ZonedDateTime"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="value" />
+
+				<AllowsTrait name="text" />
+
+				<AllowsTrait name="format" />
+
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:temporal:Duration
+			name="Duration"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="value" />
+
+				<AllowsTrait name="text" />
+
+				<AllowsTrait name="format" />
+
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=codex:domain:temporal:trait:key
+			name="key"
+		/>
+
+		<TraitDefinition
+			defaultValueTypes=[$Date, $Time, $DateTime, $YearMonth, $MonthDay, $YearWeek, $Instant, $ZonedDateTime, $Duration]
+			id=codex:domain:temporal:trait:value
+			name="value"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:temporal:trait:text
+			name="text"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:temporal:trait:format
+			name="format"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:temporal:trait:language
+			name="language"
+		/>
+	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=codex:domain:temporal:requires-child
+			title="TemporalAnnotations must contain at least one child"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="TemporalAnnotations" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<ChildConstraint conceptSelector="PlainDate" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="PlainTime" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="PlainDateTime" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="PlainYearMonth" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="PlainMonthDay" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="YearWeek" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="Instant" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="ZonedDateTime" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="Duration" type=$RequiresChildConcept />
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

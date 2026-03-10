@@ -1,0 +1,12 @@
+<SystemPackageManifest
+	author="Paperhat"
+	closureHash="a665a57b62f30ef1829af4c1ec4f6dc4058ca9ca52bb7e71b5ac2127504279c0"
+	copyright="Copyright 2026 Paperhat"
+	description="Defines localization bundles that provide human-readable labels and descriptions for schema elements in any natural language."
+	license="Apache-2.0"
+	packageName="paperhat-localization"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

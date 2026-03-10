@@ -1,0 +1,12 @@
+<VocabularyPackageManifest
+	author="Paperhat"
+	closureHash="81a270838d6611c80e2600ec547f53597691b66fa83300a7b98852c6dbf1442e"
+	copyright="Copyright 2026 Paperhat"
+	description="Broad culinary and nutritional categories for classifying foods and comestibles."
+	license="Apache-2.0"
+	packageName="food-categories"
+	packageVersion="1.0.0"
+	primaryDocument="vocabulary.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

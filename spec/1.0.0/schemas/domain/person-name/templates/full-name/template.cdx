@@ -1,0 +1,9 @@
+[Full decomposed name. Remove traits you do not need; at least given or family is required.]
+<PersonName
+	nameKind=$legal
+	given=""
+	middle=""
+	family=""
+	title=""
+	suffix=""
+/>

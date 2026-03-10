@@ -1,0 +1,60 @@
+<Essay title="The Epistemic Value of Failure in Laboratory Science">
+	<DocumentMetadata>
+		<Work
+			author="Dr. Rena Okafor"
+			datePublished={2026-01-12}
+			language=$en
+			status=$published
+			license="CC-BY-4.0"
+		/>
+
+		<Description language=$en>
+			An essay examining how failed experiments contribute to scientific
+			knowledge more than the publication record suggests.
+		</Description>
+
+		<Tags>
+			<Tag>
+				philosophy of science
+			</Tag>
+
+			<Tag>
+				epistemology
+			</Tag>
+
+			<Tag>
+				replication crisis
+			</Tag>
+		</Tags>
+	</DocumentMetadata>
+
+	<Narrative>
+		<Section>
+			<Rubric>
+				<Title>
+					Introduction
+				</Title>
+			</Rubric>
+
+			<Paragraph>
+				The published record of science is a record of success. Journals report
+				what worked, not what did not. This creates a distorted picture of how
+				knowledge actually accumulates.
+			</Paragraph>
+		</Section>
+
+		<Section>
+			<Rubric>
+				<Title>
+					Failure as Signal
+				</Title>
+			</Rubric>
+
+			<Paragraph>
+				A failed experiment, properly documented, narrows the space of plausible
+				hypotheses just as effectively as a successful one. The information
+				content is comparable; only the incentive to publish differs.
+			</Paragraph>
+		</Section>
+	</Narrative>
+</Essay>

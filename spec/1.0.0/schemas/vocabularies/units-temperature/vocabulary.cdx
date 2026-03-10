@@ -1,0 +1,15 @@
+<TokenVocabulary
+	id=codex:vocabulary:units-temperature
+	version="1.0.0"
+	title="Units of Temperature"
+	description="Units of measurement for temperature."
+	closedVocabulary=true
+>
+	<TokenDefinition token=$Celsius label="C" />
+
+	<TokenDefinition token=$Fahrenheit label="F" />
+
+	<TokenDefinition token=$Kelvin label="K" />
+
+	<TokenDefinition token=$Rankine label="R" />
+</TokenVocabulary>

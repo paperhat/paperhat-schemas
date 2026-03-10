@@ -1,0 +1,13 @@
+<PersonName
+	nameKind=$birth
+	given="Alexandrina"
+	middle="Victoria"
+	family="Hanover"
+/>
+
+<PersonName
+	nameKind=$regnal
+	full="Victoria"
+	effectiveFrom={1837-06-20}
+	effectiveTo={1901-01-22}
+/>

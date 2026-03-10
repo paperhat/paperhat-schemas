@@ -1,0 +1,19 @@
+<Specification
+	title="Invalid Requirement Modality"
+	normative=true
+	locked=true
+	version=1.0.0
+	editor="Paperhat"
+>
+	<Section
+		id=urn:example:invalid-modality-rfc2119#section/purpose
+		key=~purpose
+		title="Purpose"
+		conformance=$Normative
+		division=$Body
+	>
+		<Requirement modality=$MustAlways>
+			Requirement modality token must be constrained to the RFC 2119 set.
+		</Requirement>
+	</Section>
+</Specification>

@@ -1,0 +1,15 @@
+<LocalizationBundle
+	schema=codex:domain:identifier
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Identifier" label="Identifier" labelOther="Identifiers" />
+
+	<TraitLocalization identifier="scheme" label="Scheme" labelOther="Schemes">
+		The identification scheme or namespace for the identifier.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="value" label="Value" labelOther="Values">
+		The identifier value within the scheme.
+	</TraitLocalization>
+</LocalizationBundle>

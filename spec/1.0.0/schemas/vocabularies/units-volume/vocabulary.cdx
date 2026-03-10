@@ -1,0 +1,49 @@
+<TokenVocabulary
+	id=codex:vocabulary:units-volume
+	version="1.0.0"
+	title="Units of Volume"
+	description="Units of measurement for volume and capacity, including cooking measures."
+	closedVocabulary=true
+>
+	<TokenDefinition token=$Barrel label="bbl" />
+
+	<TokenDefinition token=$Bushel label="bu" />
+
+	<TokenDefinition token=$Centiliter label="cL" />
+
+	<TokenDefinition token=$CubicCentimeter label="cm3" />
+
+	<TokenDefinition token=$CubicFoot label="ft3" />
+
+	<TokenDefinition token=$CubicInch label="in3" />
+
+	<TokenDefinition token=$CubicMeter label="m3" />
+
+	<TokenDefinition token=$CubicYard label="yd3" />
+
+	<TokenDefinition token=$Cup label="cup" />
+
+	<TokenDefinition token=$FluidOunce label="fl oz" />
+
+	<TokenDefinition token=$Gallon label="gal" />
+
+	<TokenDefinition token=$ImperialFluidOunce label="imp fl oz" />
+
+	<TokenDefinition token=$ImperialGallon label="imp gal" />
+
+	<TokenDefinition token=$ImperialPint label="imp pt" />
+
+	<TokenDefinition token=$ImperialQuart label="imp qt" />
+
+	<TokenDefinition token=$Liter label="L" />
+
+	<TokenDefinition token=$Milliliter label="mL" />
+
+	<TokenDefinition token=$Pint label="pt" />
+
+	<TokenDefinition token=$Quart label="qt" />
+
+	<TokenDefinition token=$Tablespoon label="tbsp" />
+
+	<TokenDefinition token=$Teaspoon label="tsp" />
+</TokenVocabulary>

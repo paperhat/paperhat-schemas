@@ -1,0 +1,19 @@
+<TokenVocabulary
+	id=codex:vocabulary:units-speed
+	version="1.0.0"
+	title="Units of Speed"
+	description="Units of measurement for speed and velocity."
+	closedVocabulary=true
+>
+	<TokenDefinition token=$FeetPerSecond label="ft/s" />
+
+	<TokenDefinition token=$KilometersPerHour label="km/h" />
+
+	<TokenDefinition token=$Knot label="kn" />
+
+	<TokenDefinition token=$Mach label="Mach" />
+
+	<TokenDefinition token=$MetersPerSecond label="m/s" />
+
+	<TokenDefinition token=$MilesPerHour label="mph" />
+</TokenVocabulary>

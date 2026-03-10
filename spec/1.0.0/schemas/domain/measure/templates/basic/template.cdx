@@ -1,0 +1,2 @@
+[Both value and unit are required. Units are open tokens constrained by the consuming schema, e.g. $kg, $cm, $celsius.]
+<Measure value=0 unit=$ />

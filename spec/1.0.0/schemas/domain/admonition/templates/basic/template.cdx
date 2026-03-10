@@ -1,0 +1,4 @@
+[Define admonition markers for Gloss span binding.]
+<Admonitions>
+	<Warning key=~warn />
+</Admonitions>

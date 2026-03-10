@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="9a48adf78a66cf5e7696478924eae02b08b0a0dba6978db0a52feafc419f51a2"
+	copyright="Copyright 2026 Paperhat"
+	description="An ordered container for reusable advisory content such as cooking tips, preparation hints, or handling guidance."
+	license="Apache-2.0"
+	packageName="paperhat-tips"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

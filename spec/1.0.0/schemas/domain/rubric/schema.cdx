@@ -1,0 +1,115 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A structured heading block containing title, subtitle, teaser, and difficulty metadata."
+	id=codex:domain:rubric
+	namespace="rubric"
+	title="Rubric Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace=text reference=urn:cdx:sha256:0d835975e6ccabdab7c2204e9b1d4e19baf24108e45a8f240adea3a2684a5fd0 />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:rubric:Rubric
+			name="Rubric"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Title" max=1 min=1 />
+
+				<AllowsChildConcept conceptSelector="Subtitle" max=1 />
+
+				<AllowsChildConcept conceptSelector="text:Teaser" max=1 />
+
+				<AllowsChildConcept conceptSelector="Difficulty" max=1 />
+			</ChildRules>
+
+			<TraitRules>
+				<AllowsTrait name="timeToRead" />
+
+				<AllowsTrait name="publishedOn" />
+
+				<AllowsTrait name="lastModifiedAt" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:rubric:Subtitle
+			name="Subtitle"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:rubric:Difficulty
+			name="Difficulty"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="scale" />
+
+				<RequiresTrait name="value" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:rubric:trait:language
+			name="language"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Duration
+			id=codex:domain:rubric:trait:timeToRead
+			name="timeToRead"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Date
+			id=codex:domain:rubric:trait:publishedOn
+			name="publishedOn"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$DateTime
+			id=codex:domain:rubric:trait:lastModifiedAt
+			name="lastModifiedAt"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:rubric:trait:scale
+			name="scale"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:rubric:trait:value
+			name="value"
+		/>
+	</TraitDefinitions>
+</Schema>

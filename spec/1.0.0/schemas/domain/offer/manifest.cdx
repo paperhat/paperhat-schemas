@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="824c9cd8c7fd8d2f0be950d6088ba8099bc1ee9faee3fb49561220da20e474e2"
+	copyright="Copyright 2026 Paperhat"
+	description="A commercial offer with price, currency, and optional availability and validity details."
+	license="Apache-2.0"
+	packageName="paperhat-offer"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

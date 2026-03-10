@@ -1,0 +1,13 @@
+<EntityShapeDefinition
+	id=urn:example:shape:PersonWithFullName
+	targetConcept="Person"
+	description="Derives a fullName trait from firstName and lastName."
+>
+	<Derivation name="DeriveFullName" targetTrait="fullName" outputShape=$Text derivationClass=$Materialize>
+		<Concat separator=" ">
+			<Field name="firstName" />
+			<Field name="lastName" />
+		</Concat>
+	</Derivation>
+
+</EntityShapeDefinition>

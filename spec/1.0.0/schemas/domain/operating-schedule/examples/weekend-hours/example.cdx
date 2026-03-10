@@ -1,0 +1,6 @@
+<OperatingSchedule
+	dayOfWeek=$Saturday
+	opens="10:00"
+	closes="16:00"
+	scheduleNote="Closed on public holidays"
+/>

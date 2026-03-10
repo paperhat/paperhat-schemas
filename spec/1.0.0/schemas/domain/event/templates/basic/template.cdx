@@ -1,0 +1,4 @@
+[Minimal event with name and date.]
+<Event name="" startDate={}>
+	<Location locality="" country="" />
+</Event>

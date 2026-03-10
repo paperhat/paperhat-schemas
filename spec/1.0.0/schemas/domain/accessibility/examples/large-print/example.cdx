@@ -1,0 +1,6 @@
+<Accessibility
+	accessMode=$textual
+	accessibilityFeature="largePrint"
+	accessibilityHazard="none"
+	accessibilitySummary="Available in large print format"
+/>

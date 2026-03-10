@@ -1,0 +1,5 @@
+[Email contact point. Set contactKind to $work, $personal, $emergency, or other domain token.]
+<ContactPoint
+	contactKind=$work
+	emailAddress=""
+/>

@@ -1,0 +1,84 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="ee92bf706b67c18dd0048081c5fa55f7308acde35184d34064276c48a3d835e1"
+	copyright="Copyright 2026 Paperhat"
+	description="A product or service offered for sale, rental, or subscription, composed from leaf concepts for pricing, identification, measurement, and reviews."
+	license="Apache-2.0"
+	packageName="paperhat-product"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+>
+	<PackageDependency
+		packageName="paperhat-description"
+		closureHash="8a6c1a383e84796c18cb6c612ec676134930c3192dfd8bfe93bd0263cd8b5d65"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-offer"
+		closureHash="824c9cd8c7fd8d2f0be950d6088ba8099bc1ee9faee3fb49561220da20e474e2"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-identifier"
+		closureHash="404961f3ac5baaafcdbb455482e979e022270b90bf4b8698f4ae0382dd6c9fc9"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-rating"
+		closureHash="e0644542b191821180e7aad0976e4021ee3ad960be0cb650a11349580f5cf482"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-measure"
+		closureHash="e6aa92b9f83fbacec3c75194647f4ccf40f6c06f6d07a7d6ae04a51abf0b9a8f"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-monetary-amount"
+		closureHash="48be7fba6defcfd821475e49e9fcecd053957bc5183881d89dfae2abcfd6fafc"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-tags"
+		closureHash="7460ed89db9b5749b1be28962fbf1996092be3a59ab4e3c5a8b0e11afc9b48ab"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-work"
+		closureHash="90bc5c9658e63056858e6c23d42b4b85fe1fa90076306a8a406fba06db305e1b"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-audience"
+		closureHash="5c594e7507da828801b4262505ca7f29096dc1398cfe4dcf6d0e769e1dda4e5d"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-accessibility"
+		closureHash="4b66332d7f8c34818e7a711bdaa32fb6baa62bfbf14190c3d20f38e0db07636d"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-nutrition-information"
+		closureHash="c8af233da8cc7516971f545cb4a01fd0eaa050d78ae4c82f1722790b13d77322"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-material"
+		closureHash="a28946f724340ced892cc7f79ce2cd858b403e7852bef66b27366ff3614b971d"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</DomainPackageManifest>

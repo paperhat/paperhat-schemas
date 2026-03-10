@@ -1,0 +1,55 @@
+<Specification
+	title="RFC 2119 Modalities Validation"
+	normative=true
+	locked=false
+	version=0.1.0
+	editor="Paperhat"
+>
+	<Section
+		id=urn:example:rfc2119-modalities-valid#section/requirements
+		key=~requirements
+		title="Requirements"
+		conformance=$Normative
+		division=$Body
+	>
+		<Requirement modality=$Must requirementId=~mustRequirement>
+			Implementations MUST support this.
+		</Requirement>
+
+		<Requirement modality=$MustNot requirementId=~mustNotRequirement>
+			Implementations MUST NOT violate this.
+		</Requirement>
+
+		<Requirement modality=$Shall requirementId=~shallRequirement>
+			Implementations SHALL follow this.
+		</Requirement>
+
+		<Requirement modality=$ShallNot requirementId=~shallNotRequirement>
+			Implementations SHALL NOT deviate from this.
+		</Requirement>
+
+		<Requirement modality=$Should requirementId=~shouldRequirement>
+			Implementations SHOULD prefer this.
+		</Requirement>
+
+		<Requirement modality=$ShouldNot requirementId=~shouldNotRequirement>
+			Implementations SHOULD NOT do this.
+		</Requirement>
+
+		<Requirement modality=$May requirementId=~mayRequirement>
+			Implementations MAY choose this.
+		</Requirement>
+
+		<Requirement modality=$Required requirementId=~requiredRequirement>
+			This capability is REQUIRED.
+		</Requirement>
+
+		<Requirement modality=$Recommended requirementId=~recommendedRequirement>
+			This capability is RECOMMENDED.
+		</Requirement>
+
+		<Requirement modality=$Optional requirementId=~optionalRequirement>
+			This capability is OPTIONAL.
+		</Requirement>
+	</Section>
+</Specification>

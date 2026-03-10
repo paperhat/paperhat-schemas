@@ -1,0 +1,18 @@
+<LocalizationBundle
+	schema=codex:domain:reference
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Reference" label="Reference" labelOther="References" />
+
+	<TraitLocalization identifier="target" label="Target" labelOther="Targets">
+		The entity this reference points to.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:reference:target-is-entity"
+		label="Target must be an entity"
+	>
+		The reference target must point to an entity.
+	</ConstraintLocalization>
+</LocalizationBundle>

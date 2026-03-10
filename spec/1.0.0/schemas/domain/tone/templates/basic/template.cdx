@@ -1,0 +1,4 @@
+[Define tone markers for emotional annotation of text spans.]
+<Tones>
+	<Tone key=~tone emotion=$neutral />
+</Tones>

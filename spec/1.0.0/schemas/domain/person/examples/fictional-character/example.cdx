@@ -1,0 +1,5 @@
+<Person gender="male">
+	<PersonName nameKind=$literary given="Sherlock" family="Holmes" />
+	<Location locationKind=$residence name="221B Baker Street" locality="London" country="United Kingdom" />
+	<ContactPoint contactKind=$work emailAddress="holmes@bakerstreet.co.uk" />
+</Person>

@@ -1,0 +1,12 @@
+<VocabularyPackageManifest
+	author="Paperhat"
+	closureHash="2099f16c97008a0f81bd65baeec1947a7e59f3efd4a64b6a4035cfaadbdf82df"
+	copyright="Copyright 2026 Paperhat"
+	description="Country and territory codes from ISO 3166-1 alpha-2."
+	license="Apache-2.0"
+	packageName="iso-3166-countries"
+	packageVersion="1.0.0"
+	primaryDocument="vocabulary.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

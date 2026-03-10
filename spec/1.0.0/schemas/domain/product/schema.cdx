@@ -1,0 +1,127 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A product or service offered for sale, rental, or subscription, composed from leaf concepts for pricing, identification, measurement, and reviews."
+	id=codex:domain:product
+	namespace="product"
+	title="Product Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace=desc reference=urn:cdx:sha256:5e9c6ba4654a0b013b65fc38fde033d2b6fc281d7eb791e57b207b42d80ae7da />
+
+		<SchemaImport namespace=offer reference=urn:cdx:sha256:f322a7b5516031a49702828ac196b9e3d685b5a9b31812a706e9db8bf780f753 />
+
+		<SchemaImport namespace=ident reference=urn:cdx:sha256:a220d2034a4faa1a81d8102265c1fef36576871a0ba25ac31500abac7afd5907 />
+
+		<SchemaImport namespace=rating reference=urn:cdx:sha256:7014e5165b5abb7d2389464a9c03126d07f17161f0eaca4fdc7fde3ed3458c72 />
+
+		<SchemaImport namespace=measure reference=urn:cdx:sha256:a728956784520455efba12110f7fa1d573f81b94fab61ee9279ea07dbab1e2fe />
+
+		<SchemaImport namespace=money reference=urn:cdx:sha256:165a3dffbf009ba0b45d98a129a343a1378c0baccea116a78d03abe29d70ce47 />
+
+		<SchemaImport namespace=tags reference=urn:cdx:sha256:79f0baf3512b1d7c2730608a6796155017c30096f2f4ffde74b0deafc1eae775 />
+
+		<SchemaImport namespace=work reference=urn:cdx:sha256:1a180843230548cc38ddcde65df88bb025fd9a3feff6cdc6da19e8c3a8823dcd />
+
+		<SchemaImport namespace=audience reference=urn:cdx:sha256:96d1ab313b9cf2a357f05cfdaaf0f9dd4869f42d623f3de28abea92af787a053 />
+
+		<SchemaImport namespace=a11y reference=urn:cdx:sha256:ae60550e29ddf4d762fb537f99572d040d0146f49485a5497de2d12f878bb962 />
+
+		<SchemaImport namespace=nutrition reference=urn:cdx:sha256:60fcc8d6e3a6c6d43a2a6ae59d36c4b625bf4c739655615399744e6ce698f567 />
+
+		<SchemaImport namespace=material reference=urn:cdx:sha256:13a2279428ec67c2fd400d8bb63f7456229b63932027dc47561d753ba85e0a3a />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=codex:domain:product:Product
+			name="Product"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<AllowsTrait name="brand" />
+
+				<AllowsTrait name="category" />
+
+				<AllowsTrait name="color" />
+
+				<AllowsTrait name="model" />
+
+				<AllowsTrait name="releaseDate" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+
+				<AllowsChildConcept conceptSelector="offer:Offer" />
+
+				<AllowsChildConcept conceptSelector="ident:Identifier" />
+
+				<AllowsChildConcept conceptSelector="rating:Rating" />
+
+				<AllowsChildConcept conceptSelector="measure:Measure" />
+
+				<AllowsChildConcept conceptSelector="money:MonetaryAmount" />
+
+				<AllowsChildConcept conceptSelector="tags:Tags" />
+
+				<AllowsChildConcept conceptSelector="work:Work" />
+
+				<AllowsChildConcept conceptSelector="audience:Audience" />
+
+				<AllowsChildConcept conceptSelector="a11y:Accessibility" />
+
+				<AllowsChildConcept conceptSelector="nutrition:NutritionInformation" />
+
+				<AllowsChildConcept conceptSelector="material:Material" />
+			</ChildRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:product:trait:name
+			name="name"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:product:trait:brand
+			name="brand"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:product:trait:category
+			name="category"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Color
+			id=codex:domain:product:trait:color
+			name="color"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:product:trait:model
+			name="model"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Date
+			id=codex:domain:product:trait:releaseDate
+			name="releaseDate"
+		/>
+	</TraitDefinitions>
+</Schema>

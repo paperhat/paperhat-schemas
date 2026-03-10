@@ -1,0 +1,69 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="An unordered container for document metadata: authorship, descriptions, summaries, tags, audience, and other non-body information."
+	id=codex:domain:document-metadata
+	namespace="docmeta"
+	title="Document Metadata Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace=work reference=urn:cdx:sha256:1a180843230548cc38ddcde65df88bb025fd9a3feff6cdc6da19e8c3a8823dcd />
+
+		<SchemaImport namespace=desc reference=urn:cdx:sha256:5e9c6ba4654a0b013b65fc38fde033d2b6fc281d7eb791e57b207b42d80ae7da />
+
+		<SchemaImport namespace=summary reference=urn:cdx:sha256:3b9aafd82dbaa53ab38128147d2b215bc4067998492bc50b93e51319ab1e0cbc />
+
+		<SchemaImport namespace=tags reference=urn:cdx:sha256:79f0baf3512b1d7c2730608a6796155017c30096f2f4ffde74b0deafc1eae775 />
+
+		<SchemaImport namespace=audience reference=urn:cdx:sha256:96d1ab313b9cf2a357f05cfdaaf0f9dd4869f42d623f3de28abea92af787a053 />
+
+		<SchemaImport namespace=person reference=urn:cdx:sha256:d70dce3909118dc4c887f76cc42fa4cb89cb2b5276f0f2324df72345fdcbd9d2 />
+
+		<SchemaImport namespace=pname reference=urn:cdx:sha256:9799fb14ae695fdfbf6ba13f5e71a9b9b0a6863e4d75822e42e14e5adcf9b538 />
+
+		<SchemaImport namespace=contact reference=urn:cdx:sha256:f66ac6b540b849d0f20bed2452630e2a5d0ee961e286b2b30f07d6a6aa122fe2 />
+
+		<SchemaImport namespace=ident reference=urn:cdx:sha256:a220d2034a4faa1a81d8102265c1fef36576871a0ba25ac31500abac7afd5907 />
+
+		<SchemaImport namespace=loc reference=urn:cdx:sha256:df456110f9e2cb2b0524011e6fd6892f345dadc412a7b078699f9aab4fd5bf55 />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:document-metadata:DocumentMetadata
+			name="DocumentMetadata"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="work:Work" />
+
+				<AllowsChildConcept conceptSelector="desc:Description" />
+
+				<AllowsChildConcept conceptSelector="summary:Summary" />
+
+				<AllowsChildConcept conceptSelector="tags:Tags" />
+
+				<AllowsChildConcept conceptSelector="audience:Audience" />
+
+				<AllowsChildConcept conceptSelector="person:Person" />
+
+				<AllowsChildConcept conceptSelector="pname:PersonName" />
+
+				<AllowsChildConcept conceptSelector="contact:ContactPoint" />
+
+				<AllowsChildConcept conceptSelector="ident:Identifier" />
+
+				<AllowsChildConcept conceptSelector="loc:Location" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Unordered />
+		</ConceptDefinition>
+	</ConceptDefinitions>
+</Schema>

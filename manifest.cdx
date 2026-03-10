@@ -1,0 +1,195 @@
+<LexisRepositoryManifest
+	author="Paperhat"
+	closureHash="19d257ab994f33ab8967f680513a4e5fa6ec674b9017e0576c773d0f9780b1d8"
+	copyright="Copyright 2026 Paperhat"
+	description="Paperhat schema repository. Contains universal schema packages, behavior definitions, and reference vocabularies consumed by Paperhat systems."
+	license="Apache-2.0"
+	repositoryName="paperhat-schemas"
+	repositoryVersion="1.0.0"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+>
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-accessibility" packagePath="spec/1.0.0/schemas/domain/accessibility" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-admonition" packagePath="spec/1.0.0/schemas/domain/admonition" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-audience" packagePath="spec/1.0.0/schemas/domain/audience" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-citation" packagePath="spec/1.0.0/schemas/domain/citation" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-code" packagePath="spec/1.0.0/schemas/domain/code" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-contact-point" packagePath="spec/1.0.0/schemas/domain/contact-point" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-description" packagePath="spec/1.0.0/schemas/domain/description" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-document-metadata" packagePath="spec/1.0.0/schemas/domain/document-metadata" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-duration" packagePath="spec/1.0.0/schemas/domain/duration" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-editorial-markup" packagePath="spec/1.0.0/schemas/domain/editorial-markup" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-essay" packagePath="spec/1.0.0/schemas/domain/essay" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-event" packagePath="spec/1.0.0/schemas/domain/event" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-example" packagePath="spec/1.0.0/schemas/domain/example" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-figure" packagePath="spec/1.0.0/schemas/domain/figure" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-foreign-term" packagePath="spec/1.0.0/schemas/domain/foreign-term" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-geographic-location" packagePath="spec/1.0.0/schemas/domain/geographic-location" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-identifier" packagePath="spec/1.0.0/schemas/domain/identifier" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-jurisdiction" packagePath="spec/1.0.0/schemas/domain/jurisdiction" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-linguistic-annotation" packagePath="spec/1.0.0/schemas/domain/linguistic-annotation" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-list" packagePath="spec/1.0.0/schemas/domain/list" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-location" packagePath="spec/1.0.0/schemas/domain/location" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-measure" packagePath="spec/1.0.0/schemas/domain/measure" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-energy-measure" packagePath="spec/1.0.0/schemas/domain/energy-measure" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-mass-measure" packagePath="spec/1.0.0/schemas/domain/mass-measure" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-time-measure" packagePath="spec/1.0.0/schemas/domain/time-measure" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-volume-measure" packagePath="spec/1.0.0/schemas/domain/volume-measure" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-food" packagePath="spec/1.0.0/schemas/domain/food" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-material" packagePath="spec/1.0.0/schemas/domain/material" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-sensory-profile" packagePath="spec/1.0.0/schemas/domain/sensory-profile" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-equipment" packagePath="spec/1.0.0/schemas/domain/equipment" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-media-reference" packagePath="spec/1.0.0/schemas/domain/media-reference" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-monetary-amount" packagePath="spec/1.0.0/schemas/domain/monetary-amount" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-narrative" packagePath="spec/1.0.0/schemas/domain/narrative" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-notes" packagePath="spec/1.0.0/schemas/domain/notes" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-nutrition-information" packagePath="spec/1.0.0/schemas/domain/nutrition-information" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-offer" packagePath="spec/1.0.0/schemas/domain/offer" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-operating-schedule" packagePath="spec/1.0.0/schemas/domain/operating-schedule" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-organization" packagePath="spec/1.0.0/schemas/domain/organization" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-person" packagePath="spec/1.0.0/schemas/domain/person" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-person-name" packagePath="spec/1.0.0/schemas/domain/person-name" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-product" packagePath="spec/1.0.0/schemas/domain/product" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-project" packagePath="spec/1.0.0/schemas/domain/project" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-rating" packagePath="spec/1.0.0/schemas/domain/rating" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-recipe" packagePath="spec/1.0.0/schemas/domain/recipe" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-relation" packagePath="spec/1.0.0/schemas/domain/relation" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-reference" packagePath="spec/1.0.0/schemas/domain/reference" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-rubric" packagePath="spec/1.0.0/schemas/domain/rubric" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-role" packagePath="spec/1.0.0/schemas/domain/role" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-section" packagePath="spec/1.0.0/schemas/domain/section" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-series" packagePath="spec/1.0.0/schemas/domain/series" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-specification" packagePath="spec/1.0.0/schemas/domain/specification" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-specification-foundation" packagePath="spec/1.0.0/schemas/domain/specification-foundation" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-specification-rfc2119" packagePath="spec/1.0.0/schemas/domain/specification-rfc2119" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-summary" packagePath="spec/1.0.0/schemas/domain/summary" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-tags" packagePath="spec/1.0.0/schemas/domain/tags" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-temporal" packagePath="spec/1.0.0/schemas/domain/temporal" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-term-entry" packagePath="spec/1.0.0/schemas/domain/term-entry" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-text" packagePath="spec/1.0.0/schemas/domain/text" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-tips" packagePath="spec/1.0.0/schemas/domain/tips" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-tone" packagePath="spec/1.0.0/schemas/domain/tone" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-work" packagePath="spec/1.0.0/schemas/domain/work" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-white-paper" packagePath="spec/1.0.0/schemas/domain/white-paper" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-meta" packagePath="spec/1.0.0/schemas/domain/meta" />
+
+	<RepositoryPackageEntry packageFamily="assembly" packageName="paperhat-assembly-adaptive-plan-result" packagePath="spec/1.0.0/schemas/assembly/adaptive-plan-result" />
+
+	<RepositoryPackageEntry packageFamily="assembly" packageName="paperhat-assembly-stage-a-result" packagePath="spec/1.0.0/schemas/assembly/stage-a-result" />
+
+	<RepositoryPackageEntry packageFamily="assembly" packageName="paperhat-assembly-stage-b-result" packagePath="spec/1.0.0/schemas/assembly/stage-b-result" />
+
+	<RepositoryPackageEntry packageFamily="behavior" packageName="behavior-expression-schema" packagePath="spec/1.0.0/schemas/behavior/behavior-expression-schema" />
+
+	<RepositoryPackageEntry packageFamily="behavior" packageName="behavior-shape-schema" packagePath="spec/1.0.0/schemas/behavior/behavior-shape-schema" />
+
+	<RepositoryPackageEntry packageFamily="view" packageName="paperhat-semantic-projection-view" packagePath="spec/1.0.0/schemas/view/semantic-projection" />
+
+	<RepositoryPackageEntry packageFamily="system" packageName="paperhat-localization" packagePath="spec/1.0.0/schemas/system/localization" />
+
+	<RepositoryPackageEntry packageFamily="system" packageName="paperhat-ld-mapping" packagePath="spec/1.0.0/schemas/system/ld-mapping" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="bcp-47-languages" packagePath="spec/1.0.0/schemas/vocabularies/bcp-47-languages" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="e164-calling-codes" packagePath="spec/1.0.0/schemas/vocabularies/e164-calling-codes" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="food-categories" packagePath="spec/1.0.0/schemas/vocabularies/food-categories" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="iana-time-zones" packagePath="spec/1.0.0/schemas/vocabularies/iana-time-zones" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="iso-3166-countries" packagePath="spec/1.0.0/schemas/vocabularies/iso-3166-countries" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="iso-4217-currencies" packagePath="spec/1.0.0/schemas/vocabularies/iso-4217-currencies" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="preparations" packagePath="spec/1.0.0/schemas/vocabularies/preparations" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="units-angle" packagePath="spec/1.0.0/schemas/vocabularies/units-angle" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="units-area" packagePath="spec/1.0.0/schemas/vocabularies/units-area" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="units-data" packagePath="spec/1.0.0/schemas/vocabularies/units-data" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="units-electrical" packagePath="spec/1.0.0/schemas/vocabularies/units-electrical" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="units-energy" packagePath="spec/1.0.0/schemas/vocabularies/units-energy" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="units-force" packagePath="spec/1.0.0/schemas/vocabularies/units-force" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="units-frequency" packagePath="spec/1.0.0/schemas/vocabularies/units-frequency" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="units-length" packagePath="spec/1.0.0/schemas/vocabularies/units-length" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="units-mass" packagePath="spec/1.0.0/schemas/vocabularies/units-mass" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="units-pressure" packagePath="spec/1.0.0/schemas/vocabularies/units-pressure" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="units-speed" packagePath="spec/1.0.0/schemas/vocabularies/units-speed" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="units-temperature" packagePath="spec/1.0.0/schemas/vocabularies/units-temperature" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="units-time" packagePath="spec/1.0.0/schemas/vocabularies/units-time" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="units-volume" packagePath="spec/1.0.0/schemas/vocabularies/units-volume" />
+</LexisRepositoryManifest>

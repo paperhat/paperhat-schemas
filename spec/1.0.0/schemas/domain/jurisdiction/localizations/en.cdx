@@ -1,0 +1,23 @@
+<LocalizationBundle
+	schema=codex:domain:jurisdiction
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Jurisdiction" label="Jurisdiction" labelOther="Jurisdictions" />
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		The name of the jurisdiction.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="jurisdictionKind" label="Jurisdiction Kind" labelOther="Jurisdiction Kinds">
+		The type of jurisdiction, such as country, state, or supranational body.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="countryCode" label="Country Code" labelOther="Country Codes">
+		The ISO 3166-1 alpha-2 country code.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="subdivisionCode" label="Subdivision Code" labelOther="Subdivision Codes">
+		The ISO 3166-2 subdivision code.
+	</TraitLocalization>
+</LocalizationBundle>

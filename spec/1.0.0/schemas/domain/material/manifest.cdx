@@ -1,0 +1,36 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="a28946f724340ced892cc7f79ce2cd858b403e7852bef66b27366ff3614b971d"
+	copyright="Copyright 2026 Paperhat"
+	description="A material or substance from which objects are made, with canonical name, aliases, category, physical properties, and sustainability characteristics."
+	license="Apache-2.0"
+	packageName="paperhat-material"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+>
+	<PackageDependency
+		packageName="paperhat-description"
+		closureHash="8a6c1a383e84796c18cb6c612ec676134930c3192dfd8bfe93bd0263cd8b5d65"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-tags"
+		closureHash="7460ed89db9b5749b1be28962fbf1996092be3a59ab4e3c5a8b0e11afc9b48ab"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-measure"
+		closureHash="e6aa92b9f83fbacec3c75194647f4ccf40f6c06f6d07a7d6ae04a51abf0b9a8f"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-location"
+		closureHash="9ac9e090e21d8accedafdf54b06ea5dd3e454d2730f95a76b11ec6945a0f340c"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</DomainPackageManifest>

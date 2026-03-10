@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="cb043358401f619e9ece1f0c765f060f1815813e9cb00df27becd8a2d2195f31"
+	copyright="Copyright 2026 Paperhat"
+	description="A precise geographic position expressed as latitude, longitude, and optional elevation."
+	license="Apache-2.0"
+	packageName="paperhat-geographic-location"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

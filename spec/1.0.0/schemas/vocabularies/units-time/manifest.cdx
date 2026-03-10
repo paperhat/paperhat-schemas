@@ -1,0 +1,12 @@
+<VocabularyPackageManifest
+	author="Paperhat"
+	closureHash="011465929848f6510544918aa73f1fa77ca27180d4266fc4a2e17abf463d14c0"
+	copyright="Copyright 2026 Paperhat"
+	description="Units of measurement for time and duration."
+	license="Apache-2.0"
+	packageName="units-time"
+	packageVersion="1.0.0"
+	primaryDocument="vocabulary.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

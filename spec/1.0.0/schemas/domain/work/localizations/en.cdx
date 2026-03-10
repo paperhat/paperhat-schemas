@@ -1,0 +1,46 @@
+<LocalizationBundle
+	schema=codex:domain:work
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Work" label="Work" labelOther="Works" />
+
+	<TraitLocalization identifier="author" label="Author" labelOther="Authors">
+		The creator or author of the work.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="dateCreated" label="Date Created" labelOther="Dates Created">
+		The date the work was originally created.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="datePublished" label="Date Published" labelOther="Dates Published">
+		The date the work was published.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="dateModified" label="Date Modified" labelOther="Dates Modified">
+		The date the work was last modified.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="version" label="Version" labelOther="Versions">
+		The version of the work.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="language" label="Language" labelOther="Languages">
+		The primary natural language of the work.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="status" label="Status" labelOther="Statuses">
+		The publication or lifecycle status of the work.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="license" label="License" labelOther="Licenses">
+		The license under which the work is published.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:work:requires-work-trait"
+		label="Requires at least one work trait"
+	>
+		A Work element must specify at least one trait.
+	</ConstraintLocalization>
+</LocalizationBundle>

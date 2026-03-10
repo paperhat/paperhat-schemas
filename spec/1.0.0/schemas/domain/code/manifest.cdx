@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="5a2701a0223b1e9b1ecf9d724fdac576ddb27289d9d17f5cd27ac692363d4713"
+	copyright="Copyright 2026 Paperhat"
+	description="Computing notation for text spans and blocks: inline code, keyboard input, sample output, variables, and code blocks."
+	license="Apache-2.0"
+	packageName="paperhat-code"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

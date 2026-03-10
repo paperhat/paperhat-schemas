@@ -1,0 +1,43 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A general-purpose quantitative measurement expressed as a numeric value and a unit."
+	id=codex:domain:measure
+	namespace="measure"
+	title="Measure Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:measure:Measure
+			name="Measure"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="value" />
+
+				<RequiresTrait name="unit" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueTypes=[$Number, $Range<$Number>]
+			id=codex:domain:measure:trait:value
+			name="value"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:measure:trait:unit
+			name="unit"
+		/>
+	</TraitDefinitions>
+</Schema>

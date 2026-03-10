@@ -1,0 +1,4 @@
+[A container for annotations. Each Note requires a unique key.]
+<Notes>
+	<Note key="1"></Note>
+</Notes>

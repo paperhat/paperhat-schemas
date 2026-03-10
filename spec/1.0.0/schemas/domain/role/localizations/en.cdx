@@ -1,0 +1,19 @@
+<LocalizationBundle
+	schema=codex:domain:role
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Role" label="Role" labelOther="Roles" />
+
+	<TraitLocalization identifier="roleKind" label="Role Kind" labelOther="Role Kinds">
+		The type of role, such as author, editor, maintainer, or approver.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="holder" label="Holder" labelOther="Holders">
+		The person or organization filling this role.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="scope" label="Scope" labelOther="Scopes">
+		What the role covers or applies to.
+	</TraitLocalization>
+</LocalizationBundle>

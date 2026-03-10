@@ -1,0 +1,4 @@
+[Define editorial markup concepts for Gloss span binding.]
+<EditorialMarkup>
+	<Emphasis key=~em />
+</EditorialMarkup>

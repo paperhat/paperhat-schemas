@@ -1,0 +1,12 @@
+<VocabularyPackageManifest
+	author="Paperhat"
+	closureHash="30b9900f8372670ebd14fd289ded8451187f0a913e3a7eabda4c32e1d7b84d28"
+	copyright="Copyright 2026 Paperhat"
+	description="Language identification tags from IETF BCP 47 (RFC 5646)."
+	license="Apache-2.0"
+	packageName="bcp-47-languages"
+	packageVersion="1.0.0"
+	primaryDocument="vocabulary.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

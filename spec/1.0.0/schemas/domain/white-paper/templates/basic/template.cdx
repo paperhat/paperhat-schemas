@@ -1,0 +1,14 @@
+[A minimal white paper with required fields and one section.]
+<WhitePaper title="" coreThesis="">
+	<Abstract />
+
+	<Narrative>
+		<Section>
+			<Rubric>
+				<Title></Title>
+			</Rubric>
+
+			<Paragraph></Paragraph>
+		</Section>
+	</Narrative>
+</WhitePaper>

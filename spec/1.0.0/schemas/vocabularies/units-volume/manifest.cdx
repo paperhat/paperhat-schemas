@@ -1,0 +1,12 @@
+<VocabularyPackageManifest
+	author="Paperhat"
+	closureHash="027d45c2c8b62a17d004d11ec9b1e95c49ecbcc80a66eddac727cb693e1c7c2c"
+	copyright="Copyright 2026 Paperhat"
+	description="Units of measurement for volume and capacity, including cooking measures."
+	license="Apache-2.0"
+	packageName="units-volume"
+	packageVersion="1.0.0"
+	primaryDocument="vocabulary.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

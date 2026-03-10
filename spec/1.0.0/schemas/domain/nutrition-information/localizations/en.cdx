@@ -1,0 +1,30 @@
+<LocalizationBundle
+	schema=codex:domain:nutrition-information
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="NutritionInformation" label="Nutrition Information" />
+
+	<ConceptLocalization identifier="ServingSize" label="Serving Size" />
+
+	<ConceptLocalization identifier="Calories" label="Calories" />
+
+	<ConceptLocalization identifier="FatContent" label="Fat Content" />
+
+	<ConceptLocalization identifier="ProteinContent" label="Protein Content" />
+
+	<ConceptLocalization identifier="CarbohydrateContent" label="Carbohydrate Content" />
+
+	<ConceptLocalization identifier="FiberContent" label="Fiber Content" />
+
+	<ConceptLocalization identifier="SugarContent" label="Sugar Content" />
+
+	<ConceptLocalization identifier="SodiumContent" label="Sodium Content" />
+
+	<ConstraintLocalization
+		identifier="codex:domain:nutrition-information:requires-nutrient"
+		label="Requires at least one nutrient"
+	>
+		A NutritionInformation element must contain at least one child nutrient concept.
+	</ConstraintLocalization>
+</LocalizationBundle>

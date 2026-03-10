@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="2fc0527550241ebceb07eb0ad7baede2383a0849dfa91735935d2b02807d1912"
+	copyright="Copyright 2026 Paperhat"
+	description="A quantitative measurement of volume or capacity, with unit constrained to the units-volume vocabulary."
+	license="Apache-2.0"
+	packageName="paperhat-volume-measure"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

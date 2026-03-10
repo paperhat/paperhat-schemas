@@ -1,0 +1,24 @@
+<LocalizationBundle
+	schema=codex:domain:notes
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Notes" label="Notes" />
+
+	<ConceptLocalization identifier="Note" label="Note" labelOther="Notes" />
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		The lookup key that identifies this note for referencing.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="language" label="Language" labelOther="Languages">
+		The natural language of the note content.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:notes:requires-note"
+		label="Requires at least one note"
+	>
+		A Notes container must contain at least one Note.
+	</ConstraintLocalization>
+</LocalizationBundle>

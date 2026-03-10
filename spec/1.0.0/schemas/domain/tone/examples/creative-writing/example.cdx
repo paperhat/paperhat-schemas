@@ -1,0 +1,6 @@
+<Tones>
+	<Tone key=~happy emotion=$joy />
+	<Tone key=~angry emotion=$anger intensity=$strong />
+	<Tone key=~wry emotion=$sarcasm intensity=$mild />
+	<Tone key=~sad emotion=$melancholy />
+</Tones>

@@ -1,0 +1,29 @@
+<LocalizationBundle
+	schema=codex:domain:list
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="OrderedList" label="Ordered List" labelOther="Ordered Lists" />
+
+	<ConceptLocalization
+		identifier="UnorderedList"
+		label="Unordered List"
+		labelOther="Unordered Lists"
+	/>
+
+	<ConceptLocalization identifier="ListItem" label="List Item" labelOther="List Items" />
+
+	<ConstraintLocalization
+		identifier="codex:domain:list:ordered-requires-item"
+		label="Ordered list requires at least one item"
+	>
+		An OrderedList must contain at least one ListItem.
+	</ConstraintLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:list:unordered-requires-item"
+		label="Unordered list requires at least one item"
+	>
+		An UnorderedList must contain at least one ListItem.
+	</ConstraintLocalization>
+</LocalizationBundle>

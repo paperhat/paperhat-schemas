@@ -1,0 +1,45 @@
+<TokenVocabulary
+	id=codex:vocabulary:units-length
+	version="1.0.0"
+	title="Units of Length"
+	description="Units of measurement for length, distance, and displacement."
+	closedVocabulary=true
+>
+	<TokenDefinition token=$Angstrom label="A" />
+
+	<TokenDefinition token=$AstronomicalUnit label="au" />
+
+	<TokenDefinition token=$Centimeter label="cm" />
+
+	<TokenDefinition token=$Chain label="chain" />
+
+	<TokenDefinition token=$Fathom label="fathom" />
+
+	<TokenDefinition token=$Foot label="ft" />
+
+	<TokenDefinition token=$Furlong label="furlong" />
+
+	<TokenDefinition token=$Inch label="in" />
+
+	<TokenDefinition token=$Kilometer label="km" />
+
+	<TokenDefinition token=$LightYear label="ly" />
+
+	<TokenDefinition token=$Meter label="m" />
+
+	<TokenDefinition token=$Micrometer label="um" />
+
+	<TokenDefinition token=$Mile label="mi" />
+
+	<TokenDefinition token=$Millimeter label="mm" />
+
+	<TokenDefinition token=$Nanometer label="nm" />
+
+	<TokenDefinition token=$NauticalMile label="nmi" />
+
+	<TokenDefinition token=$Parsec label="pc" />
+
+	<TokenDefinition token=$Picometer label="pm" />
+
+	<TokenDefinition token=$Yard label="yd" />
+</TokenVocabulary>

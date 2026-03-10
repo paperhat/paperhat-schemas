@@ -1,0 +1,31 @@
+[Detailed event. Duplicate or remove child concepts freely.]
+<Event name="" startDate={} endDate={} eventStatus=$scheduled eventAttendanceMode=$>
+	[Optional: describe the event.]
+	<Description></Description>
+
+	[Optional: venue name and address.]
+	<Location locationKind=$venue name="" locality="" country="" />
+
+	[Optional: precise venue coordinates.]
+	<GeographicLocation latitude=0 longitude=0 />
+
+	[Optional: organizer or box-office contact.]
+	<ContactPoint contactKind=$organizer emailAddress="" />
+
+	[Optional: event identifier or registration code.]
+	<Identifier scheme=$ value="" />
+
+	[Optional: ticket pricing.]
+	<Offer price=0 priceCurrency=$USD availability=$InStock />
+
+	[Optional: event length.]
+	<Duration value=0 unit=$hours />
+
+	[Optional: aggregate rating.]
+	<Rating ratingValue=0 bestRating=5 />
+
+	[Optional: categorize with tags.]
+	<Tags>
+		<Tag></Tag>
+	</Tags>
+</Event>

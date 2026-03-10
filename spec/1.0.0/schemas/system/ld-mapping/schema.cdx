@@ -1,0 +1,144 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Defines a one-way mapping document format used to project Codex-authored data into linked data vocabularies for JSON-LD, RDFa, or microdata emitters."
+	id=codex:system:ld-mapping
+	namespace="ld-mapping"
+	title="Linked Data Mapping Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:system:ld-mapping:SchemaOrgMapping
+			name="SchemaOrgMapping"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="id" />
+
+				<RequiresTrait name="version" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="MapType" />
+
+				<AllowsChildConcept conceptSelector="MapContentToProperty" />
+
+				<AllowsChildConcept conceptSelector="MapTraitToProperty" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:system:ld-mapping:MapType
+			name="MapType"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="sourceConcept" />
+
+				<RequiresTrait name="targetType" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:system:ld-mapping:MapContentToProperty
+			name="MapContentToProperty"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="sourceConcept" />
+
+				<RequiresTrait name="targetProperty" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:system:ld-mapping:MapTraitToProperty
+			name="MapTraitToProperty"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="sourceConcept" />
+
+				<RequiresTrait name="sourceTrait" />
+
+				<RequiresTrait name="targetProperty" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$IriReference
+			id=codex:system:ld-mapping:trait:id
+			isReferenceTrait=true
+			name="id"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:system:ld-mapping:trait:version
+			name="version"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:system:ld-mapping:trait:sourceConcept
+			name="sourceConcept"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:system:ld-mapping:trait:sourceTrait
+			name="sourceTrait"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:system:ld-mapping:trait:targetType
+			name="targetType"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:system:ld-mapping:trait:targetProperty
+			name="targetProperty"
+		/>
+	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=codex:system:ld-mapping:root-only
+			title="Mapping document must have exactly one root SchemaOrgMapping"
+		>
+			<Targets>
+				<TargetContext contextSelector="Document" />
+			</Targets>
+
+			<Rule>
+				<ContextConstraint contextSelector="SchemaOrgMapping" type=$OnlyValidUnderContext />
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

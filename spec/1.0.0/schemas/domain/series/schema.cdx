@@ -1,0 +1,51 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Series membership metadata for a document that belongs to an ordered, multi-part publication."
+	id=codex:domain:series
+	namespace="series"
+	title="Series Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:series:SeriesInfo
+			name="SeriesInfo"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="seriesTitle" />
+
+				<AllowsTrait name="position" />
+
+				<AllowsTrait name="track" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:series:trait:seriesTitle
+			name="seriesTitle"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=codex:domain:series:trait:position
+			name="position"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:series:trait:track
+			name="track"
+		/>
+	</TraitDefinitions>
+</Schema>

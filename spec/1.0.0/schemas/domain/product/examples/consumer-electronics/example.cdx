@@ -1,0 +1,37 @@
+<Product
+	name="ProSound X40 Wireless Headphones"
+	brand="ProSound"
+	category=$electronics
+	color="Midnight Black"
+	model="X40"
+	releaseDate={2026-01-10}
+>
+	<Description>
+		Over-ear wireless headphones with active noise cancellation and 30-hour
+		battery life.
+	</Description>
+
+	<Offer price=149.99 priceCurrency=$USD availability=$InStock itemCondition=$New />
+	<Offer price=119.99 priceCurrency=$USD availability=$InStock itemCondition=$Refurbished />
+
+	<Identifier scheme=$gtin value="0123456789012" />
+	<Identifier scheme=$sku value="PS-X40-BLK" />
+
+	<Rating ratingValue=4.5 bestRating=5 ratingCount=1283 />
+
+	<Measure value=250 unit=$grams />
+
+	<Tags>
+		<Tag>
+			headphones
+		</Tag>
+
+		<Tag>
+			wireless
+		</Tag>
+
+		<Tag>
+			noise-cancelling
+		</Tag>
+	</Tags>
+</Product>

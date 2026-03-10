@@ -1,0 +1,4 @@
+[Define code notation concepts for Gloss span binding.]
+<CodeNotation>
+	<Code key=~code language=$javascript />
+</CodeNotation>

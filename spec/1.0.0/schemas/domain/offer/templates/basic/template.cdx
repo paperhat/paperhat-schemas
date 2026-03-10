@@ -1,0 +1,2 @@
+[Both price and priceCurrency are required. Use ISO 4217 codes, e.g. $USD, $EUR, $GBP.]
+<Offer price=0 priceCurrency=$ />

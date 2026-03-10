@@ -1,0 +1,97 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Ordered and unordered lists with nestable items."
+	id=codex:domain:list
+	namespace="list"
+	title="List Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:0d835975e6ccabdab7c2204e9b1d4e19baf24108e45a8f240adea3a2684a5fd0 />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:list:OrderedList
+			name="OrderedList"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="ListItem" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:list:UnorderedList
+			name="UnorderedList"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="ListItem" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Unordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:list:ListItem
+			name="ListItem"
+		>
+			<ContentRules>
+				<AllowsContentOrChildren whitespaceMode=$Flow />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
+
+				<AllowsChildConcept conceptSelector="OrderedList" />
+
+				<AllowsChildConcept conceptSelector="UnorderedList" />
+			</ChildRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=codex:domain:list:ordered-requires-item
+			title="OrderedList must contain at least one ListItem"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="OrderedList" />
+			</Targets>
+
+			<Rule>
+				<ChildConstraint conceptSelector="ListItem" type=$RequiresChildConcept />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:domain:list:unordered-requires-item
+			title="UnorderedList must contain at least one ListItem"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="UnorderedList" />
+			</Targets>
+
+			<Rule>
+				<ChildConstraint conceptSelector="ListItem" type=$RequiresChildConcept />
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

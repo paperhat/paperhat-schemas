@@ -1,0 +1,28 @@
+<DocumentMetadata>
+	<Work
+		author="Maria Chen"
+		datePublished={2026-01-20}
+		language=$en
+		status=$published
+		license="CC-BY-4.0"
+	/>
+
+	<Description language=$en>
+		An examination of participatory budgeting outcomes in mid-sized European
+		cities between 2018 and 2025.
+	</Description>
+
+	<Tags>
+		<Tag>
+			participatory budgeting
+		</Tag>
+
+		<Tag>
+			municipal governance
+		</Tag>
+
+		<Tag>
+			civic engagement
+		</Tag>
+	</Tags>
+</DocumentMetadata>

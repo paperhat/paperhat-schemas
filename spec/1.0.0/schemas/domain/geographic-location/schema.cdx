@@ -1,0 +1,51 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A precise geographic position expressed as latitude, longitude, and optional elevation."
+	id=codex:domain:geographic-location
+	namespace="geo"
+	title="Geographic Location Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:geographic-location:GeographicLocation
+			name="GeographicLocation"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="latitude" />
+
+				<RequiresTrait name="longitude" />
+
+				<AllowsTrait name="elevation" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Number
+			id=codex:domain:geographic-location:trait:latitude
+			name="latitude"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=codex:domain:geographic-location:trait:longitude
+			name="longitude"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=codex:domain:geographic-location:trait:elevation
+			name="elevation"
+		/>
+	</TraitDefinitions>
+</Schema>

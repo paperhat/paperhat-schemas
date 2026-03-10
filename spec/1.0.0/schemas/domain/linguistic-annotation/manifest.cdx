@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="63c121da5d373715fcc26f3d0b4c5c89feca3630225f8d21bd7c3fe596356348"
+	copyright="Copyright 2026 Paperhat"
+	description="Linguistic metadata applied to text spans, including ruby annotations for displaying reading aids above or beside base text."
+	license="Apache-2.0"
+	packageName="paperhat-linguistic-annotation"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

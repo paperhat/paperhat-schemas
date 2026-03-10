@@ -1,0 +1,8 @@
+[Full accessibility details. Remove traits you do not need.]
+<Accessibility
+	accessMode=$
+	accessibilityFeature=""
+	accessibilityHazard=""
+	accessibilitySummary=""
+	accessibilityControl=""
+/>

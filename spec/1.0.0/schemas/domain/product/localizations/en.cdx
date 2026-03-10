@@ -1,0 +1,35 @@
+<LocalizationBundle
+	schema=codex:domain:product
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Product" label="Product" labelOther="Products" />
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		The name of the product.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="brand" label="Brand" labelOther="Brands">
+		The brand name of the product.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="category" label="Category" labelOther="Categories">
+		The product category.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="color" label="Color" labelOther="Colors">
+		The color of the product.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="material" label="Material" labelOther="Materials">
+		The material the product is made from.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="model" label="Model" labelOther="Models">
+		The model name or number.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="releaseDate" label="Release Date" labelOther="Release Dates">
+		The date the product was released.
+	</TraitLocalization>
+</LocalizationBundle>

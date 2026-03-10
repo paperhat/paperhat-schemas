@@ -1,0 +1,124 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Shared foundation traits and enumerated value sets for specification schemas. Provides the common trait vocabulary and value sets consumed by both the strict (Must/MustNot) and loose (RFC 2119) specification schema variants."
+	id=codex:domain:specification-foundation
+	namespace=specbase
+	title="Specification Foundation Schema"
+	version=1.0.0
+	versionScheme=$Semver
+>
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:specification-foundation:trait:conformance
+			name="conformance"
+		>
+			<AllowedValues>
+				<EnumeratedConstraint set=SectionConformance />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:specification-foundation:trait:designation
+			name="designation"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:specification-foundation:trait:division
+			name="division"
+		>
+			<AllowedValues>
+				<EnumeratedConstraint set=SectionDivision />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:specification-foundation:trait:editor
+			name="editor"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Boolean
+			id=codex:domain:specification-foundation:trait:locked
+			name="locked"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:specification-foundation:trait:modality
+			name="modality"
+		>
+			<AllowedValues>
+				<EnumeratedConstraint set=RequirementModality />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Boolean
+			id=codex:domain:specification-foundation:trait:normative
+			name="normative"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=codex:domain:specification-foundation:trait:requirementId
+			name="requirementId"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:specification-foundation:trait:term
+			name="term"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$IriReference
+			id=codex:domain:specification-foundation:trait:uri
+			name="uri"
+		/>
+	</TraitDefinitions>
+
+	<EnumeratedValueSets>
+		<EnumeratedValueSet id=codex:domain:specification-foundation:set:SectionConformance name="SectionConformance">
+			<Member value=Normative />
+
+			<Member value=Informative />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet id=codex:domain:specification-foundation:set:SectionDivision name="SectionDivision">
+			<Member value=Body />
+
+			<Member value=Appendix />
+
+			<Member value=FrontMatter />
+
+			<Member value=BackMatter />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet id=codex:domain:specification-foundation:set:RequirementModality name="RequirementModality">
+			<Member value=Must />
+
+			<Member value=MustNot />
+
+			<Member value=Shall />
+
+			<Member value=ShallNot />
+
+			<Member value=Should />
+
+			<Member value=ShouldNot />
+
+			<Member value=May />
+
+			<Member value=Required />
+
+			<Member value=Recommended />
+
+			<Member value=Optional />
+		</EnumeratedValueSet>
+	</EnumeratedValueSets>
+</Schema>

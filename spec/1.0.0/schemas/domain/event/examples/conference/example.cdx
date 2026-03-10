@@ -1,0 +1,54 @@
+<Event
+	name="PaperhatCon 2026"
+	startDate={2026-09-15}
+	endDate={2026-09-17}
+	eventStatus=$scheduled
+	eventAttendanceMode=$offline
+>
+	<Description>
+		Annual developer conference covering semantic authoring, document
+		intelligence, and structured content systems.
+	</Description>
+
+	<Location
+		locationKind=$venue
+		name="Vancouver Convention Centre"
+		locality="Vancouver"
+		region="British Columbia"
+		country="Canada"
+	/>
+	<GeographicLocation latitude=49.2888 longitude=-123.1116 />
+
+	<ContactPoint
+		contactKind=$registration
+		emailAddress="register@paperhatcon.example"
+		website="https://paperhatcon.example"
+	/>
+
+	<Identifier scheme=$eventId value="PHC-2026" />
+
+	<Offer price=499 priceCurrency=$CAD availability=$InStock itemCondition=$New />
+	<Offer
+		price=299
+		priceCurrency=$CAD
+		availability=$InStock
+		itemCondition=$New
+		validThrough={2026-06-30}
+	/>
+
+	<Duration value=3 unit=$days />
+
+	<Tags>
+		<Tag>
+			conference
+		</Tag>
+
+		<Tag>
+			developer
+		</Tag>
+
+		<Tag>
+			semantic-authoring
+		</Tag>
+	</Tags>
+</Event>

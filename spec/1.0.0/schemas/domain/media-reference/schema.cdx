@@ -1,0 +1,126 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A reference to a media resource such as an image, video, or audio file, with optional format and dimension details."
+	id=codex:domain:media-reference
+	namespace="media"
+	title="Media Reference Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:media-reference:MediaReference
+			name="MediaReference"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<AllowsTrait name="url" />
+
+				<AllowsTrait name="mediaKind" />
+
+				<AllowsTrait name="encodingFormat" />
+
+				<AllowsTrait name="caption" />
+
+				<AllowsTrait name="width" />
+
+				<AllowsTrait name="height" />
+
+				<AllowsTrait name="contentSize" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$IriReference
+			id=codex:domain:media-reference:trait:url
+			name="url"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:media-reference:trait:mediaKind
+			name="mediaKind"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$MediaType
+			id=codex:domain:media-reference:trait:encodingFormat
+			name="encodingFormat"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:media-reference:trait:caption
+			name="caption"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=codex:domain:media-reference:trait:width
+			name="width"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=codex:domain:media-reference:trait:height
+			name="height"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:media-reference:trait:contentSize
+			name="contentSize"
+		/>
+	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=codex:domain:media-reference:requires-media-trait
+			title="MediaReference must have at least one trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="MediaReference" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<TraitExists trait="url" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="mediaKind" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="encodingFormat" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="caption" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="width" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="height" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="contentSize" />
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

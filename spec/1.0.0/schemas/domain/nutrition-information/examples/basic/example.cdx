@@ -1,0 +1,9 @@
+<NutritionInformation>
+	<Calories>
+		<energymeasure:EnergyMeasure value=220 unit=$Kilocalorie />
+	</Calories>
+
+	<ProteinContent>
+		<massmeasure:MassMeasure value=12 unit=$Gram />
+	</ProteinContent>
+</NutritionInformation>

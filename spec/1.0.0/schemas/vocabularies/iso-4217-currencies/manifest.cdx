@@ -1,0 +1,12 @@
+<VocabularyPackageManifest
+	author="Paperhat"
+	closureHash="5d620fad0ede68d20a674391f417d2a81300d510771d97734a366bf18aef54fd"
+	copyright="Copyright 2026 Paperhat"
+	description="Active currency codes from ISO 4217."
+	license="Apache-2.0"
+	packageName="iso-4217-currencies"
+	packageVersion="1.0.0"
+	primaryDocument="vocabulary.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

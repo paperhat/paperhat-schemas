@@ -1,0 +1,12 @@
+<VocabularyPackageManifest
+	author="Paperhat"
+	closureHash="f2418b18038cdd597119fd981e5d79abdc303026952e2ce0164adeafd2791a2b"
+	copyright="Copyright 2026 Paperhat"
+	description="International telephone country calling codes from ITU-T E.164."
+	license="Apache-2.0"
+	packageName="e164-calling-codes"
+	packageVersion="1.0.0"
+	primaryDocument="vocabulary.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

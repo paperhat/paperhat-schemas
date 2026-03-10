@@ -1,0 +1,90 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="64d7cfb6f62f6b2d533d65497754bdf47c39fd6b2ec59348120b3f86e7a14f64"
+	copyright="Copyright 2026 Paperhat"
+	description="Recipe authoring schema with structured ingredient sets, timing, serving guidance, and imported advice and annotation support."
+	license="Apache-2.0"
+	packageName="paperhat-recipe"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+>
+	<PackageDependency
+		packageName="paperhat-audience"
+		closureHash="5c594e7507da828801b4262505ca7f29096dc1398cfe4dcf6d0e769e1dda4e5d"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-description"
+		closureHash="8a6c1a383e84796c18cb6c612ec676134930c3192dfd8bfe93bd0263cd8b5d65"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-equipment"
+		closureHash="e837311621a828ccb59879b918fd52dae0c8911f42297667ed7197b96fa96257"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-food"
+		closureHash="56d626b9e16c565e43b8f67c33910a797e0a2bf65bf1cce762b6562bb62447b7"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-mass-measure"
+		closureHash="fd4bc667b88eda20fb60582d736b345dcb0a1b6b62f7b6ef573d508f1000c6aa"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-notes"
+		closureHash="22c5d0faccd4a541f902916b0b479d5d3417b4e4412f72dd65e24d7650ffae1c"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-nutrition-information"
+		closureHash="c8af233da8cc7516971f545cb4a01fd0eaa050d78ae4c82f1722790b13d77322"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-tags"
+		closureHash="7460ed89db9b5749b1be28962fbf1996092be3a59ab4e3c5a8b0e11afc9b48ab"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-text"
+		closureHash="703472ba80a5f88685e7a6d604b16d31dfb06a81186c58bdd378aac55a53e897"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-time-measure"
+		closureHash="7d9a4898e6f5d24c5faeb200458e196178a73fee5d77b86ea2adb1b07455fab1"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-tips"
+		closureHash="9a48adf78a66cf5e7696478924eae02b08b0a0dba6978db0a52feafc419f51a2"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-volume-measure"
+		closureHash="2fc0527550241ebceb07eb0ad7baede2383a0849dfa91735935d2b02807d1912"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-work"
+		closureHash="90bc5c9658e63056858e6c23d42b4b85fe1fa90076306a8a406fba06db305e1b"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</DomainPackageManifest>

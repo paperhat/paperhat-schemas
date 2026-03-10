@@ -1,0 +1,7 @@
+<Person gender="female" birthDate={1815-12-10} deathDate={1852-11-27}>
+	<PersonName nameKind=$birth given="Augusta" middle="Ada" family="Byron" />
+	<PersonName nameKind=$married given="Ada" family="Lovelace" title="Countess of" />
+	<Location locationKind=$birthPlace locality="London" country="United Kingdom" />
+	<Location locationKind=$deathPlace locality="London" country="United Kingdom" />
+	<Identifier scheme=$viaf value="61632881" />
+</Person>

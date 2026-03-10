@@ -1,0 +1,91 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A term in a language other than the document's primary language, with pronunciation, translation, and language identification."
+	id=codex:domain:foreign-term
+	namespace="foreign"
+	title="Foreign Term Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:foreign-term:ForeignTerms
+			name="ForeignTerms"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="ForeignTerm" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Unordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:foreign-term:ForeignTerm
+			name="ForeignTerm"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="language" />
+
+				<AllowsTrait name="pronunciation" />
+
+				<AllowsTrait name="translation" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=codex:domain:foreign-term:trait:key
+			name="key"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:foreign-term:trait:language
+			name="language"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Ipa
+			id=codex:domain:foreign-term:trait:pronunciation
+			name="pronunciation"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:foreign-term:trait:translation
+			name="translation"
+		/>
+	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=codex:domain:foreign-term:requires-term
+			title="ForeignTerms must contain at least one ForeignTerm"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ForeignTerms" />
+			</Targets>
+
+			<Rule>
+				<ChildConstraint conceptSelector="ForeignTerm" type=$RequiresChildConcept />
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

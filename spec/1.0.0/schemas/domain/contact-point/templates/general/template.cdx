@@ -1,0 +1,7 @@
+[General contact point. Remove unused methods; at least one is required.]
+<ContactPoint
+	contactKind=$
+	emailAddress=""
+	phoneNumber=""
+	website=""
+/>

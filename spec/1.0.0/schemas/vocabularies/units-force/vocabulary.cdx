@@ -1,0 +1,21 @@
+<TokenVocabulary
+	id=codex:vocabulary:units-force
+	version="1.0.0"
+	title="Units of Force"
+	description="Units of measurement for force."
+	closedVocabulary=true
+>
+	<TokenDefinition token=$Dyne label="dyn" />
+
+	<TokenDefinition token=$KilogramForce label="kgf" />
+
+	<TokenDefinition token=$Kilonewton label="kN" />
+
+	<TokenDefinition token=$Meganewton label="MN" />
+
+	<TokenDefinition token=$Newton label="N" />
+
+	<TokenDefinition token=$Poundal label="pdl" />
+
+	<TokenDefinition token=$PoundForce label="lbf" />
+</TokenVocabulary>

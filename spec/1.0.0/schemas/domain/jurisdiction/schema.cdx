@@ -1,0 +1,59 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A named legal or regulatory jurisdiction under which laws, policies, or regulations apply."
+	id=codex:domain:jurisdiction
+	namespace="jurisdiction"
+	title="Jurisdiction Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:jurisdiction:Jurisdiction
+			name="Jurisdiction"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<AllowsTrait name="jurisdictionKind" />
+
+				<AllowsTrait name="countryCode" />
+
+				<AllowsTrait name="subdivisionCode" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:jurisdiction:trait:name
+			name="name"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:jurisdiction:trait:jurisdictionKind
+			name="jurisdictionKind"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:jurisdiction:trait:countryCode
+			name="countryCode"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:jurisdiction:trait:subdivisionCode
+			name="subdivisionCode"
+		/>
+	</TraitDefinitions>
+</Schema>

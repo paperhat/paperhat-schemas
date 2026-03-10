@@ -1,0 +1,20 @@
+[
+  A SemanticProjectionDefinition that selects all Person concepts
+  and prunes contact information for a public-facing view.
+]
+<SemanticProjectionDefinition
+	id=codex:view:example:person-public
+	name="PersonPublicProjection"
+	description="Selects Person concepts and prunes contact information."
+>
+	<SelectRule ruleIdentifier=codex:view:example:person-public:select>
+		<RuleSelectors>
+			<ConceptTypeSelector selectorConceptType="Person" />
+		</RuleSelectors>
+	</SelectRule>
+	<PruneRule ruleIdentifier=codex:view:example:person-public:prune-contact>
+		<RuleSelectors>
+			<ConceptTypeSelector selectorConceptType="ContactPoint" />
+		</RuleSelectors>
+	</PruneRule>
+</SemanticProjectionDefinition>

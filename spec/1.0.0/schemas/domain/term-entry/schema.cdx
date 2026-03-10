@@ -1,0 +1,183 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A lexical term entry supporting simple glossary definitions through full dictionary entries with multiple senses, parts of speech, etymology, inflected forms, and semantic relations."
+	id=codex:domain:term-entry
+	namespace="term"
+	title="Term Entry Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MayBeEntity
+			id=codex:domain:term-entry:TermEntry
+			name="TermEntry"
+		>
+			<ContentRules>
+				<AllowsContent contentMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="term" />
+
+				<AllowsTrait name="key" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Sense" />
+
+				<AllowsChildConcept conceptSelector="Etymology" />
+
+				<AllowsChildConcept conceptSelector="TermForm" />
+
+				<AllowsChildConcept conceptSelector="TermRelation" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:term-entry:Sense
+			name="Sense"
+		>
+			<ContentRules>
+				<RequiresContent contentMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<AllowsTrait name="partOfSpeech" />
+
+				<AllowsTrait name="register" />
+
+				<AllowsTrait name="domain" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="UsageExample" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:term-entry:UsageExample
+			name="UsageExample"
+		>
+			<ContentRules>
+				<RequiresContent contentMode=$Flow />
+			</ContentRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:term-entry:Etymology
+			name="Etymology"
+		>
+			<ContentRules>
+				<RequiresContent contentMode=$Flow />
+			</ContentRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:term-entry:TermForm
+			name="TermForm"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="form" />
+
+				<AllowsTrait name="formKind" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:term-entry:TermRelation
+			name="TermRelation"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="relatedTerm" />
+
+				<RequiresTrait name="relationKind" />
+
+				<AllowsTrait name="target" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:term-entry:trait:term
+			name="term"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=codex:domain:term-entry:trait:key
+			name="key"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:term-entry:trait:partOfSpeech
+			name="partOfSpeech"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:term-entry:trait:register
+			name="register"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:term-entry:trait:domain
+			name="domain"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:term-entry:trait:form
+			name="form"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:term-entry:trait:formKind
+			name="formKind"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:term-entry:trait:relatedTerm
+			name="relatedTerm"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:term-entry:trait:relationKind
+			name="relationKind"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=codex:domain:term-entry:trait:target
+			isReferenceTrait=true
+			name="target"
+		/>
+	</TraitDefinitions>
+</Schema>

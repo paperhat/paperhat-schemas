@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="6cf3b4727790702289833570fb6cb46bcf6e2bebe0fad83520216b60538fa773"
+	copyright="Copyright 2026 Paperhat"
+	description="A lexical term entry supporting simple glossary definitions through full dictionary entries with multiple senses, parts of speech, etymology, inflected forms, and semantic relations."
+	license="Apache-2.0"
+	packageName="paperhat-term-entry"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

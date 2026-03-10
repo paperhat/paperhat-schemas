@@ -1,0 +1,11 @@
+<LocalizationBundle
+	language=$En
+	schema=codex:domain:figure
+	schemaVersion="1.0.0"
+>
+	<ConceptLocalization identifier="Figure" label="Figure" labelOther="Figures" />
+
+	<TraitLocalization identifier="caption" label="Caption" labelOther="Captions">
+		Caption text associated with the figure.
+	</TraitLocalization>
+</LocalizationBundle>

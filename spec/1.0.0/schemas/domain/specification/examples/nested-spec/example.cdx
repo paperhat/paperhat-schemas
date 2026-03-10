@@ -1,0 +1,63 @@
+<Specification
+	title="Schema Loading Rules"
+	normative=true
+	locked=false
+	version=1.2.0-beta.1
+	editor="Paperhat"
+>
+	<Section
+		id=urn:example:schema-loading-rules#section/scope
+		key=~scope
+		title="Scope"
+		conformance=$Normative
+		division=$Body
+	>
+		<Paragraph>
+			This section establishes scope and loading requirements.
+		</Paragraph>
+
+		<Requirement
+			id=urn:example:schema-loading-rules#requirement/single-source-of-truth
+			key=~single-source-of-truth
+			modality=$Must
+		>
+			The Codex document MUST be the {~single-source-of-truth | single source of truth}.
+		</Requirement>
+	</Section>
+
+	<Section
+		id=urn:example:schema-loading-rules#section/references
+		key=~references
+		title="References"
+		conformance=$Informative
+		division=$BackMatter
+	>
+		<SectionReference target=urn:example:schema-loading-rules#section/scope label="Scope" />
+
+		<ExternalReference uri=https://example.org/schema-loading-rules label="Companion explainer" />
+	</Section>
+
+	<Section
+		id=urn:example:schema-loading-rules#section/appendix-a
+		key=~appendixA
+		title="Appendix A"
+		conformance=$Informative
+		division=$Appendix
+	>
+		<Section
+			id=urn:example:schema-loading-rules#section/appendix-a/notes
+			key=~appendixANotes
+			title="Notes"
+			conformance=$Informative
+			division=$Appendix
+		>
+			<Note>
+				Historical lineage concepts are intentionally excluded from this schema package.
+			</Note>
+
+			<Definition term="single source of truth">
+				A single authoritative representation from which all projections are derived.
+			</Definition>
+		</Section>
+	</Section>
+</Specification>

@@ -1,0 +1,8 @@
+<Person gender="non-binary" birthDate={1990-03-15}>
+	<PersonName nameKind=$legal given="Alex" middle="Jordan" family="Chen" />
+	<PersonName nameKind=$preferred given="Lex" family="Chen" />
+	<ContactPoint contactKind=$work emailAddress="lex.chen@example.com" />
+	<ContactPoint contactKind=$personal phoneNumber="+1 555 234 5678" />
+	<Identifier scheme=$orcid value="0000-0002-1825-0097" />
+	<Location locationKind=$residence locality="Portland" region="Oregon" country="United States" />
+</Person>

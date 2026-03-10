@@ -1,0 +1,47 @@
+<TokenVocabulary
+	closedVocabulary=true
+	description="Broad culinary and nutritional categories for classifying foods and comestibles."
+	id=codex:vocabulary:food-categories
+	title="Food Categories"
+	version="1.0.0"
+>
+	<TokenDefinition token=$Beverage label="beverage" />
+
+	<TokenDefinition token=$Condiment label="condiment" />
+
+	<TokenDefinition token=$Confection label="confection" />
+
+	<TokenDefinition token=$Dairy label="dairy" />
+
+	<TokenDefinition token=$Egg label="egg" />
+
+	<TokenDefinition token=$Fat label="fat" />
+
+	<TokenDefinition token=$Fruit label="fruit" />
+
+	<TokenDefinition token=$Fungi label="fungi" />
+
+	<TokenDefinition token=$Grain label="grain" />
+
+	<TokenDefinition token=$Herb label="herb" />
+
+	<TokenDefinition token=$Legume label="legume" />
+
+	<TokenDefinition token=$Meat label="meat" />
+
+	<TokenDefinition token=$Nut label="nut" />
+
+	<TokenDefinition token=$Pasta label="pasta" />
+
+	<TokenDefinition token=$Poultry label="poultry" />
+
+	<TokenDefinition token=$Seafood label="seafood" />
+
+	<TokenDefinition token=$Seed label="seed" />
+
+	<TokenDefinition token=$Spice label="spice" />
+
+	<TokenDefinition token=$Sweetener label="sweetener" />
+
+	<TokenDefinition token=$Vegetable label="vegetable" />
+</TokenVocabulary>

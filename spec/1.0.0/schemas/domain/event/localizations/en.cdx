@@ -1,0 +1,31 @@
+<LocalizationBundle
+	schema=codex:domain:event
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Event" label="Event" labelOther="Events" />
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		The name of the event.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="startDate" label="Start Date" labelOther="Start Dates">
+		The date and time when the event begins.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="endDate" label="End Date" labelOther="End Dates">
+		The date and time when the event ends.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="eventStatus" label="Event Status" labelOther="Event Statuses">
+		The current status of the event.
+	</TraitLocalization>
+
+	<TraitLocalization
+		identifier="eventAttendanceMode"
+		label="Event Attendance Mode"
+		labelOther="Event Attendance Modes"
+	>
+		Whether the event is held online, offline, or in a mixed format.
+	</TraitLocalization>
+</LocalizationBundle>

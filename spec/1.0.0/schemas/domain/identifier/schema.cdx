@@ -1,0 +1,43 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A scheme-qualified identifier for referencing external systems, standards, or registries."
+	id=codex:domain:identifier
+	namespace="ident"
+	title="Identifier Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:identifier:Identifier
+			name="Identifier"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="scheme" />
+
+				<RequiresTrait name="value" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:identifier:trait:scheme
+			name="scheme"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:identifier:trait:value
+			name="value"
+		/>
+	</TraitDefinitions>
+</Schema>

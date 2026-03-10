@@ -1,0 +1,24 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="cea306b97c99841a8c7ba6c0dd6a9488d5d821008970555e9b18dac21665da0b"
+	copyright="Copyright 2026 Paperhat"
+	description="A captioned figure containing one or more media references. Supports rich titles via child concepts for Gloss span-bindings."
+	license="Apache-2.0"
+	packageName="paperhat-figure"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+>
+	<PackageDependency
+		packageName="paperhat-media-reference"
+		closureHash="af7d5c9014f5caa1932c73b12617d277447b3ebdf10a305f7b215a75f917f7b7"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-text"
+		closureHash="703472ba80a5f88685e7a6d604b16d31dfb06a81186c58bdd378aac55a53e897"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</DomainPackageManifest>

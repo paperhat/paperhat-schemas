@@ -1,0 +1,11 @@
+<LocalizationBundle
+	schema=codex:domain:essay
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Essay" label="Essay" labelOther="Essays" />
+
+	<TraitLocalization identifier="title" label="Title" labelOther="Titles">
+		The title of the essay.
+	</TraitLocalization>
+</LocalizationBundle>

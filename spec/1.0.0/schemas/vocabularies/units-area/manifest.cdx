@@ -1,0 +1,12 @@
+<VocabularyPackageManifest
+	author="Paperhat"
+	closureHash="0be4626d51d4623af2eaf380ba364beccaec9efea0aeadcc46b5fa09688ec4f0"
+	copyright="Copyright 2026 Paperhat"
+	description="Units of measurement for area and surface extent."
+	license="Apache-2.0"
+	packageName="units-area"
+	packageVersion="1.0.0"
+	primaryDocument="vocabulary.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

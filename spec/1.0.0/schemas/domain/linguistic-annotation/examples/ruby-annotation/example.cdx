@@ -1,0 +1,5 @@
+<LinguisticAnnotations>
+	<Ruby key=~kanji annotation="かんじ" />
+	<Ruby key=~tokyo annotation="とうきょう" />
+	<Ruby key=~pinyin annotation="běijīng" language=$zh position=$above />
+</LinguisticAnnotations>

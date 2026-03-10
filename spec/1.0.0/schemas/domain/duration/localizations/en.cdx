@@ -1,0 +1,15 @@
+<LocalizationBundle
+	schema=codex:domain:duration
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Duration" label="Duration" labelOther="Durations" />
+
+	<TraitLocalization identifier="amount" label="Amount" labelOther="Amounts">
+		The numeric value of the duration.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="unit" label="Unit" labelOther="Units">
+		The unit of time for the duration.
+	</TraitLocalization>
+</LocalizationBundle>

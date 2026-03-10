@@ -1,0 +1,5 @@
+<Admonitions>
+	<Warning key=~warn1 />
+	<Danger key=~danger1 title="High Voltage" />
+	<Critical key=~crit1 title="Do Not Operate" />
+</Admonitions>

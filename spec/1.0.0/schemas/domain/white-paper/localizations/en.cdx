@@ -1,0 +1,19 @@
+<LocalizationBundle
+	schema=codex:domain:white-paper
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="WhitePaper" label="White Paper" labelOther="White Papers" />
+
+	<ConceptLocalization identifier="Abstract" label="Abstract" labelOther="Abstracts" />
+
+	<ConceptLocalization identifier="Conclusion" label="Conclusion" labelOther="Conclusions" />
+
+	<TraitLocalization identifier="title" label="Title" labelOther="Titles">
+		The title of the white paper.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="coreThesis" label="Core Thesis">
+		The central thesis statement of the white paper.
+	</TraitLocalization>
+</LocalizationBundle>

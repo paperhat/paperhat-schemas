@@ -1,0 +1,102 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A method of contact such as email address, phone number, or website, with optional temporal validity."
+	id=codex:domain:contact-point
+	namespace="contact"
+	title="Contact Point Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:contact-point:ContactPoint
+			name="ContactPoint"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<AllowsTrait name="contactKind" />
+
+				<AllowsTrait name="emailAddress" />
+
+				<AllowsTrait name="phoneNumber" />
+
+				<AllowsTrait name="website" />
+
+				<AllowsTrait name="effectiveFrom" />
+
+				<AllowsTrait name="effectiveTo" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:contact-point:trait:contactKind
+			name="contactKind"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EmailAddress
+			id=codex:domain:contact-point:trait:emailAddress
+			name="emailAddress"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:contact-point:trait:phoneNumber
+			name="phoneNumber"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$IriReference
+			id=codex:domain:contact-point:trait:website
+			name="website"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Date
+			id=codex:domain:contact-point:trait:effectiveFrom
+			name="effectiveFrom"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Date
+			id=codex:domain:contact-point:trait:effectiveTo
+			name="effectiveTo"
+		/>
+	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=codex:domain:contact-point:requires-contact-method
+			title="ContactPoint must have at least one contact method"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ContactPoint" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<TraitExists trait="emailAddress" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="phoneNumber" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="website" />
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

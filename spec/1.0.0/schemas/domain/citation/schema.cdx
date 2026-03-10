@@ -1,0 +1,219 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A structured bibliographic citation with ordered contributors (persons or organizations), publication metadata, and identifiers."
+	id=codex:domain:citation
+	namespace="cite"
+	title="Citation Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace=person reference=urn:cdx:sha256:d70dce3909118dc4c887f76cc42fa4cb89cb2b5276f0f2324df72345fdcbd9d2 />
+
+		<SchemaImport namespace=org reference=urn:cdx:sha256:6bfa72a2e5434fc639924667cc3572cf2b1fe8261d3630d2e26fc1755d5473ac />
+
+		<SchemaImport namespace=ident reference=urn:cdx:sha256:a220d2034a4faa1a81d8102265c1fef36576871a0ba25ac31500abac7afd5907 />
+
+		<SchemaImport namespace=ref reference=urn:cdx:sha256:b5bec51c2de7a1dac1a051dffead616b03050c2bbcea1e5c8ae4f6523a1fc966 />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MayBeEntity
+			id=codex:domain:citation:Citation
+			name="Citation"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="title" />
+
+				<AllowsTrait name="subtitle" />
+
+				<AllowsTrait name="citationKind" />
+
+				<AllowsTrait name="containerTitle" />
+
+				<AllowsTrait name="edition" />
+
+				<AllowsTrait name="volume" />
+
+				<AllowsTrait name="issue" />
+
+				<AllowsTrait name="number" />
+
+				<AllowsTrait name="pageRange" />
+
+				<AllowsTrait name="publicationPlace" />
+
+				<AllowsTrait name="datePublished" />
+
+				<AllowsTrait name="dateAccessed" />
+
+				<AllowsTrait name="language" />
+
+				<AllowsTrait name="uri" />
+
+				<AllowsTrait name="key" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Contributor" />
+
+				<AllowsChildConcept conceptSelector="ident:Identifier" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:citation:Contributor
+			name="Contributor"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="contributorKind" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="person:Person" />
+
+				<AllowsChildConcept conceptSelector="org:Organization" />
+
+				<AllowsChildConcept conceptSelector="ref:Reference" />
+			</ChildRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:citation:trait:title
+			name="title"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:citation:trait:subtitle
+			name="subtitle"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:citation:trait:citationKind
+			name="citationKind"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:citation:trait:containerTitle
+			name="containerTitle"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:citation:trait:edition
+			name="edition"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:citation:trait:volume
+			name="volume"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:citation:trait:issue
+			name="issue"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:citation:trait:number
+			name="number"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:citation:trait:pageRange
+			name="pageRange"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:citation:trait:publicationPlace
+			name="publicationPlace"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Date
+			id=codex:domain:citation:trait:datePublished
+			name="datePublished"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Date
+			id=codex:domain:citation:trait:dateAccessed
+			name="dateAccessed"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:citation:trait:language
+			name="language"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Url
+			id=codex:domain:citation:trait:uri
+			name="uri"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=codex:domain:citation:trait:key
+			name="key"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:citation:trait:contributorKind
+			name="contributorKind"
+		/>
+	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=codex:domain:citation:contributor-has-entity
+			title="Contributor must have exactly one of Person, Organization, or Reference"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Contributor" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<ChildConstraint conceptSelector="person:Person" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="org:Organization" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="ref:Reference" type=$RequiresChildConcept />
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

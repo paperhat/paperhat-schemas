@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="4b66332d7f8c34818e7a711bdaa32fb6baa62bfbf14190c3d20f38e0db07636d"
+	copyright="Copyright 2026 Paperhat"
+	description="Accessibility characteristics of a resource or venue, including access modes, features, and hazards."
+	license="Apache-2.0"
+	packageName="paperhat-accessibility"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

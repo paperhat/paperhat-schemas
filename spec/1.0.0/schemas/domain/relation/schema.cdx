@@ -1,0 +1,374 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Semantic relational data model for deterministic, presentation-agnostic tabular data authoring."
+	id=codex:domain:relation
+	namespace=relation
+	title="Relation Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace=desc reference=urn:cdx:sha256:5e9c6ba4654a0b013b65fc38fde033d2b6fc281d7eb791e57b207b42d80ae7da />
+
+		<SchemaImport namespace=text reference=urn:cdx:sha256:0d835975e6ccabdab7c2204e9b1d4e19baf24108e45a8f240adea3a2684a5fd0 />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=codex:domain:relation:RelationType
+			name="RelationType"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Title" />
+
+				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
+
+				<RequiresChildConcept conceptSelector="Attribute" min=1 />
+
+				<AllowsChildConcept conceptSelector="AttributeKey" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Unordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=codex:domain:relation:Attribute
+			name="Attribute"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="valueType" />
+
+				<AllowsTrait name="required" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Unordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:relation:AttributeKey
+			name="AttributeKey"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<AllowsTrait name="name" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="KeyAttribute" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Unordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:relation:KeyAttribute
+			name="KeyAttribute"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="target" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=codex:domain:relation:RelationInstance
+			name="RelationInstance"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="for" />
+
+				<AllowsTrait name="name" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Title" />
+
+				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
+
+				<AllowsChildConcept conceptSelector="Tuple" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Unordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=codex:domain:relation:Tuple
+			name="Tuple"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<AllowsTrait name="name" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
+
+				<AllowsChildConcept conceptSelector="Binding" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Unordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:relation:Binding
+			name="Binding"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="target" />
+
+				<RequiresTrait name="value" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:relation:trait:name
+			name="name"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:relation:trait:valueType
+			name="valueType"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values="$Text,$Character,$Boolean,$Number,$Integer,$Zero,$NegativeInteger,$NonPositiveInteger,$DecimalNumber,$ExponentialNumber,$PrecisionNumber,$Fraction,$ImaginaryNumber,$ComplexNumber,$NonNegativeInteger,$PositiveInteger,$PositiveInfinity,$NegativeInfinity,$Infinity,$RealNumber,$FiniteNumber,$FiniteRealNumber,$ExactNumber,$EnumeratedToken,$IriReference,$LookupToken,$Uuid,$HostName,$EmailAddress,$Url,$Ipa,$Regex,$Semver,$HexColor,$NamedColor,$RgbColor,$HslColor,$HwbColor,$LabColor,$LchColor,$OklabColor,$OklchColor,$ColorSpaceColor,$ColorSpaceColorFunction,$ColorMix,$DeviceCmyk,$Color,$Date,$Time,$DateTime,$YearMonth,$MonthDay,$YearWeek,$Instant,$ZonedDateTime,$Duration,$TemporalKeyword,$TemporalPoint,$List,$Set,$Map,$Record,$Tuple,$Range" />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Boolean
+			id=codex:domain:relation:trait:required
+			name="required"
+		/>
+
+		<TraitDefinition
+			defaultValueTypes=[$Text, $Character, $Boolean, $Number, $Integer, $Zero, $NegativeInteger, $NonPositiveInteger, $DecimalNumber, $ExponentialNumber, $PrecisionNumber, $Fraction, $ImaginaryNumber, $ComplexNumber, $NonNegativeInteger, $PositiveInteger, $PositiveInfinity, $NegativeInfinity, $Infinity, $RealNumber, $FiniteNumber, $FiniteRealNumber, $ExactNumber, $EnumeratedToken, $IriReference, $LookupToken, $Uuid, $HostName, $EmailAddress, $Url, $Ipa, $Regex, $Semver, $HexColor, $NamedColor, $RgbColor, $HslColor, $HwbColor, $LabColor, $LchColor, $OklabColor, $OklchColor, $ColorSpaceColor, $ColorSpaceColorFunction, $ColorMix, $DeviceCmyk, $Color, $Date, $Time, $DateTime, $YearMonth, $MonthDay, $YearWeek, $Instant, $ZonedDateTime, $Duration, $TemporalKeyword, $TemporalPoint, $List, $Set, $Map, $Record, $Tuple, $Range]
+			id=codex:domain:relation:trait:value
+			name="value"
+		/>
+	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=codex:domain:relation:relation-instance-reference-trait-allowed
+			title="RelationInstance allows only for as a reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="RelationInstance" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTraitAllowed traitName="for" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:domain:relation:relation-instance-reference-singleton
+			title="RelationInstance must declare at most one reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="RelationInstance" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceSingleton />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:domain:relation:relation-instance-for-target-type
+			title="RelationInstance for must target RelationType"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="RelationInstance" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="RelationType" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:domain:relation:relation-instance-for-must-resolve
+			title="RelationInstance for must resolve"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="RelationInstance" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceMustResolve />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:domain:relation:key-attribute-reference-trait-allowed
+			title="KeyAttribute allows only target as a reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="KeyAttribute" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:domain:relation:key-attribute-reference-singleton
+			title="KeyAttribute must declare at most one reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="KeyAttribute" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceSingleton />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:domain:relation:key-attribute-target-type
+			title="KeyAttribute target must target Attribute"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="KeyAttribute" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="Attribute" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:domain:relation:key-attribute-target-must-resolve
+			title="KeyAttribute target must resolve"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="KeyAttribute" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceMustResolve />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:domain:relation:binding-reference-trait-allowed
+			title="Binding allows only target as a reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Binding" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:domain:relation:binding-reference-singleton
+			title="Binding must declare at most one reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Binding" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceSingleton />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:domain:relation:binding-target-type
+			title="Binding target must target Attribute"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Binding" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="Attribute" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:domain:relation:binding-target-must-resolve
+			title="Binding target must resolve"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Binding" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceMustResolve />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:domain:relation:tuple-requires-binding
+			title="Tuple must contain at least one Binding"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Tuple" />
+			</Targets>
+
+			<Rule>
+				<ChildConstraint conceptSelector="Binding" type=$RequiresChildConcept />
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

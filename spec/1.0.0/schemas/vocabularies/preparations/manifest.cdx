@@ -1,0 +1,12 @@
+<VocabularyPackageManifest
+	author="Paperhat"
+	closureHash="0bf4faf5813bcf49cb103b522c4d834743ce7e3261c7a9ecc387b470ffa1bb8b"
+	copyright="Copyright 2026 Paperhat"
+	description="Culinary preparation techniques applied to ingredients before or during cooking."
+	license="Apache-2.0"
+	packageName="preparations"
+	packageVersion="1.0.0"
+	primaryDocument="vocabulary.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="4c2d9a74de37b2a260d2882bbf36a1be6b80bedd656fdf31e5d27e3998de7cd8"
+	copyright="Copyright 2026 Paperhat"
+	description="Emotional or tonal annotation on a text span, marking the intended feeling, mood, or voice of the passage."
+	license="Apache-2.0"
+	packageName="paperhat-tone"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

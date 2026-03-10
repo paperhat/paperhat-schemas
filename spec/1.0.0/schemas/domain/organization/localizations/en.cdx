@@ -1,0 +1,31 @@
+<LocalizationBundle
+	schema=codex:domain:organization
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Organization" label="Organization" labelOther="Organizations" />
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		The name of the organization.
+	</TraitLocalization>
+
+	<TraitLocalization
+		identifier="organizationKind"
+		label="Organization Kind"
+		labelOther="Organization Kinds"
+	>
+		The type or category of the organization.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="foundingDate" label="Founding Date" labelOther="Founding Dates">
+		The date when the organization was founded.
+	</TraitLocalization>
+
+	<TraitLocalization
+		identifier="dissolutionDate"
+		label="Dissolution Date"
+		labelOther="Dissolution Dates"
+	>
+		The date when the organization was dissolved.
+	</TraitLocalization>
+</LocalizationBundle>

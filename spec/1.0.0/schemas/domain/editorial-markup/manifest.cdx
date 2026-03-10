@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="9698a6b93dfd0558915918a106d1ebae2f59aa5af8e8f8e289ed074c0b37efcb"
+	copyright="Copyright 2026 Paperhat"
+	description="Semantic treatments applied to text spans: emphasis, importance, highlighting, track-changes operations, annotations, corrections, redactions, spoilers, and quotations."
+	license="Apache-2.0"
+	packageName="paperhat-editorial-markup"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

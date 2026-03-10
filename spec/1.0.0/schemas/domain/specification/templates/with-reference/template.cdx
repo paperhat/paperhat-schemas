@@ -1,0 +1,36 @@
+[Specification template with internal and external references.]
+<Specification
+	title="Specification Title"
+	normative=true
+	locked=false
+	version=1.0.0
+	editor="Editor Name"
+>
+	<Section
+		id=urn:example:spec#section/primary
+		key=~primary
+		title="Primary Section"
+		conformance=$Normative
+		division=$Body
+	>
+		<Requirement
+			id=urn:example:spec#requirement/primary-requirement
+			key=~primary-requirement
+			modality=$Must
+		>
+			Primary requirement text.
+		</Requirement>
+	</Section>
+
+	<Section
+		id=urn:example:spec#section/references
+		key=~references
+		title="References"
+		conformance=$Informative
+		division=$BackMatter
+	>
+		<SectionReference target=urn:example:spec#section/primary label="Primary Section" />
+
+		<ExternalReference uri=https://example.org/spec-companion label="Companion Material" />
+	</Section>
+</Specification>

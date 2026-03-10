@@ -1,0 +1,417 @@
+<TokenVocabulary
+	id=codex:vocabulary:e164
+	version="1.0.0"
+	title="E.164 Country Calling Codes"
+	description="International telephone country calling codes from ITU-T E.164."
+	closedVocabulary=true
+>
+	<TokenDefinition token=$1 label="North America (US, CA, Caribbean)" />
+
+	<TokenDefinition token=$7 label="Russia, Kazakhstan" />
+
+	<TokenDefinition token=$20 label="Egypt" />
+
+	<TokenDefinition token=$27 label="South Africa" />
+
+	<TokenDefinition token=$30 label="Greece" />
+
+	<TokenDefinition token=$31 label="Netherlands" />
+
+	<TokenDefinition token=$32 label="Belgium" />
+
+	<TokenDefinition token=$33 label="France" />
+
+	<TokenDefinition token=$34 label="Spain" />
+
+	<TokenDefinition token=$36 label="Hungary" />
+
+	<TokenDefinition token=$39 label="Italy" />
+
+	<TokenDefinition token=$40 label="Romania" />
+
+	<TokenDefinition token=$41 label="Switzerland" />
+
+	<TokenDefinition token=$43 label="Austria" />
+
+	<TokenDefinition token=$44 label="United Kingdom" />
+
+	<TokenDefinition token=$45 label="Denmark" />
+
+	<TokenDefinition token=$46 label="Sweden" />
+
+	<TokenDefinition token=$47 label="Norway" />
+
+	<TokenDefinition token=$48 label="Poland" />
+
+	<TokenDefinition token=$49 label="Germany" />
+
+	<TokenDefinition token=$51 label="Peru" />
+
+	<TokenDefinition token=$52 label="Mexico" />
+
+	<TokenDefinition token=$53 label="Cuba" />
+
+	<TokenDefinition token=$54 label="Argentina" />
+
+	<TokenDefinition token=$55 label="Brazil" />
+
+	<TokenDefinition token=$56 label="Chile" />
+
+	<TokenDefinition token=$57 label="Colombia" />
+
+	<TokenDefinition token=$58 label="Venezuela" />
+
+	<TokenDefinition token=$60 label="Malaysia" />
+
+	<TokenDefinition token=$61 label="Australia" />
+
+	<TokenDefinition token=$62 label="Indonesia" />
+
+	<TokenDefinition token=$63 label="Philippines" />
+
+	<TokenDefinition token=$64 label="New Zealand" />
+
+	<TokenDefinition token=$65 label="Singapore" />
+
+	<TokenDefinition token=$66 label="Thailand" />
+
+	<TokenDefinition token=$81 label="Japan" />
+
+	<TokenDefinition token=$82 label="South Korea" />
+
+	<TokenDefinition token=$84 label="Viet Nam" />
+
+	<TokenDefinition token=$86 label="China" />
+
+	<TokenDefinition token=$90 label="Turkiye" />
+
+	<TokenDefinition token=$91 label="India" />
+
+	<TokenDefinition token=$92 label="Pakistan" />
+
+	<TokenDefinition token=$93 label="Afghanistan" />
+
+	<TokenDefinition token=$94 label="Sri Lanka" />
+
+	<TokenDefinition token=$95 label="Myanmar" />
+
+	<TokenDefinition token=$98 label="Iran" />
+
+	<TokenDefinition token=$211 label="South Sudan" />
+
+	<TokenDefinition token=$212 label="Morocco" />
+
+	<TokenDefinition token=$213 label="Algeria" />
+
+	<TokenDefinition token=$216 label="Tunisia" />
+
+	<TokenDefinition token=$218 label="Libya" />
+
+	<TokenDefinition token=$220 label="Gambia" />
+
+	<TokenDefinition token=$221 label="Senegal" />
+
+	<TokenDefinition token=$222 label="Mauritania" />
+
+	<TokenDefinition token=$223 label="Mali" />
+
+	<TokenDefinition token=$224 label="Guinea" />
+
+	<TokenDefinition token=$225 label="Cote d'Ivoire" />
+
+	<TokenDefinition token=$226 label="Burkina Faso" />
+
+	<TokenDefinition token=$227 label="Niger" />
+
+	<TokenDefinition token=$228 label="Togo" />
+
+	<TokenDefinition token=$229 label="Benin" />
+
+	<TokenDefinition token=$230 label="Mauritius" />
+
+	<TokenDefinition token=$231 label="Liberia" />
+
+	<TokenDefinition token=$232 label="Sierra Leone" />
+
+	<TokenDefinition token=$233 label="Ghana" />
+
+	<TokenDefinition token=$234 label="Nigeria" />
+
+	<TokenDefinition token=$235 label="Chad" />
+
+	<TokenDefinition token=$236 label="Central African Republic" />
+
+	<TokenDefinition token=$237 label="Cameroon" />
+
+	<TokenDefinition token=$238 label="Cabo Verde" />
+
+	<TokenDefinition token=$239 label="Sao Tome and Principe" />
+
+	<TokenDefinition token=$240 label="Equatorial Guinea" />
+
+	<TokenDefinition token=$241 label="Gabon" />
+
+	<TokenDefinition token=$242 label="Congo" />
+
+	<TokenDefinition token=$243 label="Congo, Democratic Republic of the" />
+
+	<TokenDefinition token=$244 label="Angola" />
+
+	<TokenDefinition token=$245 label="Guinea-Bissau" />
+
+	<TokenDefinition token=$246 label="British Indian Ocean Territory" />
+
+	<TokenDefinition token=$248 label="Seychelles" />
+
+	<TokenDefinition token=$249 label="Sudan" />
+
+	<TokenDefinition token=$250 label="Rwanda" />
+
+	<TokenDefinition token=$251 label="Ethiopia" />
+
+	<TokenDefinition token=$252 label="Somalia" />
+
+	<TokenDefinition token=$253 label="Djibouti" />
+
+	<TokenDefinition token=$254 label="Kenya" />
+
+	<TokenDefinition token=$255 label="Tanzania" />
+
+	<TokenDefinition token=$256 label="Uganda" />
+
+	<TokenDefinition token=$257 label="Burundi" />
+
+	<TokenDefinition token=$258 label="Mozambique" />
+
+	<TokenDefinition token=$260 label="Zambia" />
+
+	<TokenDefinition token=$261 label="Madagascar" />
+
+	<TokenDefinition token=$262 label="Reunion, Mayotte" />
+
+	<TokenDefinition token=$263 label="Zimbabwe" />
+
+	<TokenDefinition token=$264 label="Namibia" />
+
+	<TokenDefinition token=$265 label="Malawi" />
+
+	<TokenDefinition token=$266 label="Lesotho" />
+
+	<TokenDefinition token=$267 label="Botswana" />
+
+	<TokenDefinition token=$268 label="Eswatini" />
+
+	<TokenDefinition token=$269 label="Comoros" />
+
+	<TokenDefinition token=$290 label="Saint Helena" />
+
+	<TokenDefinition token=$291 label="Eritrea" />
+
+	<TokenDefinition token=$297 label="Aruba" />
+
+	<TokenDefinition token=$298 label="Faroe Islands" />
+
+	<TokenDefinition token=$299 label="Greenland" />
+
+	<TokenDefinition token=$350 label="Gibraltar" />
+
+	<TokenDefinition token=$351 label="Portugal" />
+
+	<TokenDefinition token=$352 label="Luxembourg" />
+
+	<TokenDefinition token=$353 label="Ireland" />
+
+	<TokenDefinition token=$354 label="Iceland" />
+
+	<TokenDefinition token=$355 label="Albania" />
+
+	<TokenDefinition token=$356 label="Malta" />
+
+	<TokenDefinition token=$357 label="Cyprus" />
+
+	<TokenDefinition token=$358 label="Finland" />
+
+	<TokenDefinition token=$359 label="Bulgaria" />
+
+	<TokenDefinition token=$370 label="Lithuania" />
+
+	<TokenDefinition token=$371 label="Latvia" />
+
+	<TokenDefinition token=$372 label="Estonia" />
+
+	<TokenDefinition token=$373 label="Moldova" />
+
+	<TokenDefinition token=$374 label="Armenia" />
+
+	<TokenDefinition token=$375 label="Belarus" />
+
+	<TokenDefinition token=$376 label="Andorra" />
+
+	<TokenDefinition token=$377 label="Monaco" />
+
+	<TokenDefinition token=$378 label="San Marino" />
+
+	<TokenDefinition token=$380 label="Ukraine" />
+
+	<TokenDefinition token=$381 label="Serbia" />
+
+	<TokenDefinition token=$382 label="Montenegro" />
+
+	<TokenDefinition token=$383 label="Kosovo" />
+
+	<TokenDefinition token=$385 label="Croatia" />
+
+	<TokenDefinition token=$386 label="Slovenia" />
+
+	<TokenDefinition token=$387 label="Bosnia and Herzegovina" />
+
+	<TokenDefinition token=$389 label="North Macedonia" />
+
+	<TokenDefinition token=$420 label="Czechia" />
+
+	<TokenDefinition token=$421 label="Slovakia" />
+
+	<TokenDefinition token=$423 label="Liechtenstein" />
+
+	<TokenDefinition token=$500 label="Falkland Islands" />
+
+	<TokenDefinition token=$501 label="Belize" />
+
+	<TokenDefinition token=$502 label="Guatemala" />
+
+	<TokenDefinition token=$503 label="El Salvador" />
+
+	<TokenDefinition token=$504 label="Honduras" />
+
+	<TokenDefinition token=$505 label="Nicaragua" />
+
+	<TokenDefinition token=$506 label="Costa Rica" />
+
+	<TokenDefinition token=$507 label="Panama" />
+
+	<TokenDefinition token=$508 label="Saint Pierre and Miquelon" />
+
+	<TokenDefinition token=$509 label="Haiti" />
+
+	<TokenDefinition token=$590 label="Guadeloupe" />
+
+	<TokenDefinition token=$591 label="Bolivia" />
+
+	<TokenDefinition token=$592 label="Guyana" />
+
+	<TokenDefinition token=$593 label="Ecuador" />
+
+	<TokenDefinition token=$594 label="French Guiana" />
+
+	<TokenDefinition token=$595 label="Paraguay" />
+
+	<TokenDefinition token=$596 label="Martinique" />
+
+	<TokenDefinition token=$597 label="Suriname" />
+
+	<TokenDefinition token=$598 label="Uruguay" />
+
+	<TokenDefinition token=$599 label="Curacao, Bonaire" />
+
+	<TokenDefinition token=$670 label="Timor-Leste" />
+
+	<TokenDefinition token=$672 label="Norfolk Island" />
+
+	<TokenDefinition token=$673 label="Brunei Darussalam" />
+
+	<TokenDefinition token=$674 label="Nauru" />
+
+	<TokenDefinition token=$675 label="Papua New Guinea" />
+
+	<TokenDefinition token=$676 label="Tonga" />
+
+	<TokenDefinition token=$677 label="Solomon Islands" />
+
+	<TokenDefinition token=$678 label="Vanuatu" />
+
+	<TokenDefinition token=$679 label="Fiji" />
+
+	<TokenDefinition token=$680 label="Palau" />
+
+	<TokenDefinition token=$681 label="Wallis and Futuna" />
+
+	<TokenDefinition token=$682 label="Cook Islands" />
+
+	<TokenDefinition token=$683 label="Niue" />
+
+	<TokenDefinition token=$685 label="Samoa" />
+
+	<TokenDefinition token=$686 label="Kiribati" />
+
+	<TokenDefinition token=$687 label="New Caledonia" />
+
+	<TokenDefinition token=$688 label="Tuvalu" />
+
+	<TokenDefinition token=$689 label="French Polynesia" />
+
+	<TokenDefinition token=$690 label="Tokelau" />
+
+	<TokenDefinition token=$691 label="Micronesia" />
+
+	<TokenDefinition token=$692 label="Marshall Islands" />
+
+	<TokenDefinition token=$850 label="North Korea" />
+
+	<TokenDefinition token=$852 label="Hong Kong" />
+
+	<TokenDefinition token=$853 label="Macao" />
+
+	<TokenDefinition token=$855 label="Cambodia" />
+
+	<TokenDefinition token=$856 label="Laos" />
+
+	<TokenDefinition token=$880 label="Bangladesh" />
+
+	<TokenDefinition token=$886 label="Taiwan" />
+
+	<TokenDefinition token=$960 label="Maldives" />
+
+	<TokenDefinition token=$961 label="Lebanon" />
+
+	<TokenDefinition token=$962 label="Jordan" />
+
+	<TokenDefinition token=$963 label="Syria" />
+
+	<TokenDefinition token=$964 label="Iraq" />
+
+	<TokenDefinition token=$965 label="Kuwait" />
+
+	<TokenDefinition token=$966 label="Saudi Arabia" />
+
+	<TokenDefinition token=$967 label="Yemen" />
+
+	<TokenDefinition token=$968 label="Oman" />
+
+	<TokenDefinition token=$970 label="Palestine" />
+
+	<TokenDefinition token=$971 label="United Arab Emirates" />
+
+	<TokenDefinition token=$972 label="Israel" />
+
+	<TokenDefinition token=$973 label="Bahrain" />
+
+	<TokenDefinition token=$974 label="Qatar" />
+
+	<TokenDefinition token=$975 label="Bhutan" />
+
+	<TokenDefinition token=$976 label="Mongolia" />
+
+	<TokenDefinition token=$977 label="Nepal" />
+
+	<TokenDefinition token=$992 label="Tajikistan" />
+
+	<TokenDefinition token=$993 label="Turkmenistan" />
+
+	<TokenDefinition token=$994 label="Azerbaijan" />
+
+	<TokenDefinition token=$995 label="Georgia" />
+
+	<TokenDefinition token=$996 label="Kyrgyzstan" />
+
+	<TokenDefinition token=$998 label="Uzbekistan" />
+</TokenVocabulary>

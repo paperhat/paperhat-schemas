@@ -1,0 +1,30 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="c960b436a0aad4f9ef35d6852b053fde34343ca3ae20e9f3633296b1253c88b0"
+	copyright="Copyright 2026 Paperhat"
+	description="A short-to-medium-length prose composition expressing the author's perspective on a single subject."
+	license="Apache-2.0"
+	packageName="paperhat-essay"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+>
+	<PackageDependency
+		packageName="paperhat-document-metadata"
+		closureHash="7f60a626867d8008adb8b8414526601759539a037d040ff2d96699ab486785ff"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-narrative"
+		closureHash="cd5fc4db03887984608f811a66d9c77e473a14d63f360d3a4c0324d9c7ad7d20"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-notes"
+		closureHash="22c5d0faccd4a541f902916b0b479d5d3417b4e4412f72dd65e24d7650ffae1c"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</DomainPackageManifest>

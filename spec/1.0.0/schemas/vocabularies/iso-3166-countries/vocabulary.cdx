@@ -1,0 +1,505 @@
+<TokenVocabulary
+	id=codex:vocabulary:iso-3166
+	version="1.0.0"
+	title="ISO 3166-1 Alpha-2 Country Codes"
+	description="Country and territory codes from ISO 3166-1 alpha-2."
+	closedVocabulary=true
+>
+	<TokenDefinition token=$AD label="Andorra" />
+
+	<TokenDefinition token=$AE label="United Arab Emirates" />
+
+	<TokenDefinition token=$AF label="Afghanistan" />
+
+	<TokenDefinition token=$AG label="Antigua and Barbuda" />
+
+	<TokenDefinition token=$AI label="Anguilla" />
+
+	<TokenDefinition token=$AL label="Albania" />
+
+	<TokenDefinition token=$AM label="Armenia" />
+
+	<TokenDefinition token=$AO label="Angola" />
+
+	<TokenDefinition token=$AQ label="Antarctica" />
+
+	<TokenDefinition token=$AR label="Argentina" />
+
+	<TokenDefinition token=$AS label="American Samoa" />
+
+	<TokenDefinition token=$AT label="Austria" />
+
+	<TokenDefinition token=$AU label="Australia" />
+
+	<TokenDefinition token=$AW label="Aruba" />
+
+	<TokenDefinition token=$AX label="Aland Islands" />
+
+	<TokenDefinition token=$AZ label="Azerbaijan" />
+
+	<TokenDefinition token=$BA label="Bosnia and Herzegovina" />
+
+	<TokenDefinition token=$BB label="Barbados" />
+
+	<TokenDefinition token=$BD label="Bangladesh" />
+
+	<TokenDefinition token=$BE label="Belgium" />
+
+	<TokenDefinition token=$BF label="Burkina Faso" />
+
+	<TokenDefinition token=$BG label="Bulgaria" />
+
+	<TokenDefinition token=$BH label="Bahrain" />
+
+	<TokenDefinition token=$BI label="Burundi" />
+
+	<TokenDefinition token=$BJ label="Benin" />
+
+	<TokenDefinition token=$BL label="Saint Barthelemy" />
+
+	<TokenDefinition token=$BM label="Bermuda" />
+
+	<TokenDefinition token=$BN label="Brunei Darussalam" />
+
+	<TokenDefinition token=$BO label="Bolivia" />
+
+	<TokenDefinition token=$BQ label="Bonaire, Sint Eustatius and Saba" />
+
+	<TokenDefinition token=$BR label="Brazil" />
+
+	<TokenDefinition token=$BS label="Bahamas" />
+
+	<TokenDefinition token=$BT label="Bhutan" />
+
+	<TokenDefinition token=$BV label="Bouvet Island" />
+
+	<TokenDefinition token=$BW label="Botswana" />
+
+	<TokenDefinition token=$BY label="Belarus" />
+
+	<TokenDefinition token=$BZ label="Belize" />
+
+	<TokenDefinition token=$CA label="Canada" />
+
+	<TokenDefinition token=$CC label="Cocos (Keeling) Islands" />
+
+	<TokenDefinition token=$CD label="Congo, Democratic Republic of the" />
+
+	<TokenDefinition token=$CF label="Central African Republic" />
+
+	<TokenDefinition token=$CG label="Congo" />
+
+	<TokenDefinition token=$CH label="Switzerland" />
+
+	<TokenDefinition token=$CI label="Cote d'Ivoire" />
+
+	<TokenDefinition token=$CK label="Cook Islands" />
+
+	<TokenDefinition token=$CL label="Chile" />
+
+	<TokenDefinition token=$CM label="Cameroon" />
+
+	<TokenDefinition token=$CN label="China" />
+
+	<TokenDefinition token=$CO label="Colombia" />
+
+	<TokenDefinition token=$CR label="Costa Rica" />
+
+	<TokenDefinition token=$CU label="Cuba" />
+
+	<TokenDefinition token=$CV label="Cabo Verde" />
+
+	<TokenDefinition token=$CW label="Curacao" />
+
+	<TokenDefinition token=$CX label="Christmas Island" />
+
+	<TokenDefinition token=$CY label="Cyprus" />
+
+	<TokenDefinition token=$CZ label="Czechia" />
+
+	<TokenDefinition token=$DE label="Germany" />
+
+	<TokenDefinition token=$DJ label="Djibouti" />
+
+	<TokenDefinition token=$DK label="Denmark" />
+
+	<TokenDefinition token=$DM label="Dominica" />
+
+	<TokenDefinition token=$DO label="Dominican Republic" />
+
+	<TokenDefinition token=$DZ label="Algeria" />
+
+	<TokenDefinition token=$EC label="Ecuador" />
+
+	<TokenDefinition token=$EE label="Estonia" />
+
+	<TokenDefinition token=$EG label="Egypt" />
+
+	<TokenDefinition token=$EH label="Western Sahara" />
+
+	<TokenDefinition token=$ER label="Eritrea" />
+
+	<TokenDefinition token=$ES label="Spain" />
+
+	<TokenDefinition token=$ET label="Ethiopia" />
+
+	<TokenDefinition token=$FI label="Finland" />
+
+	<TokenDefinition token=$FJ label="Fiji" />
+
+	<TokenDefinition token=$FK label="Falkland Islands (Malvinas)" />
+
+	<TokenDefinition token=$FM label="Micronesia" />
+
+	<TokenDefinition token=$FO label="Faroe Islands" />
+
+	<TokenDefinition token=$FR label="France" />
+
+	<TokenDefinition token=$GA label="Gabon" />
+
+	<TokenDefinition token=$GB label="United Kingdom" />
+
+	<TokenDefinition token=$GD label="Grenada" />
+
+	<TokenDefinition token=$GE label="Georgia" />
+
+	<TokenDefinition token=$GF label="French Guiana" />
+
+	<TokenDefinition token=$GG label="Guernsey" />
+
+	<TokenDefinition token=$GH label="Ghana" />
+
+	<TokenDefinition token=$GI label="Gibraltar" />
+
+	<TokenDefinition token=$GL label="Greenland" />
+
+	<TokenDefinition token=$GM label="Gambia" />
+
+	<TokenDefinition token=$GN label="Guinea" />
+
+	<TokenDefinition token=$GP label="Guadeloupe" />
+
+	<TokenDefinition token=$GQ label="Equatorial Guinea" />
+
+	<TokenDefinition token=$GR label="Greece" />
+
+	<TokenDefinition token=$GS label="South Georgia and the South Sandwich Islands" />
+
+	<TokenDefinition token=$GT label="Guatemala" />
+
+	<TokenDefinition token=$GU label="Guam" />
+
+	<TokenDefinition token=$GW label="Guinea-Bissau" />
+
+	<TokenDefinition token=$GY label="Guyana" />
+
+	<TokenDefinition token=$HK label="Hong Kong" />
+
+	<TokenDefinition token=$HM label="Heard Island and McDonald Islands" />
+
+	<TokenDefinition token=$HN label="Honduras" />
+
+	<TokenDefinition token=$HR label="Croatia" />
+
+	<TokenDefinition token=$HT label="Haiti" />
+
+	<TokenDefinition token=$HU label="Hungary" />
+
+	<TokenDefinition token=$ID label="Indonesia" />
+
+	<TokenDefinition token=$IE label="Ireland" />
+
+	<TokenDefinition token=$IL label="Israel" />
+
+	<TokenDefinition token=$IM label="Isle of Man" />
+
+	<TokenDefinition token=$IN label="India" />
+
+	<TokenDefinition token=$IO label="British Indian Ocean Territory" />
+
+	<TokenDefinition token=$IQ label="Iraq" />
+
+	<TokenDefinition token=$IR label="Iran" />
+
+	<TokenDefinition token=$IS label="Iceland" />
+
+	<TokenDefinition token=$IT label="Italy" />
+
+	<TokenDefinition token=$JE label="Jersey" />
+
+	<TokenDefinition token=$JM label="Jamaica" />
+
+	<TokenDefinition token=$JO label="Jordan" />
+
+	<TokenDefinition token=$JP label="Japan" />
+
+	<TokenDefinition token=$KE label="Kenya" />
+
+	<TokenDefinition token=$KG label="Kyrgyzstan" />
+
+	<TokenDefinition token=$KH label="Cambodia" />
+
+	<TokenDefinition token=$KI label="Kiribati" />
+
+	<TokenDefinition token=$KM label="Comoros" />
+
+	<TokenDefinition token=$KN label="Saint Kitts and Nevis" />
+
+	<TokenDefinition token=$KP label="North Korea" />
+
+	<TokenDefinition token=$KR label="South Korea" />
+
+	<TokenDefinition token=$KW label="Kuwait" />
+
+	<TokenDefinition token=$KY label="Cayman Islands" />
+
+	<TokenDefinition token=$KZ label="Kazakhstan" />
+
+	<TokenDefinition token=$LA label="Lao People's Democratic Republic" />
+
+	<TokenDefinition token=$LB label="Lebanon" />
+
+	<TokenDefinition token=$LC label="Saint Lucia" />
+
+	<TokenDefinition token=$LI label="Liechtenstein" />
+
+	<TokenDefinition token=$LK label="Sri Lanka" />
+
+	<TokenDefinition token=$LR label="Liberia" />
+
+	<TokenDefinition token=$LS label="Lesotho" />
+
+	<TokenDefinition token=$LT label="Lithuania" />
+
+	<TokenDefinition token=$LU label="Luxembourg" />
+
+	<TokenDefinition token=$LV label="Latvia" />
+
+	<TokenDefinition token=$LY label="Libya" />
+
+	<TokenDefinition token=$MA label="Morocco" />
+
+	<TokenDefinition token=$MC label="Monaco" />
+
+	<TokenDefinition token=$MD label="Moldova" />
+
+	<TokenDefinition token=$ME label="Montenegro" />
+
+	<TokenDefinition token=$MF label="Saint Martin (French part)" />
+
+	<TokenDefinition token=$MG label="Madagascar" />
+
+	<TokenDefinition token=$MH label="Marshall Islands" />
+
+	<TokenDefinition token=$MK label="North Macedonia" />
+
+	<TokenDefinition token=$ML label="Mali" />
+
+	<TokenDefinition token=$MM label="Myanmar" />
+
+	<TokenDefinition token=$MN label="Mongolia" />
+
+	<TokenDefinition token=$MO label="Macao" />
+
+	<TokenDefinition token=$MP label="Northern Mariana Islands" />
+
+	<TokenDefinition token=$MQ label="Martinique" />
+
+	<TokenDefinition token=$MR label="Mauritania" />
+
+	<TokenDefinition token=$MS label="Montserrat" />
+
+	<TokenDefinition token=$MT label="Malta" />
+
+	<TokenDefinition token=$MU label="Mauritius" />
+
+	<TokenDefinition token=$MV label="Maldives" />
+
+	<TokenDefinition token=$MW label="Malawi" />
+
+	<TokenDefinition token=$MX label="Mexico" />
+
+	<TokenDefinition token=$MY label="Malaysia" />
+
+	<TokenDefinition token=$MZ label="Mozambique" />
+
+	<TokenDefinition token=$NA label="Namibia" />
+
+	<TokenDefinition token=$NC label="New Caledonia" />
+
+	<TokenDefinition token=$NE label="Niger" />
+
+	<TokenDefinition token=$NF label="Norfolk Island" />
+
+	<TokenDefinition token=$NG label="Nigeria" />
+
+	<TokenDefinition token=$NI label="Nicaragua" />
+
+	<TokenDefinition token=$NL label="Netherlands" />
+
+	<TokenDefinition token=$NO label="Norway" />
+
+	<TokenDefinition token=$NP label="Nepal" />
+
+	<TokenDefinition token=$NR label="Nauru" />
+
+	<TokenDefinition token=$NU label="Niue" />
+
+	<TokenDefinition token=$NZ label="New Zealand" />
+
+	<TokenDefinition token=$OM label="Oman" />
+
+	<TokenDefinition token=$PA label="Panama" />
+
+	<TokenDefinition token=$PE label="Peru" />
+
+	<TokenDefinition token=$PF label="French Polynesia" />
+
+	<TokenDefinition token=$PG label="Papua New Guinea" />
+
+	<TokenDefinition token=$PH label="Philippines" />
+
+	<TokenDefinition token=$PK label="Pakistan" />
+
+	<TokenDefinition token=$PL label="Poland" />
+
+	<TokenDefinition token=$PM label="Saint Pierre and Miquelon" />
+
+	<TokenDefinition token=$PN label="Pitcairn" />
+
+	<TokenDefinition token=$PR label="Puerto Rico" />
+
+	<TokenDefinition token=$PS label="Palestine" />
+
+	<TokenDefinition token=$PT label="Portugal" />
+
+	<TokenDefinition token=$PW label="Palau" />
+
+	<TokenDefinition token=$PY label="Paraguay" />
+
+	<TokenDefinition token=$QA label="Qatar" />
+
+	<TokenDefinition token=$RE label="Reunion" />
+
+	<TokenDefinition token=$RO label="Romania" />
+
+	<TokenDefinition token=$RS label="Serbia" />
+
+	<TokenDefinition token=$RU label="Russian Federation" />
+
+	<TokenDefinition token=$RW label="Rwanda" />
+
+	<TokenDefinition token=$SA label="Saudi Arabia" />
+
+	<TokenDefinition token=$SB label="Solomon Islands" />
+
+	<TokenDefinition token=$SC label="Seychelles" />
+
+	<TokenDefinition token=$SD label="Sudan" />
+
+	<TokenDefinition token=$SE label="Sweden" />
+
+	<TokenDefinition token=$SG label="Singapore" />
+
+	<TokenDefinition token=$SH label="Saint Helena, Ascension and Tristan da Cunha" />
+
+	<TokenDefinition token=$SI label="Slovenia" />
+
+	<TokenDefinition token=$SJ label="Svalbard and Jan Mayen" />
+
+	<TokenDefinition token=$SK label="Slovakia" />
+
+	<TokenDefinition token=$SL label="Sierra Leone" />
+
+	<TokenDefinition token=$SM label="San Marino" />
+
+	<TokenDefinition token=$SN label="Senegal" />
+
+	<TokenDefinition token=$SO label="Somalia" />
+
+	<TokenDefinition token=$SR label="Suriname" />
+
+	<TokenDefinition token=$SS label="South Sudan" />
+
+	<TokenDefinition token=$ST label="Sao Tome and Principe" />
+
+	<TokenDefinition token=$SV label="El Salvador" />
+
+	<TokenDefinition token=$SX label="Sint Maarten (Dutch part)" />
+
+	<TokenDefinition token=$SY label="Syrian Arab Republic" />
+
+	<TokenDefinition token=$SZ label="Eswatini" />
+
+	<TokenDefinition token=$TC label="Turks and Caicos Islands" />
+
+	<TokenDefinition token=$TD label="Chad" />
+
+	<TokenDefinition token=$TF label="French Southern Territories" />
+
+	<TokenDefinition token=$TG label="Togo" />
+
+	<TokenDefinition token=$TH label="Thailand" />
+
+	<TokenDefinition token=$TJ label="Tajikistan" />
+
+	<TokenDefinition token=$TK label="Tokelau" />
+
+	<TokenDefinition token=$TL label="Timor-Leste" />
+
+	<TokenDefinition token=$TM label="Turkmenistan" />
+
+	<TokenDefinition token=$TN label="Tunisia" />
+
+	<TokenDefinition token=$TO label="Tonga" />
+
+	<TokenDefinition token=$TR label="Turkiye" />
+
+	<TokenDefinition token=$TT label="Trinidad and Tobago" />
+
+	<TokenDefinition token=$TV label="Tuvalu" />
+
+	<TokenDefinition token=$TW label="Taiwan" />
+
+	<TokenDefinition token=$TZ label="Tanzania" />
+
+	<TokenDefinition token=$UA label="Ukraine" />
+
+	<TokenDefinition token=$UG label="Uganda" />
+
+	<TokenDefinition token=$UM label="United States Minor Outlying Islands" />
+
+	<TokenDefinition token=$US label="United States of America" />
+
+	<TokenDefinition token=$UY label="Uruguay" />
+
+	<TokenDefinition token=$UZ label="Uzbekistan" />
+
+	<TokenDefinition token=$VA label="Holy See" />
+
+	<TokenDefinition token=$VC label="Saint Vincent and the Grenadines" />
+
+	<TokenDefinition token=$VE label="Venezuela" />
+
+	<TokenDefinition token=$VG label="Virgin Islands (British)" />
+
+	<TokenDefinition token=$VI label="Virgin Islands (U.S.)" />
+
+	<TokenDefinition token=$VN label="Viet Nam" />
+
+	<TokenDefinition token=$VU label="Vanuatu" />
+
+	<TokenDefinition token=$WF label="Wallis and Futuna" />
+
+	<TokenDefinition token=$WS label="Samoa" />
+
+	<TokenDefinition token=$YE label="Yemen" />
+
+	<TokenDefinition token=$YT label="Mayotte" />
+
+	<TokenDefinition token=$ZA label="South Africa" />
+
+	<TokenDefinition token=$ZM label="Zambia" />
+
+	<TokenDefinition token=$ZW label="Zimbabwe" />
+</TokenVocabulary>

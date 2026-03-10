@@ -1,0 +1,55 @@
+<Recipe id="urn:recipe:soft-scrambled-eggs">
+	<text:Title>Soft Scrambled Eggs</text:Title>
+
+	<text:Teaser>Creamy scrambled eggs with gentle heat and simple seasoning.</text:Teaser>
+
+	<Servings amount=2 unit="people" />
+
+	<Times>
+		<PreparationTime>
+			<timemeasure:TimeMeasure value=5 unit=$Minute />
+		</PreparationTime>
+
+		<CookingTime>
+			<timemeasure:TimeMeasure value=6 unit=$Minute />
+		</CookingTime>
+
+		<TotalTime>
+			<timemeasure:TimeMeasure value=11 unit=$Minute />
+		</TotalTime>
+	</Times>
+
+	<Ingredients>
+		<Ingredient food="urn:food:egg" />
+
+		<IngredientSet>
+			<text:Title>To serve</text:Title>
+
+			<Ingredient food="urn:food:chive" optional=true />
+
+			<Ingredient food="urn:food:black-pepper" toTaste=true />
+		</IngredientSet>
+	</Ingredients>
+
+	<Instructions>
+		<Step>Beat the eggs gently and season lightly.</Step>
+
+		<Step>Cook over low heat, stirring slowly until softly set.</Step>
+	</Instructions>
+
+	<ServingSuggestions>
+		<ServingSuggestion>Serve immediately on warm toast.</ServingSuggestion>
+	</ServingSuggestions>
+
+	<tips:Tips>
+		<tips:Tip title="Low heat">
+			Keep the heat low so the curds stay soft.
+		</tips:Tip>
+	</tips:Tips>
+
+	<notes:Notes>
+		<notes:Note key="a">Adapted from the author's weeknight breakfast method.</notes:Note>
+	</notes:Notes>
+
+	<Source>Adapted from a home cooking notebook.</Source>
+</Recipe>

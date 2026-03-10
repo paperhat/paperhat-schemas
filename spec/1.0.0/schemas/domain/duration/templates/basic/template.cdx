@@ -1,0 +1,2 @@
+[Both amount and unit are required. Units: $seconds, $minutes, $hours, $days, $weeks, $months, $years.]
+<Duration amount=0 unit=$ />

@@ -1,0 +1,144 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A material or substance from which objects are made, with canonical name, aliases, category, physical properties, and sustainability characteristics."
+	id=codex:domain:material
+	namespace="material"
+	title="Material Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:5e9c6ba4654a0b013b65fc38fde033d2b6fc281d7eb791e57b207b42d80ae7da />
+
+		<SchemaImport namespace="tags" reference=urn:cdx:sha256:79f0baf3512b1d7c2730608a6796155017c30096f2f4ffde74b0deafc1eae775 />
+
+		<SchemaImport namespace="measure" reference=urn:cdx:sha256:a728956784520455efba12110f7fa1d573f81b94fab61ee9279ea07dbab1e2fe />
+
+		<SchemaImport namespace="loc" reference=urn:cdx:sha256:df456110f9e2cb2b0524011e6fd6892f345dadc412a7b078699f9aab4fd5bf55 />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=codex:domain:material:Material
+			name="Material"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<AllowsTrait name="category" />
+
+				<AllowsTrait name="color" />
+
+				<AllowsTrait name="finish" />
+
+				<AllowsTrait name="recyclable" />
+
+				<AllowsTrait name="biodegradable" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+
+				<AllowsChildConcept conceptSelector="Aliases" max=1 />
+
+				<AllowsChildConcept conceptSelector="loc:Location" />
+
+				<AllowsChildConcept conceptSelector="measure:Measure" />
+
+				<AllowsChildConcept conceptSelector="tags:Tags" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:material:Aliases
+			name="Aliases"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Alias" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Unordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:material:Alias
+			name="Alias"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:material:trait:name
+			name="name"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:material:trait:category
+			name="category"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Ceramic, $Composite, $Fabric, $Fiber, $Film, $Foam, $Glass, $Leather, $Metal, $Mineral, $Paper, $Plastic, $Polymer, $Rubber, $Stone, $Wood] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Color
+			id=codex:domain:material:trait:color
+			name="color"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:material:trait:finish
+			name="finish"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Brushed, $Frosted, $Glossy, $Hammered, $Matte, $Polished, $Satin, $Textured] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Boolean
+			id=codex:domain:material:trait:recyclable
+			name="recyclable"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Boolean
+			id=codex:domain:material:trait:biodegradable
+			name="biodegradable"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:material:trait:language
+			name="language"
+		/>
+	</TraitDefinitions>
+</Schema>

@@ -1,0 +1,18 @@
+<Specification
+	normative=true
+	locked=true
+	version=1.0.0
+	editor="Paperhat"
+>
+	<Section
+		id=urn:example:missing-title-rfc2119#section/purpose
+		key=~purpose
+		title="Purpose"
+		conformance=$Normative
+		division=$Body
+	>
+		<Paragraph>
+			This specification is missing the required title trait.
+		</Paragraph>
+	</Section>
+</Specification>

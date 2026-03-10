@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="1d9c6ecd481869d111748a9329e539c9e1745b32e1aceb1b41b8fd957980300b"
+	copyright="Copyright 2026 Paperhat"
+	description="Callout-level semantic markers for informational notices, warnings, dangers, critical alerts, tips, and general notices."
+	license="Apache-2.0"
+	packageName="paperhat-admonition"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

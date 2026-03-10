@@ -1,0 +1,15 @@
+<EntityShapeDefinition
+	id=urn:example:shape:InvoiceWithFormattedTotal
+	targetConcept="Invoice"
+	description="Derives a formatted currency string from a numeric total."
+>
+	<Derivation name="FormatTotal" targetTrait="formattedTotal" outputShape=$Text derivationClass=$Materialize>
+		<Concat>
+			<Literal value="$" />
+			<FormatNumber decimalPlaces=2>
+				<Field name="total" />
+			</FormatNumber>
+		</Concat>
+	</Derivation>
+
+</EntityShapeDefinition>

@@ -1,0 +1,5 @@
+[Rubric with difficulty metadata. Scale tokens: $categorical, $gradeLevel, $numeric. Value is free text.]
+<Rubric timeToRead="PT0M">
+	<Title>Untitled</Title>
+	<Difficulty scale=$ value="" />
+</Rubric>

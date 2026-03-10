@@ -1,0 +1,26 @@
+<LocalizationBundle
+	schema=codex:domain:person
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Person" label="Person" labelOther="People" />
+
+	<TraitLocalization identifier="gender" label="Gender" labelOther="Genders">
+		The gender of the person.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="birthDate" label="Birth Date" labelOther="Birth Dates">
+		The date of birth.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="deathDate" label="Death Date" labelOther="Death Dates">
+		The date of death.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:person:requires-name"
+		label="Requires at least one name"
+	>
+		A Person must have at least one PersonName.
+	</ConstraintLocalization>
+</LocalizationBundle>

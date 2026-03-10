@@ -1,0 +1,12 @@
+<VocabularyPackageManifest
+	author="Paperhat"
+	closureHash="f35c837827a3abe8d243d8b52d30fc81096a4e6be1f70c86d6208ccd26579ed4"
+	copyright="Copyright 2026 Paperhat"
+	description="Units of measurement for plane angle."
+	license="Apache-2.0"
+	packageName="units-angle"
+	packageVersion="1.0.0"
+	primaryDocument="vocabulary.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

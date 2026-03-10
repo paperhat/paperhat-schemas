@@ -1,0 +1,80 @@
+<LocalizationBundle
+	schema=codex:domain:citation
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Citation" label="Citation" labelOther="Citations" />
+
+	<ConceptLocalization identifier="Contributor" label="Contributor" labelOther="Contributors" />
+
+	<TraitLocalization identifier="title" label="Title" labelOther="Titles">
+		The title of the cited work.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="subtitle" label="Subtitle" labelOther="Subtitles">
+		The subtitle of the cited work.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="citationKind" label="Citation Kind" labelOther="Citation Kinds">
+		The type of cited work, such as book, article, or specification.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="containerTitle" label="Container Title" labelOther="Container Titles">
+		The title of the containing work, such as a journal or book in which the cited work appears.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="edition" label="Edition" labelOther="Editions">
+		The edition of the cited work.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="volume" label="Volume" labelOther="Volumes">
+		The volume number.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="issue" label="Issue" labelOther="Issues">
+		The issue number.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="number" label="Number" labelOther="Numbers">
+		The report or working paper number.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="pageRange" label="Page Range" labelOther="Page Ranges">
+		The page range within the cited work.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="publicationPlace" label="Publication Place" labelOther="Publication Places">
+		The city or region of publication.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="datePublished" label="Date Published" labelOther="Dates Published">
+		The publication date.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="dateAccessed" label="Date Accessed" labelOther="Dates Accessed">
+		The date the resource was last accessed.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="language" label="Language" labelOther="Languages">
+		The language of the cited work.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="uri" label="URI" labelOther="URIs">
+		The URL of the cited work.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		Machine-readable lookup key for cross-references.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="contributorKind" label="Contributor Kind" labelOther="Contributor Kinds">
+		The contributor's role, such as author, editor, or publisher.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:citation:contributor-has-entity"
+		label="Contributor must identify a person or organization"
+	>
+		A Contributor must have exactly one of: a Person child, an Organization child, or a Reference child pointing to an entity defined elsewhere.
+	</ConstraintLocalization>
+</LocalizationBundle>

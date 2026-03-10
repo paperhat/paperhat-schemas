@@ -1,0 +1,94 @@
+<WhitePaper
+	title="Adopting Policy-as-Code in Regulated Delivery Pipelines"
+	coreThesis="Policy-as-code reduces compliance drift when paired with evidence-first deployment gates."
+>
+	<DocumentMetadata>
+		<Work
+			author="A. Rivera"
+			datePublished={2026-02-15}
+			language=$en
+			status=$inReview
+			license="CC-BY-4.0"
+		/>
+
+		<Description language=$en>
+			An implementation guide for platform teams introducing policy-as-code
+			into delivery pipelines under regulated controls.
+		</Description>
+
+		<Tags>
+			<Tag>
+				compliance
+			</Tag>
+
+			<Tag>
+				policy-as-code
+			</Tag>
+
+			<Tag>
+				delivery pipelines
+			</Tag>
+		</Tags>
+
+		<Audience audienceKind=$professional audienceDescription="Platform engineering; Security governance; Internal audit" />
+	</DocumentMetadata>
+
+	<SeriesInfo
+		seriesTitle="Platform Engineering Papers"
+		position=3
+		track="Compliance"
+	/>
+
+	<Abstract>
+		This white paper evaluates organisational and technical patterns for
+		introducing policy-as-code into delivery pipelines under regulated controls.
+	</Abstract>
+
+	<Narrative>
+		<Section>
+			<Rubric>
+				<Title>
+					Method
+				</Title>
+			</Rubric>
+
+			<Paragraph>
+				Gate deployments on machine-verifiable control evidence instead of
+				manual review checklists. Programs using automated control attestations
+				showed lower escape rates than teams relying on quarterly control
+				sampling.
+			</Paragraph>
+
+			<Paragraph>
+				Rigid gate enforcement can slow release cadence if policy ownership is
+				not delegated to service teams. The counterargument is addressed by
+				decomposing policy into team-scoped modules with independent release
+				cycles.
+			</Paragraph>
+
+			<Notes>
+				<Note key=~controlBenchmark>
+					A. Rivera and M. Chen, "Control Benchmark 2024," Journal of
+					Secure Delivery, 2024, Table 3.
+				</Note>
+
+				<Note key=~teamScopedPolicy>
+					Internal pilot data from three regulated programmes, 2024 Q3.
+				</Note>
+			</Notes>
+		</Section>
+	</Narrative>
+
+	<Conclusion>
+		Policy-as-code succeeds when control logic is versioned with application
+		changes and exceptions are bounded by explicit expiration windows.
+	</Conclusion>
+
+	<Notes>
+		<Note key=~regulatoryContext>
+			This paper addresses delivery pipelines subject to SOC 2 Type II and
+			ISO 27001 controls. Applicability to other regulatory frameworks has
+			not been evaluated.
+		</Note>
+	</Notes>
+</WhitePaper>

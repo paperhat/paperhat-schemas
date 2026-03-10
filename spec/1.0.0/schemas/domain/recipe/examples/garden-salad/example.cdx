@@ -1,0 +1,34 @@
+<Recipe id=urn:lexis:lexis:paperhat-recipe:garden-salad:1>
+	<Title>
+		Garden Salad
+	</Title>
+
+	<Servings amount=2 />
+
+	<Ingredients>
+		<Ingredient name="mixed greens" amount=4 unit="cups" />
+
+		<Ingredient name="cherry tomatoes" amount=1 unit="cup" preparation="halved" />
+
+		<Ingredient name="cucumber" amount=1 preparation="sliced" />
+
+		<Ingredient name="red onion" amount=0.25 preparation="thinly sliced" />
+
+		<Ingredient name="olive oil" amount=2 unit="tablespoons" />
+
+		<Ingredient name="lemon juice" amount=1 unit="tablespoon" />
+
+		<Ingredient name="salt" toTaste=true />
+	</Ingredients>
+
+	<Instructions>
+		<Step>
+			Combine the greens, tomatoes, cucumber, and onion in a large bowl.
+		</Step>
+
+		<Step>
+			Drizzle with olive oil and lemon juice. Toss gently and season to
+			taste.
+		</Step>
+	</Instructions>
+</Recipe>

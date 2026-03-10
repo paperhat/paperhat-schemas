@@ -1,0 +1,25 @@
+<Essay title="Against Notification Culture">
+	<DocumentMetadata>
+		<Work author="Sam Reyes" datePublished={2025-11-03} language=$en status=$published />
+	</DocumentMetadata>
+
+	<Narrative>
+		<Paragraph>
+			Every application on my phone believes it has something urgent to tell me.
+			None of them do.
+		</Paragraph>
+
+		<Paragraph>
+			The notification badge is a small act of violence against attention. It
+			converts every idle moment into an obligation to check, to clear, to
+			respond. The red circle does not inform; it summons.
+		</Paragraph>
+	</Narrative>
+
+	<Notes>
+		<Note key=~ironyDisclaimer>
+			I am aware of the irony of publishing this opinion on a platform that
+			will notify subscribers of its existence.
+		</Note>
+	</Notes>
+</Essay>

@@ -1,0 +1,12 @@
+<VocabularyPackageManifest
+	author="Paperhat"
+	closureHash="0815c5ccfcc71ee2b67312c203be8ae73b9986afeea32f20a7290d2164182ea4"
+	copyright="Copyright 2026 Paperhat"
+	description="Units of measurement for speed and velocity."
+	license="Apache-2.0"
+	packageName="units-speed"
+	packageVersion="1.0.0"
+	primaryDocument="vocabulary.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

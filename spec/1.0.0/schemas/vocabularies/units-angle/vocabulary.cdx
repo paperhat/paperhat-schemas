@@ -1,0 +1,21 @@
+<TokenVocabulary
+	id=codex:vocabulary:units-angle
+	version="1.0.0"
+	title="Units of Angle"
+	description="Units of measurement for plane angle."
+	closedVocabulary=true
+>
+	<TokenDefinition token=$ArcMinute label="arcmin" />
+
+	<TokenDefinition token=$ArcSecond label="arcsec" />
+
+	<TokenDefinition token=$Degree label="deg" />
+
+	<TokenDefinition token=$Gradian label="gon" />
+
+	<TokenDefinition token=$Milliradian label="mrad" />
+
+	<TokenDefinition token=$Radian label="rad" />
+
+	<TokenDefinition token=$Turn label="turn" />
+</TokenVocabulary>

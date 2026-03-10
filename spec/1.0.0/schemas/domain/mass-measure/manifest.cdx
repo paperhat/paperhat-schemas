@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="fd4bc667b88eda20fb60582d736b345dcb0a1b6b62f7b6ef573d508f1000c6aa"
+	copyright="Copyright 2026 Paperhat"
+	description="A quantitative measurement of mass, with unit constrained to the units-mass vocabulary."
+	license="Apache-2.0"
+	packageName="paperhat-mass-measure"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

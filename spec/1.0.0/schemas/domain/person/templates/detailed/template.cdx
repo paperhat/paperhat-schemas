@@ -1,0 +1,14 @@
+[Detailed person. Duplicate or remove child concepts freely.]
+<Person gender="" birthDate={}>
+	[Required: at least one name.]
+	<PersonName nameKind=$legal given="" family="" />
+
+	[Optional: contact method.]
+	<ContactPoint contactKind=$work emailAddress="" />
+
+	[Optional: external identifier.]
+	<Identifier scheme=$ value="" />
+
+	[Optional: associated location.]
+	<Location locationKind=$residence locality="" country="" />
+</Person>

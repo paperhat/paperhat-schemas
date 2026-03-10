@@ -1,0 +1,12 @@
+<SystemPackageManifest
+	author="Paperhat"
+	closureHash="4a18c79b10121c4d596cab809d2a35c27e1195e52df042624a1d350163a7b7da"
+	copyright="Copyright 2026 Paperhat"
+	description="Defines a one-way mapping document format used to project Codex-authored data into linked data vocabularies for JSON-LD, RDFa, or microdata emitters."
+	license="Apache-2.0"
+	packageName="paperhat-ld-mapping"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

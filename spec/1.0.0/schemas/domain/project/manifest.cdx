@@ -1,0 +1,42 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="53bdac7403edb983731ea091367affa4701313f8d26ebca39fb5f56a461e29eb"
+	copyright="Copyright 2026 Paperhat"
+	description="A named initiative, effort, or body of work with identity — a software project, specification effort, research program, or any other bounded endeavor."
+	license="Apache-2.0"
+	packageName="paperhat-project"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+>
+	<PackageDependency
+		packageName="paperhat-description"
+		closureHash="8a6c1a383e84796c18cb6c612ec676134930c3192dfd8bfe93bd0263cd8b5d65"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-identifier"
+		closureHash="404961f3ac5baaafcdbb455482e979e022270b90bf4b8698f4ae0382dd6c9fc9"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-tags"
+		closureHash="7460ed89db9b5749b1be28962fbf1996092be3a59ab4e3c5a8b0e11afc9b48ab"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-work"
+		closureHash="90bc5c9658e63056858e6c23d42b4b85fe1fa90076306a8a406fba06db305e1b"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-temporal"
+		closureHash="dbb00b6f204eb3ce860daaf554843fe45fca4f79cc5948e5cbe85440d2b868ae"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</DomainPackageManifest>

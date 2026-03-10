@@ -1,0 +1,47 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A quantitative measurement of mass, with unit constrained to the units-mass vocabulary."
+	id=codex:domain:paperhat-mass-measure
+	namespace="massmeasure"
+	title="Mass Measure Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:paperhat-mass-measure:MassMeasure
+			name="MassMeasure"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="value" />
+
+				<RequiresTrait name="unit" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueTypes=[$Number, $Range<$Number>]
+			id=codex:domain:paperhat-mass-measure:trait:value
+			name="value"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:paperhat-mass-measure:trait:unit
+			name="unit"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$AtomicMassUnit, $Carat, $Grain, $Gram, $Kilogram, $LongTon, $MetricTon, $Microgram, $Milligram, $Ounce, $Pound, $ShortTon, $Stone, $TroyOunce] />
+			</AllowedValues>
+		</TraitDefinition>
+	</TraitDefinitions>
+</Schema>

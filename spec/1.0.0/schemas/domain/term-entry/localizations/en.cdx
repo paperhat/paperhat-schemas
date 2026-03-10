@@ -1,0 +1,57 @@
+<LocalizationBundle
+	schema=codex:domain:term-entry
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="TermEntry" label="Term Entry" labelOther="Term Entries" />
+
+	<ConceptLocalization identifier="Sense" label="Sense" labelOther="Senses" />
+
+	<ConceptLocalization identifier="UsageExample" label="Usage Example" labelOther="Usage Examples" />
+
+	<ConceptLocalization identifier="Etymology" label="Etymology" labelOther="Etymologies" />
+
+	<ConceptLocalization identifier="TermForm" label="Term Form" labelOther="Term Forms" />
+
+	<ConceptLocalization identifier="TermRelation" label="Term Relation" labelOther="Term Relations" />
+
+	<TraitLocalization identifier="term" label="Term" labelOther="Terms">
+		The headword or defined term.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		Machine-readable lookup key for cross-references.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="partOfSpeech" label="Part of Speech" labelOther="Parts of Speech">
+		The grammatical category of the sense.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="register" label="Register" labelOther="Registers">
+		The usage register or formality level.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="domain" label="Domain" labelOther="Domains">
+		The subject domain in which this sense applies.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="form" label="Form" labelOther="Forms">
+		An inflected or alternate form of the headword.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="formKind" label="Form Kind" labelOther="Form Kinds">
+		The grammatical relationship of this form to the headword.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="relatedTerm" label="Related Term" labelOther="Related Terms">
+		A term related by synonym, antonym, or other semantic relationship.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="relationKind" label="Relation Kind" labelOther="Relation Kinds">
+		The type of semantic relationship to the related term.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="target" label="Target" labelOther="Targets">
+		Entity reference to the related term entry.
+	</TraitLocalization>
+</LocalizationBundle>

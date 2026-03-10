@@ -1,0 +1,102 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Accessibility characteristics of a resource or venue, including access modes, features, and hazards."
+	id=codex:domain:accessibility
+	namespace="a11y"
+	title="Accessibility Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:accessibility:Accessibility
+			name="Accessibility"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<AllowsTrait name="accessMode" />
+
+				<AllowsTrait name="accessibilityFeature" />
+
+				<AllowsTrait name="accessibilityHazard" />
+
+				<AllowsTrait name="accessibilitySummary" />
+
+				<AllowsTrait name="accessibilityControl" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:accessibility:trait:accessMode
+			name="accessMode"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:accessibility:trait:accessibilityFeature
+			name="accessibilityFeature"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:accessibility:trait:accessibilityHazard
+			name="accessibilityHazard"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:accessibility:trait:accessibilitySummary
+			name="accessibilitySummary"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:accessibility:trait:accessibilityControl
+			name="accessibilityControl"
+		/>
+	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=codex:domain:accessibility:requires-accessibility-trait
+			title="Accessibility must have at least one trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Accessibility" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<TraitExists trait="accessMode" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="accessibilityFeature" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="accessibilityHazard" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="accessibilitySummary" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="accessibilityControl" />
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

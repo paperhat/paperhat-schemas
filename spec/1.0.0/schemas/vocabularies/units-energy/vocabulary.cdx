@@ -1,0 +1,51 @@
+<TokenVocabulary
+	id=codex:vocabulary:units-energy
+	version="1.0.0"
+	title="Units of Energy and Power"
+	description="Units of measurement for energy, work, heat, and power."
+	closedVocabulary=true
+>
+	<TokenDefinition token=$BritishThermalUnit label="BTU" />
+
+	<TokenDefinition token=$BritishThermalUnitsPerHour label="BTU/h" />
+
+	<TokenDefinition token=$Calorie label="cal" />
+
+	<TokenDefinition token=$Electronvolt label="eV" />
+
+	<TokenDefinition token=$Erg label="erg" />
+
+	<TokenDefinition token=$FootPound label="ft-lbf" />
+
+	<TokenDefinition token=$FootPoundsPerSecond label="ft-lbf/s" />
+
+	<TokenDefinition token=$Gigajoule label="GJ" />
+
+	<TokenDefinition token=$Gigawatt label="GW" />
+
+	<TokenDefinition token=$Horsepower label="hp" />
+
+	<TokenDefinition token=$Joule label="J" />
+
+	<TokenDefinition token=$Kilocalorie label="kcal" />
+
+	<TokenDefinition token=$Kilojoule label="kJ" />
+
+	<TokenDefinition token=$Kilowatt label="kW" />
+
+	<TokenDefinition token=$KilowattHour label="kWh" />
+
+	<TokenDefinition token=$Megajoule label="MJ" />
+
+	<TokenDefinition token=$Megawatt label="MW" />
+
+	<TokenDefinition token=$MegawattHour label="MWh" />
+
+	<TokenDefinition token=$MetricHorsepower label="PS" />
+
+	<TokenDefinition token=$Therm label="thm" />
+
+	<TokenDefinition token=$Watt label="W" />
+
+	<TokenDefinition token=$WattHour label="Wh" />
+</TokenVocabulary>

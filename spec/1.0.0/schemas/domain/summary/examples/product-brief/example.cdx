@@ -1,0 +1,6 @@
+<Summary language=$en>
+	The Mk IV brew controller maintains water temperature within 0.5 degrees
+	Celsius of the target setpoint, supports programmable pre-infusion sequences,
+	and integrates with standard 58mm portafilters. Backflush mode runs an
+	automated cleaning cycle in under two minutes.
+</Summary>

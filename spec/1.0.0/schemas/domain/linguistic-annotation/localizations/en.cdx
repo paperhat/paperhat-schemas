@@ -1,0 +1,32 @@
+<LocalizationBundle
+	schema=codex:domain:linguistic-annotation
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="LinguisticAnnotations" label="Linguistic Annotations" />
+
+	<ConceptLocalization identifier="Ruby" label="Ruby Annotation" labelOther="Ruby Annotations" />
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		The lookup token used for Gloss span binding.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="annotation" label="Annotation" labelOther="Annotations">
+		The reading aid text displayed above or beside the base text.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="language" label="Language" labelOther="Languages">
+		The language of the annotation text.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="position" label="Position" labelOther="Positions">
+		Where the annotation is displayed relative to the base text.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:linguistic-annotation:requires-child"
+		label="Requires at least one linguistic annotation"
+	>
+		A LinguisticAnnotations container must contain at least one Ruby annotation.
+	</ConstraintLocalization>
+</LocalizationBundle>

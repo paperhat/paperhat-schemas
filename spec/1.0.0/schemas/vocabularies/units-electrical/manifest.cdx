@@ -1,0 +1,12 @@
+<VocabularyPackageManifest
+	author="Paperhat"
+	closureHash="9930f053f94e20525f28df2ba8f7e1fdd6b87c2729b294e52a87e1d48ec1a3de"
+	copyright="Copyright 2026 Paperhat"
+	description="Units of measurement for electrical quantities."
+	license="Apache-2.0"
+	packageName="units-electrical"
+	packageVersion="1.0.0"
+	primaryDocument="vocabulary.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

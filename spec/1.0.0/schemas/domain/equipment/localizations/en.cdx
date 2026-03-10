@@ -1,0 +1,15 @@
+<LocalizationBundle
+	schema=codex:domain:equipment
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Equipment" label="Equipment" />
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		The canonical authored name.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="category" label="Category" labelOther="Categories">
+		The equipment category.
+	</TraitLocalization>
+</LocalizationBundle>

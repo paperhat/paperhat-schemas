@@ -1,0 +1,29 @@
+<TokenVocabulary
+	id=codex:vocabulary:units-area
+	version="1.0.0"
+	title="Units of Area"
+	description="Units of measurement for area and surface extent."
+	closedVocabulary=true
+>
+	<TokenDefinition token=$Acre label="ac" />
+
+	<TokenDefinition token=$Are label="a" />
+
+	<TokenDefinition token=$Hectare label="ha" />
+
+	<TokenDefinition token=$SquareCentimeter label="cm2" />
+
+	<TokenDefinition token=$SquareFoot label="ft2" />
+
+	<TokenDefinition token=$SquareInch label="in2" />
+
+	<TokenDefinition token=$SquareKilometer label="km2" />
+
+	<TokenDefinition token=$SquareMeter label="m2" />
+
+	<TokenDefinition token=$SquareMile label="mi2" />
+
+	<TokenDefinition token=$SquareMillimeter label="mm2" />
+
+	<TokenDefinition token=$SquareYard label="yd2" />
+</TokenVocabulary>

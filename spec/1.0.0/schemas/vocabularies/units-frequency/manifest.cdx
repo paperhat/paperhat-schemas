@@ -1,0 +1,12 @@
+<VocabularyPackageManifest
+	author="Paperhat"
+	closureHash="1768e3d740e6172f7123c7984c56c702e60b705809260b7579a8a9299adb62b3"
+	copyright="Copyright 2026 Paperhat"
+	description="Units of measurement for frequency and periodic rate."
+	license="Apache-2.0"
+	packageName="units-frequency"
+	packageVersion="1.0.0"
+	primaryDocument="vocabulary.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

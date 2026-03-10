@@ -1,0 +1,11 @@
+[Full nutrition facts. Remove traits you do not need.]
+<NutritionInformation
+	servingSize=""
+	calories=0
+	fatContent=0
+	proteinContent=0
+	carbohydrateContent=0
+	fiberContent=0
+	sugarContent=0
+	sodiumContent=0
+/>

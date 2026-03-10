@@ -1,0 +1,5 @@
+[Minimal person. Add child concepts (ContactPoint, Identifier, Location\) as needed.]
+<Person>
+	[At least one PersonName is required.]
+	<PersonName nameKind=$legal given="" family="" />
+</Person>

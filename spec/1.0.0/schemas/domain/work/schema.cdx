@@ -1,0 +1,138 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Creative work metadata: authorship, dates, versioning, licensing, and lifecycle status."
+	id=codex:domain:work
+	namespace="work"
+	title="Work Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:work:Work
+			name="Work"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<AllowsTrait name="author" />
+
+				<AllowsTrait name="dateCreated" />
+
+				<AllowsTrait name="datePublished" />
+
+				<AllowsTrait name="dateModified" />
+
+				<AllowsTrait name="version" />
+
+				<AllowsTrait name="language" />
+
+				<AllowsTrait name="status" />
+
+				<AllowsTrait name="license" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:work:trait:author
+			name="author"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Date
+			id=codex:domain:work:trait:dateCreated
+			name="dateCreated"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Date
+			id=codex:domain:work:trait:datePublished
+			name="datePublished"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Date
+			id=codex:domain:work:trait:dateModified
+			name="dateModified"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:work:trait:version
+			name="version"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:work:trait:language
+			name="language"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:work:trait:status
+			name="status"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:work:trait:license
+			name="license"
+		/>
+	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=codex:domain:work:requires-work-trait
+			title="Work must have at least one trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Work" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<TraitExists trait="author" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="dateCreated" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="datePublished" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="dateModified" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="version" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="language" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="status" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="license" />
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

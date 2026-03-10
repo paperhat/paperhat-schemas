@@ -1,0 +1,59 @@
+<TokenVocabulary
+	closedVocabulary=true
+	description="Culinary preparation techniques applied to ingredients before or during cooking."
+	id=codex:vocabulary:preparations
+	title="Preparations"
+	version="1.0.0"
+>
+	<TokenDefinition token=$Blanched label="blanched" />
+
+	<TokenDefinition token=$Brined label="brined" />
+
+	<TokenDefinition token=$Chopped label="chopped" />
+
+	<TokenDefinition token=$Crushed label="crushed" />
+
+	<TokenDefinition token=$Cubed label="cubed" />
+
+	<TokenDefinition token=$Diced label="diced" />
+
+	<TokenDefinition token=$Drained label="drained" />
+
+	<TokenDefinition token=$Grated label="grated" />
+
+	<TokenDefinition token=$Ground label="ground" />
+
+	<TokenDefinition token=$Halved label="halved" />
+
+	<TokenDefinition token=$Julienned label="julienned" />
+
+	<TokenDefinition token=$Marinated label="marinated" />
+
+	<TokenDefinition token=$Melted label="melted" />
+
+	<TokenDefinition token=$Minced label="minced" />
+
+	<TokenDefinition token=$Peeled label="peeled" />
+
+	<TokenDefinition token=$Quartered label="quartered" />
+
+	<TokenDefinition token=$Roasted label="roasted" />
+
+	<TokenDefinition token=$Shredded label="shredded" />
+
+	<TokenDefinition token=$Sifted label="sifted" />
+
+	<TokenDefinition token=$Sliced label="sliced" />
+
+	<TokenDefinition token=$Soaked label="soaked" />
+
+	<TokenDefinition token=$Softened label="softened" />
+
+	<TokenDefinition token=$Tempered label="tempered" />
+
+	<TokenDefinition token=$Toasted label="toasted" />
+
+	<TokenDefinition token=$Trimmed label="trimmed" />
+
+	<TokenDefinition token=$Zested label="zested" />
+</TokenVocabulary>

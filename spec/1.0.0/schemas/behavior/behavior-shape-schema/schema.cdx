@@ -1,0 +1,165 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Schema for defining ValueShapeDefinition and EntityShapeDefinition with behavioral semantics."
+	id=urn:codex:behavior:shapes:1.0.0
+	namespace="shape"
+	title="Behavior Shape Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+
+		[GROUP: Shape Definitions]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Extends ValueTypeDefinition with behavioral constraints and derivations."
+			entityEligibility=$MustBeEntity
+			id=urn:codex:behavior:concept:ValueShapeDefinition
+			key=~valueShapeDefinition
+			name="ValueShapeDefinition"
+		>
+			<TraitRules>
+				<RequiresTrait name="id" />
+
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="baseValueType" />
+
+				<AllowsTrait name="description" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Constraint" />
+
+				<AllowsChildConcept conceptSelector="Derivation" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Attaches behavioral constraints and derivations to entity nodes."
+			entityEligibility=$MustBeEntity
+			id=urn:codex:behavior:concept:EntityShapeDefinition
+			key=~entityShapeDefinition
+			name="EntityShapeDefinition"
+		>
+			<TraitRules>
+				<RequiresTrait name="id" />
+
+				<RequiresTrait name="targetConcept" />
+
+				<AllowsTrait name="description" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Constraint" />
+
+				<AllowsChildConcept conceptSelector="Derivation" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Shape Definitions]
+
+		[GROUP: Behavioral Wrappers]
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="A validity condition that must evaluate to true for the shape to be satisfied."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Constraint
+			key=~constraint
+			name="Constraint"
+		>
+			<TraitRules>
+				<AllowsTrait name="name" />
+
+				<AllowsTrait name="message" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="A computed value that must be materialized for the shape."
+			entityEligibility=$MustNotBeEntity
+			id=urn:codex:behavior:concept:Derivation
+			key=~derivation
+			name="Derivation"
+		>
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="targetTrait" />
+
+				<RequiresTrait name="outputShape" />
+
+				<RequiresTrait name="derivationClass" />
+
+				<AllowsTrait name="when" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Behavioral Wrappers]
+
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			description="The underlying Codex ValueType for a ValueShapeDefinition."
+			id=urn:codex:behavior:trait:baseValueType
+			name="baseValueType"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			description="The concept name that this EntityShapeDefinition applies to."
+			id=urn:codex:behavior:trait:targetConcept
+			name="targetConcept"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			description="The trait name where the derived value will be materialized."
+			id=urn:codex:behavior:trait:targetTrait
+			name="targetTrait"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			description="Human-readable error message when a constraint fails."
+			id=urn:codex:behavior:trait:message
+			name="message"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			description="The ValueShape that the derived value conforms to."
+			id=urn:codex:behavior:trait:outputShape
+			name="outputShape"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			description="Whether the derived value is ephemeral (used only downstream) or materialized (written to the graph)."
+			id=urn:codex:behavior:trait:derivationClass
+			name="derivationClass"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Boolean
+			description="Optional guard condition for conditional derivations."
+			id=urn:codex:behavior:trait:when
+			name="when"
+		/>
+	</TraitDefinitions>
+</Schema>

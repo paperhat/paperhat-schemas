@@ -1,0 +1,39 @@
+<LocalizationBundle
+	schema=codex:domain:food
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Food" label="Food" labelOther="Foods" />
+
+	<ConceptLocalization identifier="Aliases" label="Aliases" />
+
+	<ConceptLocalization identifier="Alias" label="Alias" labelOther="Aliases" />
+
+	<ConceptLocalization identifier="Varieties" label="Varieties" />
+
+	<ConceptLocalization identifier="Variety" label="Variety" labelOther="Varieties" />
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		The canonical authored name.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="category" label="Category" labelOther="Categories">
+		The food category.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="availability" label="Availability">
+		The availability range for the food.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="shelfLife" label="Shelf Life">
+		The typical shelf-life duration.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="language" label="Language" labelOther="Languages">
+		The natural language of the alias.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="region" label="Region" labelOther="Regions">
+		The regional context for the alias.
+	</TraitLocalization>
+</LocalizationBundle>

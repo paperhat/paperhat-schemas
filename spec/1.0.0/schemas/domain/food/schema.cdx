@@ -1,0 +1,174 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A food or comestible, with canonical name, aliases, category, sensory profile, nutritional information, and varieties."
+	id=codex:domain:food
+	namespace="food"
+	title="Food Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:5e9c6ba4654a0b013b65fc38fde033d2b6fc281d7eb791e57b207b42d80ae7da />
+
+		<SchemaImport namespace="nutrition" reference=urn:cdx:sha256:60fcc8d6e3a6c6d43a2a6ae59d36c4b625bf4c739655615399744e6ce698f567 />
+
+		<SchemaImport namespace="tags" reference=urn:cdx:sha256:79f0baf3512b1d7c2730608a6796155017c30096f2f4ffde74b0deafc1eae775 />
+
+		<SchemaImport namespace="loc" reference=urn:cdx:sha256:df456110f9e2cb2b0524011e6fd6892f345dadc412a7b078699f9aab4fd5bf55 />
+
+		<SchemaImport namespace="sensory" reference=urn:cdx:sha256:2c5e1c3b2735fa6d26fd766df533e4dba26693b52721ce10c9432e551d8f1bd5 />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=codex:domain:food:Food
+			name="Food"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<AllowsTrait name="category" />
+
+				<AllowsTrait name="availability" />
+
+				<AllowsTrait name="shelfLife" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+
+				<AllowsChildConcept conceptSelector="Aliases" max=1 />
+
+				<AllowsChildConcept conceptSelector="Varieties" max=1 />
+
+				<AllowsChildConcept conceptSelector="nutrition:NutritionInformation" max=1 />
+
+				<AllowsChildConcept conceptSelector="loc:Location" />
+
+				<AllowsChildConcept conceptSelector="sensory:SensoryProfile" max=1 />
+
+				<AllowsChildConcept conceptSelector="tags:Tags" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:food:Aliases
+			name="Aliases"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Alias" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Unordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:food:Alias
+			name="Alias"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<AllowsTrait name="language" />
+
+				<AllowsTrait name="region" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:food:Varieties
+			name="Varieties"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Variety" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Unordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:food:Variety
+			name="Variety"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+			</ChildRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:food:trait:name
+			name="name"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:food:trait:category
+			name="category"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Beverage, $Condiment, $Confection, $Dairy, $Egg, $Fat, $Fruit, $Fungi, $Grain, $Herb, $Legume, $Meat, $Nut, $Pasta, $Poultry, $Seafood, $Seed, $Spice, $Sweetener, $Vegetable] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Range<$MonthDay>
+			id=codex:domain:food:trait:availability
+			name="availability"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Duration
+			id=codex:domain:food:trait:shelfLife
+			name="shelfLife"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:food:trait:language
+			name="language"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:food:trait:region
+			name="region"
+		/>
+	</TraitDefinitions>
+</Schema>

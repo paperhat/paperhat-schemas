@@ -1,0 +1,114 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Operating hours for a specific day of the week, with optional seasonal validity."
+	id=codex:domain:operating-schedule
+	namespace="schedule"
+	title="Operating Schedule Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:operating-schedule:OperatingSchedule
+			name="OperatingSchedule"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<AllowsTrait name="dayOfWeek" />
+
+				<AllowsTrait name="opens" />
+
+				<AllowsTrait name="closes" />
+
+				<AllowsTrait name="validFrom" />
+
+				<AllowsTrait name="validThrough" />
+
+				<AllowsTrait name="scheduleNote" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:operating-schedule:trait:dayOfWeek
+			name="dayOfWeek"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Time
+			id=codex:domain:operating-schedule:trait:opens
+			name="opens"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Time
+			id=codex:domain:operating-schedule:trait:closes
+			name="closes"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Date
+			id=codex:domain:operating-schedule:trait:validFrom
+			name="validFrom"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Date
+			id=codex:domain:operating-schedule:trait:validThrough
+			name="validThrough"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:operating-schedule:trait:scheduleNote
+			name="scheduleNote"
+		/>
+	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=codex:domain:operating-schedule:requires-schedule-trait
+			title="OperatingSchedule must have at least one trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="OperatingSchedule" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<TraitExists trait="dayOfWeek" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="opens" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="closes" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="validFrom" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="validThrough" />
+					</Rule>
+
+					<Rule>
+						<TraitExists trait="scheduleNote" />
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

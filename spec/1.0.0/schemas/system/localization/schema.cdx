@@ -1,0 +1,213 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Defines localization bundles that provide human-readable labels and descriptions for schema elements in any natural language."
+	id=codex:system:localization
+	namespace="l10n"
+	title="Localization Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:system:localization:LocalizationBundle
+			name="LocalizationBundle"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="schema" />
+
+				<RequiresTrait name="schemaVersion" />
+
+				<RequiresTrait name="language" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="ConceptLocalization" />
+
+				<AllowsChildConcept conceptSelector="TraitLocalization" />
+
+				<AllowsChildConcept conceptSelector="TokenLocalization" />
+
+				<AllowsChildConcept conceptSelector="ConstraintLocalization" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Unordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:system:localization:ConceptLocalization
+			name="ConceptLocalization"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="identifier" />
+
+				<RequiresTrait name="label" />
+
+				<AllowsTrait name="labelZero" />
+
+				<AllowsTrait name="labelTwo" />
+
+				<AllowsTrait name="labelFew" />
+
+				<AllowsTrait name="labelMany" />
+
+				<AllowsTrait name="labelOther" />
+
+				<AllowsTrait name="grammaticalGender" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:system:localization:TraitLocalization
+			name="TraitLocalization"
+		>
+			<ContentRules>
+				<AllowsContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="identifier" />
+
+				<RequiresTrait name="label" />
+
+				<AllowsTrait name="labelZero" />
+
+				<AllowsTrait name="labelTwo" />
+
+				<AllowsTrait name="labelFew" />
+
+				<AllowsTrait name="labelMany" />
+
+				<AllowsTrait name="labelOther" />
+
+				<AllowsTrait name="grammaticalGender" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:system:localization:TokenLocalization
+			name="TokenLocalization"
+		>
+			<ContentRules>
+				<AllowsContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="identifier" />
+
+				<RequiresTrait name="label" />
+
+				<AllowsTrait name="labelZero" />
+
+				<AllowsTrait name="labelTwo" />
+
+				<AllowsTrait name="labelFew" />
+
+				<AllowsTrait name="labelMany" />
+
+				<AllowsTrait name="labelOther" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:system:localization:ConstraintLocalization
+			name="ConstraintLocalization"
+		>
+			<ContentRules>
+				<AllowsContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="identifier" />
+
+				<RequiresTrait name="label" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$IRI
+			id=codex:system:localization:trait:schema
+			name="schema"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:system:localization:trait:schemaVersion
+			name="schemaVersion"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:system:localization:trait:language
+			name="language"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:system:localization:trait:identifier
+			name="identifier"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:system:localization:trait:label
+			name="label"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:system:localization:trait:labelZero
+			name="labelZero"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:system:localization:trait:labelTwo
+			name="labelTwo"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:system:localization:trait:labelFew
+			name="labelFew"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:system:localization:trait:labelMany
+			name="labelMany"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:system:localization:trait:labelOther
+			name="labelOther"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:system:localization:trait:grammaticalGender
+			name="grammaticalGender"
+		/>
+	</TraitDefinitions>
+</Schema>

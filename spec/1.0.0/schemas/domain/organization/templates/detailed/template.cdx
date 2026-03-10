@@ -1,0 +1,19 @@
+[Detailed organization. Duplicate or remove child concepts freely.]
+<Organization name="" organizationKind=$ foundingDate={}>
+	[Optional: describe the organization.]
+	<Description></Description>
+
+	[Optional: contact method.]
+	<ContactPoint contactKind=$work emailAddress="" />
+
+	[Optional: external identifier such as tax ID or registration number.]
+	<Identifier scheme=$ value="" />
+
+	[Optional: headquarters or branch location.]
+	<Location locationKind=$headquarters locality="" country="" />
+
+	[Optional: categorize with tags.]
+	<Tags>
+		<Tag></Tag>
+	</Tags>
+</Organization>

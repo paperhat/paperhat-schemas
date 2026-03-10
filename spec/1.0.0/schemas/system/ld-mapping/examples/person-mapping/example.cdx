@@ -1,0 +1,20 @@
+[
+  Maps the Codex Person schema to schema.org/Person type, including
+  type mappings for Person, PersonName, and ContactPoint, and
+  trait-to-property mappings for name parts and contact fields.
+]
+<SchemaOrgMapping
+	id=codex:system:ld-mapping:person
+	version="1.0.0"
+>
+	<MapType sourceConcept="Person" targetType="Person" />
+	<MapTraitToProperty sourceConcept="Person" sourceTrait="gender" targetProperty="gender" />
+	<MapTraitToProperty sourceConcept="Person" sourceTrait="birthDate" targetProperty="birthDate" />
+	<MapTraitToProperty sourceConcept="Person" sourceTrait="deathDate" targetProperty="deathDate" />
+	<MapType sourceConcept="PersonName" targetType="Person" />
+	<MapTraitToProperty sourceConcept="PersonName" sourceTrait="given" targetProperty="givenName" />
+	<MapTraitToProperty sourceConcept="PersonName" sourceTrait="family" targetProperty="familyName" />
+	<MapType sourceConcept="ContactPoint" targetType="ContactPoint" />
+	<MapTraitToProperty sourceConcept="ContactPoint" sourceTrait="emailAddress" targetProperty="email" />
+	<MapTraitToProperty sourceConcept="ContactPoint" sourceTrait="phoneNumber" targetProperty="telephone" />
+</SchemaOrgMapping>

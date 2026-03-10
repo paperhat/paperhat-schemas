@@ -1,0 +1,5 @@
+<Admonitions>
+	<Informational key=~info1 title="Compatibility" />
+	<Tip key=~tip1 title="Performance" />
+	<Warning key=~warn1 title="Deprecation" />
+</Admonitions>

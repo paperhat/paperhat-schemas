@@ -1,0 +1,131 @@
+<LocalizationBundle
+	schema=codex:view:semantic-projection
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="SemanticProjectionDefinition" label="Semantic Projection Definition" labelOther="Semantic Projection Definitions" />
+
+	<ConceptLocalization identifier="ProjectionParameter" label="Projection Parameter" labelOther="Projection Parameters" />
+
+	<ConceptLocalization identifier="ProjectionRule" label="Projection Rule" labelOther="Projection Rules" />
+
+	<ConceptLocalization identifier="SelectRule" label="Select Rule" labelOther="Select Rules" />
+
+	<ConceptLocalization identifier="PruneRule" label="Prune Rule" labelOther="Prune Rules" />
+
+	<ConceptLocalization identifier="CollapseRule" label="Collapse Rule" labelOther="Collapse Rules" />
+
+	<ConceptLocalization identifier="DeriveAnnotationRule" label="Derive Annotation Rule" labelOther="Derive Annotation Rules" />
+
+	<ConceptLocalization identifier="RuleSelectors" label="Rule Selectors" labelOther="Rule Selectors" />
+
+	<ConceptLocalization identifier="ProjectionSelector" label="Projection Selector" labelOther="Projection Selectors" />
+
+	<ConceptLocalization identifier="ConceptTypeSelector" label="Concept Type Selector" labelOther="Concept Type Selectors" />
+
+	<ConceptLocalization identifier="TraitPathSelector" label="Trait Path Selector" labelOther="Trait Path Selectors" />
+
+	<ConceptLocalization identifier="RelationshipEdgeSelector" label="Relationship Edge Selector" labelOther="Relationship Edge Selectors" />
+
+	<ConceptLocalization identifier="ValuePredicateSelector" label="Value Predicate Selector" labelOther="Value Predicate Selectors" />
+
+	<ConceptLocalization identifier="IntersectionSelector" label="Intersection Selector" labelOther="Intersection Selectors" />
+
+	<ConceptLocalization identifier="CollapseTraitMapping" label="Collapse Trait Mapping" labelOther="Collapse Trait Mappings" />
+
+	<ConceptLocalization identifier="FixedStructuralTransform" label="Fixed Structural Transform" labelOther="Fixed Structural Transforms" />
+
+	<TraitLocalization identifier="parameterName" label="Parameter Name" labelOther="Parameter Names">
+		Parameter identifier within the projection definition.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="parameterShapeReference" label="Parameter Shape Reference" labelOther="Parameter Shape References">
+		IRI reference to the ValueShapeDefinition used for parameter validation.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="parameterRequired" label="Parameter Required" labelOther="Parameter Required Flags">
+		Whether this parameter must be bound when invoking the projection.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="ruleIdentifier" label="Rule Identifier" labelOther="Rule Identifiers">
+		Stable rule identifier used for provenance and derivation identity.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="selectorTarget" label="Selector Target" labelOther="Selector Targets">
+		Selector evaluation target: canonical universe or working set.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="selectorConceptType" label="Selector Concept Type" labelOther="Selector Concept Types">
+		Concept type selector operand.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="selectorTraitPath" label="Selector Trait Path" labelOther="Selector Trait Paths">
+		Trait path selector operand.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="selectorRelationshipType" label="Selector Relationship Type" labelOther="Selector Relationship Types">
+		Relationship type selector operand.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="targetConceptType" label="Target Concept Type" labelOther="Target Concept Types">
+		Target concept type for replacement node creation in collapse operations.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="sourceTraitPath" label="Source Trait Path" labelOther="Source Trait Paths">
+		Source trait path in a collapse mapping.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="targetTraitName" label="Target Trait Name" labelOther="Target Trait Names">
+		Target trait in a collapse mapping.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="transformClass" label="Transform Class" labelOther="Transform Classes">
+		DeriveAnnotation transform class: behavior expression or structural transform.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="transformName" label="Transform Name" labelOther="Transform Names">
+		Stable identifier for a fixed deterministic transform behavior.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:view:semantic-projection:requires-select-rule"
+		label="Requires select rule"
+	>
+		SemanticProjectionDefinition must contain exactly one SelectRule.
+	</ConstraintLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:view:semantic-projection:select-rule-requires-selectors"
+		label="Select rule requires selectors"
+	>
+		SelectRule must contain RuleSelectors.
+	</ConstraintLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:view:semantic-projection:prune-rule-requires-selectors"
+		label="Prune rule requires selectors"
+	>
+		PruneRule must contain RuleSelectors.
+	</ConstraintLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:view:semantic-projection:collapse-rule-requires-selectors"
+		label="Collapse rule requires selectors"
+	>
+		CollapseRule must contain RuleSelectors.
+	</ConstraintLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:view:semantic-projection:derive-annotation-rule-requires-selectors"
+		label="Derive annotation rule requires selectors"
+	>
+		DeriveAnnotationRule must contain RuleSelectors.
+	</ConstraintLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:view:semantic-projection:value-predicate-requires-validation"
+		label="Value predicate requires validation"
+	>
+		ValuePredicateSelector must contain one behavior Validation expression.
+	</ConstraintLocalization>
+</LocalizationBundle>

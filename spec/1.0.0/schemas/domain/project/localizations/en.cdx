@@ -1,0 +1,27 @@
+<LocalizationBundle
+	schema=codex:domain:project
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Project" label="Project" labelOther="Projects" />
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		The name of the project.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="projectKind" label="Project Kind" labelOther="Project Kinds">
+		The type of project, such as software, specification, or research.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="repositoryUrl" label="Repository URL" labelOther="Repository URLs">
+		The primary source repository URL.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="websiteUrl" label="Website URL" labelOther="Website URLs">
+		The project website URL.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="projectStatus" label="Project Status" labelOther="Project Statuses">
+		The lifecycle status of the project.
+	</TraitLocalization>
+</LocalizationBundle>

@@ -1,0 +1,24 @@
+<Specification
+	editor="Paperhat"
+	locked=false
+	normative=true
+	title="Foundation Traits Example"
+	version=0.1.0
+>
+	<Section
+		conformance=$Normative
+		division=$Body
+		id=urn:example:foundation-traits#section/overview
+		key=~overview
+		title="Overview"
+	>
+		<Paragraph>
+			This example demonstrates the traits and enumerated value sets
+			defined in the specification foundation schema.
+		</Paragraph>
+
+		<Requirement modality=$Must requirementId=~exampleRequirement>
+			Implementations MUST support all foundation traits.
+		</Requirement>
+	</Section>
+</Specification>

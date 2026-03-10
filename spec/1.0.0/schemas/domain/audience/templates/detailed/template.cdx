@@ -1,0 +1,9 @@
+[Full audience with demographics. Remove traits you do not need.]
+<Audience
+	audienceKind=$
+	suggestedMinAge=0
+	suggestedMaxAge=0
+	suggestedGender=""
+	geographicArea=""
+	audienceDescription=""
+/>

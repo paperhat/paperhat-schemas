@@ -1,0 +1,15 @@
+<DocumentMetadata>
+	<Work
+		author="Infrastructure Division"
+		dateCreated={2026-01-05}
+		dateModified={2026-02-10}
+		status=$draft
+	/>
+
+	<Description language=$en>
+		Quarterly assessment of bridge and tunnel maintenance needs across the
+		northern district.
+	</Description>
+
+	<Audience audienceType=$professional />
+</DocumentMetadata>

@@ -1,0 +1,6 @@
+<MediaReference
+	url="https://example.com/videos/promo.mp4"
+	mediaKind=$video
+	encodingFormat="video/mp4"
+	caption="Summer 2026 promotional video"
+/>

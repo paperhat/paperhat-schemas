@@ -1,0 +1,33 @@
+<LocalizationBundle
+	language=$En
+	schema=codex:domain:specification
+	schemaVersion="1.0.0"
+>
+	<ConceptLocalization identifier="Specification" label="Specification" />
+
+	<ConceptLocalization identifier="Section" label="Section" labelOther="Sections" />
+
+	<ConceptLocalization identifier="Requirement" label="Requirement" labelOther="Requirements" />
+
+	<ConceptLocalization identifier="Definition" label="Definition" labelOther="Definitions" />
+
+	<ConceptLocalization identifier="Note" label="Note" labelOther="Notes" />
+
+	<ConceptLocalization identifier="SectionReference" label="Section Reference" labelOther="Section References" />
+
+	<ConceptLocalization identifier="ExternalReference" label="External Reference" labelOther="External References" />
+
+	<ConstraintLocalization
+		identifier="codex:domain:specification:section-reference-target-type"
+		label="Section reference target type"
+	>
+		A SectionReference target must resolve to a Section.
+	</ConstraintLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:specification:section-reference-must-resolve"
+		label="Section reference must resolve"
+	>
+		A SectionReference target must resolve to an existing entity.
+	</ConstraintLocalization>
+</LocalizationBundle>

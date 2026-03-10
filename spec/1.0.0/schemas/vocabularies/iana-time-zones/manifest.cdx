@@ -1,0 +1,12 @@
+<VocabularyPackageManifest
+	author="Paperhat"
+	closureHash="2a62e94febe8c2e88209189eec4475a576984abbc1bff061a2adac6cec08ce7c"
+	copyright="Copyright 2026 Paperhat"
+	description="Canonical time zone identifiers from the IANA Time Zone Database (tzdata)."
+	license="Apache-2.0"
+	packageName="iana-time-zones"
+	packageVersion="1.0.0"
+	primaryDocument="vocabulary.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

@@ -1,0 +1,14 @@
+<LocalizationBundle
+	language=$En
+	schema=codex:domain:example
+	schemaVersion="1.0.0"
+>
+	<ConceptLocalization identifier="Example" label="Example" labelOther="Examples" />
+
+	<ConstraintLocalization
+		identifier="codex:domain:example:requires-child"
+		label="Example requires at least one child"
+	>
+		An Example must contain at least one allowed child concept.
+	</ConstraintLocalization>
+</LocalizationBundle>

@@ -1,0 +1,218 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Nutritional facts per serving, including calories, macronutrients, and sodium. Each nutrient is a named concept wrapping a dimension-typed Measure."
+	id=codex:domain:nutrition-information
+	namespace="nutrition"
+	title="Nutrition Information Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace="energymeasure" reference=urn:cdx:sha256:e9c7bc5a2b95e0573e98ddb6a9dc7936a3e6bc37251fe78fedd9202977b9feb1 />
+
+		<SchemaImport namespace="massmeasure" reference=urn:cdx:sha256:f23396dcb092b7de3152a1d7fb22672248422dc2e3b59e96737c30ba863ec242 />
+
+		<SchemaImport namespace="volumemeasure" reference=urn:cdx:sha256:28e51c8a49e5f2e23148c2d96f3822d7bab801f8c3c2bc872ece55e3ef78c755 />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:nutrition-information:NutritionInformation
+			name="NutritionInformation"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="ServingSize" max=1 />
+
+				<AllowsChildConcept conceptSelector="Calories" max=1 />
+
+				<AllowsChildConcept conceptSelector="FatContent" max=1 />
+
+				<AllowsChildConcept conceptSelector="ProteinContent" max=1 />
+
+				<AllowsChildConcept conceptSelector="CarbohydrateContent" max=1 />
+
+				<AllowsChildConcept conceptSelector="FiberContent" max=1 />
+
+				<AllowsChildConcept conceptSelector="SugarContent" max=1 />
+
+				<AllowsChildConcept conceptSelector="SodiumContent" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:nutrition-information:ServingSize
+			name="ServingSize"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="massmeasure:MassMeasure" max=1 />
+
+				<AllowsChildConcept conceptSelector="volumemeasure:VolumeMeasure" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:nutrition-information:Calories
+			name="Calories"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="energymeasure:EnergyMeasure" min=1 max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:nutrition-information:FatContent
+			name="FatContent"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="massmeasure:MassMeasure" min=1 max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:nutrition-information:ProteinContent
+			name="ProteinContent"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="massmeasure:MassMeasure" min=1 max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:nutrition-information:CarbohydrateContent
+			name="CarbohydrateContent"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="massmeasure:MassMeasure" min=1 max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:nutrition-information:FiberContent
+			name="FiberContent"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="massmeasure:MassMeasure" min=1 max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:nutrition-information:SugarContent
+			name="SugarContent"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="massmeasure:MassMeasure" min=1 max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:nutrition-information:SodiumContent
+			name="SodiumContent"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="massmeasure:MassMeasure" min=1 max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=codex:domain:nutrition-information:requires-nutrient
+			title="NutritionInformation must contain at least one nutrient"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="NutritionInformation" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<ChildConstraint conceptSelector="ServingSize" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="Calories" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="FatContent" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="ProteinContent" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="CarbohydrateContent" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="FiberContent" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="SugarContent" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="SodiumContent" type=$RequiresChildConcept />
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

@@ -1,0 +1,35 @@
+<LocalizationBundle
+	schema=codex:domain:offer
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Offer" label="Offer" labelOther="Offers" />
+
+	<TraitLocalization identifier="price" label="Price" labelOther="Prices">
+		The price of the offered item.
+	</TraitLocalization>
+
+	<TraitLocalization
+		identifier="priceCurrency"
+		label="Price Currency"
+		labelOther="Price Currencies"
+	>
+		The currency of the price.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="availability" label="Availability">
+		The availability status of the offered item.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="itemCondition" label="Item Condition" labelOther="Item Conditions">
+		The condition of the offered item.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="validFrom" label="Valid From">
+		The date from which the offer is valid.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="validThrough" label="Valid Through">
+		The date after which the offer is no longer valid.
+	</TraitLocalization>
+</LocalizationBundle>

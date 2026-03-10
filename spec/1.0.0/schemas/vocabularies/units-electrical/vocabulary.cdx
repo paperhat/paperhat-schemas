@@ -1,0 +1,45 @@
+<TokenVocabulary
+	id=codex:vocabulary:units-electrical
+	version="1.0.0"
+	title="Units of Electrical Measurement"
+	description="Units of measurement for electrical quantities."
+	closedVocabulary=true
+>
+	<TokenDefinition token=$Ampere label="A" />
+
+	<TokenDefinition token=$AmpereHour label="Ah" />
+
+	<TokenDefinition token=$Coulomb label="C" />
+
+	<TokenDefinition token=$Farad label="F" />
+
+	<TokenDefinition token=$Henry label="H" />
+
+	<TokenDefinition token=$Kilohm label="kohm" />
+
+	<TokenDefinition token=$Kilovolt label="kV" />
+
+	<TokenDefinition token=$Megohm label="Mohm" />
+
+	<TokenDefinition token=$Microampere label="uA" />
+
+	<TokenDefinition token=$Microfarad label="uF" />
+
+	<TokenDefinition token=$Milliampere label="mA" />
+
+	<TokenDefinition token=$MilliampereHour label="mAh" />
+
+	<TokenDefinition token=$Millihenry label="mH" />
+
+	<TokenDefinition token=$Millivolt label="mV" />
+
+	<TokenDefinition token=$Nanofarad label="nF" />
+
+	<TokenDefinition token=$Ohm label="ohm" />
+
+	<TokenDefinition token=$Picofarad label="pF" />
+
+	<TokenDefinition token=$Siemens label="S" />
+
+	<TokenDefinition token=$Volt label="V" />
+</TokenVocabulary>

@@ -1,0 +1,23 @@
+<Specification
+	title="Minimal Valid RFC 2119 Specification"
+	normative=true
+	locked=true
+	version=1.0.0
+	editor="Paperhat"
+>
+	<Section
+		id=urn:example:minimal-rfc2119#section/purpose
+		key=~purpose
+		title="Purpose"
+		conformance=$Normative
+		division=$Body
+	>
+		<Paragraph>
+			This section defines a minimal valid specification.
+		</Paragraph>
+
+		<Requirement modality=$Must requirementId=~minimalRequirement>
+			Implementations MUST comply with this requirement.
+		</Requirement>
+	</Section>
+</Specification>

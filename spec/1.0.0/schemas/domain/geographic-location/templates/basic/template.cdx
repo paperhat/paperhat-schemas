@@ -1,0 +1,2 @@
+[Both latitude and longitude are required. Use decimal degrees (WGS 84\).]
+<GeographicLocation latitude=0 longitude=0 />

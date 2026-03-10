@@ -1,0 +1,91 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A named initiative, effort, or body of work with identity — a software project, specification effort, research program, or any other bounded endeavor."
+	id=codex:domain:project
+	namespace="project"
+	title="Project Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace=desc reference=urn:cdx:sha256:5e9c6ba4654a0b013b65fc38fde033d2b6fc281d7eb791e57b207b42d80ae7da />
+
+		<SchemaImport namespace=ident reference=urn:cdx:sha256:a220d2034a4faa1a81d8102265c1fef36576871a0ba25ac31500abac7afd5907 />
+
+		<SchemaImport namespace=tags reference=urn:cdx:sha256:79f0baf3512b1d7c2730608a6796155017c30096f2f4ffde74b0deafc1eae775 />
+
+		<SchemaImport namespace=work reference=urn:cdx:sha256:1a180843230548cc38ddcde65df88bb025fd9a3feff6cdc6da19e8c3a8823dcd />
+
+		<SchemaImport namespace=temporal reference=urn:cdx:sha256:184487dbb675e895d492185b14674046cd0ec1c5e3a3cd15aa1ddda9c3a016ec />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=codex:domain:project:Project
+			name="Project"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<AllowsTrait name="projectKind" />
+
+				<AllowsTrait name="repositoryUrl" />
+
+				<AllowsTrait name="websiteUrl" />
+
+				<AllowsTrait name="projectStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+
+				<AllowsChildConcept conceptSelector="ident:Identifier" />
+
+				<AllowsChildConcept conceptSelector="tags:Tags" />
+
+				<AllowsChildConcept conceptSelector="work:Work" />
+
+				<AllowsChildConcept conceptSelector="temporal:Temporal" />
+			</ChildRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:project:trait:name
+			name="name"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:project:trait:projectKind
+			name="projectKind"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Url
+			id=codex:domain:project:trait:repositoryUrl
+			name="repositoryUrl"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Url
+			id=codex:domain:project:trait:websiteUrl
+			name="websiteUrl"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:project:trait:projectStatus
+			name="projectStatus"
+		/>
+	</TraitDefinitions>
+</Schema>

@@ -1,0 +1,50 @@
+<LocalizationBundle
+	schema=codex:domain:accessibility
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Accessibility" label="Accessibility" />
+
+	<TraitLocalization identifier="accessMode" label="Access Mode" labelOther="Access Modes">
+		The human sensory perceptual system or cognitive faculty needed to process the content.
+	</TraitLocalization>
+
+	<TraitLocalization
+		identifier="accessibilityFeature"
+		label="Accessibility Feature"
+		labelOther="Accessibility Features"
+	>
+		A feature that supports accessibility for people with disabilities.
+	</TraitLocalization>
+
+	<TraitLocalization
+		identifier="accessibilityHazard"
+		label="Accessibility Hazard"
+		labelOther="Accessibility Hazards"
+	>
+		A hazard that may be dangerous to users with certain disabilities.
+	</TraitLocalization>
+
+	<TraitLocalization
+		identifier="accessibilitySummary"
+		label="Accessibility Summary"
+		labelOther="Accessibility Summaries"
+	>
+		A human-readable summary of accessibility features and deficiencies.
+	</TraitLocalization>
+
+	<TraitLocalization
+		identifier="accessibilityControl"
+		label="Accessibility Control"
+		labelOther="Accessibility Controls"
+	>
+		An input method sufficient to fully control the content.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:accessibility:requires-accessibility-trait"
+		label="Requires at least one accessibility trait"
+	>
+		An Accessibility element must specify at least one accessibility trait.
+	</ConstraintLocalization>
+</LocalizationBundle>

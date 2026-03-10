@@ -1,0 +1,15 @@
+<LocalizationBundle
+	schema=codex:domain:text
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Title" label="Title" labelOther="Titles" />
+
+	<ConceptLocalization identifier="Teaser" label="Teaser" labelOther="Teasers" />
+
+	<ConceptLocalization identifier="Paragraph" label="Paragraph" labelOther="Paragraphs" />
+
+	<TraitLocalization identifier="language" label="Language" labelOther="Languages">
+		The natural language of the text content.
+	</TraitLocalization>
+</LocalizationBundle>

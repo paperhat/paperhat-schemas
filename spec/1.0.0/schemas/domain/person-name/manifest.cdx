@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="d22c4986f6f696f51e74f65e2dd26a8816c9e501e17d027beef08d9a898a9e8a"
+	copyright="Copyright 2026 Paperhat"
+	description="Structured personal name with support for cultural variants, multiple name kinds, and decomposed name parts."
+	license="Apache-2.0"
+	packageName="paperhat-person-name"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

@@ -1,0 +1,23 @@
+<LocalizationBundle
+	schema=codex:domain:rating
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Rating" label="Rating" labelOther="Ratings" />
+
+	<TraitLocalization identifier="ratingValue" label="Rating Value" labelOther="Rating Values">
+		The numeric rating value.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="bestRating" label="Best Rating" labelOther="Best Ratings">
+		The highest possible value in the rating scale.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="worstRating" label="Worst Rating" labelOther="Worst Ratings">
+		The lowest possible value in the rating scale.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="ratingKind" label="Rating Kind" labelOther="Rating Kinds">
+		The type or category of the rating.
+	</TraitLocalization>
+</LocalizationBundle>

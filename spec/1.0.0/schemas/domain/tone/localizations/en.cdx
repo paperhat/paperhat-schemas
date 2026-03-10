@@ -1,0 +1,32 @@
+<LocalizationBundle
+	schema=codex:domain:tone
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Tones" label="Tones" />
+
+	<ConceptLocalization identifier="Tone" label="Tone" labelOther="Tones" />
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		The lookup token used for Gloss span binding.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="emotion" label="Emotion" labelOther="Emotions">
+		The emotional or tonal quality of the passage.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="text" label="Text">
+		Display text for label-less Gloss references.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="intensity" label="Intensity">
+		How strongly the emotion is expressed.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:tone:requires-child"
+		label="Requires at least one tone"
+	>
+		A Tones container must contain at least one Tone.
+	</ConstraintLocalization>
+</LocalizationBundle>

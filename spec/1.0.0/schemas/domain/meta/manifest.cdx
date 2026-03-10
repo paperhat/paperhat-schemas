@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="a4080530f3d7a9ddfd3211e18644d0dab6508c9a388ee2bd0b2c4669113e1101"
+	copyright="Copyright 2026 Paperhat"
+	description="Authorizes domain ontology schemas. Defines what domain schemas may declare and forbids individuals, views, policies, layout, and assembly."
+	license="Apache-2.0"
+	packageName="paperhat-meta"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

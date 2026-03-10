@@ -1,0 +1,4 @@
+[Define ruby annotations for reading aids above base text.]
+<LinguisticAnnotations>
+	<Ruby key=~reading annotation="reading" />
+</LinguisticAnnotations>

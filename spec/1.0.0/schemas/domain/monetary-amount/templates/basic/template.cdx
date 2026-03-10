@@ -1,0 +1,2 @@
+[Both amount and currency are required. Use ISO 4217 currency codes, e.g. $USD, $EUR, $GBP.]
+<MonetaryAmount amount=0 currency=$ />

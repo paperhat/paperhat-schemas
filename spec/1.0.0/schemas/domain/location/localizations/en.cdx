@@ -1,0 +1,34 @@
+<LocalizationBundle
+	schema=codex:domain:location
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Location" label="Location" labelOther="Locations" />
+
+	<TraitLocalization identifier="locationKind" label="Location Kind" labelOther="Location Kinds">
+		The type or category of the location.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		The name of the location.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="locality" label="Locality" labelOther="Localities">
+		The city, town, or village.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="region" label="Region" labelOther="Regions">
+		The state, province, or administrative region.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="country" label="Country" labelOther="Countries">
+		The country.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:location:requires-location-part"
+		label="Requires at least one location part"
+	>
+		A Location must include at least one location part.
+	</ConstraintLocalization>
+</LocalizationBundle>

@@ -1,0 +1,60 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="f00a69ad7e23c3fea0a6abcb540be2944eb66419e4ab3abb2028283b85f08e8b"
+	copyright="Copyright 2026 Paperhat"
+	description="RFC 2119 specification schema for authoring formal specifications in Codex. Supports the full RFC 2119 requirement modality keyword set."
+	license="Apache-2.0"
+	packageName="paperhat-specification-rfc2119"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+>
+	<PackageDependency
+		packageName="paperhat-admonition"
+		closureHash="1d9c6ecd481869d111748a9329e539c9e1745b32e1aceb1b41b8fd957980300b"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-code"
+		closureHash="5a2701a0223b1e9b1ecf9d724fdac576ddb27289d9d17f5cd27ac692363d4713"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-example"
+		closureHash="6294de377882a55ab96826d682cf924d66efa0b4503b3c6b4689123c546898ae"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-figure"
+		closureHash="cea306b97c99841a8c7ba6c0dd6a9488d5d821008970555e9b18dac21665da0b"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-list"
+		closureHash="37316dfe7f2d350765a454f11b475d85a7bf5c09a7b89f0398418725a86ea088"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-specification-foundation"
+		closureHash="7e15defc9d762c7c902396ac27fb2da86b34034df76aaa5c68126b1ae3c17024"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-relation"
+		closureHash="e8512ed64a18415445b095f9dffb8dfaa6938d97f80c0b667941ada76a627342"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-text"
+		closureHash="703472ba80a5f88685e7a6d604b16d31dfb06a81186c58bdd378aac55a53e897"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</DomainPackageManifest>

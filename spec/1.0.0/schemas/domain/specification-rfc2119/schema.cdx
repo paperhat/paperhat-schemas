@@ -1,0 +1,233 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="RFC 2119 specification schema for authoring formal specifications in Codex. Supports the full RFC 2119 requirement modality keyword set: Must, MustNot, Shall, ShallNot, Should, ShouldNot, May, Required, Recommended, Optional."
+	id=codex:domain:specification-rfc2119
+	namespace=spec2119
+	title="Specification Schema (RFC 2119)"
+	version=1.0.0
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace=admonition reference=urn:cdx:sha256:31678c88cd6e0a8b64991b39efb46aa4e97a569046deb4d6d57f235891a3a7c2 />
+
+		<SchemaImport namespace=code reference=urn:cdx:sha256:6f6e27c71484bc9bb78eb52f401521597afe5e220fda09112c6af67bdaf21e9e />
+
+		<SchemaImport namespace=example reference=urn:cdx:sha256:2d88426a3cf5e22d7a64bff7accefab4519ba34c26eb48227cd846f8ecc85a33 />
+
+		<SchemaImport namespace=figure reference=urn:cdx:sha256:7f7660dd097a9a8879541f45cbd28def9478ae94d85df0c467b1d6d82a108da2 />
+
+		<SchemaImport namespace=list reference=urn:cdx:sha256:47b1e8725dfbf226ac7dd20ffe8b0fb77c1e444735895c24b2225b317d2185cd />
+
+		<SchemaImport namespace=specbase reference=urn:cdx:sha256:a4840e1e965d7f6dcde5382f51f757ec18bd0505bc28aca03295e9c48012281a />
+
+		<SchemaImport namespace=relation reference=urn:cdx:sha256:9f68d4f9a5421a5c1b506c7b0b05550a2bf08a83379ef53d081ba84b11018769 />
+
+		<SchemaImport namespace=text reference=urn:cdx:sha256:0d835975e6ccabdab7c2204e9b1d4e19baf24108e45a8f240adea3a2684a5fd0 />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:specification-rfc2119:Specification
+			name="Specification"
+		>
+			<TraitRules>
+				<RequiresTrait name="specbase:editor" />
+
+				<RequiresTrait name="specbase:locked" />
+
+				<RequiresTrait name="specbase:normative" />
+
+				<RequiresTrait name="title" />
+
+				<RequiresTrait name="version" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector=Section min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=codex:domain:specification-rfc2119:Section
+			name="Section"
+		>
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="specbase:conformance" />
+
+				<RequiresTrait name="title" />
+
+				<AllowsTrait name="specbase:designation" />
+
+				<AllowsTrait name="specbase:division" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector=text:Paragraph />
+
+				<AllowsChildConcept conceptSelector=list:OrderedList />
+
+				<AllowsChildConcept conceptSelector=list:UnorderedList />
+
+				<AllowsChildConcept conceptSelector=code:CodeBlock />
+
+				<AllowsChildConcept conceptSelector=Section />
+
+				<AllowsChildConcept conceptSelector=Requirement />
+
+				<AllowsChildConcept conceptSelector=Definition />
+
+				<AllowsChildConcept conceptSelector=Note />
+
+				<AllowsChildConcept conceptSelector=SectionReference />
+
+				<AllowsChildConcept conceptSelector=ExternalReference />
+
+				<AllowsChildConcept conceptSelector=figure:Figure />
+
+				<AllowsChildConcept conceptSelector=example:Example />
+
+				<AllowsChildConcept conceptSelector=relation:RelationType />
+
+				<AllowsChildConcept conceptSelector=relation:RelationInstance />
+
+				<AllowsChildConcept conceptSelector=admonition:Warning />
+
+				<AllowsChildConcept conceptSelector=admonition:Danger />
+
+				<AllowsChildConcept conceptSelector=admonition:Critical />
+
+				<AllowsChildConcept conceptSelector=admonition:Notice />
+
+				<AllowsChildConcept conceptSelector=admonition:Informational />
+
+				<AllowsChildConcept conceptSelector=admonition:Tip />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:specification-rfc2119:Requirement
+			name="Requirement"
+		>
+			<TraitRules>
+				<RequiresTrait name="specbase:modality" />
+
+				<AllowsTrait name="key" />
+
+				<AllowsTrait name="specbase:requirementId" />
+			</TraitRules>
+
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:specification-rfc2119:Definition
+			name="Definition"
+		>
+			<TraitRules>
+				<RequiresTrait name="specbase:term" />
+			</TraitRules>
+
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:specification-rfc2119:Note
+			name="Note"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:specification-rfc2119:SectionReference
+			name="SectionReference"
+		>
+			<TraitRules>
+				<RequiresTrait name="target" />
+
+				<AllowsTrait name="label" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:specification-rfc2119:ExternalReference
+			name="ExternalReference"
+		>
+			<TraitRules>
+				<RequiresTrait name="specbase:uri" />
+
+				<AllowsTrait name="label" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=codex:domain:specification-rfc2119:section-reference-target-type
+			title="SectionReference target must resolve to a Section"
+		>
+			<Targets>
+				<TargetConcept conceptSelector=SectionReference />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector=Section />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:domain:specification-rfc2119:section-reference-must-resolve
+			title="SectionReference target must resolve"
+		>
+			<Targets>
+				<TargetConcept conceptSelector=SectionReference />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceMustResolve />
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="3d5df45065f13f42ddd5e2caf2f802e73da8a3da1fdf8c4adf5723220151b294"
+	copyright="Copyright 2026 Paperhat"
+	description="A temporal duration expressed as an amount and a unit."
+	license="Apache-2.0"
+	packageName="paperhat-duration"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

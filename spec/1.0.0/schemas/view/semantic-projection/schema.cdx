@@ -1,0 +1,510 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="View-family schema concepts for deterministic semantic projections over canonical Lexis universe U."
+	id=codex:view:semantic-projection
+	namespace="projection"
+	title="Semantic Projection View Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace=behavior reference=urn:cdx:sha256:e3a754044bf335e4f3c49b30b508a29363476a323eb5b34157a3593f8def7a05 />
+
+		<SchemaImport namespace=shape reference=urn:cdx:sha256:08dfad42681427e71a53190aa2ab1be8d27b9f63fd627f3ee4cfa321f5e95bed />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=codex:view:semantic-projection:SemanticProjectionDefinition
+			name="SemanticProjectionDefinition"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="id" />
+
+				<RequiresTrait name="name" />
+
+				<AllowsTrait name="description" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="ProjectionParameter" />
+
+				<AllowsChildConcept conceptSelector="shape:ValueShapeDefinition" />
+
+				<RequiresChildConcept conceptSelector="SelectRule" max=1 min=1 />
+
+				<AllowsChildConcept conceptSelector="PruneRule" />
+
+				<AllowsChildConcept conceptSelector="CollapseRule" />
+
+				<AllowsChildConcept conceptSelector="DeriveAnnotationRule" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:view:semantic-projection:ProjectionParameter
+			name="ProjectionParameter"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="parameterName" />
+
+				<RequiresTrait name="parameterShapeReference" />
+
+				<AllowsTrait name="parameterRequired" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Abstract rule concept used for schema documentation and targeting."
+			entityEligibility=$MustNotBeEntity
+			id=codex:view:semantic-projection:ProjectionRule
+			name="ProjectionRule"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="ruleIdentifier" />
+
+				<AllowsTrait name="description" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:view:semantic-projection:SelectRule
+			name="SelectRule"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="ruleIdentifier" />
+
+				<AllowsTrait name="selectorTarget" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="RuleSelectors" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:view:semantic-projection:PruneRule
+			name="PruneRule"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="ruleIdentifier" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="RuleSelectors" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:view:semantic-projection:CollapseRule
+			name="CollapseRule"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="ruleIdentifier" />
+
+				<RequiresTrait name="targetConceptType" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="RuleSelectors" max=1 min=1 />
+
+				<AllowsChildConcept conceptSelector="CollapseTraitMapping" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:view:semantic-projection:DeriveAnnotationRule
+			name="DeriveAnnotationRule"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="ruleIdentifier" />
+
+				<AllowsTrait name="transformClass" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="RuleSelectors" max=1 min=1 />
+
+				<AllowsChildConcept conceptSelector="behavior:Validation" />
+
+				<AllowsChildConcept conceptSelector="FixedStructuralTransform" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:view:semantic-projection:RuleSelectors
+			name="RuleSelectors"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+
+				<AllowsChildConcept conceptSelector="ConceptTypeSelector" />
+
+				<AllowsChildConcept conceptSelector="TraitPathSelector" />
+
+				<AllowsChildConcept conceptSelector="RelationshipEdgeSelector" />
+
+				<AllowsChildConcept conceptSelector="ValuePredicateSelector" />
+
+				<AllowsChildConcept conceptSelector="IntersectionSelector" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Abstract selector concept for all selector primitives."
+			entityEligibility=$MustNotBeEntity
+			id=codex:view:semantic-projection:ProjectionSelector
+			name="ProjectionSelector"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:view:semantic-projection:ConceptTypeSelector
+			name="ConceptTypeSelector"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="selectorConceptType" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:view:semantic-projection:TraitPathSelector
+			name="TraitPathSelector"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="selectorTraitPath" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:view:semantic-projection:RelationshipEdgeSelector
+			name="RelationshipEdgeSelector"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="selectorRelationshipType" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:view:semantic-projection:ValuePredicateSelector
+			name="ValuePredicateSelector"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="behavior:Validation" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:view:semantic-projection:IntersectionSelector
+			name="IntersectionSelector"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+
+				<AllowsChildConcept conceptSelector="ConceptTypeSelector" />
+
+				<AllowsChildConcept conceptSelector="TraitPathSelector" />
+
+				<AllowsChildConcept conceptSelector="RelationshipEdgeSelector" />
+
+				<AllowsChildConcept conceptSelector="ValuePredicateSelector" />
+
+				<AllowsChildConcept conceptSelector="IntersectionSelector" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:view:semantic-projection:CollapseTraitMapping
+			name="CollapseTraitMapping"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="sourceTraitPath" />
+
+				<RequiresTrait name="targetTraitName" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:view:semantic-projection:FixedStructuralTransform
+			name="FixedStructuralTransform"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="transformName" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:view:semantic-projection:trait:parameterName
+			name="parameterName"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$IriReference
+			id=codex:view:semantic-projection:trait:parameterShapeReference
+			isReferenceTrait=true
+			name="parameterShapeReference"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Boolean
+			id=codex:view:semantic-projection:trait:parameterRequired
+			name="parameterRequired"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$IriReference
+			id=codex:view:semantic-projection:trait:ruleIdentifier
+			isReferenceTrait=true
+			name="ruleIdentifier"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:view:semantic-projection:trait:selectorTarget
+			name="selectorTarget"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[ $CanonicalUniverse, $WorkingSet ] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:view:semantic-projection:trait:selectorConceptType
+			name="selectorConceptType"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:view:semantic-projection:trait:selectorTraitPath
+			name="selectorTraitPath"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:view:semantic-projection:trait:selectorRelationshipType
+			name="selectorRelationshipType"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:view:semantic-projection:trait:targetConceptType
+			name="targetConceptType"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:view:semantic-projection:trait:sourceTraitPath
+			name="sourceTraitPath"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:view:semantic-projection:trait:targetTraitName
+			name="targetTraitName"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:view:semantic-projection:trait:transformClass
+			name="transformClass"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[ $BehaviorExpression, $StructuralTransform ] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:view:semantic-projection:trait:transformName
+			name="transformName"
+		/>
+	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=codex:view:semantic-projection:requires-select-rule
+			title="SemanticProjectionDefinition must contain exactly one SelectRule"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="SemanticProjectionDefinition" />
+			</Targets>
+
+			<Rule>
+				<ChildConstraint conceptSelector="SelectRule" type=$RequiresChildConcept />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:view:semantic-projection:select-rule-requires-selectors
+			title="SelectRule must contain RuleSelectors"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="SelectRule" />
+			</Targets>
+
+			<Rule>
+				<ChildConstraint conceptSelector="RuleSelectors" type=$RequiresChildConcept />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:view:semantic-projection:prune-rule-requires-selectors
+			title="PruneRule must contain RuleSelectors"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="PruneRule" />
+			</Targets>
+
+			<Rule>
+				<ChildConstraint conceptSelector="RuleSelectors" type=$RequiresChildConcept />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:view:semantic-projection:collapse-rule-requires-selectors
+			title="CollapseRule must contain RuleSelectors"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="CollapseRule" />
+			</Targets>
+
+			<Rule>
+				<ChildConstraint conceptSelector="RuleSelectors" type=$RequiresChildConcept />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:view:semantic-projection:derive-annotation-rule-requires-selectors
+			title="DeriveAnnotationRule must contain RuleSelectors"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="DeriveAnnotationRule" />
+			</Targets>
+
+			<Rule>
+				<ChildConstraint conceptSelector="RuleSelectors" type=$RequiresChildConcept />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:view:semantic-projection:value-predicate-requires-validation
+			title="ValuePredicateSelector must contain one behavior Validation expression"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ValuePredicateSelector" />
+			</Targets>
+
+			<Rule>
+				<ChildConstraint conceptSelector="behavior:Validation" type=$RequiresChildConcept />
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

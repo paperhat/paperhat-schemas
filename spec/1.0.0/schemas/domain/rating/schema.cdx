@@ -1,0 +1,59 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A numeric rating on a defined scale."
+	id=codex:domain:rating
+	namespace="rating"
+	title="Rating Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:rating:Rating
+			name="Rating"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="ratingValue" />
+
+				<AllowsTrait name="bestRating" />
+
+				<AllowsTrait name="worstRating" />
+
+				<AllowsTrait name="ratingKind" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Number
+			id=codex:domain:rating:trait:ratingValue
+			name="ratingValue"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=codex:domain:rating:trait:bestRating
+			name="bestRating"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=codex:domain:rating:trait:worstRating
+			name="worstRating"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:rating:trait:ratingKind
+			name="ratingKind"
+		/>
+	</TraitDefinitions>
+</Schema>

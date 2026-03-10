@@ -1,0 +1,8 @@
+<PersonName
+	nameKind=$legal
+	given="Eleanor"
+	middle="Rosalind" "Frances"
+	family="Vance"
+	title="Dr."
+	suffix="PhD"
+/>

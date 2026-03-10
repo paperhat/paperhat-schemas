@@ -1,0 +1,145 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Compositional sensory characteristics of food and beverage items, covering taste, aroma, and mouthfeel for flavor modeling and substitution inference."
+	id=codex:domain:sensory-profile
+	namespace="sensory"
+	title="Sensory Profile Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:5e9c6ba4654a0b013b65fc38fde033d2b6fc281d7eb791e57b207b42d80ae7da />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:sensory-profile:SensoryProfile
+			name="SensoryProfile"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="TasteNote" />
+
+				<AllowsChildConcept conceptSelector="AromaNote" />
+
+				<AllowsChildConcept conceptSelector="MouthfeelNote" />
+
+				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:sensory-profile:TasteNote
+			name="TasteNote"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="taste" />
+
+				<AllowsTrait name="intensity" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:sensory-profile:AromaNote
+			name="AromaNote"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="aroma" />
+
+				<AllowsTrait name="intensity" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:sensory-profile:MouthfeelNote
+			name="MouthfeelNote"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="mouthfeel" />
+
+				<AllowsTrait name="intensity" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:sensory-profile:trait:taste
+			name="taste"
+			priority=$Primary
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Bitter, $Salty, $Sour, $Sweet, $Umami] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:sensory-profile:trait:aroma
+			name="aroma"
+			priority=$Primary
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Caramel, $Dairy, $Earthy, $Fermented, $Floral, $Fruity, $Herbal, $Marine, $Meaty, $Nutty, $Smoky, $Spicy, $Sulfurous, $Woody] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:sensory-profile:trait:mouthfeel
+			name="mouthfeel"
+			priority=$Primary
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Astringent, $Chewy, $Cooling, $Creamy, $Crispy, $Crunchy, $Crumbly, $Firm, $Fizzy, $Gelatinous, $Grainy, $Heating, $Numbing, $Silky, $Tender, $Tingling, $Viscous] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:sensory-profile:trait:intensity
+			name="intensity"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Subtle, $Mild, $Moderate, $Pronounced, $Dominant] />
+			</AllowedValues>
+		</TraitDefinition>
+	</TraitDefinitions>
+</Schema>

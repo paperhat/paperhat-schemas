@@ -1,0 +1,107 @@
+<Recipe id=urn:lexis:lexis:paperhat-recipe:banana-bread:1>
+	<Title>
+		Banana Bread
+	</Title>
+
+	<Teaser>
+		A moist, tender quick bread that uses overripe bananas.
+	</Teaser>
+
+	<Description>
+		Classic banana bread with a golden crust and soft interior. The riper the
+		bananas, the sweeter and more flavorful the bread.
+	</Description>
+
+	<Servings amount=10 unit="slices" />
+
+	<PreparationTime duration=15 unit="minutes" />
+
+	<CookingTime duration=60 unit="minutes" />
+
+	<Ingredients>
+		<Ingredient name="overripe bananas" amount=3 preparation="mashed" />
+
+		<Ingredient name="unsalted butter" amount=75 unit="grams" preparation="melted" />
+
+		<Ingredient name="granulated sugar" amount=150 unit="grams" />
+
+		<Ingredient name="egg" amount=1 />
+
+		<Ingredient name="vanilla extract" amount=1 unit="teaspoon" />
+
+		<Ingredient name="all-purpose flour" amount=190 unit="grams" />
+
+		<Ingredient name="baking soda" amount=1 unit="teaspoon" />
+
+		<Ingredient name="salt" amount=0.25 unit="teaspoon" />
+
+		<Ingredient name="walnuts" amount=60 unit="grams" preparation="chopped" optional=true />
+	</Ingredients>
+
+	<Equipment>
+		<Item>
+			Loaf pan
+		</Item>
+
+		<Item>
+			Large mixing bowl
+		</Item>
+
+		<Item>
+			Wire cooling rack
+		</Item>
+	</Equipment>
+
+	<Instructions>
+		<Step>
+			Preheat the oven to 175 degrees Celsius. Grease the loaf pan.
+		</Step>
+
+		<Step>
+			Mash the bananas in a large bowl. Stir in the melted butter.
+		</Step>
+
+		<Step>
+			Mix in the sugar, egg, and vanilla extract.
+		</Step>
+
+		<Step>
+			Add the flour, baking soda, and salt. Stir until just combined.
+		</Step>
+
+		<Step optional=true>
+			Fold in the chopped walnuts.
+		</Step>
+
+		<Step>
+			Pour the batter into the prepared pan.
+		</Step>
+
+		<Step>
+			Bake for 55 to 60 minutes, until a toothpick inserted in the center
+			comes out clean.
+		</Step>
+
+		<Step>
+			Cool in the pan for 10 minutes, then transfer to a wire rack.
+		</Step>
+	</Instructions>
+
+	<Tags>
+		<Tag>
+			baking
+		</Tag>
+
+		<Tag>
+			bread
+		</Tag>
+
+		<Tag>
+			snack
+		</Tag>
+	</Tags>
+
+	<Source>
+		Adapted from classic American quick bread recipes.
+	</Source>
+</Recipe>

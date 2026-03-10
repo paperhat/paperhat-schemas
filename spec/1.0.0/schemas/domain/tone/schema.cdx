@@ -1,0 +1,91 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Emotional or tonal annotation on a text span, marking the intended feeling, mood, or voice of the passage."
+	id=codex:domain:tone
+	namespace="tone"
+	title="Tone Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:tone:Tones
+			name="Tones"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Tone" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Unordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:tone:Tone
+			name="Tone"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="emotion" />
+
+				<AllowsTrait name="text" />
+
+				<AllowsTrait name="intensity" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=codex:domain:tone:trait:key
+			name="key"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:tone:trait:emotion
+			name="emotion"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:tone:trait:text
+			name="text"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:tone:trait:intensity
+			name="intensity"
+		/>
+	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=codex:domain:tone:requires-child
+			title="Tones must contain at least one child"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Tones" />
+			</Targets>
+
+			<Rule>
+				<ChildConstraint conceptSelector="Tone" type=$RequiresChildConcept />
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

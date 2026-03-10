@@ -1,0 +1,24 @@
+<LocalizationBundle
+	schema=codex:domain:tips
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Tips" label="Tips" />
+
+	<ConceptLocalization identifier="Tip" label="Tip" labelOther="Tips" />
+
+	<TraitLocalization identifier="title" label="Title" labelOther="Titles">
+		A short authored label for the tip when one is needed.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="language" label="Language" labelOther="Languages">
+		The natural language of the tip content.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:tips:requires-tip"
+		label="Requires at least one tip"
+	>
+		A Tips container must contain at least one Tip.
+	</ConstraintLocalization>
+</LocalizationBundle>

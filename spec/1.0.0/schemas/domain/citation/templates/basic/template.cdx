@@ -1,0 +1,8 @@
+[A bibliographic citation. title is required. Add Contributor children for authors, editors, and publishers.]
+<Citation title="">
+	<Contributor contributorKind=$author>
+		<person:Person>
+			<pname:PersonName given="" family="" />
+		</person:Person>
+	</Contributor>
+</Citation>

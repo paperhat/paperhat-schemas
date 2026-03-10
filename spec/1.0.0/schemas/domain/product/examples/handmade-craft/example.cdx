@@ -1,0 +1,32 @@
+<Product
+	name="Hand-Thrown Ceramic Mug"
+	brand="Willow Creek Pottery"
+	category=$homeGoods
+	material="Stoneware"
+	color="Sage Green"
+>
+	<Description>
+		Handmade stoneware mug with a comfortable handle and food-safe glaze.
+	</Description>
+
+	<Offer price=34 priceCurrency=$USD availability=$InStock itemCondition=$New />
+
+	<Identifier scheme=$sku value="WCP-MUG-SG-12" />
+
+	<Measure value=350 unit=$ml />
+	<Measure value=310 unit=$grams />
+
+	<Tags>
+		<Tag>
+			handmade
+		</Tag>
+
+		<Tag>
+			ceramic
+		</Tag>
+
+		<Tag>
+			mug
+		</Tag>
+	</Tags>
+</Product>

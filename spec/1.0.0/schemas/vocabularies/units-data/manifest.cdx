@@ -1,0 +1,12 @@
+<VocabularyPackageManifest
+	author="Paperhat"
+	closureHash="ab9443eb63352f04156e5941b2297d27858819eaea1eef4da70da7e0663b48de"
+	copyright="Copyright 2026 Paperhat"
+	description="Units of measurement for digital data storage and transfer rate."
+	license="Apache-2.0"
+	packageName="units-data"
+	packageVersion="1.0.0"
+	primaryDocument="vocabulary.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

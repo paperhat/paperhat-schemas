@@ -1,0 +1,36 @@
+[A full white paper with metadata, series info, sectioned body, conclusion, and endnotes. Remove parts you do not need.]
+<WhitePaper title="" coreThesis="">
+	<DocumentMetadata>
+		<Work author="" datePublished={} language=$ status=$ />
+
+		<Description language=$></Description>
+
+		<Tags>
+			<Tag></Tag>
+		</Tags>
+	</DocumentMetadata>
+
+	<SeriesInfo seriesTitle="" />
+
+	<Abstract />
+
+	<Narrative>
+		<Section>
+			<Rubric>
+				<Title></Title>
+			</Rubric>
+
+			<Paragraph></Paragraph>
+
+			<Notes>
+				<Note key=~placeholder></Note>
+			</Notes>
+		</Section>
+	</Narrative>
+
+	<Conclusion />
+
+	<Notes>
+		<Note key=~placeholder></Note>
+	</Notes>
+</WhitePaper>

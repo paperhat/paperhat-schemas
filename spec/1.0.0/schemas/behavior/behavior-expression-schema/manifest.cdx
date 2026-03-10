@@ -1,0 +1,12 @@
+<BehaviorPackageManifest
+	author="Paperhat"
+	closureHash="4996619e19d16bf49d855cb55982d3c295a2488f2d4f4f2b59e473ef3636920b"
+	copyright="Copyright 2026 Paperhat"
+	description="Schema for authoring Behavior expressions in Codex surface form."
+	license="Apache-2.0"
+	packageName="behavior-expression-schema"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

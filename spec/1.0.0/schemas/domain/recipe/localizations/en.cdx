@@ -1,0 +1,87 @@
+<LocalizationBundle
+	schema=codex:domain:recipe
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Recipe" label="Recipe" labelOther="Recipes" />
+
+	<ConceptLocalization identifier="Servings" label="Servings" />
+
+	<ConceptLocalization identifier="Yield" label="Yield" />
+
+	<ConceptLocalization identifier="Times" label="Times" />
+
+	<ConceptLocalization identifier="PreparationTime" label="Preparation Time" />
+
+	<ConceptLocalization identifier="CookingTime" label="Cooking Time" />
+
+	<ConceptLocalization identifier="RestingTime" label="Resting Time" />
+
+	<ConceptLocalization identifier="SettingTime" label="Setting Time" />
+
+	<ConceptLocalization identifier="TotalTime" label="Total Time" />
+
+	<ConceptLocalization identifier="Ingredients" label="Ingredients" />
+
+	<ConceptLocalization identifier="IngredientSet" label="Ingredient Set" labelOther="Ingredient Sets" />
+
+	<ConceptLocalization identifier="Ingredient" label="Ingredient" labelOther="Ingredients" />
+
+	<ConceptLocalization identifier="Equipment" label="Equipment" />
+
+	<ConceptLocalization identifier="Instructions" label="Instructions" />
+
+	<ConceptLocalization identifier="Step" label="Step" labelOther="Steps" />
+
+	<ConceptLocalization identifier="ServingSuggestions" label="Serving Suggestions" />
+
+	<ConceptLocalization identifier="ServingSuggestion" label="Serving Suggestion" labelOther="Serving Suggestions" />
+
+	<ConceptLocalization identifier="Source" label="Source" labelOther="Sources" />
+
+	<TraitLocalization identifier="food" label="Food" labelOther="Foods">
+		The referenced food item used by the ingredient.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="amount" label="Amount" labelOther="Amounts">
+		The quantitative amount for servings or yield.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="unit" label="Unit" labelOther="Units">
+		The authored serving unit when a serving count needs one.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="item" label="Item" labelOther="Items">
+		The produced item description for yield.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="preparation" label="Preparation" labelOther="Preparations">
+		How the ingredient should be prepared before use.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="optional" label="Optional">
+		Whether the ingredient or step is optional.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="toTaste" label="To Taste">
+		Whether the ingredient amount should be adjusted to taste.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="language" label="Language" labelOther="Languages">
+		The natural language of the serving suggestion content.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:recipe:ingredients-requires-member"
+		label="Requires at least one ingredient or ingredient set"
+	>
+		An Ingredients container must contain at least one Ingredient or IngredientSet.
+	</ConstraintLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:recipe:times-requires-member"
+		label="Requires at least one time concept"
+	>
+		A Times container must contain at least one time concept.
+	</ConstraintLocalization>
+</LocalizationBundle>

@@ -1,0 +1,21 @@
+[Full essay with metadata, sectioned body, and endnotes. Remove parts you do not need.]
+<Essay title="">
+	<DocumentMetadata>
+		<Work author="" datePublished={} language=$ status=$ />
+		<Description language=$></Description>
+		<Tags>
+			<Tag></Tag>
+		</Tags>
+	</DocumentMetadata>
+	<Narrative>
+		<Section>
+			<Rubric>
+				<Title></Title>
+			</Rubric>
+			<Paragraph></Paragraph>
+		</Section>
+	</Narrative>
+	<Notes>
+		<Note key=~placeholder></Note>
+	</Notes>
+</Essay>

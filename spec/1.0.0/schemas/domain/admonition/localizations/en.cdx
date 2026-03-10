@@ -1,0 +1,30 @@
+<LocalizationBundle
+	schema=codex:domain:admonition
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Admonitions" label="Admonitions" />
+
+	<ConceptLocalization identifier="Informational" label="Informational" />
+
+	<ConceptLocalization identifier="Warning" label="Warning" labelOther="Warnings" />
+
+	<ConceptLocalization identifier="Danger" label="Danger" labelOther="Dangers" />
+
+	<ConceptLocalization identifier="Critical" label="Critical" />
+
+	<ConceptLocalization identifier="Notice" label="Notice" labelOther="Notices" />
+
+	<ConceptLocalization identifier="Tip" label="Tip" labelOther="Tips" />
+
+	<TraitLocalization identifier="text" label="Text">
+		Display text for label-less Gloss references.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:admonition:requires-child"
+		label="Requires at least one admonition"
+	>
+		An Admonitions container must contain at least one admonition concept.
+	</ConstraintLocalization>
+</LocalizationBundle>

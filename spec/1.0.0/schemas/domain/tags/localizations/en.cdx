@@ -1,0 +1,16 @@
+<LocalizationBundle
+	schema=codex:domain:tags
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Tags" label="Tags" />
+
+	<ConceptLocalization identifier="Tag" label="Tag" labelOther="Tags" />
+
+	<ConstraintLocalization
+		identifier="codex:domain:tags:requires-tag"
+		label="Requires at least one tag"
+	>
+		A Tags container must contain at least one Tag.
+	</ConstraintLocalization>
+</LocalizationBundle>

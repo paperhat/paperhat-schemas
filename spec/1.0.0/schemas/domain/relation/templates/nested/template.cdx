@@ -1,0 +1,50 @@
+[Template with a relation-valued binding.]
+<RelationType
+	id="urn:example:relation-type:outer"
+	name="Outer Relation"
+>
+	<Attribute
+		id="urn:example:relation-type:outer:attribute:nested"
+		name="nested"
+		valueType=$IriReference
+		required=true
+	/>
+</RelationType>
+
+<RelationType
+	id="urn:example:relation-type:inner"
+	name="Inner Relation"
+>
+	<Attribute
+		id="urn:example:relation-type:inner:attribute:value"
+		name="value"
+		valueType=$Number
+		required=true
+	/>
+</RelationType>
+
+<RelationInstance
+	id="urn:example:relation:inner"
+	for="urn:example:relation-type:inner"
+	name="Inner data"
+>
+	<Tuple id="urn:example:relation:inner:tuple:1">
+		<Binding
+			target="urn:example:relation-type:inner:attribute:value"
+			value=1
+		/>
+	</Tuple>
+</RelationInstance>
+
+<RelationInstance
+	id="urn:example:relation:outer"
+	for="urn:example:relation-type:outer"
+	name="Outer data"
+>
+	<Tuple id="urn:example:relation:outer:tuple:1">
+		<Binding
+			target="urn:example:relation-type:outer:attribute:nested"
+			value="urn:example:relation:inner"
+		/>
+	</Tuple>
+</RelationInstance>

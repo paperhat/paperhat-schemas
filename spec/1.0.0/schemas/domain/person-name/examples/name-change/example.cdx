@@ -1,0 +1,22 @@
+<PersonName
+	nameKind=$birth
+	given="Norma"
+	middle="Jeane"
+	family="Mortenson"
+	effectiveFrom={1926-06-01}
+	effectiveTo={1956-02-23}
+/>
+
+<PersonName
+	nameKind=$married
+	given="Norma"
+	middle="Jeane"
+	family="DiMaggio"
+	effectiveFrom={1954-01-14}
+	effectiveTo={1955-01-14}
+/>
+
+<PersonName
+	nameKind=$stage
+	full="Marilyn Monroe"
+/>

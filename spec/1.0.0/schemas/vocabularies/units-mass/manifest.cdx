@@ -1,0 +1,12 @@
+<VocabularyPackageManifest
+	author="Paperhat"
+	closureHash="912ad8d2efba77acd16af68e6be0282b182393abbaf0b891a0d6cb1a6f9ebefe"
+	copyright="Copyright 2026 Paperhat"
+	description="Units of measurement for mass and weight."
+	license="Apache-2.0"
+	packageName="units-mass"
+	packageVersion="1.0.0"
+	primaryDocument="vocabulary.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

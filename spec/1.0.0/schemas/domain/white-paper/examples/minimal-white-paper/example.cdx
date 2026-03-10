@@ -1,0 +1,25 @@
+<WhitePaper
+	title="Zero-Trust Migration for Mid-Market Enterprises"
+	coreThesis="A phased zero-trust rollout can reduce breach exposure without disrupting delivery velocity."
+>
+	<Abstract>
+		This paper outlines a phased migration strategy for organisations moving
+		from perimeter-centric controls to zero-trust architecture.
+	</Abstract>
+
+	<Narrative>
+		<Section>
+			<Rubric>
+				<Title>
+					The Problem
+				</Title>
+			</Rubric>
+
+			<Paragraph>
+				Perimeter-centric access models create excessive lateral movement risk.
+				Internal incident reviews showed that 72 percent of high-severity
+				incidents involved privilege propagation across trust zones.
+			</Paragraph>
+		</Section>
+	</Narrative>
+</WhitePaper>

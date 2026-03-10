@@ -1,0 +1,12 @@
+<Recipe id="">
+	<text:Title></text:Title>
+
+	<Ingredients>
+		<Ingredient food="">
+		</Ingredient>
+	</Ingredients>
+
+	<Instructions>
+		<Step></Step>
+	</Instructions>
+</Recipe>

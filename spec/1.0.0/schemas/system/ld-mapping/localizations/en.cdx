@@ -1,0 +1,44 @@
+<LocalizationBundle
+	schema=codex:system:ld-mapping
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="SchemaOrgMapping" label="Schema.org Mapping" labelOther="Schema.org Mappings" />
+
+	<ConceptLocalization identifier="MapType" label="Map Type" labelOther="Map Types" />
+
+	<ConceptLocalization identifier="MapContentToProperty" label="Map Content to Property" labelOther="Map Content to Property Entries" />
+
+	<ConceptLocalization identifier="MapTraitToProperty" label="Map Trait to Property" labelOther="Map Trait to Property Entries" />
+
+	<TraitLocalization identifier="id" label="Identifier" labelOther="Identifiers">
+		Stable identity reference for the mapping document.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="version" label="Version" labelOther="Versions">
+		Version of the mapping document.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="sourceConcept" label="Source Concept" labelOther="Source Concepts">
+		The Codex concept being mapped.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="sourceTrait" label="Source Trait" labelOther="Source Traits">
+		The Codex trait being mapped.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="targetType" label="Target Type" labelOther="Target Types">
+		The target linked data type to map to.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="targetProperty" label="Target Property" labelOther="Target Properties">
+		The target linked data property to map to.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:system:ld-mapping:root-only"
+		label="Root only"
+	>
+		A mapping document must have exactly one root SchemaOrgMapping.
+	</ConstraintLocalization>
+</LocalizationBundle>

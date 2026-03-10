@@ -1,0 +1,12 @@
+<BehaviorPackageManifest
+	author="Paperhat"
+	closureHash="32336f49d65843f9282400c9d47d5dfbe367e6885a85bf12e2fe871c7d875266"
+	copyright="Copyright 2026 Paperhat"
+	description="Schema for defining ValueShapeDefinition and EntityShapeDefinition with behavioral semantics."
+	license="Apache-2.0"
+	packageName="behavior-shape-schema"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

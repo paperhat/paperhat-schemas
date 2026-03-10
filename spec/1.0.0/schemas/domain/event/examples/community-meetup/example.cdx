@@ -1,0 +1,26 @@
+<Event
+	name="Vancouver Codex Authors Meetup"
+	startDate={2026-03-20}
+	eventStatus=$scheduled
+	eventAttendanceMode=$mixed
+>
+	<Location locality="Vancouver" region="British Columbia" country="Canada" />
+
+	<ContactPoint contactKind=$organizer emailAddress="meetup@codexauthors.example" />
+
+	<Identifier scheme=$meetupId value="VCA-2026-03" />
+
+	<Tags>
+		<Tag>
+			meetup
+		</Tag>
+
+		<Tag>
+			codex
+		</Tag>
+
+		<Tag>
+			community
+		</Tag>
+	</Tags>
+</Event>

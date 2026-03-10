@@ -1,0 +1,5 @@
+<EditorialMarkup>
+	<Emphasis key=~em />
+	<Important key=~imp />
+	<Highlight key=~hi />
+</EditorialMarkup>

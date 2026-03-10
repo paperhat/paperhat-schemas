@@ -1,0 +1,317 @@
+<TokenVocabulary
+	id=codex:vocabulary:iso-4217
+	version="1.0.0"
+	title="ISO 4217 Currency Codes"
+	description="Active currency codes from ISO 4217."
+	closedVocabulary=true
+>
+	<TokenDefinition token=$AED label="UAE Dirham" />
+
+	<TokenDefinition token=$AFN label="Afghani" />
+
+	<TokenDefinition token=$ALL label="Lek" />
+
+	<TokenDefinition token=$AMD label="Armenian Dram" />
+
+	<TokenDefinition token=$ANG label="Netherlands Antillean Guilder" />
+
+	<TokenDefinition token=$AOA label="Kwanza" />
+
+	<TokenDefinition token=$ARS label="Argentine Peso" />
+
+	<TokenDefinition token=$AUD label="Australian Dollar" />
+
+	<TokenDefinition token=$AWG label="Aruban Florin" />
+
+	<TokenDefinition token=$AZN label="Azerbaijan Manat" />
+
+	<TokenDefinition token=$BAM label="Convertible Mark" />
+
+	<TokenDefinition token=$BBD label="Barbados Dollar" />
+
+	<TokenDefinition token=$BDT label="Taka" />
+
+	<TokenDefinition token=$BGN label="Bulgarian Lev" />
+
+	<TokenDefinition token=$BHD label="Bahraini Dinar" />
+
+	<TokenDefinition token=$BIF label="Burundi Franc" />
+
+	<TokenDefinition token=$BMD label="Bermudian Dollar" />
+
+	<TokenDefinition token=$BND label="Brunei Dollar" />
+
+	<TokenDefinition token=$BOB label="Boliviano" />
+
+	<TokenDefinition token=$BRL label="Brazilian Real" />
+
+	<TokenDefinition token=$BSD label="Bahamian Dollar" />
+
+	<TokenDefinition token=$BTN label="Ngultrum" />
+
+	<TokenDefinition token=$BWP label="Pula" />
+
+	<TokenDefinition token=$BYN label="Belarusian Ruble" />
+
+	<TokenDefinition token=$BZD label="Belize Dollar" />
+
+	<TokenDefinition token=$CAD label="Canadian Dollar" />
+
+	<TokenDefinition token=$CDF label="Congolese Franc" />
+
+	<TokenDefinition token=$CHF label="Swiss Franc" />
+
+	<TokenDefinition token=$CLP label="Chilean Peso" />
+
+	<TokenDefinition token=$CNY label="Yuan Renminbi" />
+
+	<TokenDefinition token=$COP label="Colombian Peso" />
+
+	<TokenDefinition token=$CRC label="Costa Rican Colon" />
+
+	<TokenDefinition token=$CUP label="Cuban Peso" />
+
+	<TokenDefinition token=$CVE label="Cabo Verde Escudo" />
+
+	<TokenDefinition token=$CZK label="Czech Koruna" />
+
+	<TokenDefinition token=$DJF label="Djibouti Franc" />
+
+	<TokenDefinition token=$DKK label="Danish Krone" />
+
+	<TokenDefinition token=$DOP label="Dominican Peso" />
+
+	<TokenDefinition token=$DZD label="Algerian Dinar" />
+
+	<TokenDefinition token=$EGP label="Egyptian Pound" />
+
+	<TokenDefinition token=$ERN label="Nakfa" />
+
+	<TokenDefinition token=$ETB label="Ethiopian Birr" />
+
+	<TokenDefinition token=$EUR label="Euro" />
+
+	<TokenDefinition token=$FJD label="Fiji Dollar" />
+
+	<TokenDefinition token=$FKP label="Falkland Islands Pound" />
+
+	<TokenDefinition token=$GBP label="Pound Sterling" />
+
+	<TokenDefinition token=$GEL label="Lari" />
+
+	<TokenDefinition token=$GHS label="Ghana Cedi" />
+
+	<TokenDefinition token=$GIP label="Gibraltar Pound" />
+
+	<TokenDefinition token=$GMD label="Dalasi" />
+
+	<TokenDefinition token=$GNF label="Guinean Franc" />
+
+	<TokenDefinition token=$GTQ label="Quetzal" />
+
+	<TokenDefinition token=$GYD label="Guyana Dollar" />
+
+	<TokenDefinition token=$HKD label="Hong Kong Dollar" />
+
+	<TokenDefinition token=$HNL label="Lempira" />
+
+	<TokenDefinition token=$HTG label="Gourde" />
+
+	<TokenDefinition token=$HUF label="Forint" />
+
+	<TokenDefinition token=$IDR label="Rupiah" />
+
+	<TokenDefinition token=$ILS label="New Israeli Sheqel" />
+
+	<TokenDefinition token=$INR label="Indian Rupee" />
+
+	<TokenDefinition token=$IQD label="Iraqi Dinar" />
+
+	<TokenDefinition token=$IRR label="Iranian Rial" />
+
+	<TokenDefinition token=$ISK label="Iceland Krona" />
+
+	<TokenDefinition token=$JMD label="Jamaican Dollar" />
+
+	<TokenDefinition token=$JOD label="Jordanian Dinar" />
+
+	<TokenDefinition token=$JPY label="Yen" />
+
+	<TokenDefinition token=$KES label="Kenyan Shilling" />
+
+	<TokenDefinition token=$KGS label="Som" />
+
+	<TokenDefinition token=$KHR label="Riel" />
+
+	<TokenDefinition token=$KMF label="Comorian Franc" />
+
+	<TokenDefinition token=$KPW label="North Korean Won" />
+
+	<TokenDefinition token=$KRW label="Won" />
+
+	<TokenDefinition token=$KWD label="Kuwaiti Dinar" />
+
+	<TokenDefinition token=$KYD label="Cayman Islands Dollar" />
+
+	<TokenDefinition token=$KZT label="Tenge" />
+
+	<TokenDefinition token=$LAK label="Lao Kip" />
+
+	<TokenDefinition token=$LBP label="Lebanese Pound" />
+
+	<TokenDefinition token=$LKR label="Sri Lanka Rupee" />
+
+	<TokenDefinition token=$LRD label="Liberian Dollar" />
+
+	<TokenDefinition token=$LSL label="Loti" />
+
+	<TokenDefinition token=$LYD label="Libyan Dinar" />
+
+	<TokenDefinition token=$MAD label="Moroccan Dirham" />
+
+	<TokenDefinition token=$MDL label="Moldovan Leu" />
+
+	<TokenDefinition token=$MGA label="Malagasy Ariary" />
+
+	<TokenDefinition token=$MKD label="Denar" />
+
+	<TokenDefinition token=$MMK label="Kyat" />
+
+	<TokenDefinition token=$MNT label="Tugrik" />
+
+	<TokenDefinition token=$MOP label="Pataca" />
+
+	<TokenDefinition token=$MRU label="Ouguiya" />
+
+	<TokenDefinition token=$MUR label="Mauritius Rupee" />
+
+	<TokenDefinition token=$MVR label="Rufiyaa" />
+
+	<TokenDefinition token=$MWK label="Malawi Kwacha" />
+
+	<TokenDefinition token=$MXN label="Mexican Peso" />
+
+	<TokenDefinition token=$MYR label="Malaysian Ringgit" />
+
+	<TokenDefinition token=$MZN label="Mozambique Metical" />
+
+	<TokenDefinition token=$NAD label="Namibia Dollar" />
+
+	<TokenDefinition token=$NGN label="Naira" />
+
+	<TokenDefinition token=$NIO label="Cordoba Oro" />
+
+	<TokenDefinition token=$NOK label="Norwegian Krone" />
+
+	<TokenDefinition token=$NPR label="Nepalese Rupee" />
+
+	<TokenDefinition token=$NZD label="New Zealand Dollar" />
+
+	<TokenDefinition token=$OMR label="Rial Omani" />
+
+	<TokenDefinition token=$PAB label="Balboa" />
+
+	<TokenDefinition token=$PEN label="Sol" />
+
+	<TokenDefinition token=$PGK label="Kina" />
+
+	<TokenDefinition token=$PHP label="Philippine Peso" />
+
+	<TokenDefinition token=$PKR label="Pakistan Rupee" />
+
+	<TokenDefinition token=$PLN label="Zloty" />
+
+	<TokenDefinition token=$PYG label="Guarani" />
+
+	<TokenDefinition token=$QAR label="Qatari Rial" />
+
+	<TokenDefinition token=$RON label="Romanian Leu" />
+
+	<TokenDefinition token=$RSD label="Serbian Dinar" />
+
+	<TokenDefinition token=$RUB label="Russian Ruble" />
+
+	<TokenDefinition token=$RWF label="Rwanda Franc" />
+
+	<TokenDefinition token=$SAR label="Saudi Riyal" />
+
+	<TokenDefinition token=$SBD label="Solomon Islands Dollar" />
+
+	<TokenDefinition token=$SCR label="Seychelles Rupee" />
+
+	<TokenDefinition token=$SDG label="Sudanese Pound" />
+
+	<TokenDefinition token=$SEK label="Swedish Krona" />
+
+	<TokenDefinition token=$SGD label="Singapore Dollar" />
+
+	<TokenDefinition token=$SHP label="Saint Helena Pound" />
+
+	<TokenDefinition token=$SLE label="Leone" />
+
+	<TokenDefinition token=$SOS label="Somali Shilling" />
+
+	<TokenDefinition token=$SRD label="Surinam Dollar" />
+
+	<TokenDefinition token=$SSP label="South Sudanese Pound" />
+
+	<TokenDefinition token=$STN label="Dobra" />
+
+	<TokenDefinition token=$SVC label="El Salvador Colon" />
+
+	<TokenDefinition token=$SYP label="Syrian Pound" />
+
+	<TokenDefinition token=$SZL label="Lilangeni" />
+
+	<TokenDefinition token=$THB label="Baht" />
+
+	<TokenDefinition token=$TJS label="Somoni" />
+
+	<TokenDefinition token=$TMT label="Turkmenistan New Manat" />
+
+	<TokenDefinition token=$TND label="Tunisian Dinar" />
+
+	<TokenDefinition token=$TOP label="Pa'anga" />
+
+	<TokenDefinition token=$TRY label="Turkish Lira" />
+
+	<TokenDefinition token=$TTD label="Trinidad and Tobago Dollar" />
+
+	<TokenDefinition token=$TWD label="New Taiwan Dollar" />
+
+	<TokenDefinition token=$TZS label="Tanzanian Shilling" />
+
+	<TokenDefinition token=$UAH label="Hryvnia" />
+
+	<TokenDefinition token=$UGX label="Uganda Shilling" />
+
+	<TokenDefinition token=$USD label="US Dollar" />
+
+	<TokenDefinition token=$UYU label="Peso Uruguayo" />
+
+	<TokenDefinition token=$UZS label="Uzbekistan Sum" />
+
+	<TokenDefinition token=$VES label="Bolivar Soberano" />
+
+	<TokenDefinition token=$VND label="Dong" />
+
+	<TokenDefinition token=$VUV label="Vatu" />
+
+	<TokenDefinition token=$WST label="Tala" />
+
+	<TokenDefinition token=$XAF label="CFA Franc BEAC" />
+
+	<TokenDefinition token=$XCD label="East Caribbean Dollar" />
+
+	<TokenDefinition token=$XOF label="CFA Franc BCEAO" />
+
+	<TokenDefinition token=$XPF label="CFP Franc" />
+
+	<TokenDefinition token=$YER label="Yemeni Rial" />
+
+	<TokenDefinition token=$ZAR label="Rand" />
+
+	<TokenDefinition token=$ZMW label="Zambian Kwacha" />
+
+	<TokenDefinition token=$ZWL label="Zimbabwe Dollar" />
+</TokenVocabulary>

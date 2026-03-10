@@ -1,0 +1,6 @@
+<Audience
+	audienceKind=$consumer
+	suggestedMinAge=6
+	suggestedMaxAge=12
+	audienceDescription="Children ages 6-12"
+/>

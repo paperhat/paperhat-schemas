@@ -1,0 +1,91 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Linguistic metadata applied to text spans, including ruby annotations for displaying reading aids above or beside base text."
+	id=codex:domain:linguistic-annotation
+	namespace="linguistic"
+	title="Linguistic Annotation Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:linguistic-annotation:LinguisticAnnotations
+			name="LinguisticAnnotations"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Ruby" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Unordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:linguistic-annotation:Ruby
+			name="Ruby"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="annotation" />
+
+				<AllowsTrait name="language" />
+
+				<AllowsTrait name="position" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=codex:domain:linguistic-annotation:trait:key
+			name="key"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:linguistic-annotation:trait:annotation
+			name="annotation"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:linguistic-annotation:trait:language
+			name="language"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=codex:domain:linguistic-annotation:trait:position
+			name="position"
+		/>
+	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=codex:domain:linguistic-annotation:requires-child
+			title="LinguisticAnnotations must contain at least one child"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="LinguisticAnnotations" />
+			</Targets>
+
+			<Rule>
+				<ChildConstraint conceptSelector="Ruby" type=$RequiresChildConcept />
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

@@ -1,0 +1,11 @@
+<CodeNotation>
+	<Code key=~fetch language=$javascript text="fetch()" />
+	<Code key=~println language=$rust text="println!()" />
+	<Variable key=~filename text="filename" />
+</CodeNotation>
+
+<CodeBlock language=$rust>
+fn main() {
+	println!("Hello, world!");
+}
+</CodeBlock>

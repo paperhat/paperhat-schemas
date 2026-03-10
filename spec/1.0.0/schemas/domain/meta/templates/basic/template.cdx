@@ -1,0 +1,17 @@
+[Minimal domain concept. Content rules and collection ordering are required.]
+<DomainConcept
+	id=codex:domain:NAMESPACE:CONCEPT_NAME
+	name=""
+	conceptKind=$Semantic
+	entityEligibility=$MustNotBeEntity
+>
+	[Required: content disposition. Use AllowsContent to opt in.]
+	<ContentRules>
+		<ForbidsContent />
+	</ContentRules>
+
+	[Required: collection ordering.]
+	<CollectionRules>
+		<CollectionOrdering />
+	</CollectionRules>
+</DomainConcept>

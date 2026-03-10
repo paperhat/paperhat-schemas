@@ -1,0 +1,15 @@
+<LocalizationBundle
+	schema=codex:domain:measure
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Measure" label="Measure" labelOther="Measures" />
+
+	<TraitLocalization identifier="value" label="Value" labelOther="Values">
+		The numeric measurement value.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="unit" label="Unit" labelOther="Units">
+		The unit of measurement.
+	</TraitLocalization>
+</LocalizationBundle>

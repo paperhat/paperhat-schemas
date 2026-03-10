@@ -1,0 +1,18 @@
+[A section with nested subsections. Add or remove subsections as needed.]
+<Section>
+	<Rubric>
+		<Title></Title>
+	</Rubric>
+	<Section>
+		<Rubric>
+			<Title></Title>
+		</Rubric>
+		<Paragraph></Paragraph>
+	</Section>
+	<Section>
+		<Rubric>
+			<Title></Title>
+		</Rubric>
+		<Paragraph></Paragraph>
+	</Section>
+</Section>

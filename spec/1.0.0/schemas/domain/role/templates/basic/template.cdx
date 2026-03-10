@@ -1,0 +1,2 @@
+[A role assignment. roleKind is required; holder and scope are optional.]
+<Role roleKind=$author />

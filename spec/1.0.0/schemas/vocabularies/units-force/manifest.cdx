@@ -1,0 +1,12 @@
+<VocabularyPackageManifest
+	author="Paperhat"
+	closureHash="7374237731510e7c513dd20a8bb1cdf861130e68526f020819672dc306ead9c0"
+	copyright="Copyright 2026 Paperhat"
+	description="Units of measurement for force."
+	license="Apache-2.0"
+	packageName="units-force"
+	packageVersion="1.0.0"
+	primaryDocument="vocabulary.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

@@ -1,0 +1,21 @@
+<TokenVocabulary
+	closedVocabulary=true
+	description="Units of measurement for time and duration."
+	id=codex:vocabulary:units-time
+	title="Units of Time"
+	version="1.0.0"
+>
+	<TokenDefinition token=$Day label="d" />
+
+	<TokenDefinition token=$Hour label="h" />
+
+	<TokenDefinition token=$Minute label="min" />
+
+	<TokenDefinition token=$Month label="mo" />
+
+	<TokenDefinition token=$Second label="s" />
+
+	<TokenDefinition token=$Week label="wk" />
+
+	<TokenDefinition token=$Year label="yr" />
+</TokenVocabulary>

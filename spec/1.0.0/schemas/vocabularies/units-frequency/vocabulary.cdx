@@ -1,0 +1,21 @@
+<TokenVocabulary
+	id=codex:vocabulary:units-frequency
+	version="1.0.0"
+	title="Units of Frequency"
+	description="Units of measurement for frequency and periodic rate."
+	closedVocabulary=true
+>
+	<TokenDefinition token=$BeatsPerMinute label="bpm" />
+
+	<TokenDefinition token=$Gigahertz label="GHz" />
+
+	<TokenDefinition token=$Hertz label="Hz" />
+
+	<TokenDefinition token=$Kilohertz label="kHz" />
+
+	<TokenDefinition token=$Megahertz label="MHz" />
+
+	<TokenDefinition token=$RevolutionsPerMinute label="rpm" />
+
+	<TokenDefinition token=$Terahertz label="THz" />
+</TokenVocabulary>

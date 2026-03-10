@@ -1,0 +1,35 @@
+<LocalizationBundle
+	schema=codex:domain:rubric
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Rubric" label="Rubric" labelOther="Rubrics" />
+
+	<ConceptLocalization identifier="Subtitle" label="Subtitle" labelOther="Subtitles" />
+
+	<ConceptLocalization identifier="Difficulty" label="Difficulty" labelOther="Difficulties" />
+
+	<TraitLocalization identifier="language" label="Language" labelOther="Languages">
+		The natural language of the subtitle content.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="timeToRead" label="Time to Read">
+		The estimated reading time for the content.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="publishedOn" label="Published On">
+		The date on which the content was published.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="lastModifiedAt" label="Last Modified At">
+		The date and time when the content was last modified.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="scale" label="Scale" labelOther="Scales">
+		The difficulty scale being used.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="value" label="Value" labelOther="Values">
+		The difficulty rating value within the scale.
+	</TraitLocalization>
+</LocalizationBundle>

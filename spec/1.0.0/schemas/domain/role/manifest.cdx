@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="3062ef6a9442dd8902284e2f404c5b545d14fe96fb7a9380e56f4d2e7a56afce"
+	copyright="Copyright 2026 Paperhat"
+	description="A named function or capacity that a person or organization can hold, such as author, editor, maintainer, or approver."
+	license="Apache-2.0"
+	packageName="paperhat-role"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

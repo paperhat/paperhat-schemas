@@ -1,0 +1,54 @@
+<LocalizationBundle
+	schema=codex:domain:person-name
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="PersonName" label="Person Name" labelOther="Person Names" />
+
+	<TraitLocalization identifier="nameKind" label="Name Kind" labelOther="Name Kinds">
+		The kind or purpose of the name, such as legal, birth, or preferred.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="full" label="Full Name" labelOther="Full Names">
+		The complete name as a single string.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="given" label="Given Name" labelOther="Given Names">
+		The first or given name.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="middle" label="Middle Name" labelOther="Middle Names">
+		One or more middle names.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="family" label="Family Name" labelOther="Family Names">
+		The surname or family name.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="title" label="Title" labelOther="Titles">
+		A prefix title such as Mr., Dr., or Prof.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="honorific" label="Honorific" labelOther="Honorifics">
+		An honorific designation or form of address.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="suffix" label="Suffix" labelOther="Suffixes">
+		A name suffix such as Jr., Sr., or III.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="effectiveFrom" label="Effective From">
+		The date from which this name is or was in use.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="effectiveTo" label="Effective To">
+		The date after which this name is or was no longer in use.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:person-name:requires-name-part"
+		label="Requires at least one name part"
+	>
+		A PersonName must have at least one of full, given, or family name.
+	</ConstraintLocalization>
+</LocalizationBundle>

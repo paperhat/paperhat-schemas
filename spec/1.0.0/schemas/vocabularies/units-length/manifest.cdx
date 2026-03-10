@@ -1,0 +1,12 @@
+<VocabularyPackageManifest
+	author="Paperhat"
+	closureHash="cfd8808a6a385c59bf0d231c17bf349ff1e8fb752cdbb64cd1e316c32b53f802"
+	copyright="Copyright 2026 Paperhat"
+	description="Units of measurement for length, distance, and displacement."
+	license="Apache-2.0"
+	packageName="units-length"
+	packageVersion="1.0.0"
+	primaryDocument="vocabulary.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

@@ -1,0 +1,35 @@
+[
+  English localization bundle for a hypothetical Book schema.
+  Covers all four localization types: concept, trait, token, and constraint.
+]
+<LocalizationBundle
+	schema=codex:domain:book
+	schemaVersion="1.0.0"
+	language=$en
+>
+	<ConceptLocalization identifier="Book" label="Book" labelOther="Books" />
+	<ConceptLocalization identifier="Chapter" label="Chapter" labelOther="Chapters" />
+
+	<TraitLocalization identifier="title" label="Title" labelOther="Titles">
+		The title of the book or chapter.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="pageCount" label="Page Count" labelOther="Page Counts">
+		Total number of pages.
+	</TraitLocalization>
+
+	<TokenLocalization identifier="$Hardcover" label="Hardcover">
+		A book with rigid covers.
+	</TokenLocalization>
+
+	<TokenLocalization identifier="$Paperback" label="Paperback">
+		A book with flexible covers.
+	</TokenLocalization>
+
+	<ConstraintLocalization
+		identifier="codex:domain:book:requires-title"
+		label="Requires title"
+	>
+		A Book must have a title.
+	</ConstraintLocalization>
+</LocalizationBundle>

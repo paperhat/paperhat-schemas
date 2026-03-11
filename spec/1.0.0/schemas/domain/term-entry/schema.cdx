@@ -11,27 +11,24 @@
 	<ConceptDefinitions>
 		<ConceptDefinition
 			conceptKind=$Semantic
-			entityEligibility=$MayBeEntity
+			defaultLabelSource="term"
+			entityEligibility=$MustBeEntity
 			id=codex:domain:term-entry:TermEntry
 			name="TermEntry"
 		>
 			<ContentRules>
-				<AllowsContent contentMode=$Flow />
+				<AllowsContentOrChildren whitespaceMode=$Flow />
 			</ContentRules>
 
 			<TraitRules>
 				<RequiresTrait name="term" />
-
 				<AllowsTrait name="key" />
 			</TraitRules>
 
 			<ChildRules>
 				<AllowsChildConcept conceptSelector="Sense" />
-
-				<AllowsChildConcept conceptSelector="Etymology" />
-
+				<AllowsChildConcept conceptSelector="Etymology" max=1 />
 				<AllowsChildConcept conceptSelector="TermForm" />
-
 				<AllowsChildConcept conceptSelector="TermRelation" />
 			</ChildRules>
 		</ConceptDefinition>
@@ -43,14 +40,12 @@
 			name="Sense"
 		>
 			<ContentRules>
-				<RequiresContent contentMode=$Flow />
+				<RequiresContent whitespaceMode=$Flow />
 			</ContentRules>
 
 			<TraitRules>
 				<AllowsTrait name="partOfSpeech" />
-
 				<AllowsTrait name="register" />
-
 				<AllowsTrait name="domain" />
 			</TraitRules>
 
@@ -66,7 +61,7 @@
 			name="UsageExample"
 		>
 			<ContentRules>
-				<RequiresContent contentMode=$Flow />
+				<RequiresContent whitespaceMode=$Flow />
 			</ContentRules>
 		</ConceptDefinition>
 
@@ -77,7 +72,7 @@
 			name="Etymology"
 		>
 			<ContentRules>
-				<RequiresContent contentMode=$Flow />
+				<RequiresContent whitespaceMode=$Flow />
 			</ContentRules>
 		</ConceptDefinition>
 
@@ -93,7 +88,6 @@
 
 			<TraitRules>
 				<RequiresTrait name="form" />
-
 				<AllowsTrait name="formKind" />
 			</TraitRules>
 		</ConceptDefinition>
@@ -110,9 +104,7 @@
 
 			<TraitRules>
 				<RequiresTrait name="relatedTerm" />
-
 				<RequiresTrait name="relationKind" />
-
 				<AllowsTrait name="target" />
 			</TraitRules>
 		</ConceptDefinition>
@@ -180,4 +172,73 @@
 			name="target"
 		/>
 	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=codex:domain:term-entry:requires-definition-or-sense
+			title="TermEntry must contain direct definition content or at least one Sense"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="TermEntry" />
+			</Targets>
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<ContentConstraint type=$ContentRequired />
+					</Rule>
+					<Rule>
+						<ChildConstraint conceptSelector="Sense" type=$RequiresChildConcept />
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:domain:term-entry:term-relation-reference-trait-allowed
+			title="TermRelation allows only target as a reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="TermRelation" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:domain:term-entry:term-relation-reference-singleton
+			title="TermRelation must declare at most one reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="TermRelation" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceSingleton />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:domain:term-entry:term-relation-targets-entity
+			title="TermRelation target must resolve to an entity"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="TermRelation" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTargetsEntity />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:domain:term-entry:term-relation-must-resolve
+			title="TermRelation target must resolve"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="TermRelation" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceMustResolve />
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
 </Schema>

@@ -15,15 +15,15 @@
 
 		<SchemaImport namespace=summary reference=urn:cdx:sha256:3b9aafd82dbaa53ab38128147d2b215bc4067998492bc50b93e51319ab1e0cbc />
 
-		<SchemaImport namespace=tags reference=urn:cdx:sha256:79f0baf3512b1d7c2730608a6796155017c30096f2f4ffde74b0deafc1eae775 />
+		<SchemaImport namespace=tags reference=urn:cdx:sha256:864fb472fd89cb8024e9d3725203d2129185e39f375df5569b421353dbae9c98 />
 
 		<SchemaImport namespace=audience reference=urn:cdx:sha256:96d1ab313b9cf2a357f05cfdaaf0f9dd4869f42d623f3de28abea92af787a053 />
 
-		<SchemaImport namespace=person reference=urn:cdx:sha256:08e64ca8d7215574fcebb8e37c8a716042c7486a67d35e6e3d3fc65064b99327 />
+		<SchemaImport namespace=person reference=urn:cdx:sha256:7badcc38ee67c837a2178a667491ac1f58e0c051b5438adfd13b8de89b3e9be6 />
 
-		<SchemaImport namespace=pname reference=urn:cdx:sha256:e58e42b071716e7b96987e607a01420b597e302bf3ee228c35339c7efabf22a7 />
+		<SchemaImport namespace=pname reference=urn:cdx:sha256:097ed49d3aa9f872aae455972ae284958edd09a622863eef03c9eb3c75bf4c4e />
 
-		<SchemaImport namespace=contact reference=urn:cdx:sha256:f66ac6b540b849d0f20bed2452630e2a5d0ee961e286b2b30f07d6a6aa122fe2 />
+		<SchemaImport namespace=contact reference=urn:cdx:sha256:3b19e88f414107daffdfaf3b1116dd5bec1c656faad58536392a2ec9891ff11a />
 
 		<SchemaImport namespace=ident reference=urn:cdx:sha256:a220d2034a4faa1a81d8102265c1fef36576871a0ba25ac31500abac7afd5907 />
 

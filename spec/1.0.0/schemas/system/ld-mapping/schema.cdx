@@ -90,7 +90,7 @@
 
 	<TraitDefinitions>
 		<TraitDefinition
-			defaultValueType=$IriReference
+			defaultValueType=$Iri
 			id=codex:system:ld-mapping:trait:id
 			isReferenceTrait=true
 			name="id"

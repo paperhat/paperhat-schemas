@@ -3,10 +3,10 @@
 	<AppliesTo target=urn:service:example scopeKind=$Service />
 	<RelatedDocument target=urn:policy:privacy:example relationshipKind=$PairedWith />
 	<Definitions>
-		<term:TermEntry term="Defined Term" key=~definedTerm>
-			<Sense>
+		<term:TermEntry id=urn:term:defined-term term="Defined Term" key=~definedTerm bodyMode=$children>
+			<term:Sense>
 				State the formal meaning of the defined term.
-			</Sense>
+			</term:Sense>
 		</term:TermEntry>
 	</Definitions>
 	<Acceptance>

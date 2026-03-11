@@ -22,7 +22,7 @@
 	<ContactPoint
 		contactKind=$registration
 		emailAddress="register@paperhatcon.example"
-		website="https://paperhatcon.example"
+		website=url("https://paperhatcon.example")
 	/>
 
 	<Identifier scheme=$eventId value="PHC-2026" />

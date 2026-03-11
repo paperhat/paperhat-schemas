@@ -23,9 +23,9 @@ PersonName is a leaf concept with no concept dependencies. It is designed to be 
 
 ### nameKind
 
-A token classifying the role this name plays. Common values include `$legal`, `$birth`, `$preferred`, `$maiden`, `$married`, `$stage`, `$pen`, `$religious`, `$alias`, `$regnal`.
+A token classifying the role this name plays. Common values include `$Legal`, `$Birth`, `$Preferred`, `$Maiden`, `$Married`, `$Stage`, `$Pen`, `$Religious`, `$Alias`, `$Regnal`.
 
-This is an open vocabulary — any token value is valid. The consuming schema (such as Person) may constrain which values are accepted.
+This is an open vocabulary. The consuming schema can constrain which values are accepted.
 
 ### full
 
@@ -39,27 +39,27 @@ The given (first) name.
 
 ### middle
 
-An ordered list of middle names. Order matters — middle names are positional. Duplicates are permitted (e.g., "Humbert Humbert").
+An ordered list of middle names. Order matters, and duplicates are permitted.
 
 ### family
 
-The family (last/surname) name.
+The family (last or surname) name.
 
 ### title
 
-An ordered list of titles preceding the name (e.g., "Dr.", "Professor", "The Honourable").
+An ordered list of titles preceding the name, for example `"Dr."`, `"Professor"`, `"The Honourable"`.
 
 ### honorific
 
-An ordered list of honorifics (e.g., "Sir", "Dame", "Saint").
+An ordered list of honorifics, for example `"Sir"`, `"Dame"`, `"Saint"`.
 
 ### suffix
 
-An ordered list of suffixes following the name (e.g., "Jr.", "III", "PhD", "OBE").
+An ordered list of suffixes following the name, for example `"Jr."`, `"III"`, `"PhD"`, `"OBE"`.
 
 ### effectiveFrom / effectiveTo
 
-PlainDate values defining the period during which this name is valid. Useful for tracking legal name changes, married names, or regnal names.
+Date values defining the period during which this name is valid. Useful for tracking legal name changes, married names, or regnal names.
 
 A name with no dates is assumed to be current and unbounded.
 
@@ -67,7 +67,7 @@ A name with no dates is assumed to be current and unbounded.
 
 ## Constraints
 
-At least one of `full`, `given`, or `family` must be present. A PersonName with only metadata (nameKind, dates) and no actual name content is invalid.
+At least one of `full`, `given`, or `family` must be present. A PersonName with only metadata (`nameKind`, dates) and no actual name content is invalid.
 
 ---
 
@@ -75,9 +75,9 @@ At least one of `full`, `given`, or `family` must be present. A PersonName with 
 
 **Why PersonName and not Name?** The structure of this schema is specific to personal names. An organization name, a place name, or a product name would have different decomposition. The concept is named for what it models.
 
-**Why $List for middle, title, honorific, suffix?** Order matters ("Mary Jane" is not "Jane Mary"), and duplicates are possible. $List preserves both.
+**Why `$List<$Text>` for middle, title, honorific, suffix?** Order matters and duplicates are possible. `$List<$Text>` preserves both.
 
-**Why is nameKind a $EnumeratedToken?** Name kinds vary across cultures and contexts. A closed enumeration would be incomplete. The token vocabulary is open; consuming schemas constrain it as needed.
+**Why is nameKind an $EnumeratedToken?** Name kinds vary across cultures and contexts. A closed enumeration would be incomplete. The token vocabulary is open; consuming schemas constrain it as needed.
 
 **Why effectiveFrom/effectiveTo?** Names change. A person's birth name, married name, and legal name may all have different validity periods. Temporal traits allow precise biographical modeling.
 

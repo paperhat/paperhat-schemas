@@ -322,7 +322,7 @@ Represent Paperhat as an institution: entities, projects, roles, ownership, auth
 | ProductLine | REJECTED | Defer to Stage 6. Grouping handled by Series and Tags. If Stage 6 needs it, create it then. |
 | AuthorityAssignment | REJECTED | Role with `roleKind` and `scope` covers authority assignment. If Stage 5 policy modeling reveals a gap, create a policy-specific concept there. |
 | Membership / Assignment | REJECTED | Role with `roleKind=$member` or `$assignee` and scope handles this. Higher-level composers will compose Role + Temporal as children of Organization. |
-| Relationship (cross-entity) | REJECTED | Too generic. Specific relationships are better expressed through Role, Reference, or domain-specific traits. |
+| Relationship (cross-entity) | REJECTED | Do not create a second generic relationship package. Use `relation`, `reference`, or domain-specific semantics where appropriate. |
 | Domain / Property / Asset | REJECTED | Too broad. Domain names are Identifiers. Physical/digital assets are covered by MediaAsset and Product. Create focused leaves if a specific asset type proves necessary. |
 
 ### Stage 4 Checklist
@@ -376,15 +376,15 @@ Represent institutional rules and operational commitments as first-class semanti
 |---|---|---|
 | Policy | CREATED | `policy` package exists (6/6). Core institutional concept with stable identity. Imports jurisdiction as child. |
 | PolicyDocument | REJECTED | `Work` already models documents; a policy document is a Work with `workKind=$Policy`. |
-| Rule | REJECTED | Rules are structured content within a Policy, not standalone entities. |
-| Obligation | REJECTED | A kind of rule (`statementKind=$Obligation`), not a separate concept. Enumerated token value. |
-| Permission | REJECTED | A kind of rule (`statementKind=$Permission`), not a separate concept. Enumerated token value. |
-| Prohibition | REJECTED | A kind of rule (`statementKind=$Prohibition`), not a separate concept. Enumerated token value. |
-| Condition | REJECTED | Too abstract. Preconditions are prose content within a policy, not domain entities. |
-| Exception | REJECTED | Content within a policy, not a standalone entity. |
+| Rule | REJECTED | No separate universal `Rule` package yet. Policy semantics still need internal machine-actionable structure, but the current corpus does not yet justify a standalone universal leaf package. |
+| Obligation | REJECTED | Not a separate top-level package. Obligation is a deontic statement kind inside policy structure, not just free prose and not a standalone universal leaf. |
+| Permission | REJECTED | Not a separate top-level package. Permission is a deontic statement kind inside policy structure, not just free prose and not a standalone universal leaf. |
+| Prohibition | REJECTED | Not a separate top-level package. Prohibition is a deontic statement kind inside policy structure, not just free prose and not a standalone universal leaf. |
+| Condition | REJECTED | No separate universal package yet. Conditions belong inside explicit policy structure unless a shared cross-domain condition model is proven necessary. |
+| Exception | REJECTED | No separate universal package yet. Exceptions belong inside explicit policy structure unless a shared cross-domain model is proven necessary. |
 | Scope | REJECTED | A trait on Policy (jurisdiction + prose), not a standalone concept. Jurisdiction already exists for geographic/legal scope. |
 | ResponsibleParty | REJECTED | Covered by Role + Relation patterns. A role assignment with `roleKind=$PolicyOwner` handles this. |
-| Enforcement / Consequence | REJECTED | Content within a policy describing what happens on violation, not a standalone entity. |
+| Enforcement / Consequence | REJECTED | No separate universal package yet. Enforcement semantics belong inside explicit policy structure unless a shared cross-domain model is proven necessary. |
 | ReviewRequirement | REJECTED | A property of a policy (trait-level), not its own entity. |
 | ApprovalRequirement | REJECTED | A property of a policy (trait-level), not its own entity. Role covers who approves. |
 
@@ -441,7 +441,7 @@ Represent what Paperhat offers in a way that is reusable across web, documentati
 | Proposed Concept | Decision | Rationale |
 |---|---|---|
 | Tier / Plan | CREATED | `tier` package exists (6/6). Named packaging level (FOSS/Pro/Premium) with stable identity, distinct from Product. |
-| Service | REJECTED | Product with `productKind=$Service` covers this. No unique trait set that warrants a separate schema. |
+| Service | REJECTED | Product with `productKind=$Service` covers current known needs. Reopen only if real corpus work proves a service-only trait surface that Product cannot express cleanly. |
 | Offering | REJECTED | Union type over product-or-service. Same reasoning as Party rejection — adds indirection without semantic value. |
 | Feature | REJECTED | Descriptive content within a tier or product. Express as Description/List children, not a standalone entity. |
 | Capability | REJECTED | Synonym for Feature. Same reasoning. |

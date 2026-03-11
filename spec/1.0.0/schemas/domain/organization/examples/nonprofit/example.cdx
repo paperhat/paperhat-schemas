@@ -7,7 +7,7 @@
 		A global nonprofit promoting free access to knowledge and open data.
 	</Description>
 
-	<ContactPoint contactKind=$work website="https://okfn.org" />
+	<ContactPoint contactKind=$work website=url("https://okfn.org") />
 
 	<Identifier scheme=$taxId value="GB-CHC-1145606" />
 

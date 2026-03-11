@@ -173,6 +173,20 @@
 
 	<TraitDefinitions>
 		<TraitDefinition
+			defaultValueType=$Iri
+			id=codex:domain:relation:trait:for
+			isReferenceTrait=true
+			name="for"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=codex:domain:relation:trait:target
+			isReferenceTrait=true
+			name="target"
+		/>
+
+		<TraitDefinition
 			defaultValueType=$Text
 			id=codex:domain:relation:trait:name
 			name="name"
@@ -184,7 +198,7 @@
 			name="valueType"
 		>
 			<AllowedValues>
-				<ValueIsOneOf values="$Text,$Character,$Boolean,$Number,$Integer,$Zero,$NegativeInteger,$NonPositiveInteger,$DecimalNumber,$ExponentialNumber,$PrecisionNumber,$Fraction,$ImaginaryNumber,$ComplexNumber,$NonNegativeInteger,$PositiveInteger,$PositiveInfinity,$NegativeInfinity,$Infinity,$RealNumber,$FiniteNumber,$FiniteRealNumber,$ExactNumber,$EnumeratedToken,$IriReference,$LookupToken,$Uuid,$HostName,$EmailAddress,$Url,$Ipa,$Regex,$Semver,$HexColor,$NamedColor,$RgbColor,$HslColor,$HwbColor,$LabColor,$LchColor,$OklabColor,$OklchColor,$ColorSpaceColor,$ColorSpaceColorFunction,$ColorMix,$DeviceCmyk,$Color,$Date,$Time,$DateTime,$YearMonth,$MonthDay,$YearWeek,$Instant,$ZonedDateTime,$Duration,$TemporalKeyword,$TemporalPoint,$List,$Set,$Map,$Record,$Tuple,$Range" />
+				<ValueIsOneOf values="$Text,$Word,$Sentence,$Paragraph,$Character,$Boolean,$Number,$Integer,$Zero,$NegativeInteger,$NonPositiveInteger,$DecimalNumber,$ExponentialNumber,$PrecisionNumber,$Fraction,$ImaginaryNumber,$ComplexNumber,$NonNegativeInteger,$PositiveInteger,$PositiveInfinity,$NegativeInfinity,$Infinity,$RealNumber,$FiniteNumber,$FiniteRealNumber,$ExactNumber,$EnumeratedToken,$Iri,$LookupToken,$Uuid,$DomainName,$EmailAddress,$Url,$Ipa,$Regex,$Semver,$LanguageTag,$MediaType,$Slug,$RgbRed,$RgbGreen,$RgbBlue,$HslHue,$HslSaturation,$HslLightness,$HwbWhiteness,$HwbBlackness,$LabLightness,$LabA,$LabB,$LchChroma,$LchHue,$OklabLightness,$OklabA,$OklabB,$OklchChroma,$OklchHue,$CmykCyan,$CmykMagenta,$CmykYellow,$CmykKey,$Opacity,$ColorPrimitive,$NamedColor,$RgbColor,$HslColor,$HwbColor,$LabColor,$LchColor,$OklabColor,$OklchColor,$ColorSpaceColor,$ColorSpaceColorFunction,$ColorMix,$DeviceCmyk,$Color,$Year,$Month,$Week,$Day,$Weekday,$Hour,$Minute,$Second,$TimeZone,$Instant,$Duration,$Date,$Time,$DateTime,$YearMonth,$MonthDay,$YearWeek,$YearWeekDay,$ZonedDate,$ZonedTime,$ZonedDateTime,$TemporalKeyword,$List,$Set,$Map,$Record,$Tuple,$Group,$Range" />
 			</AllowedValues>
 		</TraitDefinition>
 
@@ -195,7 +209,7 @@
 		/>
 
 		<TraitDefinition
-			defaultValueTypes=[$Text, $Character, $Boolean, $Number, $Integer, $Zero, $NegativeInteger, $NonPositiveInteger, $DecimalNumber, $ExponentialNumber, $PrecisionNumber, $Fraction, $ImaginaryNumber, $ComplexNumber, $NonNegativeInteger, $PositiveInteger, $PositiveInfinity, $NegativeInfinity, $Infinity, $RealNumber, $FiniteNumber, $FiniteRealNumber, $ExactNumber, $EnumeratedToken, $IriReference, $LookupToken, $Uuid, $HostName, $EmailAddress, $Url, $Ipa, $Regex, $Semver, $HexColor, $NamedColor, $RgbColor, $HslColor, $HwbColor, $LabColor, $LchColor, $OklabColor, $OklchColor, $ColorSpaceColor, $ColorSpaceColorFunction, $ColorMix, $DeviceCmyk, $Color, $Date, $Time, $DateTime, $YearMonth, $MonthDay, $YearWeek, $Instant, $ZonedDateTime, $Duration, $TemporalKeyword, $TemporalPoint, $List, $Set, $Map, $Record, $Tuple, $Range]
+			defaultValueTypes=[$Text, $Word, $Sentence, $Paragraph, $Character, $Boolean, $Number, $Integer, $Zero, $NegativeInteger, $NonPositiveInteger, $DecimalNumber, $ExponentialNumber, $PrecisionNumber, $Fraction, $ImaginaryNumber, $ComplexNumber, $NonNegativeInteger, $PositiveInteger, $PositiveInfinity, $NegativeInfinity, $Infinity, $RealNumber, $FiniteNumber, $FiniteRealNumber, $ExactNumber, $EnumeratedToken, $Iri, $LookupToken, $Uuid, $DomainName, $EmailAddress, $Url, $Ipa, $Regex, $Semver, $LanguageTag, $MediaType, $Slug, $RgbRed, $RgbGreen, $RgbBlue, $HslHue, $HslSaturation, $HslLightness, $HwbWhiteness, $HwbBlackness, $LabLightness, $LabA, $LabB, $LchChroma, $LchHue, $OklabLightness, $OklabA, $OklabB, $OklchChroma, $OklchHue, $CmykCyan, $CmykMagenta, $CmykYellow, $CmykKey, $Opacity, $ColorPrimitive, $NamedColor, $RgbColor, $HslColor, $HwbColor, $LabColor, $LchColor, $OklabColor, $OklchColor, $ColorSpaceColor, $ColorSpaceColorFunction, $ColorMix, $DeviceCmyk, $Color, $Year, $Month, $Week, $Day, $Weekday, $Hour, $Minute, $Second, $TimeZone, $Instant, $Duration, $Date, $Time, $DateTime, $YearMonth, $MonthDay, $YearWeek, $YearWeekDay, $ZonedDate, $ZonedTime, $ZonedDateTime, $TemporalKeyword, $List, $Set, $Map, $Record, $Tuple, $Group, $Range]
 			id=codex:domain:relation:trait:value
 			name="value"
 		/>

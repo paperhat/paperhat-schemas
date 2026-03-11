@@ -4,10 +4,10 @@
 	<RelatedDocument target=urn:policy:privacy:recipe-library relationshipKind=$PairedWith />
 	<RelatedDocument target=urn:policy:cookie:recipe-library relationshipKind=$Supplements />
 	<Definitions>
-		<term:TermEntry term="Service" key=~service>
-			<Sense>
+		<term:TermEntry id=urn:term:service term="Service" key=~service bodyMode=$children>
+			<term:Sense>
 				The recipe library service and all directly related site materials.
-			</Sense>
+			</term:Sense>
 		</term:TermEntry>
 	</Definitions>
 	<Acceptance>

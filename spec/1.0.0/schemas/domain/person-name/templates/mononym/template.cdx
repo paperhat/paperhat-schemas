@@ -1,5 +1,5 @@
 [Single-part name for people known by one name, such as Voltaire or Cher.]
 <PersonName
-	nameKind=$preferred
+	nameKind=$Preferred
 	full=""
 />

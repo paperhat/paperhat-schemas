@@ -15,7 +15,7 @@
 
 		<SchemaImport namespace=geo reference=urn:cdx:sha256:941382f4d17070cc01d68d5d0f6279dbf2ee67c20b2fe7dc6ce37adb5b0d8f2a />
 
-		<SchemaImport namespace=contact reference=urn:cdx:sha256:f66ac6b540b849d0f20bed2452630e2a5d0ee961e286b2b30f07d6a6aa122fe2 />
+		<SchemaImport namespace=contact reference=urn:cdx:sha256:3b19e88f414107daffdfaf3b1116dd5bec1c656faad58536392a2ec9891ff11a />
 
 		<SchemaImport namespace=ident reference=urn:cdx:sha256:a220d2034a4faa1a81d8102265c1fef36576871a0ba25ac31500abac7afd5907 />
 
@@ -27,7 +27,7 @@
 
 		<SchemaImport namespace=money reference=urn:cdx:sha256:165a3dffbf009ba0b45d98a129a343a1378c0baccea116a78d03abe29d70ce47 />
 
-		<SchemaImport namespace=tags reference=urn:cdx:sha256:79f0baf3512b1d7c2730608a6796155017c30096f2f4ffde74b0deafc1eae775 />
+		<SchemaImport namespace=tags reference=urn:cdx:sha256:864fb472fd89cb8024e9d3725203d2129185e39f375df5569b421353dbae9c98 />
 
 		<SchemaImport namespace=work reference=urn:cdx:sha256:1a180843230548cc38ddcde65df88bb025fd9a3feff6cdc6da19e8c3a8823dcd />
 

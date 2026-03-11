@@ -8,13 +8,13 @@ A lexical term entry that scales from a simple glossary definition to a full dic
 
 ## When to Use
 
-Use `TermEntry` whenever a document needs defined terms: specification glossaries, policy definition sections, contract definitions, dictionaries, encyclopedic indexes, or any context requiring formal term-definition pairs. For a simple key-value definition, write the definition text as content directly on TermEntry. For structured multi-sense entries, use Sense children.
+Use `TermEntry` whenever a document needs defined terms: specification glossaries, policy definition sections, contract definitions, dictionaries, encyclopedic indexes, or any context requiring formal term-definition pairs. For a simple key-value definition, write the definition text as direct content on `TermEntry`. For structured multi-sense entries, use `Sense` children.
 
 ## Concepts
 
 | Concept | Kind | Entity | Content | Children | Description |
 |---|---|---|---|---|---|
-| TermEntry | Semantic | $MayBeEntity | AllowsContent (Flow) | Sense (0+), Etymology (0..1), TermForm (0+), TermRelation (0+) | The headword entry. Content holds a simple definition; Sense children hold structured multi-sense definitions. |
+| TermEntry | Semantic | $MustBeEntity | AllowsContentOrChildren (Flow) | Sense (0+), Etymology (0..1), TermForm (0+), TermRelation (0+) | The headword entry. Direct content holds a simple definition; Sense children hold structured multi-sense definitions. |
 | Sense | Semantic | $MustNotBeEntity | RequiresContent (Flow) | UsageExample (0+) | One meaning of the term, optionally scoped by part of speech, register, or domain. Content is the definition text. |
 | UsageExample | Semantic | $MustNotBeEntity | RequiresContent (Flow) | — | An illustrative sentence showing the term in context. |
 | Etymology | Semantic | $MustNotBeEntity | RequiresContent (Flow) | — | The origin and historical development of the term. |
@@ -26,84 +26,89 @@ Use `TermEntry` whenever a document needs defined terms: specification glossarie
 | Trait | Type | Required | Description |
 |---|---|---|---|
 | term | $Text | yes | The headword or defined term. |
-| key | $LookupToken | no | Machine-readable lookup key for Gloss cross-references (e.g., `~canonicalForm`). |
+| key | $LookupToken | no | Machine-readable lookup key for Gloss cross-references, for example `~canonicalForm`. |
 
 ## Sense Traits
 
 | Trait | Type | Required | Description |
 |---|---|---|---|
-| partOfSpeech | $EnumeratedToken | no | Part of speech, e.g., `$noun`, `$verb`, `$adjective`, `$adverb`, `$preposition`, `$conjunction`, `$pronoun`, `$interjection`, `$determiner`, `$article`, `$participle`. Open vocabulary. |
-| register | $EnumeratedToken | no | Usage register, e.g., `$formal`, `$informal`, `$archaic`, `$technical`, `$slang`, `$literary`, `$colloquial`, `$vulgar`, `$dialectal`. Open vocabulary. |
-| domain | $EnumeratedToken | no | Subject domain, e.g., `$computing`, `$law`, `$medicine`, `$linguistics`, `$music`, `$botany`, `$chemistry`. Open vocabulary. |
+| partOfSpeech | $EnumeratedToken | no | Part of speech, for example `$Noun`, `$Verb`, `$Adjective`, `$Adverb`, `$Preposition`, `$Conjunction`, `$Pronoun`, `$Interjection`, `$Determiner`, `$Article`, `$Participle`. Open vocabulary. |
+| register | $EnumeratedToken | no | Usage register, for example `$Formal`, `$Informal`, `$Archaic`, `$Technical`, `$Slang`, `$Literary`, `$Colloquial`, `$Vulgar`, `$Dialectal`. Open vocabulary. |
+| domain | $EnumeratedToken | no | Subject domain, for example `$Computing`, `$Law`, `$Medicine`, `$Linguistics`, `$Music`, `$Botany`, `$Chemistry`. Open vocabulary. |
 
 ## TermForm Traits
 
 | Trait | Type | Required | Description |
 |---|---|---|---|
-| form | $Text | yes | The alternate form (e.g., "ran", "running", "mice"). |
-| formKind | $EnumeratedToken | no | The grammatical relationship to the headword, e.g., `$plural`, `$singular`, `$pastTense`, `$presentParticiple`, `$pastParticiple`, `$comparative`, `$superlative`, `$thirdPersonSingular`, `$gerund`, `$diminutive`, `$abbreviation`, `$feminine`, `$masculine`, `$neuter`. Open vocabulary. |
+| form | $Text | yes | The alternate form, for example "runs", "ran", "running", or "mice". |
+| formKind | $EnumeratedToken | no | The grammatical relationship to the headword, for example `$Plural`, `$Singular`, `$PastTense`, `$PresentParticiple`, `$PastParticiple`, `$Comparative`, `$Superlative`, `$ThirdPersonSingular`, `$Gerund`, `$Diminutive`, `$Abbreviation`, `$Feminine`, `$Masculine`, `$Neuter`. Open vocabulary. |
 
 ## TermRelation Traits
 
 | Trait | Type | Required | Description |
 |---|---|---|---|
 | relatedTerm | $Text | yes | The related term as text. |
-| relationKind | $EnumeratedToken | yes | The semantic relationship, e.g., `$synonym`, `$antonym`, `$homonym`, `$homophone`, `$hypernym`, `$hyponym`, `$meronym`, `$holonym`, `$seeAlso`. |
-| target | $Iri | no | Entity reference to the related TermEntry if it exists in the document. Marked as a reference trait (`isReferenceTrait=true`). |
+| relationKind | $EnumeratedToken | yes | The semantic relationship, for example `$Synonym`, `$Antonym`, `$Homonym`, `$Homophone`, `$Hypernym`, `$Hyponym`, `$Meronym`, `$Holonym`, `$SeeAlso`. |
+| target | $Iri | no | Entity reference to the related `TermEntry` if it exists in the corpus. |
 
 ## Constraints
 
-- `term` is required on TermEntry.
-- `form` is required on TermForm.
-- `relatedTerm` and `relationKind` are both required on TermRelation.
+- `TermEntry` requires either direct definition content or at least one `Sense` child.
+- `bodyMode` is required on every `TermEntry` instance because the concept allows either direct content or children.
+- `form` is required on `TermForm`.
+- `relatedTerm` and `relationKind` are both required on `TermRelation`.
 
 ## Usage Spectrum
 
-### Simple glossary (key-value)
+### Simple glossary
 
 ```
-<TermEntry term="canonical form">The normalized representation of a value after all processing rules have been applied.</TermEntry>
-```
-
-### Specification glossary (with lookup key)
-
-```
-<TermEntry term="canonical form" key=~canonicalForm>The normalized representation of a value after all processing rules have been applied.</TermEntry>
+<TermEntry
+	id=urn:term:canonical-form
+	term="canonical form"
+	key=~canonicalForm
+	bodyMode=$Content
+>
+	The normalized representation of a value after all processing rules have been applied.
+</TermEntry>
 ```
 
 ### Full dictionary entry
 
 ```
-<TermEntry term="run">
-	<Sense partOfSpeech=$verb>
+<TermEntry
+	id=urn:term:run
+	term="run"
+	bodyMode=$Children
+>
+	<Sense partOfSpeech=$Verb>
 		To move swiftly on foot so that both feet leave the ground during each stride.
 		<UsageExample>She runs five kilometers every morning.</UsageExample>
 		<UsageExample>The children ran across the field.</UsageExample>
 	</Sense>
-	<Sense partOfSpeech=$verb register=$informal>
+	<Sense partOfSpeech=$Verb register=$Informal>
 		To manage or operate.
 		<UsageExample>He runs a small bakery on the corner.</UsageExample>
 	</Sense>
-	<Sense partOfSpeech=$noun>
+	<Sense partOfSpeech=$Noun>
 		An act or instance of running.
 		<UsageExample>She went for a run before breakfast.</UsageExample>
 	</Sense>
-	<TermForm form="runs" formKind=$thirdPersonSingular />
-	<TermForm form="ran" formKind=$pastTense />
-	<TermForm form="running" formKind=$presentParticiple />
+	<TermForm form="runs" formKind=$ThirdPersonSingular />
+	<TermForm form="ran" formKind=$PastTense />
+	<TermForm form="running" formKind=$PresentParticiple />
 	<Etymology>From Middle English runnen, from Old English rinnan and Old Norse rinna.</Etymology>
-	<TermRelation relatedTerm="sprint" relationKind=$synonym />
-	<TermRelation relatedTerm="walk" relationKind=$antonym />
+	<TermRelation relatedTerm="sprint" relationKind=$Synonym />
+	<TermRelation relatedTerm="walk" relationKind=$Antonym />
 </TermEntry>
 ```
 
 ## Design Notes
 
-- `$MayBeEntity` on TermEntry because glossary terms in specifications need stable identity for Gloss cross-references, while simple inline definitions do not.
-- AllowsContent on TermEntry enables the simple key-value pattern. For structured entries, use Sense children instead. A consuming schema can constrain to one pattern or the other.
-- No imports. All sub-concepts are local to this schema. This keeps it self-contained while still being importable — a Specification or Policy schema imports the whole package and gets all six concepts.
-- Pronunciation is handled by importing `linguistic-annotation` as a sibling in the consuming schema, not here. That keeps concerns separate.
-- The existing `specification` schema has its own internal `Definition` concept. Once this shared leaf exists, a future unlocked revision of the specification schema could migrate to importing this package. The specification schema is UNLOCKED, so this is possible without breaking locked contracts.
+- `TermEntry` is an entity because defined terms are graph objects and must be referenceable across a corpus.
+- `AllowsContentOrChildren` preserves both the simple glossary pattern and the structured multi-sense pattern.
+- The schema is self-contained. Consuming schemas import one package and gain the full term-entry surface.
+- The existing `specification` schema has its own internal `Definition` concept. This shared package remains the reusable lexical-entry surface.
 
 ---
 

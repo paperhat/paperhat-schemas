@@ -1,0 +1,43 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Reusable glossary definitions for specifications, documentation, and any context that defines terms. Each entry binds a term to its definition and supports key-based referencing via Gloss."
+	id=codex:domain:glossary
+	namespace="glossary"
+	title="Glossary Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MayBeEntity
+			id=codex:domain:glossary:GlossaryEntry
+			name="GlossaryEntry"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="term" />
+
+				<AllowsTrait name="key" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=codex:domain:glossary:trait:term
+			name="term"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=codex:domain:glossary:trait:key
+			name="key"
+		/>
+	</TraitDefinitions>
+</Schema>

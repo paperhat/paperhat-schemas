@@ -1,6 +1,6 @@
-[Fill in given and family names. Set nameKind to $legal, $preferred, $birth, or $regnal.]
+[Fill in given and family names. Set nameKind to $Legal, $Preferred, $Birth, or $Regnal.]
 <PersonName
-	nameKind=$legal
+	nameKind=$Legal
 	given=""
 	family=""
 />

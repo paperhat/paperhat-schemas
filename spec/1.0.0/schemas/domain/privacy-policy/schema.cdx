@@ -9,18 +9,12 @@
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=docmeta reference=urn:cdx:sha256:cd9a05f04ecb4f87bf24b281579f7aa34c9824e32bf7ccb479de90b1d96cc8bf />
-
+		<SchemaImport namespace=docmeta reference=urn:cdx:sha256:aacfbd65a5928a0cfc5bcfbad2a2ff435f5aab17448b68710b59ccc8da9ce1a4 />
 		<SchemaImport namespace=jurisdiction reference=urn:cdx:sha256:12fa171849ee9c6dd633d59e48483057461cf8b80fee17985e59aafd8ec1bfd8 />
-
-		<SchemaImport namespace=contact reference=urn:cdx:sha256:f66ac6b540b849d0f20bed2452630e2a5d0ee961e286b2b30f07d6a6aa122fe2 />
-
+		<SchemaImport namespace=contact reference=urn:cdx:sha256:3b19e88f414107daffdfaf3b1116dd5bec1c656faad58536392a2ec9891ff11a />
 		<SchemaImport namespace=text reference=urn:cdx:sha256:0d835975e6ccabdab7c2204e9b1d4e19baf24108e45a8f240adea3a2684a5fd0 />
-
 		<SchemaImport namespace=list reference=urn:cdx:sha256:47b1e8725dfbf226ac7dd20ffe8b0fb77c1e444735895c24b2225b317d2185cd />
-
-		<SchemaImport namespace=section reference=urn:cdx:sha256:1b7f37c5a3731a1f47c10e75ed73a905b76780f0df02f48b7fa9bfdf77317bb9 />
-
+		<SchemaImport namespace=section reference=urn:cdx:sha256:c3647adb77a28456689ca99ef09e7c6b98745bc8aac6152c5fc83bdaaba4c7be />
 		<SchemaImport namespace=notes reference=urn:cdx:sha256:9d3ab9c299e532776ee07bbdd56c58dc18347be6e9712c1def71a0fc8f399352 />
 	</SchemaImports>
 
@@ -35,11 +29,9 @@
 			<ContentRules>
 				<ForbidsContent />
 			</ContentRules>
-
 			<TraitRules>
 				<RequiresTrait name="title" />
 			</TraitRules>
-
 			<ChildRules>
 				<AllowsChildConcept conceptSelector="docmeta:DocumentMetadata" max=1 />
 				<AllowsChildConcept conceptSelector="jurisdiction:Jurisdiction" />
@@ -55,44 +47,78 @@
 				<AllowsChildConcept conceptSelector="PrivacyContact" max=1 />
 				<AllowsChildConcept conceptSelector="notes:Notes" max=1 />
 			</ChildRules>
-
-			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
 		</ConceptDefinition>
 
-		<ConceptDefinition conceptKind=$Structural entityEligibility=$MustNotBeEntity id=codex:domain:privacy-policy:GoverningEntity name="GoverningEntity">
-			<ContentRules><ForbidsContent /></ContentRules>
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:privacy-policy:GoverningEntity
+			name="GoverningEntity"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
 			<TraitRules>
 				<RequiresTrait name="target" />
 				<AllowsTrait name="governingRole" />
 			</TraitRules>
 		</ConceptDefinition>
 
-		<ConceptDefinition conceptKind=$Structural entityEligibility=$MustNotBeEntity id=codex:domain:privacy-policy:AppliesTo name="AppliesTo">
-			<ContentRules><ForbidsContent /></ContentRules>
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:privacy-policy:AppliesTo
+			name="AppliesTo"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
 			<TraitRules>
 				<RequiresTrait name="target" />
 				<AllowsTrait name="scopeKind" />
 			</TraitRules>
 		</ConceptDefinition>
 
-		<ConceptDefinition conceptKind=$Structural entityEligibility=$MustNotBeEntity id=codex:domain:privacy-policy:RelatedDocument name="RelatedDocument">
-			<ContentRules><ForbidsContent /></ContentRules>
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:privacy-policy:RelatedDocument
+			name="RelatedDocument"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
 			<TraitRules>
 				<RequiresTrait name="target" />
 				<RequiresTrait name="relationshipKind" />
 			</TraitRules>
 		</ConceptDefinition>
 
-		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=codex:domain:privacy-policy:Controller name="Controller">
-			<ContentRules><ForbidsContent /></ContentRules>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:privacy-policy:Controller
+			name="Controller"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
 			<TraitRules>
 				<RequiresTrait name="target" />
 				<AllowsTrait name="controllerKind" />
 			</TraitRules>
 		</ConceptDefinition>
 
-		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=codex:domain:privacy-policy:DataCollection name="DataCollection">
-			<ContentRules><ForbidsContent /></ContentRules>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:privacy-policy:DataCollection
+			name="DataCollection"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
 			<ChildRules>
 				<AllowsChildConcept conceptSelector="text:Paragraph" />
 				<AllowsChildConcept conceptSelector="list:OrderedList" />
@@ -103,8 +129,15 @@
 			<CollectionRules allowsDuplicates=false ordering=$Ordered />
 		</ConceptDefinition>
 
-		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=codex:domain:privacy-policy:DataUse name="DataUse">
-			<ContentRules><ForbidsContent /></ContentRules>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:privacy-policy:DataUse
+			name="DataUse"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
 			<ChildRules>
 				<AllowsChildConcept conceptSelector="text:Paragraph" />
 				<AllowsChildConcept conceptSelector="list:OrderedList" />
@@ -115,8 +148,15 @@
 			<CollectionRules allowsDuplicates=false ordering=$Ordered />
 		</ConceptDefinition>
 
-		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=codex:domain:privacy-policy:DataSharing name="DataSharing">
-			<ContentRules><ForbidsContent /></ContentRules>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:privacy-policy:DataSharing
+			name="DataSharing"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
 			<ChildRules>
 				<AllowsChildConcept conceptSelector="text:Paragraph" />
 				<AllowsChildConcept conceptSelector="list:OrderedList" />
@@ -127,8 +167,15 @@
 			<CollectionRules allowsDuplicates=false ordering=$Ordered />
 		</ConceptDefinition>
 
-		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=codex:domain:privacy-policy:Retention name="Retention">
-			<ContentRules><ForbidsContent /></ContentRules>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:privacy-policy:Retention
+			name="Retention"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
 			<ChildRules>
 				<AllowsChildConcept conceptSelector="text:Paragraph" />
 				<AllowsChildConcept conceptSelector="list:OrderedList" />
@@ -139,8 +186,15 @@
 			<CollectionRules allowsDuplicates=false ordering=$Ordered />
 		</ConceptDefinition>
 
-		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=codex:domain:privacy-policy:DataRights name="DataRights">
-			<ContentRules><ForbidsContent /></ContentRules>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:privacy-policy:DataRights
+			name="DataRights"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
 			<ChildRules>
 				<AllowsChildConcept conceptSelector="text:Paragraph" />
 				<AllowsChildConcept conceptSelector="list:OrderedList" />
@@ -151,8 +205,15 @@
 			<CollectionRules allowsDuplicates=false ordering=$Ordered />
 		</ConceptDefinition>
 
-		<ConceptDefinition conceptKind=$Structural entityEligibility=$MustNotBeEntity id=codex:domain:privacy-policy:PrivacyContact name="PrivacyContact">
-			<ContentRules><ForbidsContent /></ContentRules>
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:privacy-policy:PrivacyContact
+			name="PrivacyContact"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
 			<ChildRules>
 				<AllowsChildConcept conceptSelector="contact:ContactPoint" />
 			</ChildRules>
@@ -170,76 +231,195 @@
 	</TraitDefinitions>
 
 	<ConstraintDefinitions>
-		<ConstraintDefinition id=codex:domain:privacy-policy:governing-entity-reference-trait-allowed title="GoverningEntity allows only target as a reference trait">
-			<Targets><TargetConcept conceptSelector="GoverningEntity" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" /></Rule>
+		<ConstraintDefinition
+			id=codex:domain:privacy-policy:governing-entity-reference-trait-allowed
+			title="GoverningEntity allows only target as a reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="GoverningEntity" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" />
+			</Rule>
 		</ConstraintDefinition>
-		<ConstraintDefinition id=codex:domain:privacy-policy:governing-entity-reference-singleton title="GoverningEntity must declare at most one reference trait">
-			<Targets><TargetConcept conceptSelector="GoverningEntity" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceSingleton /></Rule>
+		<ConstraintDefinition
+			id=codex:domain:privacy-policy:governing-entity-reference-singleton
+			title="GoverningEntity must declare at most one reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="GoverningEntity" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceSingleton />
+			</Rule>
 		</ConstraintDefinition>
-		<ConstraintDefinition id=codex:domain:privacy-policy:governing-entity-targets-entity title="GoverningEntity target must resolve to an entity">
-			<Targets><TargetConcept conceptSelector="GoverningEntity" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceTargetsEntity /></Rule>
+		<ConstraintDefinition
+			id=codex:domain:privacy-policy:governing-entity-targets-entity
+			title="GoverningEntity target must resolve to an entity"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="GoverningEntity" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTargetsEntity />
+			</Rule>
 		</ConstraintDefinition>
-		<ConstraintDefinition id=codex:domain:privacy-policy:governing-entity-must-resolve title="GoverningEntity target must resolve">
-			<Targets><TargetConcept conceptSelector="GoverningEntity" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceMustResolve /></Rule>
-		</ConstraintDefinition>
-
-		<ConstraintDefinition id=codex:domain:privacy-policy:applies-to-reference-trait-allowed title="AppliesTo allows only target as a reference trait">
-			<Targets><TargetConcept conceptSelector="AppliesTo" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" /></Rule>
-		</ConstraintDefinition>
-		<ConstraintDefinition id=codex:domain:privacy-policy:applies-to-reference-singleton title="AppliesTo must declare at most one reference trait">
-			<Targets><TargetConcept conceptSelector="AppliesTo" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceSingleton /></Rule>
-		</ConstraintDefinition>
-		<ConstraintDefinition id=codex:domain:privacy-policy:applies-to-targets-entity title="AppliesTo target must resolve to an entity">
-			<Targets><TargetConcept conceptSelector="AppliesTo" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceTargetsEntity /></Rule>
-		</ConstraintDefinition>
-		<ConstraintDefinition id=codex:domain:privacy-policy:applies-to-must-resolve title="AppliesTo target must resolve">
-			<Targets><TargetConcept conceptSelector="AppliesTo" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceMustResolve /></Rule>
-		</ConstraintDefinition>
-
-		<ConstraintDefinition id=codex:domain:privacy-policy:related-document-reference-trait-allowed title="RelatedDocument allows only target as a reference trait">
-			<Targets><TargetConcept conceptSelector="RelatedDocument" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" /></Rule>
-		</ConstraintDefinition>
-		<ConstraintDefinition id=codex:domain:privacy-policy:related-document-reference-singleton title="RelatedDocument must declare at most one reference trait">
-			<Targets><TargetConcept conceptSelector="RelatedDocument" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceSingleton /></Rule>
-		</ConstraintDefinition>
-		<ConstraintDefinition id=codex:domain:privacy-policy:related-document-targets-entity title="RelatedDocument target must resolve to an entity">
-			<Targets><TargetConcept conceptSelector="RelatedDocument" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceTargetsEntity /></Rule>
-		</ConstraintDefinition>
-		<ConstraintDefinition id=codex:domain:privacy-policy:related-document-must-resolve title="RelatedDocument target must resolve">
-			<Targets><TargetConcept conceptSelector="RelatedDocument" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceMustResolve /></Rule>
+		<ConstraintDefinition
+			id=codex:domain:privacy-policy:governing-entity-must-resolve
+			title="GoverningEntity target must resolve"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="GoverningEntity" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceMustResolve />
+			</Rule>
 		</ConstraintDefinition>
 
-		<ConstraintDefinition id=codex:domain:privacy-policy:controller-reference-trait-allowed title="Controller allows only target as a reference trait">
-			<Targets><TargetConcept conceptSelector="Controller" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" /></Rule>
+		<ConstraintDefinition
+			id=codex:domain:privacy-policy:applies-to-reference-trait-allowed
+			title="AppliesTo allows only target as a reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AppliesTo" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" />
+			</Rule>
 		</ConstraintDefinition>
-		<ConstraintDefinition id=codex:domain:privacy-policy:controller-reference-singleton title="Controller must declare at most one reference trait">
-			<Targets><TargetConcept conceptSelector="Controller" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceSingleton /></Rule>
+		<ConstraintDefinition
+			id=codex:domain:privacy-policy:applies-to-reference-singleton
+			title="AppliesTo must declare at most one reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AppliesTo" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceSingleton />
+			</Rule>
 		</ConstraintDefinition>
-		<ConstraintDefinition id=codex:domain:privacy-policy:controller-targets-entity title="Controller target must resolve to an entity">
-			<Targets><TargetConcept conceptSelector="Controller" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceTargetsEntity /></Rule>
+		<ConstraintDefinition
+			id=codex:domain:privacy-policy:applies-to-targets-entity
+			title="AppliesTo target must resolve to an entity"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AppliesTo" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTargetsEntity />
+			</Rule>
 		</ConstraintDefinition>
-		<ConstraintDefinition id=codex:domain:privacy-policy:controller-must-resolve title="Controller target must resolve">
-			<Targets><TargetConcept conceptSelector="Controller" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceMustResolve /></Rule>
+		<ConstraintDefinition
+			id=codex:domain:privacy-policy:applies-to-must-resolve
+			title="AppliesTo target must resolve"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AppliesTo" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceMustResolve />
+			</Rule>
 		</ConstraintDefinition>
-		<ConstraintDefinition id=codex:domain:privacy-policy:privacy-contact-requires-contact-point title="PrivacyContact must contain at least one ContactPoint">
-			<Targets><TargetConcept conceptSelector="PrivacyContact" /></Targets>
-			<Rule><ChildConstraint conceptSelector="contact:ContactPoint" type=$RequiresChildConcept /></Rule>
+
+		<ConstraintDefinition
+			id=codex:domain:privacy-policy:related-document-reference-trait-allowed
+			title="RelatedDocument allows only target as a reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="RelatedDocument" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" />
+			</Rule>
+		</ConstraintDefinition>
+		<ConstraintDefinition
+			id=codex:domain:privacy-policy:related-document-reference-singleton
+			title="RelatedDocument must declare at most one reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="RelatedDocument" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceSingleton />
+			</Rule>
+		</ConstraintDefinition>
+		<ConstraintDefinition
+			id=codex:domain:privacy-policy:related-document-targets-entity
+			title="RelatedDocument target must resolve to an entity"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="RelatedDocument" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTargetsEntity />
+			</Rule>
+		</ConstraintDefinition>
+		<ConstraintDefinition
+			id=codex:domain:privacy-policy:related-document-must-resolve
+			title="RelatedDocument target must resolve"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="RelatedDocument" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceMustResolve />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:domain:privacy-policy:controller-reference-trait-allowed
+			title="Controller allows only target as a reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Controller" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" />
+			</Rule>
+		</ConstraintDefinition>
+		<ConstraintDefinition
+			id=codex:domain:privacy-policy:controller-reference-singleton
+			title="Controller must declare at most one reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Controller" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceSingleton />
+			</Rule>
+		</ConstraintDefinition>
+		<ConstraintDefinition
+			id=codex:domain:privacy-policy:controller-targets-entity
+			title="Controller target must resolve to an entity"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Controller" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTargetsEntity />
+			</Rule>
+		</ConstraintDefinition>
+		<ConstraintDefinition
+			id=codex:domain:privacy-policy:controller-must-resolve
+			title="Controller target must resolve"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Controller" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceMustResolve />
+			</Rule>
+		</ConstraintDefinition>
+		<ConstraintDefinition
+			id=codex:domain:privacy-policy:privacy-contact-requires-contact-point
+			title="PrivacyContact must contain at least one ContactPoint"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="PrivacyContact" />
+			</Targets>
+			<Rule>
+				<ChildConstraint conceptSelector="contact:ContactPoint" type=$RequiresChildConcept />
+			</Rule>
 		</ConstraintDefinition>
 	</ConstraintDefinitions>
 </Schema>

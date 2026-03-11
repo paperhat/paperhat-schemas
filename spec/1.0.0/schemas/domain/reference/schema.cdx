@@ -27,7 +27,7 @@
 
 	<TraitDefinitions>
 		<TraitDefinition
-			defaultValueType=$IriReference
+			defaultValueType=$Iri
 			id=codex:domain:reference:trait:target
 			isReferenceTrait=true
 			name="target"

@@ -23,7 +23,7 @@
 				<AllowsChildConcept conceptSelector="Tag" />
 			</ChildRules>
 
-			<CollectionRules allowsDuplicates=false ordering=$Unordered />
+			<CollectionRules allowsDuplicates=true ordering=$Unordered />
 		</ConceptDefinition>
 
 		<ConceptDefinition

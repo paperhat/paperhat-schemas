@@ -9,20 +9,30 @@
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=docmeta reference=urn:cdx:sha256:cd9a05f04ecb4f87bf24b281579f7aa34c9824e32bf7ccb479de90b1d96cc8bf />
+		<SchemaImport namespace=docmeta reference=urn:cdx:sha256:aacfbd65a5928a0cfc5bcfbad2a2ff435f5aab17448b68710b59ccc8da9ce1a4 />
 		<SchemaImport namespace=jurisdiction reference=urn:cdx:sha256:12fa171849ee9c6dd633d59e48483057461cf8b80fee17985e59aafd8ec1bfd8 />
-		<SchemaImport namespace=contact reference=urn:cdx:sha256:f66ac6b540b849d0f20bed2452630e2a5d0ee961e286b2b30f07d6a6aa122fe2 />
+		<SchemaImport namespace=contact reference=urn:cdx:sha256:3b19e88f414107daffdfaf3b1116dd5bec1c656faad58536392a2ec9891ff11a />
 		<SchemaImport namespace=text reference=urn:cdx:sha256:0d835975e6ccabdab7c2204e9b1d4e19baf24108e45a8f240adea3a2684a5fd0 />
 		<SchemaImport namespace=list reference=urn:cdx:sha256:47b1e8725dfbf226ac7dd20ffe8b0fb77c1e444735895c24b2225b317d2185cd />
-		<SchemaImport namespace=section reference=urn:cdx:sha256:1b7f37c5a3731a1f47c10e75ed73a905b76780f0df02f48b7fa9bfdf77317bb9 />
+		<SchemaImport namespace=section reference=urn:cdx:sha256:c3647adb77a28456689ca99ef09e7c6b98745bc8aac6152c5fc83bdaaba4c7be />
 		<SchemaImport namespace=notes reference=urn:cdx:sha256:9d3ab9c299e532776ee07bbdd56c58dc18347be6e9712c1def71a0fc8f399352 />
-		<SchemaImport namespace=term reference=urn:cdx:sha256:419ff92b0dc13cc22534c4385da43bd7e93bcb65fcd3da07cb1ff442c048afdc />
+		<SchemaImport namespace=term reference=urn:cdx:sha256:c139458a29a8c749d7f7adbbd06b0c9996e2c7f251f13f8382be04b2959eddc0 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
-		<ConceptDefinition conceptKind=$Semantic defaultLabelSource="title" entityEligibility=$MustBeEntity id=codex:domain:terms-of-use:TermsOfUse name="TermsOfUse">
-			<ContentRules><ForbidsContent /></ContentRules>
-			<TraitRules><RequiresTrait name="title" /></TraitRules>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			defaultLabelSource="title"
+			entityEligibility=$MustBeEntity
+			id=codex:domain:terms-of-use:TermsOfUse
+			name="TermsOfUse"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="title" />
+			</TraitRules>
 			<ChildRules>
 				<AllowsChildConcept conceptSelector="docmeta:DocumentMetadata" max=1 />
 				<AllowsChildConcept conceptSelector="jurisdiction:Jurisdiction" />
@@ -40,65 +50,214 @@
 				<AllowsChildConcept conceptSelector="TermsContact" max=1 />
 				<AllowsChildConcept conceptSelector="notes:Notes" max=1 />
 			</ChildRules>
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:terms-of-use:GoverningEntity
+			name="GoverningEntity"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="target" />
+				<AllowsTrait name="governingRole" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:terms-of-use:AppliesTo
+			name="AppliesTo"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="target" />
+				<AllowsTrait name="scopeKind" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:terms-of-use:RelatedDocument
+			name="RelatedDocument"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="target" />
+				<RequiresTrait name="relationshipKind" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:terms-of-use:Definitions
+			name="Definitions"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="term:TermEntry" min=1 />
+			</ChildRules>
 			<CollectionRules allowsDuplicates=false ordering=$Ordered />
 		</ConceptDefinition>
 
-		<ConceptDefinition conceptKind=$Structural entityEligibility=$MustNotBeEntity id=codex:domain:terms-of-use:GoverningEntity name="GoverningEntity">
-			<ContentRules><ForbidsContent /></ContentRules>
-			<TraitRules><RequiresTrait name="target" /><AllowsTrait name="governingRole" /></TraitRules>
-		</ConceptDefinition>
-		<ConceptDefinition conceptKind=$Structural entityEligibility=$MustNotBeEntity id=codex:domain:terms-of-use:AppliesTo name="AppliesTo">
-			<ContentRules><ForbidsContent /></ContentRules>
-			<TraitRules><RequiresTrait name="target" /><AllowsTrait name="scopeKind" /></TraitRules>
-		</ConceptDefinition>
-		<ConceptDefinition conceptKind=$Structural entityEligibility=$MustNotBeEntity id=codex:domain:terms-of-use:RelatedDocument name="RelatedDocument">
-			<ContentRules><ForbidsContent /></ContentRules>
-			<TraitRules><RequiresTrait name="target" /><RequiresTrait name="relationshipKind" /></TraitRules>
-		</ConceptDefinition>
-		<ConceptDefinition conceptKind=$Structural entityEligibility=$MustNotBeEntity id=codex:domain:terms-of-use:Definitions name="Definitions">
-			<ContentRules><ForbidsContent /></ContentRules>
-			<ChildRules><AllowsChildConcept conceptSelector="term:TermEntry" min=1 /></ChildRules>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:terms-of-use:Acceptance
+			name="Acceptance"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
+				<AllowsChildConcept conceptSelector="list:OrderedList" />
+				<AllowsChildConcept conceptSelector="list:UnorderedList" />
+				<AllowsChildConcept conceptSelector="section:Section" />
+				<AllowsChildConcept conceptSelector="notes:Notes" />
+			</ChildRules>
 			<CollectionRules allowsDuplicates=false ordering=$Ordered />
 		</ConceptDefinition>
 
-		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=codex:domain:terms-of-use:Acceptance name="Acceptance">
-			<ContentRules><ForbidsContent /></ContentRules>
-			<ChildRules><AllowsChildConcept conceptSelector="text:Paragraph" /><AllowsChildConcept conceptSelector="list:OrderedList" /><AllowsChildConcept conceptSelector="list:UnorderedList" /><AllowsChildConcept conceptSelector="section:Section" /><AllowsChildConcept conceptSelector="notes:Notes" /></ChildRules>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:terms-of-use:PermittedUse
+			name="PermittedUse"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
+				<AllowsChildConcept conceptSelector="list:OrderedList" />
+				<AllowsChildConcept conceptSelector="list:UnorderedList" />
+				<AllowsChildConcept conceptSelector="section:Section" />
+				<AllowsChildConcept conceptSelector="notes:Notes" />
+			</ChildRules>
 			<CollectionRules allowsDuplicates=false ordering=$Ordered />
 		</ConceptDefinition>
-		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=codex:domain:terms-of-use:PermittedUse name="PermittedUse">
-			<ContentRules><ForbidsContent /></ContentRules>
-			<ChildRules><AllowsChildConcept conceptSelector="text:Paragraph" /><AllowsChildConcept conceptSelector="list:OrderedList" /><AllowsChildConcept conceptSelector="list:UnorderedList" /><AllowsChildConcept conceptSelector="section:Section" /><AllowsChildConcept conceptSelector="notes:Notes" /></ChildRules>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:terms-of-use:ProhibitedUse
+			name="ProhibitedUse"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
+				<AllowsChildConcept conceptSelector="list:OrderedList" />
+				<AllowsChildConcept conceptSelector="list:UnorderedList" />
+				<AllowsChildConcept conceptSelector="section:Section" />
+				<AllowsChildConcept conceptSelector="notes:Notes" />
+			</ChildRules>
 			<CollectionRules allowsDuplicates=false ordering=$Ordered />
 		</ConceptDefinition>
-		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=codex:domain:terms-of-use:ProhibitedUse name="ProhibitedUse">
-			<ContentRules><ForbidsContent /></ContentRules>
-			<ChildRules><AllowsChildConcept conceptSelector="text:Paragraph" /><AllowsChildConcept conceptSelector="list:OrderedList" /><AllowsChildConcept conceptSelector="list:UnorderedList" /><AllowsChildConcept conceptSelector="section:Section" /><AllowsChildConcept conceptSelector="notes:Notes" /></ChildRules>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:terms-of-use:Disclaimer
+			name="Disclaimer"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
+				<AllowsChildConcept conceptSelector="list:OrderedList" />
+				<AllowsChildConcept conceptSelector="list:UnorderedList" />
+				<AllowsChildConcept conceptSelector="section:Section" />
+				<AllowsChildConcept conceptSelector="notes:Notes" />
+			</ChildRules>
 			<CollectionRules allowsDuplicates=false ordering=$Ordered />
 		</ConceptDefinition>
-		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=codex:domain:terms-of-use:Disclaimer name="Disclaimer">
-			<ContentRules><ForbidsContent /></ContentRules>
-			<ChildRules><AllowsChildConcept conceptSelector="text:Paragraph" /><AllowsChildConcept conceptSelector="list:OrderedList" /><AllowsChildConcept conceptSelector="list:UnorderedList" /><AllowsChildConcept conceptSelector="section:Section" /><AllowsChildConcept conceptSelector="notes:Notes" /></ChildRules>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:terms-of-use:LimitationOfLiability
+			name="LimitationOfLiability"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
+				<AllowsChildConcept conceptSelector="list:OrderedList" />
+				<AllowsChildConcept conceptSelector="list:UnorderedList" />
+				<AllowsChildConcept conceptSelector="section:Section" />
+				<AllowsChildConcept conceptSelector="notes:Notes" />
+			</ChildRules>
 			<CollectionRules allowsDuplicates=false ordering=$Ordered />
 		</ConceptDefinition>
-		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=codex:domain:terms-of-use:LimitationOfLiability name="LimitationOfLiability">
-			<ContentRules><ForbidsContent /></ContentRules>
-			<ChildRules><AllowsChildConcept conceptSelector="text:Paragraph" /><AllowsChildConcept conceptSelector="list:OrderedList" /><AllowsChildConcept conceptSelector="list:UnorderedList" /><AllowsChildConcept conceptSelector="section:Section" /><AllowsChildConcept conceptSelector="notes:Notes" /></ChildRules>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:terms-of-use:Termination
+			name="Termination"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
+				<AllowsChildConcept conceptSelector="list:OrderedList" />
+				<AllowsChildConcept conceptSelector="list:UnorderedList" />
+				<AllowsChildConcept conceptSelector="section:Section" />
+				<AllowsChildConcept conceptSelector="notes:Notes" />
+			</ChildRules>
 			<CollectionRules allowsDuplicates=false ordering=$Ordered />
 		</ConceptDefinition>
-		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=codex:domain:terms-of-use:Termination name="Termination">
-			<ContentRules><ForbidsContent /></ContentRules>
-			<ChildRules><AllowsChildConcept conceptSelector="text:Paragraph" /><AllowsChildConcept conceptSelector="list:OrderedList" /><AllowsChildConcept conceptSelector="list:UnorderedList" /><AllowsChildConcept conceptSelector="section:Section" /><AllowsChildConcept conceptSelector="notes:Notes" /></ChildRules>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:terms-of-use:GoverningLaw
+			name="GoverningLaw"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
+				<AllowsChildConcept conceptSelector="list:OrderedList" />
+				<AllowsChildConcept conceptSelector="list:UnorderedList" />
+				<AllowsChildConcept conceptSelector="section:Section" />
+				<AllowsChildConcept conceptSelector="notes:Notes" />
+			</ChildRules>
 			<CollectionRules allowsDuplicates=false ordering=$Ordered />
 		</ConceptDefinition>
-		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=codex:domain:terms-of-use:GoverningLaw name="GoverningLaw">
-			<ContentRules><ForbidsContent /></ContentRules>
-			<ChildRules><AllowsChildConcept conceptSelector="text:Paragraph" /><AllowsChildConcept conceptSelector="list:OrderedList" /><AllowsChildConcept conceptSelector="list:UnorderedList" /><AllowsChildConcept conceptSelector="section:Section" /><AllowsChildConcept conceptSelector="notes:Notes" /></ChildRules>
-			<CollectionRules allowsDuplicates=false ordering=$Ordered />
-		</ConceptDefinition>
-		<ConceptDefinition conceptKind=$Structural entityEligibility=$MustNotBeEntity id=codex:domain:terms-of-use:TermsContact name="TermsContact">
-			<ContentRules><ForbidsContent /></ContentRules>
-			<ChildRules><AllowsChildConcept conceptSelector="contact:ContactPoint" /></ChildRules>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:terms-of-use:TermsContact
+			name="TermsContact"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="contact:ContactPoint" />
+			</ChildRules>
 			<CollectionRules allowsDuplicates=false ordering=$Unordered />
 		</ConceptDefinition>
 	</ConceptDefinitions>
@@ -112,64 +271,162 @@
 	</TraitDefinitions>
 
 	<ConstraintDefinitions>
-		<ConstraintDefinition id=codex:domain:terms-of-use:governing-entity-reference-trait-allowed title="GoverningEntity allows only target as a reference trait">
-			<Targets><TargetConcept conceptSelector="GoverningEntity" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" /></Rule>
+		<ConstraintDefinition
+			id=codex:domain:terms-of-use:governing-entity-reference-trait-allowed
+			title="GoverningEntity allows only target as a reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="GoverningEntity" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" />
+			</Rule>
 		</ConstraintDefinition>
-		<ConstraintDefinition id=codex:domain:terms-of-use:governing-entity-reference-singleton title="GoverningEntity must declare at most one reference trait">
-			<Targets><TargetConcept conceptSelector="GoverningEntity" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceSingleton /></Rule>
+		<ConstraintDefinition
+			id=codex:domain:terms-of-use:governing-entity-reference-singleton
+			title="GoverningEntity must declare at most one reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="GoverningEntity" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceSingleton />
+			</Rule>
 		</ConstraintDefinition>
-		<ConstraintDefinition id=codex:domain:terms-of-use:governing-entity-targets-entity title="GoverningEntity target must resolve to an entity">
-			<Targets><TargetConcept conceptSelector="GoverningEntity" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceTargetsEntity /></Rule>
+		<ConstraintDefinition
+			id=codex:domain:terms-of-use:governing-entity-targets-entity
+			title="GoverningEntity target must resolve to an entity"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="GoverningEntity" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTargetsEntity />
+			</Rule>
 		</ConstraintDefinition>
-		<ConstraintDefinition id=codex:domain:terms-of-use:governing-entity-must-resolve title="GoverningEntity target must resolve">
-			<Targets><TargetConcept conceptSelector="GoverningEntity" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceMustResolve /></Rule>
-		</ConstraintDefinition>
-
-		<ConstraintDefinition id=codex:domain:terms-of-use:applies-to-reference-trait-allowed title="AppliesTo allows only target as a reference trait">
-			<Targets><TargetConcept conceptSelector="AppliesTo" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" /></Rule>
-		</ConstraintDefinition>
-		<ConstraintDefinition id=codex:domain:terms-of-use:applies-to-reference-singleton title="AppliesTo must declare at most one reference trait">
-			<Targets><TargetConcept conceptSelector="AppliesTo" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceSingleton /></Rule>
-		</ConstraintDefinition>
-		<ConstraintDefinition id=codex:domain:terms-of-use:applies-to-targets-entity title="AppliesTo target must resolve to an entity">
-			<Targets><TargetConcept conceptSelector="AppliesTo" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceTargetsEntity /></Rule>
-		</ConstraintDefinition>
-		<ConstraintDefinition id=codex:domain:terms-of-use:applies-to-must-resolve title="AppliesTo target must resolve">
-			<Targets><TargetConcept conceptSelector="AppliesTo" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceMustResolve /></Rule>
-		</ConstraintDefinition>
-
-		<ConstraintDefinition id=codex:domain:terms-of-use:related-document-reference-trait-allowed title="RelatedDocument allows only target as a reference trait">
-			<Targets><TargetConcept conceptSelector="RelatedDocument" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" /></Rule>
-		</ConstraintDefinition>
-		<ConstraintDefinition id=codex:domain:terms-of-use:related-document-reference-singleton title="RelatedDocument must declare at most one reference trait">
-			<Targets><TargetConcept conceptSelector="RelatedDocument" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceSingleton /></Rule>
-		</ConstraintDefinition>
-		<ConstraintDefinition id=codex:domain:terms-of-use:related-document-targets-entity title="RelatedDocument target must resolve to an entity">
-			<Targets><TargetConcept conceptSelector="RelatedDocument" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceTargetsEntity /></Rule>
-		</ConstraintDefinition>
-		<ConstraintDefinition id=codex:domain:terms-of-use:related-document-must-resolve title="RelatedDocument target must resolve">
-			<Targets><TargetConcept conceptSelector="RelatedDocument" /></Targets>
-			<Rule><ReferenceConstraint type=$ReferenceMustResolve /></Rule>
+		<ConstraintDefinition
+			id=codex:domain:terms-of-use:governing-entity-must-resolve
+			title="GoverningEntity target must resolve"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="GoverningEntity" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceMustResolve />
+			</Rule>
 		</ConstraintDefinition>
 
-		<ConstraintDefinition id=codex:domain:terms-of-use:terms-contact-requires-contact-point title="TermsContact must contain at least one ContactPoint">
-			<Targets><TargetConcept conceptSelector="TermsContact" /></Targets>
-			<Rule><ChildConstraint conceptSelector="contact:ContactPoint" type=$RequiresChildConcept /></Rule>
+		<ConstraintDefinition
+			id=codex:domain:terms-of-use:applies-to-reference-trait-allowed
+			title="AppliesTo allows only target as a reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AppliesTo" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" />
+			</Rule>
 		</ConstraintDefinition>
-		<ConstraintDefinition id=codex:domain:terms-of-use:definitions-requires-term-entry title="Definitions must contain at least one TermEntry">
-			<Targets><TargetConcept conceptSelector="Definitions" /></Targets>
-			<Rule><ChildConstraint conceptSelector="term:TermEntry" type=$RequiresChildConcept /></Rule>
+		<ConstraintDefinition
+			id=codex:domain:terms-of-use:applies-to-reference-singleton
+			title="AppliesTo must declare at most one reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AppliesTo" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceSingleton />
+			</Rule>
+		</ConstraintDefinition>
+		<ConstraintDefinition
+			id=codex:domain:terms-of-use:applies-to-targets-entity
+			title="AppliesTo target must resolve to an entity"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AppliesTo" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTargetsEntity />
+			</Rule>
+		</ConstraintDefinition>
+		<ConstraintDefinition
+			id=codex:domain:terms-of-use:applies-to-must-resolve
+			title="AppliesTo target must resolve"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AppliesTo" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceMustResolve />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:domain:terms-of-use:related-document-reference-trait-allowed
+			title="RelatedDocument allows only target as a reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="RelatedDocument" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" />
+			</Rule>
+		</ConstraintDefinition>
+		<ConstraintDefinition
+			id=codex:domain:terms-of-use:related-document-reference-singleton
+			title="RelatedDocument must declare at most one reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="RelatedDocument" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceSingleton />
+			</Rule>
+		</ConstraintDefinition>
+		<ConstraintDefinition
+			id=codex:domain:terms-of-use:related-document-targets-entity
+			title="RelatedDocument target must resolve to an entity"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="RelatedDocument" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTargetsEntity />
+			</Rule>
+		</ConstraintDefinition>
+		<ConstraintDefinition
+			id=codex:domain:terms-of-use:related-document-must-resolve
+			title="RelatedDocument target must resolve"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="RelatedDocument" />
+			</Targets>
+			<Rule>
+				<ReferenceConstraint type=$ReferenceMustResolve />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=codex:domain:terms-of-use:terms-contact-requires-contact-point
+			title="TermsContact must contain at least one ContactPoint"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="TermsContact" />
+			</Targets>
+			<Rule>
+				<ChildConstraint conceptSelector="contact:ContactPoint" type=$RequiresChildConcept />
+			</Rule>
+		</ConstraintDefinition>
+		<ConstraintDefinition
+			id=codex:domain:terms-of-use:definitions-requires-term-entry
+			title="Definitions must contain at least one TermEntry"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Definitions" />
+			</Targets>
+			<Rule>
+				<ChildConstraint conceptSelector="term:TermEntry" type=$RequiresChildConcept />
+			</Rule>
 		</ConstraintDefinition>
 	</ConstraintDefinitions>
 </Schema>

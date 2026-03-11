@@ -222,7 +222,7 @@
 		</TraitDefinition>
 
 		<TraitDefinition
-			defaultValueType=$IriReference
+			defaultValueType=$Iri
 			id=codex:assembly:adaptive-plan-result:trait:intentId
 			isReferenceTrait=true
 			name="intentId"
@@ -239,28 +239,28 @@
 		</TraitDefinition>
 
 		<TraitDefinition
-			defaultValueType=$IriReference
+			defaultValueType=$Iri
 			id=codex:assembly:adaptive-plan-result:trait:policySetRef
 			isReferenceTrait=true
 			name="policySetRef"
 		/>
 
 		<TraitDefinition
-			defaultValueType=$IriReference
+			defaultValueType=$Iri
 			id=codex:assembly:adaptive-plan-result:trait:compositionIri
 			isReferenceTrait=true
 			name="compositionIri"
 		/>
 
 		<TraitDefinition
-			defaultValueType=$IriReference
+			defaultValueType=$Iri
 			id=codex:assembly:adaptive-plan-result:trait:viewIri
 			isReferenceTrait=true
 			name="viewIri"
 		/>
 
 		<TraitDefinition
-			defaultValueType=$IriReference
+			defaultValueType=$Iri
 			id=codex:assembly:adaptive-plan-result:trait:iri
 			isReferenceTrait=true
 			name="iri"

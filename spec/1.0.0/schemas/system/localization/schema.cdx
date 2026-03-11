@@ -145,7 +145,7 @@
 
 	<TraitDefinitions>
 		<TraitDefinition
-			defaultValueType=$IRI
+			defaultValueType=$Iri
 			id=codex:system:localization:trait:schema
 			name="schema"
 		/>

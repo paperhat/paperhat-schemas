@@ -9,13 +9,13 @@
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=person reference=urn:cdx:sha256:08e64ca8d7215574fcebb8e37c8a716042c7486a67d35e6e3d3fc65064b99327 />
+		<SchemaImport namespace=person reference=urn:cdx:sha256:7badcc38ee67c837a2178a667491ac1f58e0c051b5438adfd13b8de89b3e9be6 />
 
-		<SchemaImport namespace=org reference=urn:cdx:sha256:6bfa72a2e5434fc639924667cc3572cf2b1fe8261d3630d2e26fc1755d5473ac />
+		<SchemaImport namespace=org reference=urn:cdx:sha256:b2727faf70e967608fd39722a35e64868e92898b5bcfc5b16e174a05397faa4b />
 
 		<SchemaImport namespace=ident reference=urn:cdx:sha256:a220d2034a4faa1a81d8102265c1fef36576871a0ba25ac31500abac7afd5907 />
 
-		<SchemaImport namespace=ref reference=urn:cdx:sha256:b5bec51c2de7a1dac1a051dffead616b03050c2bbcea1e5c8ae4f6523a1fc966 />
+		<SchemaImport namespace=ref reference=urn:cdx:sha256:9a7a73d6e6c4e03375f90e390a881d49a56a35f98d7271942dc723c84ff07912 />
 	</SchemaImports>
 
 	<ConceptDefinitions>

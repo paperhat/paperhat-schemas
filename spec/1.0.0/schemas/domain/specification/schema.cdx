@@ -9,23 +9,25 @@
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=admonition reference=urn:cdx:sha256:302ea04fd765f5f783d10a17d8ce599b8fa4dd4743e161db48cdc52e5883690e />
+		<SchemaImport namespace=admonition reference=urn:cdx:sha256:9d4943531b58b45a915b94a436ed829795761441cc976d236a9268612d63ec9e />
 
 		<SchemaImport namespace=code reference=urn:cdx:sha256:31678c88cd6e0a8b64991b39efb46aa4e97a569046deb4d6d57f235891a3a7c2 />
 
 		<SchemaImport namespace=example reference=urn:cdx:sha256:6f6e27c71484bc9bb78eb52f401521597afe5e220fda09112c6af67bdaf21e9e />
 
-		<SchemaImport namespace=figure reference=urn:cdx:sha256:2d88426a3cf5e22d7a64bff7accefab4519ba34c26eb48227cd846f8ecc85a33 />
+		<SchemaImport namespace=figure reference=urn:cdx:sha256:34d49171a982401ce9c3b2cd6c989af331db9be008866dc0a328b845de7a9e26 />
 
-		<SchemaImport namespace=list reference=urn:cdx:sha256:7f7660dd097a9a8879541f45cbd28def9478ae94d85df0c467b1d6d82a108da2 />
+		<SchemaImport namespace=list reference=urn:cdx:sha256:9483b412f016c9bdb17bdf3ae70164c4c59838405c38009057d02fc8cd911c50 />
 
 		<SchemaImport namespace=specbase reference=urn:cdx:sha256:47b1e8725dfbf226ac7dd20ffe8b0fb77c1e444735895c24b2225b317d2185cd />
 
-		<SchemaImport namespace=relation reference=urn:cdx:sha256:b3c9fe844e31f66ff7cbbb8a3d8d6c68a53717f8a1365748d1d577cc6769210f />
+		<SchemaImport namespace=relation reference=urn:cdx:sha256:638b329409681df79bc5bc3c928ae4d41bf0669b96a0fa6cb9e54e7ce1cb3a9e />
 
-		<SchemaImport namespace=text reference=urn:cdx:sha256:9f68d4f9a5421a5c1b506c7b0b05550a2bf08a83379ef53d081ba84b11018769 />
+		<SchemaImport namespace=text reference=urn:cdx:sha256:e351237805bd69ea34497dc62cb7de9dc324d3a9f9a98b1fa9fc2991ba29fb92 />
 
 		<SchemaImport namespace=cite reference=urn:cdx:sha256:0d835975e6ccabdab7c2204e9b1d4e19baf24108e45a8f240adea3a2684a5fd0 />
+
+		<SchemaImport namespace=glossary reference=urn:cdx:sha256:d796af835dc0fe85e3c38731660c4bd3b9c204cc2c5a5ef9611763332c1ec9e8 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
@@ -93,7 +95,7 @@
 
 				<AllowsChildConcept conceptSelector=Requirement />
 
-				<AllowsChildConcept conceptSelector=Definition />
+				<AllowsChildConcept conceptSelector=glossary:GlossaryEntry />
 
 				<AllowsChildConcept conceptSelector=Note />
 
@@ -149,21 +151,6 @@
 						<EnumeratedConstraint set=StrictRequirementModality />
 					</AllowedValues>
 				</RequiresTrait>
-			</TraitRules>
-
-			<ContentRules>
-				<RequiresContent whitespaceMode=$Flow />
-			</ContentRules>
-		</ConceptDefinition>
-
-		<ConceptDefinition
-			conceptKind=$Semantic
-			entityEligibility=$MustNotBeEntity
-			id=codex:domain:specification:Definition
-			name=Definition
-		>
-			<TraitRules>
-				<RequiresTrait name=specbase:term />
 			</TraitRules>
 
 			<ContentRules>

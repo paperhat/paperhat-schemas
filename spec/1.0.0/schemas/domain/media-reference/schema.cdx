@@ -39,7 +39,7 @@
 
 	<TraitDefinitions>
 		<TraitDefinition
-			defaultValueType=$IriReference
+			defaultValueType=$Iri
 			id=codex:domain:media-reference:trait:url
 			name="url"
 		/>

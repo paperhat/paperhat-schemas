@@ -32,11 +32,19 @@
 
 				<AllowsChildConcept conceptSelector="YearWeek" />
 
-				<AllowsChildConcept conceptSelector="Instant" />
+				<AllowsChildConcept conceptSelector="YearWeekDay" />
+
+				<AllowsChildConcept conceptSelector="ZonedDate" />
+
+				<AllowsChildConcept conceptSelector="ZonedTime" />
 
 				<AllowsChildConcept conceptSelector="ZonedDateTime" />
 
+				<AllowsChildConcept conceptSelector="Instant" />
+
 				<AllowsChildConcept conceptSelector="Duration" />
+
+				<AllowsChildConcept conceptSelector="TemporalKeyword" />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=false ordering=$Unordered />
@@ -183,8 +191,54 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:temporal:Instant
-			name="Instant"
+			id=codex:domain:temporal:YearWeekDay
+			name="YearWeekDay"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="value" />
+
+				<AllowsTrait name="text" />
+
+				<AllowsTrait name="format" />
+
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:temporal:ZonedDate
+			name="ZonedDate"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="value" />
+
+				<AllowsTrait name="text" />
+
+				<AllowsTrait name="format" />
+
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:temporal:ZonedTime
+			name="ZonedTime"
 		>
 			<ContentRules>
 				<ForbidsContent />
@@ -229,8 +283,54 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
+			id=codex:domain:temporal:Instant
+			name="Instant"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="value" />
+
+				<AllowsTrait name="text" />
+
+				<AllowsTrait name="format" />
+
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
 			id=codex:domain:temporal:Duration
 			name="Duration"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="value" />
+
+				<AllowsTrait name="text" />
+
+				<AllowsTrait name="format" />
+
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=codex:domain:temporal:TemporalKeyword
+			name="TemporalKeyword"
 		>
 			<ContentRules>
 				<ForbidsContent />
@@ -258,7 +358,7 @@
 		/>
 
 		<TraitDefinition
-			defaultValueTypes=[$Date, $Time, $DateTime, $YearMonth, $MonthDay, $YearWeek, $Instant, $ZonedDateTime, $Duration]
+			defaultValueTypes=[$Date, $Time, $DateTime, $YearMonth, $MonthDay, $YearWeek, $YearWeekDay, $ZonedDate, $ZonedTime, $ZonedDateTime, $Instant, $Duration, $TemporalKeyword]
 			id=codex:domain:temporal:trait:value
 			name="value"
 		/>
@@ -318,7 +418,15 @@
 					</Rule>
 
 					<Rule>
-						<ChildConstraint conceptSelector="Instant" type=$RequiresChildConcept />
+						<ChildConstraint conceptSelector="YearWeekDay" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="ZonedDate" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="ZonedTime" type=$RequiresChildConcept />
 					</Rule>
 
 					<Rule>
@@ -326,7 +434,15 @@
 					</Rule>
 
 					<Rule>
+						<ChildConstraint conceptSelector="Instant" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
 						<ChildConstraint conceptSelector="Duration" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="TemporalKeyword" type=$RequiresChildConcept />
 					</Rule>
 				</AnyOf>
 			</Rule>

@@ -28,7 +28,7 @@ Use `Project` to represent any bounded endeavor: a software project, a specifica
 | ident:Identifier | `codex:domain:identifier` | External identifiers (DOI, registry IDs, package registry names). |
 | tags:Tags | `codex:domain:tags` | Freeform categorization. |
 | work:Work | `codex:domain:work` | Authorship, licensing, dates, versioning. |
-| temporal:Temporal | `codex:domain:temporal` | Project start date, end date, milestones. |
+| temporal:TemporalAnnotations | `codex:domain:temporal` | Project start date, end date, milestones, and other keyed temporal annotations. |
 
 ## Imports
 

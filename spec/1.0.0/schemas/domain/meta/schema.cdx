@@ -36,7 +36,7 @@
 
 	<TraitDefinitions>
 		<TraitDefinition
-			defaultValueType=$IriReference
+			defaultValueType=$Iri
 			id=codex:domain:meta:trait:id
 			isReferenceTrait=true
 			name="id"

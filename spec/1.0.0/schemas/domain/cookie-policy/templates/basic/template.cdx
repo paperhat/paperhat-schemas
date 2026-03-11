@@ -3,10 +3,10 @@
 	<AppliesTo target=urn:service:example scopeKind=$Service />
 	<RelatedDocument target=urn:policy:privacy:example relationshipKind=$PairedWith />
 	<Definitions>
-		<term:TermEntry term="Defined Cookie Term" key=~definedCookieTerm>
-			<Sense>
+		<term:TermEntry id=urn:term:defined-cookie-term term="Defined Cookie Term" key=~definedCookieTerm bodyMode=$children>
+			<term:Sense>
 				State the formal meaning of the cookie-related term.
-			</Sense>
+			</term:Sense>
 		</term:TermEntry>
 	</Definitions>
 	<CookieCategory category=$Essential>

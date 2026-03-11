@@ -6,7 +6,7 @@
 	<Attribute
 		id="urn:example:relation-type:outer:attribute:nested"
 		name="nested"
-		valueType=$IriReference
+		valueType=$Iri
 		required=true
 	/>
 </RelationType>

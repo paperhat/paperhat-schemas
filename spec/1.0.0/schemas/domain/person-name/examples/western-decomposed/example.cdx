@@ -1,8 +1,8 @@
 <PersonName
-	nameKind=$legal
+	nameKind=$Legal
 	given="Eleanor"
-	middle="Rosalind" "Frances"
+	middle=["Rosalind", "Frances"]
 	family="Vance"
-	title="Dr."
-	suffix="PhD"
+	title=["Dr."]
+	suffix=["PhD"]
 />

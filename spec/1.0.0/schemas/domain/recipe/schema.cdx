@@ -13,9 +13,9 @@
 
 		<SchemaImport namespace="desc" reference=urn:cdx:sha256:5e9c6ba4654a0b013b65fc38fde033d2b6fc281d7eb791e57b207b42d80ae7da />
 
-		<SchemaImport namespace="equip" reference=urn:cdx:sha256:82e3a01539cffac166a8c81513bd828e49396fe9d1a6ec7e14021c350fdffe3b />
+		<SchemaImport namespace="equip" reference=urn:cdx:sha256:c8ff753f9e2ebbe06101beefff08758dc2bb12e57ad4ccf05a0f13a2ddb07941 />
 
-		<SchemaImport namespace="food" reference=urn:cdx:sha256:4904dc56cee5b6f7a4155653f3f86321ba2378701a5078ed8c30a56274e6b2c5 />
+		<SchemaImport namespace="food" reference=urn:cdx:sha256:0b15edcd17c932d579f6291d056572264082d6a1001b76782b8b41818c0442e0 />
 
 		<SchemaImport namespace="massmeasure" reference=urn:cdx:sha256:f23396dcb092b7de3152a1d7fb22672248422dc2e3b59e96737c30ba863ec242 />
 
@@ -23,7 +23,7 @@
 
 		<SchemaImport namespace="nutrition" reference=urn:cdx:sha256:60fcc8d6e3a6c6d43a2a6ae59d36c4b625bf4c739655615399744e6ce698f567 />
 
-		<SchemaImport namespace="tags" reference=urn:cdx:sha256:79f0baf3512b1d7c2730608a6796155017c30096f2f4ffde74b0deafc1eae775 />
+		<SchemaImport namespace="tags" reference=urn:cdx:sha256:864fb472fd89cb8024e9d3725203d2129185e39f375df5569b421353dbae9c98 />
 
 		<SchemaImport namespace="text" reference=urn:cdx:sha256:0d835975e6ccabdab7c2204e9b1d4e19baf24108e45a8f240adea3a2684a5fd0 />
 
@@ -384,7 +384,7 @@
 
 	<TraitDefinitions>
 		<TraitDefinition
-			defaultValueType=$IriReference
+			defaultValueType=$Iri
 			id=codex:domain:recipe:trait:food
 			name="food"
 			priority=$Primary

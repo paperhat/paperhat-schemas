@@ -4,7 +4,7 @@ Version: 1.0.0
 
 # Tags
 
-An unordered set of keyword labels for categorisation and discovery.
+An unordered collection of keyword labels for categorisation and discovery.
 
 ## When to Use
 

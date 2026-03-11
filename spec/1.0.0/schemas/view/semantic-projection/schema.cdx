@@ -346,7 +346,7 @@
 		/>
 
 		<TraitDefinition
-			defaultValueType=$IriReference
+			defaultValueType=$Iri
 			id=codex:view:semantic-projection:trait:parameterShapeReference
 			isReferenceTrait=true
 			name="parameterShapeReference"
@@ -359,7 +359,7 @@
 		/>
 
 		<TraitDefinition
-			defaultValueType=$IriReference
+			defaultValueType=$Iri
 			id=codex:view:semantic-projection:trait:ruleIdentifier
 			isReferenceTrait=true
 			name="ruleIdentifier"

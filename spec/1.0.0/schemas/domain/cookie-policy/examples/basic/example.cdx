@@ -3,10 +3,10 @@
 	<AppliesTo target=urn:service:recipe-library scopeKind=$Service />
 	<RelatedDocument target=urn:policy:privacy:recipe-library relationshipKind=$PairedWith />
 	<Definitions>
-		<term:TermEntry term="Cookie" key=~cookie>
-			<Sense>
+		<term:TermEntry id=urn:term:cookie term="Cookie" key=~cookie bodyMode=$children>
+			<term:Sense>
 				A small browser-stored value used to support the service.
-			</Sense>
+			</term:Sense>
 		</term:TermEntry>
 	</Definitions>
 	<CookieCategory category=$Essential>

@@ -1,3 +1,9 @@
-<TermEntry term="">
-	<Sense partOfSpeech=$noun>Definition text here.</Sense>
+<TermEntry
+	id=urn:term:example
+	term=""
+	bodyMode=$children
+>
+	<Sense partOfSpeech=$Noun>
+		Definition text here.
+	</Sense>
 </TermEntry>

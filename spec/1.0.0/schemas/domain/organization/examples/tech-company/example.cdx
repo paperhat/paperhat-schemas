@@ -9,7 +9,7 @@
 	</Description>
 
 	<ContactPoint contactKind=$work emailAddress="info@acmerobotics.example" />
-	<ContactPoint contactKind=$work website="https://acmerobotics.example" />
+	<ContactPoint contactKind=$work website=url("https://acmerobotics.example") />
 
 	<Identifier scheme=$registrationNumber value="BC-2019-048721" />
 

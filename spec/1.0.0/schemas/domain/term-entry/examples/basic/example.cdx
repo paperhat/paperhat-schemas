@@ -1,1 +1,8 @@
-<TermEntry term="canonical form" key=~canonicalForm>The normalized representation of a value after all processing rules defined by the value type have been applied. Two values are equal if and only if their canonical forms are identical.</TermEntry>
+<TermEntry
+	id=urn:term:canonical-form
+	term="canonical form"
+	key=~canonicalForm
+	bodyMode=$Content
+>
+	The normalized representation of a value after all processing rules defined by the value type have been applied. Two values are equal if and only if their canonical forms are identical.
+</TermEntry>

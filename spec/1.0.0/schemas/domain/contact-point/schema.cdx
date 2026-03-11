@@ -55,7 +55,7 @@
 		/>
 
 		<TraitDefinition
-			defaultValueType=$IriReference
+			defaultValueType=$Url
 			id=codex:domain:contact-point:trait:website
 			name="website"
 		/>

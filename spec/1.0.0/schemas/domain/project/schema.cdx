@@ -13,11 +13,11 @@
 
 		<SchemaImport namespace=ident reference=urn:cdx:sha256:a220d2034a4faa1a81d8102265c1fef36576871a0ba25ac31500abac7afd5907 />
 
-		<SchemaImport namespace=tags reference=urn:cdx:sha256:79f0baf3512b1d7c2730608a6796155017c30096f2f4ffde74b0deafc1eae775 />
+		<SchemaImport namespace=tags reference=urn:cdx:sha256:864fb472fd89cb8024e9d3725203d2129185e39f375df5569b421353dbae9c98 />
 
 		<SchemaImport namespace=work reference=urn:cdx:sha256:1a180843230548cc38ddcde65df88bb025fd9a3feff6cdc6da19e8c3a8823dcd />
 
-		<SchemaImport namespace=temporal reference=urn:cdx:sha256:184487dbb675e895d492185b14674046cd0ec1c5e3a3cd15aa1ddda9c3a016ec />
+		<SchemaImport namespace=temporal reference=urn:cdx:sha256:674ed1dd9571552d7c00256360665602d01a090a9b8077e7f007aff8e9c0587f />
 	</SchemaImports>
 
 	<ConceptDefinitions>
@@ -52,7 +52,7 @@
 
 				<AllowsChildConcept conceptSelector="work:Work" />
 
-				<AllowsChildConcept conceptSelector="temporal:Temporal" />
+				<AllowsChildConcept conceptSelector="temporal:TemporalAnnotations" />
 			</ChildRules>
 		</ConceptDefinition>
 	</ConceptDefinitions>

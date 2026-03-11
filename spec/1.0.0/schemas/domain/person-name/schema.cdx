@@ -21,23 +21,14 @@
 
 			<TraitRules>
 				<AllowsTrait name="nameKind" />
-
 				<AllowsTrait name="full" />
-
 				<AllowsTrait name="given" />
-
 				<AllowsTrait name="middle" />
-
 				<AllowsTrait name="family" />
-
 				<AllowsTrait name="title" />
-
 				<AllowsTrait name="honorific" />
-
 				<AllowsTrait name="suffix" />
-
 				<AllowsTrait name="effectiveFrom" />
-
 				<AllowsTrait name="effectiveTo" />
 			</TraitRules>
 		</ConceptDefinition>
@@ -63,7 +54,7 @@
 		/>
 
 		<TraitDefinition
-			defaultValueType=$List($Text)
+			defaultValueType=$List<$Text>
 			id=codex:domain:person-name:trait:middle
 			name="middle"
 		/>
@@ -75,19 +66,19 @@
 		/>
 
 		<TraitDefinition
-			defaultValueType=$List($Text)
+			defaultValueType=$List<$Text>
 			id=codex:domain:person-name:trait:title
 			name="title"
 		/>
 
 		<TraitDefinition
-			defaultValueType=$List($Text)
+			defaultValueType=$List<$Text>
 			id=codex:domain:person-name:trait:honorific
 			name="honorific"
 		/>
 
 		<TraitDefinition
-			defaultValueType=$List($Text)
+			defaultValueType=$List<$Text>
 			id=codex:domain:person-name:trait:suffix
 			name="suffix"
 		/>
@@ -119,11 +110,9 @@
 					<Rule>
 						<TraitExists trait="full" />
 					</Rule>
-
 					<Rule>
 						<TraitExists trait="given" />
 					</Rule>
-
 					<Rule>
 						<TraitExists trait="family" />
 					</Rule>

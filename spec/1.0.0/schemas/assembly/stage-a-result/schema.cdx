@@ -136,7 +136,7 @@
 		/>
 
 		<TraitDefinition
-			defaultValueType=$IriReference
+			defaultValueType=$Iri
 			id=codex:assembly:stage-a-result:trait:iri
 			isReferenceTrait=true
 			name="iri"

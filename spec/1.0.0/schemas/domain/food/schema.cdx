@@ -13,7 +13,7 @@
 
 		<SchemaImport namespace="nutrition" reference=urn:cdx:sha256:60fcc8d6e3a6c6d43a2a6ae59d36c4b625bf4c739655615399744e6ce698f567 />
 
-		<SchemaImport namespace="tags" reference=urn:cdx:sha256:79f0baf3512b1d7c2730608a6796155017c30096f2f4ffde74b0deafc1eae775 />
+		<SchemaImport namespace="tags" reference=urn:cdx:sha256:864fb472fd89cb8024e9d3725203d2129185e39f375df5569b421353dbae9c98 />
 
 		<SchemaImport namespace="loc" reference=urn:cdx:sha256:df456110f9e2cb2b0524011e6fd6892f345dadc412a7b078699f9aab4fd5bf55 />
 

@@ -1,0 +1,24 @@
+<CompositionPackageManifest
+	author="Paperhat"
+	closureHash="PENDING-HASH"
+	copyright="Copyright 2026 Paperhat"
+	description="Composition-family schema package for graph-native output composition rooted in Document."
+	license="Apache-2.0"
+	packageName="paperhat-composition"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+>
+	<PackageDependency
+		packageName="paperhat-description"
+		closureHash="0dc413b5692c7be3b0de4cd130ca4108a0c05dcb9bac6c213231dd522db9c6f6"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-text"
+		closureHash="41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</CompositionPackageManifest>

@@ -1,6 +1,6 @@
 <VocabularyPackageManifest
 	author="Paperhat"
-	closureHash="9930f053f94e20525f28df2ba8f7e1fdd6b87c2729b294e52a87e1d48ec1a3de"
+	closureHash="b971b0d24cc238f08451e23f28507e9bf5d88338ff2722590988f626a78736ff"
 	copyright="Copyright 2026 Paperhat"
 	description="Units of measurement for electrical quantities."
 	license="Apache-2.0"

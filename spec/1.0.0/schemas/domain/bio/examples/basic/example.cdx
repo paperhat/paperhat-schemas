@@ -1,4 +1,4 @@
-<Bio id=urn:bio:owen-thomas title="About Owen Thomas" subject=urn:person:owen-thomas>
+<Bio id=urn:paperhat:bio:owen-thomas title="About Owen Thomas" subject=urn:paperhat:person:owen-thomas>
 	<narrative:Narrative>
 		<text:Paragraph>
 			Owen Thomas documents the design and development of human-centered semantic systems.

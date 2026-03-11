@@ -1,6 +1,6 @@
 <VocabularyPackageManifest
 	author="Paperhat"
-	closureHash="f35c837827a3abe8d243d8b52d30fc81096a4e6be1f70c86d6208ccd26579ed4"
+	closureHash="9cb60f900d8567f142abe87cf893df2bafc8f6922296c7a9e21cee1860372790"
 	copyright="Copyright 2026 Paperhat"
 	description="Units of measurement for plane angle."
 	license="Apache-2.0"

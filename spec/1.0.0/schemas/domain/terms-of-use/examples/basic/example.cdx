@@ -1,10 +1,10 @@
-<TermsOfUse id=urn:terms:recipe-library title="Recipe Library Terms Of Use">
+<TermsOfUse id=urn:paperhat:terms:recipe-library title="Recipe Library Terms Of Use">
 	<GoverningEntity target=urn:organization:recipe-library governingRole=$Owner />
 	<AppliesTo target=urn:service:recipe-library scopeKind=$Service />
-	<RelatedDocument target=urn:policy:privacy:recipe-library relationshipKind=$PairedWith />
-	<RelatedDocument target=urn:policy:cookie:recipe-library relationshipKind=$Supplements />
+	<RelatedDocument target=urn:paperhat:policy:privacy:recipe-library relationshipKind=$PairedWith />
+	<RelatedDocument target=urn:paperhat:policy:cookie:recipe-library relationshipKind=$Supplements />
 	<Definitions>
-		<term:TermEntry id=urn:term:service term="Service" key=~service bodyMode=$children>
+		<term:TermEntry id=urn:paperhat:term:service term="Service" key=~service bodyMode=$children>
 			<term:Sense>
 				The recipe library service and all directly related site materials.
 			</term:Sense>

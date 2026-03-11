@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="PENDING-HASH"
+	closureHash="d00f3a0f7a0f617d86c89a4bef15db737870cab26fc2f78da93474ec254488fd"
 	copyright="Copyright 2026 Paperhat"
 	description="A discrete media file or object with identity, such as an image, video, audio recording, or document file, carrying technical metadata about the asset itself."
 	license="Apache-2.0"

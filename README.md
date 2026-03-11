@@ -51,6 +51,18 @@ A schema package uses this structure:
 └── localizations/
 ```
 
+## Schema Identifier Policy
+
+Paperhat-authored schema vocabulary identifiers MUST use the `paperhat:` namespace.
+
+Paperhat-authored corpus entities and authored documents MUST use the `urn:paperhat:` namespace.
+
+`SchemaImport.reference` MUST remain `urn:cdx:sha256:<hex-digest>`.
+
+Authoritative policy file:
+
+- `IDENTIFIER_POLICY.md`
+
 ## Naming
 
 Repository package names currently use the `paperhat-` prefix for reusable Paperhat-owned schema packages.

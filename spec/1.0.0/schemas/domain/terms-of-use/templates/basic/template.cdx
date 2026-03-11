@@ -1,9 +1,9 @@
-<TermsOfUse id=urn:terms:example title="Terms Of Use Title">
+<TermsOfUse id=urn:paperhat:terms:example title="Terms Of Use Title">
 	<GoverningEntity target=urn:organization:example governingRole=$Owner />
 	<AppliesTo target=urn:service:example scopeKind=$Service />
-	<RelatedDocument target=urn:policy:privacy:example relationshipKind=$PairedWith />
+	<RelatedDocument target=urn:paperhat:policy:privacy:example relationshipKind=$PairedWith />
 	<Definitions>
-		<term:TermEntry id=urn:term:defined-term term="Defined Term" key=~definedTerm bodyMode=$children>
+		<term:TermEntry id=urn:paperhat:term:defined-term term="Defined Term" key=~definedTerm bodyMode=$children>
 			<term:Sense>
 				State the formal meaning of the defined term.
 			</term:Sense>

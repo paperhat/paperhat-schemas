@@ -1,0 +1,49 @@
+<Document id=urn:paperhat:composition:recipe-site:website realization=[$Website, $Ebook]>
+	<SchemaImports>
+		<SchemaImport namespace=desc reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
+		<SchemaImport namespace=text reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
+	</SchemaImports>
+	<text:Title>
+		Recipe Site Composition
+	</text:Title>
+	<desc:Description>
+		Composition root for a recipe site and ebook run.
+	</desc:Description>
+	<Import id=urn:paperhat:composition:import:project target=urn:paperhat:project:dharmesh-recipe-library importKind=$Document />
+	<Import id=urn:paperhat:composition:import:recipes target=urn:paperhat:collection:recipes importKind=$Collection />
+	<Import id=urn:paperhat:composition:import:about target=urn:paperhat:bio:about-dharmesh-gordhan importKind=$Document />
+	<Import id=urn:paperhat:composition:import:privacy target=urn:paperhat:legal:privacy-policy importKind=$Document />
+	<Artifact id=urn:paperhat:composition:artifact:home category=$Content realization=[$Website]>
+		<text:Title>
+			Home
+		</text:Title>
+		<Binding id=urn:paperhat:composition:binding:home-primary source=urn:paperhat:project:dharmesh-recipe-library view=urn:paperhat:view:project:home bindingIntent=$Primary realization=[$Website] />
+	</Artifact>
+	<Artifact id=urn:paperhat:composition:artifact:recipes category=$Collection realization=[$Website, $Ebook]>
+		<text:Title>
+			Recipes
+		</text:Title>
+		<Selection id=urn:paperhat:composition:selection:all-recipes source=urn:paperhat:composition:import:recipes selectionKind=$All />
+		<Collection id=urn:paperhat:composition:collection:featured members=[urn:paperhat:recipe:aloo-fry, urn:paperhat:recipe:shakshuka] organization=$Alphabetical>
+			<text:Title>
+				Featured Recipes
+			</text:Title>
+		</Collection>
+		<Binding id=urn:paperhat:composition:binding:recipe-cards source=urn:paperhat:composition:collection:featured view=urn:paperhat:view:recipe:card bindingIntent=$Summary realization=[$Website] />
+		<Binding id=urn:paperhat:composition:binding:recipe-full source=urn:paperhat:composition:collection:featured view=urn:paperhat:view:recipe:full bindingIntent=$Detail realization=[$Ebook] />
+	</Artifact>
+	<Artifact id=urn:paperhat:composition:artifact:about category=$Identity realization=[$Website]>
+		<text:Title>
+			About
+		</text:Title>
+		<Binding id=urn:paperhat:composition:binding:about-primary source=urn:paperhat:composition:import:about view=urn:paperhat:view:bio:about bindingIntent=$Primary realization=[$Website] />
+	</Artifact>
+	<Artifact id=urn:paperhat:composition:artifact:privacy category=$Policy realization=[$Website]>
+		<text:Title>
+			Privacy Policy
+		</text:Title>
+		<Binding id=urn:paperhat:composition:binding:privacy-primary source=urn:paperhat:composition:import:privacy view=urn:paperhat:view:policy:full bindingIntent=$Primary realization=[$Website] />
+	</Artifact>
+	<Relationship id=urn:paperhat:composition:relationship:home-references-recipes source=urn:paperhat:composition:artifact:home target=urn:paperhat:composition:artifact:recipes relationshipKind=$References weight=1 />
+	<Relationship id=urn:paperhat:composition:relationship:home-references-about source=urn:paperhat:composition:artifact:home target=urn:paperhat:composition:artifact:about relationshipKind=$References weight=1 />
+</Document>

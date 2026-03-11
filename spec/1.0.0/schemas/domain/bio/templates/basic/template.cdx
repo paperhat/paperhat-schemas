@@ -1,4 +1,4 @@
-<Bio id=urn:bio:example title="Example Bio" subject=urn:person:example>
+<Bio id=urn:paperhat:bio:example title="Example Bio" subject=urn:paperhat:person:example>
 	<narrative:Narrative>
 		<text:Paragraph>
 			Write the biography here.

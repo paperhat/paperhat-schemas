@@ -1,6 +1,6 @@
 <VocabularyPackageManifest
 	author="Paperhat"
-	closureHash="027d45c2c8b62a17d004d11ec9b1e95c49ecbcc80a66eddac727cb693e1c7c2c"
+	closureHash="325f7d00fcd42267e3a3c41087b4a5f2864f6642bb2b32e0b00230dd401ac0cf"
 	copyright="Copyright 2026 Paperhat"
 	description="Units of measurement for volume and capacity, including cooking measures."
 	license="Apache-2.0"

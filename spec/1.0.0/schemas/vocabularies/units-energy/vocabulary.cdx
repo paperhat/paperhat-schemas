@@ -1,5 +1,5 @@
 <TokenVocabulary
-	id=codex:vocabulary:units-energy
+	id=paperhat:vocabulary:units-energy
 	version="1.0.0"
 	title="Units of Energy and Power"
 	description="Units of measurement for energy, work, heat, and power."

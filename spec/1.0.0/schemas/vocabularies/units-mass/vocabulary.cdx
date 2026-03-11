@@ -1,5 +1,5 @@
 <TokenVocabulary
-	id=codex:vocabulary:units-mass
+	id=paperhat:vocabulary:units-mass
 	version="1.0.0"
 	title="Units of Mass"
 	description="Units of measurement for mass and weight."

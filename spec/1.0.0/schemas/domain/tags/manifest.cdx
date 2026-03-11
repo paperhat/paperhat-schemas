@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="7460ed89db9b5749b1be28962fbf1996092be3a59ab4e3c5a8b0e11afc9b48ab"
+	closureHash="c8bae75e8068cc05e3f31704fec12c990ea729c4b00c72a53652f031ffe424d9"
 	copyright="Copyright 2026 Paperhat"
 	description="An unordered set of keyword labels for categorisation and discovery."
 	license="Apache-2.0"

@@ -1,6 +1,6 @@
 <VocabularyPackageManifest
 	author="Paperhat"
-	closureHash="912ad8d2efba77acd16af68e6be0282b182393abbaf0b891a0d6cb1a6f9ebefe"
+	closureHash="4ff182c596d43ba3b7d61afbe3ee2f2c5ec3b8e3b12d8cdf0b2976c226e776a7"
 	copyright="Copyright 2026 Paperhat"
 	description="Units of measurement for mass and weight."
 	license="Apache-2.0"

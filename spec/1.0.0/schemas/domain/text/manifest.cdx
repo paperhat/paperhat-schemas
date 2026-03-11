@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="703472ba80a5f88685e7a6d604b16d31dfb06a81186c58bdd378aac55a53e897"
+	closureHash="36fc0dd91ce00a6d8caa47b4f17d88d766bf5833cafb9dfeb54c37af38c8aaa1"
 	copyright="Copyright 2026 Paperhat"
 	description="Reusable text primitives: title, teaser, and paragraph."
 	license="Apache-2.0"

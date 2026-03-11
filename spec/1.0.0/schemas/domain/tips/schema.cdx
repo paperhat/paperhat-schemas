@@ -23,7 +23,7 @@
 				<AllowsChildConcept conceptSelector="Tip" />
 			</ChildRules>
 
-			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
 		</ConceptDefinition>
 
 		<ConceptDefinition

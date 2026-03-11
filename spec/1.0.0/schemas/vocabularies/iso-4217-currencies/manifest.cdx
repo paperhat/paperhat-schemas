@@ -1,6 +1,6 @@
 <VocabularyPackageManifest
 	author="Paperhat"
-	closureHash="5d620fad0ede68d20a674391f417d2a81300d510771d97734a366bf18aef54fd"
+	closureHash="a70e8d2b9375b69b799362cba4033b58e799388b55cba0b5e6f99ec3843f2134"
 	copyright="Copyright 2026 Paperhat"
 	description="Active currency codes from ISO 4217."
 	license="Apache-2.0"

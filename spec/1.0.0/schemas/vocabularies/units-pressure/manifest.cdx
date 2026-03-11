@@ -1,6 +1,6 @@
 <VocabularyPackageManifest
 	author="Paperhat"
-	closureHash="63e4d60187d3428cc5bd5ca05fabe2441433cbeb9f12a7a720240c75e7178a7c"
+	closureHash="4551a491655e934e44c26a5276a4d7070bc75d539bc64ef1cedd5e9154fdad1a"
 	copyright="Copyright 2026 Paperhat"
 	description="Units of measurement for pressure and stress."
 	license="Apache-2.0"

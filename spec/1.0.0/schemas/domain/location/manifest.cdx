@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="9ac9e090e21d8accedafdf54b06ea5dd3e454d2730f95a76b11ec6945a0f340c"
+	closureHash="798b5e790d4bcf62880d1573b1bb39c0d35350862aa714b2899ec9ec9b696cfd"
 	copyright="Copyright 2026 Paperhat"
 	description="A named geographic or fictional location with optional administrative subdivisions."
 	license="Apache-2.0"

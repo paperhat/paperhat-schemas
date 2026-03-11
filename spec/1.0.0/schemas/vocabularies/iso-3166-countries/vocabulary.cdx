@@ -1,5 +1,5 @@
 <TokenVocabulary
-	id=codex:vocabulary:iso-3166
+	id=paperhat:vocabulary:iso-3166
 	version="1.0.0"
 	title="ISO 3166-1 Alpha-2 Country Codes"
 	description="Country and territory codes from ISO 3166-1 alpha-2."

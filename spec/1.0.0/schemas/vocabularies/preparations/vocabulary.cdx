@@ -1,7 +1,7 @@
 <TokenVocabulary
 	closedVocabulary=true
 	description="Culinary preparation techniques applied to ingredients before or during cooking."
-	id=codex:vocabulary:preparations
+	id=paperhat:vocabulary:preparations
 	title="Preparations"
 	version="1.0.0"
 >

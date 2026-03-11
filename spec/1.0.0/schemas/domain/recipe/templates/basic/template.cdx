@@ -1,10 +1,10 @@
-<Recipe id=urn:recipe:example>
+<Recipe id=urn:paperhat:recipe:example>
 	<text:Title>
 		Example Recipe Title
 	</text:Title>
 
 	<Ingredients>
-		<Ingredient food=urn:food:example />
+		<Ingredient food=urn:paperhat:food:example />
 	</Ingredients>
 
 	<Instructions>

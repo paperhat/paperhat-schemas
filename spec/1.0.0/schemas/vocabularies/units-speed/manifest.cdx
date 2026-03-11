@@ -1,6 +1,6 @@
 <VocabularyPackageManifest
 	author="Paperhat"
-	closureHash="0815c5ccfcc71ee2b67312c203be8ae73b9986afeea32f20a7290d2164182ea4"
+	closureHash="8e84ebb3151170117ac67c77a3c3010e4bb4caef35564bfb19e312b642238b28"
 	copyright="Copyright 2026 Paperhat"
 	description="Units of measurement for speed and velocity."
 	license="Apache-2.0"

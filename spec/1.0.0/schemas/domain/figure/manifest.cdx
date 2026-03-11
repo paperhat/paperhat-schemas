@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="cea306b97c99841a8c7ba6c0dd6a9488d5d821008970555e9b18dac21665da0b"
+	closureHash="54c326074b4d0e18669378bea85e188873a7a111de431a22d4bcdb12ac68c1d0"
 	copyright="Copyright 2026 Paperhat"
 	description="A captioned figure containing one or more media references. Supports rich titles via child concepts for Gloss span-bindings."
 	license="Apache-2.0"
@@ -12,13 +12,13 @@
 >
 	<PackageDependency
 		packageName="paperhat-media-reference"
-		closureHash="af7d5c9014f5caa1932c73b12617d277447b3ebdf10a305f7b215a75f917f7b7"
+		closureHash="d5c472233ddeb1b530167ac573f325321a893124b06e5841b5a38b73ce9c7a5f"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-text"
-		closureHash="703472ba80a5f88685e7a6d604b16d31dfb06a81186c58bdd378aac55a53e897"
+		closureHash="36fc0dd91ce00a6d8caa47b4f17d88d766bf5833cafb9dfeb54c37af38c8aaa1"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

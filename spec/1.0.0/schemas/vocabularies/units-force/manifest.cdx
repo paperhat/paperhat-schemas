@@ -1,6 +1,6 @@
 <VocabularyPackageManifest
 	author="Paperhat"
-	closureHash="7374237731510e7c513dd20a8bb1cdf861130e68526f020819672dc306ead9c0"
+	closureHash="e31e9908ed52f284d1055a7b9ae4014da1a5619d3585828bdb8994947f21ae72"
 	copyright="Copyright 2026 Paperhat"
 	description="Units of measurement for force."
 	license="Apache-2.0"

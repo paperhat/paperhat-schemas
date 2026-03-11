@@ -9,13 +9,13 @@
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=admonition reference=urn:cdx:sha256:421385f20c78fd60afcf0a272f4cb74438a6a9a946a9eb2bfb40284ab67f4838 />
+		<SchemaImport namespace=admonition reference=urn:cdx:sha256:1568c1b800c406511d6888d9a46759e5b53e4e4f227c9550df85fa8a65d670b8 />
 
 		<SchemaImport namespace=code reference=urn:cdx:sha256:f676d06cf578a8fa377b961fcd4d8e5676f8def5ba6b298eaee92f0d3614a890 />
 
 		<SchemaImport namespace=example reference=urn:cdx:sha256:70c45e812f5306b69dad783ea4c84546284dfaeeba6f1342918372e385da0cea />
 
-		<SchemaImport namespace=figure reference=urn:cdx:sha256:ed5c9a3ad8d594a063db5e178c8fafd22fc66800d00d15fb90454364da052e6a />
+		<SchemaImport namespace=figure reference=urn:cdx:sha256:26827833a1a91e8db46d3837d021eb0cd2f52c46c8072b2ae687fc7748456be3 />
 
 		<SchemaImport namespace=list reference=urn:cdx:sha256:9f94a5780eeab62a7ff88d7a3950e5436dbc906f0f1460f93c47fcc409d7730d />
 
@@ -23,7 +23,7 @@
 
 		<SchemaImport namespace=relation reference=urn:cdx:sha256:9dad41bb31175f1e64ba50c8864ee04f6da4d6486e6d08a0a5f934fffe84f7ff />
 
-		<SchemaImport namespace=text reference=urn:cdx:sha256:c62bfa251d5b7eb685cb3e1d65054a4cb5583860b29326678aed2982048e369d />
+		<SchemaImport namespace=text reference=urn:cdx:sha256:d2699fd88c3d11900f8e53067f6311da01343894717945dce051f17c6616ac4f />
 
 		<SchemaImport namespace=cite reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
 

@@ -1,5 +1,5 @@
 <TokenVocabulary
-	id=codex:vocabulary:units-speed
+	id=paperhat:vocabulary:units-speed
 	version="1.0.0"
 	title="Units of Speed"
 	description="Units of measurement for speed and velocity."

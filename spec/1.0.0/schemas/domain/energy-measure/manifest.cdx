@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="392e4c211161c4208255737065a9f9ef0baa03d31e9c07f1fb3d7d81a3a48c33"
+	closureHash="848084093ed551fd3646682487b1c2bc3018573d596e1df3966a4b3060be692f"
 	copyright="Copyright 2026 Paperhat"
 	description="A quantitative measurement of energy, work, heat, or power, with unit constrained to the units-energy vocabulary."
 	license="Apache-2.0"

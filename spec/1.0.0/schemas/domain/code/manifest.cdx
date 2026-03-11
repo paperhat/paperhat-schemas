@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="5a2701a0223b1e9b1ecf9d724fdac576ddb27289d9d17f5cd27ac692363d4713"
+	closureHash="f8ba0135730d0cdc0be5e7e714a8bdc1a4c3001ba6995d98254a79cd697f9935"
 	copyright="Copyright 2026 Paperhat"
 	description="Computing notation for text spans and blocks: inline code, keyboard input, sample output, variables, and code blocks."
 	license="Apache-2.0"

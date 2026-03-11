@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="PENDING-HASH"
+	closureHash="8234dd35d5bdcef6d96a3736f282823fefe5b268d90515c343c929a1f70b4e37"
 	copyright="Copyright 2026 Paperhat"
 	description="A storage and retrieval system for artifacts, such as a source code repository, document archive, package registry, or artifact store."
 	license="Apache-2.0"

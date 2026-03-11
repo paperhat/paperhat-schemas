@@ -1,6 +1,6 @@
 <VocabularyPackageManifest
 	author="Paperhat"
-	closureHash="cfd8808a6a385c59bf0d231c17bf349ff1e8fb752cdbb64cd1e316c32b53f802"
+	closureHash="2083c874cb75ea99cdac3da1533b483a8f49e80bbf1cbb804a4fa50ab92b17bb"
 	copyright="Copyright 2026 Paperhat"
 	description="Units of measurement for length, distance, and displacement."
 	license="Apache-2.0"

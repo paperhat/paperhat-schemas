@@ -1,5 +1,5 @@
 <TokenVocabulary
-	id=codex:vocabulary:units-volume
+	id=paperhat:vocabulary:units-volume
 	version="1.0.0"
 	title="Units of Volume"
 	description="Units of measurement for volume and capacity, including cooking measures."

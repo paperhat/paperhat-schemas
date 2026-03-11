@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="0000000000000000000000000000000000000000000000000000000000000000"
+	closureHash="e64aad110828ac21c5ff93d36069dd00a52a4e9254889e13e0a9ad7490f49232"
 	copyright="Copyright 2026 Paperhat"
 	description="Reusable glossary entry schema for concise defined terms and their definitions."
 	license="Apache-2.0"

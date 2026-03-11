@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="e0644542b191821180e7aad0976e4021ee3ad960be0cb650a11349580f5cf482"
+	closureHash="a5c784f1114edfc4584e0e960316c9aa7dfb62a20edde489b5e42fde04c84d71"
 	copyright="Copyright 2026 Paperhat"
 	description="A numeric rating on a defined scale."
 	license="Apache-2.0"

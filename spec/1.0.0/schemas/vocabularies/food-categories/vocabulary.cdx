@@ -1,7 +1,7 @@
 <TokenVocabulary
 	closedVocabulary=true
 	description="Broad culinary and nutritional categories for classifying foods and comestibles."
-	id=codex:vocabulary:food-categories
+	id=paperhat:vocabulary:food-categories
 	title="Food Categories"
 	version="1.0.0"
 >

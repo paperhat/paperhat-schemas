@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="6cf3b4727790702289833570fb6cb46bcf6e2bebe0fad83520216b60538fa773"
+	closureHash="efdc6e94ec893fb03eede9ac460db1e434245d1e9278ec6e50eb933bc282de38"
 	copyright="Copyright 2026 Paperhat"
 	description="A lexical term entry supporting simple glossary definitions through full dictionary entries with multiple senses, parts of speech, etymology, inflected forms, and semantic relations."
 	license="Apache-2.0"

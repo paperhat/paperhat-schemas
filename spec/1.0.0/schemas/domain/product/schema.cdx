@@ -9,7 +9,7 @@
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=desc reference=urn:cdx:sha256:011828a51c1e0956207698eae3cdad433acbf33711fece6e6b26c129cfad4188 />
+		<SchemaImport namespace=desc reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
 
 		<SchemaImport namespace=offer reference=urn:cdx:sha256:554d5ee6d5110916bf29f8d556330a10fd8981b69462b96b49619cc824aa9013 />
 
@@ -31,7 +31,7 @@
 
 		<SchemaImport namespace=nutrition reference=urn:cdx:sha256:c61007345cffcfed0a46ceaccb06cd4349c52af0bcca2c1e5bc33636a66e9fa1 />
 
-		<SchemaImport namespace=material reference=urn:cdx:sha256:22def4aa578da342ec4d5d216a5d0c24c6cae1d5f7c40c56ed8feb3fa5c20d1f />
+		<SchemaImport namespace=material reference=urn:cdx:sha256:4f288ad6ab6cd1a9c02b74cb01a2fd2bfa2526e1aa0f89e7db0c52dddb228412 />
 	</SchemaImports>
 
 	<ConceptDefinitions>

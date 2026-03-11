@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="7f60a626867d8008adb8b8414526601759539a037d040ff2d96699ab486785ff"
+	closureHash="b22b175328a5814c7026b94319964968c4a3f13f594ea2ff4e4b678e577b47bc"
 	copyright="Copyright 2026 Paperhat"
 	description="An unordered container for document metadata: authorship, descriptions, summaries, tags, audience, and other non-body information."
 	license="Apache-2.0"
@@ -12,61 +12,61 @@
 >
 	<PackageDependency
 		packageName="paperhat-work"
-		closureHash="90bc5c9658e63056858e6c23d42b4b85fe1fa90076306a8a406fba06db305e1b"
+		closureHash="03267f2a018d40c9671ff9e987ac09c10f6b79c705050a4ba3b01e294159c368"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-description"
-		closureHash="8a6c1a383e84796c18cb6c612ec676134930c3192dfd8bfe93bd0263cd8b5d65"
+		closureHash="2a0f7d96f2ae202d211282c9489f7e2adfe381c24fa8a414eede55250457fc8a"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-summary"
-		closureHash="ed5d197af39344fca4c606ad8e4e3e1a78a253e7687682d07b28232a0a806ed5"
+		closureHash="716aa48b4b4460762d44afd592de267803b395b1872035b01e9ad2e67293e2c4"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-tags"
-		closureHash="7460ed89db9b5749b1be28962fbf1996092be3a59ab4e3c5a8b0e11afc9b48ab"
+		closureHash="c8bae75e8068cc05e3f31704fec12c990ea729c4b00c72a53652f031ffe424d9"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-audience"
-		closureHash="5c594e7507da828801b4262505ca7f29096dc1398cfe4dcf6d0e769e1dda4e5d"
+		closureHash="e192824a1a7bbb2f4e0dc6a3a4b2342541e274963c299fe34507f6d12e907cdf"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-person"
-		closureHash="27060589a96c6da6e97aff4b9f99e2b1da03d7a7baf0d0975cb910c03e2dfef5"
+		closureHash="407ee47fbfa91d7a751d886fd23512b8a60a63b8b7b4aea2b606f9eddd35ab74"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-person-name"
-		closureHash="d22c4986f6f696f51e74f65e2dd26a8816c9e501e17d027beef08d9a898a9e8a"
+		closureHash="092779788e6b38975a9a3bd09ee045e349ced09d7d5fc0aef1a5b27044167496"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-contact-point"
-		closureHash="9e02926fb7fa310c44ecc6d3d3dcf540d96854175ed1f07e0782ac1a5a048b08"
+		closureHash="fe881dddebc868859e5c082ec46ea4663f47da9e2c19259a7d60ed7886bf26dc"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-identifier"
-		closureHash="404961f3ac5baaafcdbb455482e979e022270b90bf4b8698f4ae0382dd6c9fc9"
+		closureHash="92a41d386d392b5bee505fbca1425b2d3923888b63dcd0a80af5ef27074516d0"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-location"
-		closureHash="9ac9e090e21d8accedafdf54b06ea5dd3e454d2730f95a76b11ec6945a0f340c"
+		closureHash="798b5e790d4bcf62880d1573b1bb39c0d35350862aa714b2899ec9ec9b696cfd"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

@@ -1,7 +1,7 @@
 <TokenVocabulary
 	closedVocabulary=true
 	description="Units of measurement for time and duration."
-	id=codex:vocabulary:units-time
+	id=paperhat:vocabulary:units-time
 	title="Units of Time"
 	version="1.0.0"
 >

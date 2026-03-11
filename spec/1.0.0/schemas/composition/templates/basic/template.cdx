@@ -1,0 +1,20 @@
+<Document id=urn:paperhat:composition:example:document realization=[$Website]>
+	<SchemaImports>
+		<SchemaImport namespace=desc reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
+		<SchemaImport namespace=text reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
+	</SchemaImports>
+	<text:Title>
+		Composition Title
+	</text:Title>
+	<desc:Description>
+		Composition description.
+	</desc:Description>
+	<Import id=urn:paperhat:composition:import:source target=urn:paperhat:example:source importKind=$Document />
+	<Artifact id=urn:paperhat:composition:artifact:primary category=$Content realization=[$Website]>
+		<text:Title>
+			Primary Artifact
+		</text:Title>
+		<Selection id=urn:paperhat:composition:selection:primary source=urn:paperhat:composition:import:source selectionKind=$Explicit rule="Primary selection rule" />
+		<Binding id=urn:paperhat:composition:binding:primary source=urn:paperhat:composition:selection:primary view=urn:paperhat:view:example:primary bindingIntent=$Primary realization=[$Website] />
+	</Artifact>
+</Document>

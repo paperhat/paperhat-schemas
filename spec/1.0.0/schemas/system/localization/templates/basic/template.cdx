@@ -1,6 +1,6 @@
 [Minimal localization bundle. One entry per schema element.]
 <LocalizationBundle
-	schema=codex:FAMILY:SCHEMA_NAME
+	schema=paperhat:FAMILY:SCHEMA_NAME
 	schemaVersion="1.0.0"
 	language=$en
 >

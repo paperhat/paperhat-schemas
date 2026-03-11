@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="c960b436a0aad4f9ef35d6852b053fde34343ca3ae20e9f3633296b1253c88b0"
+	closureHash="b7bc700b85ade8853f58f01fe2f153cd441df70c3d5f4696395271c5cd45e8c4"
 	copyright="Copyright 2026 Paperhat"
 	description="A short-to-medium-length prose composition expressing the author's perspective on a single subject."
 	license="Apache-2.0"
@@ -12,19 +12,19 @@
 >
 	<PackageDependency
 		packageName="paperhat-document-metadata"
-		closureHash="7f60a626867d8008adb8b8414526601759539a037d040ff2d96699ab486785ff"
+		closureHash="b22b175328a5814c7026b94319964968c4a3f13f594ea2ff4e4b678e577b47bc"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-narrative"
-		closureHash="cd5fc4db03887984608f811a66d9c77e473a14d63f360d3a4c0324d9c7ad7d20"
+		closureHash="7032b0a7dd73d7cac4377da8b12e01ccb506aab3f07b38702964528c0b7d26bb"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-notes"
-		closureHash="22c5d0faccd4a541f902916b0b479d5d3417b4e4412f72dd65e24d7650ffae1c"
+		closureHash="fc81a3ba3e3fbf84149c3668a2c29fa3fc9cfad7dd93d9e2cdffa96ac528d19e"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

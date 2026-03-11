@@ -1,6 +1,6 @@
 <VocabularyPackageManifest
 	author="Paperhat"
-	closureHash="011465929848f6510544918aa73f1fa77ca27180d4266fc4a2e17abf463d14c0"
+	closureHash="bb6a50083c0eb73ef67dc8045b7f44b264fc6544ba26a5d664bd2e210c01b449"
 	copyright="Copyright 2026 Paperhat"
 	description="Units of measurement for time and duration."
 	license="Apache-2.0"

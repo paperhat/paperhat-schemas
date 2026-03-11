@@ -1,4 +1,4 @@
-<Recipe id=urn:recipe:soft-scrambled-eggs>
+<Recipe id=urn:paperhat:recipe:soft-scrambled-eggs>
 	<text:Title>
 		Soft Scrambled Eggs
 	</text:Title>
@@ -24,16 +24,18 @@
 	</Times>
 
 	<Ingredients>
-		<Ingredient food=urn:food:egg />
+		<Ingredient food=urn:paperhat:food:egg>
+			<measure:Measure value=4 unit=$Item />
+		</Ingredient>
 
 		<IngredientSet>
 			<text:Title>
 				To serve
 			</text:Title>
 
-			<Ingredient food=urn:food:chive optional=true />
+			<Ingredient food=urn:paperhat:food:chive optional=true />
 
-			<Ingredient food=urn:food:black-pepper toTaste=true />
+			<Ingredient food=urn:paperhat:food:black-pepper toTaste=true />
 		</IngredientSet>
 	</Ingredients>
 

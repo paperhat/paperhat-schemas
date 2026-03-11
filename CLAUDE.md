@@ -24,6 +24,16 @@ Model semantic truth first.
 
 Do not create page-shaped, widget-shaped, or presentation-shaped schemas when a semantic schema or composed structure already covers the need.
 
+## Identifier Rule
+
+Paperhat-authored schema vocabulary identifiers MUST use the `paperhat:` namespace.
+
+Paperhat-authored corpus entities and authored documents MUST use the `urn:paperhat:` namespace.
+
+`SchemaImport.reference` MUST remain `urn:cdx:sha256:<hex-digest>`.
+
+Read `/Users/guy/Workspace/@paperhat/specifications/paperhat-schemas/IDENTIFIER_POLICY.md` before changing schema identifiers.
+
 ## Package Boundary Rule
 
 These schemas are universal. They are not Lexis-specific. Do not introduce `lexis-` package naming or Lexis-owned semantics into this repository.

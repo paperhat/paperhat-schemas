@@ -1,6 +1,6 @@
 <VocabularyPackageManifest
 	author="Paperhat"
-	closureHash="48020ecadc20d3f7afe1b3b6d3d53ec16fad4b2923c035d8b8836c20184df6c0"
+	closureHash="3d4e5ebfb46cfe1e16efcf8b3c760fd0728a62b33fd1fe98a0d51fb565cd775f"
 	copyright="Copyright 2026 Paperhat"
 	description="Units of measurement for energy, work, heat, and power."
 	license="Apache-2.0"

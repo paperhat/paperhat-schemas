@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="48be7fba6defcfd821475e49e9fcecd053957bc5183881d89dfae2abcfd6fafc"
+	closureHash="3768d973b323057c03519758c40154a67614b52534ce6f32e3014f640a45db03"
 	copyright="Copyright 2026 Paperhat"
 	description="A currency-qualified monetary value."
 	license="Apache-2.0"

@@ -1,6 +1,6 @@
 <VocabularyPackageManifest
 	author="Paperhat"
-	closureHash="1768e3d740e6172f7123c7984c56c702e60b705809260b7579a8a9299adb62b3"
+	closureHash="631769e39d51202c9e16f9b9fe2e0bbe337ea1fbb50e761768ba9173b73f3e97"
 	copyright="Copyright 2026 Paperhat"
 	description="Units of measurement for frequency and periodic rate."
 	license="Apache-2.0"

@@ -11,13 +11,15 @@
 	<SchemaImports>
 		<SchemaImport namespace="audience" reference=urn:cdx:sha256:eeb4cfc2a3574d6de35e3cfa7efd3daa750ffacc91c57ca046b9d1a2da903c43 />
 
-		<SchemaImport namespace="desc" reference=urn:cdx:sha256:011828a51c1e0956207698eae3cdad433acbf33711fece6e6b26c129cfad4188 />
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
 
-		<SchemaImport namespace="equip" reference=urn:cdx:sha256:12380e375b0a83b6860e194e19b6a90ad1e827d92b1ebde69ef5cd7cb10b8124 />
+		<SchemaImport namespace="equip" reference=urn:cdx:sha256:319e6b36210107d34418e6ca522a2ed97cb2a0a7c01d0e197ca27d1460074f40 />
 
-		<SchemaImport namespace="food" reference=urn:cdx:sha256:65a0e32809863dc325ab8f624dc46608be6444526e6ae8750c70cfa788ebd1b5 />
+		<SchemaImport namespace="food" reference=urn:cdx:sha256:bb75c0209718f294c52783f23ad585ce0ae3ff9ca1539350350b23ab1e26bc0a />
 
 		<SchemaImport namespace="massmeasure" reference=urn:cdx:sha256:97d990dfd254f4506ddbbee2ac3a2d2e73f99430980f41b568f7eced111b7cc7 />
+
+		<SchemaImport namespace="measure" reference=urn:cdx:sha256:c39ffedc2e8321d6351ba3743c8d66abd10d51c005e259a3d01cc6334593207b />
 
 		<SchemaImport namespace="notes" reference=urn:cdx:sha256:5169d4469cf2f181b23bfee5510652073ead5e1c6871486dba219bfb6c2b3a2b />
 
@@ -29,7 +31,7 @@
 
 		<SchemaImport namespace="timemeasure" reference=urn:cdx:sha256:d2cce1cba825d67e78dc44fd1249b5f662fab761b776536272a4a44d1ec97d4b />
 
-		<SchemaImport namespace="tips" reference=urn:cdx:sha256:1cba994944e6323df80438b08425c719db42000fe4b040b76b966610182f632a />
+		<SchemaImport namespace="tips" reference=urn:cdx:sha256:7f7d1c9f22526e98af2d97038ebb6f245c5030870d4904e05d553fb617ecb04d />
 
 		<SchemaImport namespace="volumemeasure" reference=urn:cdx:sha256:54cd771145ce25e43cbe318ab6e97af5457f69d4abacee7edb2366265c019f75 />
 
@@ -118,6 +120,8 @@
 			</TraitRules>
 
 			<ChildRules>
+				<AllowsChildConcept conceptSelector="measure:Measure" max=1 />
+
 				<AllowsChildConcept conceptSelector="massmeasure:MassMeasure" max=1 />
 
 				<AllowsChildConcept conceptSelector="volumemeasure:VolumeMeasure" max=1 />
@@ -240,7 +244,7 @@
 				<AllowsChildConcept conceptSelector="IngredientSet" />
 			</ChildRules>
 
-			<CollectionRules allowsDuplicates=false ordering=$Unordered />
+			<CollectionRules allowsDuplicates=true ordering=$Unordered />
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -259,7 +263,7 @@
 				<AllowsChildConcept conceptSelector="Ingredient" min=1 />
 			</ChildRules>
 
-			<CollectionRules allowsDuplicates=false ordering=$Unordered />
+			<CollectionRules allowsDuplicates=true ordering=$Unordered />
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -283,6 +287,8 @@
 			</TraitRules>
 
 			<ChildRules>
+				<AllowsChildConcept conceptSelector="measure:Measure" max=1 />
+
 				<AllowsChildConcept conceptSelector="massmeasure:MassMeasure" max=1 />
 
 				<AllowsChildConcept conceptSelector="volumemeasure:VolumeMeasure" max=1 />
@@ -303,7 +309,7 @@
 				<AllowsChildConcept conceptSelector="equip:Equipment" min=1 />
 			</ChildRules>
 
-			<CollectionRules allowsDuplicates=false ordering=$Unordered />
+			<CollectionRules allowsDuplicates=true ordering=$Unordered />
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -320,7 +326,7 @@
 				<AllowsChildConcept conceptSelector="Step" min=1 />
 			</ChildRules>
 
-			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -352,7 +358,7 @@
 				<AllowsChildConcept conceptSelector="ServingSuggestion" min=1 />
 			</ChildRules>
 
-			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
 		</ConceptDefinition>
 
 		<ConceptDefinition

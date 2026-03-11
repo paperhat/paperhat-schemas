@@ -1,5 +1,5 @@
 <TokenVocabulary
-	id=codex:vocabulary:e164
+	id=paperhat:vocabulary:e164
 	version="1.0.0"
 	title="E.164 Country Calling Codes"
 	description="International telephone country calling codes from ITU-T E.164."

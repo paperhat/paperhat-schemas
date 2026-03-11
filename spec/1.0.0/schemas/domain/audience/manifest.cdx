@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="5c594e7507da828801b4262505ca7f29096dc1398cfe4dcf6d0e769e1dda4e5d"
+	closureHash="e192824a1a7bbb2f4e0dc6a3a4b2342541e274963c299fe34507f6d12e907cdf"
 	copyright="Copyright 2026 Paperhat"
 	description="A target audience described by demographic criteria such as age range, geographic area, and audience type."
 	license="Apache-2.0"

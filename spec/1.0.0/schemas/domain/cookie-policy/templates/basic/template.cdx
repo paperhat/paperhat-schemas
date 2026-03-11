@@ -1,9 +1,9 @@
-<CookiePolicy id=urn:policy:cookie:example title="Cookie Policy Title">
+<CookiePolicy id=urn:paperhat:policy:cookie:example title="Cookie Policy Title">
 	<GoverningEntity target=urn:organization:example governingRole=$Owner />
 	<AppliesTo target=urn:service:example scopeKind=$Service />
-	<RelatedDocument target=urn:policy:privacy:example relationshipKind=$PairedWith />
+	<RelatedDocument target=urn:paperhat:policy:privacy:example relationshipKind=$PairedWith />
 	<Definitions>
-		<term:TermEntry id=urn:term:defined-cookie-term term="Defined Cookie Term" key=~definedCookieTerm bodyMode=$children>
+		<term:TermEntry id=urn:paperhat:term:defined-cookie-term term="Defined Cookie Term" key=~definedCookieTerm bodyMode=$children>
 			<term:Sense>
 				State the formal meaning of the cookie-related term.
 			</term:Sense>

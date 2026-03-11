@@ -1,6 +1,6 @@
 <LexisRepositoryManifest
 	author="Paperhat"
-	closureHash="05394398bfaf69feecdcf8883e04ab4d56620e551ace5d74d771741c6703f68e"
+	closureHash="061ab48c7773207564280357cb417ec6a40bdcd7d9919b5e4a056c260f1270c9"
 	copyright="Copyright 2026 Paperhat"
 	description="Paperhat schema repository. Contains universal schema packages, behavior definitions, and reference vocabularies consumed by Paperhat systems."
 	license="Apache-2.0"
@@ -49,10 +49,9 @@
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-foreign-term" packagePath="spec/1.0.0/schemas/domain/foreign-term" />
 
-	<RepositoryPackageEntry packageFamily="domain" (packageName="paperhat-geographic-location" packagePath="spec/1.0.0/schemas/domain/geographic-location" />
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-geographic-location" packagePath="spec/1.0.0/schemas/domain/geographic-location" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-glossary" packagePath="spec/1.0.0/schemas/domain/glossary" />
-)
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-identifier" packagePath="spec/1.0.0/schemas/domain/identifier" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-jurisdiction" packagePath="spec/1.0.0/schemas/domain/jurisdiction" />

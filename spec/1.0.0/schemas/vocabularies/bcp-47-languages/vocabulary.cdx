@@ -1,5 +1,5 @@
 <TokenVocabulary
-	id=codex:vocabulary:bcp-47-languages
+	id=paperhat:vocabulary:bcp-47-languages
 	version="1.0.0"
 	title="BCP 47 Language Tags"
 	description="Language identification tags from IETF BCP 47 (RFC 5646)."

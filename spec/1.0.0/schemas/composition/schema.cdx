@@ -1,0 +1,344 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Composition-family schema for graph-native output composition rooted in Document."
+	id=paperhat:composition:document
+	namespace="composition"
+	title="Composition Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace=desc reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
+
+		<SchemaImport namespace=text reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:composition:document:Document
+			name="Document"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Title" min=1 max=1 />
+
+				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
+
+				<AllowsChildConcept conceptSelector="Import" min=1 />
+
+				<AllowsChildConcept conceptSelector="Artifact" min=1 />
+
+				<AllowsChildConcept conceptSelector="Relationship" />
+
+				<AllowsChildConcept conceptSelector="Condition" />
+			</ChildRules>
+
+			<TraitRules>
+				<AllowsTrait name="realization" />
+			</TraitRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:composition:document:Import
+			name="Import"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="target" />
+
+				<RequiresTrait name="importKind" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:composition:document:Artifact
+			name="Artifact"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Title" max=1 />
+
+				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
+
+				<AllowsChildConcept conceptSelector="Selection" />
+
+				<AllowsChildConcept conceptSelector="Collection" />
+
+				<AllowsChildConcept conceptSelector="Binding" />
+			</ChildRules>
+
+			<TraitRules>
+				<RequiresTrait name="category" />
+
+				<AllowsTrait name="realization" />
+
+				<AllowsTrait name="priority" />
+
+				<AllowsTrait name="audience" />
+			</TraitRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:composition:document:Selection
+			name="Selection"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="source" />
+
+				<RequiresTrait name="selectionKind" />
+
+				<AllowsTrait name="rule" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:composition:document:Collection
+			name="Collection"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Title" max=1 />
+			</ChildRules>
+
+			<TraitRules>
+				<RequiresTrait name="members" />
+
+				<AllowsTrait name="organization" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:composition:document:Binding
+			name="Binding"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="source" />
+
+				<RequiresTrait name="view" />
+
+				<AllowsTrait name="bindingIntent" />
+
+				<AllowsTrait name="realization" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:composition:document:Relationship
+			name="Relationship"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="source" />
+
+				<RequiresTrait name="target" />
+
+				<RequiresTrait name="relationshipKind" />
+
+				<AllowsTrait name="weight" />
+
+				<AllowsTrait name="condition" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:composition:document:Condition
+			name="Condition"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="expression" />
+
+				<RequiresTrait name="effect" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$List<$EnumeratedToken>
+			id=paperhat:composition:document:trait:realization
+			name="realization"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Website, $Ebook, $PrintManuscript, $AudioProgram, $TabularExport] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$IriReference
+			id=paperhat:composition:document:trait:target
+			name="target"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:composition:document:trait:importKind
+			name="importKind"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Document, $Entity, $Collection, $Schema, $Repository] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:composition:document:trait:category
+			name="category"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Content, $Collection, $Index, $Policy, $Identity, $Support, $Input, $Summary, $History, $Statistics, $Inventory, $Transaction] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=paperhat:composition:document:trait:priority
+			name="priority"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$IriReference
+			id=paperhat:composition:document:trait:audience
+			name="audience"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$IriReference
+			id=paperhat:composition:document:trait:source
+			name="source"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:composition:document:trait:selectionKind
+			name="selectionKind"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$All, $Explicit, $Tagged, $Referenced, $Related] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:composition:document:trait:rule
+			name="rule"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$List<$IriReference>
+			id=paperhat:composition:document:trait:members
+			name="members"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:composition:document:trait:organization
+			name="organization"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Ordered, $Unordered, $Chronological, $Alphabetical, $Hierarchical] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$IriReference
+			id=paperhat:composition:document:trait:view
+			name="view"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:composition:document:trait:bindingIntent
+			name="bindingIntent"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Primary, $Summary, $Detail, $Form, $Index] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:composition:document:trait:relationshipKind
+			name="relationshipKind"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$References, $Includes, $Groups, $Precedes, $Follows, $Summarizes, $DerivesFrom, $BelongsTo, $Governs, $Supports, $Instantiates, $AlternatesWith] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=paperhat:composition:document:trait:weight
+			name="weight"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$IriReference
+			id=paperhat:composition:document:trait:condition
+			name="condition"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:composition:document:trait:expression
+			name="expression"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:composition:document:trait:effect
+			name="effect"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Include, $Exclude, $Substitute, $Activate, $Group] />
+			</AllowedValues>
+		</TraitDefinition>
+	</TraitDefinitions>
+</Schema>

@@ -9,7 +9,7 @@
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace="desc" reference=urn:cdx:sha256:011828a51c1e0956207698eae3cdad433acbf33711fece6e6b26c129cfad4188 />
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
 
 		<SchemaImport namespace="nutrition" reference=urn:cdx:sha256:c61007345cffcfed0a46ceaccb06cd4349c52af0bcca2c1e5bc33636a66e9fa1 />
 
@@ -17,7 +17,7 @@
 
 		<SchemaImport namespace="loc" reference=urn:cdx:sha256:69ebdc66422b5962b2521ef49b174550c9b45c369ddd60c9967699566c0b16f0 />
 
-		<SchemaImport namespace="sensory" reference=urn:cdx:sha256:d00de1b8dfa3ed02fdee8a8a7aaff5d174317579f954672fb062e1b7004e71f9 />
+		<SchemaImport namespace="sensory" reference=urn:cdx:sha256:9356c072581fa0447bfdd5bb98dc49acf89520c8ef1c4d069dd3aa1e012dcfd4 />
 	</SchemaImports>
 
 	<ConceptDefinitions>

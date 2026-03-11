@@ -1,7 +1,7 @@
-<PrivacyPolicy id=urn:policy:privacy:example title="Privacy Policy Title">
+<PrivacyPolicy id=urn:paperhat:policy:privacy:example title="Privacy Policy Title">
 	<GoverningEntity target=urn:organization:example governingRole=$Owner />
 	<AppliesTo target=urn:service:example scopeKind=$Service />
-	<RelatedDocument target=urn:terms:example relationshipKind=$PairedWith />
+	<RelatedDocument target=urn:paperhat:terms:example relationshipKind=$PairedWith />
 	<Controller target=urn:organization:example controllerKind=$Primary />
 	<DataCollection>
 		<text:Paragraph>

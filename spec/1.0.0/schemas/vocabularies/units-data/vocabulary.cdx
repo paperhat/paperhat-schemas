@@ -1,5 +1,5 @@
 <TokenVocabulary
-	id=codex:vocabulary:units-data
+	id=paperhat:vocabulary:units-data
 	version="1.0.0"
 	title="Units of Digital Data"
 	description="Units of measurement for digital data storage and transfer rate."

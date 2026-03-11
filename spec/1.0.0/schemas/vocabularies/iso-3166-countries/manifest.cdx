@@ -1,6 +1,6 @@
 <VocabularyPackageManifest
 	author="Paperhat"
-	closureHash="2099f16c97008a0f81bd65baeec1947a7e59f3efd4a64b6a4035cfaadbdf82df"
+	closureHash="c49432277e4f70d8af2b4383a8a1f3faf418f04d840a2bb30f89b830209083f3"
 	copyright="Copyright 2026 Paperhat"
 	description="Country and territory codes from ISO 3166-1 alpha-2."
 	license="Apache-2.0"

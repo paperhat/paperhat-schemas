@@ -1,5 +1,5 @@
 <TokenVocabulary
-	id=codex:vocabulary:units-pressure
+	id=paperhat:vocabulary:units-pressure
 	version="1.0.0"
 	title="Units of Pressure"
 	description="Units of measurement for pressure and stress."

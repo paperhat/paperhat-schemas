@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="cbf717eb12f675d50fff56524cd8d437d6ec098cbcf36c1d9ff63b5aab00ced3"
+	closureHash="e832c24fb25a5efc3d741a1aee125dbc763ec51eb37969d453e5235a9fa1a12d"
 	copyright="Copyright 2026 Paperhat"
 	description="A structured bibliographic citation with ordered contributors (persons or organizations), publication metadata, and identifiers."
 	license="Apache-2.0"
@@ -12,25 +12,25 @@
 >
 	<PackageDependency
 		packageName="paperhat-person"
-		closureHash="27060589a96c6da6e97aff4b9f99e2b1da03d7a7baf0d0975cb910c03e2dfef5"
+		closureHash="407ee47fbfa91d7a751d886fd23512b8a60a63b8b7b4aea2b606f9eddd35ab74"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-organization"
-		closureHash="396bea1eb781bc5cde2a36e1334e910af8cf62959ccc76bdb04c0799218e6a96"
+		closureHash="9ea1d16959e5a68cf73b121803ff8a77313cf7e3fc41e94b8a1b9b9af92da364"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-identifier"
-		closureHash="404961f3ac5baaafcdbb455482e979e022270b90bf4b8698f4ae0382dd6c9fc9"
+		closureHash="92a41d386d392b5bee505fbca1425b2d3923888b63dcd0a80af5ef27074516d0"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-reference"
-		closureHash="c4dcd4ef6b6853cb4b9278f6174e531fa1ee52e95ee299f876c727c8c80601cd"
+		closureHash="ae87f8ee559588782353c60fc11c843b640e2625d42ceb56a5798cb21345819b"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

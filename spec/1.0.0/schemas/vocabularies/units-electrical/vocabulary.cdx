@@ -1,5 +1,5 @@
 <TokenVocabulary
-	id=codex:vocabulary:units-electrical
+	id=paperhat:vocabulary:units-electrical
 	version="1.0.0"
 	title="Units of Electrical Measurement"
 	description="Units of measurement for electrical quantities."

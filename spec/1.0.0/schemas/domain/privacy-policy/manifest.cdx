@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="1d42d28aaf8f5c52a139f1c601a06bde7d66337f9f373236de45474adc655131"
+	closureHash="79dd151cff456e4cf231f95378ce8e4f24280a498f00e9c79344b129f8680ba6"
 	copyright="Copyright 2026 Paperhat"
 	description="A structured privacy policy document defining controllers, collection, use, sharing, retention, rights, and privacy contact information."
 	license="Apache-2.0"
@@ -12,43 +12,43 @@
 >
 	<PackageDependency
 		packageName="paperhat-document-metadata"
-		closureHash="7f60a626867d8008adb8b8414526601759539a037d040ff2d96699ab486785ff"
+		closureHash="b22b175328a5814c7026b94319964968c4a3f13f594ea2ff4e4b678e577b47bc"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-jurisdiction"
-		closureHash="62c2a4021c878aca795cba7eaea0a8e561af5716550635051ee578c10eb87d35"
+		closureHash="d41e824916e78824e2092576e198069aa55695ec5a74ade740ab35a0aeacad10"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-contact-point"
-		closureHash="9e02926fb7fa310c44ecc6d3d3dcf540d96854175ed1f07e0782ac1a5a048b08"
+		closureHash="fe881dddebc868859e5c082ec46ea4663f47da9e2c19259a7d60ed7886bf26dc"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-text"
-		closureHash="703472ba80a5f88685e7a6d604b16d31dfb06a81186c58bdd378aac55a53e897"
+		closureHash="36fc0dd91ce00a6d8caa47b4f17d88d766bf5833cafb9dfeb54c37af38c8aaa1"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-list"
-		closureHash="37316dfe7f2d350765a454f11b475d85a7bf5c09a7b89f0398418725a86ea088"
+		closureHash="783b2977c16536499d4f21a85438f33bf25c301aa502ec78ee4cd6cb143f60a3"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-section"
-		closureHash="9c49168789d463f8f021f890afca78b78044f0b02de75dd724e286faeaf8704a"
+		closureHash="8c2ee0e20b56f5e4c8d007f1a5f561d790053ddb34f7ddb2e1b393f7b56c9008"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-notes"
-		closureHash="22c5d0faccd4a541f902916b0b479d5d3417b4e4412f72dd65e24d7650ffae1c"
+		closureHash="fc81a3ba3e3fbf84149c3668a2c29fa3fc9cfad7dd93d9e2cdffa96ac528d19e"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

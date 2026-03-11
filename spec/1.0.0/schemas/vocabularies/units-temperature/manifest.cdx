@@ -1,6 +1,6 @@
 <VocabularyPackageManifest
 	author="Paperhat"
-	closureHash="b2bc9028161bc62a046798786c085a29161c5ca7ae3e7b6ed999e21f2e0a25de"
+	closureHash="0b2a81272ea6f492494e25cd85b82f213df33139d26dd0c799ea8e39dfa35dd3"
 	copyright="Copyright 2026 Paperhat"
 	description="Units of measurement for temperature."
 	license="Apache-2.0"

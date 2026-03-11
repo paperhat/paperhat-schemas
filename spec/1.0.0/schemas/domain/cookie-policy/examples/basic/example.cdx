@@ -1,9 +1,9 @@
-<CookiePolicy id=urn:policy:cookie:recipe-library title="Recipe Library Cookie Policy">
+<CookiePolicy id=urn:paperhat:policy:cookie:recipe-library title="Recipe Library Cookie Policy">
 	<GoverningEntity target=urn:organization:recipe-library governingRole=$Owner />
 	<AppliesTo target=urn:service:recipe-library scopeKind=$Service />
-	<RelatedDocument target=urn:policy:privacy:recipe-library relationshipKind=$PairedWith />
+	<RelatedDocument target=urn:paperhat:policy:privacy:recipe-library relationshipKind=$PairedWith />
 	<Definitions>
-		<term:TermEntry id=urn:term:cookie term="Cookie" key=~cookie bodyMode=$children>
+		<term:TermEntry id=urn:paperhat:term:cookie term="Cookie" key=~cookie bodyMode=$children>
 			<term:Sense>
 				A small browser-stored value used to support the service.
 			</term:Sense>

@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="90c2261ca73743a35d39553023e2f788063f3398460b26709b1903a81e9cae4a"
+	closureHash="e1a276c55f85d16243ba657044acf33dbce1f1f29a6b2d12ae02c8d74a149b65"
 	copyright="Copyright 2026 Paperhat"
 	description="RFC 2119 specification schema for authoring formal specifications in Codex. Supports the full RFC 2119 requirement modality keyword set."
 	license="Apache-2.0"
@@ -10,63 +10,83 @@
 	requiredCodexVersion=">=1.0.0 <2.0.0"
 	requiredLexisVersion=">=1.0.0 <2.0.0"
 >
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+)
 	<PackageDependency
 		packageName="paperhat-citation"
-		closureHash="cbf717eb12f675d50fff56524cd8d437d6ec098cbcf36c1d9ff63b5aab00ced3"
+		closureHash="e832c24fb25a5efc3d741a1aee125dbc763ec51eb37969d453e5235a9fa1a12d"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-admonition"
-		closureHash="1d9c6ecd481869d111748a9329e539c9e1745b32e1aceb1b41b8fd957980300b"
+		closureHash="740f07045c3f877359e88b1eaf2f45422630c045ed2980402ba6c218c9137788"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-code"
-		closureHash="5a2701a0223b1e9b1ecf9d724fdac576ddb27289d9d17f5cd27ac692363d4713"
+		closureHash="f8ba0135730d0cdc0be5e7e714a8bdc1a4c3001ba6995d98254a79cd697f9935"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-example"
-		closureHash="6294de377882a55ab96826d682cf924d66efa0b4503b3c6b4689123c546898ae"
+		closureHash="c6bc1ac31f816d1b6f766e65383473e70e630ca504fea5fcbb544b7cf7090723"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-figure"
-		closureHash="cea306b97c99841a8c7ba6c0dd6a9488d5d821008970555e9b18dac21665da0b"
+		closureHash="54c326074b4d0e18669378bea85e188873a7a111de431a22d4bcdb12ac68c1d0"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-list"
-		closureHash="37316dfe7f2d350765a454f11b475d85a7bf5c09a7b89f0398418725a86ea088"
+		closureHash="783b2977c16536499d4f21a85438f33bf25c301aa502ec78ee4cd6cb143f60a3"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-specification-foundation"
-		closureHash="a0f9f1c1cf49c852148f6e5a4a2aa97ab28950d7ca4bbd7d1cce63fca9e37e24"
+		closureHash="4e0f8778e967b88b8ddb718fa5bf17d96668467cfee19540bed2d9e7e979caad"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-relation"
-		closureHash="e8512ed64a18415445b095f9dffb8dfaa6938d97f80c0b667941ada76a627342"
+		closureHash="bdd7d7be63424378fbe1014314c66d53b8f8ceeb23a3390b9cfbc78bc39ad487"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
-		(packageName="paperhat-text"
-		closureHash="703472ba80a5f88685e7a6d604b16d31dfb06a81186c58bdd378aac55a53e897"
+		packageName="paperhat-text"
+		closureHash="36fc0dd91ce00a6d8caa47b4f17d88d766bf5833cafb9dfeb54c37af38c8aaa1"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-glossary"
-		closureHash="0000000000000000000000000000000000000000000000000000000000000000"
+		closureHash="e64aad110828ac21c5ff93d36069dd00a52a4e9254889e13e0a9ad7490f49232"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
-)</DomainPackageManifest>
+</DomainPackageManifest>

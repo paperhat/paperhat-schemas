@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="c8af233da8cc7516971f545cb4a01fd0eaa050d78ae4c82f1722790b13d77322"
+	closureHash="df57f4bf14337d34484858397ff1b78cbf83620571c7487b60273fa2196743ec"
 	copyright="Copyright 2026 Paperhat"
 	description="Nutritional facts per serving, including calories, macronutrients, and sodium."
 	license="Apache-2.0"
@@ -12,19 +12,19 @@
 >
 	<PackageDependency
 		packageName="paperhat-energy-measure"
-		closureHash="392e4c211161c4208255737065a9f9ef0baa03d31e9c07f1fb3d7d81a3a48c33"
+		closureHash="848084093ed551fd3646682487b1c2bc3018573d596e1df3966a4b3060be692f"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-mass-measure"
-		closureHash="fd4bc667b88eda20fb60582d736b345dcb0a1b6b62f7b6ef573d508f1000c6aa"
+		closureHash="917e605fa7f9a41cd68f9019d1cf681401ac8520fc198a7d3a1d8c7d100aad92"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-volume-measure"
-		closureHash="2fc0527550241ebceb07eb0ad7baede2383a0849dfa91735935d2b02807d1912"
+		closureHash="1a7fa13c38afdc1b7e9e1a45d3c74e17b36147faebd86e7a5503b91bd8ca2faf"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

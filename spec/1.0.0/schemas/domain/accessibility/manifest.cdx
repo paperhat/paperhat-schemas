@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="4b66332d7f8c34818e7a711bdaa32fb6baa62bfbf14190c3d20f38e0db07636d"
+	closureHash="5f09647c6534c3527c0a2ffd2f866889c3b218203da7bac5ae838fee8e531341"
 	copyright="Copyright 2026 Paperhat"
 	description="Accessibility characteristics of a resource or venue, including access modes, features, and hazards."
 	license="Apache-2.0"

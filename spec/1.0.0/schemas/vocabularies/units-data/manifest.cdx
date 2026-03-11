@@ -1,6 +1,6 @@
 <VocabularyPackageManifest
 	author="Paperhat"
-	closureHash="ab9443eb63352f04156e5941b2297d27858819eaea1eef4da70da7e0663b48de"
+	closureHash="c0b0e2a5871e313835e93ac417acf5ea68253fd70f715753498f8ff0b7f88b77"
 	copyright="Copyright 2026 Paperhat"
 	description="Units of measurement for digital data storage and transfer rate."
 	license="Apache-2.0"

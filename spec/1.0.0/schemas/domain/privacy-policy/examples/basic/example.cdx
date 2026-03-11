@@ -1,8 +1,8 @@
-<PrivacyPolicy id=urn:policy:privacy:recipe-library title="Recipe Library Privacy Policy">
+<PrivacyPolicy id=urn:paperhat:policy:privacy:recipe-library title="Recipe Library Privacy Policy">
 	<GoverningEntity target=urn:organization:recipe-library governingRole=$Owner />
 	<AppliesTo target=urn:service:recipe-library scopeKind=$Service />
-	<RelatedDocument target=urn:terms:recipe-library relationshipKind=$PairedWith />
-	<RelatedDocument target=urn:policy:cookie:recipe-library relationshipKind=$Supplements />
+	<RelatedDocument target=urn:paperhat:terms:recipe-library relationshipKind=$PairedWith />
+	<RelatedDocument target=urn:paperhat:policy:cookie:recipe-library relationshipKind=$Supplements />
 	<Controller target=urn:organization:recipe-library controllerKind=$Primary />
 	<DataCollection>
 		<text:Paragraph>

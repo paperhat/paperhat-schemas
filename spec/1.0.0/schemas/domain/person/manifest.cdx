@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="27060589a96c6da6e97aff4b9f99e2b1da03d7a7baf0d0975cb910c03e2dfef5"
+	closureHash="407ee47fbfa91d7a751d886fd23512b8a60a63b8b7b4aea2b606f9eddd35ab74"
 	copyright="Copyright 2026 Paperhat"
 	description="A person, real or fictional, composed from leaf concepts for names, contact points, identifiers, and locations."
 	license="Apache-2.0"
@@ -12,25 +12,25 @@
 >
 	<PackageDependency
 		packageName="paperhat-person-name"
-		closureHash="d22c4986f6f696f51e74f65e2dd26a8816c9e501e17d027beef08d9a898a9e8a"
+		closureHash="092779788e6b38975a9a3bd09ee045e349ced09d7d5fc0aef1a5b27044167496"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-contact-point"
-		closureHash="9e02926fb7fa310c44ecc6d3d3dcf540d96854175ed1f07e0782ac1a5a048b08"
+		closureHash="fe881dddebc868859e5c082ec46ea4663f47da9e2c19259a7d60ed7886bf26dc"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-identifier"
-		closureHash="404961f3ac5baaafcdbb455482e979e022270b90bf4b8698f4ae0382dd6c9fc9"
+		closureHash="92a41d386d392b5bee505fbca1425b2d3923888b63dcd0a80af5ef27074516d0"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-location"
-		closureHash="9ac9e090e21d8accedafdf54b06ea5dd3e454d2730f95a76b11ec6945a0f340c"
+		closureHash="798b5e790d4bcf62880d1573b1bb39c0d35350862aa714b2899ec9ec9b696cfd"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

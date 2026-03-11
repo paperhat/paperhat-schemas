@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="PENDING-HASH"
+	closureHash="73c9f095c2271e5c99528c54c67ef902a98219cad9a43340fd2f0f0a679699a5"
 	copyright="Copyright 2026 Paperhat"
 	description="A named subdivision within an organization, such as a department, division, team, bureau, or working group."
 	license="Apache-2.0"

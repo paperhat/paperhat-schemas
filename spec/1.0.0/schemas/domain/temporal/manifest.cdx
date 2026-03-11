@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="dbb00b6f204eb3ce860daaf554843fe45fca4f79cc5948e5cbe85440d2b868ae"
+	closureHash="c07c59921f5bc211f40b0763b74d9c2204c5060b967716eba14f1c6b1063d606"
 	copyright="Copyright 2026 Paperhat"
 	description="Temporal annotations for text spans: dates, times, datetimes, durations, and instants with formatting and internationalisation support."
 	license="Apache-2.0"

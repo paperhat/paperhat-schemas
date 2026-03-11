@@ -1,0 +1,69 @@
+<LocalizationBundle
+	schema=paperhat:composition:document
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Document" label="Document" labelOther="Documents" />
+	<ConceptLocalization identifier="Import" label="Import" labelOther="Imports" />
+	<ConceptLocalization identifier="Artifact" label="Artifact" labelOther="Artifacts" />
+	<ConceptLocalization identifier="Selection" label="Selection" labelOther="Selections" />
+	<ConceptLocalization identifier="Collection" label="Collection" labelOther="Collections" />
+	<ConceptLocalization identifier="Binding" label="Binding" labelOther="Bindings" />
+	<ConceptLocalization identifier="Relationship" label="Relationship" labelOther="Relationships" />
+	<ConceptLocalization identifier="Condition" label="Condition" labelOther="Conditions" />
+
+	<TraitLocalization identifier="realization" label="Realization" labelOther="Realizations">
+		The realization classes supported by the document, artifact, or binding.
+	</TraitLocalization>
+	<TraitLocalization identifier="target" label="Target" labelOther="Targets">
+		The referenced target IRI.
+	</TraitLocalization>
+	<TraitLocalization identifier="importKind" label="Import Kind" labelOther="Import Kinds">
+		The kind of imported source surface.
+	</TraitLocalization>
+	<TraitLocalization identifier="category" label="Category" labelOther="Categories">
+		The semantic category of the artifact.
+	</TraitLocalization>
+	<TraitLocalization identifier="priority" label="Priority" labelOther="Priorities">
+		The authored priority value for the artifact.
+	</TraitLocalization>
+	<TraitLocalization identifier="audience" label="Audience" labelOther="Audiences">
+		The intended audience reference for the artifact.
+	</TraitLocalization>
+	<TraitLocalization identifier="source" label="Source" labelOther="Sources">
+		The referenced source IRI used by a selection, binding, or relationship.
+	</TraitLocalization>
+	<TraitLocalization identifier="selectionKind" label="Selection Kind" labelOther="Selection Kinds">
+		The selection strategy used to gather source material.
+	</TraitLocalization>
+	<TraitLocalization identifier="rule" label="Rule" labelOther="Rules">
+		The authored rule text for a selection.
+	</TraitLocalization>
+	<TraitLocalization identifier="members" label="Members">
+		The explicit member IRIs of a collection.
+	</TraitLocalization>
+	<TraitLocalization identifier="organization" label="Organization">
+		The organization mode for a collection.
+	</TraitLocalization>
+	<TraitLocalization identifier="view" label="View" labelOther="Views">
+		The view IRI used by a binding.
+	</TraitLocalization>
+	<TraitLocalization identifier="bindingIntent" label="Binding Intent" labelOther="Binding Intents">
+		The semantic purpose of the view binding.
+	</TraitLocalization>
+	<TraitLocalization identifier="relationshipKind" label="Relationship Kind" labelOther="Relationship Kinds">
+		The semantic relationship declared by the relationship node.
+	</TraitLocalization>
+	<TraitLocalization identifier="weight" label="Weight" labelOther="Weights">
+		The relative relationship weight.
+	</TraitLocalization>
+	<TraitLocalization identifier="condition" label="Condition" labelOther="Conditions">
+		The referenced condition applied to the relationship.
+	</TraitLocalization>
+	<TraitLocalization identifier="expression" label="Expression" labelOther="Expressions">
+		The authored expression carried by a condition.
+	</TraitLocalization>
+	<TraitLocalization identifier="effect" label="Effect" labelOther="Effects">
+		The semantic effect of the condition.
+	</TraitLocalization>
+</LocalizationBundle>

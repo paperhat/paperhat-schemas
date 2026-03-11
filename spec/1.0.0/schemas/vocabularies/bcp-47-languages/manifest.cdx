@@ -1,6 +1,6 @@
 <VocabularyPackageManifest
 	author="Paperhat"
-	closureHash="30b9900f8372670ebd14fd289ded8451187f0a913e3a7eabda4c32e1d7b84d28"
+	closureHash="dbe496e69d9b80c37244545d16695331d6ce94ef474d2edecc604a92b31ae1df"
 	copyright="Copyright 2026 Paperhat"
 	description="Language identification tags from IETF BCP 47 (RFC 5646)."
 	license="Apache-2.0"

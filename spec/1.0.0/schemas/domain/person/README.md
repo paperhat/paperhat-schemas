@@ -22,19 +22,19 @@ Use `Person` to represent any human being — an author, a character, a well-kno
 
 | Child | Schema | Description |
 |---|---|---|
-| pname:PersonName | `codex:domain:person-name` | Names for this person. Multiple instances with different `nameKind` values support legal names, birth names, aliases, stage names, etc. |
-| contact:ContactPoint | `codex:domain:contact-point` | Contact methods. Use `contactKind` to distinguish work, personal, emergency roles. |
-| ident:Identifier | `codex:domain:identifier` | External identifiers (passport, ORCID, SSN). |
-| loc:Location | `codex:domain:location` | Associated locations (birthplace, residence, workplace). |
+| pname:PersonName | `paperhat:domain:person-name` | Names for this person. Multiple instances with different `nameKind` values support legal names, birth names, aliases, stage names, etc. |
+| contact:ContactPoint | `paperhat:domain:contact-point` | Contact methods. Use `contactKind` to distinguish work, personal, emergency roles. |
+| ident:Identifier | `paperhat:domain:identifier` | External identifiers (passport, ORCID, SSN). |
+| loc:Location | `paperhat:domain:location` | Associated locations (birthplace, residence, workplace). |
 
 ## Imports
 
 | Namespace | Schema |
 |---|---|
-| pname | `codex:domain:person-name` |
-| contact | `codex:domain:contact-point` |
-| ident | `codex:domain:identifier` |
-| loc | `codex:domain:location` |
+| pname | `paperhat:domain:person-name` |
+| contact | `paperhat:domain:contact-point` |
+| ident | `paperhat:domain:identifier` |
+| loc | `paperhat:domain:location` |
 
 ## Constraints
 

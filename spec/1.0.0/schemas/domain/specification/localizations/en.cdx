@@ -1,6 +1,6 @@
 <LocalizationBundle
 	language=$En
-	schema=codex:domain:specification
+	schema=paperhat:domain:specification
 	schemaVersion="1.0.0"
 >
 	<ConceptLocalization identifier="Specification" label="Specification" />
@@ -26,14 +26,14 @@
 	<ConceptLocalization identifier="OpenQuestion" label="Open Question" labelOther="Open Questions" />
 
 	<ConstraintLocalization
-		identifier="codex:domain:specification:section-reference-target-type"
+		identifier="paperhat:domain:specification:section-reference-target-type"
 		label="Section reference target type"
 	>
 		A SectionReference target must resolve to a Section.
 	</ConstraintLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:specification:section-reference-must-resolve"
+		identifier="paperhat:domain:specification:section-reference-must-resolve"
 		label="Section reference must resolve"
 	>
 		A SectionReference target must resolve to an existing entity.

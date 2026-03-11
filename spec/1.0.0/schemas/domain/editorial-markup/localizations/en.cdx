@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:editorial-markup
+	schema=paperhat:domain:editorial-markup
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -66,7 +66,7 @@
 	</TraitLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:editorial-markup:requires-child"
+		identifier="paperhat:domain:editorial-markup:requires-child"
 		label="Requires at least one editorial markup concept"
 	>
 		An EditorialMarkup container must contain at least one child concept.

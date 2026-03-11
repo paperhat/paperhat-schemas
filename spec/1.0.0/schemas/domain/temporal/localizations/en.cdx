@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:temporal
+	schema=paperhat:domain:temporal
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -44,7 +44,7 @@
 	</TraitLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:temporal:requires-child"
+		identifier="paperhat:domain:temporal:requires-child"
 		label="Requires at least one temporal annotation"
 	>
 		A TemporalAnnotations container must contain at least one temporal concept.

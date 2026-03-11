@@ -2,20 +2,20 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A biography document about a referenced entity, composed from metadata, ordered narrative content, and referenced annotations."
-	id=codex:domain:bio
+	id=paperhat:domain:bio
 	namespace="bio"
 	title="Bio Schema"
 	version="1.0.0"
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=docmeta reference=urn:cdx:sha256:aacfbd65a5928a0cfc5bcfbad2a2ff435f5aab17448b68710b59ccc8da9ce1a4 />
+		<SchemaImport namespace=docmeta reference=urn:cdx:sha256:d6387600e328aa9cfa352df858754c1ff816bf436ba227b72d97d4cedf5a65e3 />
 
-		<SchemaImport namespace=narrative reference=urn:cdx:sha256:b6523e966a6cd7853cca4519f60bf713c2655f291e4c7040cfc07770bdcf2336 />
+		<SchemaImport namespace=narrative reference=urn:cdx:sha256:a97f438a11d18ed0c556d0824e3d0692d6719c13c50ac2b7f1e0b3e37520c415 />
 
-		<SchemaImport namespace=text reference=urn:cdx:sha256:0d835975e6ccabdab7c2204e9b1d4e19baf24108e45a8f240adea3a2684a5fd0 />
+		<SchemaImport namespace=text reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
 
-		<SchemaImport namespace=notes reference=urn:cdx:sha256:9d3ab9c299e532776ee07bbdd56c58dc18347be6e9712c1def71a0fc8f399352 />
+		<SchemaImport namespace=notes reference=urn:cdx:sha256:5169d4469cf2f181b23bfee5510652073ead5e1c6871486dba219bfb6c2b3a2b />
 	</SchemaImports>
 
 	<ConceptDefinitions>
@@ -23,7 +23,7 @@
 			conceptKind=$Semantic
 			defaultLabelSource="title"
 			entityEligibility=$MustBeEntity
-			id=codex:domain:bio:Bio
+			id=paperhat:domain:bio:Bio
 			name="Bio"
 		>
 			<ContentRules>
@@ -51,13 +51,13 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:bio:trait:title
+			id=paperhat:domain:bio:trait:title
 			name="title"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Iri
-			id=codex:domain:bio:trait:subject
+			id=paperhat:domain:bio:trait:subject
 			isReferenceTrait=true
 			name="subject"
 		/>
@@ -65,7 +65,7 @@
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:bio:subject-reference-trait-allowed
+			id=paperhat:domain:bio:subject-reference-trait-allowed
 			title="Bio allows only subject as a reference trait"
 		>
 			<Targets>
@@ -78,7 +78,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:bio:subject-reference-singleton
+			id=paperhat:domain:bio:subject-reference-singleton
 			title="Bio must declare at most one reference trait"
 		>
 			<Targets>
@@ -91,7 +91,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:bio:subject-targets-entity
+			id=paperhat:domain:bio:subject-targets-entity
 			title="Bio subject must target an entity"
 		>
 			<Targets>
@@ -104,7 +104,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:bio:subject-must-resolve
+			id=paperhat:domain:bio:subject-must-resolve
 			title="Bio subject must resolve"
 		>
 			<Targets>

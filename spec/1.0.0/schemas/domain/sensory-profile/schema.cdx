@@ -2,21 +2,21 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="Compositional sensory characteristics of food and beverage items, covering taste, aroma, and mouthfeel for flavor modeling and substitution inference."
-	id=codex:domain:sensory-profile
+	id=paperhat:domain:sensory-profile
 	namespace="sensory"
 	title="Sensory Profile Schema"
 	version="1.0.0"
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace="desc" reference=urn:cdx:sha256:5e9c6ba4654a0b013b65fc38fde033d2b6fc281d7eb791e57b207b42d80ae7da />
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:011828a51c1e0956207698eae3cdad433acbf33711fece6e6b26c129cfad4188 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:sensory-profile:SensoryProfile
+			id=paperhat:domain:sensory-profile:SensoryProfile
 			name="SensoryProfile"
 		>
 			<ContentRules>
@@ -37,7 +37,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:sensory-profile:TasteNote
+			id=paperhat:domain:sensory-profile:TasteNote
 			name="TasteNote"
 		>
 			<ContentRules>
@@ -58,7 +58,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:sensory-profile:AromaNote
+			id=paperhat:domain:sensory-profile:AromaNote
 			name="AromaNote"
 		>
 			<ContentRules>
@@ -79,7 +79,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:sensory-profile:MouthfeelNote
+			id=paperhat:domain:sensory-profile:MouthfeelNote
 			name="MouthfeelNote"
 		>
 			<ContentRules>
@@ -101,7 +101,7 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:sensory-profile:trait:taste
+			id=paperhat:domain:sensory-profile:trait:taste
 			name="taste"
 			priority=$Primary
 		>
@@ -112,7 +112,7 @@
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:sensory-profile:trait:aroma
+			id=paperhat:domain:sensory-profile:trait:aroma
 			name="aroma"
 			priority=$Primary
 		>
@@ -123,7 +123,7 @@
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:sensory-profile:trait:mouthfeel
+			id=paperhat:domain:sensory-profile:trait:mouthfeel
 			name="mouthfeel"
 			priority=$Primary
 		>
@@ -134,7 +134,7 @@
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:sensory-profile:trait:intensity
+			id=paperhat:domain:sensory-profile:trait:intensity
 			name="intensity"
 		>
 			<AllowedValues>

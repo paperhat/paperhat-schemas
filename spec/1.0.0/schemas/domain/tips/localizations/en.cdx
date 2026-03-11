@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:tips
+	schema=paperhat:domain:tips
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -16,7 +16,7 @@
 	</TraitLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:tips:requires-tip"
+		identifier="paperhat:domain:tips:requires-tip"
 		label="Requires at least one tip"
 	>
 		A Tips container must contain at least one Tip.

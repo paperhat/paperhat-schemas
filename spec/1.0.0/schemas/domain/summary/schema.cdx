@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A condensed restatement of what a document or resource says, distinct from a description of what it is about."
-	id=codex:domain:summary
+	id=paperhat:domain:summary
 	namespace="summary"
 	title="Summary Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:summary:Summary
+			id=paperhat:domain:summary:Summary
 			name="Summary"
 		>
 			<ContentRules>
@@ -28,7 +28,7 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:summary:trait:language
+			id=paperhat:domain:summary:trait:language
 			name="language"
 		/>
 	</TraitDefinitions>

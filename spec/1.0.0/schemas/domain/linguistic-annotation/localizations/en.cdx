@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:linguistic-annotation
+	schema=paperhat:domain:linguistic-annotation
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -24,7 +24,7 @@
 	</TraitLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:linguistic-annotation:requires-child"
+		identifier="paperhat:domain:linguistic-annotation:requires-child"
 		label="Requires at least one linguistic annotation"
 	>
 		A LinguisticAnnotations container must contain at least one Ruby annotation.

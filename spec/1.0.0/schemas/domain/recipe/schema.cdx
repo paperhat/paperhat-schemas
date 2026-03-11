@@ -2,45 +2,45 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="Recipe authoring schema. Structured parts are concepts, not traits."
-	id=codex:domain:recipe
+	id=paperhat:domain:recipe
 	namespace="recipe"
 	title="Recipe Domain Schema"
 	version="1.0.0"
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace="audience" reference=urn:cdx:sha256:96d1ab313b9cf2a357f05cfdaaf0f9dd4869f42d623f3de28abea92af787a053 />
+		<SchemaImport namespace="audience" reference=urn:cdx:sha256:eeb4cfc2a3574d6de35e3cfa7efd3daa750ffacc91c57ca046b9d1a2da903c43 />
 
-		<SchemaImport namespace="desc" reference=urn:cdx:sha256:5e9c6ba4654a0b013b65fc38fde033d2b6fc281d7eb791e57b207b42d80ae7da />
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:011828a51c1e0956207698eae3cdad433acbf33711fece6e6b26c129cfad4188 />
 
-		<SchemaImport namespace="equip" reference=urn:cdx:sha256:c8ff753f9e2ebbe06101beefff08758dc2bb12e57ad4ccf05a0f13a2ddb07941 />
+		<SchemaImport namespace="equip" reference=urn:cdx:sha256:12380e375b0a83b6860e194e19b6a90ad1e827d92b1ebde69ef5cd7cb10b8124 />
 
-		<SchemaImport namespace="food" reference=urn:cdx:sha256:0b15edcd17c932d579f6291d056572264082d6a1001b76782b8b41818c0442e0 />
+		<SchemaImport namespace="food" reference=urn:cdx:sha256:65a0e32809863dc325ab8f624dc46608be6444526e6ae8750c70cfa788ebd1b5 />
 
-		<SchemaImport namespace="massmeasure" reference=urn:cdx:sha256:f23396dcb092b7de3152a1d7fb22672248422dc2e3b59e96737c30ba863ec242 />
+		<SchemaImport namespace="massmeasure" reference=urn:cdx:sha256:97d990dfd254f4506ddbbee2ac3a2d2e73f99430980f41b568f7eced111b7cc7 />
 
-		<SchemaImport namespace="notes" reference=urn:cdx:sha256:9d3ab9c299e532776ee07bbdd56c58dc18347be6e9712c1def71a0fc8f399352 />
+		<SchemaImport namespace="notes" reference=urn:cdx:sha256:5169d4469cf2f181b23bfee5510652073ead5e1c6871486dba219bfb6c2b3a2b />
 
-		<SchemaImport namespace="nutrition" reference=urn:cdx:sha256:60fcc8d6e3a6c6d43a2a6ae59d36c4b625bf4c739655615399744e6ce698f567 />
+		<SchemaImport namespace="nutrition" reference=urn:cdx:sha256:c61007345cffcfed0a46ceaccb06cd4349c52af0bcca2c1e5bc33636a66e9fa1 />
 
-		<SchemaImport namespace="tags" reference=urn:cdx:sha256:864fb472fd89cb8024e9d3725203d2129185e39f375df5569b421353dbae9c98 />
+		<SchemaImport namespace="tags" reference=urn:cdx:sha256:af138b9c8bbc16117f2d8553c482253f9144721ab3a9d411992a2035e2094206 />
 
-		<SchemaImport namespace="text" reference=urn:cdx:sha256:0d835975e6ccabdab7c2204e9b1d4e19baf24108e45a8f240adea3a2684a5fd0 />
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
 
-		<SchemaImport namespace="timemeasure" reference=urn:cdx:sha256:2600bc33a21ada68f6d957d79894d37ffa1414c3a88e929dfb245d6c66658114 />
+		<SchemaImport namespace="timemeasure" reference=urn:cdx:sha256:d2cce1cba825d67e78dc44fd1249b5f662fab761b776536272a4a44d1ec97d4b />
 
-		<SchemaImport namespace="tips" reference=urn:cdx:sha256:a9c16883469de29d27aa81b64663bcc56724c7196d20750dd00379f7ee30110b />
+		<SchemaImport namespace="tips" reference=urn:cdx:sha256:1cba994944e6323df80438b08425c719db42000fe4b040b76b966610182f632a />
 
-		<SchemaImport namespace="volumemeasure" reference=urn:cdx:sha256:28e51c8a49e5f2e23148c2d96f3822d7bab801f8c3c2bc872ece55e3ef78c755 />
+		<SchemaImport namespace="volumemeasure" reference=urn:cdx:sha256:54cd771145ce25e43cbe318ab6e97af5457f69d4abacee7edb2366265c019f75 />
 
-		<SchemaImport namespace="work" reference=urn:cdx:sha256:1a180843230548cc38ddcde65df88bb025fd9a3feff6cdc6da19e8c3a8823dcd />
+		<SchemaImport namespace="work" reference=urn:cdx:sha256:7d8e5217434f3f577ec3d65a10d50846c5140722b229029517aba371c6aeda67 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustBeEntity
-			id=codex:domain:recipe:Recipe
+			id=paperhat:domain:recipe:Recipe
 			name="Recipe"
 		>
 			<ContentRules>
@@ -87,7 +87,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:recipe:Servings
+			id=paperhat:domain:recipe:Servings
 			name="Servings"
 		>
 			<ContentRules>
@@ -104,7 +104,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:recipe:Yield
+			id=paperhat:domain:recipe:Yield
 			name="Yield"
 		>
 			<ContentRules>
@@ -127,7 +127,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:recipe:Times
+			id=paperhat:domain:recipe:Times
 			name="Times"
 		>
 			<ContentRules>
@@ -152,7 +152,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:recipe:PreparationTime
+			id=paperhat:domain:recipe:PreparationTime
 			name="PreparationTime"
 		>
 			<ContentRules>
@@ -167,7 +167,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:recipe:CookingTime
+			id=paperhat:domain:recipe:CookingTime
 			name="CookingTime"
 		>
 			<ContentRules>
@@ -182,7 +182,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:recipe:RestingTime
+			id=paperhat:domain:recipe:RestingTime
 			name="RestingTime"
 		>
 			<ContentRules>
@@ -197,7 +197,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:recipe:SettingTime
+			id=paperhat:domain:recipe:SettingTime
 			name="SettingTime"
 		>
 			<ContentRules>
@@ -212,7 +212,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:recipe:TotalTime
+			id=paperhat:domain:recipe:TotalTime
 			name="TotalTime"
 		>
 			<ContentRules>
@@ -227,7 +227,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:recipe:Ingredients
+			id=paperhat:domain:recipe:Ingredients
 			name="Ingredients"
 		>
 			<ContentRules>
@@ -246,7 +246,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:recipe:IngredientSet
+			id=paperhat:domain:recipe:IngredientSet
 			name="IngredientSet"
 		>
 			<ContentRules>
@@ -265,7 +265,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:recipe:Ingredient
+			id=paperhat:domain:recipe:Ingredient
 			name="Ingredient"
 		>
 			<ContentRules>
@@ -292,7 +292,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:recipe:Equipment
+			id=paperhat:domain:recipe:Equipment
 			name="Equipment"
 		>
 			<ContentRules>
@@ -309,7 +309,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:recipe:Instructions
+			id=paperhat:domain:recipe:Instructions
 			name="Instructions"
 		>
 			<ContentRules>
@@ -326,7 +326,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:recipe:Step
+			id=paperhat:domain:recipe:Step
 			name="Step"
 		>
 			<ContentRules>
@@ -341,7 +341,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:recipe:ServingSuggestions
+			id=paperhat:domain:recipe:ServingSuggestions
 			name="ServingSuggestions"
 		>
 			<ContentRules>
@@ -358,7 +358,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:recipe:ServingSuggestion
+			id=paperhat:domain:recipe:ServingSuggestion
 			name="ServingSuggestion"
 		>
 			<ContentRules>
@@ -373,7 +373,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:recipe:Source
+			id=paperhat:domain:recipe:Source
 			name="Source"
 		>
 			<ContentRules>
@@ -385,56 +385,56 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Iri
-			id=codex:domain:recipe:trait:food
+			id=paperhat:domain:recipe:trait:food
 			name="food"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueTypes=[$Number, $Range<$Number>]
-			id=codex:domain:recipe:trait:amount
+			id=paperhat:domain:recipe:trait:amount
 			name="amount"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:recipe:trait:unit
+			id=paperhat:domain:recipe:trait:unit
 			name="unit"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:recipe:trait:item
+			id=paperhat:domain:recipe:trait:item
 			name="item"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:recipe:trait:preparation
+			id=paperhat:domain:recipe:trait:preparation
 			name="preparation"
 			priority=$Secondary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Boolean
-			id=codex:domain:recipe:trait:optional
+			id=paperhat:domain:recipe:trait:optional
 			name="optional"
 			priority=$Secondary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Boolean
-			id=codex:domain:recipe:trait:toTaste
+			id=paperhat:domain:recipe:trait:toTaste
 			name="toTaste"
 			priority=$Secondary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:recipe:trait:language
+			id=paperhat:domain:recipe:trait:language
 			name="language"
 			priority=$Secondary
 		/>
@@ -442,7 +442,7 @@
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:recipe:ingredients-requires-member
+			id=paperhat:domain:recipe:ingredients-requires-member
 			title="Ingredients must contain at least one Ingredient or IngredientSet"
 		>
 			<Targets>
@@ -463,7 +463,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:recipe:times-requires-member
+			id=paperhat:domain:recipe:times-requires-member
 			title="Times must contain at least one time concept"
 		>
 			<Targets>

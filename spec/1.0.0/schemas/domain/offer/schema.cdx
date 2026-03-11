@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A commercial offer with price, currency, and optional availability and validity details."
-	id=codex:domain:offer
+	id=paperhat:domain:offer
 	namespace="offer"
 	title="Offer Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:offer:Offer
+			id=paperhat:domain:offer:Offer
 			name="Offer"
 		>
 			<ContentRules>
@@ -38,37 +38,37 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Number
-			id=codex:domain:offer:trait:price
+			id=paperhat:domain:offer:trait:price
 			name="price"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:offer:trait:priceCurrency
+			id=paperhat:domain:offer:trait:priceCurrency
 			name="priceCurrency"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:offer:trait:availability
+			id=paperhat:domain:offer:trait:availability
 			name="availability"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:offer:trait:itemCondition
+			id=paperhat:domain:offer:trait:itemCondition
 			name="itemCondition"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Date
-			id=codex:domain:offer:trait:validFrom
+			id=paperhat:domain:offer:trait:validFrom
 			name="validFrom"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Date
-			id=codex:domain:offer:trait:validThrough
+			id=paperhat:domain:offer:trait:validThrough
 			name="validThrough"
 		/>
 	</TraitDefinitions>

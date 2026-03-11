@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A general published work with stable identity — a book, journal, manual, report, anthology, or other published artifact that does not require the specific structural prescriptions of WhitePaper or Essay."
-	id=codex:domain:publication
+	id=paperhat:domain:publication
 	namespace="pub"
 	title="Publication Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustBeEntity
-			id=codex:domain:publication:Publication
+			id=paperhat:domain:publication:Publication
 			name="Publication"
 		>
 			<ContentRules>
@@ -32,19 +32,19 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:publication:trait:name
+			id=paperhat:domain:publication:trait:name
 			name="name"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:publication:trait:publicationKind
+			id=paperhat:domain:publication:trait:publicationKind
 			name="publicationKind"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:publication:trait:publicationStatus
+			id=paperhat:domain:publication:trait:publicationStatus
 			name="publicationStatus"
 		/>
 	</TraitDefinitions>

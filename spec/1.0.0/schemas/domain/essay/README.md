@@ -20,9 +20,9 @@ Use `Essay` for personal essays, opinion pieces, reflective writing, literary es
 
 | Namespace | Schema |
 |---|---|
-| docmeta | `codex:domain:document-metadata` |
-| narrative | `codex:domain:narrative` |
-| notes | `codex:domain:notes` |
+| docmeta | `paperhat:domain:document-metadata` |
+| narrative | `paperhat:domain:narrative` |
+| notes | `paperhat:domain:notes` |
 
 ## Traits
 

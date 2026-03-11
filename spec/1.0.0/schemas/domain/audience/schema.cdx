@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A target audience described by demographic criteria such as age range, geographic area, and audience type."
-	id=codex:domain:audience
+	id=paperhat:domain:audience
 	namespace="audience"
 	title="Audience Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:audience:Audience
+			id=paperhat:domain:audience:Audience
 			name="Audience"
 		>
 			<ContentRules>
@@ -38,44 +38,44 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:audience:trait:audienceKind
+			id=paperhat:domain:audience:trait:audienceKind
 			name="audienceKind"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Number
-			id=codex:domain:audience:trait:suggestedMinAge
+			id=paperhat:domain:audience:trait:suggestedMinAge
 			name="suggestedMinAge"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Number
-			id=codex:domain:audience:trait:suggestedMaxAge
+			id=paperhat:domain:audience:trait:suggestedMaxAge
 			name="suggestedMaxAge"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:audience:trait:suggestedGender
+			id=paperhat:domain:audience:trait:suggestedGender
 			name="suggestedGender"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:audience:trait:geographicArea
+			id=paperhat:domain:audience:trait:geographicArea
 			name="geographicArea"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:audience:trait:audienceDescription
+			id=paperhat:domain:audience:trait:audienceDescription
 			name="audienceDescription"
 		/>
 	</TraitDefinitions>
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:audience:requires-audience-trait
+			id=paperhat:domain:audience:requires-audience-trait
 			title="Audience must have at least one trait"
 		>
 			<Targets>

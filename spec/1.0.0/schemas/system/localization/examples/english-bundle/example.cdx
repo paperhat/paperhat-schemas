@@ -3,7 +3,7 @@
   Covers all four localization types: concept, trait, token, and constraint.
 ]
 <LocalizationBundle
-	schema=codex:domain:book
+	schema=paperhat:domain:book
 	schemaVersion="1.0.0"
 	language=$en
 >
@@ -27,7 +27,7 @@
 	</TokenLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:book:requires-title"
+		identifier="paperhat:domain:book:requires-title"
 		label="Requires title"
 	>
 		A Book must have a title.

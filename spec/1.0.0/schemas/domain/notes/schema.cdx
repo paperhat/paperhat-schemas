@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A container for keyed annotations such as footnotes, endnotes, or bibliographic references."
-	id=codex:domain:notes
+	id=paperhat:domain:notes
 	namespace="notes"
 	title="Notes Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:notes:Notes
+			id=paperhat:domain:notes:Notes
 			name="Notes"
 		>
 			<ContentRules>
@@ -29,7 +29,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:notes:Note
+			id=paperhat:domain:notes:Note
 			name="Note"
 		>
 			<ContentRules>
@@ -47,20 +47,20 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$LookupToken
-			id=codex:domain:notes:trait:key
+			id=paperhat:domain:notes:trait:key
 			name="key"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:notes:trait:language
+			id=paperhat:domain:notes:trait:language
 			name="language"
 		/>
 	</TraitDefinitions>
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:notes:requires-note
+			id=paperhat:domain:notes:requires-note
 			title="Notes must contain at least one Note"
 		>
 			<Targets>

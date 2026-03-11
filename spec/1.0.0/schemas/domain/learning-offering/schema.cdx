@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A training course, workshop, or educational program offered as a catalog entity — the abstract offering, not a specific scheduled instance."
-	id=codex:domain:learning-offering
+	id=paperhat:domain:learning-offering
 	namespace="learning"
 	title="Learning Offering Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustBeEntity
-			id=codex:domain:learning-offering:LearningOffering
+			id=paperhat:domain:learning-offering:LearningOffering
 			name="LearningOffering"
 		>
 			<ContentRules>
@@ -36,31 +36,31 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:learning-offering:trait:name
+			id=paperhat:domain:learning-offering:trait:name
 			name="name"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:learning-offering:trait:offeringKind
+			id=paperhat:domain:learning-offering:trait:offeringKind
 			name="offeringKind"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:learning-offering:trait:offeringStatus
+			id=paperhat:domain:learning-offering:trait:offeringStatus
 			name="offeringStatus"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:learning-offering:trait:deliveryMode
+			id=paperhat:domain:learning-offering:trait:deliveryMode
 			name="deliveryMode"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Iri
-			id=codex:domain:learning-offering:trait:product
+			id=paperhat:domain:learning-offering:trait:product
 			isReferenceTrait=true
 			name="product"
 		/>

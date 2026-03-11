@@ -2,23 +2,23 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="View-family schema concepts for deterministic semantic projections over canonical Lexis universe U."
-	id=codex:view:semantic-projection
+	id=paperhat:view:semantic-projection
 	namespace="projection"
 	title="Semantic Projection View Schema"
 	version="1.0.0"
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=behavior reference=urn:cdx:sha256:e3a754044bf335e4f3c49b30b508a29363476a323eb5b34157a3593f8def7a05 />
+		<SchemaImport namespace=behavior reference=urn:cdx:sha256:65cc0f997728c5d3628a1d575d4e8eebd65128381f3004d4f95f7874db5bef7b />
 
-		<SchemaImport namespace=shape reference=urn:cdx:sha256:08dfad42681427e71a53190aa2ab1be8d27b9f63fd627f3ee4cfa321f5e95bed />
+		<SchemaImport namespace=shape reference=urn:cdx:sha256:74cecb49232434267108caf27bdb7403fa900cf2213347e6ce7b22080b331d5c />
 	</SchemaImports>
 
 	<ConceptDefinitions>
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustBeEntity
-			id=codex:view:semantic-projection:SemanticProjectionDefinition
+			id=paperhat:view:semantic-projection:SemanticProjectionDefinition
 			name="SemanticProjectionDefinition"
 		>
 			<ContentRules>
@@ -53,7 +53,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:view:semantic-projection:ProjectionParameter
+			id=paperhat:view:semantic-projection:ProjectionParameter
 			name="ProjectionParameter"
 		>
 			<ContentRules>
@@ -73,7 +73,7 @@
 			conceptKind=$Structural
 			description="Abstract rule concept used for schema documentation and targeting."
 			entityEligibility=$MustNotBeEntity
-			id=codex:view:semantic-projection:ProjectionRule
+			id=paperhat:view:semantic-projection:ProjectionRule
 			name="ProjectionRule"
 		>
 			<ContentRules>
@@ -90,7 +90,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:view:semantic-projection:SelectRule
+			id=paperhat:view:semantic-projection:SelectRule
 			name="SelectRule"
 		>
 			<ContentRules>
@@ -111,7 +111,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:view:semantic-projection:PruneRule
+			id=paperhat:view:semantic-projection:PruneRule
 			name="PruneRule"
 		>
 			<ContentRules>
@@ -130,7 +130,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:view:semantic-projection:CollapseRule
+			id=paperhat:view:semantic-projection:CollapseRule
 			name="CollapseRule"
 		>
 			<ContentRules>
@@ -155,7 +155,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:view:semantic-projection:DeriveAnnotationRule
+			id=paperhat:view:semantic-projection:DeriveAnnotationRule
 			name="DeriveAnnotationRule"
 		>
 			<ContentRules>
@@ -182,7 +182,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:view:semantic-projection:RuleSelectors
+			id=paperhat:view:semantic-projection:RuleSelectors
 			name="RuleSelectors"
 		>
 			<ContentRules>
@@ -210,7 +210,7 @@
 			conceptKind=$Structural
 			description="Abstract selector concept for all selector primitives."
 			entityEligibility=$MustNotBeEntity
-			id=codex:view:semantic-projection:ProjectionSelector
+			id=paperhat:view:semantic-projection:ProjectionSelector
 			name="ProjectionSelector"
 		>
 			<ContentRules>
@@ -221,7 +221,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:view:semantic-projection:ConceptTypeSelector
+			id=paperhat:view:semantic-projection:ConceptTypeSelector
 			name="ConceptTypeSelector"
 		>
 			<ContentRules>
@@ -236,7 +236,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:view:semantic-projection:TraitPathSelector
+			id=paperhat:view:semantic-projection:TraitPathSelector
 			name="TraitPathSelector"
 		>
 			<ContentRules>
@@ -251,7 +251,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:view:semantic-projection:RelationshipEdgeSelector
+			id=paperhat:view:semantic-projection:RelationshipEdgeSelector
 			name="RelationshipEdgeSelector"
 		>
 			<ContentRules>
@@ -266,7 +266,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:view:semantic-projection:ValuePredicateSelector
+			id=paperhat:view:semantic-projection:ValuePredicateSelector
 			name="ValuePredicateSelector"
 		>
 			<ContentRules>
@@ -281,7 +281,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:view:semantic-projection:IntersectionSelector
+			id=paperhat:view:semantic-projection:IntersectionSelector
 			name="IntersectionSelector"
 		>
 			<ContentRules>
@@ -308,7 +308,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:view:semantic-projection:CollapseTraitMapping
+			id=paperhat:view:semantic-projection:CollapseTraitMapping
 			name="CollapseTraitMapping"
 		>
 			<ContentRules>
@@ -325,7 +325,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:view:semantic-projection:FixedStructuralTransform
+			id=paperhat:view:semantic-projection:FixedStructuralTransform
 			name="FixedStructuralTransform"
 		>
 			<ContentRules>
@@ -341,33 +341,33 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:view:semantic-projection:trait:parameterName
+			id=paperhat:view:semantic-projection:trait:parameterName
 			name="parameterName"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Iri
-			id=codex:view:semantic-projection:trait:parameterShapeReference
+			id=paperhat:view:semantic-projection:trait:parameterShapeReference
 			isReferenceTrait=true
 			name="parameterShapeReference"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Boolean
-			id=codex:view:semantic-projection:trait:parameterRequired
+			id=paperhat:view:semantic-projection:trait:parameterRequired
 			name="parameterRequired"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Iri
-			id=codex:view:semantic-projection:trait:ruleIdentifier
+			id=paperhat:view:semantic-projection:trait:ruleIdentifier
 			isReferenceTrait=true
 			name="ruleIdentifier"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:view:semantic-projection:trait:selectorTarget
+			id=paperhat:view:semantic-projection:trait:selectorTarget
 			name="selectorTarget"
 		>
 			<AllowedValues>
@@ -377,43 +377,43 @@
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:view:semantic-projection:trait:selectorConceptType
+			id=paperhat:view:semantic-projection:trait:selectorConceptType
 			name="selectorConceptType"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:view:semantic-projection:trait:selectorTraitPath
+			id=paperhat:view:semantic-projection:trait:selectorTraitPath
 			name="selectorTraitPath"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:view:semantic-projection:trait:selectorRelationshipType
+			id=paperhat:view:semantic-projection:trait:selectorRelationshipType
 			name="selectorRelationshipType"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:view:semantic-projection:trait:targetConceptType
+			id=paperhat:view:semantic-projection:trait:targetConceptType
 			name="targetConceptType"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:view:semantic-projection:trait:sourceTraitPath
+			id=paperhat:view:semantic-projection:trait:sourceTraitPath
 			name="sourceTraitPath"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:view:semantic-projection:trait:targetTraitName
+			id=paperhat:view:semantic-projection:trait:targetTraitName
 			name="targetTraitName"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:view:semantic-projection:trait:transformClass
+			id=paperhat:view:semantic-projection:trait:transformClass
 			name="transformClass"
 		>
 			<AllowedValues>
@@ -423,14 +423,14 @@
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:view:semantic-projection:trait:transformName
+			id=paperhat:view:semantic-projection:trait:transformName
 			name="transformName"
 		/>
 	</TraitDefinitions>
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:view:semantic-projection:requires-select-rule
+			id=paperhat:view:semantic-projection:requires-select-rule
 			title="SemanticProjectionDefinition must contain exactly one SelectRule"
 		>
 			<Targets>
@@ -443,7 +443,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:view:semantic-projection:select-rule-requires-selectors
+			id=paperhat:view:semantic-projection:select-rule-requires-selectors
 			title="SelectRule must contain RuleSelectors"
 		>
 			<Targets>
@@ -456,7 +456,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:view:semantic-projection:prune-rule-requires-selectors
+			id=paperhat:view:semantic-projection:prune-rule-requires-selectors
 			title="PruneRule must contain RuleSelectors"
 		>
 			<Targets>
@@ -469,7 +469,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:view:semantic-projection:collapse-rule-requires-selectors
+			id=paperhat:view:semantic-projection:collapse-rule-requires-selectors
 			title="CollapseRule must contain RuleSelectors"
 		>
 			<Targets>
@@ -482,7 +482,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:view:semantic-projection:derive-annotation-rule-requires-selectors
+			id=paperhat:view:semantic-projection:derive-annotation-rule-requires-selectors
 			title="DeriveAnnotationRule must contain RuleSelectors"
 		>
 			<Targets>
@@ -495,7 +495,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:view:semantic-projection:value-predicate-requires-validation
+			id=paperhat:view:semantic-projection:value-predicate-requires-validation
 			title="ValuePredicateSelector must contain one behavior Validation expression"
 		>
 			<Targets>

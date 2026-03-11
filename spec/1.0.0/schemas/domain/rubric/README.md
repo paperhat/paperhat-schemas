@@ -22,7 +22,7 @@ Use `Rubric` at the top of a section, chapter, or document to declare its headin
 
 | Namespace | Schema |
 |---|---|
-| text | `codex:domain:text` |
+| text | `paperhat:domain:text` |
 
 ## Traits
 

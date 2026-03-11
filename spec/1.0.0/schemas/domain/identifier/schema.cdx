@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A scheme-qualified identifier for referencing external systems, standards, or registries."
-	id=codex:domain:identifier
+	id=paperhat:domain:identifier
 	namespace="ident"
 	title="Identifier Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:identifier:Identifier
+			id=paperhat:domain:identifier:Identifier
 			name="Identifier"
 		>
 			<ContentRules>
@@ -30,13 +30,13 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:identifier:trait:scheme
+			id=paperhat:domain:identifier:trait:scheme
 			name="scheme"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:identifier:trait:value
+			id=paperhat:domain:identifier:trait:value
 			name="value"
 		/>
 	</TraitDefinitions>

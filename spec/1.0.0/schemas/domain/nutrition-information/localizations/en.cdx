@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:nutrition-information
+	schema=paperhat:domain:nutrition-information
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -22,7 +22,7 @@
 	<ConceptLocalization identifier="SodiumContent" label="Sodium Content" />
 
 	<ConstraintLocalization
-		identifier="codex:domain:nutrition-information:requires-nutrient"
+		identifier="paperhat:domain:nutrition-information:requires-nutrient"
 		label="Requires at least one nutrient"
 	>
 		A NutritionInformation element must contain at least one child nutrient concept.

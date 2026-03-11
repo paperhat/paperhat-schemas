@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="Shared foundation traits and enumerated value sets for specification schemas. Provides the common trait vocabulary and value sets consumed by both the strict (Must/MustNot) and loose (RFC 2119) specification schema variants."
-	id=codex:domain:specification-foundation
+	id=paperhat:domain:specification-foundation
 	namespace=specbase
 	title="Specification Foundation Schema"
 	version=1.0.0
@@ -11,7 +11,7 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:specification-foundation:trait:conformance
+			id=paperhat:domain:specification-foundation:trait:conformance
 			name="conformance"
 		>
 			<AllowedValues>
@@ -21,13 +21,13 @@
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:specification-foundation:trait:designation
+			id=paperhat:domain:specification-foundation:trait:designation
 			name="designation"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:specification-foundation:trait:division
+			id=paperhat:domain:specification-foundation:trait:division
 			name="division"
 		>
 			<AllowedValues>
@@ -37,19 +37,19 @@
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:specification-foundation:trait:editor
+			id=paperhat:domain:specification-foundation:trait:editor
 			name="editor"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Boolean
-			id=codex:domain:specification-foundation:trait:locked
+			id=paperhat:domain:specification-foundation:trait:locked
 			name="locked"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:specification-foundation:trait:modality
+			id=paperhat:domain:specification-foundation:trait:modality
 			name="modality"
 		>
 			<AllowedValues>
@@ -59,37 +59,37 @@
 
 		<TraitDefinition
 			defaultValueType=$Boolean
-			id=codex:domain:specification-foundation:trait:normative
+			id=paperhat:domain:specification-foundation:trait:normative
 			name="normative"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$LookupToken
-			id=codex:domain:specification-foundation:trait:requirementId
+			id=paperhat:domain:specification-foundation:trait:requirementId
 			name="requirementId"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:specification-foundation:trait:term
+			id=paperhat:domain:specification-foundation:trait:term
 			name="term"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Iri
-			id=codex:domain:specification-foundation:trait:uri
+			id=paperhat:domain:specification-foundation:trait:uri
 			name="uri"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Iri
-			id=codex:domain:specification-foundation:trait:source
+			id=paperhat:domain:specification-foundation:trait:source
 			name="source"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:specification-foundation:trait:status
+			id=paperhat:domain:specification-foundation:trait:status
 			name="status"
 		>
 			<AllowedValues>
@@ -99,25 +99,25 @@
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:specification-foundation:trait:resolution
+			id=paperhat:domain:specification-foundation:trait:resolution
 			name="resolution"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:specification-foundation:trait:answer
+			id=paperhat:domain:specification-foundation:trait:answer
 			name="answer"
 		/>
 	</TraitDefinitions>
 
 	<EnumeratedValueSets>
-		<EnumeratedValueSet id=codex:domain:specification-foundation:set:SectionConformance name="SectionConformance">
+		<EnumeratedValueSet id=paperhat:domain:specification-foundation:set:SectionConformance name="SectionConformance">
 			<Member value=Normative />
 
 			<Member value=Informative />
 		</EnumeratedValueSet>
 
-		<EnumeratedValueSet id=codex:domain:specification-foundation:set:SectionDivision name="SectionDivision">
+		<EnumeratedValueSet id=paperhat:domain:specification-foundation:set:SectionDivision name="SectionDivision">
 			<Member value=Body />
 
 			<Member value=Appendix />
@@ -127,7 +127,7 @@
 			<Member value=BackMatter />
 		</EnumeratedValueSet>
 
-		<EnumeratedValueSet id=codex:domain:specification-foundation:set:RequirementModality name="RequirementModality">
+		<EnumeratedValueSet id=paperhat:domain:specification-foundation:set:RequirementModality name="RequirementModality">
 			<Member value=Must />
 
 			<Member value=MustNot />
@@ -148,7 +148,7 @@
 
 			<Member value=Optional />
 		</EnumeratedValueSet>
-		<EnumeratedValueSet id=codex:domain:specification-foundation:set:DraftItemStatus name="DraftItemStatus">
+		<EnumeratedValueSet id=paperhat:domain:specification-foundation:set:DraftItemStatus name="DraftItemStatus">
 			<Member value=Open />
 
 			<Member value=Resolved />

@@ -7,7 +7,7 @@ Version: 1.0.0
 A structured personal name with support for cultural variants, multiple name kinds, and decomposed name parts.
 
 **Package:** `paperhat-person-name`
-**Schema ID:** `codex:domain:person-name`
+**Schema ID:** `paperhat:domain:person-name`
 
 ---
 

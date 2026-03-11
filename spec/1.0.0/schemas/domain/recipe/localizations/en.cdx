@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:recipe
+	schema=paperhat:domain:recipe
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -72,14 +72,14 @@
 	</TraitLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:recipe:ingredients-requires-member"
+		identifier="paperhat:domain:recipe:ingredients-requires-member"
 		label="Requires at least one ingredient or ingredient set"
 	>
 		An Ingredients container must contain at least one Ingredient or IngredientSet.
 	</ConstraintLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:recipe:times-requires-member"
+		identifier="paperhat:domain:recipe:times-requires-member"
 		label="Requires at least one time concept"
 	>
 		A Times container must contain at least one time concept.

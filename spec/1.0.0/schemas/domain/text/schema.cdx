@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="Reusable text primitives: title, teaser, and paragraph."
-	id=codex:domain:text
+	id=paperhat:domain:text
 	namespace="text"
 	title="Text Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:text:Title
+			id=paperhat:domain:text:Title
 			name="Title"
 		>
 			<ContentRules>
@@ -27,7 +27,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:text:Teaser
+			id=paperhat:domain:text:Teaser
 			name="Teaser"
 		>
 			<ContentRules>
@@ -42,7 +42,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:text:Paragraph
+			id=paperhat:domain:text:Paragraph
 			name="Paragraph"
 		>
 			<ContentRules>
@@ -58,7 +58,7 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:text:trait:language
+			id=paperhat:domain:text:trait:language
 			name="language"
 		/>
 	</TraitDefinitions>

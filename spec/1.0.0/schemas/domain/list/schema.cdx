@@ -2,21 +2,21 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="Ordered and unordered lists with nestable items."
-	id=codex:domain:list
+	id=paperhat:domain:list
 	namespace="list"
 	title="List Schema"
 	version="1.0.0"
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace="text" reference=urn:cdx:sha256:0d835975e6ccabdab7c2204e9b1d4e19baf24108e45a8f240adea3a2684a5fd0 />
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
 	</SchemaImports>
 
 	<ConceptDefinitions>
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:list:OrderedList
+			id=paperhat:domain:list:OrderedList
 			name="OrderedList"
 		>
 			<ContentRules>
@@ -33,7 +33,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:list:UnorderedList
+			id=paperhat:domain:list:UnorderedList
 			name="UnorderedList"
 		>
 			<ContentRules>
@@ -50,7 +50,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:list:ListItem
+			id=paperhat:domain:list:ListItem
 			name="ListItem"
 		>
 			<ContentRules>
@@ -69,7 +69,7 @@
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:list:ordered-requires-item
+			id=paperhat:domain:list:ordered-requires-item
 			title="OrderedList must contain at least one ListItem"
 		>
 			<Targets>
@@ -82,7 +82,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:list:unordered-requires-item
+			id=paperhat:domain:list:unordered-requires-item
 			title="UnorderedList must contain at least one ListItem"
 		>
 			<Targets>

@@ -2,47 +2,47 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="An occurrence happening at a certain time and place, such as a concert, conference, lecture, festival, or community gathering."
-	id=codex:domain:event
+	id=paperhat:domain:event
 	namespace="event"
 	title="Event Schema"
 	version="1.0.0"
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=desc reference=urn:cdx:sha256:5e9c6ba4654a0b013b65fc38fde033d2b6fc281d7eb791e57b207b42d80ae7da />
+		<SchemaImport namespace=desc reference=urn:cdx:sha256:011828a51c1e0956207698eae3cdad433acbf33711fece6e6b26c129cfad4188 />
 
-		<SchemaImport namespace=loc reference=urn:cdx:sha256:df456110f9e2cb2b0524011e6fd6892f345dadc412a7b078699f9aab4fd5bf55 />
+		<SchemaImport namespace=loc reference=urn:cdx:sha256:69ebdc66422b5962b2521ef49b174550c9b45c369ddd60c9967699566c0b16f0 />
 
-		<SchemaImport namespace=geo reference=urn:cdx:sha256:941382f4d17070cc01d68d5d0f6279dbf2ee67c20b2fe7dc6ce37adb5b0d8f2a />
+		<SchemaImport namespace=geo reference=urn:cdx:sha256:f2da2ba76a57e4a4231575414420229f3e73d64b19d732ccad58378903c7677e />
 
-		<SchemaImport namespace=contact reference=urn:cdx:sha256:3b19e88f414107daffdfaf3b1116dd5bec1c656faad58536392a2ec9891ff11a />
+		<SchemaImport namespace=contact reference=urn:cdx:sha256:0623b3bc48dfd1632919af1704725cc24b3e1ead90f4ce3a59117485e64335eb />
 
-		<SchemaImport namespace=ident reference=urn:cdx:sha256:a220d2034a4faa1a81d8102265c1fef36576871a0ba25ac31500abac7afd5907 />
+		<SchemaImport namespace=ident reference=urn:cdx:sha256:5fafd42cd5ebaa41ecaf7b26d4ea2be9fb9c6a6c68c56ab3c8f2483fdbe1cf28 />
 
-		<SchemaImport namespace=offer reference=urn:cdx:sha256:f322a7b5516031a49702828ac196b9e3d685b5a9b31812a706e9db8bf780f753 />
+		<SchemaImport namespace=offer reference=urn:cdx:sha256:554d5ee6d5110916bf29f8d556330a10fd8981b69462b96b49619cc824aa9013 />
 
-		<SchemaImport namespace=dur reference=urn:cdx:sha256:f6c3a7f7df6b8f00aa4141c14deadb6dfaddb67e9079d2cc7691ef6d6e575b8e />
+		<SchemaImport namespace=dur reference=urn:cdx:sha256:af406058ee6760ac08123519cad8423b77a16bc15aa085a59d9d2fe53cadfad8 />
 
-		<SchemaImport namespace=rating reference=urn:cdx:sha256:7014e5165b5abb7d2389464a9c03126d07f17161f0eaca4fdc7fde3ed3458c72 />
+		<SchemaImport namespace=rating reference=urn:cdx:sha256:128a174d3495eeea9b078f4684034c29d3e894f6fe5c42579e1abb60b9146a4e />
 
-		<SchemaImport namespace=money reference=urn:cdx:sha256:165a3dffbf009ba0b45d98a129a343a1378c0baccea116a78d03abe29d70ce47 />
+		<SchemaImport namespace=money reference=urn:cdx:sha256:3db9a58f8ea85a9631dd5cadb0e54a054b9b7c23fba92a1ea5925ca46dc5432d />
 
-		<SchemaImport namespace=tags reference=urn:cdx:sha256:864fb472fd89cb8024e9d3725203d2129185e39f375df5569b421353dbae9c98 />
+		<SchemaImport namespace=tags reference=urn:cdx:sha256:af138b9c8bbc16117f2d8553c482253f9144721ab3a9d411992a2035e2094206 />
 
-		<SchemaImport namespace=work reference=urn:cdx:sha256:1a180843230548cc38ddcde65df88bb025fd9a3feff6cdc6da19e8c3a8823dcd />
+		<SchemaImport namespace=work reference=urn:cdx:sha256:7d8e5217434f3f577ec3d65a10d50846c5140722b229029517aba371c6aeda67 />
 
-		<SchemaImport namespace=schedule reference=urn:cdx:sha256:73e1baa06ad4267464ca64e3e67eddea0b617959ebc44d297239ab558623be8e />
+		<SchemaImport namespace=schedule reference=urn:cdx:sha256:65a8316825019873f3b83bf3474a06e4961cfa99335f691b924452bde0f0cbcc />
 
-		<SchemaImport namespace=audience reference=urn:cdx:sha256:96d1ab313b9cf2a357f05cfdaaf0f9dd4869f42d623f3de28abea92af787a053 />
+		<SchemaImport namespace=audience reference=urn:cdx:sha256:eeb4cfc2a3574d6de35e3cfa7efd3daa750ffacc91c57ca046b9d1a2da903c43 />
 
-		<SchemaImport namespace=a11y reference=urn:cdx:sha256:ae60550e29ddf4d762fb537f99572d040d0146f49485a5497de2d12f878bb962 />
+		<SchemaImport namespace=a11y reference=urn:cdx:sha256:0d010c95b51336324799dad926c6ae6ae90f12fb1b1b198105508c6cbb2cfed3 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustBeEntity
-			id=codex:domain:event:Event
+			id=paperhat:domain:event:Event
 			name="Event"
 		>
 			<ContentRules>
@@ -96,31 +96,31 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:event:trait:name
+			id=paperhat:domain:event:trait:name
 			name="name"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Date
-			id=codex:domain:event:trait:startDate
+			id=paperhat:domain:event:trait:startDate
 			name="startDate"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Date
-			id=codex:domain:event:trait:endDate
+			id=paperhat:domain:event:trait:endDate
 			name="endDate"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:event:trait:eventStatus
+			id=paperhat:domain:event:trait:eventStatus
 			name="eventStatus"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:event:trait:eventAttendanceMode
+			id=paperhat:domain:event:trait:eventAttendanceMode
 			name="eventAttendanceMode"
 		/>
 	</TraitDefinitions>

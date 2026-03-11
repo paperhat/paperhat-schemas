@@ -37,15 +37,15 @@ Use this schema when the document follows RFC 2119 conventions and requires the 
 
 | Namespace | Schema | Provides |
 |---|---|---|
-| cite | `codex:domain:citation` | Citation, Contributor (bibliographic references within specification sections) |
-| admonition | `codex:domain:admonition` | Warning, Danger, Critical, Notice, Informational, Tip |
-| code | `codex:domain:code` | CodeBlock |
-| example | `codex:domain:example` | Example |
-| figure | `codex:domain:figure` | Figure |
-| list | `codex:domain:list` | OrderedList, UnorderedList, ListItem |
-| specbase | `codex:domain:specification-foundation` | Shared traits and enumerated value sets |
-| relation | `codex:domain:relation` | RelationType, RelationInstance |
-| text | `codex:domain:text` | Paragraph |
+| cite | `paperhat:domain:citation` | Citation, Contributor (bibliographic references within specification sections) |
+| admonition | `paperhat:domain:admonition` | Warning, Danger, Critical, Notice, Informational, Tip |
+| code | `paperhat:domain:code` | CodeBlock |
+| example | `paperhat:domain:example` | Example |
+| figure | `paperhat:domain:figure` | Figure |
+| list | `paperhat:domain:list` | OrderedList, UnorderedList, ListItem |
+| specbase | `paperhat:domain:specification-foundation` | Shared traits and enumerated value sets |
+| relation | `paperhat:domain:relation` | RelationType, RelationInstance |
+| text | `paperhat:domain:text` | Paragraph |
 
 ## Front Matter Traits
 

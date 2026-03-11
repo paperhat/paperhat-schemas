@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:view:semantic-projection
+	schema=paperhat:view:semantic-projection
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -88,42 +88,42 @@
 	</TraitLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:view:semantic-projection:requires-select-rule"
+		identifier="paperhat:view:semantic-projection:requires-select-rule"
 		label="Requires select rule"
 	>
 		SemanticProjectionDefinition must contain exactly one SelectRule.
 	</ConstraintLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:view:semantic-projection:select-rule-requires-selectors"
+		identifier="paperhat:view:semantic-projection:select-rule-requires-selectors"
 		label="Select rule requires selectors"
 	>
 		SelectRule must contain RuleSelectors.
 	</ConstraintLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:view:semantic-projection:prune-rule-requires-selectors"
+		identifier="paperhat:view:semantic-projection:prune-rule-requires-selectors"
 		label="Prune rule requires selectors"
 	>
 		PruneRule must contain RuleSelectors.
 	</ConstraintLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:view:semantic-projection:collapse-rule-requires-selectors"
+		identifier="paperhat:view:semantic-projection:collapse-rule-requires-selectors"
 		label="Collapse rule requires selectors"
 	>
 		CollapseRule must contain RuleSelectors.
 	</ConstraintLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:view:semantic-projection:derive-annotation-rule-requires-selectors"
+		identifier="paperhat:view:semantic-projection:derive-annotation-rule-requires-selectors"
 		label="Derive annotation rule requires selectors"
 	>
 		DeriveAnnotationRule must contain RuleSelectors.
 	</ConstraintLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:view:semantic-projection:value-predicate-requires-validation"
+		identifier="paperhat:view:semantic-projection:value-predicate-requires-validation"
 		label="Value predicate requires validation"
 	>
 		ValuePredicateSelector must contain one behavior Validation expression.

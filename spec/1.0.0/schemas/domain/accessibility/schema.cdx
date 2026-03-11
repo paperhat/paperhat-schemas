@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="Accessibility characteristics of a resource or venue, including access modes, features, and hazards."
-	id=codex:domain:accessibility
+	id=paperhat:domain:accessibility
 	namespace="a11y"
 	title="Accessibility Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:accessibility:Accessibility
+			id=paperhat:domain:accessibility:Accessibility
 			name="Accessibility"
 		>
 			<ContentRules>
@@ -36,38 +36,38 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:accessibility:trait:accessMode
+			id=paperhat:domain:accessibility:trait:accessMode
 			name="accessMode"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:accessibility:trait:accessibilityFeature
+			id=paperhat:domain:accessibility:trait:accessibilityFeature
 			name="accessibilityFeature"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:accessibility:trait:accessibilityHazard
+			id=paperhat:domain:accessibility:trait:accessibilityHazard
 			name="accessibilityHazard"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:accessibility:trait:accessibilitySummary
+			id=paperhat:domain:accessibility:trait:accessibilitySummary
 			name="accessibilitySummary"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:accessibility:trait:accessibilityControl
+			id=paperhat:domain:accessibility:trait:accessibilityControl
 			name="accessibilityControl"
 		/>
 	</TraitDefinitions>
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:accessibility:requires-accessibility-trait
+			id=paperhat:domain:accessibility:requires-accessibility-trait
 			title="Accessibility must have at least one trait"
 		>
 			<Targets>

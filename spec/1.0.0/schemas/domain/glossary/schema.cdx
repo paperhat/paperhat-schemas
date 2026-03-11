@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="Reusable glossary definitions for specifications, documentation, and any context that defines terms. Each entry binds a term to its definition and supports key-based referencing via Gloss."
-	id=codex:domain:glossary
+	id=paperhat:domain:glossary
 	namespace="glossary"
 	title="Glossary Schema"
 	version="1.0.0"
@@ -11,8 +11,8 @@
 	<ConceptDefinitions>
 		<ConceptDefinition
 			conceptKind=$Semantic
-			entityEligibility=$MayBeEntity
-			id=codex:domain:glossary:GlossaryEntry
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:glossary:GlossaryEntry
 			name="GlossaryEntry"
 		>
 			<ContentRules>
@@ -30,13 +30,13 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:glossary:trait:term
+			id=paperhat:domain:glossary:trait:term
 			name="term"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$LookupToken
-			id=codex:domain:glossary:trait:key
+			id=paperhat:domain:glossary:trait:key
 			name="key"
 		/>
 	</TraitDefinitions>

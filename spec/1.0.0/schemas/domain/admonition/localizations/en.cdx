@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:admonition
+	schema=paperhat:domain:admonition
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -22,7 +22,7 @@
 	</TraitLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:admonition:requires-child"
+		identifier="paperhat:domain:admonition:requires-child"
 		label="Requires at least one admonition"
 	>
 		An Admonitions container must contain at least one admonition concept.

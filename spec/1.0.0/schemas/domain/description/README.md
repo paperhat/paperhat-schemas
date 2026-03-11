@@ -20,8 +20,8 @@ Use `Description` wherever content needs a "what is this?" block. For simple cas
 
 | Namespace | Schema |
 |---|---|
-| text | `codex:domain:text` |
-| list | `codex:domain:list` |
+| text | `paperhat:domain:text` |
+| list | `paperhat:domain:list` |
 
 ## Traits
 

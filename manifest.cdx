@@ -49,8 +49,10 @@
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-foreign-term" packagePath="spec/1.0.0/schemas/domain/foreign-term" />
 
-	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-geographic-location" packagePath="spec/1.0.0/schemas/domain/geographic-location" />
+	<RepositoryPackageEntry packageFamily="domain" (packageName="paperhat-geographic-location" packagePath="spec/1.0.0/schemas/domain/geographic-location" />
 
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-glossary" packagePath="spec/1.0.0/schemas/domain/glossary" />
+)
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-identifier" packagePath="spec/1.0.0/schemas/domain/identifier" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-jurisdiction" packagePath="spec/1.0.0/schemas/domain/jurisdiction" />

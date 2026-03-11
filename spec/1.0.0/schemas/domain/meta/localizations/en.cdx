@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:meta
+	schema=paperhat:domain:meta
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -16,28 +16,28 @@
 	</TraitLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:meta:no-instances"
+		identifier="paperhat:domain:meta:no-instances"
 		label="No individuals"
 	>
 		Domain schemas must not define individuals.
 	</ConstraintLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:meta:content-opt-in"
+		identifier="paperhat:domain:meta:content-opt-in"
 		label="Content forbidden by default"
 	>
 		Content is forbidden by default in domain concepts.
 	</ConstraintLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:meta:ordering-declared"
+		identifier="paperhat:domain:meta:ordering-declared"
 		label="Ordering declared"
 	>
 		Default collection ordering must be declared.
 	</ConstraintLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:meta:override-context-only"
+		identifier="paperhat:domain:meta:override-context-only"
 		label="Override context only"
 	>
 		Sequence and Group are permitted only within CollectionOverride.

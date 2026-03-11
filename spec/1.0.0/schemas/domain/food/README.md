@@ -35,11 +35,11 @@ Use `Food` to define a food entity that can be referenced by recipes and other c
 
 | Namespace | Schema |
 |---|---|
-| desc | `codex:domain:description` |
-| nutrition | `codex:domain:nutrition-information` |
-| tags | `codex:domain:tags` |
-| loc | `codex:domain:location` |
-| sensory | `codex:domain:sensory-profile` |
+| desc | `paperhat:domain:description` |
+| nutrition | `paperhat:domain:nutrition-information` |
+| tags | `paperhat:domain:tags` |
+| loc | `paperhat:domain:location` |
+| sensory | `paperhat:domain:sensory-profile` |
 
 ## Design Notes
 

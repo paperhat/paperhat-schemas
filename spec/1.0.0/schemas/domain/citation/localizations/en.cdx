@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:citation
+	schema=paperhat:domain:citation
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -72,7 +72,7 @@
 	</TraitLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:citation:contributor-has-entity"
+		identifier="paperhat:domain:citation:contributor-has-entity"
 		label="Contributor must identify a person or organization"
 	>
 		A Contributor must have exactly one of: a Person child, an Organization child, or a Reference child pointing to an entity defined elsewhere.

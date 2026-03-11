@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="Defines localization bundles that provide human-readable labels and descriptions for schema elements in any natural language."
-	id=codex:system:localization
+	id=paperhat:system:localization
 	namespace="l10n"
 	title="Localization Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:system:localization:LocalizationBundle
+			id=paperhat:system:localization:LocalizationBundle
 			name="LocalizationBundle"
 		>
 			<ContentRules>
@@ -43,7 +43,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:system:localization:ConceptLocalization
+			id=paperhat:system:localization:ConceptLocalization
 			name="ConceptLocalization"
 		>
 			<ContentRules>
@@ -72,7 +72,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:system:localization:TraitLocalization
+			id=paperhat:system:localization:TraitLocalization
 			name="TraitLocalization"
 		>
 			<ContentRules>
@@ -101,7 +101,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:system:localization:TokenLocalization
+			id=paperhat:system:localization:TokenLocalization
 			name="TokenLocalization"
 		>
 			<ContentRules>
@@ -128,7 +128,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:system:localization:ConstraintLocalization
+			id=paperhat:system:localization:ConstraintLocalization
 			name="ConstraintLocalization"
 		>
 			<ContentRules>
@@ -146,67 +146,67 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Iri
-			id=codex:system:localization:trait:schema
+			id=paperhat:system:localization:trait:schema
 			name="schema"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:system:localization:trait:schemaVersion
+			id=paperhat:system:localization:trait:schemaVersion
 			name="schemaVersion"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:system:localization:trait:language
+			id=paperhat:system:localization:trait:language
 			name="language"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:system:localization:trait:identifier
+			id=paperhat:system:localization:trait:identifier
 			name="identifier"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:system:localization:trait:label
+			id=paperhat:system:localization:trait:label
 			name="label"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:system:localization:trait:labelZero
+			id=paperhat:system:localization:trait:labelZero
 			name="labelZero"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:system:localization:trait:labelTwo
+			id=paperhat:system:localization:trait:labelTwo
 			name="labelTwo"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:system:localization:trait:labelFew
+			id=paperhat:system:localization:trait:labelFew
 			name="labelFew"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:system:localization:trait:labelMany
+			id=paperhat:system:localization:trait:labelMany
 			name="labelMany"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:system:localization:trait:labelOther
+			id=paperhat:system:localization:trait:labelOther
 			name="labelOther"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:system:localization:trait:grammaticalGender
+			id=paperhat:system:localization:trait:grammaticalGender
 			name="grammaticalGender"
 		/>
 	</TraitDefinitions>

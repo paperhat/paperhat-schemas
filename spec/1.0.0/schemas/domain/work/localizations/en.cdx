@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:work
+	schema=paperhat:domain:work
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -38,7 +38,7 @@
 	</TraitLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:work:requires-work-trait"
+		identifier="paperhat:domain:work:requires-work-trait"
 		label="Requires at least one work trait"
 	>
 		A Work element must specify at least one trait.

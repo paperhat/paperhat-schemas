@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="Semantic treatments applied to text spans: emphasis, importance, highlighting, track-changes operations, annotations, corrections, redactions, spoilers, and quotations."
-	id=codex:domain:editorial-markup
+	id=paperhat:domain:editorial-markup
 	namespace="markup"
 	title="Editorial Markup Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:editorial-markup:EditorialMarkup
+			id=paperhat:domain:editorial-markup:EditorialMarkup
 			name="EditorialMarkup"
 		>
 			<ContentRules>
@@ -51,7 +51,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:editorial-markup:Emphasis
+			id=paperhat:domain:editorial-markup:Emphasis
 			name="Emphasis"
 		>
 			<ContentRules>
@@ -68,7 +68,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:editorial-markup:Important
+			id=paperhat:domain:editorial-markup:Important
 			name="Important"
 		>
 			<ContentRules>
@@ -85,7 +85,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:editorial-markup:Highlight
+			id=paperhat:domain:editorial-markup:Highlight
 			name="Highlight"
 		>
 			<ContentRules>
@@ -102,7 +102,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:editorial-markup:Deletion
+			id=paperhat:domain:editorial-markup:Deletion
 			name="Deletion"
 		>
 			<ContentRules>
@@ -119,7 +119,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:editorial-markup:Insertion
+			id=paperhat:domain:editorial-markup:Insertion
 			name="Insertion"
 		>
 			<ContentRules>
@@ -136,7 +136,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:editorial-markup:MoveFrom
+			id=paperhat:domain:editorial-markup:MoveFrom
 			name="MoveFrom"
 		>
 			<ContentRules>
@@ -155,7 +155,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:editorial-markup:MoveTo
+			id=paperhat:domain:editorial-markup:MoveTo
 			name="MoveTo"
 		>
 			<ContentRules>
@@ -174,7 +174,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:editorial-markup:Annotation
+			id=paperhat:domain:editorial-markup:Annotation
 			name="Annotation"
 		>
 			<ContentRules>
@@ -191,7 +191,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:editorial-markup:Redaction
+			id=paperhat:domain:editorial-markup:Redaction
 			name="Redaction"
 		>
 			<ContentRules>
@@ -210,7 +210,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:editorial-markup:Spoiler
+			id=paperhat:domain:editorial-markup:Spoiler
 			name="Spoiler"
 		>
 			<ContentRules>
@@ -227,7 +227,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:editorial-markup:Correction
+			id=paperhat:domain:editorial-markup:Correction
 			name="Correction"
 		>
 			<ContentRules>
@@ -246,7 +246,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:editorial-markup:Quote
+			id=paperhat:domain:editorial-markup:Quote
 			name="Quote"
 		>
 			<ContentRules>
@@ -267,7 +267,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:editorial-markup:BlockQuotation
+			id=paperhat:domain:editorial-markup:BlockQuotation
 			name="BlockQuotation"
 		>
 			<ContentRules>
@@ -288,7 +288,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:editorial-markup:PullQuote
+			id=paperhat:domain:editorial-markup:PullQuote
 			name="PullQuote"
 		>
 			<ContentRules>
@@ -306,56 +306,56 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$LookupToken
-			id=codex:domain:editorial-markup:trait:key
+			id=paperhat:domain:editorial-markup:trait:key
 			name="key"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:editorial-markup:trait:text
+			id=paperhat:domain:editorial-markup:trait:text
 			name="text"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:editorial-markup:trait:author
+			id=paperhat:domain:editorial-markup:trait:author
 			name="author"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:editorial-markup:trait:source
+			id=paperhat:domain:editorial-markup:trait:source
 			name="source"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:editorial-markup:trait:language
+			id=paperhat:domain:editorial-markup:trait:language
 			name="language"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$LookupToken
-			id=codex:domain:editorial-markup:trait:moveIdentifier
+			id=paperhat:domain:editorial-markup:trait:moveIdentifier
 			name="moveIdentifier"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:editorial-markup:trait:reason
+			id=paperhat:domain:editorial-markup:trait:reason
 			name="reason"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:editorial-markup:trait:original
+			id=paperhat:domain:editorial-markup:trait:original
 			name="original"
 		/>
 	</TraitDefinitions>
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:editorial-markup:requires-child
+			id=paperhat:domain:editorial-markup:requires-child
 			title="EditorialMarkup must contain at least one child"
 		>
 			<Targets>

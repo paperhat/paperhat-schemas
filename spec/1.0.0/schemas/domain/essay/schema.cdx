@@ -2,25 +2,25 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A short-to-medium-length prose composition expressing the author's perspective on a single subject."
-	id=codex:domain:essay
+	id=paperhat:domain:essay
 	namespace="essay"
 	title="Essay Schema"
 	version="1.0.0"
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=docmeta reference=urn:cdx:sha256:aacfbd65a5928a0cfc5bcfbad2a2ff435f5aab17448b68710b59ccc8da9ce1a4 />
+		<SchemaImport namespace=docmeta reference=urn:cdx:sha256:d6387600e328aa9cfa352df858754c1ff816bf436ba227b72d97d4cedf5a65e3 />
 
-		<SchemaImport namespace=narrative reference=urn:cdx:sha256:b6523e966a6cd7853cca4519f60bf713c2655f291e4c7040cfc07770bdcf2336 />
+		<SchemaImport namespace=narrative reference=urn:cdx:sha256:a97f438a11d18ed0c556d0824e3d0692d6719c13c50ac2b7f1e0b3e37520c415 />
 
-		<SchemaImport namespace=notes reference=urn:cdx:sha256:9d3ab9c299e532776ee07bbdd56c58dc18347be6e9712c1def71a0fc8f399352 />
+		<SchemaImport namespace=notes reference=urn:cdx:sha256:5169d4469cf2f181b23bfee5510652073ead5e1c6871486dba219bfb6c2b3a2b />
 	</SchemaImports>
 
 	<ConceptDefinitions>
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustBeEntity
-			id=codex:domain:essay:Essay
+			id=paperhat:domain:essay:Essay
 			name="Essay"
 		>
 			<ContentRules>
@@ -46,7 +46,7 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:essay:trait:title
+			id=paperhat:domain:essay:trait:title
 			name="title"
 		/>
 	</TraitDefinitions>

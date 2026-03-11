@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A temporal duration expressed as an amount and a unit."
-	id=codex:domain:duration
+	id=paperhat:domain:duration
 	namespace="dur"
 	title="Duration Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:duration:Duration
+			id=paperhat:domain:duration:Duration
 			name="Duration"
 		>
 			<ContentRules>
@@ -30,13 +30,13 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueTypes=[$Number, $Range<$Number>]
-			id=codex:domain:duration:trait:amount
+			id=paperhat:domain:duration:trait:amount
 			name="amount"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:duration:trait:unit
+			id=paperhat:domain:duration:trait:unit
 			name="unit"
 		/>
 	</TraitDefinitions>

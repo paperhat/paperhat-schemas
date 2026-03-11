@@ -2,39 +2,39 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="An unordered container for document metadata: authorship, descriptions, summaries, tags, audience, and other non-body information."
-	id=codex:domain:document-metadata
+	id=paperhat:domain:document-metadata
 	namespace="docmeta"
 	title="Document Metadata Schema"
 	version="1.0.0"
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=work reference=urn:cdx:sha256:1a180843230548cc38ddcde65df88bb025fd9a3feff6cdc6da19e8c3a8823dcd />
+		<SchemaImport namespace=work reference=urn:cdx:sha256:7d8e5217434f3f577ec3d65a10d50846c5140722b229029517aba371c6aeda67 />
 
-		<SchemaImport namespace=desc reference=urn:cdx:sha256:5e9c6ba4654a0b013b65fc38fde033d2b6fc281d7eb791e57b207b42d80ae7da />
+		<SchemaImport namespace=desc reference=urn:cdx:sha256:011828a51c1e0956207698eae3cdad433acbf33711fece6e6b26c129cfad4188 />
 
-		<SchemaImport namespace=summary reference=urn:cdx:sha256:3b9aafd82dbaa53ab38128147d2b215bc4067998492bc50b93e51319ab1e0cbc />
+		<SchemaImport namespace=summary reference=urn:cdx:sha256:8ad50bcc27f33fbe714c7a9c32c12ef643a78ad193c5befc49ad223d03f9f2e1 />
 
-		<SchemaImport namespace=tags reference=urn:cdx:sha256:864fb472fd89cb8024e9d3725203d2129185e39f375df5569b421353dbae9c98 />
+		<SchemaImport namespace=tags reference=urn:cdx:sha256:af138b9c8bbc16117f2d8553c482253f9144721ab3a9d411992a2035e2094206 />
 
-		<SchemaImport namespace=audience reference=urn:cdx:sha256:96d1ab313b9cf2a357f05cfdaaf0f9dd4869f42d623f3de28abea92af787a053 />
+		<SchemaImport namespace=audience reference=urn:cdx:sha256:eeb4cfc2a3574d6de35e3cfa7efd3daa750ffacc91c57ca046b9d1a2da903c43 />
 
-		<SchemaImport namespace=person reference=urn:cdx:sha256:7badcc38ee67c837a2178a667491ac1f58e0c051b5438adfd13b8de89b3e9be6 />
+		<SchemaImport namespace=person reference=urn:cdx:sha256:f8dcd8d7f5c8142ceb4449ff9e769417a2726e4cf735b55dfd983cac3d8d30d0 />
 
-		<SchemaImport namespace=pname reference=urn:cdx:sha256:097ed49d3aa9f872aae455972ae284958edd09a622863eef03c9eb3c75bf4c4e />
+		<SchemaImport namespace=pname reference=urn:cdx:sha256:43ee55dc78ff2c04b294272064481d98a3be7087af7cb2564c5e8a6862905394 />
 
-		<SchemaImport namespace=contact reference=urn:cdx:sha256:3b19e88f414107daffdfaf3b1116dd5bec1c656faad58536392a2ec9891ff11a />
+		<SchemaImport namespace=contact reference=urn:cdx:sha256:0623b3bc48dfd1632919af1704725cc24b3e1ead90f4ce3a59117485e64335eb />
 
-		<SchemaImport namespace=ident reference=urn:cdx:sha256:a220d2034a4faa1a81d8102265c1fef36576871a0ba25ac31500abac7afd5907 />
+		<SchemaImport namespace=ident reference=urn:cdx:sha256:5fafd42cd5ebaa41ecaf7b26d4ea2be9fb9c6a6c68c56ab3c8f2483fdbe1cf28 />
 
-		<SchemaImport namespace=loc reference=urn:cdx:sha256:df456110f9e2cb2b0524011e6fd6892f345dadc412a7b078699f9aab4fd5bf55 />
+		<SchemaImport namespace=loc reference=urn:cdx:sha256:69ebdc66422b5962b2521ef49b174550c9b45c369ddd60c9967699566c0b16f0 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:document-metadata:DocumentMetadata
+			id=paperhat:domain:document-metadata:DocumentMetadata
 			name="DocumentMetadata"
 		>
 			<ContentRules>

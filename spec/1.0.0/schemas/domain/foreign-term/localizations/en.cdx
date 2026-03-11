@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:foreign-term
+	schema=paperhat:domain:foreign-term
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -24,7 +24,7 @@
 	</TraitLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:foreign-term:requires-term"
+		identifier="paperhat:domain:foreign-term:requires-term"
 		label="Requires at least one foreign term"
 	>
 		A ForeignTerms container must contain at least one ForeignTerm.

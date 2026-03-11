@@ -20,9 +20,9 @@ Use `Bio` for an authored biography or about-document whose subject is a referen
 
 | Namespace | Schema |
 |---|---|
-| docmeta | `codex:domain:document-metadata` |
-| narrative | `codex:domain:narrative` |
-| notes | `codex:domain:notes` |
+| docmeta | `paperhat:domain:document-metadata` |
+| narrative | `paperhat:domain:narrative` |
+| notes | `paperhat:domain:notes` |
 
 ## Traits
 

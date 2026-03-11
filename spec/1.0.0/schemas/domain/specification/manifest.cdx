@@ -63,4 +63,9 @@
 		closureHash="703472ba80a5f88685e7a6d604b16d31dfb06a81186c58bdd378aac55a53e897"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
+	<PackageDependency
+		packageName="paperhat-glossary"
+		closureHash="0000000000000000000000000000000000000000000000000000000000000000"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
 </DomainPackageManifest>

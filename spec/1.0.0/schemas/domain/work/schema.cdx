@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="Creative work metadata: authorship, dates, versioning, licensing, and lifecycle status."
-	id=codex:domain:work
+	id=paperhat:domain:work
 	namespace="work"
 	title="Work Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:work:Work
+			id=paperhat:domain:work:Work
 			name="Work"
 		>
 			<ContentRules>
@@ -42,56 +42,56 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:work:trait:author
+			id=paperhat:domain:work:trait:author
 			name="author"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Date
-			id=codex:domain:work:trait:dateCreated
+			id=paperhat:domain:work:trait:dateCreated
 			name="dateCreated"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Date
-			id=codex:domain:work:trait:datePublished
+			id=paperhat:domain:work:trait:datePublished
 			name="datePublished"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Date
-			id=codex:domain:work:trait:dateModified
+			id=paperhat:domain:work:trait:dateModified
 			name="dateModified"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:work:trait:version
+			id=paperhat:domain:work:trait:version
 			name="version"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:work:trait:language
+			id=paperhat:domain:work:trait:language
 			name="language"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:work:trait:status
+			id=paperhat:domain:work:trait:status
 			name="status"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:work:trait:license
+			id=paperhat:domain:work:trait:license
 			name="license"
 		/>
 	</TraitDefinitions>
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:work:requires-work-trait
+			id=paperhat:domain:work:requires-work-trait
 			title="Work must have at least one trait"
 		>
 			<Targets>

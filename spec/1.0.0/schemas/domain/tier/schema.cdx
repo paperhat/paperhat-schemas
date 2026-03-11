@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A named packaging level within a product or service — a tier, plan, or edition that bundles specific features and pricing."
-	id=codex:domain:tier
+	id=paperhat:domain:tier
 	namespace="tier"
 	title="Tier Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustBeEntity
-			id=codex:domain:tier:Tier
+			id=paperhat:domain:tier:Tier
 			name="Tier"
 		>
 			<ContentRules>
@@ -34,26 +34,26 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:tier:trait:name
+			id=paperhat:domain:tier:trait:name
 			name="name"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:tier:trait:tierKind
+			id=paperhat:domain:tier:trait:tierKind
 			name="tierKind"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Iri
-			id=codex:domain:tier:trait:product
+			id=paperhat:domain:tier:trait:product
 			isReferenceTrait=true
 			name="product"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:tier:trait:tierStatus
+			id=paperhat:domain:tier:trait:tierStatus
 			name="tierStatus"
 		/>
 	</TraitDefinitions>

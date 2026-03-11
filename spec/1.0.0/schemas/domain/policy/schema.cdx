@@ -2,21 +2,21 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A named institutional policy — a set of rules, obligations, or commitments governing behavior within an organization or jurisdiction."
-	id=codex:domain:policy
+	id=paperhat:domain:policy
 	namespace="policy"
 	title="Policy Schema"
 	version="1.0.0"
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=jurisdiction reference=urn:cdx:sha256:12fa171849ee9c6dd633d59e48483057461cf8b80fee17985e59aafd8ec1bfd8 />
+		<SchemaImport namespace=jurisdiction reference=urn:cdx:sha256:c420d5337b090d64b1004a8b047d34b7c400ce39fdc32f0bc0d475a523c9c519 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustBeEntity
-			id=codex:domain:policy:Policy
+			id=paperhat:domain:policy:Policy
 			name="Policy"
 		>
 			<ContentRules>
@@ -42,25 +42,25 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:policy:trait:name
+			id=paperhat:domain:policy:trait:name
 			name="name"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:policy:trait:policyKind
+			id=paperhat:domain:policy:trait:policyKind
 			name="policyKind"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:policy:trait:policyStatus
+			id=paperhat:domain:policy:trait:policyStatus
 			name="policyStatus"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Date
-			id=codex:domain:policy:trait:effectiveDate
+			id=paperhat:domain:policy:trait:effectiveDate
 			name="effectiveDate"
 		/>
 	</TraitDefinitions>

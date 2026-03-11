@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:location
+	schema=paperhat:domain:location
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -26,7 +26,7 @@
 	</TraitLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:location:requires-location-part"
+		identifier="paperhat:domain:location:requires-location-part"
 		label="Requires at least one location part"
 	>
 		A Location must include at least one location part.

@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:reference
+	schema=paperhat:domain:reference
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -10,7 +10,7 @@
 	</TraitLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:reference:target-is-entity"
+		identifier="paperhat:domain:reference:target-is-entity"
 		label="Target must be an entity"
 	>
 		The reference target must point to an entity.

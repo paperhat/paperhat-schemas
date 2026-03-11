@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="Structured personal name with support for cultural variants, multiple name kinds, and decomposed name parts."
-	id=codex:domain:person-name
+	id=paperhat:domain:person-name
 	namespace="pname"
 	title="Person Name Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:person-name:PersonName
+			id=paperhat:domain:person-name:PersonName
 			name="PersonName"
 		>
 			<ContentRules>
@@ -37,68 +37,68 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:person-name:trait:nameKind
+			id=paperhat:domain:person-name:trait:nameKind
 			name="nameKind"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:person-name:trait:full
+			id=paperhat:domain:person-name:trait:full
 			name="full"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:person-name:trait:given
+			id=paperhat:domain:person-name:trait:given
 			name="given"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$List<$Text>
-			id=codex:domain:person-name:trait:middle
+			id=paperhat:domain:person-name:trait:middle
 			name="middle"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:person-name:trait:family
+			id=paperhat:domain:person-name:trait:family
 			name="family"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$List<$Text>
-			id=codex:domain:person-name:trait:title
+			id=paperhat:domain:person-name:trait:title
 			name="title"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$List<$Text>
-			id=codex:domain:person-name:trait:honorific
+			id=paperhat:domain:person-name:trait:honorific
 			name="honorific"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$List<$Text>
-			id=codex:domain:person-name:trait:suffix
+			id=paperhat:domain:person-name:trait:suffix
 			name="suffix"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Date
-			id=codex:domain:person-name:trait:effectiveFrom
+			id=paperhat:domain:person-name:trait:effectiveFrom
 			name="effectiveFrom"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Date
-			id=codex:domain:person-name:trait:effectiveTo
+			id=paperhat:domain:person-name:trait:effectiveTo
 			name="effectiveTo"
 		/>
 	</TraitDefinitions>
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:person-name:requires-name-part
+			id=paperhat:domain:person-name:requires-name-part
 			title="PersonName must have at least one name part"
 		>
 			<Targets>

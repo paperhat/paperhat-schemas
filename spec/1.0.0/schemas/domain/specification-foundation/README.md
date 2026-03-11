@@ -85,7 +85,7 @@ Status values for draft-phase items (Issues and OpenQuestions). These items are 
 
 - Trait-level AllowedValues are declared on `conformance`, `division`, and `modality` so that any consuming schema inherits the constraint automatically, even without concept-level AllowedValues.
 - The RequirementModality set contains all 10 RFC 2119 keywords. The strict specification schema narrows this to {Must, MustNot} at concept level. The RFC 2119 specification schema inherits the full set.
-- Trait IRI prefix is `codex:domain:specification-foundation:trait:*`, distinct from the consuming schemas' concept IRI prefixes.
+- Trait IRI prefix is `paperhat:domain:specification-foundation:trait:*`, distinct from the consuming schemas' concept IRI prefixes.
 
 ---
 

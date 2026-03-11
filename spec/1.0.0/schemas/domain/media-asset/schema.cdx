@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A discrete media file or object with identity, such as an image, video, audio recording, or document file, carrying technical metadata about the asset itself."
-	id=codex:domain:media-asset
+	id=paperhat:domain:media-asset
 	namespace="asset"
 	title="Media Asset Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustBeEntity
-			id=codex:domain:media-asset:MediaAsset
+			id=paperhat:domain:media-asset:MediaAsset
 			name="MediaAsset"
 		>
 			<ContentRules>
@@ -36,31 +36,31 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:media-asset:trait:name
+			id=paperhat:domain:media-asset:trait:name
 			name="name"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:media-asset:trait:assetKind
+			id=paperhat:domain:media-asset:trait:assetKind
 			name="assetKind"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Url
-			id=codex:domain:media-asset:trait:url
+			id=paperhat:domain:media-asset:trait:url
 			name="url"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$MediaType
-			id=codex:domain:media-asset:trait:encodingFormat
+			id=paperhat:domain:media-asset:trait:encodingFormat
 			name="encodingFormat"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:media-asset:trait:altText
+			id=paperhat:domain:media-asset:trait:altText
 			name="altText"
 		/>
 	</TraitDefinitions>

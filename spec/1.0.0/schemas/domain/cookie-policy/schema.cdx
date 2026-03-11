@@ -2,20 +2,20 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A structured cookie policy document defining governing entities, covered targets, cookie categories, controls, third-party use, retention semantics, defined terms, and related legal document references."
-	id=codex:domain:cookie-policy
+	id=paperhat:domain:cookie-policy
 	namespace="cookie"
 	title="Cookie Policy Schema"
 	version="1.0.0"
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=docmeta reference=urn:cdx:sha256:aacfbd65a5928a0cfc5bcfbad2a2ff435f5aab17448b68710b59ccc8da9ce1a4 />
-		<SchemaImport namespace=jurisdiction reference=urn:cdx:sha256:12fa171849ee9c6dd633d59e48483057461cf8b80fee17985e59aafd8ec1bfd8 />
-		<SchemaImport namespace=text reference=urn:cdx:sha256:0d835975e6ccabdab7c2204e9b1d4e19baf24108e45a8f240adea3a2684a5fd0 />
-		<SchemaImport namespace=list reference=urn:cdx:sha256:47b1e8725dfbf226ac7dd20ffe8b0fb77c1e444735895c24b2225b317d2185cd />
-		<SchemaImport namespace=section reference=urn:cdx:sha256:c3647adb77a28456689ca99ef09e7c6b98745bc8aac6152c5fc83bdaaba4c7be />
-		<SchemaImport namespace=notes reference=urn:cdx:sha256:9d3ab9c299e532776ee07bbdd56c58dc18347be6e9712c1def71a0fc8f399352 />
-		<SchemaImport namespace=term reference=urn:cdx:sha256:c139458a29a8c749d7f7adbbd06b0c9996e2c7f251f13f8382be04b2959eddc0 />
+		<SchemaImport namespace=docmeta reference=urn:cdx:sha256:d6387600e328aa9cfa352df858754c1ff816bf436ba227b72d97d4cedf5a65e3 />
+		<SchemaImport namespace=jurisdiction reference=urn:cdx:sha256:c420d5337b090d64b1004a8b047d34b7c400ce39fdc32f0bc0d475a523c9c519 />
+		<SchemaImport namespace=text reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
+		<SchemaImport namespace=list reference=urn:cdx:sha256:10cc30a2245e8480bb2564cba4c09c243f84285d5219b06a1899272917da2caa />
+		<SchemaImport namespace=section reference=urn:cdx:sha256:c60256433124cfac2e173ea6ed7861b57c59bb24c3152d35badf8620f353f51e />
+		<SchemaImport namespace=notes reference=urn:cdx:sha256:5169d4469cf2f181b23bfee5510652073ead5e1c6871486dba219bfb6c2b3a2b />
+		<SchemaImport namespace=term reference=urn:cdx:sha256:d1238116402919e9ea43e55229413ed596a830e0f8f44ac2878ac63e4430f5c1 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
@@ -23,7 +23,7 @@
 			conceptKind=$Semantic
 			defaultLabelSource="title"
 			entityEligibility=$MustBeEntity
-			id=codex:domain:cookie-policy:CookiePolicy
+			id=paperhat:domain:cookie-policy:CookiePolicy
 			name="CookiePolicy"
 		>
 			<ContentRules>
@@ -51,7 +51,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:cookie-policy:GoverningEntity
+			id=paperhat:domain:cookie-policy:GoverningEntity
 			name="GoverningEntity"
 		>
 			<ContentRules>
@@ -66,7 +66,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:cookie-policy:AppliesTo
+			id=paperhat:domain:cookie-policy:AppliesTo
 			name="AppliesTo"
 		>
 			<ContentRules>
@@ -81,7 +81,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:cookie-policy:RelatedDocument
+			id=paperhat:domain:cookie-policy:RelatedDocument
 			name="RelatedDocument"
 		>
 			<ContentRules>
@@ -96,7 +96,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:cookie-policy:Definitions
+			id=paperhat:domain:cookie-policy:Definitions
 			name="Definitions"
 		>
 			<ContentRules>
@@ -111,7 +111,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:cookie-policy:CookieCategory
+			id=paperhat:domain:cookie-policy:CookieCategory
 			name="CookieCategory"
 		>
 			<ContentRules>
@@ -133,7 +133,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:cookie-policy:CookieControl
+			id=paperhat:domain:cookie-policy:CookieControl
 			name="CookieControl"
 		>
 			<ContentRules>
@@ -152,7 +152,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:cookie-policy:ThirdPartyUse
+			id=paperhat:domain:cookie-policy:ThirdPartyUse
 			name="ThirdPartyUse"
 		>
 			<ContentRules>
@@ -171,7 +171,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:cookie-policy:Retention
+			id=paperhat:domain:cookie-policy:Retention
 			name="Retention"
 		>
 			<ContentRules>
@@ -189,17 +189,17 @@
 	</ConceptDefinitions>
 
 	<TraitDefinitions>
-		<TraitDefinition defaultValueType=$Text id=codex:domain:cookie-policy:trait:title name="title" />
-		<TraitDefinition defaultValueType=$EnumeratedToken id=codex:domain:cookie-policy:trait:category name="category" />
-		<TraitDefinition defaultValueType=$Iri id=codex:domain:cookie-policy:trait:target isReferenceTrait=true name="target" />
-		<TraitDefinition defaultValueType=$EnumeratedToken id=codex:domain:cookie-policy:trait:governingRole name="governingRole" />
-		<TraitDefinition defaultValueType=$EnumeratedToken id=codex:domain:cookie-policy:trait:scopeKind name="scopeKind" />
-		<TraitDefinition defaultValueType=$EnumeratedToken id=codex:domain:cookie-policy:trait:relationshipKind name="relationshipKind" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:cookie-policy:trait:title name="title" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:cookie-policy:trait:category name="category" />
+		<TraitDefinition defaultValueType=$Iri id=paperhat:domain:cookie-policy:trait:target isReferenceTrait=true name="target" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:cookie-policy:trait:governingRole name="governingRole" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:cookie-policy:trait:scopeKind name="scopeKind" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:cookie-policy:trait:relationshipKind name="relationshipKind" />
 	</TraitDefinitions>
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:cookie-policy:governing-entity-reference-trait-allowed
+			id=paperhat:domain:cookie-policy:governing-entity-reference-trait-allowed
 			title="GoverningEntity allows only target as a reference trait"
 		>
 			<Targets>
@@ -210,7 +210,7 @@
 			</Rule>
 		</ConstraintDefinition>
 		<ConstraintDefinition
-			id=codex:domain:cookie-policy:governing-entity-reference-singleton
+			id=paperhat:domain:cookie-policy:governing-entity-reference-singleton
 			title="GoverningEntity must declare at most one reference trait"
 		>
 			<Targets>
@@ -221,7 +221,7 @@
 			</Rule>
 		</ConstraintDefinition>
 		<ConstraintDefinition
-			id=codex:domain:cookie-policy:governing-entity-targets-entity
+			id=paperhat:domain:cookie-policy:governing-entity-targets-entity
 			title="GoverningEntity target must resolve to an entity"
 		>
 			<Targets>
@@ -232,7 +232,7 @@
 			</Rule>
 		</ConstraintDefinition>
 		<ConstraintDefinition
-			id=codex:domain:cookie-policy:governing-entity-must-resolve
+			id=paperhat:domain:cookie-policy:governing-entity-must-resolve
 			title="GoverningEntity target must resolve"
 		>
 			<Targets>
@@ -244,7 +244,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:cookie-policy:applies-to-reference-trait-allowed
+			id=paperhat:domain:cookie-policy:applies-to-reference-trait-allowed
 			title="AppliesTo allows only target as a reference trait"
 		>
 			<Targets>
@@ -255,7 +255,7 @@
 			</Rule>
 		</ConstraintDefinition>
 		<ConstraintDefinition
-			id=codex:domain:cookie-policy:applies-to-reference-singleton
+			id=paperhat:domain:cookie-policy:applies-to-reference-singleton
 			title="AppliesTo must declare at most one reference trait"
 		>
 			<Targets>
@@ -266,7 +266,7 @@
 			</Rule>
 		</ConstraintDefinition>
 		<ConstraintDefinition
-			id=codex:domain:cookie-policy:applies-to-targets-entity
+			id=paperhat:domain:cookie-policy:applies-to-targets-entity
 			title="AppliesTo target must resolve to an entity"
 		>
 			<Targets>
@@ -277,7 +277,7 @@
 			</Rule>
 		</ConstraintDefinition>
 		<ConstraintDefinition
-			id=codex:domain:cookie-policy:applies-to-must-resolve
+			id=paperhat:domain:cookie-policy:applies-to-must-resolve
 			title="AppliesTo target must resolve"
 		>
 			<Targets>
@@ -289,7 +289,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:cookie-policy:related-document-reference-trait-allowed
+			id=paperhat:domain:cookie-policy:related-document-reference-trait-allowed
 			title="RelatedDocument allows only target as a reference trait"
 		>
 			<Targets>
@@ -300,7 +300,7 @@
 			</Rule>
 		</ConstraintDefinition>
 		<ConstraintDefinition
-			id=codex:domain:cookie-policy:related-document-reference-singleton
+			id=paperhat:domain:cookie-policy:related-document-reference-singleton
 			title="RelatedDocument must declare at most one reference trait"
 		>
 			<Targets>
@@ -311,7 +311,7 @@
 			</Rule>
 		</ConstraintDefinition>
 		<ConstraintDefinition
-			id=codex:domain:cookie-policy:related-document-targets-entity
+			id=paperhat:domain:cookie-policy:related-document-targets-entity
 			title="RelatedDocument target must resolve to an entity"
 		>
 			<Targets>
@@ -322,7 +322,7 @@
 			</Rule>
 		</ConstraintDefinition>
 		<ConstraintDefinition
-			id=codex:domain:cookie-policy:related-document-must-resolve
+			id=paperhat:domain:cookie-policy:related-document-must-resolve
 			title="RelatedDocument target must resolve"
 		>
 			<Targets>
@@ -334,7 +334,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:cookie-policy:definitions-requires-term-entry
+			id=paperhat:domain:cookie-policy:definitions-requires-term-entry
 			title="Definitions must contain at least one TermEntry"
 		>
 			<Targets>

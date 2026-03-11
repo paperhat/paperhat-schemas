@@ -1,6 +1,6 @@
 [Minimal domain concept. Content rules and collection ordering are required.]
 <DomainConcept
-	id=codex:domain:NAMESPACE:CONCEPT_NAME
+	id=paperhat:domain:NAMESPACE:CONCEPT_NAME
 	name=""
 	conceptKind=$Semantic
 	entityEligibility=$MustNotBeEntity

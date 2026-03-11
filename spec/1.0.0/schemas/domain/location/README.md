@@ -7,7 +7,7 @@ Version: 1.0.0
 A named geographic or fictional location with optional administrative subdivisions.
 
 **Package:** `paperhat-location`
-**Schema ID:** `codex:domain:location`
+**Schema ID:** `paperhat:domain:location`
 
 ---
 

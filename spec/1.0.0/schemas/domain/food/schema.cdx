@@ -2,29 +2,29 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A food or comestible, with canonical name, aliases, category, sensory profile, nutritional information, and varieties."
-	id=codex:domain:food
+	id=paperhat:domain:food
 	namespace="food"
 	title="Food Schema"
 	version="1.0.0"
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace="desc" reference=urn:cdx:sha256:5e9c6ba4654a0b013b65fc38fde033d2b6fc281d7eb791e57b207b42d80ae7da />
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:011828a51c1e0956207698eae3cdad433acbf33711fece6e6b26c129cfad4188 />
 
-		<SchemaImport namespace="nutrition" reference=urn:cdx:sha256:60fcc8d6e3a6c6d43a2a6ae59d36c4b625bf4c739655615399744e6ce698f567 />
+		<SchemaImport namespace="nutrition" reference=urn:cdx:sha256:c61007345cffcfed0a46ceaccb06cd4349c52af0bcca2c1e5bc33636a66e9fa1 />
 
-		<SchemaImport namespace="tags" reference=urn:cdx:sha256:864fb472fd89cb8024e9d3725203d2129185e39f375df5569b421353dbae9c98 />
+		<SchemaImport namespace="tags" reference=urn:cdx:sha256:af138b9c8bbc16117f2d8553c482253f9144721ab3a9d411992a2035e2094206 />
 
-		<SchemaImport namespace="loc" reference=urn:cdx:sha256:df456110f9e2cb2b0524011e6fd6892f345dadc412a7b078699f9aab4fd5bf55 />
+		<SchemaImport namespace="loc" reference=urn:cdx:sha256:69ebdc66422b5962b2521ef49b174550c9b45c369ddd60c9967699566c0b16f0 />
 
-		<SchemaImport namespace="sensory" reference=urn:cdx:sha256:2c5e1c3b2735fa6d26fd766df533e4dba26693b52721ce10c9432e551d8f1bd5 />
+		<SchemaImport namespace="sensory" reference=urn:cdx:sha256:d00de1b8dfa3ed02fdee8a8a7aaff5d174317579f954672fb062e1b7004e71f9 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustBeEntity
-			id=codex:domain:food:Food
+			id=paperhat:domain:food:Food
 			name="Food"
 		>
 			<ContentRules>
@@ -61,7 +61,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:food:Aliases
+			id=paperhat:domain:food:Aliases
 			name="Aliases"
 		>
 			<ContentRules>
@@ -78,7 +78,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:food:Alias
+			id=paperhat:domain:food:Alias
 			name="Alias"
 		>
 			<ContentRules>
@@ -95,7 +95,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:food:Varieties
+			id=paperhat:domain:food:Varieties
 			name="Varieties"
 		>
 			<ContentRules>
@@ -112,7 +112,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:food:Variety
+			id=paperhat:domain:food:Variety
 			name="Variety"
 		>
 			<ContentRules>
@@ -132,14 +132,14 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:food:trait:name
+			id=paperhat:domain:food:trait:name
 			name="name"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:food:trait:category
+			id=paperhat:domain:food:trait:category
 			name="category"
 		>
 			<AllowedValues>
@@ -149,25 +149,25 @@
 
 		<TraitDefinition
 			defaultValueType=$Range<$MonthDay>
-			id=codex:domain:food:trait:availability
+			id=paperhat:domain:food:trait:availability
 			name="availability"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Duration
-			id=codex:domain:food:trait:shelfLife
+			id=paperhat:domain:food:trait:shelfLife
 			name="shelfLife"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:food:trait:language
+			id=paperhat:domain:food:trait:language
 			name="language"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:food:trait:region
+			id=paperhat:domain:food:trait:region
 			name="region"
 		/>
 	</TraitDefinitions>

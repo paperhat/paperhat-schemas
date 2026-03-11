@@ -2,20 +2,20 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A structured, argument-driven long-form document for technical or policy white papers. Composes imported building blocks for metadata, narrative structure, footnotes, and series membership."
-	id=codex:domain:white-paper
+	id=paperhat:domain:white-paper
 	namespace="wpaper"
 	title="White Paper Schema"
 	version="1.0.0"
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=docmeta reference=urn:cdx:sha256:aacfbd65a5928a0cfc5bcfbad2a2ff435f5aab17448b68710b59ccc8da9ce1a4 />
+		<SchemaImport namespace=docmeta reference=urn:cdx:sha256:d6387600e328aa9cfa352df858754c1ff816bf436ba227b72d97d4cedf5a65e3 />
 
-		<SchemaImport namespace=narrative reference=urn:cdx:sha256:b6523e966a6cd7853cca4519f60bf713c2655f291e4c7040cfc07770bdcf2336 />
+		<SchemaImport namespace=narrative reference=urn:cdx:sha256:a97f438a11d18ed0c556d0824e3d0692d6719c13c50ac2b7f1e0b3e37520c415 />
 
-		<SchemaImport namespace=notes reference=urn:cdx:sha256:9d3ab9c299e532776ee07bbdd56c58dc18347be6e9712c1def71a0fc8f399352 />
+		<SchemaImport namespace=notes reference=urn:cdx:sha256:5169d4469cf2f181b23bfee5510652073ead5e1c6871486dba219bfb6c2b3a2b />
 
-		<SchemaImport namespace=series reference=urn:cdx:sha256:6fcc7adf6d5bb55bc017a2b6d8887d1e581316cdc4d9fbf06d68e5ffaa87e1be />
+		<SchemaImport namespace=series reference=urn:cdx:sha256:da07d1db83af05789adbcb6ecda9e9f52f1c879cc5ae9b6273fff96676d1b799 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
@@ -23,7 +23,7 @@
 			conceptKind=$Semantic
 			defaultLabelSource="title"
 			entityEligibility=$MustBeEntity
-			id=codex:domain:white-paper:WhitePaper
+			id=paperhat:domain:white-paper:WhitePaper
 			name="WhitePaper"
 		>
 			<ContentRules>
@@ -56,7 +56,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:white-paper:Abstract
+			id=paperhat:domain:white-paper:Abstract
 			name="Abstract"
 		>
 			<ContentRules>
@@ -67,7 +67,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:white-paper:Conclusion
+			id=paperhat:domain:white-paper:Conclusion
 			name="Conclusion"
 		>
 			<ContentRules>
@@ -79,13 +79,13 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:white-paper:trait:title
+			id=paperhat:domain:white-paper:trait:title
 			name="title"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:white-paper:trait:coreThesis
+			id=paperhat:domain:white-paper:trait:coreThesis
 			name="coreThesis"
 		/>
 	</TraitDefinitions>

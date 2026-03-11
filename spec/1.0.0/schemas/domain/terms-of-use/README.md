@@ -32,14 +32,14 @@ Use `TermsOfUse` for the contractual or quasi-contractual terms governing use of
 
 | Namespace | Schema |
 |---|---|
-| docmeta | `codex:domain:document-metadata` |
-| jurisdiction | `codex:domain:jurisdiction` |
-| contact | `codex:domain:contact-point` |
-| text | `codex:domain:text` |
-| list | `codex:domain:list` |
-| section | `codex:domain:section` |
-| notes | `codex:domain:notes` |
-| term | `codex:domain:term-entry` |
+| docmeta | `paperhat:domain:document-metadata` |
+| jurisdiction | `paperhat:domain:jurisdiction` |
+| contact | `paperhat:domain:contact-point` |
+| text | `paperhat:domain:text` |
+| list | `paperhat:domain:list` |
+| section | `paperhat:domain:section` |
+| notes | `paperhat:domain:notes` |
+| term | `paperhat:domain:term-entry` |
 
 ## Traits
 

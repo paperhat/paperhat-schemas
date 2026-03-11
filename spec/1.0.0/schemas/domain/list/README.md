@@ -22,7 +22,7 @@ Use `OrderedList` when sequence matters (steps, rankings, instructions). Use `Un
 
 | Namespace | Schema |
 |---|---|
-| text | `codex:domain:text` |
+| text | `paperhat:domain:text` |
 
 ## Constraints
 

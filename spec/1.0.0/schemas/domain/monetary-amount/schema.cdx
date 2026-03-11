@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A currency-qualified monetary value."
-	id=codex:domain:monetary-amount
+	id=paperhat:domain:monetary-amount
 	namespace="money"
 	title="Monetary Amount Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:monetary-amount:MonetaryAmount
+			id=paperhat:domain:monetary-amount:MonetaryAmount
 			name="MonetaryAmount"
 		>
 			<ContentRules>
@@ -30,13 +30,13 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Number
-			id=codex:domain:monetary-amount:trait:amount
+			id=paperhat:domain:monetary-amount:trait:amount
 			name="amount"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:monetary-amount:trait:currency
+			id=paperhat:domain:monetary-amount:trait:currency
 			name="currency"
 		/>
 	</TraitDefinitions>

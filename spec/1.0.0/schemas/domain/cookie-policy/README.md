@@ -28,13 +28,13 @@ Use `CookiePolicy` for a document that explains how a service uses cookies or co
 
 | Namespace | Schema |
 |---|---|
-| docmeta | `codex:domain:document-metadata` |
-| jurisdiction | `codex:domain:jurisdiction` |
-| text | `codex:domain:text` |
-| list | `codex:domain:list` |
-| section | `codex:domain:section` |
-| notes | `codex:domain:notes` |
-| term | `codex:domain:term-entry` |
+| docmeta | `paperhat:domain:document-metadata` |
+| jurisdiction | `paperhat:domain:jurisdiction` |
+| text | `paperhat:domain:text` |
+| list | `paperhat:domain:list` |
+| section | `paperhat:domain:section` |
+| notes | `paperhat:domain:notes` |
+| term | `paperhat:domain:term-entry` |
 
 ## Traits
 

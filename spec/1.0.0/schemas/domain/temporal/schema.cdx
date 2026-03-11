@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="Temporal annotations for text spans: dates, times, datetimes, durations, and instants with formatting and internationalisation support."
-	id=codex:domain:temporal
+	id=paperhat:domain:temporal
 	namespace="temporal"
 	title="Temporal Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:temporal:TemporalAnnotations
+			id=paperhat:domain:temporal:TemporalAnnotations
 			name="TemporalAnnotations"
 		>
 			<ContentRules>
@@ -32,7 +32,7 @@
 
 				<AllowsChildConcept conceptSelector="YearWeek" />
 
-				<AllowsChildConcept conceptSelector="YearWeekDay" />
+				<AllowsChildConcept conceptSelector="YearWeekWeekday" />
 
 				<AllowsChildConcept conceptSelector="ZonedDate" />
 
@@ -53,7 +53,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:temporal:PlainDate
+			id=paperhat:domain:temporal:PlainDate
 			name="PlainDate"
 		>
 			<ContentRules>
@@ -76,7 +76,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:temporal:PlainTime
+			id=paperhat:domain:temporal:PlainTime
 			name="PlainTime"
 		>
 			<ContentRules>
@@ -99,7 +99,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:temporal:PlainDateTime
+			id=paperhat:domain:temporal:PlainDateTime
 			name="PlainDateTime"
 		>
 			<ContentRules>
@@ -122,7 +122,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:temporal:PlainYearMonth
+			id=paperhat:domain:temporal:PlainYearMonth
 			name="PlainYearMonth"
 		>
 			<ContentRules>
@@ -145,7 +145,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:temporal:PlainMonthDay
+			id=paperhat:domain:temporal:PlainMonthDay
 			name="PlainMonthDay"
 		>
 			<ContentRules>
@@ -168,7 +168,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:temporal:YearWeek
+			id=paperhat:domain:temporal:YearWeek
 			name="YearWeek"
 		>
 			<ContentRules>
@@ -191,8 +191,8 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:temporal:YearWeekDay
-			name="YearWeekDay"
+			id=paperhat:domain:temporal:YearWeekWeekday
+			name="YearWeekWeekday"
 		>
 			<ContentRules>
 				<ForbidsContent />
@@ -214,7 +214,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:temporal:ZonedDate
+			id=paperhat:domain:temporal:ZonedDate
 			name="ZonedDate"
 		>
 			<ContentRules>
@@ -237,7 +237,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:temporal:ZonedTime
+			id=paperhat:domain:temporal:ZonedTime
 			name="ZonedTime"
 		>
 			<ContentRules>
@@ -260,7 +260,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:temporal:ZonedDateTime
+			id=paperhat:domain:temporal:ZonedDateTime
 			name="ZonedDateTime"
 		>
 			<ContentRules>
@@ -283,7 +283,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:temporal:Instant
+			id=paperhat:domain:temporal:Instant
 			name="Instant"
 		>
 			<ContentRules>
@@ -306,7 +306,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:temporal:Duration
+			id=paperhat:domain:temporal:Duration
 			name="Duration"
 		>
 			<ContentRules>
@@ -329,7 +329,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:temporal:TemporalKeyword
+			id=paperhat:domain:temporal:TemporalKeyword
 			name="TemporalKeyword"
 		>
 			<ContentRules>
@@ -353,38 +353,38 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$LookupToken
-			id=codex:domain:temporal:trait:key
+			id=paperhat:domain:temporal:trait:key
 			name="key"
 		/>
 
 		<TraitDefinition
-			defaultValueTypes=[$Date, $Time, $DateTime, $YearMonth, $MonthDay, $YearWeek, $YearWeekDay, $ZonedDate, $ZonedTime, $ZonedDateTime, $Instant, $Duration, $TemporalKeyword]
-			id=codex:domain:temporal:trait:value
+			defaultValueTypes=[$Date, $Time, $DateTime, $YearMonth, $MonthDay, $YearWeek, $YearWeekWeekday, $ZonedDate, $ZonedTime, $ZonedDateTime, $Instant, $Duration, $TemporalKeyword]
+			id=paperhat:domain:temporal:trait:value
 			name="value"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:temporal:trait:text
+			id=paperhat:domain:temporal:trait:text
 			name="text"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:temporal:trait:format
+			id=paperhat:domain:temporal:trait:format
 			name="format"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:temporal:trait:language
+			id=paperhat:domain:temporal:trait:language
 			name="language"
 		/>
 	</TraitDefinitions>
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:temporal:requires-child
+			id=paperhat:domain:temporal:requires-child
 			title="TemporalAnnotations must contain at least one child"
 		>
 			<Targets>
@@ -418,7 +418,7 @@
 					</Rule>
 
 					<Rule>
-						<ChildConstraint conceptSelector="YearWeekDay" type=$RequiresChildConcept />
+						<ChildConstraint conceptSelector="YearWeekWeekday" type=$RequiresChildConcept />
 					</Rule>
 
 					<Rule>

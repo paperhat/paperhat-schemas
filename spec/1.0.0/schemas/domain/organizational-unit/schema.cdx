@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A named subdivision within an organization, such as a department, division, team, bureau, or working group."
-	id=codex:domain:organizational-unit
+	id=paperhat:domain:organizational-unit
 	namespace="orgunit"
 	title="Organizational Unit Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustBeEntity
-			id=codex:domain:organizational-unit:OrganizationalUnit
+			id=paperhat:domain:organizational-unit:OrganizationalUnit
 			name="OrganizationalUnit"
 		>
 			<ContentRules>
@@ -32,19 +32,19 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:organizational-unit:trait:name
+			id=paperhat:domain:organizational-unit:trait:name
 			name="name"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:organizational-unit:trait:unitKind
+			id=paperhat:domain:organizational-unit:trait:unitKind
 			name="unitKind"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Iri
-			id=codex:domain:organizational-unit:trait:parentUnit
+			id=paperhat:domain:organizational-unit:trait:parentUnit
 			isReferenceTrait=true
 			name="parentUnit"
 		/>

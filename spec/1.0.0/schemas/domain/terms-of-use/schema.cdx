@@ -2,21 +2,21 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A structured terms of use document defining governing entities, covered targets, legal definitions, permitted use, prohibited use, disclaimers, liability limits, termination, governing law, and contact information."
-	id=codex:domain:terms-of-use
+	id=paperhat:domain:terms-of-use
 	namespace="terms"
 	title="Terms Of Use Schema"
 	version="1.0.0"
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=docmeta reference=urn:cdx:sha256:aacfbd65a5928a0cfc5bcfbad2a2ff435f5aab17448b68710b59ccc8da9ce1a4 />
-		<SchemaImport namespace=jurisdiction reference=urn:cdx:sha256:12fa171849ee9c6dd633d59e48483057461cf8b80fee17985e59aafd8ec1bfd8 />
-		<SchemaImport namespace=contact reference=urn:cdx:sha256:3b19e88f414107daffdfaf3b1116dd5bec1c656faad58536392a2ec9891ff11a />
-		<SchemaImport namespace=text reference=urn:cdx:sha256:0d835975e6ccabdab7c2204e9b1d4e19baf24108e45a8f240adea3a2684a5fd0 />
-		<SchemaImport namespace=list reference=urn:cdx:sha256:47b1e8725dfbf226ac7dd20ffe8b0fb77c1e444735895c24b2225b317d2185cd />
-		<SchemaImport namespace=section reference=urn:cdx:sha256:c3647adb77a28456689ca99ef09e7c6b98745bc8aac6152c5fc83bdaaba4c7be />
-		<SchemaImport namespace=notes reference=urn:cdx:sha256:9d3ab9c299e532776ee07bbdd56c58dc18347be6e9712c1def71a0fc8f399352 />
-		<SchemaImport namespace=term reference=urn:cdx:sha256:c139458a29a8c749d7f7adbbd06b0c9996e2c7f251f13f8382be04b2959eddc0 />
+		<SchemaImport namespace=docmeta reference=urn:cdx:sha256:d6387600e328aa9cfa352df858754c1ff816bf436ba227b72d97d4cedf5a65e3 />
+		<SchemaImport namespace=jurisdiction reference=urn:cdx:sha256:c420d5337b090d64b1004a8b047d34b7c400ce39fdc32f0bc0d475a523c9c519 />
+		<SchemaImport namespace=contact reference=urn:cdx:sha256:0623b3bc48dfd1632919af1704725cc24b3e1ead90f4ce3a59117485e64335eb />
+		<SchemaImport namespace=text reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
+		<SchemaImport namespace=list reference=urn:cdx:sha256:10cc30a2245e8480bb2564cba4c09c243f84285d5219b06a1899272917da2caa />
+		<SchemaImport namespace=section reference=urn:cdx:sha256:c60256433124cfac2e173ea6ed7861b57c59bb24c3152d35badf8620f353f51e />
+		<SchemaImport namespace=notes reference=urn:cdx:sha256:5169d4469cf2f181b23bfee5510652073ead5e1c6871486dba219bfb6c2b3a2b />
+		<SchemaImport namespace=term reference=urn:cdx:sha256:d1238116402919e9ea43e55229413ed596a830e0f8f44ac2878ac63e4430f5c1 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
@@ -24,7 +24,7 @@
 			conceptKind=$Semantic
 			defaultLabelSource="title"
 			entityEligibility=$MustBeEntity
-			id=codex:domain:terms-of-use:TermsOfUse
+			id=paperhat:domain:terms-of-use:TermsOfUse
 			name="TermsOfUse"
 		>
 			<ContentRules>
@@ -56,7 +56,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:terms-of-use:GoverningEntity
+			id=paperhat:domain:terms-of-use:GoverningEntity
 			name="GoverningEntity"
 		>
 			<ContentRules>
@@ -71,7 +71,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:terms-of-use:AppliesTo
+			id=paperhat:domain:terms-of-use:AppliesTo
 			name="AppliesTo"
 		>
 			<ContentRules>
@@ -86,7 +86,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:terms-of-use:RelatedDocument
+			id=paperhat:domain:terms-of-use:RelatedDocument
 			name="RelatedDocument"
 		>
 			<ContentRules>
@@ -101,7 +101,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:terms-of-use:Definitions
+			id=paperhat:domain:terms-of-use:Definitions
 			name="Definitions"
 		>
 			<ContentRules>
@@ -116,7 +116,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:terms-of-use:Acceptance
+			id=paperhat:domain:terms-of-use:Acceptance
 			name="Acceptance"
 		>
 			<ContentRules>
@@ -135,7 +135,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:terms-of-use:PermittedUse
+			id=paperhat:domain:terms-of-use:PermittedUse
 			name="PermittedUse"
 		>
 			<ContentRules>
@@ -154,7 +154,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:terms-of-use:ProhibitedUse
+			id=paperhat:domain:terms-of-use:ProhibitedUse
 			name="ProhibitedUse"
 		>
 			<ContentRules>
@@ -173,7 +173,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:terms-of-use:Disclaimer
+			id=paperhat:domain:terms-of-use:Disclaimer
 			name="Disclaimer"
 		>
 			<ContentRules>
@@ -192,7 +192,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:terms-of-use:LimitationOfLiability
+			id=paperhat:domain:terms-of-use:LimitationOfLiability
 			name="LimitationOfLiability"
 		>
 			<ContentRules>
@@ -211,7 +211,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:terms-of-use:Termination
+			id=paperhat:domain:terms-of-use:Termination
 			name="Termination"
 		>
 			<ContentRules>
@@ -230,7 +230,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:terms-of-use:GoverningLaw
+			id=paperhat:domain:terms-of-use:GoverningLaw
 			name="GoverningLaw"
 		>
 			<ContentRules>
@@ -249,7 +249,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:terms-of-use:TermsContact
+			id=paperhat:domain:terms-of-use:TermsContact
 			name="TermsContact"
 		>
 			<ContentRules>
@@ -263,16 +263,16 @@
 	</ConceptDefinitions>
 
 	<TraitDefinitions>
-		<TraitDefinition defaultValueType=$Text id=codex:domain:terms-of-use:trait:title name="title" />
-		<TraitDefinition defaultValueType=$Iri id=codex:domain:terms-of-use:trait:target isReferenceTrait=true name="target" />
-		<TraitDefinition defaultValueType=$EnumeratedToken id=codex:domain:terms-of-use:trait:governingRole name="governingRole" />
-		<TraitDefinition defaultValueType=$EnumeratedToken id=codex:domain:terms-of-use:trait:scopeKind name="scopeKind" />
-		<TraitDefinition defaultValueType=$EnumeratedToken id=codex:domain:terms-of-use:trait:relationshipKind name="relationshipKind" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:terms-of-use:trait:title name="title" />
+		<TraitDefinition defaultValueType=$Iri id=paperhat:domain:terms-of-use:trait:target isReferenceTrait=true name="target" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:terms-of-use:trait:governingRole name="governingRole" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:terms-of-use:trait:scopeKind name="scopeKind" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:terms-of-use:trait:relationshipKind name="relationshipKind" />
 	</TraitDefinitions>
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:terms-of-use:governing-entity-reference-trait-allowed
+			id=paperhat:domain:terms-of-use:governing-entity-reference-trait-allowed
 			title="GoverningEntity allows only target as a reference trait"
 		>
 			<Targets>
@@ -283,7 +283,7 @@
 			</Rule>
 		</ConstraintDefinition>
 		<ConstraintDefinition
-			id=codex:domain:terms-of-use:governing-entity-reference-singleton
+			id=paperhat:domain:terms-of-use:governing-entity-reference-singleton
 			title="GoverningEntity must declare at most one reference trait"
 		>
 			<Targets>
@@ -294,7 +294,7 @@
 			</Rule>
 		</ConstraintDefinition>
 		<ConstraintDefinition
-			id=codex:domain:terms-of-use:governing-entity-targets-entity
+			id=paperhat:domain:terms-of-use:governing-entity-targets-entity
 			title="GoverningEntity target must resolve to an entity"
 		>
 			<Targets>
@@ -305,7 +305,7 @@
 			</Rule>
 		</ConstraintDefinition>
 		<ConstraintDefinition
-			id=codex:domain:terms-of-use:governing-entity-must-resolve
+			id=paperhat:domain:terms-of-use:governing-entity-must-resolve
 			title="GoverningEntity target must resolve"
 		>
 			<Targets>
@@ -317,7 +317,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:terms-of-use:applies-to-reference-trait-allowed
+			id=paperhat:domain:terms-of-use:applies-to-reference-trait-allowed
 			title="AppliesTo allows only target as a reference trait"
 		>
 			<Targets>
@@ -328,7 +328,7 @@
 			</Rule>
 		</ConstraintDefinition>
 		<ConstraintDefinition
-			id=codex:domain:terms-of-use:applies-to-reference-singleton
+			id=paperhat:domain:terms-of-use:applies-to-reference-singleton
 			title="AppliesTo must declare at most one reference trait"
 		>
 			<Targets>
@@ -339,7 +339,7 @@
 			</Rule>
 		</ConstraintDefinition>
 		<ConstraintDefinition
-			id=codex:domain:terms-of-use:applies-to-targets-entity
+			id=paperhat:domain:terms-of-use:applies-to-targets-entity
 			title="AppliesTo target must resolve to an entity"
 		>
 			<Targets>
@@ -350,7 +350,7 @@
 			</Rule>
 		</ConstraintDefinition>
 		<ConstraintDefinition
-			id=codex:domain:terms-of-use:applies-to-must-resolve
+			id=paperhat:domain:terms-of-use:applies-to-must-resolve
 			title="AppliesTo target must resolve"
 		>
 			<Targets>
@@ -362,7 +362,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:terms-of-use:related-document-reference-trait-allowed
+			id=paperhat:domain:terms-of-use:related-document-reference-trait-allowed
 			title="RelatedDocument allows only target as a reference trait"
 		>
 			<Targets>
@@ -373,7 +373,7 @@
 			</Rule>
 		</ConstraintDefinition>
 		<ConstraintDefinition
-			id=codex:domain:terms-of-use:related-document-reference-singleton
+			id=paperhat:domain:terms-of-use:related-document-reference-singleton
 			title="RelatedDocument must declare at most one reference trait"
 		>
 			<Targets>
@@ -384,7 +384,7 @@
 			</Rule>
 		</ConstraintDefinition>
 		<ConstraintDefinition
-			id=codex:domain:terms-of-use:related-document-targets-entity
+			id=paperhat:domain:terms-of-use:related-document-targets-entity
 			title="RelatedDocument target must resolve to an entity"
 		>
 			<Targets>
@@ -395,7 +395,7 @@
 			</Rule>
 		</ConstraintDefinition>
 		<ConstraintDefinition
-			id=codex:domain:terms-of-use:related-document-must-resolve
+			id=paperhat:domain:terms-of-use:related-document-must-resolve
 			title="RelatedDocument target must resolve"
 		>
 			<Targets>
@@ -407,7 +407,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:terms-of-use:terms-contact-requires-contact-point
+			id=paperhat:domain:terms-of-use:terms-contact-requires-contact-point
 			title="TermsContact must contain at least one ContactPoint"
 		>
 			<Targets>
@@ -418,7 +418,7 @@
 			</Rule>
 		</ConstraintDefinition>
 		<ConstraintDefinition
-			id=codex:domain:terms-of-use:definitions-requires-term-entry
+			id=paperhat:domain:terms-of-use:definitions-requires-term-entry
 			title="Definitions must contain at least one TermEntry"
 		>
 			<Targets>

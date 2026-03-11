@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A lexical term entry supporting simple glossary definitions through full dictionary entries with multiple senses, parts of speech, etymology, inflected forms, and semantic relations."
-	id=codex:domain:term-entry
+	id=paperhat:domain:term-entry
 	namespace="term"
 	title="Term Entry Schema"
 	version="1.0.0"
@@ -13,7 +13,7 @@
 			conceptKind=$Semantic
 			defaultLabelSource="term"
 			entityEligibility=$MustBeEntity
-			id=codex:domain:term-entry:TermEntry
+			id=paperhat:domain:term-entry:TermEntry
 			name="TermEntry"
 		>
 			<ContentRules>
@@ -36,7 +36,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:term-entry:Sense
+			id=paperhat:domain:term-entry:Sense
 			name="Sense"
 		>
 			<ContentRules>
@@ -57,7 +57,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:term-entry:UsageExample
+			id=paperhat:domain:term-entry:UsageExample
 			name="UsageExample"
 		>
 			<ContentRules>
@@ -68,7 +68,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:term-entry:Etymology
+			id=paperhat:domain:term-entry:Etymology
 			name="Etymology"
 		>
 			<ContentRules>
@@ -79,7 +79,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:term-entry:TermForm
+			id=paperhat:domain:term-entry:TermForm
 			name="TermForm"
 		>
 			<ContentRules>
@@ -95,7 +95,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:term-entry:TermRelation
+			id=paperhat:domain:term-entry:TermRelation
 			name="TermRelation"
 		>
 			<ContentRules>
@@ -113,61 +113,61 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:term-entry:trait:term
+			id=paperhat:domain:term-entry:trait:term
 			name="term"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$LookupToken
-			id=codex:domain:term-entry:trait:key
+			id=paperhat:domain:term-entry:trait:key
 			name="key"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:term-entry:trait:partOfSpeech
+			id=paperhat:domain:term-entry:trait:partOfSpeech
 			name="partOfSpeech"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:term-entry:trait:register
+			id=paperhat:domain:term-entry:trait:register
 			name="register"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:term-entry:trait:domain
+			id=paperhat:domain:term-entry:trait:domain
 			name="domain"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:term-entry:trait:form
+			id=paperhat:domain:term-entry:trait:form
 			name="form"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:term-entry:trait:formKind
+			id=paperhat:domain:term-entry:trait:formKind
 			name="formKind"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:term-entry:trait:relatedTerm
+			id=paperhat:domain:term-entry:trait:relatedTerm
 			name="relatedTerm"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:term-entry:trait:relationKind
+			id=paperhat:domain:term-entry:trait:relationKind
 			name="relationKind"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Iri
-			id=codex:domain:term-entry:trait:target
+			id=paperhat:domain:term-entry:trait:target
 			isReferenceTrait=true
 			name="target"
 		/>
@@ -175,7 +175,7 @@
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:term-entry:requires-definition-or-sense
+			id=paperhat:domain:term-entry:requires-definition-or-sense
 			title="TermEntry must contain direct definition content or at least one Sense"
 		>
 			<Targets>
@@ -194,7 +194,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:term-entry:term-relation-reference-trait-allowed
+			id=paperhat:domain:term-entry:term-relation-reference-trait-allowed
 			title="TermRelation allows only target as a reference trait"
 		>
 			<Targets>
@@ -206,7 +206,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:term-entry:term-relation-reference-singleton
+			id=paperhat:domain:term-entry:term-relation-reference-singleton
 			title="TermRelation must declare at most one reference trait"
 		>
 			<Targets>
@@ -218,7 +218,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:term-entry:term-relation-targets-entity
+			id=paperhat:domain:term-entry:term-relation-targets-entity
 			title="TermRelation target must resolve to an entity"
 		>
 			<Targets>
@@ -230,7 +230,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:term-entry:term-relation-must-resolve
+			id=paperhat:domain:term-entry:term-relation-must-resolve
 			title="TermRelation target must resolve"
 		>
 			<Targets>

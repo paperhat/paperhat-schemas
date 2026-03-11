@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="Series membership metadata for a document that belongs to an ordered, multi-part publication."
-	id=codex:domain:series
+	id=paperhat:domain:series
 	namespace="series"
 	title="Series Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:series:SeriesInfo
+			id=paperhat:domain:series:SeriesInfo
 			name="SeriesInfo"
 		>
 			<ContentRules>
@@ -32,19 +32,19 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:series:trait:seriesTitle
+			id=paperhat:domain:series:trait:seriesTitle
 			name="seriesTitle"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Integer
-			id=codex:domain:series:trait:position
+			id=paperhat:domain:series:trait:position
 			name="position"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:series:trait:track
+			id=paperhat:domain:series:trait:track
 			name="track"
 		/>
 	</TraitDefinitions>

@@ -2,25 +2,25 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="Kitchen and general-purpose equipment, with canonical name, category, and physical characteristics."
-	id=codex:domain:equipment
+	id=paperhat:domain:equipment
 	namespace="equip"
 	title="Equipment Schema"
 	version="1.0.0"
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace="desc" reference=urn:cdx:sha256:5e9c6ba4654a0b013b65fc38fde033d2b6fc281d7eb791e57b207b42d80ae7da />
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:011828a51c1e0956207698eae3cdad433acbf33711fece6e6b26c129cfad4188 />
 
-		<SchemaImport namespace="measure" reference=urn:cdx:sha256:a728956784520455efba12110f7fa1d573f81b94fab61ee9279ea07dbab1e2fe />
+		<SchemaImport namespace="measure" reference=urn:cdx:sha256:c39ffedc2e8321d6351ba3743c8d66abd10d51c005e259a3d01cc6334593207b />
 
-		<SchemaImport namespace="tags" reference=urn:cdx:sha256:864fb472fd89cb8024e9d3725203d2129185e39f375df5569b421353dbae9c98 />
+		<SchemaImport namespace="tags" reference=urn:cdx:sha256:af138b9c8bbc16117f2d8553c482253f9144721ab3a9d411992a2035e2094206 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustBeEntity
-			id=codex:domain:equipment:Equipment
+			id=paperhat:domain:equipment:Equipment
 			name="Equipment"
 		>
 			<ContentRules>
@@ -46,14 +46,14 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:equipment:trait:name
+			id=paperhat:domain:equipment:trait:name
 			name="name"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:equipment:trait:category
+			id=paperhat:domain:equipment:trait:category
 			name="category"
 		>
 			<AllowedValues>

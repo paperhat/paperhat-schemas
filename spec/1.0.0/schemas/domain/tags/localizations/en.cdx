@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:tags
+	schema=paperhat:domain:tags
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -8,7 +8,7 @@
 	<ConceptLocalization identifier="Tag" label="Tag" labelOther="Tags" />
 
 	<ConstraintLocalization
-		identifier="codex:domain:tags:requires-tag"
+		identifier="paperhat:domain:tags:requires-tag"
 		label="Requires at least one tag"
 	>
 		A Tags container must contain at least one Tag.

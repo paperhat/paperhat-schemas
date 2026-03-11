@@ -2,25 +2,25 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="Nutritional facts per serving, including calories, macronutrients, and sodium. Each nutrient is a named concept wrapping a dimension-typed Measure."
-	id=codex:domain:nutrition-information
+	id=paperhat:domain:nutrition-information
 	namespace="nutrition"
 	title="Nutrition Information Schema"
 	version="1.0.0"
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace="energymeasure" reference=urn:cdx:sha256:e9c7bc5a2b95e0573e98ddb6a9dc7936a3e6bc37251fe78fedd9202977b9feb1 />
+		<SchemaImport namespace="energymeasure" reference=urn:cdx:sha256:06e2db6ce35e820cef24f32844770be9ea62c6c2f256c7070598f10c5cb69f91 />
 
-		<SchemaImport namespace="massmeasure" reference=urn:cdx:sha256:f23396dcb092b7de3152a1d7fb22672248422dc2e3b59e96737c30ba863ec242 />
+		<SchemaImport namespace="massmeasure" reference=urn:cdx:sha256:97d990dfd254f4506ddbbee2ac3a2d2e73f99430980f41b568f7eced111b7cc7 />
 
-		<SchemaImport namespace="volumemeasure" reference=urn:cdx:sha256:28e51c8a49e5f2e23148c2d96f3822d7bab801f8c3c2bc872ece55e3ef78c755 />
+		<SchemaImport namespace="volumemeasure" reference=urn:cdx:sha256:54cd771145ce25e43cbe318ab6e97af5457f69d4abacee7edb2366265c019f75 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:nutrition-information:NutritionInformation
+			id=paperhat:domain:nutrition-information:NutritionInformation
 			name="NutritionInformation"
 		>
 			<ContentRules>
@@ -49,7 +49,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:nutrition-information:ServingSize
+			id=paperhat:domain:nutrition-information:ServingSize
 			name="ServingSize"
 		>
 			<ContentRules>
@@ -66,7 +66,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:nutrition-information:Calories
+			id=paperhat:domain:nutrition-information:Calories
 			name="Calories"
 		>
 			<ContentRules>
@@ -81,7 +81,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:nutrition-information:FatContent
+			id=paperhat:domain:nutrition-information:FatContent
 			name="FatContent"
 		>
 			<ContentRules>
@@ -96,7 +96,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:nutrition-information:ProteinContent
+			id=paperhat:domain:nutrition-information:ProteinContent
 			name="ProteinContent"
 		>
 			<ContentRules>
@@ -111,7 +111,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:nutrition-information:CarbohydrateContent
+			id=paperhat:domain:nutrition-information:CarbohydrateContent
 			name="CarbohydrateContent"
 		>
 			<ContentRules>
@@ -126,7 +126,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:nutrition-information:FiberContent
+			id=paperhat:domain:nutrition-information:FiberContent
 			name="FiberContent"
 		>
 			<ContentRules>
@@ -141,7 +141,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:nutrition-information:SugarContent
+			id=paperhat:domain:nutrition-information:SugarContent
 			name="SugarContent"
 		>
 			<ContentRules>
@@ -156,7 +156,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:nutrition-information:SodiumContent
+			id=paperhat:domain:nutrition-information:SodiumContent
 			name="SodiumContent"
 		>
 			<ContentRules>
@@ -171,7 +171,7 @@
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:nutrition-information:requires-nutrient
+			id=paperhat:domain:nutrition-information:requires-nutrient
 			title="NutritionInformation must contain at least one nutrient"
 		>
 			<Targets>

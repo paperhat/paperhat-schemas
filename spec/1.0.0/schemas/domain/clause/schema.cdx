@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A single legally operative provision within a contract or agreement — an obligation, grant, limitation, indemnification, or other binding clause."
-	id=codex:domain:clause
+	id=paperhat:domain:clause
 	namespace="clause"
 	title="Clause Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MayBeEntity
-			id=codex:domain:clause:Clause
+			id=paperhat:domain:clause:Clause
 			name="Clause"
 		>
 			<ContentRules>
@@ -30,13 +30,13 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:clause:trait:key
+			id=paperhat:domain:clause:trait:key
 			name="key"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:clause:trait:clauseKind
+			id=paperhat:domain:clause:trait:clauseKind
 			name="clauseKind"
 		/>
 	</TraitDefinitions>

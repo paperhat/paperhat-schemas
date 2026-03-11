@@ -2,21 +2,21 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A named binding agreement between parties — a software license, support agreement, consulting contract, partnership memorandum, or other commercial/legal commitment."
-	id=codex:domain:contract
+	id=paperhat:domain:contract
 	namespace="contract"
 	title="Contract Schema"
 	version="1.0.0"
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=jurisdiction reference=urn:cdx:sha256:12fa171849ee9c6dd633d59e48483057461cf8b80fee17985e59aafd8ec1bfd8 />
+		<SchemaImport namespace=jurisdiction reference=urn:cdx:sha256:c420d5337b090d64b1004a8b047d34b7c400ce39fdc32f0bc0d475a523c9c519 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustBeEntity
-			id=codex:domain:contract:Contract
+			id=paperhat:domain:contract:Contract
 			name="Contract"
 		>
 			<ContentRules>
@@ -44,31 +44,31 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:contract:trait:name
+			id=paperhat:domain:contract:trait:name
 			name="name"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:contract:trait:contractKind
+			id=paperhat:domain:contract:trait:contractKind
 			name="contractKind"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:contract:trait:contractStatus
+			id=paperhat:domain:contract:trait:contractStatus
 			name="contractStatus"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Date
-			id=codex:domain:contract:trait:effectiveDate
+			id=paperhat:domain:contract:trait:effectiveDate
 			name="effectiveDate"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Date
-			id=codex:domain:contract:trait:expirationDate
+			id=paperhat:domain:contract:trait:expirationDate
 			name="expirationDate"
 		/>
 	</TraitDefinitions>

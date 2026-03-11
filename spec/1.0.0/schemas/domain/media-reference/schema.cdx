@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A reference to a media resource such as an image, video, or audio file, with optional format and dimension details."
-	id=codex:domain:media-reference
+	id=paperhat:domain:media-reference
 	namespace="media"
 	title="Media Reference Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:media-reference:MediaReference
+			id=paperhat:domain:media-reference:MediaReference
 			name="MediaReference"
 		>
 			<ContentRules>
@@ -40,50 +40,50 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Iri
-			id=codex:domain:media-reference:trait:url
+			id=paperhat:domain:media-reference:trait:url
 			name="url"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:media-reference:trait:mediaKind
+			id=paperhat:domain:media-reference:trait:mediaKind
 			name="mediaKind"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$MediaType
-			id=codex:domain:media-reference:trait:encodingFormat
+			id=paperhat:domain:media-reference:trait:encodingFormat
 			name="encodingFormat"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:media-reference:trait:caption
+			id=paperhat:domain:media-reference:trait:caption
 			name="caption"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Number
-			id=codex:domain:media-reference:trait:width
+			id=paperhat:domain:media-reference:trait:width
 			name="width"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Number
-			id=codex:domain:media-reference:trait:height
+			id=paperhat:domain:media-reference:trait:height
 			name="height"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:media-reference:trait:contentSize
+			id=paperhat:domain:media-reference:trait:contentSize
 			name="contentSize"
 		/>
 	</TraitDefinitions>
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:media-reference:requires-media-trait
+			id=paperhat:domain:media-reference:requires-media-trait
 			title="MediaReference must have at least one trait"
 		>
 			<Targets>

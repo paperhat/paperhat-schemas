@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A method of contact such as email address, phone number, or website, with optional temporal validity."
-	id=codex:domain:contact-point
+	id=paperhat:domain:contact-point
 	namespace="contact"
 	title="Contact Point Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:contact-point:ContactPoint
+			id=paperhat:domain:contact-point:ContactPoint
 			name="ContactPoint"
 		>
 			<ContentRules>
@@ -38,44 +38,44 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:contact-point:trait:contactKind
+			id=paperhat:domain:contact-point:trait:contactKind
 			name="contactKind"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EmailAddress
-			id=codex:domain:contact-point:trait:emailAddress
+			id=paperhat:domain:contact-point:trait:emailAddress
 			name="emailAddress"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:contact-point:trait:phoneNumber
+			id=paperhat:domain:contact-point:trait:phoneNumber
 			name="phoneNumber"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Url
-			id=codex:domain:contact-point:trait:website
+			id=paperhat:domain:contact-point:trait:website
 			name="website"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Date
-			id=codex:domain:contact-point:trait:effectiveFrom
+			id=paperhat:domain:contact-point:trait:effectiveFrom
 			name="effectiveFrom"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Date
-			id=codex:domain:contact-point:trait:effectiveTo
+			id=paperhat:domain:contact-point:trait:effectiveTo
 			name="effectiveTo"
 		/>
 	</TraitDefinitions>
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:contact-point:requires-contact-method
+			id=paperhat:domain:contact-point:requires-contact-method
 			title="ContactPoint must have at least one contact method"
 		>
 			<Targets>

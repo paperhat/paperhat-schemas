@@ -7,7 +7,7 @@ Version: 1.0.0
 A scheme-qualified identifier for referencing external systems, standards, or registries.
 
 **Package:** `paperhat-identifier`
-**Schema ID:** `codex:domain:identifier`
+**Schema ID:** `paperhat:domain:identifier`
 
 ---
 

@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A quantitative measurement of volume or capacity, with unit constrained to the units-volume vocabulary."
-	id=codex:domain:paperhat-volume-measure
+	id=paperhat:domain:paperhat-volume-measure
 	namespace="volumemeasure"
 	title="Volume Measure Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:paperhat-volume-measure:VolumeMeasure
+			id=paperhat:domain:paperhat-volume-measure:VolumeMeasure
 			name="VolumeMeasure"
 		>
 			<ContentRules>
@@ -30,13 +30,13 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueTypes=[$Number, $Range<$Number>]
-			id=codex:domain:paperhat-volume-measure:trait:value
+			id=paperhat:domain:paperhat-volume-measure:trait:value
 			name="value"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:paperhat-volume-measure:trait:unit
+			id=paperhat:domain:paperhat-volume-measure:trait:unit
 			name="unit"
 		>
 			<AllowedValues>

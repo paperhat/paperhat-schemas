@@ -1,6 +1,6 @@
 [Minimal linked data mapping. At least one MapType is required.]
 <SchemaOrgMapping
-	id=codex:system:ld-mapping:MAPPING_NAME
+	id=paperhat:system:ld-mapping:MAPPING_NAME
 	version="1.0.0"
 >
 	[Required: one MapType per source concept.]

@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="An unordered set of keyword labels for categorisation and discovery."
-	id=codex:domain:tags
+	id=paperhat:domain:tags
 	namespace="tags"
 	title="Tags Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:tags:Tags
+			id=paperhat:domain:tags:Tags
 			name="Tags"
 		>
 			<ContentRules>
@@ -29,7 +29,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:tags:Tag
+			id=paperhat:domain:tags:Tag
 			name="Tag"
 		>
 			<ContentRules>
@@ -40,7 +40,7 @@
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:tags:requires-tag
+			id=paperhat:domain:tags:requires-tag
 			title="Tags must contain at least one Tag"
 		>
 			<Targets>

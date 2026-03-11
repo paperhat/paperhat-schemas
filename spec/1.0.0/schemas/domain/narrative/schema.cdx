@@ -2,23 +2,23 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="An ordered container for the body content of a document, holding sections and paragraphs in reading order."
-	id=codex:domain:narrative
+	id=paperhat:domain:narrative
 	namespace="narrative"
 	title="Narrative Schema"
 	version="1.0.0"
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=section reference=urn:cdx:sha256:c3647adb77a28456689ca99ef09e7c6b98745bc8aac6152c5fc83bdaaba4c7be />
+		<SchemaImport namespace=section reference=urn:cdx:sha256:c60256433124cfac2e173ea6ed7861b57c59bb24c3152d35badf8620f353f51e />
 
-		<SchemaImport namespace=text reference=urn:cdx:sha256:0d835975e6ccabdab7c2204e9b1d4e19baf24108e45a8f240adea3a2684a5fd0 />
+		<SchemaImport namespace=text reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
 	</SchemaImports>
 
 	<ConceptDefinitions>
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:narrative:Narrative
+			id=paperhat:domain:narrative:Narrative
 			name="Narrative"
 		>
 			<ContentRules>

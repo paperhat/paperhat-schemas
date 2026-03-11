@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:privacy-policy
+	schema=paperhat:domain:privacy-policy
 	schemaVersion="1.0.0"
 	language=$En
 >

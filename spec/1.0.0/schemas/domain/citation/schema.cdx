@@ -2,27 +2,27 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A structured bibliographic citation with ordered contributors (persons or organizations), publication metadata, and identifiers."
-	id=codex:domain:citation
+	id=paperhat:domain:citation
 	namespace="cite"
 	title="Citation Schema"
 	version="1.0.0"
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=person reference=urn:cdx:sha256:7badcc38ee67c837a2178a667491ac1f58e0c051b5438adfd13b8de89b3e9be6 />
+		<SchemaImport namespace=person reference=urn:cdx:sha256:f8dcd8d7f5c8142ceb4449ff9e769417a2726e4cf735b55dfd983cac3d8d30d0 />
 
-		<SchemaImport namespace=org reference=urn:cdx:sha256:b2727faf70e967608fd39722a35e64868e92898b5bcfc5b16e174a05397faa4b />
+		<SchemaImport namespace=org reference=urn:cdx:sha256:acd8eb66e545faaebb213141893b4781c37b46499487e91040a668d3b649b555 />
 
-		<SchemaImport namespace=ident reference=urn:cdx:sha256:a220d2034a4faa1a81d8102265c1fef36576871a0ba25ac31500abac7afd5907 />
+		<SchemaImport namespace=ident reference=urn:cdx:sha256:5fafd42cd5ebaa41ecaf7b26d4ea2be9fb9c6a6c68c56ab3c8f2483fdbe1cf28 />
 
-		<SchemaImport namespace=ref reference=urn:cdx:sha256:9a7a73d6e6c4e03375f90e390a881d49a56a35f98d7271942dc723c84ff07912 />
+		<SchemaImport namespace=ref reference=urn:cdx:sha256:fbdf30cc77a348bc8ef500d860500457f7b636aff40e073645278a873425e0ae />
 	</SchemaImports>
 
 	<ConceptDefinitions>
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MayBeEntity
-			id=codex:domain:citation:Citation
+			id=paperhat:domain:citation:Citation
 			name="Citation"
 		>
 			<ContentRules>
@@ -71,7 +71,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:citation:Contributor
+			id=paperhat:domain:citation:Contributor
 			name="Contributor"
 		>
 			<ContentRules>
@@ -95,104 +95,104 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:citation:trait:title
+			id=paperhat:domain:citation:trait:title
 			name="title"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:citation:trait:subtitle
+			id=paperhat:domain:citation:trait:subtitle
 			name="subtitle"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:citation:trait:citationKind
+			id=paperhat:domain:citation:trait:citationKind
 			name="citationKind"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:citation:trait:containerTitle
+			id=paperhat:domain:citation:trait:containerTitle
 			name="containerTitle"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:citation:trait:edition
+			id=paperhat:domain:citation:trait:edition
 			name="edition"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:citation:trait:volume
+			id=paperhat:domain:citation:trait:volume
 			name="volume"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:citation:trait:issue
+			id=paperhat:domain:citation:trait:issue
 			name="issue"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:citation:trait:number
+			id=paperhat:domain:citation:trait:number
 			name="number"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:citation:trait:pageRange
+			id=paperhat:domain:citation:trait:pageRange
 			name="pageRange"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:citation:trait:publicationPlace
+			id=paperhat:domain:citation:trait:publicationPlace
 			name="publicationPlace"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Date
-			id=codex:domain:citation:trait:datePublished
+			id=paperhat:domain:citation:trait:datePublished
 			name="datePublished"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Date
-			id=codex:domain:citation:trait:dateAccessed
+			id=paperhat:domain:citation:trait:dateAccessed
 			name="dateAccessed"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:citation:trait:language
+			id=paperhat:domain:citation:trait:language
 			name="language"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Url
-			id=codex:domain:citation:trait:uri
+			id=paperhat:domain:citation:trait:uri
 			name="uri"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$LookupToken
-			id=codex:domain:citation:trait:key
+			id=paperhat:domain:citation:trait:key
 			name="key"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:citation:trait:contributorKind
+			id=paperhat:domain:citation:trait:contributorKind
 			name="contributorKind"
 		/>
 	</TraitDefinitions>
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:citation:contributor-has-entity
+			id=paperhat:domain:citation:contributor-has-entity
 			title="Contributor must have exactly one of Person, Organization, or Reference"
 		>
 			<Targets>

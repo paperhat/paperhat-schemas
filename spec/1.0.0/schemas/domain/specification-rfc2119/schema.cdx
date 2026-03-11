@@ -2,39 +2,39 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="RFC 2119 specification schema for authoring formal specifications in Codex. Supports the full RFC 2119 requirement modality keyword set: Must, MustNot, Shall, ShallNot, Should, ShouldNot, May, Required, Recommended, Optional."
-	id=codex:domain:specification-rfc2119
+	id=paperhat:domain:specification-rfc2119
 	namespace=spec2119
 	title="Specification Schema (RFC 2119)"
 	version=1.0.0
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=admonition reference=urn:cdx:sha256:9d4943531b58b45a915b94a436ed829795761441cc976d236a9268612d63ec9e />
+		<SchemaImport namespace=admonition reference=urn:cdx:sha256:421385f20c78fd60afcf0a272f4cb74438a6a9a946a9eb2bfb40284ab67f4838 />
 
-		<SchemaImport namespace=code reference=urn:cdx:sha256:31678c88cd6e0a8b64991b39efb46aa4e97a569046deb4d6d57f235891a3a7c2 />
+		<SchemaImport namespace=code reference=urn:cdx:sha256:f676d06cf578a8fa377b961fcd4d8e5676f8def5ba6b298eaee92f0d3614a890 />
 
-		<SchemaImport namespace=example reference=urn:cdx:sha256:6f6e27c71484bc9bb78eb52f401521597afe5e220fda09112c6af67bdaf21e9e />
+		<SchemaImport namespace=example reference=urn:cdx:sha256:70c45e812f5306b69dad783ea4c84546284dfaeeba6f1342918372e385da0cea />
 
-		<SchemaImport namespace=figure reference=urn:cdx:sha256:34d49171a982401ce9c3b2cd6c989af331db9be008866dc0a328b845de7a9e26 />
+		<SchemaImport namespace=figure reference=urn:cdx:sha256:ed5c9a3ad8d594a063db5e178c8fafd22fc66800d00d15fb90454364da052e6a />
 
-		<SchemaImport namespace=list reference=urn:cdx:sha256:9483b412f016c9bdb17bdf3ae70164c4c59838405c38009057d02fc8cd911c50 />
+		<SchemaImport namespace=list reference=urn:cdx:sha256:9f94a5780eeab62a7ff88d7a3950e5436dbc906f0f1460f93c47fcc409d7730d />
 
-		<SchemaImport namespace=specbase reference=urn:cdx:sha256:47b1e8725dfbf226ac7dd20ffe8b0fb77c1e444735895c24b2225b317d2185cd />
+		<SchemaImport namespace=specbase reference=urn:cdx:sha256:10cc30a2245e8480bb2564cba4c09c243f84285d5219b06a1899272917da2caa />
 
-		<SchemaImport namespace=relation reference=urn:cdx:sha256:638b329409681df79bc5bc3c928ae4d41bf0669b96a0fa6cb9e54e7ce1cb3a9e />
+		<SchemaImport namespace=relation reference=urn:cdx:sha256:9dad41bb31175f1e64ba50c8864ee04f6da4d6486e6d08a0a5f934fffe84f7ff />
 
-		<SchemaImport namespace=text reference=urn:cdx:sha256:e351237805bd69ea34497dc62cb7de9dc324d3a9f9a98b1fa9fc2991ba29fb92 />
+		<SchemaImport namespace=text reference=urn:cdx:sha256:c62bfa251d5b7eb685cb3e1d65054a4cb5583860b29326678aed2982048e369d />
 
-		<SchemaImport namespace=cite reference=urn:cdx:sha256:0d835975e6ccabdab7c2204e9b1d4e19baf24108e45a8f240adea3a2684a5fd0 />
+		<SchemaImport namespace=cite reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
 
-		<SchemaImport namespace=glossary reference=urn:cdx:sha256:d796af835dc0fe85e3c38731660c4bd3b9c204cc2c5a5ef9611763332c1ec9e8 />
+		<SchemaImport namespace=glossary reference=urn:cdx:sha256:6b96358486e600af7c9fc2840b1b448d11354b4e3a40c2f0eb3ca552e7fba59c />
 	</SchemaImports>
 
 	<ConceptDefinitions>
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:specification-rfc2119:Specification
+			id=paperhat:domain:specification-rfc2119:Specification
 			name="Specification"
 		>
 			<TraitRules>
@@ -63,7 +63,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustBeEntity
-			id=codex:domain:specification-rfc2119:Section
+			id=paperhat:domain:specification-rfc2119:Section
 			name="Section"
 		>
 			<TraitRules>
@@ -140,7 +140,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:specification-rfc2119:Requirement
+			id=paperhat:domain:specification-rfc2119:Requirement
 			name="Requirement"
 		>
 			<TraitRules>
@@ -159,7 +159,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:specification-rfc2119:Note
+			id=paperhat:domain:specification-rfc2119:Note
 			name="Note"
 		>
 			<ContentRules>
@@ -170,7 +170,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:specification-rfc2119:SectionReference
+			id=paperhat:domain:specification-rfc2119:SectionReference
 			name="SectionReference"
 		>
 			<TraitRules>
@@ -187,7 +187,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:specification-rfc2119:ExternalReference
+			id=paperhat:domain:specification-rfc2119:ExternalReference
 			name="ExternalReference"
 		>
 			<TraitRules>
@@ -204,7 +204,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:specification-rfc2119:RequirementSet
+			id=paperhat:domain:specification-rfc2119:RequirementSet
 			name="RequirementSet"
 		>
 			<TraitRules>
@@ -227,7 +227,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:specification-rfc2119:TermBinding
+			id=paperhat:domain:specification-rfc2119:TermBinding
 			name="TermBinding"
 		>
 			<TraitRules>
@@ -246,7 +246,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MayBeEntity
-			id=codex:domain:specification-rfc2119:Issue
+			id=paperhat:domain:specification-rfc2119:Issue
 			name="Issue"
 		>
 			<TraitRules>
@@ -269,7 +269,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MayBeEntity
-			id=codex:domain:specification-rfc2119:OpenQuestion
+			id=paperhat:domain:specification-rfc2119:OpenQuestion
 			name="OpenQuestion"
 		>
 			<TraitRules>
@@ -291,7 +291,7 @@
 	</ConceptDefinitions>
 
 	<EnumeratedValueSets>
-		<EnumeratedValueSet id=codex:domain:specification-rfc2119:set:IssueStatus name=IssueStatus>
+		<EnumeratedValueSet id=paperhat:domain:specification-rfc2119:set:IssueStatus name=IssueStatus>
 			<Member value=Open />
 
 			<Member value=Resolved />
@@ -299,7 +299,7 @@
 			<Member value=Deferred />
 		</EnumeratedValueSet>
 
-		<EnumeratedValueSet id=codex:domain:specification-rfc2119:set:OpenQuestionStatus name=OpenQuestionStatus>
+		<EnumeratedValueSet id=paperhat:domain:specification-rfc2119:set:OpenQuestionStatus name=OpenQuestionStatus>
 			<Member value=Open />
 
 			<Member value=Answered />
@@ -310,7 +310,7 @@
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:specification-rfc2119:section-reference-target-type
+			id=paperhat:domain:specification-rfc2119:section-reference-target-type
 			title="SectionReference target must resolve to a Section"
 		>
 			<Targets>
@@ -323,7 +323,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:specification-rfc2119:section-reference-must-resolve
+			id=paperhat:domain:specification-rfc2119:section-reference-must-resolve
 			title="SectionReference target must resolve"
 		>
 			<Targets>

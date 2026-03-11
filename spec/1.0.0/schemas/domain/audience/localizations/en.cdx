@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:audience
+	schema=paperhat:domain:audience
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -42,7 +42,7 @@
 	</TraitLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:audience:requires-audience-trait"
+		identifier="paperhat:domain:audience:requires-audience-trait"
 		label="Requires at least one audience trait"
 	>
 		An Audience element must specify at least one audience trait.

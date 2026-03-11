@@ -20,8 +20,8 @@ Use `Narrative` as the body wrapper in any document-like entity (essays, article
 
 | Namespace | Schema |
 |---|---|
-| section | `codex:domain:section` |
-| text | `codex:domain:text` |
+| section | `paperhat:domain:section` |
+| text | `paperhat:domain:text` |
 
 ## Design Notes
 

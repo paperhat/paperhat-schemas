@@ -2,23 +2,23 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="Semantic relational data model for deterministic, presentation-agnostic tabular data authoring."
-	id=codex:domain:relation
+	id=paperhat:domain:relation
 	namespace=relation
 	title="Relation Schema"
 	version="1.0.0"
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=desc reference=urn:cdx:sha256:5e9c6ba4654a0b013b65fc38fde033d2b6fc281d7eb791e57b207b42d80ae7da />
+		<SchemaImport namespace=desc reference=urn:cdx:sha256:011828a51c1e0956207698eae3cdad433acbf33711fece6e6b26c129cfad4188 />
 
-		<SchemaImport namespace=text reference=urn:cdx:sha256:0d835975e6ccabdab7c2204e9b1d4e19baf24108e45a8f240adea3a2684a5fd0 />
+		<SchemaImport namespace=text reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
 	</SchemaImports>
 
 	<ConceptDefinitions>
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustBeEntity
-			id=codex:domain:relation:RelationType
+			id=paperhat:domain:relation:RelationType
 			name="RelationType"
 		>
 			<ContentRules>
@@ -45,7 +45,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustBeEntity
-			id=codex:domain:relation:Attribute
+			id=paperhat:domain:relation:Attribute
 			name="Attribute"
 		>
 			<ContentRules>
@@ -70,7 +70,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:relation:AttributeKey
+			id=paperhat:domain:relation:AttributeKey
 			name="AttributeKey"
 		>
 			<ContentRules>
@@ -91,7 +91,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:relation:KeyAttribute
+			id=paperhat:domain:relation:KeyAttribute
 			name="KeyAttribute"
 		>
 			<ContentRules>
@@ -106,7 +106,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustBeEntity
-			id=codex:domain:relation:RelationInstance
+			id=paperhat:domain:relation:RelationInstance
 			name="RelationInstance"
 		>
 			<ContentRules>
@@ -133,7 +133,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustBeEntity
-			id=codex:domain:relation:Tuple
+			id=paperhat:domain:relation:Tuple
 			name="Tuple"
 		>
 			<ContentRules>
@@ -156,7 +156,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:relation:Binding
+			id=paperhat:domain:relation:Binding
 			name="Binding"
 		>
 			<ContentRules>
@@ -174,50 +174,50 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Iri
-			id=codex:domain:relation:trait:for
+			id=paperhat:domain:relation:trait:for
 			isReferenceTrait=true
 			name="for"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Iri
-			id=codex:domain:relation:trait:target
+			id=paperhat:domain:relation:trait:target
 			isReferenceTrait=true
 			name="target"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:relation:trait:name
+			id=paperhat:domain:relation:trait:name
 			name="name"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:relation:trait:valueType
+			id=paperhat:domain:relation:trait:valueType
 			name="valueType"
 		>
 			<AllowedValues>
-				<ValueIsOneOf values="$Text,$Word,$Sentence,$Paragraph,$Character,$Boolean,$Number,$Integer,$Zero,$NegativeInteger,$NonPositiveInteger,$DecimalNumber,$ExponentialNumber,$PrecisionNumber,$Fraction,$ImaginaryNumber,$ComplexNumber,$NonNegativeInteger,$PositiveInteger,$PositiveInfinity,$NegativeInfinity,$Infinity,$RealNumber,$FiniteNumber,$FiniteRealNumber,$ExactNumber,$EnumeratedToken,$Iri,$LookupToken,$Uuid,$DomainName,$EmailAddress,$Url,$Ipa,$Regex,$Semver,$LanguageTag,$MediaType,$Slug,$RgbRed,$RgbGreen,$RgbBlue,$HslHue,$HslSaturation,$HslLightness,$HwbWhiteness,$HwbBlackness,$LabLightness,$LabA,$LabB,$LchChroma,$LchHue,$OklabLightness,$OklabA,$OklabB,$OklchChroma,$OklchHue,$CmykCyan,$CmykMagenta,$CmykYellow,$CmykKey,$Opacity,$ColorPrimitive,$NamedColor,$RgbColor,$HslColor,$HwbColor,$LabColor,$LchColor,$OklabColor,$OklchColor,$ColorSpaceColor,$ColorSpaceColorFunction,$ColorMix,$DeviceCmyk,$Color,$Year,$Month,$Week,$Day,$Weekday,$Hour,$Minute,$Second,$TimeZone,$Instant,$Duration,$Date,$Time,$DateTime,$YearMonth,$MonthDay,$YearWeek,$YearWeekDay,$ZonedDate,$ZonedTime,$ZonedDateTime,$TemporalKeyword,$List,$Set,$Map,$Record,$Tuple,$Group,$Range" />
+				<ValueIsOneOf values="$Text,$Word,$Sentence,$Paragraph,$Character,$Boolean,$Number,$Integer,$Zero,$NegativeInteger,$NonPositiveInteger,$DecimalNumber,$ExponentialNumber,$PrecisionNumber,$Fraction,$ImaginaryNumber,$ComplexNumber,$NonNegativeInteger,$PositiveInteger,$PositiveInfinity,$NegativeInfinity,$Infinity,$RealNumber,$FiniteNumber,$FiniteRealNumber,$ExactNumber,$EnumeratedToken,$Iri,$LookupToken,$Uuid,$DomainName,$EmailAddress,$Url,$Ipa,$Regex,$Semver,$LanguageTag,$MediaType,$Slug,$RgbRed,$RgbGreen,$RgbBlue,$HslHue,$HslSaturation,$HslLightness,$HwbWhiteness,$HwbBlackness,$LabLightness,$LabA,$LabB,$LchChroma,$LchHue,$OklabLightness,$OklabA,$OklabB,$OklchChroma,$OklchHue,$CmykCyan,$CmykMagenta,$CmykYellow,$CmykKey,$Opacity,$ColorPrimitive,$NamedColor,$RgbColor,$HslColor,$HwbColor,$LabColor,$LchColor,$OklabColor,$OklchColor,$ColorSpaceColor,$ColorSpaceColorFunction,$ColorMix,$DeviceCmyk,$Color,$Year,$Month,$Week,$Day,$Weekday,$Hour,$Minute,$Second,$TimeZone,$Instant,$Duration,$Date,$Time,$DateTime,$YearMonth,$MonthDay,$YearWeek,$YearWeekWeekday,$ZonedDate,$ZonedTime,$ZonedDateTime,$TemporalKeyword,$List,$Set,$Map,$Record,$Tuple,$Group,$Range" />
 			</AllowedValues>
 		</TraitDefinition>
 
 		<TraitDefinition
 			defaultValueType=$Boolean
-			id=codex:domain:relation:trait:required
+			id=paperhat:domain:relation:trait:required
 			name="required"
 		/>
 
 		<TraitDefinition
-			defaultValueTypes=[$Text, $Word, $Sentence, $Paragraph, $Character, $Boolean, $Number, $Integer, $Zero, $NegativeInteger, $NonPositiveInteger, $DecimalNumber, $ExponentialNumber, $PrecisionNumber, $Fraction, $ImaginaryNumber, $ComplexNumber, $NonNegativeInteger, $PositiveInteger, $PositiveInfinity, $NegativeInfinity, $Infinity, $RealNumber, $FiniteNumber, $FiniteRealNumber, $ExactNumber, $EnumeratedToken, $Iri, $LookupToken, $Uuid, $DomainName, $EmailAddress, $Url, $Ipa, $Regex, $Semver, $LanguageTag, $MediaType, $Slug, $RgbRed, $RgbGreen, $RgbBlue, $HslHue, $HslSaturation, $HslLightness, $HwbWhiteness, $HwbBlackness, $LabLightness, $LabA, $LabB, $LchChroma, $LchHue, $OklabLightness, $OklabA, $OklabB, $OklchChroma, $OklchHue, $CmykCyan, $CmykMagenta, $CmykYellow, $CmykKey, $Opacity, $ColorPrimitive, $NamedColor, $RgbColor, $HslColor, $HwbColor, $LabColor, $LchColor, $OklabColor, $OklchColor, $ColorSpaceColor, $ColorSpaceColorFunction, $ColorMix, $DeviceCmyk, $Color, $Year, $Month, $Week, $Day, $Weekday, $Hour, $Minute, $Second, $TimeZone, $Instant, $Duration, $Date, $Time, $DateTime, $YearMonth, $MonthDay, $YearWeek, $YearWeekDay, $ZonedDate, $ZonedTime, $ZonedDateTime, $TemporalKeyword, $List, $Set, $Map, $Record, $Tuple, $Group, $Range]
-			id=codex:domain:relation:trait:value
+			defaultValueTypes=[$Text, $Word, $Sentence, $Paragraph, $Character, $Boolean, $Number, $Integer, $Zero, $NegativeInteger, $NonPositiveInteger, $DecimalNumber, $ExponentialNumber, $PrecisionNumber, $Fraction, $ImaginaryNumber, $ComplexNumber, $NonNegativeInteger, $PositiveInteger, $PositiveInfinity, $NegativeInfinity, $Infinity, $RealNumber, $FiniteNumber, $FiniteRealNumber, $ExactNumber, $EnumeratedToken, $Iri, $LookupToken, $Uuid, $DomainName, $EmailAddress, $Url, $Ipa, $Regex, $Semver, $LanguageTag, $MediaType, $Slug, $RgbRed, $RgbGreen, $RgbBlue, $HslHue, $HslSaturation, $HslLightness, $HwbWhiteness, $HwbBlackness, $LabLightness, $LabA, $LabB, $LchChroma, $LchHue, $OklabLightness, $OklabA, $OklabB, $OklchChroma, $OklchHue, $CmykCyan, $CmykMagenta, $CmykYellow, $CmykKey, $Opacity, $ColorPrimitive, $NamedColor, $RgbColor, $HslColor, $HwbColor, $LabColor, $LchColor, $OklabColor, $OklchColor, $ColorSpaceColor, $ColorSpaceColorFunction, $ColorMix, $DeviceCmyk, $Color, $Year, $Month, $Week, $Day, $Weekday, $Hour, $Minute, $Second, $TimeZone, $Instant, $Duration, $Date, $Time, $DateTime, $YearMonth, $MonthDay, $YearWeek, $YearWeekWeekday, $ZonedDate, $ZonedTime, $ZonedDateTime, $TemporalKeyword, $List, $Set, $Map, $Record, $Tuple, $Group, $Range]
+			id=paperhat:domain:relation:trait:value
 			name="value"
 		/>
 	</TraitDefinitions>
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:relation:relation-instance-reference-trait-allowed
+			id=paperhat:domain:relation:relation-instance-reference-trait-allowed
 			title="RelationInstance allows only for as a reference trait"
 		>
 			<Targets>
@@ -230,7 +230,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:relation:relation-instance-reference-singleton
+			id=paperhat:domain:relation:relation-instance-reference-singleton
 			title="RelationInstance must declare at most one reference trait"
 		>
 			<Targets>
@@ -243,7 +243,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:relation:relation-instance-for-target-type
+			id=paperhat:domain:relation:relation-instance-for-target-type
 			title="RelationInstance for must target RelationType"
 		>
 			<Targets>
@@ -256,7 +256,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:relation:relation-instance-for-must-resolve
+			id=paperhat:domain:relation:relation-instance-for-must-resolve
 			title="RelationInstance for must resolve"
 		>
 			<Targets>
@@ -269,7 +269,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:relation:key-attribute-reference-trait-allowed
+			id=paperhat:domain:relation:key-attribute-reference-trait-allowed
 			title="KeyAttribute allows only target as a reference trait"
 		>
 			<Targets>
@@ -282,7 +282,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:relation:key-attribute-reference-singleton
+			id=paperhat:domain:relation:key-attribute-reference-singleton
 			title="KeyAttribute must declare at most one reference trait"
 		>
 			<Targets>
@@ -295,7 +295,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:relation:key-attribute-target-type
+			id=paperhat:domain:relation:key-attribute-target-type
 			title="KeyAttribute target must target Attribute"
 		>
 			<Targets>
@@ -308,7 +308,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:relation:key-attribute-target-must-resolve
+			id=paperhat:domain:relation:key-attribute-target-must-resolve
 			title="KeyAttribute target must resolve"
 		>
 			<Targets>
@@ -321,7 +321,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:relation:binding-reference-trait-allowed
+			id=paperhat:domain:relation:binding-reference-trait-allowed
 			title="Binding allows only target as a reference trait"
 		>
 			<Targets>
@@ -334,7 +334,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:relation:binding-reference-singleton
+			id=paperhat:domain:relation:binding-reference-singleton
 			title="Binding must declare at most one reference trait"
 		>
 			<Targets>
@@ -347,7 +347,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:relation:binding-target-type
+			id=paperhat:domain:relation:binding-target-type
 			title="Binding target must target Attribute"
 		>
 			<Targets>
@@ -360,7 +360,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:relation:binding-target-must-resolve
+			id=paperhat:domain:relation:binding-target-must-resolve
 			title="Binding target must resolve"
 		>
 			<Targets>
@@ -373,7 +373,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:relation:tuple-requires-binding
+			id=paperhat:domain:relation:tuple-requires-binding
 			title="Tuple must contain at least one Binding"
 		>
 			<Targets>

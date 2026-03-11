@@ -1,0 +1,3 @@
+<GlossaryEntry id="urn:paperhat:glossary-entry:adaptive-realization" key=~adaptiveRealization term="adaptive realization">
+	The foundry-specific process that realizes a semantic graph under changing context while preserving topological invariants.
+</GlossaryEntry>

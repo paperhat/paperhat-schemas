@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A quantitative measurement of time or duration, with unit constrained to the units-time vocabulary."
-	id=codex:domain:paperhat-time-measure
+	id=paperhat:domain:paperhat-time-measure
 	namespace="timemeasure"
 	title="Time Measure Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:paperhat-time-measure:TimeMeasure
+			id=paperhat:domain:paperhat-time-measure:TimeMeasure
 			name="TimeMeasure"
 		>
 			<ContentRules>
@@ -30,13 +30,13 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueTypes=[$Number, $Range<$Number>]
-			id=codex:domain:paperhat-time-measure:trait:value
+			id=paperhat:domain:paperhat-time-measure:trait:value
 			name="value"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:paperhat-time-measure:trait:unit
+			id=paperhat:domain:paperhat-time-measure:trait:unit
 			name="unit"
 		>
 			<AllowedValues>

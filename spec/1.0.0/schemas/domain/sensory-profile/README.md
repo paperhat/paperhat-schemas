@@ -32,7 +32,7 @@ Use `SensoryProfile` to author a reusable sensory description that can be attach
 
 | Namespace | Schema |
 |---|---|
-| desc | `codex:domain:description` |
+| desc | `paperhat:domain:description` |
 
 ## Design Notes
 

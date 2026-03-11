@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:person
+	schema=paperhat:domain:person
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -18,7 +18,7 @@
 	</TraitLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:person:requires-name"
+		identifier="paperhat:domain:person:requires-name"
 		label="Requires at least one name"
 	>
 		A Person must have at least one PersonName.

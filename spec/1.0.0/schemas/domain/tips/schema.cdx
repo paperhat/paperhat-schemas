@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="Ordered reusable advisory content such as cooking tips, preparation hints, or handling guidance."
-	id=codex:domain:tips
+	id=paperhat:domain:tips
 	namespace="tips"
 	title="Tips Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:tips:Tips
+			id=paperhat:domain:tips:Tips
 			name="Tips"
 		>
 			<ContentRules>
@@ -29,7 +29,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:tips:Tip
+			id=paperhat:domain:tips:Tip
 			name="Tip"
 		>
 			<ContentRules>
@@ -47,20 +47,20 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:tips:trait:title
+			id=paperhat:domain:tips:trait:title
 			name="title"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:tips:trait:language
+			id=paperhat:domain:tips:trait:language
 			name="language"
 		/>
 	</TraitDefinitions>
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:tips:requires-tip
+			id=paperhat:domain:tips:requires-tip
 			title="Tips must contain at least one Tip"
 		>
 			<Targets>

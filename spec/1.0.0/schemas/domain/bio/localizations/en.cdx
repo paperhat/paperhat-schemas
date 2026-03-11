@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:bio
+	schema=paperhat:domain:bio
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -14,7 +14,7 @@
 	</TraitLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:bio:subject-targets-entity"
+		identifier="paperhat:domain:bio:subject-targets-entity"
 		label="Subject must target an entity"
 	>
 		The Bio subject reference must resolve to an entity.

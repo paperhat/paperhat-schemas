@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:media-asset
+	schema=paperhat:domain:media-asset
 	schemaVersion="1.0.0"
 	language=$En
 >

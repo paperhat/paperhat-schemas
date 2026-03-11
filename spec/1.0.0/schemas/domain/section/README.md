@@ -20,11 +20,11 @@ Use `Section` to divide any long-form document into logical parts: chapters, sub
 
 | Namespace | Schema |
 |---|---|
-| text | `codex:domain:text` |
-| rubric | `codex:domain:rubric` |
-| desc | `codex:domain:description` |
-| list | `codex:domain:list` |
-| notes | `codex:domain:notes` |
+| text | `paperhat:domain:text` |
+| rubric | `paperhat:domain:rubric` |
+| desc | `paperhat:domain:description` |
+| list | `paperhat:domain:list` |
+| notes | `paperhat:domain:notes` |
 
 ## Design Notes
 

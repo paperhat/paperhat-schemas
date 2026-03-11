@@ -20,16 +20,16 @@ Use `DocumentMetadata` to collect the metadata of any document-like entity. It h
 
 | Namespace | Schema |
 |---|---|
-| work | `codex:domain:work` |
-| desc | `codex:domain:description` |
-| summary | `codex:domain:summary` |
-| tags | `codex:domain:tags` |
-| audience | `codex:domain:audience` |
-| person | `codex:domain:person` |
-| pname | `codex:domain:person-name` |
-| contact | `codex:domain:contact-point` |
-| ident | `codex:domain:identifier` |
-| loc | `codex:domain:location` |
+| work | `paperhat:domain:work` |
+| desc | `paperhat:domain:description` |
+| summary | `paperhat:domain:summary` |
+| tags | `paperhat:domain:tags` |
+| audience | `paperhat:domain:audience` |
+| person | `paperhat:domain:person` |
+| pname | `paperhat:domain:person-name` |
+| contact | `paperhat:domain:contact-point` |
+| ident | `paperhat:domain:identifier` |
+| loc | `paperhat:domain:location` |
 
 ## Design Notes
 

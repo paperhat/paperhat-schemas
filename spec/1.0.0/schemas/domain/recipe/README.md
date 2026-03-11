@@ -37,19 +37,19 @@ Use `Recipe` to author any food or drink preparation procedure. Every recipe req
 
 | Namespace | Schema |
 |---|---|
-| audience | `codex:domain:audience` |
-| desc | `codex:domain:description` |
-| equip | `codex:domain:equipment` |
-| food | `codex:domain:food` |
-| massmeasure | `codex:domain:paperhat-mass-measure` |
-| notes | `codex:domain:notes` |
-| nutrition | `codex:domain:nutrition-information` |
-| tags | `codex:domain:tags` |
-| text | `codex:domain:text` |
-| timemeasure | `codex:domain:paperhat-time-measure` |
-| tips | `codex:domain:tips` |
-| volumemeasure | `codex:domain:paperhat-volume-measure` |
-| work | `codex:domain:work` |
+| audience | `paperhat:domain:audience` |
+| desc | `paperhat:domain:description` |
+| equip | `paperhat:domain:equipment` |
+| food | `paperhat:domain:food` |
+| massmeasure | `paperhat:domain:paperhat-mass-measure` |
+| notes | `paperhat:domain:notes` |
+| nutrition | `paperhat:domain:nutrition-information` |
+| tags | `paperhat:domain:tags` |
+| text | `paperhat:domain:text` |
+| timemeasure | `paperhat:domain:paperhat-time-measure` |
+| tips | `paperhat:domain:tips` |
+| volumemeasure | `paperhat:domain:paperhat-volume-measure` |
+| work | `paperhat:domain:work` |
 
 ## Constraints
 

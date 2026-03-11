@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:code
+	schema=paperhat:domain:code
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -28,7 +28,7 @@
 	</TraitLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:code:requires-child"
+		identifier="paperhat:domain:code:requires-child"
 		label="Requires at least one code notation concept"
 	>
 		A CodeNotation container must contain at least one child concept.

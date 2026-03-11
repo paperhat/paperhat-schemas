@@ -34,10 +34,10 @@ Use `Material` to author a reusable material entity that can be referenced by pr
 
 | Namespace | Schema |
 |---|---|
-| desc | `codex:domain:description` |
-| tags | `codex:domain:tags` |
-| measure | `codex:domain:measure` |
-| loc | `codex:domain:location` |
+| desc | `paperhat:domain:description` |
+| tags | `paperhat:domain:tags` |
+| measure | `paperhat:domain:measure` |
+| loc | `paperhat:domain:location` |
 
 ## Design Notes
 

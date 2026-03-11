@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A precise geographic position expressed as latitude, longitude, and optional elevation."
-	id=codex:domain:geographic-location
+	id=paperhat:domain:geographic-location
 	namespace="geo"
 	title="Geographic Location Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:geographic-location:GeographicLocation
+			id=paperhat:domain:geographic-location:GeographicLocation
 			name="GeographicLocation"
 		>
 			<ContentRules>
@@ -32,19 +32,19 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Number
-			id=codex:domain:geographic-location:trait:latitude
+			id=paperhat:domain:geographic-location:trait:latitude
 			name="latitude"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Number
-			id=codex:domain:geographic-location:trait:longitude
+			id=paperhat:domain:geographic-location:trait:longitude
 			name="longitude"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Number
-			id=codex:domain:geographic-location:trait:elevation
+			id=paperhat:domain:geographic-location:trait:elevation
 			name="elevation"
 		/>
 	</TraitDefinitions>

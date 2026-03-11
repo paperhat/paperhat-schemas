@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="0000000000000000000000000000000000000000000000000000000000000000"
+	copyright="Copyright 2026 Paperhat"
+	description="Reusable glossary entry schema for concise defined terms and their definitions."
+	license="Apache-2.0"
+	packageName="paperhat-glossary"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A named geographic or fictional location with optional administrative subdivisions."
-	id=codex:domain:location
+	id=paperhat:domain:location
 	namespace="loc"
 	title="Location Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:location:Location
+			id=paperhat:domain:location:Location
 			name="Location"
 		>
 			<ContentRules>
@@ -36,38 +36,38 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:location:trait:locationKind
+			id=paperhat:domain:location:trait:locationKind
 			name="locationKind"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:location:trait:name
+			id=paperhat:domain:location:trait:name
 			name="name"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:location:trait:locality
+			id=paperhat:domain:location:trait:locality
 			name="locality"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:location:trait:region
+			id=paperhat:domain:location:trait:region
 			name="region"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:location:trait:country
+			id=paperhat:domain:location:trait:country
 			name="country"
 		/>
 	</TraitDefinitions>
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:location:requires-location-part
+			id=paperhat:domain:location:requires-location-part
 			title="Location must have at least one location part"
 		>
 			<Targets>

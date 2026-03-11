@@ -2,29 +2,29 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A named initiative, effort, or body of work with identity — a software project, specification effort, research program, or any other bounded endeavor."
-	id=codex:domain:project
+	id=paperhat:domain:project
 	namespace="project"
 	title="Project Schema"
 	version="1.0.0"
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=desc reference=urn:cdx:sha256:5e9c6ba4654a0b013b65fc38fde033d2b6fc281d7eb791e57b207b42d80ae7da />
+		<SchemaImport namespace=desc reference=urn:cdx:sha256:011828a51c1e0956207698eae3cdad433acbf33711fece6e6b26c129cfad4188 />
 
-		<SchemaImport namespace=ident reference=urn:cdx:sha256:a220d2034a4faa1a81d8102265c1fef36576871a0ba25ac31500abac7afd5907 />
+		<SchemaImport namespace=ident reference=urn:cdx:sha256:5fafd42cd5ebaa41ecaf7b26d4ea2be9fb9c6a6c68c56ab3c8f2483fdbe1cf28 />
 
-		<SchemaImport namespace=tags reference=urn:cdx:sha256:864fb472fd89cb8024e9d3725203d2129185e39f375df5569b421353dbae9c98 />
+		<SchemaImport namespace=tags reference=urn:cdx:sha256:af138b9c8bbc16117f2d8553c482253f9144721ab3a9d411992a2035e2094206 />
 
-		<SchemaImport namespace=work reference=urn:cdx:sha256:1a180843230548cc38ddcde65df88bb025fd9a3feff6cdc6da19e8c3a8823dcd />
+		<SchemaImport namespace=work reference=urn:cdx:sha256:7d8e5217434f3f577ec3d65a10d50846c5140722b229029517aba371c6aeda67 />
 
-		<SchemaImport namespace=temporal reference=urn:cdx:sha256:674ed1dd9571552d7c00256360665602d01a090a9b8077e7f007aff8e9c0587f />
+		<SchemaImport namespace=temporal reference=urn:cdx:sha256:27285ec031853ac164d1e28f707cd51e863e2a2652d0404ab0e8f1f6d4e90e4d />
 	</SchemaImports>
 
 	<ConceptDefinitions>
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustBeEntity
-			id=codex:domain:project:Project
+			id=paperhat:domain:project:Project
 			name="Project"
 		>
 			<ContentRules>
@@ -60,31 +60,31 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:project:trait:name
+			id=paperhat:domain:project:trait:name
 			name="name"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:project:trait:projectKind
+			id=paperhat:domain:project:trait:projectKind
 			name="projectKind"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Url
-			id=codex:domain:project:trait:repositoryUrl
+			id=paperhat:domain:project:trait:repositoryUrl
 			name="repositoryUrl"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Url
-			id=codex:domain:project:trait:websiteUrl
+			id=paperhat:domain:project:trait:websiteUrl
 			name="websiteUrl"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:project:trait:projectStatus
+			id=paperhat:domain:project:trait:projectStatus
 			name="projectStatus"
 		/>
 	</TraitDefinitions>

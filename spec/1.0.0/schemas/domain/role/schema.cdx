@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A named function or capacity that a person or organization can hold, such as author, editor, maintainer, or approver."
-	id=codex:domain:role
+	id=paperhat:domain:role
 	namespace="role"
 	title="Role Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:role:Role
+			id=paperhat:domain:role:Role
 			name="Role"
 		>
 			<ContentRules>
@@ -32,20 +32,20 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:role:trait:roleKind
+			id=paperhat:domain:role:trait:roleKind
 			name="roleKind"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Iri
-			id=codex:domain:role:trait:holder
+			id=paperhat:domain:role:trait:holder
 			isReferenceTrait=true
 			name="holder"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:role:trait:scope
+			id=paperhat:domain:role:trait:scope
 			name="scope"
 		/>
 	</TraitDefinitions>

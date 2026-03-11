@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="Schema for authoring Behavior expressions in Codex surface form."
-	id=urn:codex:behavior:1.0.0
+	id=urn:paperhat:behavior:1.0.0
 	namespace="behavior"
 	title="Behavior Expression Schema"
 	version="1.0.0"
@@ -10,7 +10,7 @@
 >
 	<EnumeratedValueSets>
 		<EnumeratedValueSet
-			id=urn:codex:behavior:enum:ArgumentPosition
+			id=urn:paperhat:behavior:enum:ArgumentPosition
 			key=~argumentPosition
 			name="ArgumentPosition"
 		>
@@ -20,7 +20,7 @@
 		</EnumeratedValueSet>
 
 		<EnumeratedValueSet
-			id=urn:codex:behavior:enum:RoundingMode
+			id=urn:paperhat:behavior:enum:RoundingMode
 			key=~roundingMode
 			name="RoundingMode"
 		>
@@ -36,7 +36,7 @@
 		</EnumeratedValueSet>
 
 		<EnumeratedValueSet
-			id=urn:codex:behavior:enum:DisambiguationMode
+			id=urn:paperhat:behavior:enum:DisambiguationMode
 			key=~disambiguationMode
 			name="DisambiguationMode"
 		>
@@ -57,7 +57,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Calculation
+			id=urn:paperhat:behavior:concept:Calculation
 			key=~calculation
 			name="Calculation"
 		>
@@ -69,7 +69,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Validation
+			id=urn:paperhat:behavior:concept:Validation
 			key=~validation
 			name="Validation"
 		>
@@ -85,7 +85,7 @@
 		<ConceptDefinition
 			conceptKind=$ValueLike
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Argument
+			id=urn:paperhat:behavior:concept:Argument
 			key=~argument
 			name="Argument"
 		>
@@ -97,7 +97,7 @@
 		<ConceptDefinition
 			conceptKind=$ValueLike
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Variable
+			id=urn:paperhat:behavior:concept:Variable
 			key=~variable
 			name="Variable"
 		>
@@ -109,7 +109,7 @@
 		<ConceptDefinition
 			conceptKind=$ValueLike
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Constant
+			id=urn:paperhat:behavior:concept:Constant
 			key=~constant
 			name="Constant"
 		>
@@ -121,7 +121,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:FieldStep
+			id=urn:paperhat:behavior:concept:FieldStep
 			key=~fieldStep
 			name="FieldStep"
 		>
@@ -137,7 +137,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Index
+			id=urn:paperhat:behavior:concept:Index
 			key=~index
 			name="Index"
 		>
@@ -151,7 +151,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Source
+			id=urn:paperhat:behavior:concept:Source
 			key=~source
 			name="Source"
 		>
@@ -163,7 +163,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Position
+			id=urn:paperhat:behavior:concept:Position
 			key=~position
 			name="Position"
 		>
@@ -175,7 +175,7 @@
 		<ConceptDefinition
 			conceptKind=$ValueLike
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Absent
+			id=urn:paperhat:behavior:concept:Absent
 			key=~absent
 			name="Absent"
 		/>
@@ -188,7 +188,7 @@
 			conceptKind=$ValueLike
 			description="References the input value being validated in a ValueShape context."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Input
+			id=urn:paperhat:behavior:concept:Input
 			key=~input
 			name="Input"
 		/>
@@ -197,7 +197,7 @@
 			conceptKind=$ValueLike
 			description="References the current entity node in an EntityShape context."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ThisNode
+			id=urn:paperhat:behavior:concept:ThisNode
 			key=~thisNode
 			name="ThisNode"
 		/>
@@ -206,7 +206,7 @@
 			conceptKind=$Semantic
 			description="Reads a trait value from the current node or a specified node."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Field
+			id=urn:paperhat:behavior:concept:Field
 			key=~field
 			name="Field"
 		>
@@ -221,7 +221,7 @@
 			conceptKind=$ValueLike
 			description="References the current element during collection iteration."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Element
+			id=urn:paperhat:behavior:concept:Element
 			key=~element
 			name="Element"
 		/>
@@ -230,7 +230,7 @@
 			conceptKind=$ValueLike
 			description="References a named parameter for parameterized behaviors."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Parameter
+			id=urn:paperhat:behavior:concept:Parameter
 			key=~parameter
 			name="Parameter"
 		>
@@ -243,7 +243,7 @@
 			conceptKind=$ValueLike
 			description="A constant literal value."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Literal
+			id=urn:paperhat:behavior:concept:Literal
 			key=~literal
 			name="Literal"
 		>
@@ -259,7 +259,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:X
+			id=urn:paperhat:behavior:concept:X
 			key=~x
 			name="X"
 		>
@@ -271,7 +271,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Y
+			id=urn:paperhat:behavior:concept:Y
 			key=~y
 			name="Y"
 		>
@@ -287,7 +287,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Augend
+			id=urn:paperhat:behavior:concept:Augend
 			key=~augend
 			name="Augend"
 		>
@@ -299,7 +299,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Addend
+			id=urn:paperhat:behavior:concept:Addend
 			key=~addend
 			name="Addend"
 		>
@@ -311,7 +311,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Minuend
+			id=urn:paperhat:behavior:concept:Minuend
 			key=~minuend
 			name="Minuend"
 		>
@@ -323,7 +323,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Subtrahend
+			id=urn:paperhat:behavior:concept:Subtrahend
 			key=~subtrahend
 			name="Subtrahend"
 		>
@@ -335,7 +335,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Multiplicand
+			id=urn:paperhat:behavior:concept:Multiplicand
 			key=~multiplicand
 			name="Multiplicand"
 		>
@@ -347,7 +347,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Multiplier
+			id=urn:paperhat:behavior:concept:Multiplier
 			key=~multiplier
 			name="Multiplier"
 		>
@@ -359,7 +359,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Dividend
+			id=urn:paperhat:behavior:concept:Dividend
 			key=~dividend
 			name="Dividend"
 		>
@@ -371,7 +371,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Divisor
+			id=urn:paperhat:behavior:concept:Divisor
 			key=~divisor
 			name="Divisor"
 		>
@@ -383,7 +383,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Base
+			id=urn:paperhat:behavior:concept:Base
 			key=~base
 			name="Base"
 		>
@@ -395,7 +395,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Exponent
+			id=urn:paperhat:behavior:concept:Exponent
 			key=~exponent
 			name="Exponent"
 		>
@@ -411,7 +411,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Referent
+			id=urn:paperhat:behavior:concept:Referent
 			key=~referent
 			name="Referent"
 		>
@@ -423,7 +423,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Comparator
+			id=urn:paperhat:behavior:concept:Comparator
 			key=~comparator
 			name="Comparator"
 		>
@@ -439,7 +439,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Condition
+			id=urn:paperhat:behavior:concept:Condition
 			key=~condition
 			name="Condition"
 		>
@@ -451,7 +451,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Then
+			id=urn:paperhat:behavior:concept:Then
 			key=~then
 			name="Then"
 		>
@@ -463,7 +463,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Else
+			id=urn:paperhat:behavior:concept:Else
 			key=~else
 			name="Else"
 		>
@@ -475,7 +475,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Operand
+			id=urn:paperhat:behavior:concept:Operand
 			key=~operand
 			name="Operand"
 		>
@@ -491,7 +491,7 @@
 		<ConceptDefinition
 			conceptKind=$ValueLike
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Pi
+			id=urn:paperhat:behavior:concept:Pi
 			key=~pi
 			name="Pi"
 		/>
@@ -499,7 +499,7 @@
 		<ConceptDefinition
 			conceptKind=$ValueLike
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Tau
+			id=urn:paperhat:behavior:concept:Tau
 			key=~tau
 			name="Tau"
 		/>
@@ -507,7 +507,7 @@
 		<ConceptDefinition
 			conceptKind=$ValueLike
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:EulerNumber
+			id=urn:paperhat:behavior:concept:EulerNumber
 			key=~eulerNumber
 			name="EulerNumber"
 		/>
@@ -515,7 +515,7 @@
 		<ConceptDefinition
 			conceptKind=$ValueLike
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:GoldenRatio
+			id=urn:paperhat:behavior:concept:GoldenRatio
 			key=~goldenRatio
 			name="GoldenRatio"
 		/>
@@ -523,7 +523,7 @@
 		<ConceptDefinition
 			conceptKind=$ValueLike
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ImaginaryUnit
+			id=urn:paperhat:behavior:concept:ImaginaryUnit
 			key=~imaginaryUnit
 			name="ImaginaryUnit"
 		/>
@@ -531,7 +531,7 @@
 		<ConceptDefinition
 			conceptKind=$ValueLike
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:PositiveInfinity
+			id=urn:paperhat:behavior:concept:PositiveInfinity
 			key=~positiveInfinity
 			name="PositiveInfinity"
 		/>
@@ -539,7 +539,7 @@
 		<ConceptDefinition
 			conceptKind=$ValueLike
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:NegativeInfinity
+			id=urn:paperhat:behavior:concept:NegativeInfinity
 			key=~negativeInfinity
 			name="NegativeInfinity"
 		/>
@@ -547,7 +547,7 @@
 		<ConceptDefinition
 			conceptKind=$ValueLike
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:NegativeZero
+			id=urn:paperhat:behavior:concept:NegativeZero
 			key=~negativeZero
 			name="NegativeZero"
 		/>
@@ -559,7 +559,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MakeComplex
+			id=urn:paperhat:behavior:concept:MakeComplex
 			key=~makeComplex
 			name="MakeComplex"
 		>
@@ -573,7 +573,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MakeImaginary
+			id=urn:paperhat:behavior:concept:MakeImaginary
 			key=~makeImaginary
 			name="MakeImaginary"
 		>
@@ -585,7 +585,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MakeComplexFromPolar
+			id=urn:paperhat:behavior:concept:MakeComplexFromPolar
 			key=~makeComplexFromPolar
 			name="MakeComplexFromPolar"
 		>
@@ -599,7 +599,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:RealPart
+			id=urn:paperhat:behavior:concept:RealPart
 			key=~realPart
 			name="RealPart"
 		>
@@ -611,7 +611,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ImaginaryPart
+			id=urn:paperhat:behavior:concept:ImaginaryPart
 			key=~imaginaryPart
 			name="ImaginaryPart"
 		>
@@ -623,7 +623,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Conjugate
+			id=urn:paperhat:behavior:concept:Conjugate
 			key=~conjugate
 			name="Conjugate"
 		>
@@ -635,7 +635,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Magnitude
+			id=urn:paperhat:behavior:concept:Magnitude
 			key=~magnitude
 			name="Magnitude"
 		>
@@ -647,7 +647,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Phase
+			id=urn:paperhat:behavior:concept:Phase
 			key=~phase
 			name="Phase"
 		>
@@ -663,7 +663,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Add
+			id=urn:paperhat:behavior:concept:Add
 			key=~add
 			name="Add"
 		>
@@ -681,7 +681,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Subtract
+			id=urn:paperhat:behavior:concept:Subtract
 			key=~subtract
 			name="Subtract"
 		>
@@ -699,7 +699,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Multiply
+			id=urn:paperhat:behavior:concept:Multiply
 			key=~multiply
 			name="Multiply"
 		>
@@ -717,7 +717,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:DivideBy
+			id=urn:paperhat:behavior:concept:DivideBy
 			key=~divideBy
 			name="DivideBy"
 		>
@@ -735,7 +735,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Negate
+			id=urn:paperhat:behavior:concept:Negate
 			key=~negate
 			name="Negate"
 		>
@@ -749,7 +749,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Reciprocal
+			id=urn:paperhat:behavior:concept:Reciprocal
 			key=~reciprocal
 			name="Reciprocal"
 		>
@@ -763,7 +763,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Power
+			id=urn:paperhat:behavior:concept:Power
 			key=~power
 			name="Power"
 		>
@@ -785,7 +785,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:QuotientTowardZero
+			id=urn:paperhat:behavior:concept:QuotientTowardZero
 			key=~quotientTowardZero
 			name="QuotientTowardZero"
 		>
@@ -803,7 +803,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:QuotientTowardNegativeInfinity
+			id=urn:paperhat:behavior:concept:QuotientTowardNegativeInfinity
 			key=~quotientTowardNegativeInfinity
 			name="QuotientTowardNegativeInfinity"
 		>
@@ -821,7 +821,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Remainder
+			id=urn:paperhat:behavior:concept:Remainder
 			key=~remainder
 			name="Remainder"
 		>
@@ -839,7 +839,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Modulus
+			id=urn:paperhat:behavior:concept:Modulus
 			key=~modulus
 			name="Modulus"
 		>
@@ -861,7 +861,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:AbsoluteValue
+			id=urn:paperhat:behavior:concept:AbsoluteValue
 			key=~absoluteValue
 			name="AbsoluteValue"
 		>
@@ -873,7 +873,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Sign
+			id=urn:paperhat:behavior:concept:Sign
 			key=~sign
 			name="Sign"
 		>
@@ -885,7 +885,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Minimum
+			id=urn:paperhat:behavior:concept:Minimum
 			key=~minimum
 			name="Minimum"
 		>
@@ -897,7 +897,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Maximum
+			id=urn:paperhat:behavior:concept:Maximum
 			key=~maximum
 			name="Maximum"
 		>
@@ -909,7 +909,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Clamp
+			id=urn:paperhat:behavior:concept:Clamp
 			key=~clamp
 			name="Clamp"
 		>
@@ -925,7 +925,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Value
+			id=urn:paperhat:behavior:concept:Value
 			key=~value
 			name="Value"
 		>
@@ -937,7 +937,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MinimumBound
+			id=urn:paperhat:behavior:concept:MinimumBound
 			key=~minimumBound
 			name="MinimumBound"
 		>
@@ -949,7 +949,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MaximumBound
+			id=urn:paperhat:behavior:concept:MaximumBound
 			key=~maximumBound
 			name="MaximumBound"
 		>
@@ -965,7 +965,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:RoundTowardNegativeInfinity
+			id=urn:paperhat:behavior:concept:RoundTowardNegativeInfinity
 			key=~roundTowardNegativeInfinity
 			name="RoundTowardNegativeInfinity"
 		>
@@ -977,7 +977,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:RoundTowardPositiveInfinity
+			id=urn:paperhat:behavior:concept:RoundTowardPositiveInfinity
 			key=~roundTowardPositiveInfinity
 			name="RoundTowardPositiveInfinity"
 		>
@@ -989,7 +989,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:RoundTowardZero
+			id=urn:paperhat:behavior:concept:RoundTowardZero
 			key=~roundTowardZero
 			name="RoundTowardZero"
 		>
@@ -1001,7 +1001,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:RoundToNearestTiesToEven
+			id=urn:paperhat:behavior:concept:RoundToNearestTiesToEven
 			key=~roundToNearestTiesToEven
 			name="RoundToNearestTiesToEven"
 		>
@@ -1013,7 +1013,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:RoundToNearestTiesAwayFromZero
+			id=urn:paperhat:behavior:concept:RoundToNearestTiesAwayFromZero
 			key=~roundToNearestTiesAwayFromZero
 			name="RoundToNearestTiesAwayFromZero"
 		>
@@ -1025,7 +1025,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:RoundToDecimalPlaces
+			id=urn:paperhat:behavior:concept:RoundToDecimalPlaces
 			key=~roundToDecimalPlaces
 			name="RoundToDecimalPlaces"
 		>
@@ -1041,7 +1041,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:RoundToSignificantFigures
+			id=urn:paperhat:behavior:concept:RoundToSignificantFigures
 			key=~roundToSignificantFigures
 			name="RoundToSignificantFigures"
 		>
@@ -1061,7 +1061,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:SquareRoot
+			id=urn:paperhat:behavior:concept:SquareRoot
 			key=~squareRoot
 			name="SquareRoot"
 		>
@@ -1073,7 +1073,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:CubeRoot
+			id=urn:paperhat:behavior:concept:CubeRoot
 			key=~cubeRoot
 			name="CubeRoot"
 		>
@@ -1085,7 +1085,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:NthRoot
+			id=urn:paperhat:behavior:concept:NthRoot
 			key=~nthRoot
 			name="NthRoot"
 		>
@@ -1101,7 +1101,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Exponential
+			id=urn:paperhat:behavior:concept:Exponential
 			key=~exponential
 			name="Exponential"
 		>
@@ -1113,7 +1113,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:NaturalLogarithm
+			id=urn:paperhat:behavior:concept:NaturalLogarithm
 			key=~naturalLogarithm
 			name="NaturalLogarithm"
 		>
@@ -1125,7 +1125,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:BaseTwoLogarithm
+			id=urn:paperhat:behavior:concept:BaseTwoLogarithm
 			key=~baseTwoLogarithm
 			name="BaseTwoLogarithm"
 		>
@@ -1137,7 +1137,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:BaseTenLogarithm
+			id=urn:paperhat:behavior:concept:BaseTenLogarithm
 			key=~baseTenLogarithm
 			name="BaseTenLogarithm"
 		>
@@ -1149,7 +1149,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Logarithm
+			id=urn:paperhat:behavior:concept:Logarithm
 			key=~logarithm
 			name="Logarithm"
 		>
@@ -1171,7 +1171,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Sine
+			id=urn:paperhat:behavior:concept:Sine
 			key=~sine
 			name="Sine"
 		>
@@ -1183,7 +1183,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Cosine
+			id=urn:paperhat:behavior:concept:Cosine
 			key=~cosine
 			name="Cosine"
 		>
@@ -1195,7 +1195,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Tangent
+			id=urn:paperhat:behavior:concept:Tangent
 			key=~tangent
 			name="Tangent"
 		>
@@ -1207,7 +1207,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ArcSine
+			id=urn:paperhat:behavior:concept:ArcSine
 			key=~arcSine
 			name="ArcSine"
 		>
@@ -1219,7 +1219,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ArcCosine
+			id=urn:paperhat:behavior:concept:ArcCosine
 			key=~arcCosine
 			name="ArcCosine"
 		>
@@ -1231,7 +1231,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ArcTangent
+			id=urn:paperhat:behavior:concept:ArcTangent
 			key=~arcTangent
 			name="ArcTangent"
 		>
@@ -1247,7 +1247,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Secant
+			id=urn:paperhat:behavior:concept:Secant
 			key=~secant
 			name="Secant"
 		>
@@ -1259,7 +1259,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Cosecant
+			id=urn:paperhat:behavior:concept:Cosecant
 			key=~cosecant
 			name="Cosecant"
 		>
@@ -1271,7 +1271,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Cotangent
+			id=urn:paperhat:behavior:concept:Cotangent
 			key=~cotangent
 			name="Cotangent"
 		>
@@ -1283,7 +1283,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ArcSecant
+			id=urn:paperhat:behavior:concept:ArcSecant
 			key=~arcSecant
 			name="ArcSecant"
 		>
@@ -1295,7 +1295,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ArcCosecant
+			id=urn:paperhat:behavior:concept:ArcCosecant
 			key=~arcCosecant
 			name="ArcCosecant"
 		>
@@ -1307,7 +1307,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ArcCotangent
+			id=urn:paperhat:behavior:concept:ArcCotangent
 			key=~arcCotangent
 			name="ArcCotangent"
 		>
@@ -1319,7 +1319,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ArcTangentFromCoordinates
+			id=urn:paperhat:behavior:concept:ArcTangentFromCoordinates
 			key=~arcTangentFromCoordinates
 			name="ArcTangentFromCoordinates"
 		>
@@ -1333,7 +1333,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:trigonometry:Y
+			id=urn:paperhat:behavior:concept:trigonometry:Y
 			key=~trigonometryY
 			name="Y"
 		>
@@ -1345,7 +1345,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:trigonometry:X
+			id=urn:paperhat:behavior:concept:trigonometry:X
 			key=~trigonometryX
 			name="X"
 		>
@@ -1361,7 +1361,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:RadiansFromDegrees
+			id=urn:paperhat:behavior:concept:RadiansFromDegrees
 			key=~radiansFromDegrees
 			name="RadiansFromDegrees"
 		>
@@ -1373,7 +1373,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:DegreesFromRadians
+			id=urn:paperhat:behavior:concept:DegreesFromRadians
 			key=~degreesFromRadians
 			name="DegreesFromRadians"
 		>
@@ -1385,7 +1385,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:RadiansFromGradians
+			id=urn:paperhat:behavior:concept:RadiansFromGradians
 			key=~radiansFromGradians
 			name="RadiansFromGradians"
 		>
@@ -1397,7 +1397,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:GradiansFromRadians
+			id=urn:paperhat:behavior:concept:GradiansFromRadians
 			key=~gradiansFromRadians
 			name="GradiansFromRadians"
 		>
@@ -1413,7 +1413,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:HyperbolicSine
+			id=urn:paperhat:behavior:concept:HyperbolicSine
 			key=~hyperbolicSine
 			name="HyperbolicSine"
 		>
@@ -1425,7 +1425,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:HyperbolicCosine
+			id=urn:paperhat:behavior:concept:HyperbolicCosine
 			key=~hyperbolicCosine
 			name="HyperbolicCosine"
 		>
@@ -1437,7 +1437,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:HyperbolicTangent
+			id=urn:paperhat:behavior:concept:HyperbolicTangent
 			key=~hyperbolicTangent
 			name="HyperbolicTangent"
 		>
@@ -1449,7 +1449,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:HyperbolicSecant
+			id=urn:paperhat:behavior:concept:HyperbolicSecant
 			key=~hyperbolicSecant
 			name="HyperbolicSecant"
 		>
@@ -1461,7 +1461,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:HyperbolicCosecant
+			id=urn:paperhat:behavior:concept:HyperbolicCosecant
 			key=~hyperbolicCosecant
 			name="HyperbolicCosecant"
 		>
@@ -1473,7 +1473,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:HyperbolicCotangent
+			id=urn:paperhat:behavior:concept:HyperbolicCotangent
 			key=~hyperbolicCotangent
 			name="HyperbolicCotangent"
 		>
@@ -1485,7 +1485,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:AreaHyperbolicSine
+			id=urn:paperhat:behavior:concept:AreaHyperbolicSine
 			key=~areaHyperbolicSine
 			name="AreaHyperbolicSine"
 		>
@@ -1497,7 +1497,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:AreaHyperbolicCosine
+			id=urn:paperhat:behavior:concept:AreaHyperbolicCosine
 			key=~areaHyperbolicCosine
 			name="AreaHyperbolicCosine"
 		>
@@ -1509,7 +1509,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:AreaHyperbolicTangent
+			id=urn:paperhat:behavior:concept:AreaHyperbolicTangent
 			key=~areaHyperbolicTangent
 			name="AreaHyperbolicTangent"
 		>
@@ -1521,7 +1521,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:AreaHyperbolicSecant
+			id=urn:paperhat:behavior:concept:AreaHyperbolicSecant
 			key=~areaHyperbolicSecant
 			name="AreaHyperbolicSecant"
 		>
@@ -1533,7 +1533,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:AreaHyperbolicCosecant
+			id=urn:paperhat:behavior:concept:AreaHyperbolicCosecant
 			key=~areaHyperbolicCosecant
 			name="AreaHyperbolicCosecant"
 		>
@@ -1545,7 +1545,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:AreaHyperbolicCotangent
+			id=urn:paperhat:behavior:concept:AreaHyperbolicCotangent
 			key=~areaHyperbolicCotangent
 			name="AreaHyperbolicCotangent"
 		>
@@ -1561,7 +1561,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsEqualTo
+			id=urn:paperhat:behavior:concept:IsEqualTo
 			key=~isEqualTo
 			name="IsEqualTo"
 		>
@@ -1579,7 +1579,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsNotEqualTo
+			id=urn:paperhat:behavior:concept:IsNotEqualTo
 			key=~isNotEqualTo
 			name="IsNotEqualTo"
 		>
@@ -1597,7 +1597,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsLessThan
+			id=urn:paperhat:behavior:concept:IsLessThan
 			key=~isLessThan
 			name="IsLessThan"
 		>
@@ -1615,7 +1615,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsGreaterThan
+			id=urn:paperhat:behavior:concept:IsGreaterThan
 			key=~isGreaterThan
 			name="IsGreaterThan"
 		>
@@ -1633,7 +1633,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsLessThanOrEqualTo
+			id=urn:paperhat:behavior:concept:IsLessThanOrEqualTo
 			key=~isLessThanOrEqualTo
 			name="IsLessThanOrEqualTo"
 		>
@@ -1651,7 +1651,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsGreaterThanOrEqualTo
+			id=urn:paperhat:behavior:concept:IsGreaterThanOrEqualTo
 			key=~isGreaterThanOrEqualTo
 			name="IsGreaterThanOrEqualTo"
 		>
@@ -1673,7 +1673,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:And
+			id=urn:paperhat:behavior:concept:And
 			key=~and
 			name="And"
 		>
@@ -1685,7 +1685,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Or
+			id=urn:paperhat:behavior:concept:Or
 			key=~or
 			name="Or"
 		>
@@ -1697,7 +1697,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Not
+			id=urn:paperhat:behavior:concept:Not
 			key=~not
 			name="Not"
 		>
@@ -1709,7 +1709,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Ternary
+			id=urn:paperhat:behavior:concept:Ternary
 			key=~ternary
 			name="Ternary"
 		>
@@ -1729,7 +1729,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsAbsent
+			id=urn:paperhat:behavior:concept:IsAbsent
 			key=~isAbsent
 			name="IsAbsent"
 		>
@@ -1741,7 +1741,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsPresent
+			id=urn:paperhat:behavior:concept:IsPresent
 			key=~isPresent
 			name="IsPresent"
 		>
@@ -1753,7 +1753,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsInteger
+			id=urn:paperhat:behavior:concept:IsInteger
 			key=~isInteger
 			name="IsInteger"
 		>
@@ -1765,7 +1765,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsNumber
+			id=urn:paperhat:behavior:concept:IsNumber
 			key=~isNumber
 			name="IsNumber"
 		>
@@ -1777,7 +1777,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsText
+			id=urn:paperhat:behavior:concept:IsText
 			key=~isText
 			name="IsText"
 		>
@@ -1789,7 +1789,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsList
+			id=urn:paperhat:behavior:concept:IsList
 			key=~isList
 			name="IsList"
 		>
@@ -1801,7 +1801,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsBoolean
+			id=urn:paperhat:behavior:concept:IsBoolean
 			key=~isBoolean
 			name="IsBoolean"
 		>
@@ -1817,7 +1817,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:TextLength
+			id=urn:paperhat:behavior:concept:TextLength
 			key=~textLength
 			name="TextLength"
 		>
@@ -1829,7 +1829,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsEmptyText
+			id=urn:paperhat:behavior:concept:IsEmptyText
 			key=~isEmptyText
 			name="IsEmptyText"
 		>
@@ -1841,7 +1841,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsBlankText
+			id=urn:paperhat:behavior:concept:IsBlankText
 			key=~isBlankText
 			name="IsBlankText"
 		>
@@ -1853,7 +1853,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ConcatenateText
+			id=urn:paperhat:behavior:concept:ConcatenateText
 			key=~concatenateText
 			name="ConcatenateText"
 		>
@@ -1865,7 +1865,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:JoinText
+			id=urn:paperhat:behavior:concept:JoinText
 			key=~joinText
 			name="JoinText"
 		>
@@ -1881,7 +1881,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:RepeatText
+			id=urn:paperhat:behavior:concept:RepeatText
 			key=~repeatText
 			name="RepeatText"
 		>
@@ -1897,7 +1897,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Substring
+			id=urn:paperhat:behavior:concept:Substring
 			key=~substring
 			name="Substring"
 		>
@@ -1919,7 +1919,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Trim
+			id=urn:paperhat:behavior:concept:Trim
 			key=~trim
 			name="Trim"
 		>
@@ -1931,7 +1931,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:TrimStart
+			id=urn:paperhat:behavior:concept:TrimStart
 			key=~trimStart
 			name="TrimStart"
 		>
@@ -1943,7 +1943,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:TrimEnd
+			id=urn:paperhat:behavior:concept:TrimEnd
 			key=~trimEnd
 			name="TrimEnd"
 		>
@@ -1955,7 +1955,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:PadStart
+			id=urn:paperhat:behavior:concept:PadStart
 			key=~padStart
 			name="PadStart"
 		>
@@ -1973,7 +1973,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:PadEnd
+			id=urn:paperhat:behavior:concept:PadEnd
 			key=~padEnd
 			name="PadEnd"
 		>
@@ -1995,7 +1995,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ToUpperCase
+			id=urn:paperhat:behavior:concept:ToUpperCase
 			key=~toUpperCase
 			name="ToUpperCase"
 		>
@@ -2007,7 +2007,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ToLowerCase
+			id=urn:paperhat:behavior:concept:ToLowerCase
 			key=~toLowerCase
 			name="ToLowerCase"
 		>
@@ -2019,7 +2019,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ToTitleCase
+			id=urn:paperhat:behavior:concept:ToTitleCase
 			key=~toTitleCase
 			name="ToTitleCase"
 		>
@@ -2031,7 +2031,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ToCamelCase
+			id=urn:paperhat:behavior:concept:ToCamelCase
 			key=~toCamelCase
 			name="ToCamelCase"
 		>
@@ -2043,7 +2043,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ToPascalCase
+			id=urn:paperhat:behavior:concept:ToPascalCase
 			key=~toPascalCase
 			name="ToPascalCase"
 		>
@@ -2055,7 +2055,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ToSnakeCase
+			id=urn:paperhat:behavior:concept:ToSnakeCase
 			key=~toSnakeCase
 			name="ToSnakeCase"
 		>
@@ -2067,7 +2067,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ToKebabCase
+			id=urn:paperhat:behavior:concept:ToKebabCase
 			key=~toKebabCase
 			name="ToKebabCase"
 		>
@@ -2083,7 +2083,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IndexOf
+			id=urn:paperhat:behavior:concept:IndexOf
 			key=~indexOf
 			name="IndexOf"
 		>
@@ -2101,7 +2101,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:LastIndexOf
+			id=urn:paperhat:behavior:concept:LastIndexOf
 			key=~lastIndexOf
 			name="LastIndexOf"
 		>
@@ -2119,7 +2119,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ContainsSubstring
+			id=urn:paperhat:behavior:concept:ContainsSubstring
 			key=~containsSubstring
 			name="ContainsSubstring"
 		>
@@ -2135,7 +2135,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:StartsWithSubstring
+			id=urn:paperhat:behavior:concept:StartsWithSubstring
 			key=~startsWithSubstring
 			name="StartsWithSubstring"
 		>
@@ -2151,7 +2151,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:EndsWithSubstring
+			id=urn:paperhat:behavior:concept:EndsWithSubstring
 			key=~endsWithSubstring
 			name="EndsWithSubstring"
 		>
@@ -2171,7 +2171,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ReplaceFirst
+			id=urn:paperhat:behavior:concept:ReplaceFirst
 			key=~replaceFirst
 			name="ReplaceFirst"
 		>
@@ -2189,7 +2189,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ReplaceAll
+			id=urn:paperhat:behavior:concept:ReplaceAll
 			key=~replaceAll
 			name="ReplaceAll"
 		>
@@ -2211,7 +2211,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Split
+			id=urn:paperhat:behavior:concept:Split
 			key=~split
 			name="Split"
 		>
@@ -2227,7 +2227,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:SplitLines
+			id=urn:paperhat:behavior:concept:SplitLines
 			key=~splitLines
 			name="SplitLines"
 		>
@@ -2243,7 +2243,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MatchesPattern
+			id=urn:paperhat:behavior:concept:MatchesPattern
 			key=~matchesPattern
 			name="MatchesPattern"
 		>
@@ -2263,7 +2263,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsValidEmail
+			id=urn:paperhat:behavior:concept:IsValidEmail
 			key=~isValidEmail
 			name="IsValidEmail"
 		>
@@ -2275,7 +2275,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsValidUrl
+			id=urn:paperhat:behavior:concept:IsValidUrl
 			key=~isValidUrl
 			name="IsValidUrl"
 		>
@@ -2287,7 +2287,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsValidUuid
+			id=urn:paperhat:behavior:concept:IsValidUuid
 			key=~isValidUuid
 			name="IsValidUuid"
 		>
@@ -2303,7 +2303,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MakePlainDate
+			id=urn:paperhat:behavior:concept:MakePlainDate
 			key=~makePlainDate
 			name="MakePlainDate"
 		>
@@ -2319,7 +2319,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MakePlainTime
+			id=urn:paperhat:behavior:concept:MakePlainTime
 			key=~makePlainTime
 			name="MakePlainTime"
 		>
@@ -2337,7 +2337,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MakePlainDateTime
+			id=urn:paperhat:behavior:concept:MakePlainDateTime
 			key=~makePlainDateTime
 			name="MakePlainDateTime"
 		>
@@ -2359,7 +2359,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MakeDuration
+			id=urn:paperhat:behavior:concept:MakeDuration
 			key=~makeDuration
 			name="MakeDuration"
 		>
@@ -2387,7 +2387,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:temporal:Year
+			id=urn:paperhat:behavior:concept:temporal:Year
 			key=~temporalYear
 			name="Year"
 		>
@@ -2399,7 +2399,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Month
+			id=urn:paperhat:behavior:concept:Month
 			key=~month
 			name="Month"
 		>
@@ -2411,7 +2411,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Day
+			id=urn:paperhat:behavior:concept:Day
 			key=~day
 			name="Day"
 		>
@@ -2423,7 +2423,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Hour
+			id=urn:paperhat:behavior:concept:Hour
 			key=~hour
 			name="Hour"
 		>
@@ -2435,7 +2435,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Minute
+			id=urn:paperhat:behavior:concept:Minute
 			key=~minute
 			name="Minute"
 		>
@@ -2447,7 +2447,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Second
+			id=urn:paperhat:behavior:concept:Second
 			key=~second
 			name="Second"
 		>
@@ -2459,7 +2459,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:DayOfWeek
+			id=urn:paperhat:behavior:concept:DayOfWeek
 			key=~dayOfWeek
 			name="DayOfWeek"
 		>
@@ -2471,7 +2471,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:DayOfYear
+			id=urn:paperhat:behavior:concept:DayOfYear
 			key=~dayOfYear
 			name="DayOfYear"
 		>
@@ -2487,7 +2487,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:AddDuration
+			id=urn:paperhat:behavior:concept:AddDuration
 			key=~addDuration
 			name="AddDuration"
 		>
@@ -2499,7 +2499,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:SubtractDuration
+			id=urn:paperhat:behavior:concept:SubtractDuration
 			key=~subtractDuration
 			name="SubtractDuration"
 		>
@@ -2511,7 +2511,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:DifferenceBetween
+			id=urn:paperhat:behavior:concept:DifferenceBetween
 			key=~differenceBetween
 			name="DifferenceBetween"
 		>
@@ -2527,7 +2527,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:DaysBetween
+			id=urn:paperhat:behavior:concept:DaysBetween
 			key=~daysBetween
 			name="DaysBetween"
 		>
@@ -2543,7 +2543,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsAfter
+			id=urn:paperhat:behavior:concept:IsAfter
 			key=~isAfter
 			name="IsAfter"
 		>
@@ -2561,7 +2561,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsBefore
+			id=urn:paperhat:behavior:concept:IsBefore
 			key=~isBefore
 			name="IsBefore"
 		>
@@ -2579,7 +2579,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsSameInstant
+			id=urn:paperhat:behavior:concept:IsSameInstant
 			key=~isSameInstant
 			name="IsSameInstant"
 		>
@@ -2601,7 +2601,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsWeekday
+			id=urn:paperhat:behavior:concept:IsWeekday
 			key=~isWeekday
 			name="IsWeekday"
 		>
@@ -2613,7 +2613,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsWeekend
+			id=urn:paperhat:behavior:concept:IsWeekend
 			key=~isWeekend
 			name="IsWeekend"
 		>
@@ -2625,7 +2625,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsLeapYear
+			id=urn:paperhat:behavior:concept:IsLeapYear
 			key=~isLeapYear
 			name="IsLeapYear"
 		>
@@ -2637,7 +2637,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:DaysInMonth
+			id=urn:paperhat:behavior:concept:DaysInMonth
 			key=~daysInMonth
 			name="DaysInMonth"
 		>
@@ -2653,7 +2653,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:FormatIso
+			id=urn:paperhat:behavior:concept:FormatIso
 			key=~formatIso
 			name="FormatIso"
 		>
@@ -2665,7 +2665,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:FormatTemporal
+			id=urn:paperhat:behavior:concept:FormatTemporal
 			key=~formatTemporal
 			name="FormatTemporal"
 		>
@@ -2685,7 +2685,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ParsePlainDate
+			id=urn:paperhat:behavior:concept:ParsePlainDate
 			key=~parsePlainDate
 			name="ParsePlainDate"
 		>
@@ -2697,7 +2697,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ParsePlainTime
+			id=urn:paperhat:behavior:concept:ParsePlainTime
 			key=~parsePlainTime
 			name="ParsePlainTime"
 		>
@@ -2709,7 +2709,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ParsePlainDateTime
+			id=urn:paperhat:behavior:concept:ParsePlainDateTime
 			key=~parsePlainDateTime
 			name="ParsePlainDateTime"
 		>
@@ -2721,7 +2721,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ParseDuration
+			id=urn:paperhat:behavior:concept:ParseDuration
 			key=~parseDuration
 			name="ParseDuration"
 		>
@@ -2737,7 +2737,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsPlainDate
+			id=urn:paperhat:behavior:concept:IsPlainDate
 			key=~isPlainDate
 			name="IsPlainDate"
 		>
@@ -2749,7 +2749,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsPlainTime
+			id=urn:paperhat:behavior:concept:IsPlainTime
 			key=~isPlainTime
 			name="IsPlainTime"
 		>
@@ -2761,7 +2761,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsPlainDateTime
+			id=urn:paperhat:behavior:concept:IsPlainDateTime
 			key=~isPlainDateTime
 			name="IsPlainDateTime"
 		>
@@ -2773,7 +2773,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsDuration
+			id=urn:paperhat:behavior:concept:IsDuration
 			key=~isDuration
 			name="IsDuration"
 		>
@@ -2785,7 +2785,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsTemporal
+			id=urn:paperhat:behavior:concept:IsTemporal
 			key=~isTemporal
 			name="IsTemporal"
 		>
@@ -2801,7 +2801,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ArithmeticMean
+			id=urn:paperhat:behavior:concept:ArithmeticMean
 			key=~arithmeticMean
 			name="ArithmeticMean"
 		>
@@ -2813,7 +2813,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:GeometricMean
+			id=urn:paperhat:behavior:concept:GeometricMean
 			key=~geometricMean
 			name="GeometricMean"
 		>
@@ -2825,7 +2825,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:HarmonicMean
+			id=urn:paperhat:behavior:concept:HarmonicMean
 			key=~harmonicMean
 			name="HarmonicMean"
 		>
@@ -2837,7 +2837,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Median
+			id=urn:paperhat:behavior:concept:Median
 			key=~median
 			name="Median"
 		>
@@ -2849,7 +2849,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Mode
+			id=urn:paperhat:behavior:concept:Mode
 			key=~mode
 			name="Mode"
 		>
@@ -2861,7 +2861,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:WeightedMean
+			id=urn:paperhat:behavior:concept:WeightedMean
 			key=~weightedMean
 			name="WeightedMean"
 		>
@@ -2875,7 +2875,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Values
+			id=urn:paperhat:behavior:concept:Values
 			key=~values
 			name="Values"
 		>
@@ -2887,7 +2887,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Weights
+			id=urn:paperhat:behavior:concept:Weights
 			key=~weights
 			name="Weights"
 		>
@@ -2903,7 +2903,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Range
+			id=urn:paperhat:behavior:concept:Range
 			key=~range
 			name="Range"
 		>
@@ -2915,7 +2915,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:InterquartileRange
+			id=urn:paperhat:behavior:concept:InterquartileRange
 			key=~interquartileRange
 			name="InterquartileRange"
 		>
@@ -2927,7 +2927,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:PopulationVariance
+			id=urn:paperhat:behavior:concept:PopulationVariance
 			key=~populationVariance
 			name="PopulationVariance"
 		>
@@ -2939,7 +2939,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:SampleVariance
+			id=urn:paperhat:behavior:concept:SampleVariance
 			key=~sampleVariance
 			name="SampleVariance"
 		>
@@ -2951,7 +2951,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:PopulationStandardDeviation
+			id=urn:paperhat:behavior:concept:PopulationStandardDeviation
 			key=~populationStandardDeviation
 			name="PopulationStandardDeviation"
 		>
@@ -2963,7 +2963,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:SampleStandardDeviation
+			id=urn:paperhat:behavior:concept:SampleStandardDeviation
 			key=~sampleStandardDeviation
 			name="SampleStandardDeviation"
 		>
@@ -2975,7 +2975,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MeanAbsoluteDeviation
+			id=urn:paperhat:behavior:concept:MeanAbsoluteDeviation
 			key=~meanAbsoluteDeviation
 			name="MeanAbsoluteDeviation"
 		>
@@ -2987,7 +2987,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MedianAbsoluteDeviation
+			id=urn:paperhat:behavior:concept:MedianAbsoluteDeviation
 			key=~medianAbsoluteDeviation
 			name="MedianAbsoluteDeviation"
 		>
@@ -2999,7 +2999,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:CoefficientOfVariation
+			id=urn:paperhat:behavior:concept:CoefficientOfVariation
 			key=~coefficientOfVariation
 			name="CoefficientOfVariation"
 		>
@@ -3015,7 +3015,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Quantile
+			id=urn:paperhat:behavior:concept:Quantile
 			key=~quantile
 			name="Quantile"
 		>
@@ -3031,7 +3031,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Percentile
+			id=urn:paperhat:behavior:concept:Percentile
 			key=~percentile
 			name="Percentile"
 		>
@@ -3047,7 +3047,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Quartile
+			id=urn:paperhat:behavior:concept:Quartile
 			key=~quartile
 			name="Quartile"
 		>
@@ -3067,7 +3067,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Covariance
+			id=urn:paperhat:behavior:concept:Covariance
 			key=~covariance
 			name="Covariance"
 		>
@@ -3079,7 +3079,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:SampleCovariance
+			id=urn:paperhat:behavior:concept:SampleCovariance
 			key=~sampleCovariance
 			name="SampleCovariance"
 		>
@@ -3091,7 +3091,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:PearsonCorrelation
+			id=urn:paperhat:behavior:concept:PearsonCorrelation
 			key=~pearsonCorrelation
 			name="PearsonCorrelation"
 		>
@@ -3103,7 +3103,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:SpearmanCorrelation
+			id=urn:paperhat:behavior:concept:SpearmanCorrelation
 			key=~spearmanCorrelation
 			name="SpearmanCorrelation"
 		>
@@ -3119,7 +3119,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Factorial
+			id=urn:paperhat:behavior:concept:Factorial
 			key=~factorial
 			name="Factorial"
 		>
@@ -3131,7 +3131,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:DoubleFactorial
+			id=urn:paperhat:behavior:concept:DoubleFactorial
 			key=~doubleFactorial
 			name="DoubleFactorial"
 		>
@@ -3143,7 +3143,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:BinomialCoefficient
+			id=urn:paperhat:behavior:concept:BinomialCoefficient
 			key=~binomialCoefficient
 			name="BinomialCoefficient"
 		>
@@ -3157,7 +3157,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:PermutationCount
+			id=urn:paperhat:behavior:concept:PermutationCount
 			key=~permutationCount
 			name="PermutationCount"
 		>
@@ -3175,7 +3175,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:GreatestCommonDivisor
+			id=urn:paperhat:behavior:concept:GreatestCommonDivisor
 			key=~greatestCommonDivisor
 			name="GreatestCommonDivisor"
 		>
@@ -3187,7 +3187,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:LeastCommonMultiple
+			id=urn:paperhat:behavior:concept:LeastCommonMultiple
 			key=~leastCommonMultiple
 			name="LeastCommonMultiple"
 		>
@@ -3199,7 +3199,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsPrime
+			id=urn:paperhat:behavior:concept:IsPrime
 			key=~isPrime
 			name="IsPrime"
 		>
@@ -3211,7 +3211,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:PrimeFactorization
+			id=urn:paperhat:behavior:concept:PrimeFactorization
 			key=~primeFactorization
 			name="PrimeFactorization"
 		>
@@ -3223,7 +3223,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Divisors
+			id=urn:paperhat:behavior:concept:Divisors
 			key=~divisors
 			name="Divisors"
 		>
@@ -3235,7 +3235,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:DivisorCount
+			id=urn:paperhat:behavior:concept:DivisorCount
 			key=~divisorCount
 			name="DivisorCount"
 		>
@@ -3247,7 +3247,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:DivisorSum
+			id=urn:paperhat:behavior:concept:DivisorSum
 			key=~divisorSum
 			name="DivisorSum"
 		>
@@ -3263,7 +3263,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:DotProduct
+			id=urn:paperhat:behavior:concept:DotProduct
 			key=~dotProduct
 			name="DotProduct"
 		>
@@ -3275,7 +3275,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:CrossProduct
+			id=urn:paperhat:behavior:concept:CrossProduct
 			key=~crossProduct
 			name="CrossProduct"
 		>
@@ -3287,7 +3287,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:VectorLength
+			id=urn:paperhat:behavior:concept:VectorLength
 			key=~vectorLength
 			name="VectorLength"
 		>
@@ -3299,7 +3299,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:NormalizeVector
+			id=urn:paperhat:behavior:concept:NormalizeVector
 			key=~normalizeVector
 			name="NormalizeVector"
 		>
@@ -3311,7 +3311,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:VectorAngle
+			id=urn:paperhat:behavior:concept:VectorAngle
 			key=~vectorAngle
 			name="VectorAngle"
 		>
@@ -3327,7 +3327,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MatrixAdd
+			id=urn:paperhat:behavior:concept:MatrixAdd
 			key=~matrixAdd
 			name="MatrixAdd"
 		>
@@ -3339,7 +3339,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MatrixSubtract
+			id=urn:paperhat:behavior:concept:MatrixSubtract
 			key=~matrixSubtract
 			name="MatrixSubtract"
 		>
@@ -3351,7 +3351,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MatrixMultiply
+			id=urn:paperhat:behavior:concept:MatrixMultiply
 			key=~matrixMultiply
 			name="MatrixMultiply"
 		>
@@ -3363,7 +3363,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MatrixTranspose
+			id=urn:paperhat:behavior:concept:MatrixTranspose
 			key=~matrixTranspose
 			name="MatrixTranspose"
 		>
@@ -3375,7 +3375,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MatrixDeterminant
+			id=urn:paperhat:behavior:concept:MatrixDeterminant
 			key=~matrixDeterminant
 			name="MatrixDeterminant"
 		>
@@ -3387,7 +3387,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MatrixInverse
+			id=urn:paperhat:behavior:concept:MatrixInverse
 			key=~matrixInverse
 			name="MatrixInverse"
 		>
@@ -3399,7 +3399,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MatrixTrace
+			id=urn:paperhat:behavior:concept:MatrixTrace
 			key=~matrixTrace
 			name="MatrixTrace"
 		>
@@ -3411,7 +3411,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IdentityMatrix
+			id=urn:paperhat:behavior:concept:IdentityMatrix
 			key=~identityMatrix
 			name="IdentityMatrix"
 		>
@@ -3427,7 +3427,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsFinite
+			id=urn:paperhat:behavior:concept:IsFinite
 			key=~isFinite
 			name="IsFinite"
 		>
@@ -3439,7 +3439,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsInfinite
+			id=urn:paperhat:behavior:concept:IsInfinite
 			key=~isInfinite
 			name="IsInfinite"
 		>
@@ -3451,7 +3451,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsPositive
+			id=urn:paperhat:behavior:concept:IsPositive
 			key=~isPositive
 			name="IsPositive"
 		>
@@ -3463,7 +3463,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsNegative
+			id=urn:paperhat:behavior:concept:IsNegative
 			key=~isNegative
 			name="IsNegative"
 		>
@@ -3475,7 +3475,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsZero
+			id=urn:paperhat:behavior:concept:IsZero
 			key=~isZero
 			name="IsZero"
 		>
@@ -3487,7 +3487,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsEven
+			id=urn:paperhat:behavior:concept:IsEven
 			key=~isEven
 			name="IsEven"
 		>
@@ -3499,7 +3499,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsOdd
+			id=urn:paperhat:behavior:concept:IsOdd
 			key=~isOdd
 			name="IsOdd"
 		>
@@ -3515,7 +3515,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:LinearInterpolation
+			id=urn:paperhat:behavior:concept:LinearInterpolation
 			key=~linearInterpolation
 			name="LinearInterpolation"
 		>
@@ -3533,7 +3533,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Start
+			id=urn:paperhat:behavior:concept:Start
 			key=~start
 			name="Start"
 		>
@@ -3545,7 +3545,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:End
+			id=urn:paperhat:behavior:concept:End
 			key=~end
 			name="End"
 		>
@@ -3557,7 +3557,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:InverseLinearInterpolation
+			id=urn:paperhat:behavior:concept:InverseLinearInterpolation
 			key=~inverseLinearInterpolation
 			name="InverseLinearInterpolation"
 		>
@@ -3573,7 +3573,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Remap
+			id=urn:paperhat:behavior:concept:Remap
 			key=~remap
 			name="Remap"
 		>
@@ -3589,7 +3589,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:FromRange
+			id=urn:paperhat:behavior:concept:FromRange
 			key=~fromRange
 			name="FromRange"
 		>
@@ -3603,7 +3603,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ToRange
+			id=urn:paperhat:behavior:concept:ToRange
 			key=~toRange
 			name="ToRange"
 		>
@@ -3621,7 +3621,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MapElements
+			id=urn:paperhat:behavior:concept:MapElements
 			key=~mapElements
 			name="MapElements"
 		>
@@ -3635,7 +3635,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Collection
+			id=urn:paperhat:behavior:concept:Collection
 			key=~collection
 			name="Collection"
 		>
@@ -3647,7 +3647,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Transform
+			id=urn:paperhat:behavior:concept:Transform
 			key=~transform
 			name="Transform"
 		>
@@ -3659,7 +3659,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:FilterElements
+			id=urn:paperhat:behavior:concept:FilterElements
 			key=~filterElements
 			name="FilterElements"
 		>
@@ -3673,7 +3673,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Predicate
+			id=urn:paperhat:behavior:concept:Predicate
 			key=~predicate
 			name="Predicate"
 		>
@@ -3685,7 +3685,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ReduceElements
+			id=urn:paperhat:behavior:concept:ReduceElements
 			key=~reduceElements
 			name="ReduceElements"
 		>
@@ -3701,7 +3701,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:InitialValue
+			id=urn:paperhat:behavior:concept:InitialValue
 			key=~initialValue
 			name="InitialValue"
 		>
@@ -3713,7 +3713,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Reducer
+			id=urn:paperhat:behavior:concept:Reducer
 			key=~reducer
 			name="Reducer"
 		>
@@ -3725,7 +3725,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:FlatMapElements
+			id=urn:paperhat:behavior:concept:FlatMapElements
 			key=~flatMapElements
 			name="FlatMapElements"
 		>
@@ -3743,7 +3743,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:FindFirstElement
+			id=urn:paperhat:behavior:concept:FindFirstElement
 			key=~findFirstElement
 			name="FindFirstElement"
 		>
@@ -3757,7 +3757,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:FindLastElement
+			id=urn:paperhat:behavior:concept:FindLastElement
 			key=~findLastElement
 			name="FindLastElement"
 		>
@@ -3771,7 +3771,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ContainsElement
+			id=urn:paperhat:behavior:concept:ContainsElement
 			key=~containsElement
 			name="ContainsElement"
 		>
@@ -3785,7 +3785,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:collection:Element
+			id=urn:paperhat:behavior:concept:collection:Element
 			key=~collectionElement
 			name="Element"
 		>
@@ -3801,7 +3801,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:SortElements
+			id=urn:paperhat:behavior:concept:SortElements
 			key=~sortElements
 			name="SortElements"
 		>
@@ -3813,7 +3813,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:SortElementsBy
+			id=urn:paperhat:behavior:concept:SortElementsBy
 			key=~sortElementsBy
 			name="SortElementsBy"
 		>
@@ -3827,7 +3827,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:KeyExpression
+			id=urn:paperhat:behavior:concept:KeyExpression
 			key=~keyExpression
 			name="KeyExpression"
 		>
@@ -3839,7 +3839,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:SortElementsDescending
+			id=urn:paperhat:behavior:concept:SortElementsDescending
 			key=~sortElementsDescending
 			name="SortElementsDescending"
 		>
@@ -3851,7 +3851,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ReverseElements
+			id=urn:paperhat:behavior:concept:ReverseElements
 			key=~reverseElements
 			name="ReverseElements"
 		>
@@ -3867,7 +3867,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:TakeFirstElements
+			id=urn:paperhat:behavior:concept:TakeFirstElements
 			key=~takeFirstElements
 			name="TakeFirstElements"
 		>
@@ -3883,7 +3883,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:TakeLastElements
+			id=urn:paperhat:behavior:concept:TakeLastElements
 			key=~takeLastElements
 			name="TakeLastElements"
 		>
@@ -3899,7 +3899,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:DropFirstElements
+			id=urn:paperhat:behavior:concept:DropFirstElements
 			key=~dropFirstElements
 			name="DropFirstElements"
 		>
@@ -3915,7 +3915,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:DropLastElements
+			id=urn:paperhat:behavior:concept:DropLastElements
 			key=~dropLastElements
 			name="DropLastElements"
 		>
@@ -3931,7 +3931,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:SliceElements
+			id=urn:paperhat:behavior:concept:SliceElements
 			key=~sliceElements
 			name="SliceElements"
 		>
@@ -3953,7 +3953,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ConcatenateElements
+			id=urn:paperhat:behavior:concept:ConcatenateElements
 			key=~concatenateElements
 			name="ConcatenateElements"
 		>
@@ -3965,7 +3965,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ZipElements
+			id=urn:paperhat:behavior:concept:ZipElements
 			key=~zipElements
 			name="ZipElements"
 		>
@@ -3977,7 +3977,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:FlattenElements
+			id=urn:paperhat:behavior:concept:FlattenElements
 			key=~flattenElements
 			name="FlattenElements"
 		>
@@ -3989,7 +3989,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:DistinctElements
+			id=urn:paperhat:behavior:concept:DistinctElements
 			key=~distinctElements
 			name="DistinctElements"
 		>
@@ -4005,7 +4005,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:CountElements
+			id=urn:paperhat:behavior:concept:CountElements
 			key=~countElements
 			name="CountElements"
 		>
@@ -4017,7 +4017,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:SumElements
+			id=urn:paperhat:behavior:concept:SumElements
 			key=~sumElements
 			name="SumElements"
 		>
@@ -4029,7 +4029,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ProductElements
+			id=urn:paperhat:behavior:concept:ProductElements
 			key=~productElements
 			name="ProductElements"
 		>
@@ -4041,7 +4041,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MinimumElement
+			id=urn:paperhat:behavior:concept:MinimumElement
 			key=~minimumElement
 			name="MinimumElement"
 		>
@@ -4053,7 +4053,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MaximumElement
+			id=urn:paperhat:behavior:concept:MaximumElement
 			key=~maximumElement
 			name="MaximumElement"
 		>
@@ -4065,7 +4065,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:AverageElements
+			id=urn:paperhat:behavior:concept:AverageElements
 			key=~averageElements
 			name="AverageElements"
 		>
@@ -4081,7 +4081,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:AnyElementSatisfies
+			id=urn:paperhat:behavior:concept:AnyElementSatisfies
 			key=~anyElementSatisfies
 			name="AnyElementSatisfies"
 		>
@@ -4095,7 +4095,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:AllElementsSatisfy
+			id=urn:paperhat:behavior:concept:AllElementsSatisfy
 			key=~allElementsSatisfy
 			name="AllElementsSatisfy"
 		>
@@ -4109,7 +4109,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:NoElementSatisfies
+			id=urn:paperhat:behavior:concept:NoElementSatisfies
 			key=~noElementSatisfies
 			name="NoElementSatisfies"
 		>
@@ -4123,7 +4123,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsEmpty
+			id=urn:paperhat:behavior:concept:IsEmpty
 			key=~isEmpty
 			name="IsEmpty"
 		>
@@ -4135,7 +4135,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsNotEmpty
+			id=urn:paperhat:behavior:concept:IsNotEmpty
 			key=~isNotEmpty
 			name="IsNotEmpty"
 		>
@@ -4151,7 +4151,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:FirstElement
+			id=urn:paperhat:behavior:concept:FirstElement
 			key=~firstElement
 			name="FirstElement"
 		>
@@ -4163,7 +4163,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:LastElement
+			id=urn:paperhat:behavior:concept:LastElement
 			key=~lastElement
 			name="LastElement"
 		>
@@ -4175,7 +4175,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:list:ElementAt
+			id=urn:paperhat:behavior:concept:list:ElementAt
 			key=~listElementAt
 			name="ElementAt"
 		>
@@ -4195,7 +4195,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:SetUnion
+			id=urn:paperhat:behavior:concept:SetUnion
 			key=~setUnion
 			name="SetUnion"
 		>
@@ -4207,7 +4207,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:SetIntersection
+			id=urn:paperhat:behavior:concept:SetIntersection
 			key=~setIntersection
 			name="SetIntersection"
 		>
@@ -4219,7 +4219,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:SetDifference
+			id=urn:paperhat:behavior:concept:SetDifference
 			key=~setDifference
 			name="SetDifference"
 		>
@@ -4231,7 +4231,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:SetContains
+			id=urn:paperhat:behavior:concept:SetContains
 			key=~setContains
 			name="SetContains"
 		>
@@ -4245,7 +4245,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsSubsetOf
+			id=urn:paperhat:behavior:concept:IsSubsetOf
 			key=~isSubsetOf
 			name="IsSubsetOf"
 		>
@@ -4257,7 +4257,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsSupersetOf
+			id=urn:paperhat:behavior:concept:IsSupersetOf
 			key=~isSupersetOf
 			name="IsSupersetOf"
 		>
@@ -4269,7 +4269,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ListToSet
+			id=urn:paperhat:behavior:concept:ListToSet
 			key=~listToSet
 			name="ListToSet"
 		>
@@ -4281,7 +4281,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:SetToList
+			id=urn:paperhat:behavior:concept:SetToList
 			key=~setToList
 			name="SetToList"
 		>
@@ -4297,7 +4297,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MapGet
+			id=urn:paperhat:behavior:concept:MapGet
 			key=~mapGet
 			name="MapGet"
 		>
@@ -4311,7 +4311,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Key
+			id=urn:paperhat:behavior:concept:Key
 			key=~key
 			name="Key"
 		>
@@ -4323,7 +4323,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MapContainsKey
+			id=urn:paperhat:behavior:concept:MapContainsKey
 			key=~mapContainsKey
 			name="MapContainsKey"
 		>
@@ -4337,7 +4337,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MapKeys
+			id=urn:paperhat:behavior:concept:MapKeys
 			key=~mapKeys
 			name="MapKeys"
 		>
@@ -4349,7 +4349,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MapValues
+			id=urn:paperhat:behavior:concept:MapValues
 			key=~mapValues
 			name="MapValues"
 		>
@@ -4361,7 +4361,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MapEntries
+			id=urn:paperhat:behavior:concept:MapEntries
 			key=~mapEntries
 			name="MapEntries"
 		>
@@ -4373,7 +4373,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MapMerge
+			id=urn:paperhat:behavior:concept:MapMerge
 			key=~mapMerge
 			name="MapMerge"
 		>
@@ -4389,7 +4389,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:RecordGet
+			id=urn:paperhat:behavior:concept:RecordGet
 			key=~recordGet
 			name="RecordGet"
 		>
@@ -4405,7 +4405,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:RecordHasField
+			id=urn:paperhat:behavior:concept:RecordHasField
 			key=~recordHasField
 			name="RecordHasField"
 		>
@@ -4421,7 +4421,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:RecordKeys
+			id=urn:paperhat:behavior:concept:RecordKeys
 			key=~recordKeys
 			name="RecordKeys"
 		>
@@ -4433,7 +4433,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:RecordValues
+			id=urn:paperhat:behavior:concept:RecordValues
 			key=~recordValues
 			name="RecordValues"
 		>
@@ -4445,7 +4445,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:RecordMerge
+			id=urn:paperhat:behavior:concept:RecordMerge
 			key=~recordMerge
 			name="RecordMerge"
 		>
@@ -4461,7 +4461,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:TupleFirst
+			id=urn:paperhat:behavior:concept:TupleFirst
 			key=~tupleFirst
 			name="TupleFirst"
 		>
@@ -4473,7 +4473,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:TupleSecond
+			id=urn:paperhat:behavior:concept:TupleSecond
 			key=~tupleSecond
 			name="TupleSecond"
 		>
@@ -4485,7 +4485,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:TupleGet
+			id=urn:paperhat:behavior:concept:TupleGet
 			key=~tupleGet
 			name="TupleGet"
 		>
@@ -4501,7 +4501,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:TupleLength
+			id=urn:paperhat:behavior:concept:TupleLength
 			key=~tupleLength
 			name="TupleLength"
 		>
@@ -4513,7 +4513,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:TupleToList
+			id=urn:paperhat:behavior:concept:TupleToList
 			key=~tupleToList
 			name="TupleToList"
 		>
@@ -4525,7 +4525,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ListToTuple
+			id=urn:paperhat:behavior:concept:ListToTuple
 			key=~listToTuple
 			name="ListToTuple"
 		>
@@ -4541,7 +4541,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:EmptyList
+			id=urn:paperhat:behavior:concept:EmptyList
 			key=~emptyList
 			name="EmptyList"
 		/>
@@ -4549,7 +4549,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:EmptySet
+			id=urn:paperhat:behavior:concept:EmptySet
 			key=~emptySet
 			name="EmptySet"
 		/>
@@ -4557,7 +4557,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:EmptyMap
+			id=urn:paperhat:behavior:concept:EmptyMap
 			key=~emptyMap
 			name="EmptyMap"
 		/>
@@ -4565,7 +4565,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:EmptyRecord
+			id=urn:paperhat:behavior:concept:EmptyRecord
 			key=~emptyRecord
 			name="EmptyRecord"
 		/>
@@ -4573,7 +4573,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MakeRange
+			id=urn:paperhat:behavior:concept:MakeRange
 			key=~makeRange
 			name="MakeRange"
 		>
@@ -4591,7 +4591,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:RangeToList
+			id=urn:paperhat:behavior:concept:RangeToList
 			key=~rangeToList
 			name="RangeToList"
 		>
@@ -4608,7 +4608,7 @@
 			conceptKind=$Semantic
 			description="Computes the numerical derivative of a function at a point using finite differences."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:NumericalDerivative
+			id=urn:paperhat:behavior:concept:NumericalDerivative
 			key=~numericalDerivative
 			name="NumericalDerivative"
 		>
@@ -4623,7 +4623,7 @@
 			conceptKind=$Semantic
 			description="Computes the numerical second derivative of a function at a point."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:NumericalSecondDerivative
+			id=urn:paperhat:behavior:concept:NumericalSecondDerivative
 			key=~numericalSecondDerivative
 			name="NumericalSecondDerivative"
 		>
@@ -4638,7 +4638,7 @@
 			conceptKind=$Semantic
 			description="Computes the numerical definite integral of a function over an interval."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:NumericalIntegral
+			id=urn:paperhat:behavior:concept:NumericalIntegral
 			key=~numericalIntegral
 			name="NumericalIntegral"
 		>
@@ -4655,7 +4655,7 @@
 			conceptKind=$Semantic
 			description="Finds a root of a function near an initial guess using Newton's method or similar."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:FindRoot
+			id=urn:paperhat:behavior:concept:FindRoot
 			key=~findRoot
 			name="FindRoot"
 		>
@@ -4670,7 +4670,7 @@
 			conceptKind=$Semantic
 			description="Finds a root of a function within a bracket using bisection or Brent's method."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:FindRootBracketed
+			id=urn:paperhat:behavior:concept:FindRootBracketed
 			key=~findRootBracketed
 			name="FindRootBracketed"
 		>
@@ -4687,7 +4687,7 @@
 			conceptKind=$Semantic
 			description="Finds a local minimum of a function within a bracket."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:FindMinimum
+			id=urn:paperhat:behavior:concept:FindMinimum
 			key=~findMinimum
 			name="FindMinimum"
 		>
@@ -4704,7 +4704,7 @@
 			conceptKind=$Semantic
 			description="Finds a local maximum of a function within a bracket."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:FindMaximum
+			id=urn:paperhat:behavior:concept:FindMaximum
 			key=~findMaximum
 			name="FindMaximum"
 		>
@@ -4721,7 +4721,7 @@
 			conceptKind=$Structural
 			description="Wrapper for a single-variable function expression (must reference a parameter)."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Function
+			id=urn:paperhat:behavior:concept:Function
 			key=~function
 			name="Function"
 		>
@@ -4734,7 +4734,7 @@
 			conceptKind=$Structural
 			description="Wrapper for a point value at which to evaluate."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Point
+			id=urn:paperhat:behavior:concept:Point
 			key=~point
 			name="Point"
 		>
@@ -4747,7 +4747,7 @@
 			conceptKind=$Structural
 			description="Wrapper for a lower bound of an interval."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:LowerBound
+			id=urn:paperhat:behavior:concept:LowerBound
 			key=~lowerBound
 			name="LowerBound"
 		>
@@ -4760,7 +4760,7 @@
 			conceptKind=$Structural
 			description="Wrapper for an upper bound of an interval."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:UpperBound
+			id=urn:paperhat:behavior:concept:UpperBound
 			key=~upperBound
 			name="UpperBound"
 		>
@@ -4773,7 +4773,7 @@
 			conceptKind=$Structural
 			description="Wrapper for an initial guess value for iterative methods."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:InitialGuess
+			id=urn:paperhat:behavior:concept:InitialGuess
 			key=~initialGuess
 			name="InitialGuess"
 		>
@@ -4790,7 +4790,7 @@
 			conceptKind=$Semantic
 			description="Computes the gamma function Γ(x), the extension of factorial to real/complex numbers."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:GammaFunction
+			id=urn:paperhat:behavior:concept:GammaFunction
 			key=~gammaFunction
 			name="GammaFunction"
 		>
@@ -4803,7 +4803,7 @@
 			conceptKind=$Semantic
 			description="Computes the natural logarithm of the gamma function, ln(Γ(x))."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:LogGammaFunction
+			id=urn:paperhat:behavior:concept:LogGammaFunction
 			key=~logGammaFunction
 			name="LogGammaFunction"
 		>
@@ -4816,7 +4816,7 @@
 			conceptKind=$Semantic
 			description="Computes the digamma function ψ(x), the logarithmic derivative of gamma."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:DigammaFunction
+			id=urn:paperhat:behavior:concept:DigammaFunction
 			key=~digammaFunction
 			name="DigammaFunction"
 		>
@@ -4829,7 +4829,7 @@
 			conceptKind=$Semantic
 			description="Computes the beta function B(a,b) = Γ(a)Γ(b)/Γ(a+b)."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:BetaFunction
+			id=urn:paperhat:behavior:concept:BetaFunction
 			key=~betaFunction
 			name="BetaFunction"
 		>
@@ -4844,7 +4844,7 @@
 			conceptKind=$Semantic
 			description="Computes the regularized incomplete beta function I_x(a,b)."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IncompleteBetaFunction
+			id=urn:paperhat:behavior:concept:IncompleteBetaFunction
 			key=~incompleteBetaFunction
 			name="IncompleteBetaFunction"
 		>
@@ -4861,7 +4861,7 @@
 			conceptKind=$Semantic
 			description="Computes the regularized incomplete gamma function P(a,x) or Q(a,x)."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IncompleteGammaFunction
+			id=urn:paperhat:behavior:concept:IncompleteGammaFunction
 			key=~incompleteGammaFunction
 			name="IncompleteGammaFunction"
 		>
@@ -4876,7 +4876,7 @@
 			conceptKind=$Semantic
 			description="Computes the error function erf(x)."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ErrorFunction
+			id=urn:paperhat:behavior:concept:ErrorFunction
 			key=~errorFunction
 			name="ErrorFunction"
 		>
@@ -4889,7 +4889,7 @@
 			conceptKind=$Semantic
 			description="Computes the complementary error function erfc(x) = 1 - erf(x)."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ComplementaryErrorFunction
+			id=urn:paperhat:behavior:concept:ComplementaryErrorFunction
 			key=~complementaryErrorFunction
 			name="ComplementaryErrorFunction"
 		>
@@ -4902,7 +4902,7 @@
 			conceptKind=$Semantic
 			description="Computes the inverse error function erf⁻¹(x)."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:InverseErrorFunction
+			id=urn:paperhat:behavior:concept:InverseErrorFunction
 			key=~inverseErrorFunction
 			name="InverseErrorFunction"
 		>
@@ -4915,7 +4915,7 @@
 			conceptKind=$Semantic
 			description="Computes the Bessel function of the first kind J_n(x)."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:BesselJ
+			id=urn:paperhat:behavior:concept:BesselJ
 			key=~besselJ
 			name="BesselJ"
 		>
@@ -4930,7 +4930,7 @@
 			conceptKind=$Semantic
 			description="Computes the Bessel function of the second kind Y_n(x)."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:BesselY
+			id=urn:paperhat:behavior:concept:BesselY
 			key=~besselY
 			name="BesselY"
 		>
@@ -4945,7 +4945,7 @@
 			conceptKind=$Semantic
 			description="Computes the modified Bessel function of the first kind I_n(x)."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:BesselI
+			id=urn:paperhat:behavior:concept:BesselI
 			key=~besselI
 			name="BesselI"
 		>
@@ -4960,7 +4960,7 @@
 			conceptKind=$Semantic
 			description="Computes the modified Bessel function of the second kind K_n(x)."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:BesselK
+			id=urn:paperhat:behavior:concept:BesselK
 			key=~besselK
 			name="BesselK"
 		>
@@ -4975,7 +4975,7 @@
 			conceptKind=$Semantic
 			description="Computes the Riemann zeta function ζ(s)."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Zeta
+			id=urn:paperhat:behavior:concept:Zeta
 			key=~zeta
 			name="Zeta"
 		>
@@ -4988,7 +4988,7 @@
 			conceptKind=$Structural
 			description="Wrapper for the x parameter in special functions."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:special:X
+			id=urn:paperhat:behavior:concept:special:X
 			key=~specialX
 			name="X"
 		>
@@ -5001,7 +5001,7 @@
 			conceptKind=$Structural
 			description="Wrapper for the a parameter in special functions."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:A
+			id=urn:paperhat:behavior:concept:A
 			key=~a
 			name="A"
 		>
@@ -5014,7 +5014,7 @@
 			conceptKind=$Structural
 			description="Wrapper for the b parameter in special functions."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:B
+			id=urn:paperhat:behavior:concept:B
 			key=~b
 			name="B"
 		>
@@ -5027,7 +5027,7 @@
 			conceptKind=$Structural
 			description="Wrapper for the order parameter in Bessel functions."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Order
+			id=urn:paperhat:behavior:concept:Order
 			key=~order
 			name="Order"
 		>
@@ -5044,7 +5044,7 @@
 			conceptKind=$Semantic
 			description="Computes the Euclidean distance between two points in 2D space."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:DistanceBetweenPoints2D
+			id=urn:paperhat:behavior:concept:DistanceBetweenPoints2D
 			key=~distanceBetweenPoints2D
 			name="DistanceBetweenPoints2D"
 		>
@@ -5059,7 +5059,7 @@
 			conceptKind=$Semantic
 			description="Computes the midpoint between two points in 2D space."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MidpointBetweenPoints2D
+			id=urn:paperhat:behavior:concept:MidpointBetweenPoints2D
 			key=~midpointBetweenPoints2D
 			name="MidpointBetweenPoints2D"
 		>
@@ -5074,7 +5074,7 @@
 			conceptKind=$Semantic
 			description="Computes the slope of the line between two points in 2D space."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:SlopeBetweenPoints
+			id=urn:paperhat:behavior:concept:SlopeBetweenPoints
 			key=~slopeBetweenPoints
 			name="SlopeBetweenPoints"
 		>
@@ -5089,7 +5089,7 @@
 			conceptKind=$Semantic
 			description="Computes the angle from point1 to point2 relative to the positive x-axis, in radians."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:AngleBetweenPoints
+			id=urn:paperhat:behavior:concept:AngleBetweenPoints
 			key=~angleBetweenPoints
 			name="AngleBetweenPoints"
 		>
@@ -5104,7 +5104,7 @@
 			conceptKind=$Semantic
 			description="Computes the point on a circle at a given angle from the center."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:PointOnCircle
+			id=urn:paperhat:behavior:concept:PointOnCircle
 			key=~pointOnCircle
 			name="PointOnCircle"
 		>
@@ -5121,7 +5121,7 @@
 			conceptKind=$Semantic
 			description="Rotates a point around an origin by a given angle in 2D space."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:RotatePoint2D
+			id=urn:paperhat:behavior:concept:RotatePoint2D
 			key=~rotatePoint2D
 			name="RotatePoint2D"
 		>
@@ -5138,7 +5138,7 @@
 			conceptKind=$Semantic
 			description="Computes the area of a triangle given three vertices in 2D space."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:TriangleArea
+			id=urn:paperhat:behavior:concept:TriangleArea
 			key=~triangleArea
 			name="TriangleArea"
 		>
@@ -5155,7 +5155,7 @@
 			conceptKind=$Semantic
 			description="Tests whether a point lies inside a triangle defined by three vertices."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsPointInTriangle
+			id=urn:paperhat:behavior:concept:IsPointInTriangle
 			key=~isPointInTriangle
 			name="IsPointInTriangle"
 		>
@@ -5174,7 +5174,7 @@
 			conceptKind=$Semantic
 			description="Tests whether a point lies inside a circle defined by center and radius."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsPointInCircle
+			id=urn:paperhat:behavior:concept:IsPointInCircle
 			key=~isPointInCircle
 			name="IsPointInCircle"
 		>
@@ -5191,7 +5191,7 @@
 			conceptKind=$Semantic
 			description="Tests whether a point lies inside an axis-aligned rectangle."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsPointInRectangle
+			id=urn:paperhat:behavior:concept:IsPointInRectangle
 			key=~isPointInRectangle
 			name="IsPointInRectangle"
 		>
@@ -5208,7 +5208,7 @@
 			conceptKind=$Structural
 			description="Wrapper for the first point in geometry operations."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Point1
+			id=urn:paperhat:behavior:concept:Point1
 			key=~point1
 			name="Point1"
 		>
@@ -5221,7 +5221,7 @@
 			conceptKind=$Structural
 			description="Wrapper for the second point in geometry operations."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Point2
+			id=urn:paperhat:behavior:concept:Point2
 			key=~point2
 			name="Point2"
 		>
@@ -5234,7 +5234,7 @@
 			conceptKind=$Structural
 			description="Wrapper for the third point in geometry operations."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Point3
+			id=urn:paperhat:behavior:concept:Point3
 			key=~point3
 			name="Point3"
 		>
@@ -5247,7 +5247,7 @@
 			conceptKind=$Structural
 			description="Wrapper for a center point in geometry operations."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Center
+			id=urn:paperhat:behavior:concept:Center
 			key=~center
 			name="Center"
 		>
@@ -5260,7 +5260,7 @@
 			conceptKind=$Structural
 			description="Wrapper for a radius value in geometry operations."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Radius
+			id=urn:paperhat:behavior:concept:Radius
 			key=~radius
 			name="Radius"
 		>
@@ -5273,7 +5273,7 @@
 			conceptKind=$Structural
 			description="Wrapper for an angle value (in radians) in geometry operations."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Angle
+			id=urn:paperhat:behavior:concept:Angle
 			key=~angle
 			name="Angle"
 		>
@@ -5286,7 +5286,7 @@
 			conceptKind=$Structural
 			description="Wrapper for an origin point in rotation operations."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Origin
+			id=urn:paperhat:behavior:concept:Origin
 			key=~origin
 			name="Origin"
 		>
@@ -5299,7 +5299,7 @@
 			conceptKind=$Structural
 			description="Wrapper for the first vertex in polygon operations."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Vertex1
+			id=urn:paperhat:behavior:concept:Vertex1
 			key=~vertex1
 			name="Vertex1"
 		>
@@ -5312,7 +5312,7 @@
 			conceptKind=$Structural
 			description="Wrapper for the second vertex in polygon operations."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Vertex2
+			id=urn:paperhat:behavior:concept:Vertex2
 			key=~vertex2
 			name="Vertex2"
 		>
@@ -5325,7 +5325,7 @@
 			conceptKind=$Structural
 			description="Wrapper for the third vertex in polygon operations."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Vertex3
+			id=urn:paperhat:behavior:concept:Vertex3
 			key=~vertex3
 			name="Vertex3"
 		>
@@ -5338,7 +5338,7 @@
 			conceptKind=$Structural
 			description="Wrapper for the minimum corner point of a rectangle."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MinCorner
+			id=urn:paperhat:behavior:concept:MinCorner
 			key=~minCorner
 			name="MinCorner"
 		>
@@ -5351,7 +5351,7 @@
 			conceptKind=$Structural
 			description="Wrapper for the maximum corner point of a rectangle."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MaxCorner
+			id=urn:paperhat:behavior:concept:MaxCorner
 			key=~maxCorner
 			name="MaxCorner"
 		>
@@ -5368,7 +5368,7 @@
 			conceptKind=$Semantic
 			description="Computes the Euclidean distance between two points in 3D space."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:DistanceBetweenPoints3D
+			id=urn:paperhat:behavior:concept:DistanceBetweenPoints3D
 			key=~distanceBetweenPoints3D
 			name="DistanceBetweenPoints3D"
 		>
@@ -5383,7 +5383,7 @@
 			conceptKind=$Semantic
 			description="Computes the midpoint between two points in 3D space."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:MidpointBetweenPoints3D
+			id=urn:paperhat:behavior:concept:MidpointBetweenPoints3D
 			key=~midpointBetweenPoints3D
 			name="MidpointBetweenPoints3D"
 		>
@@ -5398,7 +5398,7 @@
 			conceptKind=$Semantic
 			description="Rotates a point around an arbitrary axis in 3D space."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:RotatePoint3DAroundAxis
+			id=urn:paperhat:behavior:concept:RotatePoint3DAroundAxis
 			key=~rotatePoint3DAroundAxis
 			name="RotatePoint3DAroundAxis"
 		>
@@ -5417,7 +5417,7 @@
 			conceptKind=$Semantic
 			description="Computes the volume of a tetrahedron given four vertices in 3D space."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:TetrahedronVolume
+			id=urn:paperhat:behavior:concept:TetrahedronVolume
 			key=~tetrahedronVolume
 			name="TetrahedronVolume"
 		>
@@ -5436,7 +5436,7 @@
 			conceptKind=$Semantic
 			description="Tests whether a point lies inside a sphere defined by center and radius."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsPointInSphere
+			id=urn:paperhat:behavior:concept:IsPointInSphere
 			key=~isPointInSphere
 			name="IsPointInSphere"
 		>
@@ -5453,7 +5453,7 @@
 			conceptKind=$Semantic
 			description="Tests whether a point lies inside an axis-aligned box in 3D space."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:IsPointInBox
+			id=urn:paperhat:behavior:concept:IsPointInBox
 			key=~isPointInBox
 			name="IsPointInBox"
 		>
@@ -5470,7 +5470,7 @@
 			conceptKind=$Structural
 			description="Wrapper for the fourth point in geometry operations."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:Point4
+			id=urn:paperhat:behavior:concept:Point4
 			key=~point4
 			name="Point4"
 		>
@@ -5483,7 +5483,7 @@
 			conceptKind=$Structural
 			description="Wrapper for the origin point of a rotation axis."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:AxisOrigin
+			id=urn:paperhat:behavior:concept:AxisOrigin
 			key=~axisOrigin
 			name="AxisOrigin"
 		>
@@ -5496,7 +5496,7 @@
 			conceptKind=$Structural
 			description="Wrapper for the direction vector of a rotation axis."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:AxisDirection
+			id=urn:paperhat:behavior:concept:AxisDirection
 			key=~axisDirection
 			name="AxisDirection"
 		>
@@ -5513,7 +5513,7 @@
 			conceptKind=$Semantic
 			description="Normalizes an angle in radians to the range [0, 2π)."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:NormalizeAngleRadians
+			id=urn:paperhat:behavior:concept:NormalizeAngleRadians
 			key=~normalizeAngleRadians
 			name="NormalizeAngleRadians"
 		>
@@ -5526,7 +5526,7 @@
 			conceptKind=$Semantic
 			description="Normalizes an angle in radians to the range [-π, π)."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:NormalizeAngleRadiansSigned
+			id=urn:paperhat:behavior:concept:NormalizeAngleRadiansSigned
 			key=~normalizeAngleRadiansSigned
 			name="NormalizeAngleRadiansSigned"
 		>
@@ -5539,7 +5539,7 @@
 			conceptKind=$Semantic
 			description="Normalizes an angle in degrees to the range [0, 360)."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:NormalizeAngleDegrees
+			id=urn:paperhat:behavior:concept:NormalizeAngleDegrees
 			key=~normalizeAngleDegrees
 			name="NormalizeAngleDegrees"
 		>
@@ -5552,7 +5552,7 @@
 			conceptKind=$Semantic
 			description="Normalizes an angle in degrees to the range [-180, 180)."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:NormalizeAngleDegreesSigned
+			id=urn:paperhat:behavior:concept:NormalizeAngleDegreesSigned
 			key=~normalizeAngleDegreesSigned
 			name="NormalizeAngleDegreesSigned"
 		>
@@ -5565,7 +5565,7 @@
 			conceptKind=$Semantic
 			description="Computes the shortest signed difference between two angles (in radians)."
 			entityEligibility=$MustNotBeEntity
-			id=urn:codex:behavior:concept:ShortestAngleDifference
+			id=urn:paperhat:behavior:concept:ShortestAngleDifference
 			key=~shortestAngleDifference
 			name="ShortestAngleDifference"
 		>
@@ -5583,35 +5583,35 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=urn:codex:behavior:trait:name
+			id=urn:paperhat:behavior:trait:name
 			name="name"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$NonNegativeInteger
-			id=urn:codex:behavior:trait:index
+			id=urn:paperhat:behavior:trait:index
 			name="index"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$NonNegativeInteger
-			id=urn:codex:behavior:trait:places
+			id=urn:paperhat:behavior:trait:places
 			name="places"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$PositiveInteger
-			id=urn:codex:behavior:trait:figures
+			id=urn:paperhat:behavior:trait:figures
 			name="figures"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Integer
-			id=urn:codex:behavior:trait:n
+			id=urn:paperhat:behavior:trait:n
 			name="n"
 			priority=$Primary
 		/>
@@ -5620,77 +5620,77 @@
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=urn:codex:behavior:trait:separator
+			id=urn:paperhat:behavior:trait:separator
 			name="separator"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$NonNegativeInteger
-			id=urn:codex:behavior:trait:count
+			id=urn:paperhat:behavior:trait:count
 			name="count"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Integer
-			id=urn:codex:behavior:trait:startIndex
+			id=urn:paperhat:behavior:trait:startIndex
 			name="startIndex"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Integer
-			id=urn:codex:behavior:trait:endIndex
+			id=urn:paperhat:behavior:trait:endIndex
 			name="endIndex"
 			priority=$Secondary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$NonNegativeInteger
-			id=urn:codex:behavior:trait:targetLength
+			id=urn:paperhat:behavior:trait:targetLength
 			name="targetLength"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=urn:codex:behavior:trait:padString
+			id=urn:paperhat:behavior:trait:padString
 			name="padString"
 			priority=$Secondary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=urn:codex:behavior:trait:search
+			id=urn:paperhat:behavior:trait:search
 			name="search"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=urn:codex:behavior:trait:prefix
+			id=urn:paperhat:behavior:trait:prefix
 			name="prefix"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=urn:codex:behavior:trait:suffix
+			id=urn:paperhat:behavior:trait:suffix
 			name="suffix"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=urn:codex:behavior:trait:replacement
+			id=urn:paperhat:behavior:trait:replacement
 			name="replacement"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=urn:codex:behavior:trait:pattern
+			id=urn:paperhat:behavior:trait:pattern
 			name="pattern"
 			priority=$Primary
 		/>
@@ -5701,105 +5701,105 @@
 
 		<TraitDefinition
 			defaultValueType=$Integer
-			id=urn:codex:behavior:trait:year
+			id=urn:paperhat:behavior:trait:year
 			name="year"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Integer
-			id=urn:codex:behavior:trait:month
+			id=urn:paperhat:behavior:trait:month
 			name="month"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Integer
-			id=urn:codex:behavior:trait:day
+			id=urn:paperhat:behavior:trait:day
 			name="day"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Integer
-			id=urn:codex:behavior:trait:hour
+			id=urn:paperhat:behavior:trait:hour
 			name="hour"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Integer
-			id=urn:codex:behavior:trait:minute
+			id=urn:paperhat:behavior:trait:minute
 			name="minute"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Integer
-			id=urn:codex:behavior:trait:second
+			id=urn:paperhat:behavior:trait:second
 			name="second"
 			priority=$Secondary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Integer
-			id=urn:codex:behavior:trait:millisecond
+			id=urn:paperhat:behavior:trait:millisecond
 			name="millisecond"
 			priority=$Secondary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Integer
-			id=urn:codex:behavior:trait:years
+			id=urn:paperhat:behavior:trait:years
 			name="years"
 			priority=$Secondary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Integer
-			id=urn:codex:behavior:trait:months
+			id=urn:paperhat:behavior:trait:months
 			name="months"
 			priority=$Secondary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Integer
-			id=urn:codex:behavior:trait:weeks
+			id=urn:paperhat:behavior:trait:weeks
 			name="weeks"
 			priority=$Secondary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Integer
-			id=urn:codex:behavior:trait:days
+			id=urn:paperhat:behavior:trait:days
 			name="days"
 			priority=$Secondary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Integer
-			id=urn:codex:behavior:trait:hours
+			id=urn:paperhat:behavior:trait:hours
 			name="hours"
 			priority=$Secondary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Integer
-			id=urn:codex:behavior:trait:minutes
+			id=urn:paperhat:behavior:trait:minutes
 			name="minutes"
 			priority=$Secondary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Integer
-			id=urn:codex:behavior:trait:seconds
+			id=urn:paperhat:behavior:trait:seconds
 			name="seconds"
 			priority=$Secondary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=urn:codex:behavior:trait:largestUnit
+			id=urn:paperhat:behavior:trait:largestUnit
 			name="largestUnit"
 			priority=$Secondary
 		/>
@@ -5810,28 +5810,28 @@
 
 		<TraitDefinition
 			defaultValueType=$Number
-			id=urn:codex:behavior:trait:real
+			id=urn:paperhat:behavior:trait:real
 			name="real"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Number
-			id=urn:codex:behavior:trait:imaginary
+			id=urn:paperhat:behavior:trait:imaginary
 			name="imaginary"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Number
-			id=urn:codex:behavior:trait:magnitude
+			id=urn:paperhat:behavior:trait:magnitude
 			name="magnitude"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Number
-			id=urn:codex:behavior:trait:phase
+			id=urn:paperhat:behavior:trait:phase
 			name="phase"
 			priority=$Primary
 		/>
@@ -5842,21 +5842,21 @@
 
 		<TraitDefinition
 			defaultValueType=$Number
-			id=urn:codex:behavior:trait:proportion
+			id=urn:paperhat:behavior:trait:proportion
 			name="proportion"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Number
-			id=urn:codex:behavior:trait:percent
+			id=urn:paperhat:behavior:trait:percent
 			name="percent"
 			priority=$Primary
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Integer
-			id=urn:codex:behavior:trait:q
+			id=urn:paperhat:behavior:trait:q
 			name="q"
 			priority=$Primary
 		/>
@@ -5867,7 +5867,7 @@
 
 		<TraitDefinition
 			defaultValueType=$NonNegativeInteger
-			id=urn:codex:behavior:trait:k
+			id=urn:paperhat:behavior:trait:k
 			name="k"
 			priority=$Primary
 		/>
@@ -5878,7 +5878,7 @@
 
 		<TraitDefinition
 			defaultValueType=$PositiveInteger
-			id=urn:codex:behavior:trait:size
+			id=urn:paperhat:behavior:trait:size
 			name="size"
 			priority=$Primary
 		/>
@@ -5889,7 +5889,7 @@
 
 		<TraitDefinition
 			defaultValueType=$Number
-			id=urn:codex:behavior:trait:t
+			id=urn:paperhat:behavior:trait:t
 			name="t"
 			priority=$Primary
 		/>
@@ -5900,7 +5900,7 @@
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=urn:codex:behavior:trait:fieldName
+			id=urn:paperhat:behavior:trait:fieldName
 			name="fieldName"
 			priority=$Primary
 		/>
@@ -5911,7 +5911,7 @@
 
 		<TraitDefinition
 			defaultValueType=$Number
-			id=urn:codex:behavior:trait:step
+			id=urn:paperhat:behavior:trait:step
 			name="step"
 			priority=$Secondary
 		/>
@@ -5926,7 +5926,7 @@
 
 		<ConstraintDefinition
 			description="Add must use either Augend/Addend OR X/Y, but not mix them."
-			id=urn:codex:behavior:constraint:add-matched-pairs
+			id=urn:paperhat:behavior:constraint:add-matched-pairs
 			title="Add requires matched argument pairs"
 		>
 			<Targets>
@@ -5976,7 +5976,7 @@
 
 		<ConstraintDefinition
 			description="Subtract must use either Minuend/Subtrahend OR X/Y, but not mix them."
-			id=urn:codex:behavior:constraint:subtract-matched-pairs
+			id=urn:paperhat:behavior:constraint:subtract-matched-pairs
 			title="Subtract requires matched argument pairs"
 		>
 			<Targets>
@@ -6030,7 +6030,7 @@
 
 		<ConstraintDefinition
 			description="Multiply must use either Multiplicand/Multiplier OR X/Y, but not mix them."
-			id=urn:codex:behavior:constraint:multiply-matched-pairs
+			id=urn:paperhat:behavior:constraint:multiply-matched-pairs
 			title="Multiply requires matched argument pairs"
 		>
 			<Targets>
@@ -6080,7 +6080,7 @@
 
 		<ConstraintDefinition
 			description="DivideBy must use either Dividend/Divisor OR X/Y, but not mix them."
-			id=urn:codex:behavior:constraint:divide-matched-pairs
+			id=urn:paperhat:behavior:constraint:divide-matched-pairs
 			title="DivideBy requires matched argument pairs"
 		>
 			<Targets>
@@ -6134,7 +6134,7 @@
 
 		<ConstraintDefinition
 			description="Power must use either Base/Exponent OR X/Y, but not mix them."
-			id=urn:codex:behavior:constraint:power-matched-pairs
+			id=urn:paperhat:behavior:constraint:power-matched-pairs
 			title="Power requires matched argument pairs"
 		>
 			<Targets>
@@ -6192,7 +6192,7 @@
 
 		<ConstraintDefinition
 			description="Comparison operators must use either Referent/Comparator OR X/Y, but not mix them."
-			id=urn:codex:behavior:constraint:comparison-matched-pairs
+			id=urn:paperhat:behavior:constraint:comparison-matched-pairs
 			title="Comparison operators require matched argument pairs"
 		>
 			<Targets>

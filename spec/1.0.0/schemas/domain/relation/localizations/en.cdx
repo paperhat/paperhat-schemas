@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:relation
+	schema=paperhat:domain:relation
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -33,15 +33,15 @@
 		Bound value for a tuple and attribute pair.
 	</TraitLocalization>
 
-	<ConstraintLocalization identifier="codex:domain:relation:relation-instance-for-target-type" label="Relation instance for target type">
+	<ConstraintLocalization identifier="paperhat:domain:relation:relation-instance-for-target-type" label="Relation instance for target type">
 		RelationInstance for references must point to RelationType concepts.
 	</ConstraintLocalization>
 
-	<ConstraintLocalization identifier="codex:domain:relation:binding-target-type" label="Binding target type">
+	<ConstraintLocalization identifier="paperhat:domain:relation:binding-target-type" label="Binding target type">
 		Binding target references must point to Attribute concepts.
 	</ConstraintLocalization>
 
-	<ConstraintLocalization identifier="codex:domain:relation:tuple-requires-binding" label="Tuple requires binding">
+	<ConstraintLocalization identifier="paperhat:domain:relation:tuple-requires-binding" label="Tuple requires binding">
 		Each Tuple must include at least one Binding child.
 	</ConstraintLocalization>
 </LocalizationBundle>

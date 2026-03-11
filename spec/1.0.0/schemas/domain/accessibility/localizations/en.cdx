@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:accessibility
+	schema=paperhat:domain:accessibility
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -42,7 +42,7 @@
 	</TraitLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:accessibility:requires-accessibility-trait"
+		identifier="paperhat:domain:accessibility:requires-accessibility-trait"
 		label="Requires at least one accessibility trait"
 	>
 		An Accessibility element must specify at least one accessibility trait.

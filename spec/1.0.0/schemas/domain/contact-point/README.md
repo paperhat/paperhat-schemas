@@ -7,7 +7,7 @@ Version: 1.0.0
 A method of contact such as email address, phone number, or website, with optional temporal validity.
 
 **Package:** `paperhat-contact-point`
-**Schema ID:** `codex:domain:contact-point`
+**Schema ID:** `paperhat:domain:contact-point`
 
 ---
 

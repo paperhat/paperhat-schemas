@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:media-reference
+	schema=paperhat:domain:media-reference
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -42,7 +42,7 @@
 	</TraitLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:media-reference:requires-media-trait"
+		identifier="paperhat:domain:media-reference:requires-media-trait"
 		label="Requires at least one media trait"
 	>
 		A MediaReference must specify at least one trait.

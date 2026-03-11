@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:contact-point
+	schema=paperhat:domain:contact-point
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -34,7 +34,7 @@
 	</TraitLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:contact-point:requires-contact-method"
+		identifier="paperhat:domain:contact-point:requires-contact-method"
 		label="Requires at least one contact method"
 	>
 		A ContactPoint must include at least one contact method.

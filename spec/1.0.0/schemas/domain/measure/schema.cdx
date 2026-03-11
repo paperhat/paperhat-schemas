@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A general-purpose quantitative measurement expressed as a numeric value and a unit."
-	id=codex:domain:measure
+	id=paperhat:domain:measure
 	namespace="measure"
 	title="Measure Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:measure:Measure
+			id=paperhat:domain:measure:Measure
 			name="Measure"
 		>
 			<ContentRules>
@@ -30,13 +30,13 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueTypes=[$Number, $Range<$Number>]
-			id=codex:domain:measure:trait:value
+			id=paperhat:domain:measure:trait:value
 			name="value"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:measure:trait:unit
+			id=paperhat:domain:measure:trait:unit
 			name="unit"
 		/>
 	</TraitDefinitions>

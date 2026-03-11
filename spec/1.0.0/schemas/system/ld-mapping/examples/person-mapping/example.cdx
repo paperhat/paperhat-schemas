@@ -4,7 +4,7 @@
   trait-to-property mappings for name parts and contact fields.
 ]
 <SchemaOrgMapping
-	id=codex:system:ld-mapping:person
+	id=paperhat:system:ld-mapping:person
 	version="1.0.0"
 >
 	<MapType sourceConcept="Person" targetType="Person" />

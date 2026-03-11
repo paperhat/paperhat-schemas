@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="Defines a one-way mapping document format used to project Codex-authored data into linked data vocabularies for JSON-LD, RDFa, or microdata emitters."
-	id=codex:system:ld-mapping
+	id=paperhat:system:ld-mapping
 	namespace="ld-mapping"
 	title="Linked Data Mapping Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:system:ld-mapping:SchemaOrgMapping
+			id=paperhat:system:ld-mapping:SchemaOrgMapping
 			name="SchemaOrgMapping"
 		>
 			<ContentRules>
@@ -37,7 +37,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:system:ld-mapping:MapType
+			id=paperhat:system:ld-mapping:MapType
 			name="MapType"
 		>
 			<ContentRules>
@@ -54,7 +54,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:system:ld-mapping:MapContentToProperty
+			id=paperhat:system:ld-mapping:MapContentToProperty
 			name="MapContentToProperty"
 		>
 			<ContentRules>
@@ -71,7 +71,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:system:ld-mapping:MapTraitToProperty
+			id=paperhat:system:ld-mapping:MapTraitToProperty
 			name="MapTraitToProperty"
 		>
 			<ContentRules>
@@ -91,45 +91,45 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Iri
-			id=codex:system:ld-mapping:trait:id
+			id=paperhat:system:ld-mapping:trait:id
 			isReferenceTrait=true
 			name="id"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:system:ld-mapping:trait:version
+			id=paperhat:system:ld-mapping:trait:version
 			name="version"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:system:ld-mapping:trait:sourceConcept
+			id=paperhat:system:ld-mapping:trait:sourceConcept
 			name="sourceConcept"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:system:ld-mapping:trait:sourceTrait
+			id=paperhat:system:ld-mapping:trait:sourceTrait
 			name="sourceTrait"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:system:ld-mapping:trait:targetType
+			id=paperhat:system:ld-mapping:trait:targetType
 			name="targetType"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:system:ld-mapping:trait:targetProperty
+			id=paperhat:system:ld-mapping:trait:targetProperty
 			name="targetProperty"
 		/>
 	</TraitDefinitions>
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:system:ld-mapping:root-only
+			id=paperhat:system:ld-mapping:root-only
 			title="Mapping document must have exactly one root SchemaOrgMapping"
 		>
 			<Targets>

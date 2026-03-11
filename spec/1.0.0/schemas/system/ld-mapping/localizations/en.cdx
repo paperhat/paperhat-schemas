@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:system:ld-mapping
+	schema=paperhat:system:ld-mapping
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -36,7 +36,7 @@
 	</TraitLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:system:ld-mapping:root-only"
+		identifier="paperhat:system:ld-mapping:root-only"
 		label="Root only"
 	>
 		A mapping document must have exactly one root SchemaOrgMapping.

@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A typed link to an entity, used to express relationships between concepts without embedding."
-	id=codex:domain:reference
+	id=paperhat:domain:reference
 	namespace="ref"
 	title="Reference Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:reference:Reference
+			id=paperhat:domain:reference:Reference
 			name="Reference"
 		>
 			<ContentRules>
@@ -28,7 +28,7 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Iri
-			id=codex:domain:reference:trait:target
+			id=paperhat:domain:reference:trait:target
 			isReferenceTrait=true
 			name="target"
 		/>
@@ -36,7 +36,7 @@
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:reference:target-is-entity
+			id=paperhat:domain:reference:target-is-entity
 			title="Reference target must be an entity"
 		>
 			<Targets>

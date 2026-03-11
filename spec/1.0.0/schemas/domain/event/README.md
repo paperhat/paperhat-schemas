@@ -24,39 +24,39 @@ Use `Event` to represent any named occurrence with a time dimension: scheduled h
 
 | Child | Schema | Description |
 |---|---|---|
-| desc:Description | `codex:domain:description` | Free-text description of the event. |
-| loc:Location | `codex:domain:location` | Venue name, city, region, country. |
-| geo:GeographicLocation | `codex:domain:geographic-location` | Precise coordinates of the venue. |
-| contact:ContactPoint | `codex:domain:contact-point` | Organizer or box-office contact info. |
-| ident:Identifier | `codex:domain:identifier` | Event IDs, ticket barcodes, registration codes. |
-| offer:Offer | `codex:domain:offer` | Ticket pricing, availability, and conditions. |
-| dur:Duration | `codex:domain:duration` | Length of the event. |
-| rating:Rating | `codex:domain:rating` | Aggregate reviews or ratings. |
-| money:MonetaryAmount | `codex:domain:monetary-amount` | Admission cost when not expressed via Offer. |
-| tags:Tags | `codex:domain:tags` | Freeform categorization. |
-| work:Work | `codex:domain:work` | Authorship, licensing, provenance. |
-| schedule:OperatingSchedule | `codex:domain:operating-schedule` | Recurring schedule information. |
-| audience:Audience | `codex:domain:audience` | Target audience metadata. |
-| a11y:Accessibility | `codex:domain:accessibility` | Accessibility information. |
+| desc:Description | `paperhat:domain:description` | Free-text description of the event. |
+| loc:Location | `paperhat:domain:location` | Venue name, city, region, country. |
+| geo:GeographicLocation | `paperhat:domain:geographic-location` | Precise coordinates of the venue. |
+| contact:ContactPoint | `paperhat:domain:contact-point` | Organizer or box-office contact info. |
+| ident:Identifier | `paperhat:domain:identifier` | Event IDs, ticket barcodes, registration codes. |
+| offer:Offer | `paperhat:domain:offer` | Ticket pricing, availability, and conditions. |
+| dur:Duration | `paperhat:domain:duration` | Length of the event. |
+| rating:Rating | `paperhat:domain:rating` | Aggregate reviews or ratings. |
+| money:MonetaryAmount | `paperhat:domain:monetary-amount` | Admission cost when not expressed via Offer. |
+| tags:Tags | `paperhat:domain:tags` | Freeform categorization. |
+| work:Work | `paperhat:domain:work` | Authorship, licensing, provenance. |
+| schedule:OperatingSchedule | `paperhat:domain:operating-schedule` | Recurring schedule information. |
+| audience:Audience | `paperhat:domain:audience` | Target audience metadata. |
+| a11y:Accessibility | `paperhat:domain:accessibility` | Accessibility information. |
 
 ## Imports
 
 | Namespace | Schema |
 |---|---|
-| desc | `codex:domain:description` |
-| loc | `codex:domain:location` |
-| geo | `codex:domain:geographic-location` |
-| contact | `codex:domain:contact-point` |
-| ident | `codex:domain:identifier` |
-| offer | `codex:domain:offer` |
-| dur | `codex:domain:duration` |
-| rating | `codex:domain:rating` |
-| money | `codex:domain:monetary-amount` |
-| tags | `codex:domain:tags` |
-| work | `codex:domain:work` |
-| schedule | `codex:domain:operating-schedule` |
-| audience | `codex:domain:audience` |
-| a11y | `codex:domain:accessibility` |
+| desc | `paperhat:domain:description` |
+| loc | `paperhat:domain:location` |
+| geo | `paperhat:domain:geographic-location` |
+| contact | `paperhat:domain:contact-point` |
+| ident | `paperhat:domain:identifier` |
+| offer | `paperhat:domain:offer` |
+| dur | `paperhat:domain:duration` |
+| rating | `paperhat:domain:rating` |
+| money | `paperhat:domain:monetary-amount` |
+| tags | `paperhat:domain:tags` |
+| work | `paperhat:domain:work` |
+| schedule | `paperhat:domain:operating-schedule` |
+| audience | `paperhat:domain:audience` |
+| a11y | `paperhat:domain:accessibility` |
 
 ## Design Notes
 

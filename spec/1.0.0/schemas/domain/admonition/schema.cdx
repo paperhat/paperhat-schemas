@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="Callout-level semantic markers for informational notices, warnings, dangers, critical alerts, tips, and general notices."
-	id=codex:domain:admonition
+	id=paperhat:domain:admonition
 	namespace="admonition"
 	title="Admonition Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:admonition:Admonitions
+			id=paperhat:domain:admonition:Admonitions
 			name="Admonitions"
 		>
 			<ContentRules>
@@ -39,7 +39,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:admonition:Informational
+			id=paperhat:domain:admonition:Informational
 			name="Informational"
 		>
 			<ContentRules>
@@ -58,7 +58,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:admonition:Warning
+			id=paperhat:domain:admonition:Warning
 			name="Warning"
 		>
 			<ContentRules>
@@ -77,7 +77,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:admonition:Danger
+			id=paperhat:domain:admonition:Danger
 			name="Danger"
 		>
 			<ContentRules>
@@ -96,7 +96,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:admonition:Critical
+			id=paperhat:domain:admonition:Critical
 			name="Critical"
 		>
 			<ContentRules>
@@ -115,7 +115,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:admonition:Notice
+			id=paperhat:domain:admonition:Notice
 			name="Notice"
 		>
 			<ContentRules>
@@ -134,7 +134,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:admonition:Tip
+			id=paperhat:domain:admonition:Tip
 			name="Tip"
 		>
 			<ContentRules>
@@ -154,14 +154,14 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:admonition:trait:text
+			id=paperhat:domain:admonition:trait:text
 			name="text"
 		/>
 	</TraitDefinitions>
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:admonition:requires-child
+			id=paperhat:domain:admonition:requires-child
 			title="Admonitions must contain at least one child"
 		>
 			<Targets>

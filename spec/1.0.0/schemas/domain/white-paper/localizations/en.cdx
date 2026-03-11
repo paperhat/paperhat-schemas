@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:white-paper
+	schema=paperhat:domain:white-paper
 	schemaVersion="1.0.0"
 	language=$En
 >

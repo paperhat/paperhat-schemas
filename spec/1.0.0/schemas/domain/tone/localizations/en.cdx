@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:tone
+	schema=paperhat:domain:tone
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -24,7 +24,7 @@
 	</TraitLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:tone:requires-child"
+		identifier="paperhat:domain:tone:requires-child"
 		label="Requires at least one tone"
 	>
 		A Tones container must contain at least one Tone.

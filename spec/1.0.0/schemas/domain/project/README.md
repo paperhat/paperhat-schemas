@@ -24,21 +24,21 @@ Use `Project` to represent any bounded endeavor: a software project, a specifica
 
 | Child | Schema | Description |
 |---|---|---|
-| desc:Description | `codex:domain:description` | Free-text project description. |
-| ident:Identifier | `codex:domain:identifier` | External identifiers (DOI, registry IDs, package registry names). |
-| tags:Tags | `codex:domain:tags` | Freeform categorization. |
-| work:Work | `codex:domain:work` | Authorship, licensing, dates, versioning. |
-| temporal:TemporalAnnotations | `codex:domain:temporal` | Project start date, end date, milestones, and other keyed temporal annotations. |
+| desc:Description | `paperhat:domain:description` | Free-text project description. |
+| ident:Identifier | `paperhat:domain:identifier` | External identifiers (DOI, registry IDs, package registry names). |
+| tags:Tags | `paperhat:domain:tags` | Freeform categorization. |
+| work:Work | `paperhat:domain:work` | Authorship, licensing, dates, versioning. |
+| temporal:TemporalAnnotations | `paperhat:domain:temporal` | Project start date, end date, milestones, and other keyed temporal annotations. |
 
 ## Imports
 
 | Namespace | Schema |
 |---|---|
-| desc | `codex:domain:description` |
-| ident | `codex:domain:identifier` |
-| tags | `codex:domain:tags` |
-| work | `codex:domain:work` |
-| temporal | `codex:domain:temporal` |
+| desc | `paperhat:domain:description` |
+| ident | `paperhat:domain:identifier` |
+| tags | `paperhat:domain:tags` |
+| work | `paperhat:domain:work` |
+| temporal | `paperhat:domain:temporal` |
 
 ## Design Notes
 

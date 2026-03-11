@@ -1,10 +1,10 @@
 [Minimal semantic projection. Exactly one SelectRule is required.]
 <SemanticProjectionDefinition
-	id=codex:view:NAMESPACE:PROJECTION_NAME
+	id=paperhat:view:NAMESPACE:PROJECTION_NAME
 	name=""
 >
 	[Required: exactly one SelectRule.]
-	<SelectRule ruleIdentifier=codex:view:NAMESPACE:PROJECTION_NAME:select>
+	<SelectRule ruleIdentifier=paperhat:view:NAMESPACE:PROJECTION_NAME:select>
 		<RuleSelectors>
 			<ConceptTypeSelector selectorConceptType="" />
 		</RuleSelectors>

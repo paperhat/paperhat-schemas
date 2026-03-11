@@ -2,21 +2,21 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A structured heading block containing title, subtitle, teaser, and difficulty metadata."
-	id=codex:domain:rubric
+	id=paperhat:domain:rubric
 	namespace="rubric"
 	title="Rubric Schema"
 	version="1.0.0"
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=text reference=urn:cdx:sha256:0d835975e6ccabdab7c2204e9b1d4e19baf24108e45a8f240adea3a2684a5fd0 />
+		<SchemaImport namespace=text reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
 	</SchemaImports>
 
 	<ConceptDefinitions>
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:rubric:Rubric
+			id=paperhat:domain:rubric:Rubric
 			name="Rubric"
 		>
 			<ContentRules>
@@ -45,7 +45,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:rubric:Subtitle
+			id=paperhat:domain:rubric:Subtitle
 			name="Subtitle"
 		>
 			<ContentRules>
@@ -60,7 +60,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:rubric:Difficulty
+			id=paperhat:domain:rubric:Difficulty
 			name="Difficulty"
 		>
 			<ContentRules>
@@ -78,37 +78,37 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:rubric:trait:language
+			id=paperhat:domain:rubric:trait:language
 			name="language"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Duration
-			id=codex:domain:rubric:trait:timeToRead
+			id=paperhat:domain:rubric:trait:timeToRead
 			name="timeToRead"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Date
-			id=codex:domain:rubric:trait:publishedOn
+			id=paperhat:domain:rubric:trait:publishedOn
 			name="publishedOn"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$DateTime
-			id=codex:domain:rubric:trait:lastModifiedAt
+			id=paperhat:domain:rubric:trait:lastModifiedAt
 			name="lastModifiedAt"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:rubric:trait:scale
+			id=paperhat:domain:rubric:trait:scale
 			name="scale"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:rubric:trait:value
+			id=paperhat:domain:rubric:trait:value
 			name="value"
 		/>
 	</TraitDefinitions>

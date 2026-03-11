@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="Linguistic metadata applied to text spans, including ruby annotations for displaying reading aids above or beside base text."
-	id=codex:domain:linguistic-annotation
+	id=paperhat:domain:linguistic-annotation
 	namespace="linguistic"
 	title="Linguistic Annotation Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:linguistic-annotation:LinguisticAnnotations
+			id=paperhat:domain:linguistic-annotation:LinguisticAnnotations
 			name="LinguisticAnnotations"
 		>
 			<ContentRules>
@@ -29,7 +29,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:linguistic-annotation:Ruby
+			id=paperhat:domain:linguistic-annotation:Ruby
 			name="Ruby"
 		>
 			<ContentRules>
@@ -51,32 +51,32 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$LookupToken
-			id=codex:domain:linguistic-annotation:trait:key
+			id=paperhat:domain:linguistic-annotation:trait:key
 			name="key"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:linguistic-annotation:trait:annotation
+			id=paperhat:domain:linguistic-annotation:trait:annotation
 			name="annotation"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:linguistic-annotation:trait:language
+			id=paperhat:domain:linguistic-annotation:trait:language
 			name="language"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:linguistic-annotation:trait:position
+			id=paperhat:domain:linguistic-annotation:trait:position
 			name="position"
 		/>
 	</TraitDefinitions>
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:linguistic-annotation:requires-child
+			id=paperhat:domain:linguistic-annotation:requires-child
 			title="LinguisticAnnotations must contain at least one child"
 		>
 			<Targets>

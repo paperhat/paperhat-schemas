@@ -28,9 +28,9 @@ Use `NutritionInformation` wherever an entity has nutritional data: recipes with
 
 | Namespace | Schema |
 |---|---|
-| energymeasure | `codex:domain:paperhat-energy-measure` |
-| massmeasure | `codex:domain:paperhat-mass-measure` |
-| volumemeasure | `codex:domain:paperhat-volume-measure` |
+| energymeasure | `paperhat:domain:paperhat-energy-measure` |
+| massmeasure | `paperhat:domain:paperhat-mass-measure` |
+| volumemeasure | `paperhat:domain:paperhat-volume-measure` |
 
 ## Constraints
 

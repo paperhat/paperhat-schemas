@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=codex:domain:notes
+	schema=paperhat:domain:notes
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -16,7 +16,7 @@
 	</TraitLocalization>
 
 	<ConstraintLocalization
-		identifier="codex:domain:notes:requires-note"
+		identifier="paperhat:domain:notes:requires-note"
 		label="Requires at least one note"
 	>
 		A Notes container must contain at least one Note.

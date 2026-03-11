@@ -47,10 +47,10 @@ Use `Citation` to represent a reference to a published work with enough metadata
 
 | Namespace | Schema | Provides |
 |---|---|---|
-| person | `codex:domain:person` | Person (with PersonName, ContactPoint, Identifier, Location children) |
-| org | `codex:domain:organization` | Organization (with Description, ContactPoint, Identifier, Location, Tags children) |
-| ident | `codex:domain:identifier` | Identifier (scheme + value for ISBN, DOI, ISSN, etc.) |
-| ref | `codex:domain:reference` | Reference (entity pointer for linking to persons or organizations defined elsewhere) |
+| person | `paperhat:domain:person` | Person (with PersonName, ContactPoint, Identifier, Location children) |
+| org | `paperhat:domain:organization` | Organization (with Description, ContactPoint, Identifier, Location, Tags children) |
+| ident | `paperhat:domain:identifier` | Identifier (scheme + value for ISBN, DOI, ISSN, etc.) |
+| ref | `paperhat:domain:reference` | Reference (entity pointer for linking to persons or organizations defined elsewhere) |
 
 ## Constraints
 

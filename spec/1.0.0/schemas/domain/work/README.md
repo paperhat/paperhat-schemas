@@ -29,7 +29,7 @@ Use `Work` wherever an entity carries creative-work metadata: articles, books, s
 - `author` is plain text for the common case. Structured attribution (Person/Organization entities) is handled by composing those schemas separately.
 - `version` is $Text, not $Number, because version identifiers are often non-numeric (e.g. "3.2.1", "2nd edition").
 - `language` and `status` use $EnumeratedToken so consuming schemas can constrain the allowed values via vocabularies.
-- The Tags schema (`codex:domain:tags`) already covers keyword/genre tagging; Work does not duplicate that.
+- The Tags schema (`paperhat:domain:tags`) already covers keyword/genre tagging; Work does not duplicate that.
 - Mirrors schema.org CreativeWork's core properties: author, dateCreated, datePublished, dateModified, version, inLanguage, creativeWorkStatus, license.
 
 ---

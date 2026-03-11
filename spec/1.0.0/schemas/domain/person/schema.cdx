@@ -2,27 +2,27 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A person, real or fictional, composed from leaf concepts for names, contact points, identifiers, and locations."
-	id=codex:domain:person
+	id=paperhat:domain:person
 	namespace="person"
 	title="Person Schema"
 	version="1.0.0"
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=pname reference=urn:cdx:sha256:097ed49d3aa9f872aae455972ae284958edd09a622863eef03c9eb3c75bf4c4e />
+		<SchemaImport namespace=pname reference=urn:cdx:sha256:43ee55dc78ff2c04b294272064481d98a3be7087af7cb2564c5e8a6862905394 />
 
-		<SchemaImport namespace=contact reference=urn:cdx:sha256:3b19e88f414107daffdfaf3b1116dd5bec1c656faad58536392a2ec9891ff11a />
+		<SchemaImport namespace=contact reference=urn:cdx:sha256:0623b3bc48dfd1632919af1704725cc24b3e1ead90f4ce3a59117485e64335eb />
 
-		<SchemaImport namespace=ident reference=urn:cdx:sha256:a220d2034a4faa1a81d8102265c1fef36576871a0ba25ac31500abac7afd5907 />
+		<SchemaImport namespace=ident reference=urn:cdx:sha256:5fafd42cd5ebaa41ecaf7b26d4ea2be9fb9c6a6c68c56ab3c8f2483fdbe1cf28 />
 
-		<SchemaImport namespace=loc reference=urn:cdx:sha256:df456110f9e2cb2b0524011e6fd6892f345dadc412a7b078699f9aab4fd5bf55 />
+		<SchemaImport namespace=loc reference=urn:cdx:sha256:69ebdc66422b5962b2521ef49b174550c9b45c369ddd60c9967699566c0b16f0 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustBeEntity
-			id=codex:domain:person:Person
+			id=paperhat:domain:person:Person
 			name="Person"
 		>
 			<ContentRules>
@@ -52,26 +52,26 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:person:trait:gender
+			id=paperhat:domain:person:trait:gender
 			name="gender"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Date
-			id=codex:domain:person:trait:birthDate
+			id=paperhat:domain:person:trait:birthDate
 			name="birthDate"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Date
-			id=codex:domain:person:trait:deathDate
+			id=paperhat:domain:person:trait:deathDate
 			name="deathDate"
 		/>
 	</TraitDefinitions>
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:person:requires-name
+			id=paperhat:domain:person:requires-name
 			title="Person must have at least one PersonName"
 		>
 			<Targets>

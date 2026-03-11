@@ -4,7 +4,7 @@
   the schema contributes, specifying how content and collections behave.
 ]
 <DomainConcept
-	id=codex:domain:example:Ingredient
+	id=paperhat:domain:example:Ingredient
 	name="Ingredient"
 	conceptKind=$Semantic
 	entityEligibility=$MustNotBeEntity

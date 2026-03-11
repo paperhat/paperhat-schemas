@@ -1,0 +1,5 @@
+<LocalizationBundle language=$EnNz schema=paperhat:domain:glossary>
+	<ConceptLocalization identifier="paperhat:domain:glossary:GlossaryEntry" label="Glossary entry" pluralLabel="Glossary entries" />
+	<TraitLocalization identifier="paperhat:domain:glossary:trait:term" label="Term" />
+	<TraitLocalization identifier="paperhat:domain:glossary:trait:key" label="Key" />
+</LocalizationBundle>

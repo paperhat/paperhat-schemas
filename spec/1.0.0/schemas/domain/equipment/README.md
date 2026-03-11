@@ -27,9 +27,9 @@ Use `Equipment` to author a reusable equipment entity that can be referenced fro
 
 | Namespace | Schema |
 |---|---|
-| desc | `codex:domain:description` |
-| measure | `codex:domain:measure` |
-| tags | `codex:domain:tags` |
+| desc | `paperhat:domain:description` |
+| measure | `paperhat:domain:measure` |
+| tags | `paperhat:domain:tags` |
 
 ## Design Notes
 

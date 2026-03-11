@@ -23,29 +23,29 @@ Use `Organization` to represent any named entity that is not a person: corporati
 
 | Child | Schema | Description |
 |---|---|---|
-| desc:Description | `codex:domain:description` | Free-text description of the organization. |
-| contact:ContactPoint | `codex:domain:contact-point` | Email addresses, phone numbers, websites. |
-| ident:Identifier | `codex:domain:identifier` | Tax IDs, registration numbers, stock tickers. |
-| loc:Location | `codex:domain:location` | Headquarters, branches, registered addresses. |
-| tags:Tags | `codex:domain:tags` | Freeform categorization. |
-| work:Work | `codex:domain:work` | Authorship, licensing, provenance. |
-| schedule:OperatingSchedule | `codex:domain:operating-schedule` | Business hours and recurring schedules. |
-| audience:Audience | `codex:domain:audience` | Target audience metadata. |
-| a11y:Accessibility | `codex:domain:accessibility` | Accessibility information. |
+| desc:Description | `paperhat:domain:description` | Free-text description of the organization. |
+| contact:ContactPoint | `paperhat:domain:contact-point` | Email addresses, phone numbers, websites. |
+| ident:Identifier | `paperhat:domain:identifier` | Tax IDs, registration numbers, stock tickers. |
+| loc:Location | `paperhat:domain:location` | Headquarters, branches, registered addresses. |
+| tags:Tags | `paperhat:domain:tags` | Freeform categorization. |
+| work:Work | `paperhat:domain:work` | Authorship, licensing, provenance. |
+| schedule:OperatingSchedule | `paperhat:domain:operating-schedule` | Business hours and recurring schedules. |
+| audience:Audience | `paperhat:domain:audience` | Target audience metadata. |
+| a11y:Accessibility | `paperhat:domain:accessibility` | Accessibility information. |
 
 ## Imports
 
 | Namespace | Schema |
 |---|---|
-| desc | `codex:domain:description` |
-| contact | `codex:domain:contact-point` |
-| ident | `codex:domain:identifier` |
-| loc | `codex:domain:location` |
-| tags | `codex:domain:tags` |
-| work | `codex:domain:work` |
-| schedule | `codex:domain:operating-schedule` |
-| audience | `codex:domain:audience` |
-| a11y | `codex:domain:accessibility` |
+| desc | `paperhat:domain:description` |
+| contact | `paperhat:domain:contact-point` |
+| ident | `paperhat:domain:identifier` |
+| loc | `paperhat:domain:location` |
+| tags | `paperhat:domain:tags` |
+| work | `paperhat:domain:work` |
+| schedule | `paperhat:domain:operating-schedule` |
+| audience | `paperhat:domain:audience` |
+| a11y | `paperhat:domain:accessibility` |
 
 ## Design Notes
 

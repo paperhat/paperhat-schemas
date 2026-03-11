@@ -1,6 +1,6 @@
 <LocalizationBundle
 	language=$En
-	schema=codex:domain:figure
+	schema=paperhat:domain:figure
 	schemaVersion="1.0.0"
 >
 	<ConceptLocalization identifier="Figure" label="Figure" labelOther="Figures" />

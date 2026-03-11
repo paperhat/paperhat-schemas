@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A named, ordered sequence of steps that accomplishes a specific operational task — a release procedure, deployment workflow, or setup guide."
-	id=codex:domain:procedure
+	id=paperhat:domain:procedure
 	namespace="procedure"
 	title="Procedure Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustBeEntity
-			id=codex:domain:procedure:Procedure
+			id=paperhat:domain:procedure:Procedure
 			name="Procedure"
 		>
 			<ContentRules>
@@ -32,19 +32,19 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:procedure:trait:name
+			id=paperhat:domain:procedure:trait:name
 			name="name"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:procedure:trait:procedureKind
+			id=paperhat:domain:procedure:trait:procedureKind
 			name="procedureKind"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:procedure:trait:procedureStatus
+			id=paperhat:domain:procedure:trait:procedureStatus
 			name="procedureStatus"
 		/>
 	</TraitDefinitions>

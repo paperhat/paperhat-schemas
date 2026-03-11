@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="A term in a language other than the document's primary language, with pronunciation, translation, and language identification."
-	id=codex:domain:foreign-term
+	id=paperhat:domain:foreign-term
 	namespace="foreign"
 	title="Foreign Term Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:foreign-term:ForeignTerms
+			id=paperhat:domain:foreign-term:ForeignTerms
 			name="ForeignTerms"
 		>
 			<ContentRules>
@@ -29,7 +29,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:foreign-term:ForeignTerm
+			id=paperhat:domain:foreign-term:ForeignTerm
 			name="ForeignTerm"
 		>
 			<ContentRules>
@@ -51,32 +51,32 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$LookupToken
-			id=codex:domain:foreign-term:trait:key
+			id=paperhat:domain:foreign-term:trait:key
 			name="key"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:foreign-term:trait:language
+			id=paperhat:domain:foreign-term:trait:language
 			name="language"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Ipa
-			id=codex:domain:foreign-term:trait:pronunciation
+			id=paperhat:domain:foreign-term:trait:pronunciation
 			name="pronunciation"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=codex:domain:foreign-term:trait:translation
+			id=paperhat:domain:foreign-term:trait:translation
 			name="translation"
 		/>
 	</TraitDefinitions>
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:foreign-term:requires-term
+			id=paperhat:domain:foreign-term:requires-term
 			title="ForeignTerms must contain at least one ForeignTerm"
 		>
 			<Targets>

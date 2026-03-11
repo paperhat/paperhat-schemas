@@ -26,33 +26,33 @@ Use `Product` to represent any item offered commercially: consumer electronics, 
 
 | Child | Schema | Description |
 |---|---|---|
-| desc:Description | `codex:domain:description` | Free-text product description. |
-| offer:Offer | `codex:domain:offer` | Pricing, availability, and condition. |
-| ident:Identifier | `codex:domain:identifier` | GTIN, SKU, MPN, ASIN, ISBN. |
-| rating:Rating | `codex:domain:rating` | Aggregate product reviews. |
-| measure:Measure | `codex:domain:measure` | Physical dimensions: weight, height, width, depth, volume. |
-| money:MonetaryAmount | `codex:domain:monetary-amount` | Price when not expressed via Offer. |
-| tags:Tags | `codex:domain:tags` | Freeform categorization. |
-| work:Work | `codex:domain:work` | Authorship, licensing, provenance. |
-| audience:Audience | `codex:domain:audience` | Target audience metadata. |
-| a11y:Accessibility | `codex:domain:accessibility` | Accessibility information. |
-| nutrition:NutritionInformation | `codex:domain:nutrition-information` | Nutritional data for food products. |
+| desc:Description | `paperhat:domain:description` | Free-text product description. |
+| offer:Offer | `paperhat:domain:offer` | Pricing, availability, and condition. |
+| ident:Identifier | `paperhat:domain:identifier` | GTIN, SKU, MPN, ASIN, ISBN. |
+| rating:Rating | `paperhat:domain:rating` | Aggregate product reviews. |
+| measure:Measure | `paperhat:domain:measure` | Physical dimensions: weight, height, width, depth, volume. |
+| money:MonetaryAmount | `paperhat:domain:monetary-amount` | Price when not expressed via Offer. |
+| tags:Tags | `paperhat:domain:tags` | Freeform categorization. |
+| work:Work | `paperhat:domain:work` | Authorship, licensing, provenance. |
+| audience:Audience | `paperhat:domain:audience` | Target audience metadata. |
+| a11y:Accessibility | `paperhat:domain:accessibility` | Accessibility information. |
+| nutrition:NutritionInformation | `paperhat:domain:nutrition-information` | Nutritional data for food products. |
 
 ## Imports
 
 | Namespace | Schema |
 |---|---|
-| desc | `codex:domain:description` |
-| offer | `codex:domain:offer` |
-| ident | `codex:domain:identifier` |
-| rating | `codex:domain:rating` |
-| measure | `codex:domain:measure` |
-| money | `codex:domain:monetary-amount` |
-| tags | `codex:domain:tags` |
-| work | `codex:domain:work` |
-| audience | `codex:domain:audience` |
-| a11y | `codex:domain:accessibility` |
-| nutrition | `codex:domain:nutrition-information` |
+| desc | `paperhat:domain:description` |
+| offer | `paperhat:domain:offer` |
+| ident | `paperhat:domain:identifier` |
+| rating | `paperhat:domain:rating` |
+| measure | `paperhat:domain:measure` |
+| money | `paperhat:domain:monetary-amount` |
+| tags | `paperhat:domain:tags` |
+| work | `paperhat:domain:work` |
+| audience | `paperhat:domain:audience` |
+| a11y | `paperhat:domain:accessibility` |
+| nutrition | `paperhat:domain:nutrition-information` |
 
 ## Design Notes
 

@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="Authorizes domain ontology schemas. Defines what domain schemas may declare and forbids individuals, views, policies, layout, and assembly. Content is forbidden by default and must be explicitly allowed per Concept. Sequence and Group are permitted only as ordering overrides under CollectionOverride."
-	id=codex:domain:meta
+	id=paperhat:domain:meta
 	namespace="meta"
 	title="Codex Data Meta-Schema"
 	version="1.0.0"
@@ -12,7 +12,7 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:meta:DomainConcept
+			id=paperhat:domain:meta:DomainConcept
 			name="DomainConcept"
 		>
 			<ContentRules>
@@ -25,7 +25,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=codex:domain:meta:CollectionOverride
+			id=paperhat:domain:meta:CollectionOverride
 			name="CollectionOverride"
 		>
 			<ContentRules>
@@ -37,14 +37,14 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Iri
-			id=codex:domain:meta:trait:id
+			id=paperhat:domain:meta:trait:id
 			isReferenceTrait=true
 			name="id"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=codex:domain:meta:trait:priority
+			id=paperhat:domain:meta:trait:priority
 			name="priority"
 		>
 			<AllowedValues>
@@ -55,7 +55,7 @@
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=codex:domain:meta:no-instances
+			id=paperhat:domain:meta:no-instances
 			title="Domain schemas must not define individuals"
 		>
 			<Targets>
@@ -74,7 +74,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:meta:content-opt-in
+			id=paperhat:domain:meta:content-opt-in
 			title="Content is forbidden by default in domain concepts"
 		>
 			<Targets>
@@ -87,7 +87,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:meta:ordering-declared
+			id=paperhat:domain:meta:ordering-declared
 			title="Default collection ordering must be declared"
 		>
 			<Targets>
@@ -108,7 +108,7 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=codex:domain:meta:override-context-only
+			id=paperhat:domain:meta:override-context-only
 			title="Sequence and Group are permitted only within CollectionOverride"
 		>
 			<Targets>

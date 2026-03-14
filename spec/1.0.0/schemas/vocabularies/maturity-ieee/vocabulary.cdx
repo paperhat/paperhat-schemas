@@ -1,0 +1,23 @@
+<TokenVocabulary
+	closedVocabulary=true
+	description="IEEE specification maturity levels following the IEEE Standards Association development process."
+	id=paperhat:vocabulary:maturity-ieee
+	title="IEEE Maturity Levels"
+	version="1.0.0"
+>
+	<TokenDefinition token=$ProjectAuthorized label="project-authorized" />
+
+	<TokenDefinition token=$Draft label="draft" />
+
+	<TokenDefinition token=$Balloting label="balloting" />
+
+	<TokenDefinition token=$Standard label="standard" />
+
+	<TokenDefinition token=$Corrigendum label="corrigendum" />
+
+	<TokenDefinition token=$Amendment label="amendment" />
+
+	<TokenDefinition token=$Superseded label="superseded" />
+
+	<TokenDefinition token=$Withdrawn label="withdrawn" />
+</TokenVocabulary>

@@ -9,14 +9,14 @@
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=docmeta reference=urn:cdx:sha256:d4b01ac6516df189b0ef903176efa8b88bbc975d2fb6984637904b292e1ad423 />
-		<SchemaImport namespace=jurisdiction reference=urn:cdx:sha256:c420d5337b090d64b1004a8b047d34b7c400ce39fdc32f0bc0d475a523c9c519 />
-		<SchemaImport namespace=contact reference=urn:cdx:sha256:0623b3bc48dfd1632919af1704725cc24b3e1ead90f4ce3a59117485e64335eb />
-		<SchemaImport namespace=text reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
-		<SchemaImport namespace=list reference=urn:cdx:sha256:10cc30a2245e8480bb2564cba4c09c243f84285d5219b06a1899272917da2caa />
-		<SchemaImport namespace=section reference=urn:cdx:sha256:f111295560d8a8f5a5369ffcd06fb3a197c7ffb4f52577b663847c54ca192157 />
-		<SchemaImport namespace=notes reference=urn:cdx:sha256:5169d4469cf2f181b23bfee5510652073ead5e1c6871486dba219bfb6c2b3a2b />
-		<SchemaImport namespace=term reference=urn:cdx:sha256:d1238116402919e9ea43e55229413ed596a830e0f8f44ac2878ac63e4430f5c1 />
+		<SchemaImport namespace="docmeta" reference=urn:cdx:sha256:0ffeb450318da8f137940409b424d0c77a821386985526ee9f0a0f50bfc61f81 />
+		<SchemaImport namespace="jurisdiction" reference=urn:cdx:sha256:c420d5337b090d64b1004a8b047d34b7c400ce39fdc32f0bc0d475a523c9c519 />
+		<SchemaImport namespace="contact" reference=urn:cdx:sha256:0623b3bc48dfd1632919af1704725cc24b3e1ead90f4ce3a59117485e64335eb />
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
+		<SchemaImport namespace="list" reference=urn:cdx:sha256:10cc30a2245e8480bb2564cba4c09c243f84285d5219b06a1899272917da2caa />
+		<SchemaImport namespace="section" reference=urn:cdx:sha256:2ca37d16001c74ef978702d41e6ca5312bad104061e79fb6c0b774773cd34e7d />
+		<SchemaImport namespace="notes" reference=urn:cdx:sha256:5169d4469cf2f181b23bfee5510652073ead5e1c6871486dba219bfb6c2b3a2b />
+		<SchemaImport namespace="term" reference=urn:cdx:sha256:d1238116402919e9ea43e55229413ed596a830e0f8f44ac2878ac63e4430f5c1 />
 	</SchemaImports>
 
 	<ConceptDefinitions>

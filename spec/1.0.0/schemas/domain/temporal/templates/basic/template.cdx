@@ -1,4 +1,4 @@
 [Define temporal annotations with formatting and language.]
 <TemporalAnnotations>
-	<PlainDate key=~date value=2024-01-01 />
+	<Date key=~date value=date(1 january 2024) />
 </TemporalAnnotations>

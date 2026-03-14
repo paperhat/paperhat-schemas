@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="1131325e0f81e337ad371d1455ff86d2a5d65c2a0b553e8b563ea56c2098e76e"
+	closureHash="2eb2b5d97ed53c299494cd26dbbbf3dd3a8cdb6edc844d1a7892d1c76c0baec7"
 	copyright="Copyright 2026 Paperhat"
 	description="A named binding agreement between parties — a software license, support agreement, consulting contract, partnership memorandum, or other commercial/legal commitment."
 	license="Apache-2.0"

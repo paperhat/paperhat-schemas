@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="c6bc1ac31f816d1b6f766e65383473e70e630ca504fea5fcbb544b7cf7090723"
+	closureHash="331ee0859ccf4b1b0526f43337b1fbfb81a6ea1037a77b31fbc5eeb508b9b3ad"
 	copyright="Copyright 2026 Paperhat"
 	description="A rich example container supporting paragraphs, lists, code blocks, figures, relation schemas/instances, and admonitions as children. No nested examples."
 	license="Apache-2.0"
@@ -24,7 +24,7 @@
 
 	<PackageDependency
 		packageName="paperhat-figure"
-		closureHash="54c326074b4d0e18669378bea85e188873a7a111de431a22d4bcdb12ac68c1d0"
+		closureHash="7a8f244045afcc29fd7b82f05172da1300283b657d3020f4f186657e69c1ffb1"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
@@ -36,7 +36,7 @@
 
 	<PackageDependency
 		packageName="paperhat-relation"
-		closureHash="bdd7d7be63424378fbe1014314c66d53b8f8ceeb23a3390b9cfbc78bc39ad487"
+		closureHash="45da267b585f860017319a27c4182f4cee1c665d7804dc85ae47f3fdee70b2b8"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 

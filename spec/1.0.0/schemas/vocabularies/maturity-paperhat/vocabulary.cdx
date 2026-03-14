@@ -1,0 +1,17 @@
+<TokenVocabulary
+	closedVocabulary=true
+	description="General-purpose specification maturity levels for the Paperhat standards track."
+	id=paperhat:vocabulary:maturity-paperhat
+	title="Paperhat Maturity Levels"
+	version="1.0.0"
+>
+	<TokenDefinition token=$Draft label="draft" />
+
+	<TokenDefinition token=$Review label="review" />
+
+	<TokenDefinition token=$Stable label="stable" />
+
+	<TokenDefinition token=$Deprecated label="deprecated" />
+
+	<TokenDefinition token=$Retired label="retired" />
+</TokenVocabulary>

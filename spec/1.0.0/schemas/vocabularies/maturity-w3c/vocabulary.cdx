@@ -1,0 +1,33 @@
+<TokenVocabulary
+	closedVocabulary=true
+	description="W3C specification maturity levels following the W3C Recommendation Track."
+	id=paperhat:vocabulary:maturity-w3c
+	title="W3C Maturity Levels"
+	version="1.0.0"
+>
+	<TokenDefinition token=$WorkingDraft label="working-draft" />
+
+	<TokenDefinition token=$CandidateRecommendation label="candidate-recommendation" />
+
+	<TokenDefinition token=$CandidateRecommendationDraft label="candidate-recommendation-draft" />
+
+	<TokenDefinition token=$CandidateRecommendationSnapshot label="candidate-recommendation-snapshot" />
+
+	<TokenDefinition token=$ProposedRecommendation label="proposed-recommendation" />
+
+	<TokenDefinition token=$Recommendation label="recommendation" />
+
+	<TokenDefinition token=$Superseded label="superseded" />
+
+	<TokenDefinition token=$Obsolete label="obsolete" />
+
+	<TokenDefinition token=$GroupNote label="group-note" />
+
+	<TokenDefinition token=$DraftNote label="draft-note" />
+
+	<TokenDefinition token=$StatementNote label="statement-note" />
+
+	<TokenDefinition token=$RegistryReport label="registry-report" />
+
+	<TokenDefinition token=$DraftRegistryReport label="draft-registry-report" />
+</TokenVocabulary>

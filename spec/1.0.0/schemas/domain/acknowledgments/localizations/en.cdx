@@ -1,0 +1,51 @@
+<LocalizationBundle
+	schema=paperhat:domain:acknowledgments
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Acknowledgments" label="Acknowledgments" labelOther="Acknowledgments" />
+
+	<ConceptLocalization identifier="Participant" label="Participant" labelOther="Participants" />
+
+	<ConceptLocalization identifier="ParticipantGroup" label="Participant Group" labelOther="Participant Groups" />
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		Full name of the participant.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="affiliation" label="Affiliation" labelOther="Affiliations">
+		Organization the participant represents.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="role" label="Role" labelOther="Roles">
+		The participant's role in the specification development.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="email" label="Email" labelOther="Emails">
+		Contact email address.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="uri" label="URI" labelOther="URIs">
+		Personal or organizational URI for the participant.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		Stable lookup key for cross-referencing.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="label" label="Label" labelOther="Labels">
+		Short display label for projection.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="title" label="Title" labelOther="Titles">
+		Optional title for the acknowledgments section.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="groupName" label="Group Name" labelOther="Group Names">
+		Name of the participant group (e.g. "Working Group Members", "Reviewers").
+	</TraitLocalization>
+
+	<TraitLocalization identifier="groupRole" label="Group Role" labelOther="Group Roles">
+		Default role for all participants in the group.
+	</TraitLocalization>
+</LocalizationBundle>

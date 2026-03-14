@@ -1,0 +1,25 @@
+<TokenVocabulary
+	closedVocabulary=true
+	description="OASIS specification maturity levels following the OASIS Standards Process."
+	id=paperhat:vocabulary:maturity-oasis
+	title="OASIS Maturity Levels"
+	version="1.0.0"
+>
+	<TokenDefinition token=$WorkingDraft label="working-draft" />
+
+	<TokenDefinition token=$CommitteeSpecificationDraft label="committee-specification-draft" />
+
+	<TokenDefinition token=$CommitteeSpecification label="committee-specification" />
+
+	<TokenDefinition token=$CandidateOasisStandard label="candidate-oasis-standard" />
+
+	<TokenDefinition token=$OasisStandard label="oasis-standard" />
+
+	<TokenDefinition token=$CommitteeNote label="committee-note" />
+
+	<TokenDefinition token=$CommitteeNoteDraft label="committee-note-draft" />
+
+	<TokenDefinition token=$ErrataApproved label="errata-approved" />
+
+	<TokenDefinition token=$Rescinded label="rescinded" />
+</TokenVocabulary>

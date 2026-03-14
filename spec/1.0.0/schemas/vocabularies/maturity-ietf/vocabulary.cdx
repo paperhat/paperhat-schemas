@@ -1,0 +1,21 @@
+<TokenVocabulary
+	closedVocabulary=true
+	description="IETF specification maturity levels following the Internet Standards Process (RFC 2026, updated by RFC 6410 and RFC 9280)."
+	id=paperhat:vocabulary:maturity-ietf
+	title="IETF Maturity Levels"
+	version="1.0.0"
+>
+	<TokenDefinition token=$InternetDraft label="internet-draft" />
+
+	<TokenDefinition token=$ProposedStandard label="proposed-standard" />
+
+	<TokenDefinition token=$InternetStandard label="internet-standard" />
+
+	<TokenDefinition token=$BestCurrentPractice label="best-current-practice" />
+
+	<TokenDefinition token=$Informational label="informational" />
+
+	<TokenDefinition token=$Experimental label="experimental" />
+
+	<TokenDefinition token=$Historic label="historic" />
+</TokenVocabulary>

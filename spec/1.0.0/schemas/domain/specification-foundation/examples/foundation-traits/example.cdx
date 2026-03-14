@@ -2,23 +2,49 @@
 	editor="Paperhat"
 	locked=false
 	normative=true
-	title="Foundation Traits Example"
+	title="Foundation Concepts Example"
 	version=0.1.0
 >
 	<Section
 		conformance=$Normative
 		division=$Body
-		id=urn:example:foundation-traits#section/overview
+		id=urn:example:foundation-concepts#section/overview
 		key=~overview
 		title="Overview"
 	>
 		<Paragraph>
-			This example demonstrates the traits and enumerated value sets
-			defined in the specification foundation schema.
+			This example demonstrates the shared concepts defined in the
+			specification foundation schema.
 		</Paragraph>
 
-		<Requirement modality=$Must requirementId=~exampleRequirement>
-			Implementations MUST support all foundation traits.
+		<Requirement modality=$Must key=~foundation-support>
+			Implementations MUST support all foundation concepts.
 		</Requirement>
+
+		<Note>
+			This note is a foundation concept available to both specification variants.
+		</Note>
+
+		<TermBinding term="foundation" source=urn:example:glossary#foundation label="Local glossary" />
+
+		<Issue key=~example-issue status=$Open>
+			Should the foundation define additional structural concepts?
+		</Issue>
+
+		<OpenQuestion key=~example-question status=$Open>
+			Is the current trait set sufficient for all known specification families?
+		</OpenQuestion>
+	</Section>
+
+	<Section
+		conformance=$Informative
+		division=$BackMatter
+		id=urn:example:foundation-concepts#section/references
+		key=~references
+		title="References"
+	>
+		<SectionReference target=urn:example:foundation-concepts#section/overview label="Overview" />
+
+		<ExternalReference uri=https://example.org/foundation-spec label="Companion document" />
 	</Section>
 </Specification>

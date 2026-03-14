@@ -3,23 +3,23 @@
 	compatibilityClass=$Initial
 	description="A rich example container supporting explanatory narrative, code blocks, figures, relation schemas/instances, and admonitions as children. No nested examples."
 	id=paperhat:domain:example
-	namespace=example
+	namespace="example"
 	title="Example Schema"
-	version=1.0.0
+	version="1.0.0"
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=admonition reference=urn:cdx:sha256:f676d06cf578a8fa377b961fcd4d8e5676f8def5ba6b298eaee92f0d3614a890 />
+		<SchemaImport namespace="admonition" reference=urn:cdx:sha256:f676d06cf578a8fa377b961fcd4d8e5676f8def5ba6b298eaee92f0d3614a890 />
 
-		<SchemaImport namespace=code reference=urn:cdx:sha256:70c45e812f5306b69dad783ea4c84546284dfaeeba6f1342918372e385da0cea />
+		<SchemaImport namespace="code" reference=urn:cdx:sha256:70c45e812f5306b69dad783ea4c84546284dfaeeba6f1342918372e385da0cea />
 
-		<SchemaImport namespace=figure reference=urn:cdx:sha256:9f94a5780eeab62a7ff88d7a3950e5436dbc906f0f1460f93c47fcc409d7730d />
+		<SchemaImport namespace="figure" reference=urn:cdx:sha256:956be71cfea89505c8bee829910938f85dd2ec1c47a3056b603a57adc8b491ae />
 
-		<SchemaImport namespace=list reference=urn:cdx:sha256:10cc30a2245e8480bb2564cba4c09c243f84285d5219b06a1899272917da2caa />
+		<SchemaImport namespace="list" reference=urn:cdx:sha256:10cc30a2245e8480bb2564cba4c09c243f84285d5219b06a1899272917da2caa />
 
-		<SchemaImport namespace=relation reference=urn:cdx:sha256:d2699fd88c3d11900f8e53067f6311da01343894717945dce051f17c6616ac4f />
+		<SchemaImport namespace="relation" reference=urn:cdx:sha256:57e32c06b4570f54e7a1ef2fd62823c1b5345e9ffa92ba288541092ae4366a3c />
 
-		<SchemaImport namespace=text reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
 	</SchemaImports>
 
 	<ConceptDefinitions>
@@ -40,33 +40,33 @@
 			</ContentRules>
 
 			<ChildRules>
-				<AllowsChildConcept conceptSelector=text:Title max=1 />
+				<AllowsChildConcept conceptSelector="text:Title" max=1 />
 
-				<AllowsChildConcept conceptSelector=text:Paragraph />
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
 
-				<AllowsChildConcept conceptSelector=list:OrderedList />
+				<AllowsChildConcept conceptSelector="list:OrderedList" />
 
-				<AllowsChildConcept conceptSelector=list:UnorderedList />
+				<AllowsChildConcept conceptSelector="list:UnorderedList" />
 
-				<AllowsChildConcept conceptSelector=code:CodeBlock />
+				<AllowsChildConcept conceptSelector="code:CodeBlock" />
 
-				<AllowsChildConcept conceptSelector=figure:Figure />
+				<AllowsChildConcept conceptSelector="figure:Figure" />
 
-				<AllowsChildConcept conceptSelector=relation:RelationType />
+				<AllowsChildConcept conceptSelector="relation:RelationType" />
 
-				<AllowsChildConcept conceptSelector=relation:RelationInstance />
+				<AllowsChildConcept conceptSelector="relation:RelationInstance" />
 
-				<AllowsChildConcept conceptSelector=admonition:Critical />
+				<AllowsChildConcept conceptSelector="admonition:Critical" />
 
-				<AllowsChildConcept conceptSelector=admonition:Danger />
+				<AllowsChildConcept conceptSelector="admonition:Danger" />
 
-				<AllowsChildConcept conceptSelector=admonition:Informational />
+				<AllowsChildConcept conceptSelector="admonition:Informational" />
 
-				<AllowsChildConcept conceptSelector=admonition:Notice />
+				<AllowsChildConcept conceptSelector="admonition:Notice" />
 
-				<AllowsChildConcept conceptSelector=admonition:Tip />
+				<AllowsChildConcept conceptSelector="admonition:Tip" />
 
-				<AllowsChildConcept conceptSelector=admonition:Warning />
+				<AllowsChildConcept conceptSelector="admonition:Warning" />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
@@ -79,65 +79,65 @@
 			title="Example must contain at least one child"
 		>
 			<Targets>
-				<TargetConcept conceptSelector=Example />
+				<TargetConcept conceptSelector="Example" />
 			</Targets>
 
 			<Rule>
 				<AnyOf>
 					<Rule>
-						<ChildConstraint conceptSelector=text:Title type=$RequiresChildConcept />
+						<ChildConstraint conceptSelector="text:Title" type=$RequiresChildConcept />
 					</Rule>
 
 					<Rule>
-						<ChildConstraint conceptSelector=text:Paragraph type=$RequiresChildConcept />
+						<ChildConstraint conceptSelector="text:Paragraph" type=$RequiresChildConcept />
 					</Rule>
 
 					<Rule>
-						<ChildConstraint conceptSelector=list:OrderedList type=$RequiresChildConcept />
+						<ChildConstraint conceptSelector="list:OrderedList" type=$RequiresChildConcept />
 					</Rule>
 
 					<Rule>
-						<ChildConstraint conceptSelector=list:UnorderedList type=$RequiresChildConcept />
+						<ChildConstraint conceptSelector="list:UnorderedList" type=$RequiresChildConcept />
 					</Rule>
 
 					<Rule>
-						<ChildConstraint conceptSelector=code:CodeBlock type=$RequiresChildConcept />
+						<ChildConstraint conceptSelector="code:CodeBlock" type=$RequiresChildConcept />
 					</Rule>
 
 					<Rule>
-						<ChildConstraint conceptSelector=figure:Figure type=$RequiresChildConcept />
+						<ChildConstraint conceptSelector="figure:Figure" type=$RequiresChildConcept />
 					</Rule>
 
 					<Rule>
-						<ChildConstraint conceptSelector=relation:RelationType type=$RequiresChildConcept />
+						<ChildConstraint conceptSelector="relation:RelationType" type=$RequiresChildConcept />
 					</Rule>
 
 					<Rule>
-						<ChildConstraint conceptSelector=relation:RelationInstance type=$RequiresChildConcept />
+						<ChildConstraint conceptSelector="relation:RelationInstance" type=$RequiresChildConcept />
 					</Rule>
 
 					<Rule>
-						<ChildConstraint conceptSelector=admonition:Critical type=$RequiresChildConcept />
+						<ChildConstraint conceptSelector="admonition:Critical" type=$RequiresChildConcept />
 					</Rule>
 
 					<Rule>
-						<ChildConstraint conceptSelector=admonition:Danger type=$RequiresChildConcept />
+						<ChildConstraint conceptSelector="admonition:Danger" type=$RequiresChildConcept />
 					</Rule>
 
 					<Rule>
-						<ChildConstraint conceptSelector=admonition:Informational type=$RequiresChildConcept />
+						<ChildConstraint conceptSelector="admonition:Informational" type=$RequiresChildConcept />
 					</Rule>
 
 					<Rule>
-						<ChildConstraint conceptSelector=admonition:Notice type=$RequiresChildConcept />
+						<ChildConstraint conceptSelector="admonition:Notice" type=$RequiresChildConcept />
 					</Rule>
 
 					<Rule>
-						<ChildConstraint conceptSelector=admonition:Tip type=$RequiresChildConcept />
+						<ChildConstraint conceptSelector="admonition:Tip" type=$RequiresChildConcept />
 					</Rule>
 
 					<Rule>
-						<ChildConstraint conceptSelector=admonition:Warning type=$RequiresChildConcept />
+						<ChildConstraint conceptSelector="admonition:Warning" type=$RequiresChildConcept />
 					</Rule>
 				</AnyOf>
 			</Rule>

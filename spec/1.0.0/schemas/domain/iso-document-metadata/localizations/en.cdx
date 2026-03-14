@@ -1,0 +1,103 @@
+<LocalizationBundle
+	schema=paperhat:domain:iso-document-metadata
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="ISODocumentMetadata" label="ISO Document Metadata" labelOther="ISO Document Metadata" />
+
+	<ConceptLocalization identifier="Committee" label="Committee" labelOther="Committees" />
+
+	<ConceptLocalization identifier="Subcommittee" label="Subcommittee" labelOther="Subcommittees" />
+
+	<ConceptLocalization identifier="WorkingGroup" label="Working Group" labelOther="Working Groups" />
+
+	<ConceptLocalization identifier="ICSClassification" label="ICS Classification" labelOther="ICS Classifications" />
+
+	<ConceptLocalization identifier="ISOForeword" label="ISO Foreword" labelOther="ISO Forewords" />
+
+	<ConceptLocalization identifier="EditionHistory" label="Edition History" labelOther="Edition Histories" />
+
+	<ConceptLocalization identifier="EditionEntry" label="Edition Entry" labelOther="Edition Entries" />
+
+	<ConceptLocalization identifier="RelatedPart" label="Related Part" labelOther="Related Parts" />
+
+	<TraitLocalization identifier="documentNumber" label="Document Number" labelOther="Document Numbers">
+		The ISO/IEC document number (e.g. "ISO 9001", "ISO/IEC 27001").
+	</TraitLocalization>
+
+	<TraitLocalization identifier="partNumber" label="Part Number" labelOther="Part Numbers">
+		Part number within a multi-part standard (e.g. "1", "2-1").
+	</TraitLocalization>
+
+	<TraitLocalization identifier="edition" label="Edition" labelOther="Editions">
+		Edition number of the standard.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="language" label="Language" labelOther="Languages">
+		Language of the document (e.g. "en", "fr", "en,fr" for bilingual).
+	</TraitLocalization>
+
+	<TraitLocalization identifier="secretariat" label="Secretariat" labelOther="Secretariats">
+		The national standards body holding the secretariat (e.g. "ANSI", "BSI", "AFNOR").
+	</TraitLocalization>
+
+	<TraitLocalization identifier="publicationDate" label="Publication Date" labelOther="Publication Dates">
+		Date of publication in ISO 8601 format.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="stage" label="Stage" labelOther="Stages">
+		Current stage in the ISO harmonized stage code system.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="label" label="Label" labelOther="Labels">
+		Short display label.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="committeeNumber" label="Committee Number" labelOther="Committee Numbers">
+		Technical committee number (e.g. "176" for ISO/TC 176).
+	</TraitLocalization>
+
+	<TraitLocalization identifier="committeeName" label="Committee Name" labelOther="Committee Names">
+		Full name of the technical committee.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="committeeType" label="Committee Type" labelOther="Committee Types">
+		Type of committee (TC, JTC, PC, IEC).
+	</TraitLocalization>
+
+	<TraitLocalization identifier="subcommitteeNumber" label="Subcommittee Number" labelOther="Subcommittee Numbers">
+		Subcommittee number (e.g. "1" for SC 1).
+	</TraitLocalization>
+
+	<TraitLocalization identifier="subcommitteeName" label="Subcommittee Name" labelOther="Subcommittee Names">
+		Full name of the subcommittee.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="workingGroupNumber" label="Working Group Number" labelOther="Working Group Numbers">
+		Working group number (e.g. "24" for WG 24).
+	</TraitLocalization>
+
+	<TraitLocalization identifier="workingGroupName" label="Working Group Name" labelOther="Working Group Names">
+		Full name of the working group.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="icsCode" label="ICS Code" labelOther="ICS Codes">
+		International Classification for Standards code (e.g. "35.040").
+	</TraitLocalization>
+
+	<TraitLocalization identifier="icsTitle" label="ICS Title" labelOther="ICS Titles">
+		Title associated with the ICS code.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="changeDescription" label="Change Description" labelOther="Change Descriptions">
+		Brief description of what changed in this edition.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="partTitle" label="Part Title" labelOther="Part Titles">
+		Title of the related part.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="relationship" label="Relationship" labelOther="Relationships">
+		The relationship between this document and the related part.
+	</TraitLocalization>
+</LocalizationBundle>

@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="b22b175328a5814c7026b94319964968c4a3f13f594ea2ff4e4b678e577b47bc"
+	closureHash="5ca4100c2fbf71d328baad520cefeb3ebbcb87826218b1f30107f2ae21e7460a"
 	copyright="Copyright 2026 Paperhat"
 	description="An unordered container for document metadata: authorship, descriptions, summaries, tags, audience, and other non-body information."
 	license="Apache-2.0"
@@ -42,7 +42,7 @@
 
 	<PackageDependency
 		packageName="paperhat-person"
-		closureHash="407ee47fbfa91d7a751d886fd23512b8a60a63b8b7b4aea2b606f9eddd35ab74"
+		closureHash="bf78a90a0b01c211e440fc407cca91d4c00449c37e827ff5cc6b1c4df8164327"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 

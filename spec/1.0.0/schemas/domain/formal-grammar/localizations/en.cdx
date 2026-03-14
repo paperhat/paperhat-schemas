@@ -1,0 +1,49 @@
+<LocalizationBundle
+	schema=paperhat:domain:formal-grammar
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Grammar" label="Grammar" labelOther="Grammars" />
+
+	<ConceptLocalization identifier="ProductionRule" label="Production Rule" labelOther="Production Rules" />
+
+	<ConceptLocalization identifier="ProductionAlternative" label="Production Alternative" labelOther="Production Alternatives" />
+
+	<ConceptLocalization identifier="RuleReference" label="Rule Reference" labelOther="Rule References" />
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		Stable lookup key for cross-referencing.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="notation" label="Notation" labelOther="Notations">
+		The formal grammar notation used (ABNF, EBNF, BNF, PEG, or Custom).
+	</TraitLocalization>
+
+	<TraitLocalization identifier="title" label="Title" labelOther="Titles">
+		Human-readable title for the grammar.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="startSymbol" label="Start Symbol" labelOther="Start Symbols">
+		The name of the start production rule for the grammar.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="ruleName" label="Rule Name" labelOther="Rule Names">
+		The nonterminal name of the production rule as it appears in the grammar.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="label" label="Label" labelOther="Labels">
+		Short display label for projection.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="isTerminal" label="Is Terminal" labelOther="Is Terminal">
+		Whether this production rule defines a terminal symbol.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="isStart" label="Is Start" labelOther="Is Start">
+		Whether this production rule is the start symbol of the grammar.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="target" label="Target" labelOther="Targets">
+		Reference to a production rule entity.
+	</TraitLocalization>
+</LocalizationBundle>

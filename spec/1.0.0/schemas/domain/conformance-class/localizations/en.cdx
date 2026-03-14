@@ -1,0 +1,31 @@
+<LocalizationBundle
+	schema=paperhat:domain:conformance-class
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="ConformanceClass" label="Conformance Class" labelOther="Conformance Classes" />
+
+	<ConceptLocalization identifier="ConformanceRequirement" label="Conformance Requirement" labelOther="Conformance Requirements" />
+
+	<ConceptLocalization identifier="ConformanceClause" label="Conformance Clause" labelOther="Conformance Clauses" />
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		Stable lookup key for cross-referencing.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="title" label="Title" labelOther="Titles">
+		Human-readable title for the conformance class or clause.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="label" label="Label" labelOther="Labels">
+		Short display label.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="target" label="Target" labelOther="Targets">
+		Reference to a requirement that must be satisfied for conformance.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="conditional" label="Conditional" labelOther="Conditionals">
+		Whether this conformance requirement applies conditionally based on implementation choices.
+	</TraitLocalization>
+</LocalizationBundle>

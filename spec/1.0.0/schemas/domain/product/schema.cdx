@@ -9,29 +9,29 @@
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=desc reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
 
-		<SchemaImport namespace=offer reference=urn:cdx:sha256:554d5ee6d5110916bf29f8d556330a10fd8981b69462b96b49619cc824aa9013 />
+		<SchemaImport namespace="offer" reference=urn:cdx:sha256:554d5ee6d5110916bf29f8d556330a10fd8981b69462b96b49619cc824aa9013 />
 
-		<SchemaImport namespace=ident reference=urn:cdx:sha256:5fafd42cd5ebaa41ecaf7b26d4ea2be9fb9c6a6c68c56ab3c8f2483fdbe1cf28 />
+		<SchemaImport namespace="ident" reference=urn:cdx:sha256:5fafd42cd5ebaa41ecaf7b26d4ea2be9fb9c6a6c68c56ab3c8f2483fdbe1cf28 />
 
-		<SchemaImport namespace=rating reference=urn:cdx:sha256:128a174d3495eeea9b078f4684034c29d3e894f6fe5c42579e1abb60b9146a4e />
+		<SchemaImport namespace="rating" reference=urn:cdx:sha256:128a174d3495eeea9b078f4684034c29d3e894f6fe5c42579e1abb60b9146a4e />
 
-		<SchemaImport namespace=measure reference=urn:cdx:sha256:c39ffedc2e8321d6351ba3743c8d66abd10d51c005e259a3d01cc6334593207b />
+		<SchemaImport namespace="measure" reference=urn:cdx:sha256:c39ffedc2e8321d6351ba3743c8d66abd10d51c005e259a3d01cc6334593207b />
 
-		<SchemaImport namespace=money reference=urn:cdx:sha256:3db9a58f8ea85a9631dd5cadb0e54a054b9b7c23fba92a1ea5925ca46dc5432d />
+		<SchemaImport namespace="money" reference=urn:cdx:sha256:3db9a58f8ea85a9631dd5cadb0e54a054b9b7c23fba92a1ea5925ca46dc5432d />
 
-		<SchemaImport namespace=tags reference=urn:cdx:sha256:af138b9c8bbc16117f2d8553c482253f9144721ab3a9d411992a2035e2094206 />
+		<SchemaImport namespace="tags" reference=urn:cdx:sha256:af138b9c8bbc16117f2d8553c482253f9144721ab3a9d411992a2035e2094206 />
 
-		<SchemaImport namespace=work reference=urn:cdx:sha256:7d8e5217434f3f577ec3d65a10d50846c5140722b229029517aba371c6aeda67 />
+		<SchemaImport namespace="work" reference=urn:cdx:sha256:7d8e5217434f3f577ec3d65a10d50846c5140722b229029517aba371c6aeda67 />
 
-		<SchemaImport namespace=audience reference=urn:cdx:sha256:eeb4cfc2a3574d6de35e3cfa7efd3daa750ffacc91c57ca046b9d1a2da903c43 />
+		<SchemaImport namespace="audience" reference=urn:cdx:sha256:eeb4cfc2a3574d6de35e3cfa7efd3daa750ffacc91c57ca046b9d1a2da903c43 />
 
-		<SchemaImport namespace=a11y reference=urn:cdx:sha256:0d010c95b51336324799dad926c6ae6ae90f12fb1b1b198105508c6cbb2cfed3 />
+		<SchemaImport namespace="a11y" reference=urn:cdx:sha256:0d010c95b51336324799dad926c6ae6ae90f12fb1b1b198105508c6cbb2cfed3 />
 
-		<SchemaImport namespace=nutrition reference=urn:cdx:sha256:c61007345cffcfed0a46ceaccb06cd4349c52af0bcca2c1e5bc33636a66e9fa1 />
+		<SchemaImport namespace="nutrition" reference=urn:cdx:sha256:c61007345cffcfed0a46ceaccb06cd4349c52af0bcca2c1e5bc33636a66e9fa1 />
 
-		<SchemaImport namespace=material reference=urn:cdx:sha256:4f288ad6ab6cd1a9c02b74cb01a2fd2bfa2526e1aa0f89e7db0c52dddb228412 />
+		<SchemaImport namespace="material" reference=urn:cdx:sha256:4f288ad6ab6cd1a9c02b74cb01a2fd2bfa2526e1aa0f89e7db0c52dddb228412 />
 	</SchemaImports>
 
 	<ConceptDefinitions>

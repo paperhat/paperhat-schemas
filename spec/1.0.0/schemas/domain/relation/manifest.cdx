@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="bdd7d7be63424378fbe1014314c66d53b8f8ceeb23a3390b9cfbc78bc39ad487"
+	closureHash="45da267b585f860017319a27c4182f4cee1c665d7804dc85ae47f3fdee70b2b8"
 	copyright="Copyright 2026 Paperhat"
 	description="Semantic relational data model for deterministic, presentation-agnostic tabular data authoring."
 	license="Apache-2.0"

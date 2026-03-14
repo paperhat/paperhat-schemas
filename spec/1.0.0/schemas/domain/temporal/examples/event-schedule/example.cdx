@@ -1,10 +1,10 @@
 <TemporalAnnotations>
-	<PlainDateTime key=~start value=2024-06-15T09:00:00 format=$full language=$en />
-	<PlainDateTime key=~end value=2024-06-15T17:30:00 format=$full language=$en />
-	<PlainDate key=~deadline value=2024-05-01 format=$long />
-	<PlainTime key=~doors value=08:30:00 format=$short />
-	<Duration key=~length value=P1DT8H30M text="one day, eight and a half hours" />
-	<Instant key=~ticketsClose value=2024-06-14T23:59:59Z format=$full />
-	<ZonedDateTime key=~keynote value=2024-06-15T10:00:00-04:00[America/New_York] format=$full language=$en />
-	<YearWeek key=~week value=2024-W24 />
+	<DateTime key=~start value=date-time(15 june 2024 09:00:00) format=$Full language=language-tag("en") />
+	<DateTime key=~end value=date-time(15 june 2024 17:30:00) format=$Full language=language-tag("en") />
+	<Date key=~deadline value=date(1 may 2024) format=$Long />
+	<Time key=~doors value=time(08:30:00) format=$Short />
+	<Duration key=~length value=duration(1 day, 8 hours, 30 minutes) text="one day, eight and a half hours" />
+	<Instant key=~ticketsClose value=instant(2024-06-14T23:59:59Z) format=$Full />
+	<DateTimeWithTimezone key=~keynote value=date-time-with-timezone(15 june 2024 10:00:00, America/New_York) format=$Full language=language-tag("en") />
+	<YearWeek key=~week value=year-week(2024 W24) />
 </TemporalAnnotations>

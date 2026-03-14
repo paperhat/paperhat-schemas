@@ -1,0 +1,51 @@
+<LocalizationBundle
+	schema=paperhat:domain:revision-history
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="RevisionHistory" label="Revision History" labelOther="Revision Histories" />
+
+	<ConceptLocalization identifier="RevisionEntry" label="Revision Entry" labelOther="Revision Entries" />
+
+	<ConceptLocalization identifier="Change" label="Change" labelOther="Changes" />
+
+	<TraitLocalization identifier="title" label="Title" labelOther="Titles">
+		Optional title for the revision history section.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="version" label="Version" labelOther="Versions">
+		Semantic version of the specification for this revision.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="date" label="Date" labelOther="Dates">
+		Date of the revision in ISO 8601 format.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="editor" label="Editor" labelOther="Editors">
+		Name of the editor responsible for this revision.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="author" label="Author" labelOther="Authors">
+		Name of the author of this revision.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		Stable lookup key for cross-referencing.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="label" label="Label" labelOther="Labels">
+		Short display label for projection.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="changeKind" label="Change Kind" labelOther="Change Kinds">
+		Classification of the change.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="affectedItem" label="Affected Item" labelOther="Affected Items">
+		Reference to the section, requirement, or other entity affected by the change.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="affectedItemLabel" label="Affected Item Label" labelOther="Affected Item Labels">
+		Human-readable label for the affected item when the reference cannot be resolved.
+	</TraitLocalization>
+</LocalizationBundle>

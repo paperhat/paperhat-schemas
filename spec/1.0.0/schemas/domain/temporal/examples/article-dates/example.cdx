@@ -1,5 +1,5 @@
 <TemporalAnnotations>
-	<PlainDate key=~published value=2024-03-15 format=$long language=$en />
-	<PlainDate key=~updated value=2024-11-02 format=$short />
-	<PlainYearMonth key=~archiveMonth value=2024-03 format=$long language=$en />
+	<Date key=~published value=date(15 march 2024) format=$Long language=language-tag("en") />
+	<Date key=~updated value=date(2 november 2024) format=$Short />
+	<YearMonth key=~archiveMonth value=year-month(march 2024) format=$Long language=language-tag("en") />
 </TemporalAnnotations>

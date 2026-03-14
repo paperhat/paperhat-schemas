@@ -9,15 +9,15 @@
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=desc reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
 
-		<SchemaImport namespace=ident reference=urn:cdx:sha256:5fafd42cd5ebaa41ecaf7b26d4ea2be9fb9c6a6c68c56ab3c8f2483fdbe1cf28 />
+		<SchemaImport namespace="ident" reference=urn:cdx:sha256:5fafd42cd5ebaa41ecaf7b26d4ea2be9fb9c6a6c68c56ab3c8f2483fdbe1cf28 />
 
-		<SchemaImport namespace=tags reference=urn:cdx:sha256:af138b9c8bbc16117f2d8553c482253f9144721ab3a9d411992a2035e2094206 />
+		<SchemaImport namespace="tags" reference=urn:cdx:sha256:af138b9c8bbc16117f2d8553c482253f9144721ab3a9d411992a2035e2094206 />
 
-		<SchemaImport namespace=work reference=urn:cdx:sha256:7d8e5217434f3f577ec3d65a10d50846c5140722b229029517aba371c6aeda67 />
+		<SchemaImport namespace="work" reference=urn:cdx:sha256:7d8e5217434f3f577ec3d65a10d50846c5140722b229029517aba371c6aeda67 />
 
-		<SchemaImport namespace=temporal reference=urn:cdx:sha256:27285ec031853ac164d1e28f707cd51e863e2a2652d0404ab0e8f1f6d4e90e4d />
+		<SchemaImport namespace="temporal" reference=urn:cdx:sha256:57f585f81073ed18263c65e27890ce0853e00be17efe01763a325d17c6445ce6 />
 	</SchemaImports>
 
 	<ConceptDefinitions>

@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="acd836ff0abf23a24a27e63ad9bc3c29a99765f2d64b6ca22d0346d563cc0c0c"
+	closureHash="e6503cc06a6b8c3de47103e4599c02dd6b038a6b291527f5b46de0fc693a5714"
 	copyright="Copyright 2026 Paperhat"
 	description="A named initiative, effort, or body of work with identity — a software project, specification effort, research program, or any other bounded endeavor."
 	license="Apache-2.0"
@@ -36,7 +36,7 @@
 
 	<PackageDependency
 		packageName="paperhat-temporal"
-		closureHash="c07c59921f5bc211f40b0763b74d9c2204c5060b967716eba14f1c6b1063d606"
+		closureHash="0012ccd0216403a2086df96c27daacfc90fdf736681ee7654da1280e02a98127"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

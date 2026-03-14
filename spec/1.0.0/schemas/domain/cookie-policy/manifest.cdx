@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="e33c2e41839f9788ee0dc30635e0e7d9d857dab3926b26a040cab6f9ed310d6a"
+	closureHash="13773f798b02678de0156e5a9845946e392c5cd4243a6c0fdeae721b790d755d"
 	copyright="Copyright 2026 Paperhat"
 	description="A structured cookie policy document defining cookie categories, controls, third-party use, and retention semantics."
 	license="Apache-2.0"
@@ -12,7 +12,7 @@
 >
 	<PackageDependency
 		packageName="paperhat-document-metadata"
-		closureHash="b22b175328a5814c7026b94319964968c4a3f13f594ea2ff4e4b678e577b47bc"
+		closureHash="5ca4100c2fbf71d328baad520cefeb3ebbcb87826218b1f30107f2ae21e7460a"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
@@ -36,7 +36,7 @@
 
 	<PackageDependency
 		packageName="paperhat-section"
-		closureHash="8c2ee0e20b56f5e4c8d007f1a5f561d790053ddb34f7ddb2e1b393f7b56c9008"
+		closureHash="dd4d1185452ac3fec3a40fa160a9c54ffbb9e7f6fb3d5f77b0aecebb780b8b49"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 

@@ -1,0 +1,41 @@
+<LocalizationBundle
+	schema=paperhat:domain:abbreviation
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Abbreviation" label="Abbreviation" labelOther="Abbreviations" />
+
+	<ConceptLocalization identifier="Initialism" label="Initialism" labelOther="Initialisms" />
+
+	<ConceptLocalization identifier="Acronym" label="Acronym" labelOther="Acronyms" />
+
+	<ConceptLocalization identifier="AbbreviationList" label="Abbreviation List" labelOther="Abbreviation Lists" />
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		Stable lookup key for cross-referencing.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="shortForm" label="Short Form" labelOther="Short Forms">
+		The abbreviated form as it appears in text (e.g. "NASA", "U.S.A.", "etc.").
+	</TraitLocalization>
+
+	<TraitLocalization identifier="expansion" label="Expansion" labelOther="Expansions">
+		The full expanded form of the abbreviation (e.g. "National Aeronautics and Space Administration").
+	</TraitLocalization>
+
+	<TraitLocalization identifier="pronunciation" label="Pronunciation" labelOther="Pronunciations">
+		How the acronym is spoken aloud (e.g. "nass-uh" for NASA, "lah-tek" for LaTeX).
+	</TraitLocalization>
+
+	<TraitLocalization identifier="label" label="Label" labelOther="Labels">
+		Short display label for projection.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="language" label="Language" labelOther="Languages">
+		The natural language of the abbreviation and its expansion.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="listTitle" label="List Title" labelOther="List Titles">
+		Optional title for an abbreviation list container.
+	</TraitLocalization>
+</LocalizationBundle>

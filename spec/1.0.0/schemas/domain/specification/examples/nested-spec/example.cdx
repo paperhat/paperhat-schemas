@@ -55,9 +55,13 @@
 				Historical lineage concepts are intentionally excluded from this schema package.
 			</Note>
 
-			<Definition term="single source of truth">
+			<GlossaryEntry
+				id=urn:example:schema-loading-rules#glossary/single-source-of-truth
+				term="single source of truth"
+				key=~single-source-of-truth
+			>
 				A single authoritative representation from which all projections are derived.
-			</Definition>
+			</GlossaryEntry>
 		</Section>
 	</Section>
 </Specification>

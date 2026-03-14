@@ -59,7 +59,7 @@
 			title="Domain schemas must not define individuals"
 		>
 			<Targets>
-				<TargetContext contextSelector="Schema" />
+				<TargetContext contextSelector="Document" />
 			</Targets>
 
 			<Rule>
@@ -107,22 +107,5 @@
 			</Rule>
 		</ConstraintDefinition>
 
-		<ConstraintDefinition
-			id=paperhat:domain:meta:override-context-only
-			title="Sequence and Group are permitted only within CollectionOverride"
-		>
-			<Targets>
-				<TargetConcept conceptSelector="Sequence" />
-
-				<TargetConcept conceptSelector="Group" />
-			</Targets>
-
-			<Rule>
-				<ContextConstraint
-					contextSelector="CollectionOverride"
-					type=$OnlyValidUnderContext
-				/>
-			</Rule>
-		</ConstraintDefinition>
 	</ConstraintDefinitions>
 </Schema>

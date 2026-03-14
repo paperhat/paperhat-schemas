@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="54c326074b4d0e18669378bea85e188873a7a111de431a22d4bcdb12ac68c1d0"
+	closureHash="7a8f244045afcc29fd7b82f05172da1300283b657d3020f4f186657e69c1ffb1"
 	copyright="Copyright 2026 Paperhat"
 	description="A captioned figure containing one or more media references. Supports rich titles via child concepts for Gloss span-bindings."
 	license="Apache-2.0"

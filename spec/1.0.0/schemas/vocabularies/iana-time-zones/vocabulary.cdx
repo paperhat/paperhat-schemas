@@ -225,5 +225,5 @@
 
 	<TokenDefinition token=$Pacific_Tongatapu label="Pacific/Tongatapu" />
 
-	<TokenDefinition token=$UTC label="UTC" />
+	<TokenDefinition token=$Etc_UTC label="Etc/UTC" />
 </TokenVocabulary>

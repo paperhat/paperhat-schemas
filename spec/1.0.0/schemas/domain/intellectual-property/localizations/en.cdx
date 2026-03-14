@@ -1,0 +1,107 @@
+<LocalizationBundle
+	schema=paperhat:domain:intellectual-property
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Copyright" label="Copyright" labelOther="Copyrights" />
+
+	<ConceptLocalization identifier="Trademark" label="Trademark" labelOther="Trademarks" />
+
+	<ConceptLocalization identifier="ServiceMark" label="Service Mark" labelOther="Service Marks" />
+
+	<ConceptLocalization identifier="RegisteredTrademark" label="Registered Trademark" labelOther="Registered Trademarks" />
+
+	<ConceptLocalization identifier="Patent" label="Patent" labelOther="Patents" />
+
+	<ConceptLocalization identifier="LicenseGrant" label="License Grant" labelOther="License Grants" />
+
+	<ConceptLocalization identifier="IPNotice" label="IP Notice" labelOther="IP Notices" />
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		Stable lookup key for cross-referencing.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="holder" label="Holder" labelOther="Holders">
+		The copyright holder or patent holder name.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="year" label="Year" labelOther="Years">
+		The copyright year or start of a year range.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="yearEnd" label="Year End" labelOther="Year Ends">
+		The end year of a copyright year range.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="jurisdiction" label="Jurisdiction" labelOther="Jurisdictions">
+		The legal jurisdiction for the IP right.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="work" label="Work" labelOther="Works">
+		The copyrighted work being covered.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="mark" label="Mark" labelOther="Marks">
+		The trademark, service mark, or registered trademark text.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="owner" label="Owner" labelOther="Owners">
+		The owner of the mark.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="registrationNumber" label="Registration Number" labelOther="Registration Numbers">
+		Official registration number with the relevant authority.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="niceClass" label="Nice Class" labelOther="Nice Classes">
+		Nice Classification class number for trademark goods or services.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="patentNumber" label="Patent Number" labelOther="Patent Numbers">
+		Official patent number.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="filingDate" label="Filing Date" labelOther="Filing Dates">
+		Date the patent application was filed.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="grantDate" label="Grant Date" labelOther="Grant Dates">
+		Date the patent was granted.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="licensingCommitment" label="Licensing Commitment" labelOther="Licensing Commitments">
+		The patent holder's licensing commitment for standards-essential patents.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="licensor" label="Licensor" labelOther="Licensors">
+		The entity granting the license.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="licensee" label="Licensee" labelOther="Licensees">
+		The entity receiving the license. Omit for universal grants.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="licenseType" label="License Type" labelOther="License Types">
+		Classification of the license.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="scope" label="Scope" labelOther="Scopes">
+		What the license covers (e.g. "implementation of this specification").
+	</TraitLocalization>
+
+	<TraitLocalization identifier="termsUri" label="Terms URI" labelOther="Terms URIs">
+		IRI to the full license text or terms document.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="spdxIdentifier" label="SPDX Identifier" labelOther="SPDX Identifiers">
+		SPDX license identifier (e.g. "Apache-2.0", "MIT", "CC-BY-4.0").
+	</TraitLocalization>
+
+	<TraitLocalization identifier="label" label="Label" labelOther="Labels">
+		Short display label for projection.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="noticeTitle" label="Notice Title" labelOther="Notice Titles">
+		Optional title for an IP notice section.
+	</TraitLocalization>
+</LocalizationBundle>

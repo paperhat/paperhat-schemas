@@ -1,0 +1,188 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Symbols, math symbols, and emoji with semantic metadata. Covers typographic symbols with Unicode codepoints, math variable bindings for formal definitions, and emoji with cultural context."
+	id=paperhat:domain:symbol
+	namespace="sym"
+	title="Symbol Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:symbol:Symbol
+			name="Symbol"
+		>
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="glyph" />
+
+				<RequiresTrait name="symbolName" />
+
+				<AllowsTrait name="codepoint" />
+
+				<AllowsTrait name="label" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:symbol:MathSymbol
+			name="MathSymbol"
+		>
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="glyph" />
+
+				<RequiresTrait name="symbolName" />
+
+				<RequiresTrait name="meaning" />
+
+				<AllowsTrait name="codepoint" />
+
+				<AllowsTrait name="unit" />
+
+				<AllowsTrait name="domain" />
+
+				<AllowsTrait name="label" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:symbol:Emoji
+			name="Emoji"
+		>
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="glyph" />
+
+				<RequiresTrait name="symbolName" />
+
+				<AllowsTrait name="codepoint" />
+
+				<AllowsTrait name="culturalContext" />
+
+				<AllowsTrait name="label" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:symbol:SymbolTable
+			name="SymbolTable"
+		>
+			<TraitRules>
+				<AllowsTrait name="tableTitle" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Symbol|MathSymbol|Emoji" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:symbol:trait:key
+			name="key"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:symbol:trait:glyph
+			name="glyph"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:symbol:trait:symbolName
+			name="symbolName"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:symbol:trait:codepoint
+			name="codepoint"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:symbol:trait:meaning
+			name="meaning"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:symbol:trait:unit
+			name="unit"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:symbol:trait:domain
+			name="domain"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:symbol:trait:culturalContext
+			name="culturalContext"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:symbol:trait:label
+			name="label"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:symbol:trait:tableTitle
+			name="tableTitle"
+		/>
+	</TraitDefinitions>
+</Schema>

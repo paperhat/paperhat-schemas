@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="9ea1d16959e5a68cf73b121803ff8a77313cf7e3fc41e94b8a1b9b9af92da364"
+	closureHash="5c3484316624f7fb7a7635d081fd02f653354c9350725a165bfa97169f861732"
 	copyright="Copyright 2026 Paperhat"
 	description="An organization such as a company, nonprofit, government body, or educational institution, composed from leaf concepts for contact points, identifiers, and locations."
 	license="Apache-2.0"

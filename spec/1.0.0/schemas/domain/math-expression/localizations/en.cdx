@@ -1,0 +1,147 @@
+<LocalizationBundle
+	schema=paperhat:domain:math-expression
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Expression" label="Expression" labelOther="Expressions" />
+
+	<ConceptLocalization identifier="Variable" label="Variable" labelOther="Variables" />
+
+	<ConceptLocalization identifier="Number" label="Number" labelOther="Numbers" />
+
+	<ConceptLocalization identifier="Operator" label="Operator" labelOther="Operators" />
+
+	<ConceptLocalization identifier="Apply" label="Application" labelOther="Applications" />
+
+	<ConceptLocalization identifier="Relation" label="Relation" labelOther="Relations" />
+
+	<ConceptLocalization identifier="Equation" label="Equation" labelOther="Equations" />
+
+	<ConceptLocalization identifier="Integral" label="Integral" labelOther="Integrals" />
+
+	<ConceptLocalization identifier="Integrand" label="Integrand" labelOther="Integrands" />
+
+	<ConceptLocalization identifier="DifferentialVariable" label="Differential Variable" labelOther="Differential Variables" />
+
+	<ConceptLocalization identifier="Derivative" label="Derivative" labelOther="Derivatives" />
+
+	<ConceptLocalization identifier="Summation" label="Summation" labelOther="Summations" />
+
+	<ConceptLocalization identifier="Limit" label="Limit" labelOther="Limits" />
+
+	<ConceptLocalization identifier="Series" label="Series" labelOther="Series" />
+
+	<ConceptLocalization identifier="Matrix" label="Matrix" labelOther="Matrices" />
+
+	<ConceptLocalization identifier="MatrixRow" label="Matrix Row" labelOther="Matrix Rows" />
+
+	<ConceptLocalization identifier="Set" label="Set" labelOther="Sets" />
+
+	<ConceptLocalization identifier="Piecewise" label="Piecewise Function" labelOther="Piecewise Functions" />
+
+	<ConceptLocalization identifier="PiecewiseCase" label="Piecewise Case" labelOther="Piecewise Cases" />
+
+	<ConceptLocalization identifier="OtherwiseCase" label="Otherwise Case" labelOther="Otherwise Cases" />
+
+	<ConceptLocalization identifier="Operand" label="Operand" labelOther="Operands" />
+
+	<ConceptLocalization identifier="Condition" label="Condition" labelOther="Conditions" />
+
+	<ConceptLocalization identifier="IndexVariable" label="Index Variable" labelOther="Index Variables" />
+
+	<ConceptLocalization identifier="LowerBound" label="Lower Bound" labelOther="Lower Bounds" />
+
+	<ConceptLocalization identifier="UpperBound" label="Upper Bound" labelOther="Upper Bounds" />
+
+	<ConceptLocalization identifier="ApproachesValue" label="Approaches Value" labelOther="Approaches Values" />
+
+	<ConceptLocalization identifier="EvaluationPoint" label="Evaluation Point" labelOther="Evaluation Points" />
+
+	<ConceptLocalization identifier="IntegrationDomain" label="Integration Domain" labelOther="Integration Domains" />
+
+	<ConceptLocalization identifier="MathBlock" label="Math Block" labelOther="Math Blocks" />
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		Stable lookup key for cross-referencing equations.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="symbol" label="Symbol" labelOther="Symbols">
+		The glyph or character used to represent the variable.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="value" label="Value" labelOther="Values">
+		Numeric value as a text string for arbitrary precision.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="unit" label="Unit" labelOther="Units">
+		Unit of measurement for the variable or number.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="variableType" label="Variable Type" labelOther="Variable Types">
+		The mathematical type of the variable (e.g. "real", "integer", "complex", "vector").
+	</TraitLocalization>
+
+	<TraitLocalization identifier="domain" label="Domain" labelOther="Domains">
+		The domain of the variable (e.g. "[0, 1]", "positive reals").
+	</TraitLocalization>
+
+	<TraitLocalization identifier="op" label="Operator" labelOther="Operators">
+		The mathematical operator to apply.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="function" label="Function" labelOther="Functions">
+		Named function being applied (for functions not in the operator set).
+	</TraitLocalization>
+
+	<TraitLocalization identifier="relationType" label="Relation Type" labelOther="Relation Types">
+		The kind of mathematical relation.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="equationType" label="Equation Type" labelOther="Equation Types">
+		Classification of the equation.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="label" label="Label" labelOther="Labels">
+		Display label for the equation or block.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="order" label="Order" labelOther="Orders">
+		Order of the derivative (1 for first, 2 for second, etc.).
+	</TraitLocalization>
+
+	<TraitLocalization identifier="derivativeType" label="Derivative Type" labelOther="Derivative Types">
+		Whether the derivative is ordinary or partial.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="integralType" label="Integral Type" labelOther="Integral Types">
+		Classification of the integral.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="direction" label="Direction" labelOther="Directions">
+		Direction of approach for a limit.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="seriesType" label="Series Type" labelOther="Series Types">
+		Whether the series is a sum or product.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="rows" label="Rows" labelOther="Rows">
+		Number of rows in the matrix.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="cols" label="Columns" labelOther="Columns">
+		Number of columns in the matrix.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="matrixType" label="Matrix Type" labelOther="Matrix Types">
+		Structural classification of the matrix.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="setType" label="Set Type" labelOther="Set Types">
+		How the set is specified.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="base" label="Base" labelOther="Bases">
+		Numeric base for the number (e.g. 2 for binary, 16 for hex).
+	</TraitLocalization>
+</LocalizationBundle>

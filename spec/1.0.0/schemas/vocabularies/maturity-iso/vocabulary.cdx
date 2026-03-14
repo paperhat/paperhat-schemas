@@ -1,0 +1,29 @@
+<TokenVocabulary
+	closedVocabulary=true
+	description="ISO/IEC specification maturity levels following the ISO standards development process (ISO/IEC Directives, Part 1)."
+	id=paperhat:vocabulary:maturity-iso
+	title="ISO Maturity Levels"
+	version="1.0.0"
+>
+	<TokenDefinition token=$PreliminaryWorkItem label="preliminary-work-item" />
+
+	<TokenDefinition token=$NewWorkItemProposal label="new-work-item-proposal" />
+
+	<TokenDefinition token=$WorkingDraft label="working-draft" />
+
+	<TokenDefinition token=$CommitteeDraft label="committee-draft" />
+
+	<TokenDefinition token=$DraftInternationalStandard label="draft-international-standard" />
+
+	<TokenDefinition token=$FinalDraftInternationalStandard label="final-draft-international-standard" />
+
+	<TokenDefinition token=$InternationalStandard label="international-standard" />
+
+	<TokenDefinition token=$TechnicalSpecification label="technical-specification" />
+
+	<TokenDefinition token=$TechnicalReport label="technical-report" />
+
+	<TokenDefinition token=$PubliclyAvailableSpecification label="publicly-available-specification" />
+
+	<TokenDefinition token=$Withdrawn label="withdrawn" />
+</TokenVocabulary>

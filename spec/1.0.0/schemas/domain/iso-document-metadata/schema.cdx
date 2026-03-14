@@ -1,0 +1,405 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="ISO/IEC-specific document metadata for standards. Covers committee structure, document numbering, edition history, ICS classification, secretariat, and foreword structure. Organization-specific supplement to the generic document-metadata schema."
+	id=paperhat:domain:iso-document-metadata
+	namespace="isometa"
+	title="ISO Document Metadata Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
+
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:iso-document-metadata:ISODocumentMetadata
+			name="ISODocumentMetadata"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Committee" />
+
+				<AllowsChildConcept conceptSelector="Subcommittee" />
+
+				<AllowsChildConcept conceptSelector="WorkingGroup" />
+
+				<AllowsChildConcept conceptSelector="ICSClassification" />
+
+				<AllowsChildConcept conceptSelector="ISOForeword" />
+
+				<AllowsChildConcept conceptSelector="EditionHistory" />
+
+				<AllowsChildConcept conceptSelector="RelatedPart" />
+
+				<AllowsChildConcept conceptSelector="desc:Description" />
+			</ChildRules>
+
+			<TraitRules>
+				<RequiresTrait name="documentNumber" />
+
+				<AllowsTrait name="partNumber" />
+
+				<AllowsTrait name="edition" />
+
+				<AllowsTrait name="language" />
+
+				<AllowsTrait name="secretariat" />
+
+				<AllowsTrait name="publicationDate" />
+
+				<AllowsTrait name="stage">
+					<AllowedValues>
+						<EnumeratedConstraint set="ISOStage" />
+					</AllowedValues>
+				</AllowsTrait>
+
+				<AllowsTrait name="label" />
+			</TraitRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Unordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:iso-document-metadata:Committee
+			name="Committee"
+		>
+			<TraitRules>
+				<RequiresTrait name="committeeNumber" />
+
+				<RequiresTrait name="committeeName" />
+
+				<AllowsTrait name="committeeType">
+					<AllowedValues>
+						<EnumeratedConstraint set="CommitteeType" />
+					</AllowedValues>
+				</AllowsTrait>
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:iso-document-metadata:Subcommittee
+			name="Subcommittee"
+		>
+			<TraitRules>
+				<RequiresTrait name="subcommitteeNumber" />
+
+				<RequiresTrait name="subcommitteeName" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:iso-document-metadata:WorkingGroup
+			name="WorkingGroup"
+		>
+			<TraitRules>
+				<RequiresTrait name="workingGroupNumber" />
+
+				<AllowsTrait name="workingGroupName" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:iso-document-metadata:ICSClassification
+			name="ICSClassification"
+		>
+			<TraitRules>
+				<RequiresTrait name="icsCode" />
+
+				<AllowsTrait name="icsTitle" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:iso-document-metadata:ISOForeword
+			name="ISOForeword"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="EditionHistory" />
+
+				<AllowsChildConcept conceptSelector="RelatedPart" />
+
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
+
+				<AllowsChildConcept conceptSelector="desc:Description" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:iso-document-metadata:EditionHistory
+			name="EditionHistory"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="EditionEntry" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:iso-document-metadata:EditionEntry
+			name="EditionEntry"
+		>
+			<TraitRules>
+				<RequiresTrait name="edition" />
+
+				<AllowsTrait name="publicationDate" />
+
+				<AllowsTrait name="changeDescription" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:iso-document-metadata:RelatedPart
+			name="RelatedPart"
+		>
+			<TraitRules>
+				<RequiresTrait name="partNumber" />
+
+				<RequiresTrait name="partTitle" />
+
+				<AllowsTrait name="relationship">
+					<AllowedValues>
+						<EnumeratedConstraint set="PartRelationship" />
+					</AllowedValues>
+				</AllowsTrait>
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+			</ChildRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:iso-document-metadata:trait:documentNumber
+			name="documentNumber"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:iso-document-metadata:trait:partNumber
+			name="partNumber"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:iso-document-metadata:trait:edition
+			name="edition"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:iso-document-metadata:trait:language
+			name="language"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:iso-document-metadata:trait:secretariat
+			name="secretariat"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:iso-document-metadata:trait:publicationDate
+			name="publicationDate"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:iso-document-metadata:trait:stage
+			name="stage"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:iso-document-metadata:trait:label
+			name="label"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:iso-document-metadata:trait:committeeNumber
+			name="committeeNumber"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:iso-document-metadata:trait:committeeName
+			name="committeeName"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:iso-document-metadata:trait:committeeType
+			name="committeeType"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:iso-document-metadata:trait:subcommitteeNumber
+			name="subcommitteeNumber"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:iso-document-metadata:trait:subcommitteeName
+			name="subcommitteeName"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:iso-document-metadata:trait:workingGroupNumber
+			name="workingGroupNumber"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:iso-document-metadata:trait:workingGroupName
+			name="workingGroupName"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:iso-document-metadata:trait:icsCode
+			name="icsCode"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:iso-document-metadata:trait:icsTitle
+			name="icsTitle"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:iso-document-metadata:trait:changeDescription
+			name="changeDescription"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:iso-document-metadata:trait:partTitle
+			name="partTitle"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:iso-document-metadata:trait:relationship
+			name="relationship"
+		/>
+	</TraitDefinitions>
+
+	<EnumeratedValueSets>
+		<EnumeratedValueSet id=paperhat:domain:iso-document-metadata:set:ISOStage name="ISOStage">
+			<Member value="Preliminary" />
+
+			<Member value="Proposal" />
+
+			<Member value="Preparatory" />
+
+			<Member value="Committee" />
+
+			<Member value="Enquiry" />
+
+			<Member value="Approval" />
+
+			<Member value="Publication" />
+
+			<Member value="Review" />
+
+			<Member value="Withdrawal" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet id=paperhat:domain:iso-document-metadata:set:CommitteeType name="CommitteeType">
+			<Member value="TC" />
+
+			<Member value="JTC" />
+
+			<Member value="PC" />
+
+			<Member value="IEC" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet id=paperhat:domain:iso-document-metadata:set:PartRelationship name="PartRelationship">
+			<Member value="Supersedes" />
+
+			<Member value="SupersededBy" />
+
+			<Member value="Complements" />
+
+			<Member value="ComplementedBy" />
+
+			<Member value="Amends" />
+
+			<Member value="AmendedBy" />
+
+			<Member value="Corrigendum" />
+		</EnumeratedValueSet>
+	</EnumeratedValueSets>
+</Schema>

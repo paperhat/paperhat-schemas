@@ -5,37 +5,5 @@
 >
 	<ConceptLocalization identifier="Specification" label="Specification" />
 
-	<ConceptLocalization identifier="Section" label="Section" labelOther="Sections" />
-
 	<ConceptLocalization identifier="Requirement" label="Requirement" labelOther="Requirements" />
-
-	<ConceptLocalization identifier="Definition" label="Definition" labelOther="Definitions" />
-
-	<ConceptLocalization identifier="Note" label="Note" labelOther="Notes" />
-
-	<ConceptLocalization identifier="SectionReference" label="Section Reference" labelOther="Section References" />
-
-	<ConceptLocalization identifier="ExternalReference" label="External Reference" labelOther="External References" />
-
-	<ConceptLocalization identifier="RequirementSet" label="Requirement Set" labelOther="Requirement Sets" />
-
-	<ConceptLocalization identifier="TermBinding" label="Term Binding" labelOther="Term Bindings" />
-
-	<ConceptLocalization identifier="Issue" label="Issue" labelOther="Issues" />
-
-	<ConceptLocalization identifier="OpenQuestion" label="Open Question" labelOther="Open Questions" />
-
-	<ConstraintLocalization
-		identifier="paperhat:domain:specification:section-reference-target-type"
-		label="Section reference target type"
-	>
-		A SectionReference target must resolve to a Section.
-	</ConstraintLocalization>
-
-	<ConstraintLocalization
-		identifier="paperhat:domain:specification:section-reference-must-resolve"
-		label="Section reference must resolve"
-	>
-		A SectionReference target must resolve to an existing entity.
-	</ConstraintLocalization>
 </LocalizationBundle>

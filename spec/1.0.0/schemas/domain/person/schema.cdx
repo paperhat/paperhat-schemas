@@ -9,13 +9,13 @@
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=pname reference=urn:cdx:sha256:43ee55dc78ff2c04b294272064481d98a3be7087af7cb2564c5e8a6862905394 />
+		<SchemaImport namespace="pname" reference=urn:cdx:sha256:43ee55dc78ff2c04b294272064481d98a3be7087af7cb2564c5e8a6862905394 />
 
-		<SchemaImport namespace=contact reference=urn:cdx:sha256:0623b3bc48dfd1632919af1704725cc24b3e1ead90f4ce3a59117485e64335eb />
+		<SchemaImport namespace="contact" reference=urn:cdx:sha256:0623b3bc48dfd1632919af1704725cc24b3e1ead90f4ce3a59117485e64335eb />
 
-		<SchemaImport namespace=ident reference=urn:cdx:sha256:5fafd42cd5ebaa41ecaf7b26d4ea2be9fb9c6a6c68c56ab3c8f2483fdbe1cf28 />
+		<SchemaImport namespace="ident" reference=urn:cdx:sha256:5fafd42cd5ebaa41ecaf7b26d4ea2be9fb9c6a6c68c56ab3c8f2483fdbe1cf28 />
 
-		<SchemaImport namespace=loc reference=urn:cdx:sha256:69ebdc66422b5962b2521ef49b174550c9b45c369ddd60c9967699566c0b16f0 />
+		<SchemaImport namespace="loc" reference=urn:cdx:sha256:69ebdc66422b5962b2521ef49b174550c9b45c369ddd60c9967699566c0b16f0 />
 	</SchemaImports>
 
 	<ConceptDefinitions>

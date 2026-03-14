@@ -1,0 +1,907 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Semantic mathematical expressions for technical specifications. A content-oriented expression tree rich enough to emit MathML Content Markup or LaTeX at projection time. The machine understands the math, not just its presentation."
+	id=paperhat:domain:math-expression
+	namespace="math"
+	title="Math Expression Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
+
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:Expression
+			name="Expression"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Variable|Number|Operator|Apply|Relation|Equation|Integral|Derivative|Summation|Limit|Series|Matrix|Set|Piecewise|Expression" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MayBeEntity
+			id=paperhat:domain:math-expression:Variable
+			name="Variable"
+		>
+			<TraitRules>
+				<RequiresTrait name="symbol" />
+
+				<AllowsTrait name="key" />
+
+				<AllowsTrait name="variableType" />
+
+				<AllowsTrait name="unit" />
+
+				<AllowsTrait name="domain" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:Number
+			name="Number"
+		>
+			<TraitRules>
+				<RequiresTrait name="value" />
+
+				<AllowsTrait name="unit" />
+
+				<AllowsTrait name="base" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:Operator
+			name="Operator"
+		>
+			<TraitRules>
+				<RequiresTrait name="op">
+					<AllowedValues>
+						<EnumeratedConstraint set="MathOperator" />
+					</AllowedValues>
+				</RequiresTrait>
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:Apply
+			name="Apply"
+		>
+			<TraitRules>
+				<AllowsTrait name="function" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Operator|Variable|Number|Apply|Relation|Expression" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:Relation
+			name="Relation"
+		>
+			<TraitRules>
+				<RequiresTrait name="relationType">
+					<AllowedValues>
+						<EnumeratedConstraint set="MathRelation" />
+					</AllowedValues>
+				</RequiresTrait>
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Variable|Number|Apply|Expression" min=2 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MayBeEntity
+			id=paperhat:domain:math-expression:Equation
+			name="Equation"
+		>
+			<TraitRules>
+				<AllowsTrait name="key" />
+
+				<AllowsTrait name="label" />
+
+				<AllowsTrait name="equationType">
+					<AllowedValues>
+						<EnumeratedConstraint set="EquationType" />
+					</AllowedValues>
+				</AllowsTrait>
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Relation|Apply|Expression" min=1 />
+
+				<AllowsChildConcept conceptSelector="desc:Description" />
+
+				<AllowsChildConcept conceptSelector="Condition" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:Integral
+			name="Integral"
+		>
+			<TraitRules>
+				<AllowsTrait name="integralType">
+					<AllowedValues>
+						<EnumeratedConstraint set="IntegralType" />
+					</AllowedValues>
+				</AllowsTrait>
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Integrand" min=1 max=1 />
+
+				<RequiresChildConcept conceptSelector="DifferentialVariable" min=1 max=1 />
+
+				<AllowsChildConcept conceptSelector="LowerBound" />
+
+				<AllowsChildConcept conceptSelector="UpperBound" />
+
+				<AllowsChildConcept conceptSelector="IntegrationDomain" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:Integrand
+			name="Integrand"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Variable|Number|Apply|Expression" min=1 max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:DifferentialVariable
+			name="DifferentialVariable"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Variable" min=1 max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:Derivative
+			name="Derivative"
+		>
+			<TraitRules>
+				<AllowsTrait name="order" />
+
+				<AllowsTrait name="derivativeType">
+					<AllowedValues>
+						<EnumeratedConstraint set="DerivativeType" />
+					</AllowedValues>
+				</AllowsTrait>
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Operand" min=1 max=1 />
+
+				<RequiresChildConcept conceptSelector="DifferentialVariable" min=1 />
+
+				<AllowsChildConcept conceptSelector="EvaluationPoint" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:Summation
+			name="Summation"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Operand" min=1 max=1 />
+
+				<RequiresChildConcept conceptSelector="IndexVariable" min=1 max=1 />
+
+				<AllowsChildConcept conceptSelector="LowerBound" />
+
+				<AllowsChildConcept conceptSelector="UpperBound" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:Limit
+			name="Limit"
+		>
+			<TraitRules>
+				<AllowsTrait name="direction">
+					<AllowedValues>
+						<EnumeratedConstraint set="LimitDirection" />
+					</AllowedValues>
+				</AllowsTrait>
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Operand" min=1 max=1 />
+
+				<RequiresChildConcept conceptSelector="IndexVariable" min=1 max=1 />
+
+				<RequiresChildConcept conceptSelector="ApproachesValue" min=1 max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:Series
+			name="Series"
+		>
+			<TraitRules>
+				<AllowsTrait name="seriesType">
+					<AllowedValues>
+						<EnumeratedConstraint set="SeriesType" />
+					</AllowedValues>
+				</AllowsTrait>
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Operand" min=1 max=1 />
+
+				<RequiresChildConcept conceptSelector="IndexVariable" min=1 max=1 />
+
+				<AllowsChildConcept conceptSelector="LowerBound" />
+
+				<AllowsChildConcept conceptSelector="UpperBound" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:Matrix
+			name="Matrix"
+		>
+			<TraitRules>
+				<AllowsTrait name="rows" />
+
+				<AllowsTrait name="cols" />
+
+				<AllowsTrait name="matrixType">
+					<AllowedValues>
+						<EnumeratedConstraint set="MatrixType" />
+					</AllowedValues>
+				</AllowsTrait>
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="MatrixRow" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:MatrixRow
+			name="MatrixRow"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Variable|Number|Apply|Expression" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:Set
+			name="Set"
+		>
+			<TraitRules>
+				<AllowsTrait name="setType">
+					<AllowedValues>
+						<EnumeratedConstraint set="SetType" />
+					</AllowedValues>
+				</AllowsTrait>
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Variable|Number|Apply|Expression" />
+
+				<AllowsChildConcept conceptSelector="Condition" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Unordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:Piecewise
+			name="Piecewise"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="PiecewiseCase" min=1 />
+
+				<AllowsChildConcept conceptSelector="OtherwiseCase" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:PiecewiseCase
+			name="PiecewiseCase"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Operand" min=1 max=1 />
+
+				<RequiresChildConcept conceptSelector="Condition" min=1 max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:OtherwiseCase
+			name="OtherwiseCase"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Operand" min=1 max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:Operand
+			name="Operand"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Variable|Number|Apply|Expression" min=1 max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:Condition
+			name="Condition"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Relation|Apply|Expression" min=1 max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:IndexVariable
+			name="IndexVariable"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Variable" min=1 max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:LowerBound
+			name="LowerBound"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Variable|Number|Apply|Expression" min=1 max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:UpperBound
+			name="UpperBound"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Variable|Number|Apply|Expression" min=1 max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:ApproachesValue
+			name="ApproachesValue"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Variable|Number|Apply|Expression" min=1 max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:EvaluationPoint
+			name="EvaluationPoint"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Variable|Number|Apply|Expression" min=1 max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:IntegrationDomain
+			name="IntegrationDomain"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Set|Variable|Expression" min=1 max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:math-expression:MathBlock
+			name="MathBlock"
+		>
+			<TraitRules>
+				<AllowsTrait name="key" />
+
+				<AllowsTrait name="label" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Equation|Expression|Apply|Relation" min=1 />
+
+				<AllowsChildConcept conceptSelector="desc:Description" />
+
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:math-expression:trait:key
+			name="key"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:math-expression:trait:symbol
+			name="symbol"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:math-expression:trait:value
+			name="value"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:math-expression:trait:unit
+			name="unit"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:math-expression:trait:variableType
+			name="variableType"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:math-expression:trait:domain
+			name="domain"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:math-expression:trait:op
+			name="op"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:math-expression:trait:function
+			name="function"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:math-expression:trait:relationType
+			name="relationType"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:math-expression:trait:equationType
+			name="equationType"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:math-expression:trait:label
+			name="label"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=paperhat:domain:math-expression:trait:order
+			name="order"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:math-expression:trait:derivativeType
+			name="derivativeType"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:math-expression:trait:integralType
+			name="integralType"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:math-expression:trait:direction
+			name="direction"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:math-expression:trait:seriesType
+			name="seriesType"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=paperhat:domain:math-expression:trait:rows
+			name="rows"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=paperhat:domain:math-expression:trait:cols
+			name="cols"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:math-expression:trait:matrixType
+			name="matrixType"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:math-expression:trait:setType
+			name="setType"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=paperhat:domain:math-expression:trait:base
+			name="base"
+		/>
+	</TraitDefinitions>
+
+	<EnumeratedValueSets>
+		<EnumeratedValueSet id=paperhat:domain:math-expression:set:MathOperator name="MathOperator">
+			<Member value="Plus" />
+
+			<Member value="Minus" />
+
+			<Member value="Times" />
+
+			<Member value="Divide" />
+
+			<Member value="Power" />
+
+			<Member value="Root" />
+
+			<Member value="Modulo" />
+
+			<Member value="Factorial" />
+
+			<Member value="Negate" />
+
+			<Member value="Abs" />
+
+			<Member value="Floor" />
+
+			<Member value="Ceiling" />
+
+			<Member value="Log" />
+
+			<Member value="Ln" />
+
+			<Member value="Exp" />
+
+			<Member value="Sin" />
+
+			<Member value="Cos" />
+
+			<Member value="Tan" />
+
+			<Member value="Min" />
+
+			<Member value="Max" />
+
+			<Member value="Gcd" />
+
+			<Member value="Lcm" />
+
+			<Member value="Union" />
+
+			<Member value="Intersection" />
+
+			<Member value="SetDifference" />
+
+			<Member value="CartesianProduct" />
+
+			<Member value="Compose" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet id=paperhat:domain:math-expression:set:MathRelation name="MathRelation">
+			<Member value="Equals" />
+
+			<Member value="NotEquals" />
+
+			<Member value="LessThan" />
+
+			<Member value="GreaterThan" />
+
+			<Member value="LessOrEqual" />
+
+			<Member value="GreaterOrEqual" />
+
+			<Member value="Approximates" />
+
+			<Member value="ProportionalTo" />
+
+			<Member value="ElementOf" />
+
+			<Member value="NotElementOf" />
+
+			<Member value="SubsetOf" />
+
+			<Member value="SupersetOf" />
+
+			<Member value="ProperSubsetOf" />
+
+			<Member value="ProperSupersetOf" />
+
+			<Member value="Equivalent" />
+
+			<Member value="Congruent" />
+
+			<Member value="Implies" />
+
+			<Member value="Iff" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet id=paperhat:domain:math-expression:set:EquationType name="EquationType">
+			<Member value="Definition" />
+
+			<Member value="Identity" />
+
+			<Member value="Constraint" />
+
+			<Member value="Recurrence" />
+
+			<Member value="Differential" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet id=paperhat:domain:math-expression:set:DerivativeType name="DerivativeType">
+			<Member value="Ordinary" />
+
+			<Member value="Partial" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet id=paperhat:domain:math-expression:set:IntegralType name="IntegralType">
+			<Member value="Definite" />
+
+			<Member value="Indefinite" />
+
+			<Member value="Line" />
+
+			<Member value="Surface" />
+
+			<Member value="Volume" />
+
+			<Member value="Contour" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet id=paperhat:domain:math-expression:set:LimitDirection name="LimitDirection">
+			<Member value="FromLeft" />
+
+			<Member value="FromRight" />
+
+			<Member value="Both" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet id=paperhat:domain:math-expression:set:SeriesType name="SeriesType">
+			<Member value="Sum" />
+
+			<Member value="Product" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet id=paperhat:domain:math-expression:set:MatrixType name="MatrixType">
+			<Member value="Dense" />
+
+			<Member value="Diagonal" />
+
+			<Member value="Symmetric" />
+
+			<Member value="Identity" />
+
+			<Member value="Sparse" />
+
+			<Member value="UpperTriangular" />
+
+			<Member value="LowerTriangular" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet id=paperhat:domain:math-expression:set:SetType name="SetType">
+			<Member value="Enumerated" />
+
+			<Member value="BuilderNotation" />
+
+			<Member value="Interval" />
+		</EnumeratedValueSet>
+	</EnumeratedValueSets>
+</Schema>

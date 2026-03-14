@@ -1,6 +1,6 @@
 <LexisRepositoryManifest
 	author="Paperhat"
-	closureHash="061ab48c7773207564280357cb417ec6a40bdcd7d9919b5e4a056c260f1270c9"
+	closureHash="a8a524d43d14c5548dcba5f5b06b2bee04624681d3872197c986834575e32a74"
 	copyright="Copyright 2026 Paperhat"
 	description="Paperhat schema repository. Contains universal schema packages, behavior definitions, and reference vocabularies consumed by Paperhat systems."
 	license="Apache-2.0"
@@ -170,11 +170,7 @@
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-meta" packagePath="spec/1.0.0/schemas/domain/meta" />
 
-	<RepositoryPackageEntry packageFamily="assembly" packageName="paperhat-assembly-adaptive-plan-result" packagePath="spec/1.0.0/schemas/assembly/adaptive-plan-result" />
-
-	<RepositoryPackageEntry packageFamily="assembly" packageName="paperhat-assembly-stage-a-result" packagePath="spec/1.0.0/schemas/assembly/stage-a-result" />
-
-	<RepositoryPackageEntry packageFamily="assembly" packageName="paperhat-assembly-stage-b-result" packagePath="spec/1.0.0/schemas/assembly/stage-b-result" />
+	<RepositoryPackageEntry packageFamily="composition" packageName="paperhat-composition" packagePath="spec/1.0.0/schemas/composition" />
 
 	<RepositoryPackageEntry packageFamily="behavior" packageName="behavior-expression-schema" packagePath="spec/1.0.0/schemas/behavior/behavior-expression-schema" />
 

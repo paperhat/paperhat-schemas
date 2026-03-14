@@ -1,8 +1,8 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="c07c59921f5bc211f40b0763b74d9c2204c5060b967716eba14f1c6b1063d606"
+	closureHash="0012ccd0216403a2086df96c27daacfc90fdf736681ee7654da1280e02a98127"
 	copyright="Copyright 2026 Paperhat"
-	description="Temporal annotations for text spans: dates, times, datetimes, durations, and instants with formatting and internationalisation support."
+	description="Temporal annotations for text spans using the canonical Paperhat Temporal type family together with formatting and internationalisation support."
 	license="Apache-2.0"
 	packageName="paperhat-temporal"
 	packageVersion="1.0.0"

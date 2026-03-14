@@ -1,0 +1,43 @@
+<LocalizationBundle
+	schema=paperhat:domain:test-assertion
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="TestAssertion" label="Test Assertion" labelOther="Test Assertions" />
+
+	<ConceptLocalization identifier="Precondition" label="Precondition" labelOther="Preconditions" />
+
+	<ConceptLocalization identifier="ExpectedOutcome" label="Expected Outcome" labelOther="Expected Outcomes" />
+
+	<ConceptLocalization identifier="TestProcedure" label="Test Procedure" labelOther="Test Procedures" />
+
+	<ConceptLocalization identifier="TestSuite" label="Test Suite" labelOther="Test Suites" />
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		Stable lookup key for cross-referencing.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="requirementRef" label="Requirement Reference" labelOther="Requirement References">
+		Reference to the requirement entity this assertion verifies.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="title" label="Title" labelOther="Titles">
+		Human-readable title for the test assertion or suite.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="status" label="Status" labelOther="Statuses">
+		Current test execution status.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="testMethod" label="Test Method" labelOther="Test Methods">
+		How the assertion is verified.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="severity" label="Severity" labelOther="Severities">
+		Impact severity if the assertion fails.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="label" label="Label" labelOther="Labels">
+		Short display label for projection.
+	</TraitLocalization>
+</LocalizationBundle>

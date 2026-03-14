@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="8c5aeec044e36ce14daaf17eb2baa1e338586826da5413a6d1e6eb000455d3f1"
+	closureHash="fcd9f1c05ec37d053b783a20b6fb756f36e96e5c42d176d8d9304b8c2a1aed67"
 	copyright="Copyright 2026 Paperhat"
 	description="A biography document about a referenced entity, composed from metadata, ordered narrative content, and referenced annotations."
 	license="Apache-2.0"
@@ -12,13 +12,13 @@
 >
 	<PackageDependency
 		packageName="paperhat-document-metadata"
-		closureHash="b22b175328a5814c7026b94319964968c4a3f13f594ea2ff4e4b678e577b47bc"
+		closureHash="5ca4100c2fbf71d328baad520cefeb3ebbcb87826218b1f30107f2ae21e7460a"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-narrative"
-		closureHash="7032b0a7dd73d7cac4377da8b12e01ccb506aab3f07b38702964528c0b7d26bb"
+		closureHash="ec753407a2561dfd987c7a04a7e0f3d3b045ee2de618fa866a9028ded5d88bb4"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 

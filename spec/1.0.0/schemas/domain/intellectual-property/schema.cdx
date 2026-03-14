@@ -1,0 +1,413 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Intellectual property declarations for technical specifications. Covers copyright, trademarks, service marks, registered trademarks, patents with licensing commitments, and license grants."
+	id=paperhat:domain:intellectual-property
+	namespace="ip"
+	title="Intellectual Property Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
+
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:intellectual-property:Copyright
+			name="Copyright"
+		>
+			<TraitRules>
+				<RequiresTrait name="holder" />
+
+				<RequiresTrait name="year" />
+
+				<AllowsTrait name="yearEnd" />
+
+				<AllowsTrait name="jurisdiction" />
+
+				<AllowsTrait name="work" />
+
+				<AllowsTrait name="key" />
+
+				<AllowsTrait name="label" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:intellectual-property:Trademark
+			name="Trademark"
+		>
+			<TraitRules>
+				<RequiresTrait name="mark" />
+
+				<RequiresTrait name="owner" />
+
+				<AllowsTrait name="registrationNumber" />
+
+				<AllowsTrait name="niceClass" />
+
+				<AllowsTrait name="jurisdiction" />
+
+				<AllowsTrait name="key" />
+
+				<AllowsTrait name="label" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:intellectual-property:ServiceMark
+			name="ServiceMark"
+		>
+			<TraitRules>
+				<RequiresTrait name="mark" />
+
+				<RequiresTrait name="owner" />
+
+				<AllowsTrait name="registrationNumber" />
+
+				<AllowsTrait name="niceClass" />
+
+				<AllowsTrait name="jurisdiction" />
+
+				<AllowsTrait name="key" />
+
+				<AllowsTrait name="label" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:intellectual-property:RegisteredTrademark
+			name="RegisteredTrademark"
+		>
+			<TraitRules>
+				<RequiresTrait name="mark" />
+
+				<RequiresTrait name="owner" />
+
+				<RequiresTrait name="registrationNumber" />
+
+				<AllowsTrait name="niceClass" />
+
+				<AllowsTrait name="jurisdiction" />
+
+				<AllowsTrait name="key" />
+
+				<AllowsTrait name="label" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:intellectual-property:Patent
+			name="Patent"
+		>
+			<TraitRules>
+				<RequiresTrait name="patentNumber" />
+
+				<RequiresTrait name="holder" />
+
+				<AllowsTrait name="filingDate" />
+
+				<AllowsTrait name="grantDate" />
+
+				<AllowsTrait name="jurisdiction" />
+
+				<AllowsTrait name="licensingCommitment">
+					<AllowedValues>
+						<EnumeratedConstraint set="LicensingCommitment" />
+					</AllowedValues>
+				</AllowsTrait>
+
+				<AllowsTrait name="key" />
+
+				<AllowsTrait name="label" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:intellectual-property:LicenseGrant
+			name="LicenseGrant"
+		>
+			<TraitRules>
+				<RequiresTrait name="licensor" />
+
+				<RequiresTrait name="licenseType">
+					<AllowedValues>
+						<EnumeratedConstraint set="LicenseType" />
+					</AllowedValues>
+				</RequiresTrait>
+
+				<AllowsTrait name="licensee" />
+
+				<AllowsTrait name="scope" />
+
+				<AllowsTrait name="termsUri" />
+
+				<AllowsTrait name="spdxIdentifier" />
+
+				<AllowsTrait name="key" />
+
+				<AllowsTrait name="label" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:intellectual-property:IPNotice
+			name="IPNotice"
+		>
+			<TraitRules>
+				<AllowsTrait name="noticeTitle" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Copyright|Trademark|ServiceMark|RegisteredTrademark|Patent|LicenseGrant" min=1 />
+
+				<AllowsChildConcept conceptSelector="desc:Description" />
+
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:intellectual-property:trait:key
+			name="key"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:intellectual-property:trait:holder
+			name="holder"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:intellectual-property:trait:year
+			name="year"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:intellectual-property:trait:yearEnd
+			name="yearEnd"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:intellectual-property:trait:jurisdiction
+			name="jurisdiction"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:intellectual-property:trait:work
+			name="work"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:intellectual-property:trait:mark
+			name="mark"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:intellectual-property:trait:owner
+			name="owner"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:intellectual-property:trait:registrationNumber
+			name="registrationNumber"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:intellectual-property:trait:niceClass
+			name="niceClass"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:intellectual-property:trait:patentNumber
+			name="patentNumber"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:intellectual-property:trait:filingDate
+			name="filingDate"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:intellectual-property:trait:grantDate
+			name="grantDate"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:intellectual-property:trait:licensingCommitment
+			name="licensingCommitment"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:intellectual-property:trait:licensor
+			name="licensor"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:intellectual-property:trait:licensee
+			name="licensee"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:intellectual-property:trait:licenseType
+			name="licenseType"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:intellectual-property:trait:scope
+			name="scope"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:intellectual-property:trait:termsUri
+			name="termsUri"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:intellectual-property:trait:spdxIdentifier
+			name="spdxIdentifier"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:intellectual-property:trait:label
+			name="label"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:intellectual-property:trait:noticeTitle
+			name="noticeTitle"
+		/>
+	</TraitDefinitions>
+
+	<EnumeratedValueSets>
+		<EnumeratedValueSet id=paperhat:domain:intellectual-property:set:LicensingCommitment name="LicensingCommitment">
+			<Member value="RAND" />
+
+			<Member value="FRAND" />
+
+			<Member value="RoyaltyFree" />
+
+			<Member value="RANDRoyaltyFree" />
+
+			<Member value="Reciprocal" />
+
+			<Member value="Unencumbered" />
+
+			<Member value="Undeclared" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet id=paperhat:domain:intellectual-property:set:LicenseType name="LicenseType">
+			<Member value="OpenSource" />
+
+			<Member value="Proprietary" />
+
+			<Member value="CreativeCommons" />
+
+			<Member value="PublicDomain" />
+
+			<Member value="FOSS" />
+
+			<Member value="Permissive" />
+
+			<Member value="Copyleft" />
+
+			<Member value="Custom" />
+		</EnumeratedValueSet>
+	</EnumeratedValueSets>
+</Schema>

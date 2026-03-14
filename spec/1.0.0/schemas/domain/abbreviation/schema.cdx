@@ -1,0 +1,164 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Abbreviations, initialisms, and acronyms with their expansions. Three semantically distinct concept kinds covering all shortened-form conventions used in technical specifications."
+	id=paperhat:domain:abbreviation
+	namespace="abbr"
+	title="Abbreviation Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:abbreviation:Abbreviation
+			name="Abbreviation"
+		>
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="shortForm" />
+
+				<RequiresTrait name="expansion" />
+
+				<AllowsTrait name="label" />
+
+				<AllowsTrait name="language" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:abbreviation:Initialism
+			name="Initialism"
+		>
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="shortForm" />
+
+				<RequiresTrait name="expansion" />
+
+				<AllowsTrait name="label" />
+
+				<AllowsTrait name="language" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:abbreviation:Acronym
+			name="Acronym"
+		>
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="shortForm" />
+
+				<RequiresTrait name="expansion" />
+
+				<AllowsTrait name="pronunciation" />
+
+				<AllowsTrait name="label" />
+
+				<AllowsTrait name="language" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:abbreviation:AbbreviationList
+			name="AbbreviationList"
+		>
+			<TraitRules>
+				<AllowsTrait name="listTitle" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Abbreviation|Initialism|Acronym" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:abbreviation:trait:key
+			name="key"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:abbreviation:trait:shortForm
+			name="shortForm"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:abbreviation:trait:expansion
+			name="expansion"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:abbreviation:trait:pronunciation
+			name="pronunciation"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:abbreviation:trait:label
+			name="label"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:abbreviation:trait:language
+			name="language"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:abbreviation:trait:listTitle
+			name="listTitle"
+		/>
+	</TraitDefinitions>
+</Schema>

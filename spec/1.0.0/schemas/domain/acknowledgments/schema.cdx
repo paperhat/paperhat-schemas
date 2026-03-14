@@ -1,0 +1,203 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Structured acknowledgments for specifications. Defines participants with names, affiliations, roles, and optional contact information. Machine-readable contributor metadata for standards documents."
+	id=paperhat:domain:acknowledgments
+	namespace="ack"
+	title="Acknowledgments Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
+
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:acknowledgments:Acknowledgments
+			name="Acknowledgments"
+		>
+			<TraitRules>
+				<AllowsTrait name="title" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Participant" min=1 />
+
+				<AllowsChildConcept conceptSelector="ParticipantGroup" />
+
+				<AllowsChildConcept conceptSelector="desc:Description" />
+
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MayBeEntity
+			id=paperhat:domain:acknowledgments:Participant
+			name="Participant"
+		>
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<AllowsTrait name="affiliation" />
+
+				<AllowsTrait name="role">
+					<AllowedValues>
+						<EnumeratedConstraint set="ParticipantRole" />
+					</AllowedValues>
+				</AllowsTrait>
+
+				<AllowsTrait name="email" />
+
+				<AllowsTrait name="uri" />
+
+				<AllowsTrait name="key" />
+
+				<AllowsTrait name="label" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:acknowledgments:ParticipantGroup
+			name="ParticipantGroup"
+		>
+			<TraitRules>
+				<RequiresTrait name="groupName" />
+
+				<AllowsTrait name="groupRole">
+					<AllowedValues>
+						<EnumeratedConstraint set="ParticipantRole" />
+					</AllowedValues>
+				</AllowsTrait>
+
+				<AllowsTrait name="label" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Participant" min=1 />
+
+				<AllowsChildConcept conceptSelector="desc:Description" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:acknowledgments:trait:name
+			name="name"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:acknowledgments:trait:affiliation
+			name="affiliation"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:acknowledgments:trait:role
+			name="role"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:acknowledgments:trait:email
+			name="email"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:acknowledgments:trait:uri
+			name="uri"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:acknowledgments:trait:key
+			name="key"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:acknowledgments:trait:label
+			name="label"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:acknowledgments:trait:title
+			name="title"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:acknowledgments:trait:groupName
+			name="groupName"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:acknowledgments:trait:groupRole
+			name="groupRole"
+		/>
+	</TraitDefinitions>
+
+	<EnumeratedValueSets>
+		<EnumeratedValueSet id=paperhat:domain:acknowledgments:set:ParticipantRole name="ParticipantRole">
+			<Member value="Editor" />
+
+			<Member value="CoEditor" />
+
+			<Member value="Chair" />
+
+			<Member value="CoChair" />
+
+			<Member value="Contributor" />
+
+			<Member value="Reviewer" />
+
+			<Member value="BallotGroupMember" />
+
+			<Member value="Observer" />
+
+			<Member value="Secretary" />
+
+			<Member value="TechnicalContact" />
+
+			<Member value="ProjectLead" />
+
+			<Member value="FormerEditor" />
+
+			<Member value="Acknowledgee" />
+		</EnumeratedValueSet>
+	</EnumeratedValueSets>
+</Schema>

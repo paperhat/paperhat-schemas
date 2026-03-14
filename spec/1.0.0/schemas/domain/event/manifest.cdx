@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="11f9d64d5cf6748bc78c562ab96b9e6b95f15aeb90699504aa47e9a852a1854e"
+	closureHash="e1805c68b2627854fda8ef00b9e1df36e3b693ec7e6b0fb9752c29191522a649"
 	copyright="Copyright 2026 Paperhat"
 	description="An occurrence happening at a certain time and place, such as a concert, conference, lecture, festival, or community gathering."
 	license="Apache-2.0"

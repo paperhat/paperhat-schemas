@@ -17,6 +17,11 @@ Tokens use an underscore-delimited form derived from the canonical `Area/Locatio
 
 ## Scope
 
-This vocabulary includes a curated set of the most commonly used canonical zones. The full IANA database contains over 500 entries; this vocabulary covers the primary zones for all populated regions. It includes `$UTC` as the universal reference. It excludes alias identifiers, POSIX-style identifiers, and zones that differ only by archived rule sets.
+This vocabulary includes a curated set of commonly used IANA identifiers. It is
+not the full semantic domain of the Paperhat `Timezone` type; it is a schema
+vocabulary for enumerated-token use. It includes `$Etc_UTC` because
+`Etc/UTC` is an IANA identifier. It excludes alias identifiers, bare `UTC`,
+bare `Z`, numeric offsets, POSIX-style identifiers, and zones that differ only
+by archived rule sets.
 
 **End of IANA Time Zone Database Identifiers v1.0.0**

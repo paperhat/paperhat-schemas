@@ -3,7 +3,41 @@
 	schema=paperhat:domain:specification-foundation
 	schemaVersion="1.0.0"
 >
+	<ConceptLocalization identifier="Section" label="Section" labelOther="Sections" />
+
+	<ConceptLocalization identifier="Note" label="Note" labelOther="Notes" />
+
+	<ConceptLocalization identifier="SectionReference" label="Section Reference" labelOther="Section References" />
+
+	<ConceptLocalization identifier="ExternalReference" label="External Reference" labelOther="External References" />
+
+	<ConceptLocalization identifier="Rationale" label="Rationale" labelOther="Rationales" />
+
+	<ConceptLocalization identifier="RequirementSet" label="Requirement Set" labelOther="Requirement Sets" />
+
+	<ConceptLocalization identifier="TermBinding" label="Term Binding" labelOther="Term Bindings" />
+
+	<ConceptLocalization identifier="Issue" label="Issue" labelOther="Issues" />
+
+	<ConceptLocalization identifier="OpenQuestion" label="Open Question" labelOther="Open Questions" />
+
+	<TraitLocalization identifier="amends" label="Amends">
+		IRI of a specification that this specification amends without replacing.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="answer" label="Answer">
+		The answer to an open question once decided.
+	</TraitLocalization>
+
 	<TraitLocalization identifier="conformance" label="Conformance" />
+
+	<TraitLocalization identifier="deprecated" label="Deprecated">
+		Whether this item is deprecated and should no longer be relied upon.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="deprecatedSince" label="Deprecated Since">
+		The specification version at which this item was deprecated.
+	</TraitLocalization>
 
 	<TraitLocalization identifier="designation" label="Designation" />
 
@@ -15,15 +49,37 @@
 
 	<TraitLocalization identifier="label" label="Label" />
 
-	<TraitLocalization identifier="language" label="Language" />
-
 	<TraitLocalization identifier="locked" label="Locked" />
+
+	<TraitLocalization identifier="maturityLevel" label="Maturity Level">
+		The maturity stage of the specification within its standards track. Values are drawn from an external maturity vocabulary.
+	</TraitLocalization>
 
 	<TraitLocalization identifier="modality" label="Modality" />
 
 	<TraitLocalization identifier="normative" label="Normative" />
 
+	<TraitLocalization identifier="obsoletes" label="Obsoletes">
+		IRI of a specification that this specification renders obsolete. Stronger than supersedes: the target is no longer valid.
+	</TraitLocalization>
+
 	<TraitLocalization identifier="requirementId" label="Requirement Identifier" />
+
+	<TraitLocalization identifier="resolution" label="Resolution">
+		How an issue was resolved.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="source" label="Source">
+		Reference to the definition source, either an internal entity or an external IRI.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="status" label="Status">
+		The current status of a draft item.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="supersedes" label="Supersedes">
+		IRI of a specification that this specification supersedes. The target may still be valid for historical reference.
+	</TraitLocalization>
 
 	<TraitLocalization identifier="target" label="Target" />
 
@@ -35,19 +91,17 @@
 
 	<TraitLocalization identifier="version" label="Version" />
 
-	<TraitLocalization identifier="source" label="Source">
-		Reference to the definition source, either an internal entity or an external IRI.
-	</TraitLocalization>
+	<ConstraintLocalization
+		identifier="paperhat:domain:specification-foundation:section-reference-target-type"
+		label="Section reference target type"
+	>
+		A SectionReference target must resolve to a Section.
+	</ConstraintLocalization>
 
-	<TraitLocalization identifier="status" label="Status">
-		The current status of a draft item.
-	</TraitLocalization>
-
-	<TraitLocalization identifier="resolution" label="Resolution">
-		How an issue was resolved.
-	</TraitLocalization>
-
-	<TraitLocalization identifier="answer" label="Answer">
-		The answer to an open question once decided.
-	</TraitLocalization>
+	<ConstraintLocalization
+		identifier="paperhat:domain:specification-foundation:section-reference-must-resolve"
+		label="Section reference must resolve"
+	>
+		A SectionReference target must resolve to an existing entity.
+	</ConstraintLocalization>
 </LocalizationBundle>

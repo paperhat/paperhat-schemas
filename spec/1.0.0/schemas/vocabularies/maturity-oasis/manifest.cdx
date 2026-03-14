@@ -1,0 +1,12 @@
+<VocabularyPackageManifest
+	author="Paperhat"
+	closureHash="0000000000000000000000000000000000000000000000000000000000000000"
+	copyright="Copyright 2026 Paperhat"
+	description="OASIS specification maturity levels following the OASIS Standards Process."
+	license="Apache-2.0"
+	packageName="maturity-oasis"
+	packageVersion="1.0.0"
+	primaryDocument="vocabulary.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

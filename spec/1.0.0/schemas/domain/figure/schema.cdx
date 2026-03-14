@@ -3,15 +3,15 @@
 	compatibilityClass=$Initial
 	description="A figure containing one or more media references, with optional title and caption metadata."
 	id=paperhat:domain:figure
-	namespace=figure
+	namespace="figure"
 	title="Figure Schema"
-	version=1.0.0
+	version="1.0.0"
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=media reference=urn:cdx:sha256:756650982e04bd54efb9710a756c84b04ae15db9d7b119f016264240a35b8725 />
+		<SchemaImport namespace="media" reference=urn:cdx:sha256:756650982e04bd54efb9710a756c84b04ae15db9d7b119f016264240a35b8725 />
 
-		<SchemaImport namespace=text reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
 	</SchemaImports>
 
 	<ConceptDefinitions>
@@ -34,9 +34,9 @@
 			</ContentRules>
 
 			<ChildRules>
-				<AllowsChildConcept conceptSelector=text:Title max=1 />
+				<AllowsChildConcept conceptSelector="text:Title" max=1 />
 
-				<RequiresChildConcept conceptSelector=media:MediaReference min=1 />
+				<RequiresChildConcept conceptSelector="media:MediaReference" min=1 />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />

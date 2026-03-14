@@ -9,19 +9,19 @@
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=person reference=urn:cdx:sha256:f8dcd8d7f5c8142ceb4449ff9e769417a2726e4cf735b55dfd983cac3d8d30d0 />
+		<SchemaImport namespace="person" reference=urn:cdx:sha256:83caafa54bd0c990f7368ed964c673b1d379a594ab038795c243d4be7c86f000 />
 
-		<SchemaImport namespace=org reference=urn:cdx:sha256:1f4f12a3df499a8b9d76967bef5620e79dc3bb89644592b130f72107a6923617 />
+		<SchemaImport namespace="org" reference=urn:cdx:sha256:28dee680a33f91f7e2b1a4c85a16ad9088851f23d63353905284c1fcc8d99510 />
 
-		<SchemaImport namespace=ident reference=urn:cdx:sha256:5fafd42cd5ebaa41ecaf7b26d4ea2be9fb9c6a6c68c56ab3c8f2483fdbe1cf28 />
+		<SchemaImport namespace="ident" reference=urn:cdx:sha256:5fafd42cd5ebaa41ecaf7b26d4ea2be9fb9c6a6c68c56ab3c8f2483fdbe1cf28 />
 
-		<SchemaImport namespace=ref reference=urn:cdx:sha256:fbdf30cc77a348bc8ef500d860500457f7b636aff40e073645278a873425e0ae />
+		<SchemaImport namespace="ref" reference=urn:cdx:sha256:fbdf30cc77a348bc8ef500d860500457f7b636aff40e073645278a873425e0ae />
 	</SchemaImports>
 
 	<ConceptDefinitions>
 		<ConceptDefinition
 			conceptKind=$Semantic
-			entityEligibility=$MayBeEntity
+			entityEligibility=$MustBeEntity
 			id=paperhat:domain:citation:Citation
 			name="Citation"
 		>

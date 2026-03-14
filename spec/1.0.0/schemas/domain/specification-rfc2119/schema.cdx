@@ -1,33 +1,15 @@
 <Schema
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
-	description="RFC 2119 specification schema for authoring formal specifications in Codex. Supports the full RFC 2119 requirement modality keyword set: Must, MustNot, Shall, ShallNot, Should, ShouldNot, May, Required, Recommended, Optional."
+	description="RFC 2119 specification schema for authoring formal specifications in Codex. Supports the full RFC 2119 requirement modality keyword set. All shared concepts, traits, and constraints are provided by the specification foundation."
 	id=paperhat:domain:specification-rfc2119
-	namespace=spec2119
+	namespace="spec2119"
 	title="Specification Schema (RFC 2119)"
-	version=1.0.0
+	version="1.0.0"
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=admonition reference=urn:cdx:sha256:1568c1b800c406511d6888d9a46759e5b53e4e4f227c9550df85fa8a65d670b8 />
-
-		<SchemaImport namespace=code reference=urn:cdx:sha256:f676d06cf578a8fa377b961fcd4d8e5676f8def5ba6b298eaee92f0d3614a890 />
-
-		<SchemaImport namespace=example reference=urn:cdx:sha256:70c45e812f5306b69dad783ea4c84546284dfaeeba6f1342918372e385da0cea />
-
-		<SchemaImport namespace=figure reference=urn:cdx:sha256:26827833a1a91e8db46d3837d021eb0cd2f52c46c8072b2ae687fc7748456be3 />
-
-		<SchemaImport namespace=list reference=urn:cdx:sha256:9f94a5780eeab62a7ff88d7a3950e5436dbc906f0f1460f93c47fcc409d7730d />
-
-		<SchemaImport namespace=specbase reference=urn:cdx:sha256:10cc30a2245e8480bb2564cba4c09c243f84285d5219b06a1899272917da2caa />
-
-		<SchemaImport namespace=relation reference=urn:cdx:sha256:9dad41bb31175f1e64ba50c8864ee04f6da4d6486e6d08a0a5f934fffe84f7ff />
-
-		<SchemaImport namespace=text reference=urn:cdx:sha256:d2699fd88c3d11900f8e53067f6311da01343894717945dce051f17c6616ac4f />
-
-		<SchemaImport namespace=cite reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
-
-		<SchemaImport namespace=glossary reference=urn:cdx:sha256:6b96358486e600af7c9fc2840b1b448d11354b4e3a40c2f0eb3ca552e7fba59c />
+		<SchemaImport namespace="specbase" reference=urn:cdx:sha256:9cb044c6d697aea4d5f8dba56da013f2cfe1f4a2e728ae31553131e1970da58d />
 	</SchemaImports>
 
 	<ConceptDefinitions>
@@ -44,9 +26,9 @@
 
 				<RequiresTrait name="specbase:normative" />
 
-				<RequiresTrait name="title" />
+				<RequiresTrait name="specbase:title" />
 
-				<RequiresTrait name="version" />
+				<RequiresTrait name="specbase:version" />
 			</TraitRules>
 
 			<ContentRules>
@@ -54,84 +36,7 @@
 			</ContentRules>
 
 			<ChildRules>
-				<RequiresChildConcept conceptSelector=Section min=1 />
-			</ChildRules>
-
-			<CollectionRules allowsDuplicates=true ordering=$Ordered />
-		</ConceptDefinition>
-
-		<ConceptDefinition
-			conceptKind=$Semantic
-			entityEligibility=$MustBeEntity
-			id=paperhat:domain:specification-rfc2119:Section
-			name="Section"
-		>
-			<TraitRules>
-				<RequiresTrait name="key" />
-
-				<RequiresTrait name="specbase:conformance" />
-
-				<RequiresTrait name="title" />
-
-				<AllowsTrait name="specbase:designation" />
-
-				<AllowsTrait name="specbase:division" />
-			</TraitRules>
-
-			<ContentRules>
-				<ForbidsContent />
-			</ContentRules>
-
-			<ChildRules>
-				<AllowsChildConcept conceptSelector=text:Paragraph />
-
-				<AllowsChildConcept conceptSelector=list:OrderedList />
-
-				<AllowsChildConcept conceptSelector=list:UnorderedList />
-
-				<AllowsChildConcept conceptSelector=code:CodeBlock />
-
-				<AllowsChildConcept conceptSelector=Section />
-
-				<AllowsChildConcept conceptSelector=Requirement />
-
-				<AllowsChildConcept conceptSelector=glossary:GlossaryEntry />
-
-				<AllowsChildConcept conceptSelector=Note />
-
-				<AllowsChildConcept conceptSelector=SectionReference />
-
-				<AllowsChildConcept conceptSelector=ExternalReference />
-
-				<AllowsChildConcept conceptSelector=figure:Figure />
-
-				<AllowsChildConcept conceptSelector=example:Example />
-
-				<AllowsChildConcept conceptSelector=relation:RelationType />
-
-				<AllowsChildConcept conceptSelector=relation:RelationInstance />
-
-				<AllowsChildConcept conceptSelector=admonition:Warning />
-
-				<AllowsChildConcept conceptSelector=admonition:Danger />
-
-				<AllowsChildConcept conceptSelector=admonition:Critical />
-
-				<AllowsChildConcept conceptSelector=admonition:Notice />
-
-				<AllowsChildConcept conceptSelector=admonition:Informational />
-
-				<AllowsChildConcept conceptSelector=admonition:Tip />
-
-				<AllowsChildConcept conceptSelector=RequirementSet />
-
-				<AllowsChildConcept conceptSelector=TermBinding />
-
-				<AllowsChildConcept conceptSelector=Issue />
-
-				<AllowsChildConcept conceptSelector=OpenQuestion />
-
-				<AllowsChildConcept conceptSelector=cite:Citation />
+				<RequiresChildConcept conceptSelector="specbase:Section" min=1 />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
@@ -146,193 +51,34 @@
 			<TraitRules>
 				<RequiresTrait name="specbase:modality" />
 
-				<AllowsTrait name="key" />
+				<AllowsTrait name="specbase:key" />
 
 				<AllowsTrait name="specbase:requirementId" />
+
+				<AllowsTrait name="specbase:deprecated" />
+
+				<AllowsTrait name="specbase:deprecatedSince" />
 			</TraitRules>
 
 			<ContentRules>
 				<RequiresContent whitespaceMode=$Flow />
-			</ContentRules>
-		</ConceptDefinition>
-
-		<ConceptDefinition
-			conceptKind=$Semantic
-			entityEligibility=$MustNotBeEntity
-			id=paperhat:domain:specification-rfc2119:Note
-			name="Note"
-		>
-			<ContentRules>
-				<RequiresContent whitespaceMode=$Flow />
-			</ContentRules>
-		</ConceptDefinition>
-
-		<ConceptDefinition
-			conceptKind=$Semantic
-			entityEligibility=$MustNotBeEntity
-			id=paperhat:domain:specification-rfc2119:SectionReference
-			name="SectionReference"
-		>
-			<TraitRules>
-				<RequiresTrait name="target" />
-
-				<AllowsTrait name="label" />
-			</TraitRules>
-
-			<ContentRules>
-				<ForbidsContent />
-			</ContentRules>
-		</ConceptDefinition>
-
-		<ConceptDefinition
-			conceptKind=$Semantic
-			entityEligibility=$MustNotBeEntity
-			id=paperhat:domain:specification-rfc2119:ExternalReference
-			name="ExternalReference"
-		>
-			<TraitRules>
-				<RequiresTrait name="specbase:uri" />
-
-				<AllowsTrait name="label" />
-			</TraitRules>
-
-			<ContentRules>
-				<ForbidsContent />
-			</ContentRules>
-		</ConceptDefinition>
-
-		<ConceptDefinition
-			conceptKind=$Semantic
-			entityEligibility=$MustNotBeEntity
-			id=paperhat:domain:specification-rfc2119:RequirementSet
-			name="RequirementSet"
-		>
-			<TraitRules>
-				<RequiresTrait name="title" />
-
-				<AllowsTrait name="key" />
-			</TraitRules>
-
-			<ContentRules>
-				<ForbidsContent />
 			</ContentRules>
 
 			<ChildRules>
-				<RequiresChildConcept conceptSelector=Requirement min=1 />
+				<AllowsChildConcept conceptSelector="specbase:Rationale" />
+
+				<AllowsChildConcept conceptSelector="specbase:Note" />
+
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
+
+				<AllowsChildConcept conceptSelector="list:OrderedList" />
+
+				<AllowsChildConcept conceptSelector="list:UnorderedList" />
+
+				<AllowsChildConcept conceptSelector="cite:Citation" />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
 		</ConceptDefinition>
-
-		<ConceptDefinition
-			conceptKind=$Semantic
-			entityEligibility=$MustNotBeEntity
-			id=paperhat:domain:specification-rfc2119:TermBinding
-			name="TermBinding"
-		>
-			<TraitRules>
-				<RequiresTrait name="specbase:term" />
-
-				<RequiresTrait name="specbase:source" />
-
-				<AllowsTrait name="label" />
-			</TraitRules>
-
-			<ContentRules>
-				<ForbidsContent />
-			</ContentRules>
-		</ConceptDefinition>
-
-		<ConceptDefinition
-			conceptKind=$Semantic
-			entityEligibility=$MayBeEntity
-			id=paperhat:domain:specification-rfc2119:Issue
-			name="Issue"
-		>
-			<TraitRules>
-				<RequiresTrait name="key" />
-
-				<AllowsTrait name="specbase:status">
-					<AllowedValues>
-						<EnumeratedConstraint set=IssueStatus />
-					</AllowedValues>
-				</AllowsTrait>
-
-				<AllowsTrait name="specbase:resolution" />
-			</TraitRules>
-
-			<ContentRules>
-				<RequiresContent whitespaceMode=$Flow />
-			</ContentRules>
-		</ConceptDefinition>
-
-		<ConceptDefinition
-			conceptKind=$Semantic
-			entityEligibility=$MayBeEntity
-			id=paperhat:domain:specification-rfc2119:OpenQuestion
-			name="OpenQuestion"
-		>
-			<TraitRules>
-				<RequiresTrait name="key" />
-
-				<AllowsTrait name="specbase:status">
-					<AllowedValues>
-						<EnumeratedConstraint set=OpenQuestionStatus />
-					</AllowedValues>
-				</AllowsTrait>
-
-				<AllowsTrait name="specbase:answer" />
-			</TraitRules>
-
-			<ContentRules>
-				<RequiresContent whitespaceMode=$Flow />
-			</ContentRules>
-		</ConceptDefinition>
 	</ConceptDefinitions>
-
-	<EnumeratedValueSets>
-		<EnumeratedValueSet id=paperhat:domain:specification-rfc2119:set:IssueStatus name=IssueStatus>
-			<Member value=Open />
-
-			<Member value=Resolved />
-
-			<Member value=Deferred />
-		</EnumeratedValueSet>
-
-		<EnumeratedValueSet id=paperhat:domain:specification-rfc2119:set:OpenQuestionStatus name=OpenQuestionStatus>
-			<Member value=Open />
-
-			<Member value=Answered />
-
-			<Member value=Deferred />
-		</EnumeratedValueSet>
-	</EnumeratedValueSets>
-
-	<ConstraintDefinitions>
-		<ConstraintDefinition
-			id=paperhat:domain:specification-rfc2119:section-reference-target-type
-			title="SectionReference target must resolve to a Section"
-		>
-			<Targets>
-				<TargetConcept conceptSelector=SectionReference />
-			</Targets>
-
-			<Rule>
-				<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector=Section />
-			</Rule>
-		</ConstraintDefinition>
-
-		<ConstraintDefinition
-			id=paperhat:domain:specification-rfc2119:section-reference-must-resolve
-			title="SectionReference target must resolve"
-		>
-			<Targets>
-				<TargetConcept conceptSelector=SectionReference />
-			</Targets>
-
-			<Rule>
-				<ReferenceConstraint type=$ReferenceMustResolve />
-			</Rule>
-		</ConstraintDefinition>
-	</ConstraintDefinitions>
 </Schema>

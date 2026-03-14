@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="33582d05d2637b400878365ff344f88b06103418bbd407bc377ffddee983d32f"
+	closureHash="0875ebc2b864ea7302583f1c5bb5535aefa2c2bff20dc888e3ca9fbdd25e2e27"
 	copyright="Copyright 2026 Paperhat"
 	description="A structured heading block containing title, subtitle, teaser, and difficulty metadata."
 	license="Apache-2.0"

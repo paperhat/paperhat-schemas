@@ -1,0 +1,53 @@
+<LocalizationBundle
+	schema=paperhat:domain:symbol
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Symbol" label="Symbol" labelOther="Symbols" />
+
+	<ConceptLocalization identifier="MathSymbol" label="Math Symbol" labelOther="Math Symbols" />
+
+	<ConceptLocalization identifier="Emoji" label="Emoji" labelOther="Emoji" />
+
+	<ConceptLocalization identifier="SymbolTable" label="Symbol Table" labelOther="Symbol Tables" />
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		Stable lookup key for cross-referencing.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="glyph" label="Glyph" labelOther="Glyphs">
+		The visual representation of the symbol as a text character or sequence.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="symbolName" label="Symbol Name" labelOther="Symbol Names">
+		The canonical name of the symbol (e.g. "section sign", "Greek small letter tau").
+	</TraitLocalization>
+
+	<TraitLocalization identifier="codepoint" label="Codepoint" labelOther="Codepoints">
+		Unicode codepoint in U+ notation (e.g. "U+00A7" for §, "U+03C4" for τ).
+	</TraitLocalization>
+
+	<TraitLocalization identifier="meaning" label="Meaning" labelOther="Meanings">
+		What the math symbol denotes in context (e.g. "round-trip latency in milliseconds").
+	</TraitLocalization>
+
+	<TraitLocalization identifier="unit" label="Unit" labelOther="Units">
+		The unit of measurement associated with a math symbol, if applicable.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="domain" label="Domain" labelOther="Domains">
+		The mathematical or scientific domain where the symbol is used (e.g. "set theory", "thermodynamics").
+	</TraitLocalization>
+
+	<TraitLocalization identifier="culturalContext" label="Cultural Context" labelOther="Cultural Contexts">
+		Cultural or contextual notes on emoji meaning and usage.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="label" label="Label" labelOther="Labels">
+		Short display label for projection.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="tableTitle" label="Table Title" labelOther="Table Titles">
+		Optional title for a symbol table container.
+	</TraitLocalization>
+</LocalizationBundle>

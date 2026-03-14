@@ -1,0 +1,12 @@
+<VocabularyPackageManifest
+	author="Paperhat"
+	closureHash="0000000000000000000000000000000000000000000000000000000000000000"
+	copyright="Copyright 2026 Paperhat"
+	description="IETF specification maturity levels following the Internet Standards Process (RFC 2026, updated by RFC 6410 and RFC 9280)."
+	license="Apache-2.0"
+	packageName="maturity-ietf"
+	packageVersion="1.0.0"
+	primaryDocument="vocabulary.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

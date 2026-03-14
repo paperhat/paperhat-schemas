@@ -9,23 +9,23 @@
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace=desc reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
 
-		<SchemaImport namespace=contact reference=urn:cdx:sha256:0623b3bc48dfd1632919af1704725cc24b3e1ead90f4ce3a59117485e64335eb />
+		<SchemaImport namespace="contact" reference=urn:cdx:sha256:0623b3bc48dfd1632919af1704725cc24b3e1ead90f4ce3a59117485e64335eb />
 
-		<SchemaImport namespace=ident reference=urn:cdx:sha256:5fafd42cd5ebaa41ecaf7b26d4ea2be9fb9c6a6c68c56ab3c8f2483fdbe1cf28 />
+		<SchemaImport namespace="ident" reference=urn:cdx:sha256:5fafd42cd5ebaa41ecaf7b26d4ea2be9fb9c6a6c68c56ab3c8f2483fdbe1cf28 />
 
-		<SchemaImport namespace=loc reference=urn:cdx:sha256:69ebdc66422b5962b2521ef49b174550c9b45c369ddd60c9967699566c0b16f0 />
+		<SchemaImport namespace="loc" reference=urn:cdx:sha256:69ebdc66422b5962b2521ef49b174550c9b45c369ddd60c9967699566c0b16f0 />
 
-		<SchemaImport namespace=tags reference=urn:cdx:sha256:af138b9c8bbc16117f2d8553c482253f9144721ab3a9d411992a2035e2094206 />
+		<SchemaImport namespace="tags" reference=urn:cdx:sha256:af138b9c8bbc16117f2d8553c482253f9144721ab3a9d411992a2035e2094206 />
 
-		<SchemaImport namespace=work reference=urn:cdx:sha256:7d8e5217434f3f577ec3d65a10d50846c5140722b229029517aba371c6aeda67 />
+		<SchemaImport namespace="work" reference=urn:cdx:sha256:7d8e5217434f3f577ec3d65a10d50846c5140722b229029517aba371c6aeda67 />
 
-		<SchemaImport namespace=schedule reference=urn:cdx:sha256:65a8316825019873f3b83bf3474a06e4961cfa99335f691b924452bde0f0cbcc />
+		<SchemaImport namespace="schedule" reference=urn:cdx:sha256:65a8316825019873f3b83bf3474a06e4961cfa99335f691b924452bde0f0cbcc />
 
-		<SchemaImport namespace=audience reference=urn:cdx:sha256:eeb4cfc2a3574d6de35e3cfa7efd3daa750ffacc91c57ca046b9d1a2da903c43 />
+		<SchemaImport namespace="audience" reference=urn:cdx:sha256:eeb4cfc2a3574d6de35e3cfa7efd3daa750ffacc91c57ca046b9d1a2da903c43 />
 
-		<SchemaImport namespace=a11y reference=urn:cdx:sha256:0d010c95b51336324799dad926c6ae6ae90f12fb1b1b198105508c6cbb2cfed3 />
+		<SchemaImport namespace="a11y" reference=urn:cdx:sha256:0d010c95b51336324799dad926c6ae6ae90f12fb1b1b198105508c6cbb2cfed3 />
 	</SchemaImports>
 
 	<ConceptDefinitions>

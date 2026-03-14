@@ -11,7 +11,7 @@
 	<ConceptDefinitions>
 		<ConceptDefinition
 			conceptKind=$Semantic
-			entityEligibility=$MayBeEntity
+			entityEligibility=$MustNotBeEntity
 			id=paperhat:domain:clause:Clause
 			name="Clause"
 		>

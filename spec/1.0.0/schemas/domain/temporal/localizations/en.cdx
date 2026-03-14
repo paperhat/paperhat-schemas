@@ -4,23 +4,20 @@
 	language=$En
 >
 	<ConceptLocalization identifier="TemporalAnnotations" label="Temporal Annotations" />
-
-	<ConceptLocalization identifier="PlainDate" label="Date" labelOther="Dates" />
-
-	<ConceptLocalization identifier="PlainTime" label="Time" labelOther="Times" />
-
-	<ConceptLocalization identifier="PlainDateTime" label="Date and Time" labelOther="Dates and Times" />
-
-	<ConceptLocalization identifier="PlainYearMonth" label="Year and Month" />
-
-	<ConceptLocalization identifier="PlainMonthDay" label="Month and Day" />
-
+	<ConceptLocalization identifier="Date" label="Date" labelOther="Dates" />
+	<ConceptLocalization identifier="HourMinute" label="Hour and Minute" />
+	<ConceptLocalization identifier="Time" label="Time" labelOther="Times" />
+	<ConceptLocalization identifier="DateTime" label="Date and Time" labelOther="Dates and Times" />
+	<ConceptLocalization identifier="YearMonth" label="Year and Month" />
+	<ConceptLocalization identifier="MonthDay" label="Month and Day" />
 	<ConceptLocalization identifier="YearWeek" label="Year and Week" />
-
+	<ConceptLocalization identifier="YearWeekWeekday" label="Year, Week, and Weekday" />
+	<ConceptLocalization identifier="DateWithTimezone" label="Date with Timezone" />
+	<ConceptLocalization identifier="TimeWithTimezone" label="Time with Timezone" />
+	<ConceptLocalization identifier="DateTimeWithTimezone" label="Date and Time with Timezone" />
+	<ConceptLocalization identifier="TimeWithOffset" label="Time with Offset" />
+	<ConceptLocalization identifier="DateTimeWithOffset" label="Date and Time with Offset" />
 	<ConceptLocalization identifier="Instant" label="Instant" labelOther="Instants" />
-
-	<ConceptLocalization identifier="ZonedDateTime" label="Zoned Date and Time" />
-
 	<ConceptLocalization identifier="Duration" label="Duration" labelOther="Durations" />
 
 	<TraitLocalization identifier="key" label="Key" labelOther="Keys">

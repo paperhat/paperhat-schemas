@@ -1,23 +1,366 @@
 <Schema
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
-	description="Shared foundation traits and enumerated value sets for specification schemas. Provides the common trait vocabulary and value sets consumed by both the strict (Must/MustNot) and loose (RFC 2119) specification schema variants."
+	description="Shared foundation for specification schemas. Provides common traits, enumerated value sets, and all concepts that are identical across specification variants. Variant schemas import this foundation and define only their own Specification root and Requirement concept."
 	id=paperhat:domain:specification-foundation
-	namespace=specbase
+	namespace="specbase"
 	title="Specification Foundation Schema"
-	version=1.0.0
+	version="1.0.0"
 	versionScheme=$Semver
 >
+	<SchemaImports>
+		<SchemaImport namespace="admonition" reference=urn:cdx:sha256:f676d06cf578a8fa377b961fcd4d8e5676f8def5ba6b298eaee92f0d3614a890 />
+
+		<SchemaImport namespace="cite" reference=urn:cdx:sha256:91b7ebc87b875e8a237464ed2b9074b72f2bd8e3e4aacb060d0210e37d6873fa />
+
+		<SchemaImport namespace="code" reference=urn:cdx:sha256:70c45e812f5306b69dad783ea4c84546284dfaeeba6f1342918372e385da0cea />
+
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
+
+		<SchemaImport namespace="docmeta" reference=urn:cdx:sha256:0ffeb450318da8f137940409b424d0c77a821386985526ee9f0a0f50bfc61f81 />
+
+		<SchemaImport namespace="example" reference=urn:cdx:sha256:5b51537d738b32a31eb1231aa3ad42cd661e4c0c9c7bee7d9bdc8c9576c1b1d8 />
+
+		<SchemaImport namespace="figure" reference=urn:cdx:sha256:956be71cfea89505c8bee829910938f85dd2ec1c47a3056b603a57adc8b491ae />
+
+		<SchemaImport namespace="glossary" reference=urn:cdx:sha256:6b96358486e600af7c9fc2840b1b448d11354b4e3a40c2f0eb3ca552e7fba59c />
+
+		<SchemaImport namespace="list" reference=urn:cdx:sha256:10cc30a2245e8480bb2564cba4c09c243f84285d5219b06a1899272917da2caa />
+
+		<SchemaImport namespace="procedure" reference=urn:cdx:sha256:bcbffc6137ed634d22326675903bc24c2ad1e4f8d2a948ac5b26324048e7f1f0 />
+
+		<SchemaImport namespace="relation" reference=urn:cdx:sha256:57e32c06b4570f54e7a1ef2fd62823c1b5345e9ffa92ba288541092ae4366a3c />
+
+		<SchemaImport namespace="summary" reference=urn:cdx:sha256:8ad50bcc27f33fbe714c7a9c32c12ef643a78ad193c5befc49ad223d03f9f2e1 />
+
+		<SchemaImport namespace="term" reference=urn:cdx:sha256:d1238116402919e9ea43e55229413ed596a830e0f8f44ac2878ac63e4430f5c1 />
+
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
+
+		<SchemaImport namespace="abbr" reference=urn:cdx:sha256:0000000000000000000000000000000000000000000000000000000000000000 />
+
+		<SchemaImport namespace="ack" reference=urn:cdx:sha256:0000000000000000000000000000000000000000000000000000000000000000 />
+
+		<SchemaImport namespace="conf" reference=urn:cdx:sha256:0000000000000000000000000000000000000000000000000000000000000000 />
+
+		<SchemaImport namespace="grammar" reference=urn:cdx:sha256:0000000000000000000000000000000000000000000000000000000000000000 />
+
+		<SchemaImport namespace="ip" reference=urn:cdx:sha256:0000000000000000000000000000000000000000000000000000000000000000 />
+
+		<SchemaImport namespace="isometa" reference=urn:cdx:sha256:0000000000000000000000000000000000000000000000000000000000000000 />
+
+		<SchemaImport namespace="math" reference=urn:cdx:sha256:0000000000000000000000000000000000000000000000000000000000000000 />
+
+		<SchemaImport namespace="revhist" reference=urn:cdx:sha256:0000000000000000000000000000000000000000000000000000000000000000 />
+
+		<SchemaImport namespace="sym" reference=urn:cdx:sha256:0000000000000000000000000000000000000000000000000000000000000000 />
+
+		<SchemaImport namespace="test" reference=urn:cdx:sha256:0000000000000000000000000000000000000000000000000000000000000000 />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:specification-foundation:Section
+			name="Section"
+		>
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="conformance" />
+
+				<RequiresTrait name="title" />
+
+				<AllowsTrait name="deprecated" />
+
+				<AllowsTrait name="deprecatedSince" />
+
+				<AllowsTrait name="designation" />
+
+				<AllowsTrait name="division" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
+
+				<AllowsChildConcept conceptSelector="list:OrderedList" />
+
+				<AllowsChildConcept conceptSelector="list:UnorderedList" />
+
+				<AllowsChildConcept conceptSelector="code:CodeBlock" />
+
+				<AllowsChildConcept conceptSelector="Section" />
+
+				<AllowsChildConcept conceptSelector="Requirement" />
+
+				<AllowsChildConcept conceptSelector="glossary:GlossaryEntry" />
+
+				<AllowsChildConcept conceptSelector="Note" />
+
+				<AllowsChildConcept conceptSelector="SectionReference" />
+
+				<AllowsChildConcept conceptSelector="ExternalReference" />
+
+				<AllowsChildConcept conceptSelector="figure:Figure" />
+
+				<AllowsChildConcept conceptSelector="example:Example" />
+
+				<AllowsChildConcept conceptSelector="relation:RelationType" />
+
+				<AllowsChildConcept conceptSelector="relation:RelationInstance" />
+
+				<AllowsChildConcept conceptSelector="admonition:Warning" />
+
+				<AllowsChildConcept conceptSelector="admonition:Danger" />
+
+				<AllowsChildConcept conceptSelector="admonition:Critical" />
+
+				<AllowsChildConcept conceptSelector="admonition:Notice" />
+
+				<AllowsChildConcept conceptSelector="admonition:Informational" />
+
+				<AllowsChildConcept conceptSelector="admonition:Tip" />
+
+				<AllowsChildConcept conceptSelector="RequirementSet" />
+
+				<AllowsChildConcept conceptSelector="TermBinding" />
+
+				<AllowsChildConcept conceptSelector="Issue" />
+
+				<AllowsChildConcept conceptSelector="OpenQuestion" />
+
+				<AllowsChildConcept conceptSelector="cite:Citation" />
+
+				<AllowsChildConcept conceptSelector="desc:Description" />
+
+				<AllowsChildConcept conceptSelector="docmeta:DocumentMetadata" />
+
+				<AllowsChildConcept conceptSelector="procedure:Procedure" />
+
+				<AllowsChildConcept conceptSelector="summary:Summary" />
+
+				<AllowsChildConcept conceptSelector="term:TermEntry" />
+
+				<AllowsChildConcept conceptSelector="abbr:AbbreviationList" />
+
+				<AllowsChildConcept conceptSelector="ack:Acknowledgments" />
+
+				<AllowsChildConcept conceptSelector="conf:ConformanceClause" />
+
+				<AllowsChildConcept conceptSelector="grammar:Grammar" />
+
+				<AllowsChildConcept conceptSelector="ip:IPNotice" />
+
+				<AllowsChildConcept conceptSelector="isometa:ISODocumentMetadata" />
+
+				<AllowsChildConcept conceptSelector="math:MathBlock" />
+
+				<AllowsChildConcept conceptSelector="revhist:RevisionHistory" />
+
+				<AllowsChildConcept conceptSelector="sym:SymbolTable" />
+
+				<AllowsChildConcept conceptSelector="test:TestSuite" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:specification-foundation:Note
+			name="Note"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:specification-foundation:SectionReference
+			name="SectionReference"
+		>
+			<TraitRules>
+				<RequiresTrait name="target" />
+
+				<AllowsTrait name="label" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:specification-foundation:ExternalReference
+			name="ExternalReference"
+		>
+			<TraitRules>
+				<RequiresTrait name="uri" />
+
+				<AllowsTrait name="label" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:specification-foundation:RequirementSet
+			name="RequirementSet"
+		>
+			<TraitRules>
+				<RequiresTrait name="title" />
+
+				<AllowsTrait name="key" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Requirement" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:specification-foundation:Rationale
+			name="Rationale"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="text:Paragraph" min=1 />
+
+				<AllowsChildConcept conceptSelector="list:OrderedList" />
+
+				<AllowsChildConcept conceptSelector="list:UnorderedList" />
+
+				<AllowsChildConcept conceptSelector="cite:Citation" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:specification-foundation:TermBinding
+			name="TermBinding"
+		>
+			<TraitRules>
+				<RequiresTrait name="term" />
+
+				<RequiresTrait name="source" />
+
+				<AllowsTrait name="label" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:specification-foundation:Issue
+			name="Issue"
+		>
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<AllowsTrait name="status">
+					<AllowedValues>
+						<EnumeratedConstraint set="IssueStatus" />
+					</AllowedValues>
+				</AllowsTrait>
+
+				<AllowsTrait name="resolution" />
+			</TraitRules>
+
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:specification-foundation:OpenQuestion
+			name="OpenQuestion"
+		>
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<AllowsTrait name="status">
+					<AllowedValues>
+						<EnumeratedConstraint set="OpenQuestionStatus" />
+					</AllowedValues>
+				</AllowsTrait>
+
+				<AllowsTrait name="answer" />
+			</TraitRules>
+
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
 	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:specification-foundation:trait:amends
+			name="amends"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-foundation:trait:answer
+			name="answer"
+		/>
+
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
 			id=paperhat:domain:specification-foundation:trait:conformance
 			name="conformance"
 		>
 			<AllowedValues>
-				<EnumeratedConstraint set=SectionConformance />
+				<EnumeratedConstraint set="SectionConformance" />
 			</AllowedValues>
 		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Boolean
+			id=paperhat:domain:specification-foundation:trait:deprecated
+			name="deprecated"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Semver
+			id=paperhat:domain:specification-foundation:trait:deprecatedSince
+			name="deprecatedSince"
+		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
@@ -31,7 +374,7 @@
 			name="division"
 		>
 			<AllowedValues>
-				<EnumeratedConstraint set=SectionDivision />
+				<EnumeratedConstraint set="SectionDivision" />
 			</AllowedValues>
 		</TraitDefinition>
 
@@ -42,9 +385,27 @@
 		/>
 
 		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:specification-foundation:trait:key
+			name="key"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-foundation:trait:label
+			name="label"
+		/>
+
+		<TraitDefinition
 			defaultValueType=$Boolean
 			id=paperhat:domain:specification-foundation:trait:locked
 			name="locked"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:specification-foundation:trait:maturityLevel
+			name="maturityLevel"
 		/>
 
 		<TraitDefinition
@@ -53,7 +414,7 @@
 			name="modality"
 		>
 			<AllowedValues>
-				<EnumeratedConstraint set=RequirementModality />
+				<EnumeratedConstraint set="RequirementModality" />
 			</AllowedValues>
 		</TraitDefinition>
 
@@ -64,6 +425,12 @@
 		/>
 
 		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:specification-foundation:trait:obsoletes
+			name="obsoletes"
+		/>
+
+		<TraitDefinition
 			defaultValueType=$LookupToken
 			id=paperhat:domain:specification-foundation:trait:requirementId
 			name="requirementId"
@@ -71,14 +438,8 @@
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=paperhat:domain:specification-foundation:trait:term
-			name="term"
-		/>
-
-		<TraitDefinition
-			defaultValueType=$Iri
-			id=paperhat:domain:specification-foundation:trait:uri
-			name="uri"
+			id=paperhat:domain:specification-foundation:trait:resolution
+			name="resolution"
 		/>
 
 		<TraitDefinition
@@ -91,71 +452,127 @@
 			defaultValueType=$EnumeratedToken
 			id=paperhat:domain:specification-foundation:trait:status
 			name="status"
-		>
-			<AllowedValues>
-				<EnumeratedConstraint set=DraftItemStatus />
-			</AllowedValues>
-		</TraitDefinition>
+		/>
 
 		<TraitDefinition
-			defaultValueType=$Text
-			id=paperhat:domain:specification-foundation:trait:resolution
-			name="resolution"
+			defaultValueType=$Iri
+			id=paperhat:domain:specification-foundation:trait:supersedes
+			name="supersedes"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:specification-foundation:trait:target
+			isReferenceTrait=true
+			name="target"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=paperhat:domain:specification-foundation:trait:answer
-			name="answer"
+			id=paperhat:domain:specification-foundation:trait:term
+			name="term"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-foundation:trait:title
+			name="title"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:specification-foundation:trait:uri
+			name="uri"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Semver
+			id=paperhat:domain:specification-foundation:trait:version
+			name="version"
 		/>
 	</TraitDefinitions>
 
 	<EnumeratedValueSets>
 		<EnumeratedValueSet id=paperhat:domain:specification-foundation:set:SectionConformance name="SectionConformance">
-			<Member value=Normative />
+			<Member value="Normative" />
 
-			<Member value=Informative />
+			<Member value="Informative" />
 		</EnumeratedValueSet>
 
 		<EnumeratedValueSet id=paperhat:domain:specification-foundation:set:SectionDivision name="SectionDivision">
-			<Member value=Body />
+			<Member value="Body" />
 
-			<Member value=Appendix />
+			<Member value="Appendix" />
 
-			<Member value=FrontMatter />
+			<Member value="FrontMatter" />
 
-			<Member value=BackMatter />
+			<Member value="BackMatter" />
 		</EnumeratedValueSet>
 
 		<EnumeratedValueSet id=paperhat:domain:specification-foundation:set:RequirementModality name="RequirementModality">
-			<Member value=Must />
+			<Member value="Must" />
 
-			<Member value=MustNot />
+			<Member value="MustNot" />
 
-			<Member value=Shall />
+			<Member value="Shall" />
 
-			<Member value=ShallNot />
+			<Member value="ShallNot" />
 
-			<Member value=Should />
+			<Member value="Should" />
 
-			<Member value=ShouldNot />
+			<Member value="ShouldNot" />
 
-			<Member value=May />
+			<Member value="May" />
 
-			<Member value=Required />
+			<Member value="Required" />
 
-			<Member value=Recommended />
+			<Member value="Recommended" />
 
-			<Member value=Optional />
+			<Member value="Optional" />
 		</EnumeratedValueSet>
-		<EnumeratedValueSet id=paperhat:domain:specification-foundation:set:DraftItemStatus name="DraftItemStatus">
-			<Member value=Open />
 
-			<Member value=Resolved />
+		<EnumeratedValueSet id=paperhat:domain:specification-foundation:set:IssueStatus name="IssueStatus">
+			<Member value="Open" />
 
-			<Member value=Answered />
+			<Member value="Resolved" />
 
-			<Member value=Deferred />
+			<Member value="Deferred" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet id=paperhat:domain:specification-foundation:set:OpenQuestionStatus name="OpenQuestionStatus">
+			<Member value="Open" />
+
+			<Member value="Answered" />
+
+			<Member value="Deferred" />
 		</EnumeratedValueSet>
 	</EnumeratedValueSets>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=paperhat:domain:specification-foundation:section-reference-target-type
+			title="SectionReference target must resolve to a Section"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="SectionReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="Section" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:specification-foundation:section-reference-must-resolve
+			title="SectionReference target must resolve"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="SectionReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceMustResolve />
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
 </Schema>

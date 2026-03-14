@@ -1,7 +1,7 @@
 <Schema
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
-	description="Temporal annotations for text spans: dates, times, datetimes, durations, and instants with formatting and internationalisation support."
+	description="Temporal annotations for text spans using the canonical Paperhat Temporal type family together with formatting and internationalisation traits."
 	id=paperhat:domain:temporal
 	namespace="temporal"
 	title="Temporal Schema"
@@ -20,41 +20,31 @@
 			</ContentRules>
 
 			<ChildRules>
-				<AllowsChildConcept conceptSelector="PlainDate" />
-
-				<AllowsChildConcept conceptSelector="PlainTime" />
-
-				<AllowsChildConcept conceptSelector="PlainDateTime" />
-
-				<AllowsChildConcept conceptSelector="PlainYearMonth" />
-
-				<AllowsChildConcept conceptSelector="PlainMonthDay" />
-
+				<AllowsChildConcept conceptSelector="Date" />
+				<AllowsChildConcept conceptSelector="HourMinute" />
+				<AllowsChildConcept conceptSelector="Time" />
+				<AllowsChildConcept conceptSelector="DateTime" />
+				<AllowsChildConcept conceptSelector="YearMonth" />
+				<AllowsChildConcept conceptSelector="MonthDay" />
 				<AllowsChildConcept conceptSelector="YearWeek" />
-
 				<AllowsChildConcept conceptSelector="YearWeekWeekday" />
-
-				<AllowsChildConcept conceptSelector="ZonedDate" />
-
-				<AllowsChildConcept conceptSelector="ZonedTime" />
-
-				<AllowsChildConcept conceptSelector="ZonedDateTime" />
-
+				<AllowsChildConcept conceptSelector="DateWithTimezone" />
+				<AllowsChildConcept conceptSelector="TimeWithTimezone" />
+				<AllowsChildConcept conceptSelector="DateTimeWithTimezone" />
+				<AllowsChildConcept conceptSelector="TimeWithOffset" />
+				<AllowsChildConcept conceptSelector="DateTimeWithOffset" />
 				<AllowsChildConcept conceptSelector="Instant" />
-
 				<AllowsChildConcept conceptSelector="Duration" />
-
-				<AllowsChildConcept conceptSelector="TemporalKeyword" />
 			</ChildRules>
 
-			<CollectionRules allowsDuplicates=false ordering=$Unordered />
+			<CollectionRules allowsDuplicates=true ordering=$Unordered />
 		</ConceptDefinition>
 
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=paperhat:domain:temporal:PlainDate
-			name="PlainDate"
+			id=paperhat:domain:temporal:Date
+			name="Date"
 		>
 			<ContentRules>
 				<ForbidsContent />
@@ -62,13 +52,9 @@
 
 			<TraitRules>
 				<RequiresTrait name="key" />
-
 				<RequiresTrait name="value" />
-
 				<AllowsTrait name="text" />
-
 				<AllowsTrait name="format" />
-
 				<AllowsTrait name="language" />
 			</TraitRules>
 		</ConceptDefinition>
@@ -76,8 +62,8 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=paperhat:domain:temporal:PlainTime
-			name="PlainTime"
+			id=paperhat:domain:temporal:HourMinute
+			name="HourMinute"
 		>
 			<ContentRules>
 				<ForbidsContent />
@@ -85,13 +71,9 @@
 
 			<TraitRules>
 				<RequiresTrait name="key" />
-
 				<RequiresTrait name="value" />
-
 				<AllowsTrait name="text" />
-
 				<AllowsTrait name="format" />
-
 				<AllowsTrait name="language" />
 			</TraitRules>
 		</ConceptDefinition>
@@ -99,8 +81,8 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=paperhat:domain:temporal:PlainDateTime
-			name="PlainDateTime"
+			id=paperhat:domain:temporal:Time
+			name="Time"
 		>
 			<ContentRules>
 				<ForbidsContent />
@@ -108,13 +90,9 @@
 
 			<TraitRules>
 				<RequiresTrait name="key" />
-
 				<RequiresTrait name="value" />
-
 				<AllowsTrait name="text" />
-
 				<AllowsTrait name="format" />
-
 				<AllowsTrait name="language" />
 			</TraitRules>
 		</ConceptDefinition>
@@ -122,8 +100,8 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=paperhat:domain:temporal:PlainYearMonth
-			name="PlainYearMonth"
+			id=paperhat:domain:temporal:DateTime
+			name="DateTime"
 		>
 			<ContentRules>
 				<ForbidsContent />
@@ -131,13 +109,9 @@
 
 			<TraitRules>
 				<RequiresTrait name="key" />
-
 				<RequiresTrait name="value" />
-
 				<AllowsTrait name="text" />
-
 				<AllowsTrait name="format" />
-
 				<AllowsTrait name="language" />
 			</TraitRules>
 		</ConceptDefinition>
@@ -145,8 +119,8 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=paperhat:domain:temporal:PlainMonthDay
-			name="PlainMonthDay"
+			id=paperhat:domain:temporal:YearMonth
+			name="YearMonth"
 		>
 			<ContentRules>
 				<ForbidsContent />
@@ -154,13 +128,28 @@
 
 			<TraitRules>
 				<RequiresTrait name="key" />
-
 				<RequiresTrait name="value" />
-
 				<AllowsTrait name="text" />
-
 				<AllowsTrait name="format" />
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
 
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:temporal:MonthDay
+			name="MonthDay"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+				<RequiresTrait name="value" />
+				<AllowsTrait name="text" />
+				<AllowsTrait name="format" />
 				<AllowsTrait name="language" />
 			</TraitRules>
 		</ConceptDefinition>
@@ -177,13 +166,9 @@
 
 			<TraitRules>
 				<RequiresTrait name="key" />
-
 				<RequiresTrait name="value" />
-
 				<AllowsTrait name="text" />
-
 				<AllowsTrait name="format" />
-
 				<AllowsTrait name="language" />
 			</TraitRules>
 		</ConceptDefinition>
@@ -200,13 +185,9 @@
 
 			<TraitRules>
 				<RequiresTrait name="key" />
-
 				<RequiresTrait name="value" />
-
 				<AllowsTrait name="text" />
-
 				<AllowsTrait name="format" />
-
 				<AllowsTrait name="language" />
 			</TraitRules>
 		</ConceptDefinition>
@@ -214,8 +195,8 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=paperhat:domain:temporal:ZonedDate
-			name="ZonedDate"
+			id=paperhat:domain:temporal:DateWithTimezone
+			name="DateWithTimezone"
 		>
 			<ContentRules>
 				<ForbidsContent />
@@ -223,13 +204,9 @@
 
 			<TraitRules>
 				<RequiresTrait name="key" />
-
 				<RequiresTrait name="value" />
-
 				<AllowsTrait name="text" />
-
 				<AllowsTrait name="format" />
-
 				<AllowsTrait name="language" />
 			</TraitRules>
 		</ConceptDefinition>
@@ -237,8 +214,8 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=paperhat:domain:temporal:ZonedTime
-			name="ZonedTime"
+			id=paperhat:domain:temporal:TimeWithTimezone
+			name="TimeWithTimezone"
 		>
 			<ContentRules>
 				<ForbidsContent />
@@ -246,13 +223,9 @@
 
 			<TraitRules>
 				<RequiresTrait name="key" />
-
 				<RequiresTrait name="value" />
-
 				<AllowsTrait name="text" />
-
 				<AllowsTrait name="format" />
-
 				<AllowsTrait name="language" />
 			</TraitRules>
 		</ConceptDefinition>
@@ -260,8 +233,8 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=paperhat:domain:temporal:ZonedDateTime
-			name="ZonedDateTime"
+			id=paperhat:domain:temporal:DateTimeWithTimezone
+			name="DateTimeWithTimezone"
 		>
 			<ContentRules>
 				<ForbidsContent />
@@ -269,13 +242,47 @@
 
 			<TraitRules>
 				<RequiresTrait name="key" />
-
 				<RequiresTrait name="value" />
-
 				<AllowsTrait name="text" />
-
 				<AllowsTrait name="format" />
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
 
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:temporal:TimeWithOffset
+			name="TimeWithOffset"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+				<RequiresTrait name="value" />
+				<AllowsTrait name="text" />
+				<AllowsTrait name="format" />
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:temporal:DateTimeWithOffset
+			name="DateTimeWithOffset"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+				<RequiresTrait name="value" />
+				<AllowsTrait name="text" />
+				<AllowsTrait name="format" />
 				<AllowsTrait name="language" />
 			</TraitRules>
 		</ConceptDefinition>
@@ -292,13 +299,9 @@
 
 			<TraitRules>
 				<RequiresTrait name="key" />
-
 				<RequiresTrait name="value" />
-
 				<AllowsTrait name="text" />
-
 				<AllowsTrait name="format" />
-
 				<AllowsTrait name="language" />
 			</TraitRules>
 		</ConceptDefinition>
@@ -315,36 +318,9 @@
 
 			<TraitRules>
 				<RequiresTrait name="key" />
-
 				<RequiresTrait name="value" />
-
 				<AllowsTrait name="text" />
-
 				<AllowsTrait name="format" />
-
-				<AllowsTrait name="language" />
-			</TraitRules>
-		</ConceptDefinition>
-
-		<ConceptDefinition
-			conceptKind=$Semantic
-			entityEligibility=$MustNotBeEntity
-			id=paperhat:domain:temporal:TemporalKeyword
-			name="TemporalKeyword"
-		>
-			<ContentRules>
-				<ForbidsContent />
-			</ContentRules>
-
-			<TraitRules>
-				<RequiresTrait name="key" />
-
-				<RequiresTrait name="value" />
-
-				<AllowsTrait name="text" />
-
-				<AllowsTrait name="format" />
-
 				<AllowsTrait name="language" />
 			</TraitRules>
 		</ConceptDefinition>
@@ -358,7 +334,7 @@
 		/>
 
 		<TraitDefinition
-			defaultValueTypes=[$Date, $Time, $DateTime, $YearMonth, $MonthDay, $YearWeek, $YearWeekWeekday, $ZonedDate, $ZonedTime, $ZonedDateTime, $Instant, $Duration, $TemporalKeyword]
+			defaultValueTypes=[$Date, $HourMinute, $Time, $DateTime, $YearMonth, $MonthDay, $YearWeek, $YearWeekWeekday, $DateWithTimezone, $TimeWithTimezone, $DateTimeWithTimezone, $TimeWithOffset, $DateTimeWithOffset, $Instant, $Duration]
 			id=paperhat:domain:temporal:trait:value
 			name="value"
 		/>
@@ -376,7 +352,7 @@
 		/>
 
 		<TraitDefinition
-			defaultValueType=$EnumeratedToken
+			defaultValueType=$LanguageTag
 			id=paperhat:domain:temporal:trait:language
 			name="language"
 		/>
@@ -394,55 +370,49 @@
 			<Rule>
 				<AnyOf>
 					<Rule>
-						<ChildConstraint conceptSelector="PlainDate" type=$RequiresChildConcept />
+						<ChildConstraint conceptSelector="Date" type=$RequiresChildConcept />
 					</Rule>
-
 					<Rule>
-						<ChildConstraint conceptSelector="PlainTime" type=$RequiresChildConcept />
+						<ChildConstraint conceptSelector="HourMinute" type=$RequiresChildConcept />
 					</Rule>
-
 					<Rule>
-						<ChildConstraint conceptSelector="PlainDateTime" type=$RequiresChildConcept />
+						<ChildConstraint conceptSelector="Time" type=$RequiresChildConcept />
 					</Rule>
-
 					<Rule>
-						<ChildConstraint conceptSelector="PlainYearMonth" type=$RequiresChildConcept />
+						<ChildConstraint conceptSelector="DateTime" type=$RequiresChildConcept />
 					</Rule>
-
 					<Rule>
-						<ChildConstraint conceptSelector="PlainMonthDay" type=$RequiresChildConcept />
+						<ChildConstraint conceptSelector="YearMonth" type=$RequiresChildConcept />
 					</Rule>
-
+					<Rule>
+						<ChildConstraint conceptSelector="MonthDay" type=$RequiresChildConcept />
+					</Rule>
 					<Rule>
 						<ChildConstraint conceptSelector="YearWeek" type=$RequiresChildConcept />
 					</Rule>
-
 					<Rule>
 						<ChildConstraint conceptSelector="YearWeekWeekday" type=$RequiresChildConcept />
 					</Rule>
-
 					<Rule>
-						<ChildConstraint conceptSelector="ZonedDate" type=$RequiresChildConcept />
+						<ChildConstraint conceptSelector="DateWithTimezone" type=$RequiresChildConcept />
 					</Rule>
-
 					<Rule>
-						<ChildConstraint conceptSelector="ZonedTime" type=$RequiresChildConcept />
+						<ChildConstraint conceptSelector="TimeWithTimezone" type=$RequiresChildConcept />
 					</Rule>
-
 					<Rule>
-						<ChildConstraint conceptSelector="ZonedDateTime" type=$RequiresChildConcept />
+						<ChildConstraint conceptSelector="DateTimeWithTimezone" type=$RequiresChildConcept />
 					</Rule>
-
+					<Rule>
+						<ChildConstraint conceptSelector="TimeWithOffset" type=$RequiresChildConcept />
+					</Rule>
+					<Rule>
+						<ChildConstraint conceptSelector="DateTimeWithOffset" type=$RequiresChildConcept />
+					</Rule>
 					<Rule>
 						<ChildConstraint conceptSelector="Instant" type=$RequiresChildConcept />
 					</Rule>
-
 					<Rule>
 						<ChildConstraint conceptSelector="Duration" type=$RequiresChildConcept />
-					</Rule>
-
-					<Rule>
-						<ChildConstraint conceptSelector="TemporalKeyword" type=$RequiresChildConcept />
 					</Rule>
 				</AnyOf>
 			</Rule>

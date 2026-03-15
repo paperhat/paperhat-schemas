@@ -1,6 +1,6 @@
 <Section>
-	<Paragraph>
+	<text:Paragraph>
 		Not every section needs a heading. Short transitional passages or unnamed
-		divisions can stand alone.
-	</Paragraph>
+		divisions stand alone.
+	</text:Paragraph>
 </Section>

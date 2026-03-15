@@ -1,28 +1,11 @@
 <WhitePaper
-	coreThesis=`
-		A phased zero-trust rollout can reduce breach exposure without disrupting delivery velocity.
-	`
-	id=urn:paperhat:example:white-paper:minimal-white-paper
-	title="Zero-Trust Migration for Mid-Market Enterprises"
+	coreThesis="Minimal structures suffice for valid white papers."
+	id=urn:paperhat:example:white-paper:minimal
+	title="A Minimal White Paper"
 >
-	<documentstructure:Abstract>
-		This paper outlines a phased migration strategy for organisations moving
-		from perimeter-centric controls to zero-trust architecture.
+	<documentstructure:Abstract language=$En>
+		This white paper demonstrates the minimal valid structure.
 	</documentstructure:Abstract>
 
-	<Narrative>
-		<Section>
-			<Rubric>
-				<Title>
-					The Problem
-				</Title>
-			</Rubric>
-
-			<Paragraph>
-				Perimeter-centric access models create excessive lateral movement risk.
-				Internal incident reviews showed that 72 percent of high-severity
-				incidents involved privilege propagation across trust zones.
-			</Paragraph>
-		</Section>
-	</Narrative>
+	<narrative:Narrative />
 </WhitePaper>

@@ -1,36 +1,24 @@
 <Narrative>
-	<Paragraph>
+	<text:Paragraph>
 		This report examines three approaches to urban water reclamation.
-	</Paragraph>
+	</text:Paragraph>
 
-	<Section>
-		<Rubric>
-			<Title>
-				Membrane Filtration
-			</Title>
-		</Rubric>
-
-		<Paragraph>
+	<section:Section>
+		<text:Paragraph>
 			Membrane-based systems achieve the highest purity levels but require
 			significant energy input and frequent maintenance.
-		</Paragraph>
-	</Section>
+		</text:Paragraph>
+	</section:Section>
 
-	<Section>
-		<Rubric>
-			<Title>
-				Constructed Wetlands
-			</Title>
-		</Rubric>
-
-		<Paragraph>
+	<section:Section>
+		<text:Paragraph>
 			Constructed wetlands offer a low-energy alternative, using biological
 			processes to remove contaminants over larger land areas.
-		</Paragraph>
-	</Section>
+		</text:Paragraph>
+	</section:Section>
 
-	<Paragraph>
+	<text:Paragraph>
 		Each approach involves trade-offs between cost, land use, energy
 		consumption, and output quality.
-	</Paragraph>
+	</text:Paragraph>
 </Narrative>

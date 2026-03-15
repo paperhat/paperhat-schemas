@@ -1,17 +1,17 @@
 <DocumentMetadata>
-	<Work
-		datePublished={2025-09-15}
+	<work:Work
+		datePublished=date(15 september 2025)
+		language=$En
+		license=$AllRightsReserved
+		status=$Published
 		version="1st edition"
-		language=$en
-		license="All rights reserved"
-		status=$published
 	/>
 
-	<PersonName givenName="Elena" familyName="Vargas" />
+	<pname:PersonName family="Vargas" given="Elena" />
 
-	<Summary language=$en>
+	<summary:Summary language=$En>
 		A field guide to the freshwater mollusks of Central America, covering 340
 		species with identification keys, habitat descriptions, and conservation
 		status.
-	</Summary>
+	</summary:Summary>
 </DocumentMetadata>

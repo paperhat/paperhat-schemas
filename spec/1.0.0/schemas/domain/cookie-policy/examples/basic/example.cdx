@@ -1,24 +1,33 @@
 <CookiePolicy id=urn:paperhat:policy:cookie:recipe-library title="Recipe Library Cookie Policy">
-	<GoverningEntity target=urn:organization:recipe-library governingRole=$Owner />
-	<AppliesTo target=urn:service:recipe-library scopeKind=$Service />
-	<RelatedDocument target=urn:paperhat:policy:privacy:recipe-library relationshipKind=$PairedWith />
+	<GoverningEntity governingRole=$Owner target=urn:organization:recipe-library />
+
+	<AppliesTo scopeKind=$Service target=urn:service:recipe-library />
+
+	<RelatedDocument relationshipKind=$PairedWith target=urn:paperhat:policy:privacy:recipe-library />
+
 	<Definitions>
-		<term:TermEntry id=urn:paperhat:term:cookie term="Cookie" key=~cookie bodyMode=$children>
-			<term:Sense>
-				A small browser-stored value used to support the service.
-			</term:Sense>
-		</term:TermEntry>
+		<lexical:LexicalEntry
+			bodyMode=$content
+			id=urn:paperhat:lexical:cookie
+			key=~cookie
+			term="Cookie"
+		>
+			A small browser-stored value used to support the service.
+		</lexical:LexicalEntry>
 	</Definitions>
+
 	<CookieCategory category=$Essential>
 		<text:Paragraph>
 			Essential cookies are used to provide basic service operation.
 		</text:Paragraph>
 	</CookieCategory>
+
 	<CookieControl>
 		<text:Paragraph>
-			Users may manage cookies through browser settings.
+			Users manage cookies through browser settings.
 		</text:Paragraph>
 	</CookieControl>
+
 	<Retention>
 		<text:Paragraph>
 			Cookie retention depends on purpose and browser storage policy.

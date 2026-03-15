@@ -1,17 +1,14 @@
 <Section>
-	<Rubric>
-		<Title>
+	<rubric:Rubric>
+		<text:Title>
 			The Problem of Induction
-		</Title>
-	</Rubric>
+		</text:Title>
+	</rubric:Rubric>
 
-	<Paragraph>
+	<text:Paragraph>
 		Hume's argument against inductive reasoning remains one of the most
-		persistent challenges in epistemology.
-	</Paragraph>
-
-	<Paragraph>
-		The core difficulty is that any justification for induction must itself rely
-		on inductive reasoning, creating an unavoidable circularity.
-	</Paragraph>
+		persistent challenges in epistemology. The core difficulty is that any
+		justification for induction must itself rely on inductive reasoning,
+		creating an unavoidable circularity.
+	</text:Paragraph>
 </Section>

@@ -1,12 +1,12 @@
 <Person gender="male" id=urn:paperhat:example:person:fictional-character>
-	<PersonName family="Holmes" given="Sherlock" nameKind=$literary />
+	<pname:PersonName family="Holmes" given="Sherlock" nameKind=$Literary />
 
-	<Location
-		country="United Kingdom"
+	<loc:Location
+		country=$UnitedKingdom
 		locality="London"
-		locationKind=$residence
+		locationKind=$Residence
 		name="221B Baker Street"
 	/>
 
-	<ContactPoint contactKind=$work emailAddress="holmes@bakerstreet.co.uk" />
+	<contact:ContactPoint contactKind=$Work emailAddress=email("holmes@bakerstreet.co.uk") />
 </Person>

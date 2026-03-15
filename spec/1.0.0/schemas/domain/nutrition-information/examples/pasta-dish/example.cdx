@@ -1,10 +1,1 @@
-<NutritionInformation
-	servingSize="1 cup (250g)"
-	calories=420
-	proteinContent=18
-	carbohydrateContent=52
-	fatContent=14
-	fiberContent=4
-	sugarContent=6
-	sodiumContent=680
-/>
+<NutritionInformation />

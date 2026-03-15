@@ -1,26 +1,22 @@
-<Recipe id=urn:lexis:lexis:paperhat-recipe:scrambled-eggs:1>
-	<Title>
+<Recipe id=urn:paperhat:example:recipe:scrambled-eggs key=~scrambledEggs>
+	<text:Title>
 		Scrambled Eggs
-	</Title>
+	</text:Title>
 
-	<Description>
+	<desc:Description bodyMode=$content>
 		Simple, creamy scrambled eggs — a breakfast staple.
-	</Description>
+	</desc:Description>
 
 	<Servings amount=2 unit="servings" />
 
-	<PreparationTime duration=2 unit="minutes" />
-
-	<CookingTime duration=5 unit="minutes" />
-
 	<Ingredients>
-		<Ingredient name="eggs" amount=4 />
+		<Ingredient food=urn:food:eggs />
 
-		<Ingredient name="butter" amount=1 unit="tablespoon" />
+		<Ingredient food=urn:food:butter />
 
-		<Ingredient name="salt" toTaste=true />
+		<Ingredient food=urn:food:salt toTaste=true />
 
-		<Ingredient name="black pepper" toTaste=true />
+		<Ingredient food=urn:food:black-pepper toTaste=true />
 	</Ingredients>
 
 	<Instructions>
@@ -37,22 +33,7 @@
 		</Step>
 
 		<Step>
-			Remove from heat while still slightly wet; residual heat finishes the
-			cooking.
+			Remove from heat while still slightly wet; residual heat finishes the cooking.
 		</Step>
 	</Instructions>
-
-	<Tags>
-		<Tag>
-			breakfast
-		</Tag>
-
-		<Tag>
-			quick
-		</Tag>
-
-		<Tag>
-			beginner
-		</Tag>
-	</Tags>
 </Recipe>

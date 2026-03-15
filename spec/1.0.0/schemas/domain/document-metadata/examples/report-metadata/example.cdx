@@ -1,15 +1,15 @@
 <DocumentMetadata>
-	<Work
+	<work:Work
 		author="Infrastructure Division"
-		dateCreated={2026-01-05}
-		dateModified={2026-02-10}
-		status=$draft
+		dateCreated=date(5 january 2026)
+		dateModified=date(10 february 2026)
+		status=$Draft
 	/>
 
-	<Description language=$en>
+	<desc:Description bodyMode=$content language=$En>
 		Quarterly assessment of bridge and tunnel maintenance needs across the
 		northern district.
-	</Description>
+	</desc:Description>
 
-	<Audience audienceType=$professional />
+	<audience:Audience audienceKind=$Professional />
 </DocumentMetadata>

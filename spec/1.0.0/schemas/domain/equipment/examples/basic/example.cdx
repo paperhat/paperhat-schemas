@@ -1,4 +1,4 @@
-<Equipment id=urn:equipment:cast-iron-skillet name="Cast-iron skillet" category=$Cookware>
+<Equipment category=$Cookware id=urn:equipment:cast-iron-skillet name="Cast-iron skillet">
 	<desc:Description bodyMode=$content>
 		A heavy skillet suitable for searing and oven use.
 	</desc:Description>

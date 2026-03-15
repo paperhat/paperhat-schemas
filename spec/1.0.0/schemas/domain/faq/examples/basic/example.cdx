@@ -1,17 +1,20 @@
-<FrequentlyAskedQuestions title="Codex FAQ" language=$En>
+<FrequentlyAskedQuestions language=$En title="Codex FAQ">
 	<Entry key=~whatIsCodex>
 		<question:Question>
 			What is Codex?
 		</question:Question>
+
 		<question:Answer>
 			Codex is a declarative semantic markup language for authored knowledge.
 			Documents written in Codex lower deterministically to RDF.
 		</question:Answer>
 	</Entry>
+
 	<Entry key=~whatIsGloss>
 		<question:Question>
 			What is Gloss?
 		</question:Question>
+
 		<question:Answer>
 			Gloss is a span-binding language for inline annotations within Codex
 			content. It enables emphasis, foreign terms, citations, and other

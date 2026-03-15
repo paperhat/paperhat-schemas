@@ -2,12 +2,14 @@
 	<text:Title>
 		System Overview
 	</text:Title>
+
 	<caption:Caption>
 		High-level system overview showing the pipeline from parsing through rendering.
 	</caption:Caption>
+
 	<media:MediaReference
-		url=https://example.com/images/system-overview.svg
+		encodingFormat=media-type("image/svg+xml")
 		mediaKind=$Image
-		encodingFormat="image/svg+xml"
+		url=https://example.com/images/system-overview.svg
 	/>
 </Figure>

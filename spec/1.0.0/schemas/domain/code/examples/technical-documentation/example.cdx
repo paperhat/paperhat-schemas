@@ -1,4 +1,5 @@
 <CodeNotation>
 	<Code key=~fetch language=$Javascript text="fetch()" />
+
 	<Variable key=~filename text="filename" />
 </CodeNotation>

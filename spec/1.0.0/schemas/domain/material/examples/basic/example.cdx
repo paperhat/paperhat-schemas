@@ -1,9 +1,17 @@
-<Material id=urn:material:cast-iron name="Cast iron" category=$Metal finish=$Matte recyclable=true biodegradable=false>
+<Material
+	biodegradable=false
+	category=$Metal
+	finish=$Matte
+	id=urn:material:cast-iron
+	name="Cast iron"
+	recyclable=true
+>
 	<Aliases>
 		<Alias language=$EnNz>
 			Cast-iron
 		</Alias>
 	</Aliases>
+
 	<desc:Description bodyMode=$content>
 		A durable iron alloy used for cookware and heavy-duty tools.
 	</desc:Description>

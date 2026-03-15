@@ -2,9 +2,11 @@
 	<ListItem bodyMode=$content>
 		Active noise cancellation
 	</ListItem>
+
 	<ListItem bodyMode=$content>
 		40-hour battery life
 	</ListItem>
+
 	<ListItem bodyMode=$content>
 		Bluetooth 5.3 with multipoint pairing
 	</ListItem>

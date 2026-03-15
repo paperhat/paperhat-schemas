@@ -1,11 +1,13 @@
-<Food id=urn:food:chive name="Chive" category=$Herb>
+<Food category=$Herb id=urn:food:chive name="Chive">
 	<Aliases>
 		<Alias language=$EnNz>
 			Spring onion greens
 		</Alias>
 	</Aliases>
+
 	<sensory:SensoryProfile>
-		<sensory:TasteNote taste=$Umami intensity=$Subtle />
+		<sensory:TasteNote intensity=$Subtle taste=$Umami />
+
 		<sensory:AromaNote aroma=$Herbal intensity=$Moderate />
 	</sensory:SensoryProfile>
 </Food>

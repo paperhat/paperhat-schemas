@@ -1,5 +1,5 @@
 <ForeignTerms>
-	<ForeignTerm key=~danke language=$De pronunciation="ˈdaŋkə" translation="thank you">
+	<ForeignTerm key=~danke language=$De pronunciation=ipa/ˈdaŋkə/ translation="thank you">
 		danke
 	</ForeignTerm>
 </ForeignTerms>

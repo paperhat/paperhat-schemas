@@ -3,29 +3,36 @@
 		<text:Paragraph>
 			Front-end frameworks
 		</text:Paragraph>
+
 		<UnorderedList>
 			<ListItem bodyMode=$content>
 				React
 			</ListItem>
+
 			<ListItem bodyMode=$content>
 				Vue
 			</ListItem>
+
 			<ListItem bodyMode=$content>
 				Svelte
 			</ListItem>
 		</UnorderedList>
 	</ListItem>
+
 	<ListItem bodyMode=$children>
 		<text:Paragraph>
 			Back-end languages
 		</text:Paragraph>
+
 		<UnorderedList>
 			<ListItem bodyMode=$content>
 				Go
 			</ListItem>
+
 			<ListItem bodyMode=$content>
 				Rust
 			</ListItem>
+
 			<ListItem bodyMode=$content>
 				Python
 			</ListItem>

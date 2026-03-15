@@ -1,5 +1,5 @@
 <ForeignTerms>
-	<ForeignTerm key=~sushi language=$Ja pronunciation="sɯɕi" translation="vinegared rice">
+	<ForeignTerm key=~sushi language=$Ja pronunciation=ipa/sɯɕi/ translation="vinegared rice">
 		寿司
 	</ForeignTerm>
 </ForeignTerms>

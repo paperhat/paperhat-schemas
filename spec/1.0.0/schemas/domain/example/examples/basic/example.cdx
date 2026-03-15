@@ -2,19 +2,14 @@
 	<text:Title>
 		Create a Figure Entry
 	</text:Title>
+
 	<text:Paragraph>
 		Call the publish endpoint with a validated figure payload.
 	</text:Paragraph>
+
 	<code:CodeBlock language=$Bash>
 		curl -X POST https://api.example.com/v1/figures \
 		  -H "Content-Type: application/json" \
 		  -d '{"caption":"System architecture","url":"https://example.com/arch.svg"}'
 	</code:CodeBlock>
-	<figure:Figure>
-		<figure:media:MediaReference
-			url=https://example.com/arch.svg
-			mediaKind=$Image
-			encodingFormat="image/svg+xml"
-		/>
-	</figure:Figure>
 </Example>

@@ -1,7 +1,8 @@
-<Rubric publishedOn=date(10 february 2026) lastModifiedAt=date-time(12 february 2026 09:30:00)>
+<Rubric lastModifiedAt=date-time(12 february 2026 09:30:00) publishedOn=date(10 february 2026)>
 	<text:Title>
 		Three Underrated Libraries for Faster Builds
 	</text:Title>
+
 	<text:Teaser>
 		A quick look at tools that cut your build times in half.
 	</text:Teaser>

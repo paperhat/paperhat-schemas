@@ -1,13 +1,17 @@
-<Person birthDate={1990-03-15} gender="non-binary" id=urn:paperhat:example:person:contemporary>
-	<PersonName family="Chen" given="Alex" middle="Jordan" nameKind=$legal />
+<Person
+	birthDate=date(15 march 1990)
+	gender="non-binary"
+	id=urn:paperhat:example:person:contemporary
+>
+	<pname:PersonName family="Chen" given="Alex" middle=["Jordan"] nameKind=$Legal />
 
-	<PersonName family="Chen" given="Lex" nameKind=$preferred />
+	<pname:PersonName family="Chen" given="Lex" nameKind=$Preferred />
 
-	<ContactPoint contactKind=$work emailAddress="lex.chen@example.com" />
+	<contact:ContactPoint contactKind=$Work emailAddress=email("lex.chen@example.com") />
 
-	<ContactPoint contactKind=$personal phoneNumber="+1 555 234 5678" />
+	<contact:ContactPoint contactKind=$Personal phoneNumber="+1 555 234 5678" />
 
-	<Identifier scheme=$orcid value="0000-0002-1825-0097" />
+	<ident:Identifier scheme=$Orcid value="0000-0002-1825-0097" />
 
-	<Location country="United States" locality="Portland" locationKind=$residence region="Oregon" />
+	<loc:Location country=$UnitedStates locality="Portland" locationKind=$Residence region="Oregon" />
 </Person>

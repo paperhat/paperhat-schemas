@@ -1,6 +1,6 @@
 <OrganizationalUnit
 	id=urn:paperhat:example:organizational-unit:basic
 	name="Platform Team"
-	parentUnit=engineeringDept
+	parentUnit=urn:paperhat:organizational-unit:engineering
 	unitKind=$Team
 />

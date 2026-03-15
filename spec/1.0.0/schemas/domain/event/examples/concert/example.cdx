@@ -1,43 +1,43 @@
 <Event
-	eventAttendanceMode=$offline
-	eventStatus=$scheduled
+	eventAttendanceMode=$Offline
+	eventStatus=$Scheduled
 	id=urn:paperhat:example:event:concert
 	name="Summer Jazz in the Park"
-	startDate={2026-07-12}
+	startDate=date(12 july 2026)
 >
-	<Description>
+	<desc:Description bodyMode=$content>
 		Free outdoor jazz concert featuring local and international artists.
-	</Description>
+	</desc:Description>
 
-	<Location
-		country="Canada"
+	<loc:Location
+		country=$Canada
 		locality="Vancouver"
-		locationKind=$venue
+		locationKind=$Venue
 		name="Stanley Park Pavilion"
 		region="British Columbia"
 	/>
 
-	<MonetaryAmount amount=0 currency=$CAD />
+	<money:MonetaryAmount amount=0 currency=$CAD />
 
-	<Duration unit=$hours value=3 />
+	<dur:Duration amount=3 unit=$Hours />
 
-	<Rating bestRating=5 ratingCount=238 ratingValue=4.7 />
+	<rating:Rating bestRating=5 ratingValue=4.7 />
 
-	<Tags>
-		<Tag>
+	<tags:Tags>
+		<tags:Tag>
 			music
-		</Tag>
+		</tags:Tag>
 
-		<Tag>
+		<tags:Tag>
 			jazz
-		</Tag>
+		</tags:Tag>
 
-		<Tag>
+		<tags:Tag>
 			outdoor
-		</Tag>
+		</tags:Tag>
 
-		<Tag>
+		<tags:Tag>
 			free
-		</Tag>
-	</Tags>
+		</tags:Tag>
+	</tags:Tags>
 </Event>

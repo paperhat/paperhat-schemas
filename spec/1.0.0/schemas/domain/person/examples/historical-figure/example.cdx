@@ -1,16 +1,16 @@
 <Person
-	birthDate={1815-12-10}
-	deathDate={1852-11-27}
+	birthDate=date(10 december 1815)
+	deathDate=date(27 november 1852)
 	gender="female"
 	id=urn:paperhat:example:person:historical-figure
 >
-	<PersonName family="Byron" given="Augusta" middle="Ada" nameKind=$birth />
+	<pname:PersonName family="Byron" given="Augusta" middle=["Ada"] nameKind=$Birth />
 
-	<PersonName family="Lovelace" given="Ada" nameKind=$married title="Countess of" />
+	<pname:PersonName family="Lovelace" given="Ada" nameKind=$Married title=["Countess of"] />
 
-	<Location country="United Kingdom" locality="London" locationKind=$birthPlace />
+	<loc:Location country=$UnitedKingdom locality="London" locationKind=$BirthPlace />
 
-	<Location country="United Kingdom" locality="London" locationKind=$deathPlace />
+	<loc:Location country=$UnitedKingdom locality="London" locationKind=$DeathPlace />
 
-	<Identifier scheme=$viaf value="61632881" />
+	<ident:Identifier scheme=$Viaf value="61632881" />
 </Person>

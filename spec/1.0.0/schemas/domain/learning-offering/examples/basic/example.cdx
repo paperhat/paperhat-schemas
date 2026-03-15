@@ -4,5 +4,5 @@
 	name="Codex Authoring Workshop"
 	offeringKind=$Workshop
 	offeringStatus=$Active
-	product=codex
+	product=urn:paperhat:product:codex
 />

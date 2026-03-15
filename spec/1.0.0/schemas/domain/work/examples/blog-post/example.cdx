@@ -1,1 +1,1 @@
-<Work author="Jane Doe" datePublished={2026-01-15} language=$en status=$published />
+<Work author="Jane Doe" datePublished=date(15 january 2026) language=$En status=$Published />

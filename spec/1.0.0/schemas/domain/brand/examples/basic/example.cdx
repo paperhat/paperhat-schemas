@@ -3,5 +3,5 @@
 	brandStatus=$Active
 	id=urn:paperhat:example:brand:basic
 	name="Lexis"
-	owner=paperhatLimited
+	owner=urn:paperhat:organization:paperhat-limited
 />

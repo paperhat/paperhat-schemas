@@ -1,7 +1,7 @@
 <MediaAsset
 	altText="Paperhat company logo"
 	assetKind=$Image
-	encodingFormat=media("image/png")
+	encodingFormat=media-type("image/png")
 	id=urn:paperhat:example:media-asset:basic
 	name="Paperhat Logo"
 	url=url("https://paperhat.dev/assets/logo.png")

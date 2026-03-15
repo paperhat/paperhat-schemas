@@ -1,38 +1,38 @@
 <Organization
-	foundingDate={2019-03-15}
+	foundingDate=date(15 march 2019)
 	id=urn:paperhat:example:organization:tech-company
 	name="Acme Robotics"
-	organizationKind=$corporation
+	organizationKind=$Corporation
 >
-	<Description>
+	<desc:Description bodyMode=$content>
 		A robotics startup specializing in autonomous warehouse fulfillment
 		systems.
-	</Description>
+	</desc:Description>
 
-	<ContactPoint contactKind=$work emailAddress="info@acmerobotics.example" />
+	<contact:ContactPoint contactKind=$Work emailAddress=email("info@acmerobotics.example") />
 
-	<ContactPoint contactKind=$work website=url("https://acmerobotics.example/") />
+	<contact:ContactPoint contactKind=$Work website=url("https://acmerobotics.example/") />
 
-	<Identifier scheme=$registrationNumber value="BC-2019-048721" />
+	<ident:Identifier scheme=$RegistrationNumber value="BC-2019-048721" />
 
-	<Location
-		country="Canada"
+	<loc:Location
+		country=$Canada
 		locality="Vancouver"
-		locationKind=$headquarters
+		locationKind=$Headquarters
 		region="British Columbia"
 	/>
 
-	<Tags>
-		<Tag>
+	<tags:Tags>
+		<tags:Tag>
 			robotics
-		</Tag>
+		</tags:Tag>
 
-		<Tag>
+		<tags:Tag>
 			automation
-		</Tag>
+		</tags:Tag>
 
-		<Tag>
+		<tags:Tag>
 			startup
-		</Tag>
-	</Tags>
+		</tags:Tag>
+	</tags:Tags>
 </Organization>

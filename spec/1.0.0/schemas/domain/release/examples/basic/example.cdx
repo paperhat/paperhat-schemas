@@ -1,7 +1,7 @@
 <Release
 	id=urn:paperhat:example:release:basic
-	product=codex
-	releaseDate="2026-03-01"
+	product=urn:paperhat:product:codex
+	releaseDate=date(1 march 2026)
 	releaseKind=$Minor
 	releaseStatus=$Stable
 	version="2.3.1"

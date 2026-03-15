@@ -1,1 +1,8 @@
-<Work version="3.2.1" dateCreated={2025-06-01} dateModified={2026-02-10} language=$en license="CC-BY-4.0" status=$published />
+<Work
+	dateCreated=date(1 june 2025)
+	dateModified=date(10 february 2026)
+	language=$En
+	license=$CcBy4Point0
+	status=$Published
+	version="3.2.1"
+/>

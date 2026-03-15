@@ -1,27 +1,27 @@
 <Event
-	eventAttendanceMode=$mixed
-	eventStatus=$scheduled
+	eventAttendanceMode=$Mixed
+	eventStatus=$Scheduled
 	id=urn:paperhat:example:event:community-meetup
 	name="Vancouver Codex Authors Meetup"
-	startDate={2026-03-20}
+	startDate=date(20 march 2026)
 >
-	<Location country="Canada" locality="Vancouver" region="British Columbia" />
+	<loc:Location country=$Canada locality="Vancouver" region="British Columbia" />
 
-	<ContactPoint contactKind=$organizer emailAddress="meetup@codexauthors.example" />
+	<contact:ContactPoint contactKind=$Organizer emailAddress=email("meetup@codexauthors.example") />
 
-	<Identifier scheme=$meetupId value="VCA-2026-03" />
+	<ident:Identifier scheme=$MeetupId value="VCA-2026-03" />
 
-	<Tags>
-		<Tag>
+	<tags:Tags>
+		<tags:Tag>
 			meetup
-		</Tag>
+		</tags:Tag>
 
-		<Tag>
+		<tags:Tag>
 			codex
-		</Tag>
+		</tags:Tag>
 
-		<Tag>
+		<tags:Tag>
 			community
-		</Tag>
-	</Tags>
+		</tags:Tag>
+	</tags:Tags>
 </Event>

@@ -5,5 +5,7 @@
 
 	<MouthfeelNote mouthfeel=$Silky intensity=$Mild />
 
-	<desc:Description>A bright fruit-driven profile with a smooth finish.</desc:Description>
+	<desc:Description>
+	A bright fruit-driven profile with a smooth finish.
+</desc:Description>
 </SensoryProfile>

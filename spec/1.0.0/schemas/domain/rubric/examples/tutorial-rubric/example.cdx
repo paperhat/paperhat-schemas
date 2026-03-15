@@ -1,4 +1,6 @@
 <Rubric timeToRead="PT15M">
-	<Title>Building a REST API with Go</Title>
+	<Title>
+	Building a REST API with Go
+</Title>
 	<Difficulty scale=$categorical value="intermediate" />
 </Rubric>

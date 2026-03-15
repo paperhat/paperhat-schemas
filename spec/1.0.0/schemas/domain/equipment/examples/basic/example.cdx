@@ -1,3 +1,5 @@
 <Equipment id="urn:equipment:cast-iron-skillet" name="Cast-iron skillet" category=$Cookware>
-	<desc:Description>A heavy skillet suitable for searing and oven use.</desc:Description>
+	<desc:Description>
+	A heavy skillet suitable for searing and oven use.
+</desc:Description>
 </Equipment>

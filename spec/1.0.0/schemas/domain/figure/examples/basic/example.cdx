@@ -1,6 +1,10 @@
 <Figure key=~fig-system-overview>
-	<Title>System Overview</Title>
-	<Caption>High-level system overview showing the pipeline from parsing through rendering.</Caption>
+	<Title>
+	System Overview
+</Title>
+	<Caption>
+	High-level system overview showing the pipeline from parsing through rendering.
+</Caption>
 	<MediaReference
 		url="https://example.com/images/system-overview.svg"
 		mediaKind=$image

@@ -1,1 +1,3 @@
-<Clause key="7.2" clauseKind=$Limitation>Paperhat's total aggregate liability under this Agreement shall not exceed the fees paid by Licensee in the twelve months preceding the claim.</Clause>
+<Clause clauseKind=$Limitation key="7.2">
+	Paperhat's total aggregate liability under this Agreement shall not exceed the fees paid by Licensee in the twelve months preceding the claim.
+</Clause>

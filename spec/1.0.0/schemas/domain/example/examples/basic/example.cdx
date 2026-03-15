@@ -1,5 +1,7 @@
 <Example key=~api-usage-example label="API Usage Example">
-	<Title>Create a Figure Entry</Title>
+	<Title>
+	Create a Figure Entry
+</Title>
 	<Paragraph>
 		Call the publish endpoint with a validated figure payload.
 	</Paragraph>

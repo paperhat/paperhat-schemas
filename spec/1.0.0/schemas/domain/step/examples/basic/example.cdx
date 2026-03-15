@@ -1,1 +1,3 @@
-<Step>Run npm install to download all dependencies.</Step>
+<Step>
+	Run npm install to download all dependencies.
+</Step>

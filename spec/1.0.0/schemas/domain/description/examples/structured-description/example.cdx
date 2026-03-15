@@ -1,8 +1,16 @@
 <Description>
-	<Paragraph>This course covers the fundamentals of distributed systems, from consensus algorithms to fault-tolerant replication.</Paragraph>
+	<Paragraph>
+	This course covers the fundamentals of distributed systems, from consensus algorithms to fault-tolerant replication.
+</Paragraph>
 	<UnorderedList>
-		<ListItem>No prior distributed-systems experience required</ListItem>
-		<ListItem>Weekly hands-on labs using Go and gRPC</ListItem>
-		<ListItem>Final project: build a replicated key-value store</ListItem>
+		<ListItem>
+	No prior distributed-systems experience required
+</ListItem>
+		<ListItem>
+	Weekly hands-on labs using Go and gRPC
+</ListItem>
+		<ListItem>
+	Final project: build a replicated key-value store
+</ListItem>
 	</UnorderedList>
 </Description>

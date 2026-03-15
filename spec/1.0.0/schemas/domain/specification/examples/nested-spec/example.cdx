@@ -57,7 +57,7 @@
 
 			<GlossaryEntry
 				id=urn:example:schema-loading-rules#glossary/single-source-of-truth
-				key=~singleSourceOfTruth
+				key=~singleSourceOfTruthGlossary
 				term="single source of truth"
 			>
 				A single authoritative representation from which all projections are derived.

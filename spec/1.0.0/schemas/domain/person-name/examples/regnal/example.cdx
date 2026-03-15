@@ -1,13 +1,6 @@
 <PersonName
-	nameKind=$Birth
-	given="Alexandrina"
-	middle="Victoria"
-	family="Hanover"
-/>
-
-<PersonName
-	nameKind=$Regnal
+	effectiveFrom=date(20 june 1837)
+	effectiveTo=date(22 january 1901)
 	full="Victoria"
-	effectiveFrom={1837-06-20}
-	effectiveTo={1901-01-22}
+	nameKind=$Regnal
 />

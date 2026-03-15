@@ -27,7 +27,7 @@
 
 		<TermBinding label="Local glossary" source=urn:example:glossary#foundation term="foundation" />
 
-		<Issue key=~exampleIssue status=$Open>
+		<Issue id=urn:example:foundation-concepts#issue/example key=~exampleIssue status=$Open>
 			Should the foundation define additional structural concepts?
 		</Issue>
 

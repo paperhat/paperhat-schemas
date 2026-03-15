@@ -1,64 +1,26 @@
 <RelationType
-	id="urn:paperhat:relation-type:inventory"
+	id=urn:paperhat:relation-type:inventory
 	name="Inventory"
 >
 	<text:Title>
 		Inventory relation type
 	</text:Title>
-
-	<desc:Description>
+	<desc:Description bodyMode=$content>
 		Warehouse stock levels by SKU.
 	</desc:Description>
-
 	<Attribute
-		id="urn:paperhat:relation-type:inventory:attribute:sku"
+		id=urn:paperhat:relation-type:inventory:attribute:sku
 		name="sku"
 		valueType=$Text
 		required=true
 	/>
-
 	<Attribute
-		id="urn:paperhat:relation-type:inventory:attribute:quantity"
+		id=urn:paperhat:relation-type:inventory:attribute:quantity
 		name="quantity"
 		valueType=$Integer
 		required=true
 	/>
-
 	<AttributeKey name="primary">
-		<KeyAttribute target="urn:paperhat:relation-type:inventory:attribute:sku" />
+		<KeyAttribute target=urn:paperhat:relation-type:inventory:attribute:sku />
 	</AttributeKey>
 </RelationType>
-
-<RelationInstance
-	id="urn:paperhat:relation:inventory:2026-03-03"
-	for="urn:paperhat:relation-type:inventory"
-	name="Inventory snapshot"
->
-	<desc:Description>
-		Snapshot captured at close of business.
-	</desc:Description>
-
-	<Tuple id="urn:paperhat:relation:inventory:2026-03-03:tuple:1">
-		<Binding
-			target="urn:paperhat:relation-type:inventory:attribute:sku"
-			value="ABC-001"
-		/>
-
-		<Binding
-			target="urn:paperhat:relation-type:inventory:attribute:quantity"
-			value=42
-		/>
-	</Tuple>
-
-	<Tuple id="urn:paperhat:relation:inventory:2026-03-03:tuple:2">
-		<Binding
-			target="urn:paperhat:relation-type:inventory:attribute:sku"
-			value="ABC-002"
-		/>
-
-		<Binding
-			target="urn:paperhat:relation-type:inventory:attribute:quantity"
-			value=0
-		/>
-	</Tuple>
-</RelationInstance>

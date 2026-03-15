@@ -5,30 +5,25 @@
 	title="Paperhat Plan"
 >
 	<docmeta:DocumentMetadata>
-		<work:Work author="Charles F. Munat" dateCreated=date("2026-03-15") />
+		<work:Work author="Charles F. Munat" dateCreated=date(15 march 2026) />
 	</docmeta:DocumentMetadata>
-
-	<desc:Description>
+	<desc:Description bodyMode=$content>
 		The unified plan for Paperhat. Strategy documents define the what and why. This document defines the when and in what order.
 	</desc:Description>
-
-	<Phase phaseStatus=$Active title="Phase 1: Ship">
-		<narrative:Narrative>
-			Everything from first white paper to Teams/Enterprise. All three products. Eight months.
-		</narrative:Narrative>
-
+	<Phase id=urn:paperhat:example:phase:ship phaseStatus=$Active title="Phase 1: Ship">
+		<narrative:Narrative />
 		<milestone:Milestone
+			id=urn:paperhat:example:milestone:lexis-beta
 			milestoneStatus=$Planned
 			name="Lexis FOSS Beta"
-			targetDate=date("2026-05-14")
+			targetDate=date(14 may 2026)
 		/>
-
 		<milestone:Milestone
+			id=urn:paperhat:example:milestone:first-revenue
 			milestoneStatus=$Planned
 			name="First Revenue"
-			targetDate=date("2026-07-09")
+			targetDate=date(9 july 2026)
 		/>
-
 		<dependency:Dependency
 			dependencyKind=$Requires
 			source=urn:paperhat:milestone:first-revenue

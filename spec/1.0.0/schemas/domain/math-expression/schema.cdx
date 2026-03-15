@@ -26,7 +26,35 @@
 			</ContentRules>
 
 			<ChildRules>
-				<RequiresChildConcept conceptSelector="Variable|Number|Operator|Apply|Relation|Equation|Integral|Derivative|Summation|Limit|Series|Matrix|Set|Piecewise|Expression" min=1 />
+				<AllowsChildConcept conceptSelector="Variable" />
+
+				<AllowsChildConcept conceptSelector="Number" />
+
+				<AllowsChildConcept conceptSelector="Operator" />
+
+				<AllowsChildConcept conceptSelector="Apply" />
+
+				<AllowsChildConcept conceptSelector="Relation" />
+
+				<AllowsChildConcept conceptSelector="Equation" />
+
+				<AllowsChildConcept conceptSelector="Integral" />
+
+				<AllowsChildConcept conceptSelector="Derivative" />
+
+				<AllowsChildConcept conceptSelector="Summation" />
+
+				<AllowsChildConcept conceptSelector="Limit" />
+
+				<AllowsChildConcept conceptSelector="Series" />
+
+				<AllowsChildConcept conceptSelector="Matrix" />
+
+				<AllowsChildConcept conceptSelector="Set" />
+
+				<AllowsChildConcept conceptSelector="Piecewise" />
+
+				<AllowsChildConcept conceptSelector="Expression" />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
@@ -34,7 +62,7 @@
 
 		<ConceptDefinition
 			conceptKind=$Semantic
-			entityEligibility=$MayBeEntity
+			entityEligibility=$MustBeEntity
 			id=paperhat:domain:math-expression:Variable
 			name="Variable"
 		>
@@ -108,7 +136,17 @@
 			</ContentRules>
 
 			<ChildRules>
-				<RequiresChildConcept conceptSelector="Operator|Variable|Number|Apply|Relation|Expression" min=1 />
+				<AllowsChildConcept conceptSelector="Operator" />
+
+				<AllowsChildConcept conceptSelector="Variable" />
+
+				<AllowsChildConcept conceptSelector="Number" />
+
+				<AllowsChildConcept conceptSelector="Apply" />
+
+				<AllowsChildConcept conceptSelector="Relation" />
+
+				<AllowsChildConcept conceptSelector="Expression" />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
@@ -133,7 +171,13 @@
 			</ContentRules>
 
 			<ChildRules>
-				<RequiresChildConcept conceptSelector="Variable|Number|Apply|Expression" min=2 />
+				<AllowsChildConcept conceptSelector="Variable" />
+
+				<AllowsChildConcept conceptSelector="Number" />
+
+				<AllowsChildConcept conceptSelector="Apply" />
+
+				<AllowsChildConcept conceptSelector="Expression" />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
@@ -141,7 +185,7 @@
 
 		<ConceptDefinition
 			conceptKind=$Semantic
-			entityEligibility=$MayBeEntity
+			entityEligibility=$MustBeEntity
 			id=paperhat:domain:math-expression:Equation
 			name="Equation"
 		>
@@ -162,7 +206,11 @@
 			</ContentRules>
 
 			<ChildRules>
-				<RequiresChildConcept conceptSelector="Relation|Apply|Expression" min=1 />
+				<AllowsChildConcept conceptSelector="Relation" />
+
+				<AllowsChildConcept conceptSelector="Apply" />
+
+				<AllowsChildConcept conceptSelector="Expression" />
 
 				<AllowsChildConcept conceptSelector="desc:Description" />
 
@@ -214,7 +262,13 @@
 			</ContentRules>
 
 			<ChildRules>
-				<RequiresChildConcept conceptSelector="Variable|Number|Apply|Expression" min=1 max=1 />
+				<AllowsChildConcept conceptSelector="Variable" />
+
+				<AllowsChildConcept conceptSelector="Number" />
+
+				<AllowsChildConcept conceptSelector="Apply" />
+
+				<AllowsChildConcept conceptSelector="Expression" />
 			</ChildRules>
 		</ConceptDefinition>
 
@@ -379,7 +433,13 @@
 			</ContentRules>
 
 			<ChildRules>
-				<RequiresChildConcept conceptSelector="Variable|Number|Apply|Expression" min=1 />
+				<AllowsChildConcept conceptSelector="Variable" />
+
+				<AllowsChildConcept conceptSelector="Number" />
+
+				<AllowsChildConcept conceptSelector="Apply" />
+
+				<AllowsChildConcept conceptSelector="Expression" />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
@@ -404,7 +464,13 @@
 			</ContentRules>
 
 			<ChildRules>
-				<AllowsChildConcept conceptSelector="Variable|Number|Apply|Expression" />
+				<AllowsChildConcept conceptSelector="Variable" />
+
+				<AllowsChildConcept conceptSelector="Number" />
+
+				<AllowsChildConcept conceptSelector="Apply" />
+
+				<AllowsChildConcept conceptSelector="Expression" />
 
 				<AllowsChildConcept conceptSelector="Condition" />
 			</ChildRules>
@@ -474,7 +540,13 @@
 			</ContentRules>
 
 			<ChildRules>
-				<RequiresChildConcept conceptSelector="Variable|Number|Apply|Expression" min=1 max=1 />
+				<AllowsChildConcept conceptSelector="Variable" />
+
+				<AllowsChildConcept conceptSelector="Number" />
+
+				<AllowsChildConcept conceptSelector="Apply" />
+
+				<AllowsChildConcept conceptSelector="Expression" />
 			</ChildRules>
 		</ConceptDefinition>
 
@@ -489,7 +561,11 @@
 			</ContentRules>
 
 			<ChildRules>
-				<RequiresChildConcept conceptSelector="Relation|Apply|Expression" min=1 max=1 />
+				<AllowsChildConcept conceptSelector="Relation" />
+
+				<AllowsChildConcept conceptSelector="Apply" />
+
+				<AllowsChildConcept conceptSelector="Expression" />
 			</ChildRules>
 		</ConceptDefinition>
 
@@ -519,7 +595,13 @@
 			</ContentRules>
 
 			<ChildRules>
-				<RequiresChildConcept conceptSelector="Variable|Number|Apply|Expression" min=1 max=1 />
+				<AllowsChildConcept conceptSelector="Variable" />
+
+				<AllowsChildConcept conceptSelector="Number" />
+
+				<AllowsChildConcept conceptSelector="Apply" />
+
+				<AllowsChildConcept conceptSelector="Expression" />
 			</ChildRules>
 		</ConceptDefinition>
 
@@ -534,7 +616,13 @@
 			</ContentRules>
 
 			<ChildRules>
-				<RequiresChildConcept conceptSelector="Variable|Number|Apply|Expression" min=1 max=1 />
+				<AllowsChildConcept conceptSelector="Variable" />
+
+				<AllowsChildConcept conceptSelector="Number" />
+
+				<AllowsChildConcept conceptSelector="Apply" />
+
+				<AllowsChildConcept conceptSelector="Expression" />
 			</ChildRules>
 		</ConceptDefinition>
 
@@ -549,7 +637,13 @@
 			</ContentRules>
 
 			<ChildRules>
-				<RequiresChildConcept conceptSelector="Variable|Number|Apply|Expression" min=1 max=1 />
+				<AllowsChildConcept conceptSelector="Variable" />
+
+				<AllowsChildConcept conceptSelector="Number" />
+
+				<AllowsChildConcept conceptSelector="Apply" />
+
+				<AllowsChildConcept conceptSelector="Expression" />
 			</ChildRules>
 		</ConceptDefinition>
 
@@ -564,7 +658,13 @@
 			</ContentRules>
 
 			<ChildRules>
-				<RequiresChildConcept conceptSelector="Variable|Number|Apply|Expression" min=1 max=1 />
+				<AllowsChildConcept conceptSelector="Variable" />
+
+				<AllowsChildConcept conceptSelector="Number" />
+
+				<AllowsChildConcept conceptSelector="Apply" />
+
+				<AllowsChildConcept conceptSelector="Expression" />
 			</ChildRules>
 		</ConceptDefinition>
 
@@ -579,7 +679,11 @@
 			</ContentRules>
 
 			<ChildRules>
-				<RequiresChildConcept conceptSelector="Set|Variable|Expression" min=1 max=1 />
+				<AllowsChildConcept conceptSelector="Set" />
+
+				<AllowsChildConcept conceptSelector="Variable" />
+
+				<AllowsChildConcept conceptSelector="Expression" />
 			</ChildRules>
 		</ConceptDefinition>
 
@@ -600,7 +704,13 @@
 			</ContentRules>
 
 			<ChildRules>
-				<RequiresChildConcept conceptSelector="Equation|Expression|Apply|Relation" min=1 />
+				<AllowsChildConcept conceptSelector="Equation" />
+
+				<AllowsChildConcept conceptSelector="Expression" />
+
+				<AllowsChildConcept conceptSelector="Apply" />
+
+				<AllowsChildConcept conceptSelector="Relation" />
 
 				<AllowsChildConcept conceptSelector="desc:Description" />
 

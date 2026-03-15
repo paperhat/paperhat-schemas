@@ -1,0 +1,26 @@
+<Explanation id=urn:paperhat:example:explanation:ownership name="Ownership in Rust">
+	<text:Paragraph>
+		Ownership is the mechanism by which Rust guarantees memory safety without a garbage collector.
+		Every value in Rust has exactly one owner. When the owner goes out of scope, the value is
+		dropped.
+	</text:Paragraph>
+
+	<definedTerm:DefinedTerm term="Owner">
+		The variable binding that holds the value and is responsible for its lifetime.
+	</definedTerm:DefinedTerm>
+
+	<example:Example>
+		<text:Paragraph>
+			Assigning a heap-allocated value to a new variable transfers ownership. The original
+			variable becomes invalid.
+		</text:Paragraph>
+
+		<code:CodeBlock language=$Rust>
+let s1 = String::from("hello");
+let s2 = s1; // ownership moves to s2
+// println!("{s1}"); // compile error: s1 no longer valid
+		</code:CodeBlock>
+	</example:Example>
+
+	<admonition:Warning key=~copyVsMove text="Primitive types that implement Copy (integers, booleans, characters) are copied on assignment, not moved. Ownership transfer applies to heap-allocated types." />
+</Explanation>

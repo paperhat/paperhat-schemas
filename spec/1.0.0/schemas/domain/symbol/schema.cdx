@@ -117,12 +117,43 @@
 			</ContentRules>
 
 			<ChildRules>
-				<RequiresChildConcept conceptSelector="Symbol|MathSymbol|Emoji" min=1 />
+				<AllowsChildConcept conceptSelector="Symbol" />
+
+				<AllowsChildConcept conceptSelector="MathSymbol" />
+
+				<AllowsChildConcept conceptSelector="Emoji" />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=false ordering=$Ordered />
 		</ConceptDefinition>
 	</ConceptDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=paperhat:domain:symbol:table-requires-entry
+			title="SymbolTable requires at least one Symbol, MathSymbol, or Emoji"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="SymbolTable" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<ChildConstraint conceptSelector="Symbol" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="MathSymbol" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="Emoji" type=$RequiresChildConcept />
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
 
 	<TraitDefinitions>
 		<TraitDefinition

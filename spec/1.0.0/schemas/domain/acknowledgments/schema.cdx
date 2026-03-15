@@ -44,7 +44,7 @@
 
 		<ConceptDefinition
 			conceptKind=$Semantic
-			entityEligibility=$MayBeEntity
+			entityEligibility=$MustBeEntity
 			id=paperhat:domain:acknowledgments:Participant
 			name="Participant"
 		>

@@ -1,0 +1,155 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description=`
+		A structured conceptual explanation: prose, examples, defined terms, code illustrations,
+		figures, and admonitions arranged to convey understanding of a single idea.
+	`
+	id=paperhat:domain:explanation
+	namespace="explanation"
+	title="Explanation Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport
+			namespace="admonition"
+			reference=urn:cdx:sha256:f676d06cf578a8fa377b961fcd4d8e5676f8def5ba6b298eaee92f0d3614a890
+		/>
+
+		<SchemaImport
+			namespace="code"
+			reference=urn:cdx:sha256:70c45e812f5306b69dad783ea4c84546284dfaeeba6f1342918372e385da0cea
+		/>
+
+		<SchemaImport
+			namespace="definedTerm"
+			reference=urn:cdx:sha256:f6b84212642735d08a30913f475a9db137021fa51adf848febab8b606617d7f4
+		/>
+
+		<SchemaImport
+			namespace="example"
+			reference=urn:cdx:sha256:bde5283c13c8d93b24c3aa6c01dab3d363cc253adc9ac8c79ad7e858959a3cd3
+		/>
+
+		<SchemaImport
+			namespace="figure"
+			reference=urn:cdx:sha256:eda5e8b1f99a572938c9abb04885ee27383aa0946663797779f551208737ddf7
+		/>
+
+		<SchemaImport
+			namespace="list"
+			reference=urn:cdx:sha256:10cc30a2245e8480bb2564cba4c09c243f84285d5219b06a1899272917da2caa
+		/>
+
+		<SchemaImport
+			namespace="text"
+			reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df
+		/>
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description=`
+				A structured conceptual explanation composed of prose, examples, defined terms, code
+				illustrations, figures, and admonitions.
+			`
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:explanation:Explanation
+			name="Explanation"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Title" max=1 />
+
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
+
+				<AllowsChildConcept conceptSelector="example:Example" />
+
+				<AllowsChildConcept conceptSelector="definedTerm:DefinedTerm" />
+
+				<AllowsChildConcept conceptSelector="code:CodeBlock" />
+
+				<AllowsChildConcept conceptSelector="list:OrderedList" />
+
+				<AllowsChildConcept conceptSelector="list:UnorderedList" />
+
+				<AllowsChildConcept conceptSelector="figure:Figure" />
+
+				<AllowsChildConcept conceptSelector="admonition:Critical" />
+
+				<AllowsChildConcept conceptSelector="admonition:Danger" />
+
+				<AllowsChildConcept conceptSelector="admonition:Informational" />
+
+				<AllowsChildConcept conceptSelector="admonition:Notice" />
+
+				<AllowsChildConcept conceptSelector="admonition:Tip" />
+
+				<AllowsChildConcept conceptSelector="admonition:Warning" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			description="Human-readable name of the explanation."
+			id=paperhat:domain:explanation:trait:name
+			name="name"
+		/>
+	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=paperhat:domain:explanation:requires-child
+			title="Explanation must contain at least one child"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Explanation" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<ChildConstraint conceptSelector="text:Paragraph" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="example:Example" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="definedTerm:DefinedTerm" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="code:CodeBlock" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="list:OrderedList" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="list:UnorderedList" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="figure:Figure" type=$RequiresChildConcept />
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

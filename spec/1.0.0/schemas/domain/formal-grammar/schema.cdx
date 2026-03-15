@@ -71,7 +71,7 @@
 			</TraitRules>
 
 			<ContentRules>
-				<RequiresContent whitespaceMode=$Preserve />
+				<RequiresContent whitespaceMode=$Preformatted />
 			</ContentRules>
 
 			<ChildRules>
@@ -92,7 +92,7 @@
 			</TraitRules>
 
 			<ContentRules>
-				<RequiresContent whitespaceMode=$Preserve />
+				<RequiresContent whitespaceMode=$Preformatted />
 			</ContentRules>
 		</ConceptDefinition>
 

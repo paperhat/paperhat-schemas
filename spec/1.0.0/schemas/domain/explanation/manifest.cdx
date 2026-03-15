@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="81e30527768ebf949244a196d08d5a90aab065c9767fbbfce9acd976326e2c44"
+	copyright="Copyright 2026 Paperhat"
+	description="A structured conceptual explanation: prose, examples, defined terms, code illustrations, figures, and admonitions arranged to convey understanding of a single idea."
+	license="Apache-2.0"
+	packageName="paperhat-explanation"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

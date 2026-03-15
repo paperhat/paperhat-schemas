@@ -1,0 +1,173 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A structured instructional procedure for skill acquisition: ordered learning steps with expected outcomes, code examples, figures, troubleshooting guidance, and tips."
+	id=paperhat:domain:learningProcedure
+	namespace="learningProcedure"
+	title="Learning Procedure Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport
+			namespace="admonition"
+			reference=urn:cdx:sha256:f676d06cf578a8fa377b961fcd4d8e5676f8def5ba6b298eaee92f0d3614a890
+		/>
+
+		<SchemaImport
+			namespace="code"
+			reference=urn:cdx:sha256:70c45e812f5306b69dad783ea4c84546284dfaeeba6f1342918372e385da0cea
+		/>
+
+		<SchemaImport
+			namespace="example"
+			reference=urn:cdx:sha256:bde5283c13c8d93b24c3aa6c01dab3d363cc253adc9ac8c79ad7e858959a3cd3
+		/>
+
+		<SchemaImport
+			namespace="figure"
+			reference=urn:cdx:sha256:eda5e8b1f99a572938c9abb04885ee27383aa0946663797779f551208737ddf7
+		/>
+
+		<SchemaImport
+			namespace="list"
+			reference=urn:cdx:sha256:10cc30a2245e8480bb2564cba4c09c243f84285d5219b06a1899272917da2caa
+		/>
+
+		<SchemaImport
+			namespace="text"
+			reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df
+		/>
+
+		<SchemaImport
+			namespace="tips"
+			reference=urn:cdx:sha256:7f7d1c9f22526e98af2d97038ebb6f245c5030870d4904e05d553fb617ecb04d
+		/>
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A structured instructional procedure composed of ordered learning steps with associated guidance, examples, and expected outcomes."
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:learningProcedure:LearningProcedure
+			name="LearningProcedure"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Title" max=1 />
+
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
+
+				<RequiresChildConcept conceptSelector="LearningStep" min=1 />
+
+				<AllowsChildConcept conceptSelector="ExpectedOutcome" />
+
+				<AllowsChildConcept conceptSelector="code:CodeBlock" />
+
+				<AllowsChildConcept conceptSelector="figure:Figure" />
+
+				<AllowsChildConcept conceptSelector="example:Example" />
+
+				<AllowsChildConcept conceptSelector="list:OrderedList" />
+
+				<AllowsChildConcept conceptSelector="list:UnorderedList" />
+
+				<AllowsChildConcept conceptSelector="tips:Tips" />
+
+				<AllowsChildConcept conceptSelector="admonition:Critical" />
+
+				<AllowsChildConcept conceptSelector="admonition:Danger" />
+
+				<AllowsChildConcept conceptSelector="admonition:Informational" />
+
+				<AllowsChildConcept conceptSelector="admonition:Notice" />
+
+				<AllowsChildConcept conceptSelector="admonition:Tip" />
+
+				<AllowsChildConcept conceptSelector="admonition:Warning" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A single instructional action the learner performs. In content mode, a plain text instruction. In children mode, rich structured guidance with code, figures, and admonitions."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:learningProcedure:LearningStep
+			name="LearningStep"
+		>
+			<ContentRules>
+				<AllowsContentOrChildren whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<AllowsTrait name="isOptional" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
+
+				<AllowsChildConcept conceptSelector="code:CodeBlock" />
+
+				<AllowsChildConcept conceptSelector="figure:Figure" />
+
+				<AllowsChildConcept conceptSelector="list:OrderedList" />
+
+				<AllowsChildConcept conceptSelector="list:UnorderedList" />
+
+				<AllowsChildConcept conceptSelector="example:Example" />
+
+				<AllowsChildConcept conceptSelector="admonition:Critical" />
+
+				<AllowsChildConcept conceptSelector="admonition:Danger" />
+
+				<AllowsChildConcept conceptSelector="admonition:Informational" />
+
+				<AllowsChildConcept conceptSelector="admonition:Notice" />
+
+				<AllowsChildConcept conceptSelector="admonition:Tip" />
+
+				<AllowsChildConcept conceptSelector="admonition:Warning" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="The observable result the learner expects after completing the preceding learning step."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:learningProcedure:ExpectedOutcome
+			name="ExpectedOutcome"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			description="Human-readable name of the learning procedure."
+			id=paperhat:domain:learningProcedure:trait:name
+			name="name"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Boolean
+			description="Whether this learning step is optional."
+			id=paperhat:domain:learningProcedure:trait:isOptional
+			name="isOptional"
+		/>
+	</TraitDefinitions>
+</Schema>

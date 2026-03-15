@@ -111,12 +111,43 @@
 			</ContentRules>
 
 			<ChildRules>
-				<RequiresChildConcept conceptSelector="Abbreviation|Initialism|Acronym" min=1 />
+				<AllowsChildConcept conceptSelector="Abbreviation" />
+
+				<AllowsChildConcept conceptSelector="Initialism" />
+
+				<AllowsChildConcept conceptSelector="Acronym" />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=false ordering=$Ordered />
 		</ConceptDefinition>
 	</ConceptDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=paperhat:domain:abbreviation:list-requires-entry
+			title="AbbreviationList requires at least one Abbreviation, Initialism, or Acronym"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AbbreviationList" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<ChildConstraint conceptSelector="Abbreviation" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="Initialism" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="Acronym" type=$RequiresChildConcept />
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
 
 	<TraitDefinitions>
 		<TraitDefinition

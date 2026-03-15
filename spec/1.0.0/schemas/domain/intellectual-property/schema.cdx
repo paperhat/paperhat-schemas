@@ -218,8 +218,8 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=paperhat:domain:intellectual-property:IPNotice
-			name="IPNotice"
+			id=paperhat:domain:intellectual-property:IpNotice
+			name="IpNotice"
 		>
 			<TraitRules>
 				<AllowsTrait name="noticeTitle" />
@@ -230,7 +230,17 @@
 			</ContentRules>
 
 			<ChildRules>
-				<RequiresChildConcept conceptSelector="Copyright|Trademark|ServiceMark|RegisteredTrademark|Patent|LicenseGrant" min=1 />
+				<AllowsChildConcept conceptSelector="Copyright" />
+
+				<AllowsChildConcept conceptSelector="Trademark" />
+
+				<AllowsChildConcept conceptSelector="ServiceMark" />
+
+				<AllowsChildConcept conceptSelector="RegisteredTrademark" />
+
+				<AllowsChildConcept conceptSelector="Patent" />
+
+				<AllowsChildConcept conceptSelector="LicenseGrant" />
 
 				<AllowsChildConcept conceptSelector="desc:Description" />
 
@@ -240,6 +250,45 @@
 			<CollectionRules allowsDuplicates=false ordering=$Ordered />
 		</ConceptDefinition>
 	</ConceptDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=paperhat:domain:intellectual-property:notice-requires-declaration
+			title="IpNotice requires at least one intellectual property declaration"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="IpNotice" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<ChildConstraint conceptSelector="Copyright" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="Trademark" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="ServiceMark" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="RegisteredTrademark" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="Patent" type=$RequiresChildConcept />
+					</Rule>
+
+					<Rule>
+						<ChildConstraint conceptSelector="LicenseGrant" type=$RequiresChildConcept />
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
 
 	<TraitDefinitions>
 		<TraitDefinition

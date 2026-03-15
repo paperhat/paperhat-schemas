@@ -18,8 +18,8 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=paperhat:domain:iso-document-metadata:ISODocumentMetadata
-			name="ISODocumentMetadata"
+			id=paperhat:domain:iso-document-metadata:IsoDocumentMetadata
+			name="IsoDocumentMetadata"
 		>
 			<ContentRules>
 				<ForbidsContent />
@@ -32,9 +32,9 @@
 
 				<AllowsChildConcept conceptSelector="WorkingGroup" />
 
-				<AllowsChildConcept conceptSelector="ICSClassification" />
+				<AllowsChildConcept conceptSelector="IcsClassification" />
 
-				<AllowsChildConcept conceptSelector="ISOForeword" />
+				<AllowsChildConcept conceptSelector="IsoForeword" />
 
 				<AllowsChildConcept conceptSelector="EditionHistory" />
 
@@ -58,7 +58,7 @@
 
 				<AllowsTrait name="stage">
 					<AllowedValues>
-						<EnumeratedConstraint set="ISOStage" />
+						<EnumeratedConstraint set="IsoStage" />
 					</AllowedValues>
 				</AllowsTrait>
 
@@ -128,8 +128,8 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=paperhat:domain:iso-document-metadata:ICSClassification
-			name="ICSClassification"
+			id=paperhat:domain:iso-document-metadata:IcsClassification
+			name="IcsClassification"
 		>
 			<TraitRules>
 				<RequiresTrait name="icsCode" />
@@ -145,8 +145,8 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=paperhat:domain:iso-document-metadata:ISOForeword
-			name="ISOForeword"
+			id=paperhat:domain:iso-document-metadata:IsoForeword
+			name="IsoForeword"
 		>
 			<ContentRules>
 				<ForbidsContent />
@@ -356,7 +356,7 @@
 	</TraitDefinitions>
 
 	<EnumeratedValueSets>
-		<EnumeratedValueSet id=paperhat:domain:iso-document-metadata:set:ISOStage name="ISOStage">
+		<EnumeratedValueSet id=paperhat:domain:iso-document-metadata:set:IsoStage name="IsoStage">
 			<Member value="Preliminary" />
 
 			<Member value="Proposal" />

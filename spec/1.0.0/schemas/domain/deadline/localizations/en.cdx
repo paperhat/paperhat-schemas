@@ -1,0 +1,19 @@
+<LocalizationBundle language=$En schema=paperhat:domain:deadline schemaVersion="1.0.0">
+	<ConceptLocalization identifier="Deadline" label="Deadline" labelOther="Deadlines" />
+
+	<TraitLocalization
+		identifier="deadlineStatus"
+		label="Deadline Status"
+		labelOther="Deadline Statuses"
+	>
+		The lifecycle status of the deadline.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		The name of the deadline.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="targetDate" label="Target Date" labelOther="Target Dates">
+		The date by which the obligation must be fulfilled.
+	</TraitLocalization>
+</LocalizationBundle>

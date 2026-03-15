@@ -1,0 +1,2 @@
+[name and targetDate are required. deadlineStatus is optional.]
+<Deadline name="Example Deadline" targetDate=date("2026-01-01") />

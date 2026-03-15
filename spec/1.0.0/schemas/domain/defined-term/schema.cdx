@@ -1,0 +1,46 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description=`
+		A term with an authoritative definition that binds within the scope of a governing document — a
+		contractual defined term, specification keyword, or policy term.
+	`
+	id=paperhat:domain:defined-term
+	namespace="defined-term"
+	title="Defined Term Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:defined-term:DefinedTerm
+			name="DefinedTerm"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="term" />
+
+				<AllowsTrait name="scope" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:defined-term:trait:scope
+			name="scope"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:defined-term:trait:term
+			name="term"
+		/>
+	</TraitDefinitions>
+</Schema>

@@ -1,0 +1,28 @@
+<LocalizationBundle
+	schema=paperhat:domain:faq
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="FrequentlyAskedQuestions" label="Frequently Asked Questions" labelOther="Frequently Asked Questions" />
+
+	<ConceptLocalization identifier="Entry" label="Entry" labelOther="Entries" />
+
+	<TraitLocalization identifier="title" label="Title" labelOther="Titles">
+		A title for the FAQ collection, such as "Frequently Asked Questions about Codex".
+	</TraitLocalization>
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		A stable lookup token for cross-referencing a specific FAQ entry.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="language" label="Language" labelOther="Languages">
+		The natural language of the FAQ content.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="paperhat:domain:faq:faq-requires-entry"
+		label="FAQ requires at least one Entry"
+	>
+		A FrequentlyAskedQuestions collection must contain at least one Entry child.
+	</ConstraintLocalization>
+</LocalizationBundle>

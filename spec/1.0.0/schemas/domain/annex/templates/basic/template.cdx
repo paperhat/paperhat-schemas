@@ -1,0 +1,4 @@
+[annexStatus and name are required. annexDesignator is optional. Content is the annex body.]
+<Annex annexStatus=$Normative name="Example Annex">
+	Annex body text goes here.
+</Annex>

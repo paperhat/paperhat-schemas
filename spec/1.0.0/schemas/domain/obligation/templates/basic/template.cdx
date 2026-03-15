@@ -1,0 +1,6 @@
+[name is required. All other traits are optional.]
+<Obligation name="Example Obligation">
+	<desc:Description>
+		Describe the obligation here.
+	</desc:Description>
+</Obligation>

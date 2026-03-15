@@ -1,0 +1,21 @@
+<LocalizationBundle language=$En schema=paperhat:domain:change-log schemaVersion="1.0.0">
+	<ConceptLocalization identifier="ChangeLog" label="Change Log" labelOther="Change Logs" />
+
+	<ConceptLocalization
+		identifier="ChangeLogEntry"
+		label="Change Log Entry"
+		labelOther="Change Log Entries"
+	/>
+
+	<TraitLocalization identifier="author" label="Author" labelOther="Authors">
+		The person who made the change.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="date" label="Date" labelOther="Dates">
+		The date of the change.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="version" label="Version" labelOther="Versions">
+		The version identifier associated with the change.
+	</TraitLocalization>
+</LocalizationBundle>

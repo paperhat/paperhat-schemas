@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="30145b3b14891b69b70b8839e65ef7c500eaed8e14c4844e6dd16f935d8d9794"
+	copyright="Copyright 2026 Paperhat"
+	description="A standalone directive addressed to the reader or user. Distinct from Step, which is a sequential action within a Procedure."
+	license="Apache-2.0"
+	packageName="paperhat-instruction"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

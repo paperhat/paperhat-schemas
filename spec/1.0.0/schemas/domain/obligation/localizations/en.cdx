@@ -1,0 +1,35 @@
+<LocalizationBundle language=$En schema=paperhat:domain:obligation schemaVersion="1.0.0">
+	<ConceptLocalization identifier="Obligation" label="Obligation" labelOther="Obligations" />
+
+	<TraitLocalization identifier="dueDate" label="Due Date" labelOther="Due Dates">
+		The date by which the obligation must be fulfilled.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		The name of the obligation.
+	</TraitLocalization>
+
+	<TraitLocalization
+		identifier="obligatedParty"
+		label="Obligated Party"
+		labelOther="Obligated Parties"
+	>
+		The entity responsible for fulfilling the obligation.
+	</TraitLocalization>
+
+	<TraitLocalization
+		identifier="obligationKind"
+		label="Obligation Kind"
+		labelOther="Obligation Kinds"
+	>
+		The type of obligation.
+	</TraitLocalization>
+
+	<TraitLocalization
+		identifier="obligationStatus"
+		label="Obligation Status"
+		labelOther="Obligation Statuses"
+	>
+		The current fulfillment status of the obligation.
+	</TraitLocalization>
+</LocalizationBundle>

@@ -1,0 +1,32 @@
+<LocalizationBundle
+	schema=paperhat:domain:argumentation
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Argument" label="Argument" labelOther="Arguments" />
+
+	<ConceptLocalization identifier="Claim" label="Claim" labelOther="Claims" />
+
+	<ConceptLocalization identifier="Premise" label="Premise" labelOther="Premises" />
+
+	<ConceptLocalization identifier="Inference" label="Inference" labelOther="Inferences" />
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		A stable lookup token for cross-referencing this argumentation element.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="label" label="Label" labelOther="Labels">
+		A display label for numbering or identification.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="language" label="Language" labelOther="Languages">
+		The natural language of the content.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="paperhat:domain:argumentation:argument-requires-premise"
+		label="Argument requires at least one Premise"
+	>
+		An Argument must contain at least one Premise child. An argument without premises is unsupported.
+	</ConstraintLocalization>
+</LocalizationBundle>

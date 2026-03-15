@@ -1,0 +1,7 @@
+[Named document divisions. Use the ones your document needs, remove the rest.]
+<Abstract></Abstract>
+<Introduction></Introduction>
+<Conclusion></Conclusion>
+<Preface></Preface>
+<Appendix label=""></Appendix>
+<Foreword author=""></Foreword>

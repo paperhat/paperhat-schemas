@@ -1,0 +1,23 @@
+<LocalizationBundle
+	schema=paperhat:domain:definition
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Definition" label="Definition" labelOther="Definitions" />
+
+	<TraitLocalization identifier="term" label="Term" labelOther="Terms">
+		The term being defined (the definiendum).
+	</TraitLocalization>
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		A stable lookup token for cross-referencing this definition.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="label" label="Label" labelOther="Labels">
+		A display label for numbering, such as "Definition 3.1".
+	</TraitLocalization>
+
+	<TraitLocalization identifier="language" label="Language" labelOther="Languages">
+		The natural language of the definition content.
+	</TraitLocalization>
+</LocalizationBundle>

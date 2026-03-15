@@ -1,0 +1,6 @@
+[name is required. scenarioKind is optional.]
+<ScenarioModel name="Example Scenario">
+	<desc:Description>
+		Describe the scenario assumptions here.
+	</desc:Description>
+</ScenarioModel>

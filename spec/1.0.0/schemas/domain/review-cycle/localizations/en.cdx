@@ -1,0 +1,31 @@
+<LocalizationBundle language=$En schema=paperhat:domain:review-cycle schemaVersion="1.0.0">
+	<ConceptLocalization identifier="ReviewCycle" label="Review Cycle" labelOther="Review Cycles" />
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		The name of the review cycle.
+	</TraitLocalization>
+
+	<TraitLocalization
+		identifier="nextReviewDate"
+		label="Next Review Date"
+		labelOther="Next Review Dates"
+	>
+		The date of the next scheduled review.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="responsible" label="Responsible" labelOther="Responsibles">
+		The person or role responsible for conducting the review.
+	</TraitLocalization>
+
+	<TraitLocalization
+		identifier="reviewCycleStatus"
+		label="Review Cycle Status"
+		labelOther="Review Cycle Statuses"
+	>
+		The lifecycle status of the review cycle.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="scope" label="Scope" labelOther="Scopes">
+		The scope of what is reviewed.
+	</TraitLocalization>
+</LocalizationBundle>

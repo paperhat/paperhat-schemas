@@ -1,0 +1,15 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="cb684fa8f918a229b561d95de218902472a13813ec539e4c581cdec33fb57998"
+	copyright="Copyright 2026 Paperhat"
+	description=`
+		A record of changes to a versioned document or artifact — a chronological list of modifications
+		with dates, authors, and descriptions.
+	`
+	license="Apache-2.0"
+	packageName="paperhat-change-log"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

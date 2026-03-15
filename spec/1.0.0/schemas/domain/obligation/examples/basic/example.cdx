@@ -1,0 +1,11 @@
+<Obligation
+	dueDate=date("2026-05-14")
+	name="Deliver FOSS Beta"
+	obligatedParty=urn:paperhat:organization:paperhat
+	obligationKind=$Contractual
+	obligationStatus=$Active
+>
+	<desc:Description>
+		Deliver functional and complete FOSS beta of Lexis, pending community testing.
+	</desc:Description>
+</Obligation>

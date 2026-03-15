@@ -1,0 +1,95 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A frequently asked questions collection composed of question-answer pairs. Imports the general-purpose Question and Answer discourse primitives."
+	id=paperhat:domain:faq
+	namespace="faq"
+	title="Frequently Asked Questions Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace="question" reference=urn:cdx:sha256:f3c0e777dbf641db72204a55ff21394b2a9743499d567870b04b5febc95a0b7d />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:faq:FrequentlyAskedQuestions
+			name="FrequentlyAskedQuestions"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Entry" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+
+			<TraitRules>
+				<AllowsTrait name="title" />
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:faq:Entry
+			name="Entry"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="question:Question" min=1 max=1 />
+				<AllowsChildConcept conceptSelector="question:Answer" min=1 max=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+
+			<TraitRules>
+				<AllowsTrait name="key" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:faq:trait:title
+			name="title"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:faq:trait:key
+			name="key"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:faq:trait:language
+			name="language"
+		/>
+	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=paperhat:domain:faq:faq-requires-entry
+			title="FrequentlyAskedQuestions requires at least one Entry"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="FrequentlyAskedQuestions" />
+			</Targets>
+
+			<Rule>
+				<ChildConstraint conceptSelector="Entry" type=$RequiresChildConcept />
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

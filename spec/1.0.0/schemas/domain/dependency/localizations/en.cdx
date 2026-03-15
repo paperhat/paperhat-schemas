@@ -1,0 +1,19 @@
+<LocalizationBundle language=$En schema=paperhat:domain:dependency schemaVersion="1.0.0">
+	<ConceptLocalization identifier="Dependency" label="Dependency" labelOther="Dependencys" />
+
+	<TraitLocalization
+		identifier="dependencyKind"
+		label="Dependency Kind"
+		labelOther="Dependency Kinds"
+	>
+		The type of dependency relationship.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="source" label="Source" labelOther="Sources">
+		The entity that depends on another.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="target" label="Target" labelOther="Targets">
+		The entity that is depended upon.
+	</TraitLocalization>
+</LocalizationBundle>

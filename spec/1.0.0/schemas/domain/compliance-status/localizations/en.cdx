@@ -1,0 +1,27 @@
+<LocalizationBundle language=$En schema=paperhat:domain:compliance-status schemaVersion="1.0.0">
+	<ConceptLocalization
+		identifier="ComplianceStatus"
+		label="Compliance Status"
+		labelOther="Compliance Statuss"
+	/>
+
+	<TraitLocalization
+		identifier="assessmentDate"
+		label="Assessment Date"
+		labelOther="Assessment Dates"
+	>
+		The date the compliance assessment was performed.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="assessor" label="Assessor" labelOther="Assessors">
+		The person or entity that performed the assessment.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="evidence" label="Evidence" labelOther="Evidence">
+		A reference to or description of the evidence supporting the assessment.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="status" label="Status" labelOther="Statuses">
+		The compliance state: compliant, non-compliant, pending, waived, expired, or not applicable.
+	</TraitLocalization>
+</LocalizationBundle>

@@ -1,0 +1,27 @@
+<LocalizationBundle language=$En schema=paperhat:domain:milestone schemaVersion="1.0.0">
+	<ConceptLocalization identifier="Milestone" label="Milestone" labelOther="Milestones" />
+
+	<TraitLocalization
+		identifier="completionCriteria"
+		label="Completion Criteria"
+		labelOther="Completion Criteria"
+	>
+		What must be true for this milestone to be considered complete.
+	</TraitLocalization>
+
+	<TraitLocalization
+		identifier="milestoneStatus"
+		label="Milestone Status"
+		labelOther="Milestone Statuses"
+	>
+		The lifecycle status of the milestone.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		The name of the milestone.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="targetDate" label="Target Date" labelOther="Target Dates">
+		The target achievement date for the milestone.
+	</TraitLocalization>
+</LocalizationBundle>

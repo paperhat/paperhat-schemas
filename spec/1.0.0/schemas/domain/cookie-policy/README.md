@@ -18,9 +18,9 @@ Use `CookiePolicy` for a document that explains how a service uses cookies or co
 | GoverningEntity | Structural | ForbidsContent | — | A referenced governing organization or other governing entity. Requires `target`. |
 | AppliesTo | Structural | ForbidsContent | — | A referenced covered target such as a site, service, product, or application. Requires `target`. |
 | RelatedDocument | Structural | ForbidsContent | — | A referenced related legal document. Requires `target` and `relationshipKind`. |
-| Definitions | Structural | ForbidsContent | term:TermEntry (1..n) | Formal defined terms used by the cookie policy. |
+| Definitions | Structural | ForbidsContent | lexical:LexicalEntry (1..n) | Formal defined terms used by the cookie policy. |
 | CookieCategory | Semantic | ForbidsContent | text:Paragraph, list:OrderedList, list:UnorderedList, section:Section, notes:Notes | A cookie category such as essential, analytics, or marketing. Requires `category`. |
-| CookieControl | Semantic | ForbidsContent | text:Paragraph, list:OrderedList, list:UnorderedList, section:Section, notes:Notes | How users can control or disable cookie behavior. |
+| CookieControl | Semantic | ForbidsContent | text:Paragraph, list:OrderedList, list:UnorderedList, section:Section, notes:Notes | How users control or disable cookie behavior. |
 | ThirdPartyUse | Semantic | ForbidsContent | text:Paragraph, list:OrderedList, list:UnorderedList, section:Section, notes:Notes | Third-party cookie or storage usage. |
 | Retention | Semantic | ForbidsContent | text:Paragraph, list:OrderedList, list:UnorderedList, section:Section, notes:Notes | Duration or retention semantics for cookie-related storage. |
 
@@ -34,7 +34,7 @@ Use `CookiePolicy` for a document that explains how a service uses cookies or co
 | list | `paperhat:domain:list` |
 | section | `paperhat:domain:section` |
 | notes | `paperhat:domain:notes` |
-| term | `paperhat:domain:term-entry` |
+| lexical | `paperhat:domain:lexical-entry` |
 
 ## Traits
 
@@ -51,15 +51,17 @@ Use `CookiePolicy` for a document that explains how a service uses cookies or co
 
 - `CookiePolicy` requires at least one `CookieCategory`.
 - Every `CookieCategory` requires its `category` trait.
-- `Definitions` must contain at least one `term:TermEntry`.
+- `Definitions` must contain at least one `lexical:LexicalEntry`.
 - `GoverningEntity`, `AppliesTo`, and `RelatedDocument` allow only `target` as a reference trait.
 - Every `target` in those concepts must resolve to an entity.
 
 ## Design Notes
 
 - This schema models cookie semantics, not consent-banner layout.
-- Graph references are explicit so a cookie policy can connect to governing entities, covered targets, and related legal documents without relying on prose links.
-- Defined terms are explicit through `term:TermEntry` instead of being buried in prose paragraphs.
-- Jurisdictions are explicit children because the applicable regulatory frame can vary by region.
+- Graph references are explicit so a cookie policy connects to governing entities, covered targets, and related legal documents without relying on prose links.
+- Defined terms are explicit through `lexical:LexicalEntry` instead of being buried in prose paragraphs.
+- Jurisdictions are explicit children because the applicable regulatory frame varies by region.
+
+---
 
 **End of Cookie Policy v1.0.0**

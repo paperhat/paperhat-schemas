@@ -1,0 +1,13 @@
+<Milestone
+	completionCriteria=`
+		Lexis processes a Codex document end-to-end through all eight DDE phases and renders to web and
+		PDF.
+	`
+	milestoneStatus=$Planned
+	name="Lexis FOSS Beta"
+	targetDate=date("2026-05-14")
+>
+	<desc:Description>
+		First public release of the Lexis semantic processing pipeline. Functional and complete, pending community testing.
+	</desc:Description>
+</Milestone>

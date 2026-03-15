@@ -1,0 +1,58 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="General-purpose discourse primitives for questions and answers. These are semantically paired but structurally independent — a Question exists without requiring an Answer, and vice versa."
+	id=paperhat:domain:question
+	namespace="question"
+	title="Question and Answer Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:question:Question
+			name="Question"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<AllowsTrait name="key" />
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:question:Answer
+			name="Answer"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<AllowsTrait name="key" />
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:question:trait:key
+			name="key"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:question:trait:language
+			name="language"
+		/>
+	</TraitDefinitions>
+</Schema>

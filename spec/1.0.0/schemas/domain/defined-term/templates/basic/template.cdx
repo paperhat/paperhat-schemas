@@ -1,0 +1,4 @@
+[term is required. Content is the authoritative definition text.]
+<DefinedTerm term="Example Term">
+	The definition of the term goes here.
+</DefinedTerm>

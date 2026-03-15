@@ -1,0 +1,19 @@
+<LocalizationBundle language=$En schema=paperhat:domain:rounding-policy schemaVersion="1.0.0">
+	<ConceptLocalization
+		identifier="RoundingPolicy"
+		label="Rounding Policy"
+		labelOther="Rounding Policys"
+	/>
+
+	<TraitLocalization identifier="method" label="Rounding Method" labelOther="Rounding Methods">
+		The rounding method, such as half-even, half-up, floor, or ceiling.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="scale" label="Scale" labelOther="Scales">
+		The number of decimal places to round to.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="scope" label="Scope" labelOther="Scopes">
+		Whether rounding is applied to stored values or display only.
+	</TraitLocalization>
+</LocalizationBundle>

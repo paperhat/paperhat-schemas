@@ -1,0 +1,21 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="7a6fc00293758b23346f7fbd07791bfd82c057ceb243e1dcd545f677e61bf14f"
+	copyright="Copyright 2026 Paperhat"
+	description=`
+		A binding commitment by a party to perform or refrain from an action — a contractual,
+		regulatory, or policy obligation with a responsible party and compliance state.
+	`
+	license="Apache-2.0"
+	packageName="paperhat-obligation"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+>
+	<PackageDependency
+		closureHash="2a0f7d96f2ae202d211282c9489f7e2adfe381c24fa8a414eede55250457fc8a"
+		packageName="paperhat-description"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</DomainPackageManifest>

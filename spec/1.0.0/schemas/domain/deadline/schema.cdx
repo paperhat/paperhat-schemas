@@ -1,0 +1,68 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description=`
+		A named temporal obligation — a date by which something must be accomplished, with a grace
+		period and escalation policy.
+	`
+	id=paperhat:domain:deadline
+	namespace="deadline"
+	title="Deadline Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport
+			namespace="desc"
+			reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641
+		/>
+
+		<SchemaImport
+			namespace="dur"
+			reference=urn:cdx:sha256:af406058ee6760ac08123519cad8423b77a16bc15aa085a59d9d2fe53cadfad8
+		/>
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:deadline:Deadline
+			name="Deadline"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="targetDate" />
+
+				<AllowsTrait name="deadlineStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+
+				<AllowsChildConcept conceptSelector="dur:Duration" />
+			</ChildRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:deadline:trait:deadlineStatus
+			name="deadlineStatus"
+		/>
+
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:deadline:trait:name name="name" />
+
+		<TraitDefinition
+			defaultValueType=$Date
+			id=paperhat:domain:deadline:trait:targetDate
+			name="targetDate"
+		/>
+	</TraitDefinitions>
+</Schema>

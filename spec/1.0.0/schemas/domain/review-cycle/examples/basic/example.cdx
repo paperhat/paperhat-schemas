@@ -1,0 +1,11 @@
+<ReviewCycle
+	name="Specification Annual Review"
+	nextReviewDate=date("2027-03-15")
+	reviewCycleStatus=$Active
+>
+	<desc:Description>
+		Annual review of all locked Paperhat specifications for accuracy, completeness, and consistency.
+	</desc:Description>
+
+	<dur:Duration amount=12 unit=$Months />
+</ReviewCycle>

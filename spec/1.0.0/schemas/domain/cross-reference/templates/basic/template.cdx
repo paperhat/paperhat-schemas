@@ -1,0 +1,2 @@
+[target is required. crossReferenceKind and displayText are optional.]
+<CrossReference target=urn:example:target />

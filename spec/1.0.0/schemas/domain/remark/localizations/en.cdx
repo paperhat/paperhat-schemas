@@ -1,0 +1,19 @@
+<LocalizationBundle
+	schema=paperhat:domain:remark
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Remark" label="Remark" labelOther="Remarks" />
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		A stable lookup token for cross-referencing this remark.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="label" label="Label" labelOther="Labels">
+		A display label for numbering or identification, such as "Remark 3.2".
+	</TraitLocalization>
+
+	<TraitLocalization identifier="language" label="Language" labelOther="Languages">
+		The natural language of the remark content.
+	</TraitLocalization>
+</LocalizationBundle>

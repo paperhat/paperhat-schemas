@@ -1,0 +1,42 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description=`
+		An editorial annotation intended for reviewers and editors, excluded from published output — a
+		comment, query, or instruction about the document itself.
+	`
+	id=paperhat:domain:editor-note
+	namespace="editor-note"
+	title="Editor Note Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:editor-note:EditorNote
+			name="EditorNote"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<AllowsTrait name="author" />
+
+				<AllowsTrait name="date" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:editor-note:trait:author
+			name="author"
+		/>
+
+		<TraitDefinition defaultValueType=$Date id=paperhat:domain:editor-note:trait:date name="date" />
+	</TraitDefinitions>
+</Schema>

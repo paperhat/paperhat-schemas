@@ -1,0 +1,10 @@
+[A lexical entry. Use direct content for simple definitions, or Sense children for multiple meanings.]
+<LexicalEntry
+	id=urn:lexical:example
+	term=""
+	bodyMode=$children
+>
+	<Sense partOfSpeech=$Noun>
+		Definition text here.
+	</Sense>
+</LexicalEntry>

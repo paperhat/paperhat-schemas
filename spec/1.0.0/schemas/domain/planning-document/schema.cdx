@@ -1,0 +1,224 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description=`
+		A strategic planning document with titled sections, milestones, dependencies, deadlines,
+		budgets, release schedules, and temporal projections — a project plan, commercial strategy,
+		roadmap, or operational plan.
+	`
+	id=paperhat:domain:planning-document
+	namespace="plan"
+	title="Planning Document Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport
+			namespace="audience"
+			reference=urn:cdx:sha256:eeb4cfc2a3574d6de35e3cfa7efd3daa750ffacc91c57ca046b9d1a2da903c43
+		/>
+
+		<SchemaImport
+			namespace="budget"
+			reference=urn:cdx:sha256:4e2807c139842c8b8a01bdc8d10df99d4f10d8def80553195e624ecf536cdf5c
+		/>
+
+		<SchemaImport
+			namespace="budgetLine"
+			reference=urn:cdx:sha256:a67d27050efaeafe93669ebb2fb3ad90ab8f2d23d4238798430662efd3503962
+		/>
+
+		<SchemaImport
+			namespace="deadline"
+			reference=urn:cdx:sha256:b9c5c385b701d5bdf4c40a8c6c101ce127f7bb16eb71b26e2c0c5d028c276f6e
+		/>
+
+		<SchemaImport
+			namespace="dependency"
+			reference=urn:cdx:sha256:dcb47e6b6b5b8a6dc598f1afffda981debac49ea8943a630487192e2315e0709
+		/>
+
+		<SchemaImport
+			namespace="desc"
+			reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641
+		/>
+
+		<SchemaImport
+			namespace="docmeta"
+			reference=urn:cdx:sha256:0ffeb450318da8f137940409b424d0c77a821386985526ee9f0a0f50bfc61f81
+		/>
+
+		<SchemaImport
+			namespace="milestone"
+			reference=urn:cdx:sha256:83a4eb90527e7b53efc419633c0d49429bdffc323b040ecf50d2220f23b2ae01
+		/>
+
+		<SchemaImport
+			namespace="narrative"
+			reference=urn:cdx:sha256:d5080fc725ba9b8641d5a8f09aecb46f659a9783f3b0a7dfad7f1d831807f433
+		/>
+
+		<SchemaImport
+			namespace="product"
+			reference=urn:cdx:sha256:6984027bd8b11d9fb42444228b3139d2ec58a3a6cd9acce564b6709174b645f2
+		/>
+
+		<SchemaImport
+			namespace="release"
+			reference=urn:cdx:sha256:66ad157b1371ca7acd8eb324a33c3a6839a72ca48fd896550c7e3c351052a4a4
+		/>
+
+		<SchemaImport
+			namespace="section"
+			reference=urn:cdx:sha256:2ca37d16001c74ef978702d41e6ca5312bad104061e79fb6c0b774773cd34e7d
+		/>
+
+		<SchemaImport
+			namespace="series"
+			reference=urn:cdx:sha256:da07d1db83af05789adbcb6ecda9e9f52f1c879cc5ae9b6273fff96676d1b799
+		/>
+
+		<SchemaImport
+			namespace="tags"
+			reference=urn:cdx:sha256:af138b9c8bbc16117f2d8553c482253f9144721ab3a9d411992a2035e2094206
+		/>
+
+		<SchemaImport
+			namespace="temporal"
+			reference=urn:cdx:sha256:57f585f81073ed18263c65e27890ce0853e00be17efe01763a325d17c6445ce6
+		/>
+
+		<SchemaImport
+			namespace="work"
+			reference=urn:cdx:sha256:7d8e5217434f3f577ec3d65a10d50846c5140722b229029517aba371c6aeda67
+		/>
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:planning-document:PlanningDocument
+			name="PlanningDocument"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="title" />
+
+				<AllowsTrait name="planningDocumentKind" />
+
+				<AllowsTrait name="planningDocumentStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="audience:Audience" />
+
+				<AllowsChildConcept conceptSelector="budget:Budget" />
+
+				<AllowsChildConcept conceptSelector="budgetLine:BudgetLine" />
+
+				<AllowsChildConcept conceptSelector="deadline:Deadline" />
+
+				<AllowsChildConcept conceptSelector="dependency:Dependency" />
+
+				<AllowsChildConcept conceptSelector="desc:Description" />
+
+				<AllowsChildConcept conceptSelector="docmeta:DocumentMetadata" max=1 />
+
+				<AllowsChildConcept conceptSelector="milestone:Milestone" />
+
+				<AllowsChildConcept conceptSelector="narrative:Narrative" />
+
+				<AllowsChildConcept conceptSelector="Phase" />
+
+				<AllowsChildConcept conceptSelector="product:Product" />
+
+				<AllowsChildConcept conceptSelector="release:Release" />
+
+				<AllowsChildConcept conceptSelector="section:Section" />
+
+				<AllowsChildConcept conceptSelector="series:SeriesInfo" />
+
+				<AllowsChildConcept conceptSelector="tags:Tags" />
+
+				<AllowsChildConcept conceptSelector="temporal:TemporalAnnotations" />
+
+				<AllowsChildConcept conceptSelector="work:Work" max=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:planning-document:Phase
+			name="Phase"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="title" />
+
+				<AllowsTrait name="phaseStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="budget:Budget" />
+
+				<AllowsChildConcept conceptSelector="budgetLine:BudgetLine" />
+
+				<AllowsChildConcept conceptSelector="deadline:Deadline" />
+
+				<AllowsChildConcept conceptSelector="dependency:Dependency" />
+
+				<AllowsChildConcept conceptSelector="desc:Description" />
+
+				<AllowsChildConcept conceptSelector="milestone:Milestone" />
+
+				<AllowsChildConcept conceptSelector="narrative:Narrative" />
+
+				<AllowsChildConcept conceptSelector="product:Product" />
+
+				<AllowsChildConcept conceptSelector="release:Release" />
+
+				<AllowsChildConcept conceptSelector="section:Section" />
+
+				<AllowsChildConcept conceptSelector="temporal:TemporalAnnotations" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:planning-document:trait:phaseStatus
+			name="phaseStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:planning-document:trait:planningDocumentKind
+			name="planningDocumentKind"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:planning-document:trait:planningDocumentStatus
+			name="planningDocumentStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:planning-document:trait:title
+			name="title"
+		/>
+	</TraitDefinitions>
+</Schema>

@@ -1,6 +1,6 @@
 [A minimal white paper with required fields and one section.]
 <WhitePaper title="" coreThesis="">
-	<Abstract />
+	<documentstructure:Abstract />
 
 	<Narrative>
 		<Section>

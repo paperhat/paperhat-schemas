@@ -1,0 +1,62 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description=`
+		The compliance state of an obligation, requirement, or control — whether the responsible party
+		has satisfied, failed, or not yet addressed the item.
+	`
+	id=paperhat:domain:compliance-status
+	namespace="compliance"
+	title="Compliance Status Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:compliance-status:ComplianceStatus
+			name="ComplianceStatus"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="status" />
+
+				<AllowsTrait name="assessmentDate" />
+
+				<AllowsTrait name="assessor" />
+
+				<AllowsTrait name="evidence" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Date
+			id=paperhat:domain:compliance-status:trait:assessmentDate
+			name="assessmentDate"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:compliance-status:trait:assessor
+			name="assessor"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:compliance-status:trait:evidence
+			name="evidence"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:compliance-status:trait:status
+			name="status"
+		/>
+	</TraitDefinitions>
+</Schema>

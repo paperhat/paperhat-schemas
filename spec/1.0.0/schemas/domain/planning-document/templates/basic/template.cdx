@@ -1,0 +1,16 @@
+[A planning document. title is required. Phases, milestones, deadlines, budgets, and dependencies are children.]
+<PlanningDocument title="Example Plan">
+	<docmeta:DocumentMetadata>
+		<work:Work author="Author Name" />
+	</docmeta:DocumentMetadata>
+
+	<desc:Description>
+		Describe the plan here.
+	</desc:Description>
+
+	<Phase title="Phase 1">
+		<narrative:Narrative>
+			Phase description here.
+		</narrative:Narrative>
+	</Phase>
+</PlanningDocument>

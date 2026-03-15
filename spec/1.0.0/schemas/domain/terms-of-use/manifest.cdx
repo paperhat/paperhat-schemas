@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="153b00140a2ee5256302205142939261996a9464ba49199b8dc0212db5fd0981"
+	closureHash="f2403b89480cd8961eade7bf70401d91a8e9a72a935523fd0d04019d71081f5a"
 	copyright="Copyright 2026 Paperhat"
 	description="A structured terms of use document defining acceptance, permitted use, prohibited use, disclaimers, liability limits, termination, governing law, and contact information."
 	license="Apache-2.0"
@@ -53,8 +53,8 @@
 	/>
 
 	<PackageDependency
-		packageName="paperhat-term-entry"
-		closureHash="efdc6e94ec893fb03eede9ac460db1e434245d1e9278ec6e50eb933bc282de38"
+		packageName="paperhat-lexical-entry"
+		closureHash="1895c73f492417c220de207ff65764bd364941f62de6252c7f5c1b47288e6cc8"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

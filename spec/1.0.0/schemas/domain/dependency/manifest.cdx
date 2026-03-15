@@ -1,0 +1,21 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="1d48d1a1f6de7f6319306de12725ee1708d70d505ce2bbf59e31ef2f85cae2f6"
+	copyright="Copyright 2026 Paperhat"
+	description=`
+		A typed directional relationship between two entities where one depends on the other — a
+		blocking dependency, prerequisite, sequencing constraint, or informational link.
+	`
+	license="Apache-2.0"
+	packageName="paperhat-dependency"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+>
+	<PackageDependency
+		closureHash="2a0f7d96f2ae202d211282c9489f7e2adfe381c24fa8a414eede55250457fc8a"
+		packageName="paperhat-description"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</DomainPackageManifest>

@@ -1,0 +1,42 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A descriptive or explanatory text fragment accompanying a figure, table, or other visual element. Caption is a semantic concept with opaque content, supporting span bindings via Gloss."
+	id=paperhat:domain:caption
+	namespace="caption"
+	title="Caption Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:caption:Caption
+			name="Caption"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<AllowsTrait name="key" />
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:caption:trait:key
+			name="key"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:caption:trait:language
+			name="language"
+		/>
+	</TraitDefinitions>
+</Schema>

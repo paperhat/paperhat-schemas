@@ -1,0 +1,7 @@
+[A frequently asked questions collection. Add entries as needed.]
+<FrequentlyAskedQuestions title="">
+	<Entry key=~entry-key>
+		<Question></Question>
+		<Answer></Answer>
+	</Entry>
+</FrequentlyAskedQuestions>

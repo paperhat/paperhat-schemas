@@ -1,0 +1,35 @@
+<LocalizationBundle language=$En schema=paperhat:domain:recurrence schemaVersion="1.0.0">
+	<ConceptLocalization identifier="Recurrence" label="Recurrence" labelOther="Recurrences" />
+
+	<TraitLocalization identifier="count" label="Count" labelOther="Counts">
+		The total number of occurrences.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="dayOfMonth" label="Day of Month" labelOther="Days of Month">
+		The day of the month for monthly recurrence.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="dayOfWeek" label="Day of Week" labelOther="Days of Week">
+		The day of the week for weekly recurrence.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="endDate" label="End Date" labelOther="End Dates">
+		The date after which no further occurrences are generated.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="frequency" label="Frequency" labelOther="Frequencies">
+		The recurrence frequency: daily, weekly, monthly, or yearly.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="interval" label="Interval" labelOther="Intervals">
+		The number of frequency periods between occurrences.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="monthOfYear" label="Month of Year" labelOther="Months of Year">
+		The month for yearly recurrence.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="startDate" label="Start Date" labelOther="Start Dates">
+		The date of the first occurrence.
+	</TraitLocalization>
+</LocalizationBundle>

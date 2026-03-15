@@ -1,0 +1,15 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="88553c68660fc5b1816b247a8d3fcafb6785feaf3e8d7795592e3126883a34cf"
+	copyright="Copyright 2026 Paperhat"
+	description=`
+		A typed internal reference from one document element to another — a section reference,
+		requirement citation, or figure pointer with display text.
+	`
+	license="Apache-2.0"
+	packageName="paperhat-cross-reference"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

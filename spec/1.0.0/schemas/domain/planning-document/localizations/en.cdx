@@ -1,0 +1,33 @@
+<LocalizationBundle language=$En schema=paperhat:domain:planning-document schemaVersion="1.0.0">
+	<ConceptLocalization
+		identifier="PlanningDocument"
+		label="Planning Document"
+		labelOther="Planning Documents"
+	/>
+
+	<ConceptLocalization identifier="Phase" label="Phase" labelOther="Phases" />
+
+	<TraitLocalization identifier="phaseStatus" label="Phase Status" labelOther="Phase Statuses">
+		The lifecycle status of the phase.
+	</TraitLocalization>
+
+	<TraitLocalization
+		identifier="planningDocumentKind"
+		label="Planning Document Kind"
+		labelOther="Planning Document Kinds"
+	>
+		The type of planning document.
+	</TraitLocalization>
+
+	<TraitLocalization
+		identifier="planningDocumentStatus"
+		label="Planning Document Status"
+		labelOther="Planning Document Statuses"
+	>
+		The lifecycle status of the planning document.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="title" label="Title" labelOther="Titles">
+		The title of the planning document or phase.
+	</TraitLocalization>
+</LocalizationBundle>

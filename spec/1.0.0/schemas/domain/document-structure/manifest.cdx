@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="d314a7459d97c55aa6313d910956a6fad7bfe9eabdb88ada4d8b8251d30b4b6a"
+	copyright="Copyright 2026 Paperhat"
+	description="Named structural divisions of a document with semantic identity. Abstract, Introduction, Conclusion, Preface, Appendix, and Foreword are general-purpose discourse primitives usable across document types."
+	license="Apache-2.0"
+	packageName="paperhat-document-structure"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

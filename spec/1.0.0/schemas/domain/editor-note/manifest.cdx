@@ -1,0 +1,15 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="d85d8a89b5d243c32848f3a5d25a4ff10a4afc916d13102b6f532af86e1c0acb"
+	copyright="Copyright 2026 Paperhat"
+	description=`
+		An editorial annotation intended for reviewers and editors, excluded from published output — a
+		comment, query, or instruction about the document itself.
+	`
+	license="Apache-2.0"
+	packageName="paperhat-editor-note"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

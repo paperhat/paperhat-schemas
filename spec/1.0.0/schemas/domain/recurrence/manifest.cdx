@@ -1,0 +1,15 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="48a29747c18c492202f663086e7246a138e155a510cd75a82b34f9921cf8c00a"
+	copyright="Copyright 2026 Paperhat"
+	description=`
+		A temporal recurrence pattern — the frequency, interval, and bounds of a repeating event,
+		obligation, or schedule entry.
+	`
+	license="Apache-2.0"
+	packageName="paperhat-recurrence"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

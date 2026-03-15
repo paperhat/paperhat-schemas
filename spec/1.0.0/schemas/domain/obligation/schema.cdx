@@ -1,0 +1,78 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description=`
+		A binding commitment by a party to perform or refrain from an action — a contractual,
+		regulatory, or policy obligation with a responsible party and compliance state.
+	`
+	id=paperhat:domain:obligation
+	namespace="obligation"
+	title="Obligation Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport
+			namespace="desc"
+			reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641
+		/>
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:obligation:Obligation
+			name="Obligation"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<AllowsTrait name="dueDate" />
+
+				<AllowsTrait name="obligatedParty" />
+
+				<AllowsTrait name="obligationKind" />
+
+				<AllowsTrait name="obligationStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+			</ChildRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Date
+			id=paperhat:domain:obligation:trait:dueDate
+			name="dueDate"
+		/>
+
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:obligation:trait:name name="name" />
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:obligation:trait:obligatedParty
+			isReferenceTrait=true
+			name="obligatedParty"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:obligation:trait:obligationKind
+			name="obligationKind"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:obligation:trait:obligationStatus
+			name="obligationStatus"
+		/>
+	</TraitDefinitions>
+</Schema>

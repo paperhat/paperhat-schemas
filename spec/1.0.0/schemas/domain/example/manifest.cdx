@@ -1,8 +1,11 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="331ee0859ccf4b1b0526f43337b1fbfb81a6ea1037a77b31fbc5eeb508b9b3ad"
+	closureHash="3aaa0b0fa8bec2afbc456ca445a77034dca6cb998b5068ba93740118db2546fa"
 	copyright="Copyright 2026 Paperhat"
-	description="A rich example container supporting paragraphs, lists, code blocks, figures, relation schemas/instances, and admonitions as children. No nested examples."
+	description=`
+		A rich example container supporting paragraphs, lists, code blocks, figures, relation
+		schemas/instances, and admonitions as children. No nested examples.
+	`
 	license="Apache-2.0"
 	packageName="paperhat-example"
 	packageVersion="1.0.0"
@@ -11,38 +14,38 @@
 	requiredLexisVersion=">=1.0.0 <2.0.0"
 >
 	<PackageDependency
-		packageName="paperhat-admonition"
 		closureHash="740f07045c3f877359e88b1eaf2f45422630c045ed2980402ba6c218c9137788"
+		packageName="paperhat-admonition"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
-		packageName="paperhat-code"
 		closureHash="f8ba0135730d0cdc0be5e7e714a8bdc1a4c3001ba6995d98254a79cd697f9935"
+		packageName="paperhat-code"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
-		packageName="paperhat-figure"
 		closureHash="7a8f244045afcc29fd7b82f05172da1300283b657d3020f4f186657e69c1ffb1"
+		packageName="paperhat-figure"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
-		packageName="paperhat-list"
 		closureHash="783b2977c16536499d4f21a85438f33bf25c301aa502ec78ee4cd6cb143f60a3"
+		packageName="paperhat-list"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
-		packageName="paperhat-relation"
 		closureHash="45da267b585f860017319a27c4182f4cee1c665d7804dc85ae47f3fdee70b2b8"
+		packageName="paperhat-relation"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
-		packageName="paperhat-text"
 		closureHash="36fc0dd91ce00a6d8caa47b4f17d88d766bf5833cafb9dfeb54c37af38c8aaa1"
+		packageName="paperhat-text"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

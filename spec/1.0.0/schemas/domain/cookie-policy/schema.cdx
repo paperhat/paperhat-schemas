@@ -15,7 +15,7 @@
 		<SchemaImport namespace="list" reference=urn:cdx:sha256:10cc30a2245e8480bb2564cba4c09c243f84285d5219b06a1899272917da2caa />
 		<SchemaImport namespace="section" reference=urn:cdx:sha256:2ca37d16001c74ef978702d41e6ca5312bad104061e79fb6c0b774773cd34e7d />
 		<SchemaImport namespace="notes" reference=urn:cdx:sha256:5169d4469cf2f181b23bfee5510652073ead5e1c6871486dba219bfb6c2b3a2b />
-		<SchemaImport namespace="term" reference=urn:cdx:sha256:d1238116402919e9ea43e55229413ed596a830e0f8f44ac2878ac63e4430f5c1 />
+		<SchemaImport namespace="lexical" reference=urn:cdx:sha256:c67c13b5ac551cb36bc2c7dacb27d4dda92eae85cfe8ad63aff3a8831ec43985 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
@@ -103,7 +103,7 @@
 				<ForbidsContent />
 			</ContentRules>
 			<ChildRules>
-				<AllowsChildConcept conceptSelector="term:TermEntry" min=1 />
+				<AllowsChildConcept conceptSelector="lexical:LexicalEntry" min=1 />
 			</ChildRules>
 			<CollectionRules allowsDuplicates=false ordering=$Ordered />
 		</ConceptDefinition>
@@ -334,14 +334,14 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
-			id=paperhat:domain:cookie-policy:definitions-requires-term-entry
-			title="Definitions must contain at least one TermEntry"
+			id=paperhat:domain:cookie-policy:definitions-requires-lexical-entry
+			title="Definitions must contain at least one LexicalEntry"
 		>
 			<Targets>
 				<TargetConcept conceptSelector="Definitions" />
 			</Targets>
 			<Rule>
-				<ChildConstraint conceptSelector="term:TermEntry" type=$RequiresChildConcept />
+				<ChildConstraint conceptSelector="lexical:LexicalEntry" type=$RequiresChildConcept />
 			</Rule>
 		</ConstraintDefinition>
 	</ConstraintDefinitions>

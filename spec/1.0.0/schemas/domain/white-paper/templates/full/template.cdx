@@ -12,7 +12,7 @@
 
 	<SeriesInfo seriesTitle="" />
 
-	<Abstract />
+	<documentstructure:Abstract />
 
 	<Narrative>
 		<Section>
@@ -28,7 +28,7 @@
 		</Section>
 	</Narrative>
 
-	<Conclusion />
+	<documentstructure:Conclusion />
 
 	<Notes>
 		<Note key=~placeholder></Note>

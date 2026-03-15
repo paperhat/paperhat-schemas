@@ -1,7 +1,7 @@
 <Schema
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
-	description="A figure containing one or more media references, with optional title and caption metadata."
+	description="A figure containing one or more media references, with optional title and caption. Caption is a semantic concept with opaque content, supporting span bindings via Gloss."
 	id=paperhat:domain:figure
 	namespace="figure"
 	title="Figure Schema"
@@ -12,6 +12,8 @@
 		<SchemaImport namespace="media" reference=urn:cdx:sha256:756650982e04bd54efb9710a756c84b04ae15db9d7b119f016264240a35b8725 />
 
 		<SchemaImport namespace="text" reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
+
+		<SchemaImport namespace="caption" reference=urn:cdx:sha256:d9414870c9dbfd9a59c5aa6904cd1395db48638d7e446ec80b005e4cd5e0d046 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
@@ -25,8 +27,6 @@
 				<AllowsTrait name="key" />
 
 				<AllowsTrait name="label" />
-
-				<AllowsTrait name="caption" />
 			</TraitRules>
 
 			<ContentRules>
@@ -36,18 +36,12 @@
 			<ChildRules>
 				<AllowsChildConcept conceptSelector="text:Title" max=1 />
 
+				<AllowsChildConcept conceptSelector="caption:Caption" max=1 />
+
 				<RequiresChildConcept conceptSelector="media:MediaReference" min=1 />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
 		</ConceptDefinition>
 	</ConceptDefinitions>
-
-	<TraitDefinitions>
-		<TraitDefinition
-			defaultValueType=$Text
-			id=paperhat:domain:figure:trait:caption
-			name="caption"
-		/>
-	</TraitDefinitions>
 </Schema>

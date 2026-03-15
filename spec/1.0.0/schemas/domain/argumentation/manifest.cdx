@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="d7fd7aaf276f09337778c1562d60fd5d2e1224eb3448b8c59a3bccdab29643c5"
+	copyright="Copyright 2026 Paperhat"
+	description="Formal argumentation primitives for modeling logical structure. An Argument contains Premises, an optional Inference, and a Claim."
+	license="Apache-2.0"
+	packageName="paperhat-argumentation"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

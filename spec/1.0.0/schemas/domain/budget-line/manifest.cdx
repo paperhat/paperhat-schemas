@@ -1,0 +1,15 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="fe9a111b1a3437ecb09ceb2b94eff896ba5efca642e4fc423792201cfdb903f3"
+	copyright="Copyright 2026 Paperhat"
+	description=`
+		A single line item in a budget — an amount allocated to a category for a specific period with a
+		tracking status.
+	`
+	license="Apache-2.0"
+	packageName="paperhat-budget-line"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

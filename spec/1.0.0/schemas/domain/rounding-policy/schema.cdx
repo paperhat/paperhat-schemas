@@ -1,0 +1,54 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description=`
+		An explicit declaration of rounding behavior — the method, scale, and scope of numeric rounding
+		applied to a value or computation.
+	`
+	id=paperhat:domain:rounding-policy
+	namespace="rounding-policy"
+	title="Rounding Policy Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:rounding-policy:RoundingPolicy
+			name="RoundingPolicy"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="method" />
+
+				<RequiresTrait name="scale" />
+
+				<AllowsTrait name="scope" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:rounding-policy:trait:method
+			name="method"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=paperhat:domain:rounding-policy:trait:scale
+			name="scale"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:rounding-policy:trait:scope
+			name="scope"
+		/>
+	</TraitDefinitions>
+</Schema>

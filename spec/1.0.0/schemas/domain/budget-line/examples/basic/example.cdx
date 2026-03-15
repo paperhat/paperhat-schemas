@@ -1,0 +1,7 @@
+<BudgetLine
+	amount=5000
+	budgetLineStatus=$Projected
+	category="Infrastructure"
+	currency=$USD
+	period="Q2 2026"
+/>

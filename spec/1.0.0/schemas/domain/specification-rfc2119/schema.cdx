@@ -1,7 +1,11 @@
 <Schema
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
-	description="RFC 2119 specification schema for authoring formal specifications in Codex. Supports the full RFC 2119 requirement modality keyword set. All shared concepts, traits, and constraints are provided by the specification foundation."
+	description=`
+		RFC 2119 specification schema for authoring formal specifications in Codex. Supports the full
+		RFC 2119 requirement modality keyword set. All shared concepts, traits, and constraints are
+		provided by the specification foundation.
+	`
 	id=paperhat:domain:specification-rfc2119
 	namespace="spec2119"
 	title="Specification Schema (RFC 2119)"
@@ -9,7 +13,10 @@
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace="specbase" reference=urn:cdx:sha256:9cb044c6d697aea4d5f8dba56da013f2cfe1f4a2e728ae31553131e1970da58d />
+		<SchemaImport
+			namespace="specbase"
+			reference=urn:cdx:sha256:631c8a1592a618a8208c50be3935db8a6b12c7812f9662fca022f86c2142fbdb
+		/>
 	</SchemaImports>
 
 	<ConceptDefinitions>

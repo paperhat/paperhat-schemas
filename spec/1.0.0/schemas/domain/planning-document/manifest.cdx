@@ -1,0 +1,111 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="595737bff00ae20c742ef95b052125157a829bd823a28c275be84abeb6f9ce8f"
+	copyright="Copyright 2026 Paperhat"
+	description=`
+		A strategic planning document with titled sections, milestones, dependencies, deadlines,
+		budgets, release schedules, and temporal projections.
+	`
+	license="Apache-2.0"
+	packageName="paperhat-planning-document"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+>
+	<PackageDependency
+		closureHash="e192824a1a7bbb2f4e0dc6a3a4b2342541e274963c299fe34507f6d12e907cdf"
+		packageName="paperhat-audience"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		closureHash="177129f686bc025ee9371e25ee1c6a9a887d689b06a00331ab70b6c67d3411fd"
+		packageName="paperhat-budget"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		closureHash="fe9a111b1a3437ecb09ceb2b94eff896ba5efca642e4fc423792201cfdb903f3"
+		packageName="paperhat-budget-line"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		closureHash="0576a8fb8838bb368fab16a42669d387c690e00c7016b71f91ffed65f32ab7c1"
+		packageName="paperhat-deadline"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		closureHash="1d48d1a1f6de7f6319306de12725ee1708d70d505ce2bbf59e31ef2f85cae2f6"
+		packageName="paperhat-dependency"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		closureHash="2a0f7d96f2ae202d211282c9489f7e2adfe381c24fa8a414eede55250457fc8a"
+		packageName="paperhat-description"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		closureHash="5ca4100c2fbf71d328baad520cefeb3ebbcb87826218b1f30107f2ae21e7460a"
+		packageName="paperhat-document-metadata"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		closureHash="da29a52be53fdbad0248750548ea9d50c875f93e9b9bc996bfb91082b5bcd9c2"
+		packageName="paperhat-milestone"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		closureHash="ec753407a2561dfd987c7a04a7e0f3d3b045ee2de618fa866a9028ded5d88bb4"
+		packageName="paperhat-narrative"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		closureHash="f8a168587732ad7244d9a9aedda3d6d2dfbc002e60d97a44766296eb6825c6d8"
+		packageName="paperhat-product"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		closureHash="2a382008c51aaa5ceaff007cd79675fe48fdceb5715a899a4c603488e9df080e"
+		packageName="paperhat-release"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		closureHash="dd4d1185452ac3fec3a40fa160a9c54ffbb9e7f6fb3d5f77b0aecebb780b8b49"
+		packageName="paperhat-section"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		closureHash="5ab0370bfda8fd85bd87b944a1b6db288cdad520b7bfc64b3a752ec507a76d64"
+		packageName="paperhat-series"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		closureHash="c8bae75e8068cc05e3f31704fec12c990ea729c4b00c72a53652f031ffe424d9"
+		packageName="paperhat-tags"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		closureHash="0012ccd0216403a2086df96c27daacfc90fdf736681ee7654da1280e02a98127"
+		packageName="paperhat-temporal"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		closureHash="03267f2a018d40c9671ff9e987ac09c10f6b79c705050a4ba3b01e294159c368"
+		packageName="paperhat-work"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</DomainPackageManifest>

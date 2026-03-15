@@ -1,0 +1,2 @@
+[source and target are required references. dependencyKind is optional.]
+<Dependency source=urn:example:source target=urn:example:target />

@@ -1,0 +1,55 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description=`
+		A typed internal reference from one document element to another — a section reference,
+		requirement citation, or figure pointer with display text.
+	`
+	id=paperhat:domain:cross-reference
+	namespace="cross-reference"
+	title="Cross Reference Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:cross-reference:CrossReference
+			name="CrossReference"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="target" />
+
+				<AllowsTrait name="crossReferenceKind" />
+
+				<AllowsTrait name="displayText" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:cross-reference:trait:crossReferenceKind
+			name="crossReferenceKind"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:cross-reference:trait:displayText
+			name="displayText"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:cross-reference:trait:target
+			isReferenceTrait=true
+			name="target"
+		/>
+	</TraitDefinitions>
+</Schema>

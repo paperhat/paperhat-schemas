@@ -1,0 +1,21 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="59b38a1f0a00ace6f908a00714c81ecd5ae127a466944dfdcfa1518961ca6586"
+	copyright="Copyright 2026 Paperhat"
+	description=`
+		A supplementary section of a specification or formal document with an explicit normative status
+		— a normative annex contains binding requirements, an informative annex contains guidance.
+	`
+	license="Apache-2.0"
+	packageName="paperhat-annex"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+>
+	<PackageDependency
+		closureHash="2a0f7d96f2ae202d211282c9489f7e2adfe381c24fa8a414eede55250457fc8a"
+		packageName="paperhat-description"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</DomainPackageManifest>

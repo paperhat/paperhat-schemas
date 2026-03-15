@@ -1,0 +1,6 @@
+[name is required. All other traits are optional. BudgetLine children are wired by a composer.]
+<Budget name="Example Budget">
+	<desc:Description>
+		Describe the budget here.
+	</desc:Description>
+</Budget>

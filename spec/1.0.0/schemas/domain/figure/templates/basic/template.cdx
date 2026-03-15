@@ -1,5 +1,6 @@
-<Figure key=~figure-key caption="">
+[Figure requires at least one media:MediaReference child. Caption is optional.]
+<Figure key=~figure-key>
 	<Title></Title>
+	<Caption></Caption>
 	<MediaReference url="" mediaKind=$image />
 </Figure>
-[Figure requires at least one media:MediaReference child.]

@@ -1,0 +1,5 @@
+<Dependency
+	dependencyKind=$Requires
+	source=urn:paperhat:milestone:lexis-beta
+	target=urn:paperhat:milestone:codex-beta
+/>

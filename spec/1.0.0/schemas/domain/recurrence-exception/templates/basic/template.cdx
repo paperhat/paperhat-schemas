@@ -1,0 +1,2 @@
+[originalDate is required. replacementDate and reason are optional. Absent replacementDate means cancellation.]
+<RecurrenceException originalDate=date("2026-01-01") reason="Holiday" />

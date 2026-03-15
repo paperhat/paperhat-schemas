@@ -1,0 +1,14 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="7e39cf262a4a76043d33f61907c30b5459cbd6896e0331ed25c85c13d5addcd2"
+	copyright="Copyright 2026 Paperhat"
+	description="A frequently asked questions collection composed of question-answer pairs. Imports the general-purpose Question and Answer discourse primitives."
+	license="Apache-2.0"
+	packageName="paperhat-faq"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+>
+	<PackageDependency packageName="paperhat-question-answer" closureHash="30c413cce6095b67ca2aa23ca691c6280a60eae3d705bbfd5e9125a17594ea07" versionRange=">=1.0.0 <2.0.0" />
+</DomainPackageManifest>

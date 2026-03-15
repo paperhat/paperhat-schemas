@@ -1,0 +1,6 @@
+[A named target achievement. name is required; targetDate, milestoneStatus, and completionCriteria are optional.]
+<Milestone name="Example Milestone">
+	<desc:Description>
+		Describe the milestone and its significance here.
+	</desc:Description>
+</Milestone>

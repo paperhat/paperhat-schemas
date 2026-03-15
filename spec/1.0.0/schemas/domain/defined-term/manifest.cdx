@@ -1,0 +1,15 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="bc4cd36ecba2f92355f21f075e6c3e186914e1c12a202a26f19cdc9bf6776213"
+	copyright="Copyright 2026 Paperhat"
+	description=`
+		A term with an authoritative definition that binds within the scope of a governing document — a
+		contractual defined term, specification keyword, or policy term.
+	`
+	license="Apache-2.0"
+	packageName="paperhat-defined-term"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

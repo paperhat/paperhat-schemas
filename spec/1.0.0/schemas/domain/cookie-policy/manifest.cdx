@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="13773f798b02678de0156e5a9845946e392c5cd4243a6c0fdeae721b790d755d"
+	closureHash="33b3ac59a58799f01a1da1a1949df4268bb0e94e69cac2248bddca744e7a67cb"
 	copyright="Copyright 2026 Paperhat"
 	description="A structured cookie policy document defining cookie categories, controls, third-party use, and retention semantics."
 	license="Apache-2.0"
@@ -47,8 +47,8 @@
 	/>
 
 	<PackageDependency
-		packageName="paperhat-term-entry"
-		closureHash="efdc6e94ec893fb03eede9ac460db1e434245d1e9278ec6e50eb933bc282de38"
+		packageName="paperhat-lexical-entry"
+		closureHash="1895c73f492417c220de207ff65764bd364941f62de6252c7f5c1b47288e6cc8"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

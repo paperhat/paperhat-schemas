@@ -2,10 +2,10 @@
 	title="Zero-Trust Migration for Mid-Market Enterprises"
 	coreThesis="A phased zero-trust rollout can reduce breach exposure without disrupting delivery velocity."
 >
-	<Abstract>
+	<documentstructure:Abstract>
 		This paper outlines a phased migration strategy for organisations moving
 		from perimeter-centric controls to zero-trust architecture.
-	</Abstract>
+	</documentstructure:Abstract>
 
 	<Narrative>
 		<Section>

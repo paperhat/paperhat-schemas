@@ -1,0 +1,70 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description=`
+		A single line item in a budget — an amount allocated to a category for a specific period with a
+		tracking status.
+	`
+	id=paperhat:domain:budget-line
+	namespace="budget-line"
+	title="Budget Line Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:budget-line:BudgetLine
+			name="BudgetLine"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="amount" />
+
+				<RequiresTrait name="category" />
+
+				<AllowsTrait name="budgetLineStatus" />
+
+				<AllowsTrait name="currency" />
+
+				<AllowsTrait name="period" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Number
+			id=paperhat:domain:budget-line:trait:amount
+			name="amount"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:budget-line:trait:budgetLineStatus
+			name="budgetLineStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:budget-line:trait:category
+			name="category"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:budget-line:trait:currency
+			name="currency"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:budget-line:trait:period
+			name="period"
+		/>
+	</TraitDefinitions>
+</Schema>

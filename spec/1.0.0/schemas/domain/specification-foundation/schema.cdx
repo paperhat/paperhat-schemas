@@ -1,7 +1,11 @@
 <Schema
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
-	description="Shared foundation for specification schemas. Provides common traits, enumerated value sets, and all concepts that are identical across specification variants. Variant schemas import this foundation and define only their own Specification root and Requirement concept."
+	description=`
+		Shared foundation for specification schemas. Provides common traits, enumerated value sets, and
+		all concepts that are identical across specification variants. Variant schemas import this
+		foundation and define only their own Specification root and Requirement concept.
+	`
 	id=paperhat:domain:specification-foundation
 	namespace="specbase"
 	title="Specification Foundation Schema"
@@ -9,53 +13,75 @@
 	versionScheme=$Semver
 >
 	<SchemaImports>
-		<SchemaImport namespace="admonition" reference=urn:cdx:sha256:f676d06cf578a8fa377b961fcd4d8e5676f8def5ba6b298eaee92f0d3614a890 />
+		<SchemaImport
+			namespace="admonition"
+			reference=urn:cdx:sha256:f676d06cf578a8fa377b961fcd4d8e5676f8def5ba6b298eaee92f0d3614a890
+		/>
 
-		<SchemaImport namespace="cite" reference=urn:cdx:sha256:91b7ebc87b875e8a237464ed2b9074b72f2bd8e3e4aacb060d0210e37d6873fa />
+		<SchemaImport
+			namespace="cite"
+			reference=urn:cdx:sha256:91b7ebc87b875e8a237464ed2b9074b72f2bd8e3e4aacb060d0210e37d6873fa
+		/>
 
-		<SchemaImport namespace="code" reference=urn:cdx:sha256:70c45e812f5306b69dad783ea4c84546284dfaeeba6f1342918372e385da0cea />
+		<SchemaImport
+			namespace="code"
+			reference=urn:cdx:sha256:70c45e812f5306b69dad783ea4c84546284dfaeeba6f1342918372e385da0cea
+		/>
 
-		<SchemaImport namespace="desc" reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
+		<SchemaImport
+			namespace="desc"
+			reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641
+		/>
 
-		<SchemaImport namespace="docmeta" reference=urn:cdx:sha256:0ffeb450318da8f137940409b424d0c77a821386985526ee9f0a0f50bfc61f81 />
+		<SchemaImport
+			namespace="docmeta"
+			reference=urn:cdx:sha256:0ffeb450318da8f137940409b424d0c77a821386985526ee9f0a0f50bfc61f81
+		/>
 
-		<SchemaImport namespace="example" reference=urn:cdx:sha256:5b51537d738b32a31eb1231aa3ad42cd661e4c0c9c7bee7d9bdc8c9576c1b1d8 />
+		<SchemaImport
+			namespace="example"
+			reference=urn:cdx:sha256:bde5283c13c8d93b24c3aa6c01dab3d363cc253adc9ac8c79ad7e858959a3cd3
+		/>
 
-		<SchemaImport namespace="figure" reference=urn:cdx:sha256:956be71cfea89505c8bee829910938f85dd2ec1c47a3056b603a57adc8b491ae />
+		<SchemaImport
+			namespace="figure"
+			reference=urn:cdx:sha256:eda5e8b1f99a572938c9abb04885ee27383aa0946663797779f551208737ddf7
+		/>
 
-		<SchemaImport namespace="glossary" reference=urn:cdx:sha256:6b96358486e600af7c9fc2840b1b448d11354b4e3a40c2f0eb3ca552e7fba59c />
+		<SchemaImport
+			namespace="definition"
+			reference=urn:cdx:sha256:a2e8ef5fca16c0e378dbb92c504394bc5ab69ef6f11aab501118689afa5f4145
+		/>
 
-		<SchemaImport namespace="list" reference=urn:cdx:sha256:10cc30a2245e8480bb2564cba4c09c243f84285d5219b06a1899272917da2caa />
+		<SchemaImport
+			namespace="list"
+			reference=urn:cdx:sha256:10cc30a2245e8480bb2564cba4c09c243f84285d5219b06a1899272917da2caa
+		/>
 
-		<SchemaImport namespace="procedure" reference=urn:cdx:sha256:bcbffc6137ed634d22326675903bc24c2ad1e4f8d2a948ac5b26324048e7f1f0 />
+		<SchemaImport
+			namespace="procedure"
+			reference=urn:cdx:sha256:2422fd8681a6d4a9cab27862b5875e2b80399a3fe821938872789e60465857f4
+		/>
 
-		<SchemaImport namespace="relation" reference=urn:cdx:sha256:57e32c06b4570f54e7a1ef2fd62823c1b5345e9ffa92ba288541092ae4366a3c />
+		<SchemaImport
+			namespace="relation"
+			reference=urn:cdx:sha256:d0a5249cddda2afd63895ea534253b534111ea5f4094dcf17d99a51587483447
+		/>
 
-		<SchemaImport namespace="summary" reference=urn:cdx:sha256:8ad50bcc27f33fbe714c7a9c32c12ef643a78ad193c5befc49ad223d03f9f2e1 />
+		<SchemaImport
+			namespace="summary"
+			reference=urn:cdx:sha256:8ad50bcc27f33fbe714c7a9c32c12ef643a78ad193c5befc49ad223d03f9f2e1
+		/>
 
-		<SchemaImport namespace="term" reference=urn:cdx:sha256:d1238116402919e9ea43e55229413ed596a830e0f8f44ac2878ac63e4430f5c1 />
+		<SchemaImport
+			namespace="lexical"
+			reference=urn:cdx:sha256:c67c13b5ac551cb36bc2c7dacb27d4dda92eae85cfe8ad63aff3a8831ec43985
+		/>
 
-		<SchemaImport namespace="text" reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
-
-		<SchemaImport namespace="abbr" reference=urn:cdx:sha256:0000000000000000000000000000000000000000000000000000000000000000 />
-
-		<SchemaImport namespace="ack" reference=urn:cdx:sha256:0000000000000000000000000000000000000000000000000000000000000000 />
-
-		<SchemaImport namespace="conf" reference=urn:cdx:sha256:0000000000000000000000000000000000000000000000000000000000000000 />
-
-		<SchemaImport namespace="grammar" reference=urn:cdx:sha256:0000000000000000000000000000000000000000000000000000000000000000 />
-
-		<SchemaImport namespace="ip" reference=urn:cdx:sha256:0000000000000000000000000000000000000000000000000000000000000000 />
-
-		<SchemaImport namespace="isometa" reference=urn:cdx:sha256:0000000000000000000000000000000000000000000000000000000000000000 />
-
-		<SchemaImport namespace="math" reference=urn:cdx:sha256:0000000000000000000000000000000000000000000000000000000000000000 />
-
-		<SchemaImport namespace="revhist" reference=urn:cdx:sha256:0000000000000000000000000000000000000000000000000000000000000000 />
-
-		<SchemaImport namespace="sym" reference=urn:cdx:sha256:0000000000000000000000000000000000000000000000000000000000000000 />
-
-		<SchemaImport namespace="test" reference=urn:cdx:sha256:0000000000000000000000000000000000000000000000000000000000000000 />
+		<SchemaImport
+			namespace="text"
+			reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df
+		/>
 	</SchemaImports>
 
 	<ConceptDefinitions>
@@ -98,7 +124,7 @@
 
 				<AllowsChildConcept conceptSelector="Requirement" />
 
-				<AllowsChildConcept conceptSelector="glossary:GlossaryEntry" />
+				<AllowsChildConcept conceptSelector="definition:Definition" />
 
 				<AllowsChildConcept conceptSelector="Note" />
 
@@ -144,27 +170,7 @@
 
 				<AllowsChildConcept conceptSelector="summary:Summary" />
 
-				<AllowsChildConcept conceptSelector="term:TermEntry" />
-
-				<AllowsChildConcept conceptSelector="abbr:AbbreviationList" />
-
-				<AllowsChildConcept conceptSelector="ack:Acknowledgments" />
-
-				<AllowsChildConcept conceptSelector="conf:ConformanceClause" />
-
-				<AllowsChildConcept conceptSelector="grammar:Grammar" />
-
-				<AllowsChildConcept conceptSelector="ip:IPNotice" />
-
-				<AllowsChildConcept conceptSelector="isometa:ISODocumentMetadata" />
-
-				<AllowsChildConcept conceptSelector="math:MathBlock" />
-
-				<AllowsChildConcept conceptSelector="revhist:RevisionHistory" />
-
-				<AllowsChildConcept conceptSelector="sym:SymbolTable" />
-
-				<AllowsChildConcept conceptSelector="test:TestSuite" />
+				<AllowsChildConcept conceptSelector="lexical:LexicalEntry" />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
@@ -493,13 +499,19 @@
 	</TraitDefinitions>
 
 	<EnumeratedValueSets>
-		<EnumeratedValueSet id=paperhat:domain:specification-foundation:set:SectionConformance name="SectionConformance">
+		<EnumeratedValueSet
+			id=paperhat:domain:specification-foundation:set:SectionConformance
+			name="SectionConformance"
+		>
 			<Member value="Normative" />
 
 			<Member value="Informative" />
 		</EnumeratedValueSet>
 
-		<EnumeratedValueSet id=paperhat:domain:specification-foundation:set:SectionDivision name="SectionDivision">
+		<EnumeratedValueSet
+			id=paperhat:domain:specification-foundation:set:SectionDivision
+			name="SectionDivision"
+		>
 			<Member value="Body" />
 
 			<Member value="Appendix" />
@@ -509,7 +521,10 @@
 			<Member value="BackMatter" />
 		</EnumeratedValueSet>
 
-		<EnumeratedValueSet id=paperhat:domain:specification-foundation:set:RequirementModality name="RequirementModality">
+		<EnumeratedValueSet
+			id=paperhat:domain:specification-foundation:set:RequirementModality
+			name="RequirementModality"
+		>
 			<Member value="Must" />
 
 			<Member value="MustNot" />
@@ -531,7 +546,10 @@
 			<Member value="Optional" />
 		</EnumeratedValueSet>
 
-		<EnumeratedValueSet id=paperhat:domain:specification-foundation:set:IssueStatus name="IssueStatus">
+		<EnumeratedValueSet
+			id=paperhat:domain:specification-foundation:set:IssueStatus
+			name="IssueStatus"
+		>
 			<Member value="Open" />
 
 			<Member value="Resolved" />
@@ -539,7 +557,10 @@
 			<Member value="Deferred" />
 		</EnumeratedValueSet>
 
-		<EnumeratedValueSet id=paperhat:domain:specification-foundation:set:OpenQuestionStatus name="OpenQuestionStatus">
+		<EnumeratedValueSet
+			id=paperhat:domain:specification-foundation:set:OpenQuestionStatus
+			name="OpenQuestionStatus"
+		>
 			<Member value="Open" />
 
 			<Member value="Answered" />
@@ -558,7 +579,7 @@
 			</Targets>
 
 			<Rule>
-				<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="Section" />
+				<ReferenceConstraint conceptSelector="Section" type=$ReferenceTargetsConcept />
 			</Rule>
 		</ConstraintDefinition>
 

@@ -1,8 +1,8 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="acbb9867fd2ea4687523c24534421b6e11d2006c0b22c36f51c89974184d7777"
+	closureHash="db4178920a5a621e50ffb394269a7ab181fad83f6ed973463c41c77711804365"
 	copyright="Copyright 2026 Paperhat"
-	description="A structured, argument-driven long-form document for technical or policy white papers."
+	description="A structured, argument-driven long-form document for technical or policy white papers. Composes imported building blocks for metadata, narrative structure, footnotes, series membership, and document divisions."
 	license="Apache-2.0"
 	packageName="paperhat-white-paper"
 	packageVersion="1.0.0"
@@ -31,6 +31,12 @@
 	<PackageDependency
 		packageName="paperhat-series"
 		closureHash="5ab0370bfda8fd85bd87b944a1b6db288cdad520b7bfc64b3a752ec507a76d64"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-document-structure"
+		closureHash="d314a7459d97c55aa6313d910956a6fad7bfe9eabdb88ada4d8b8251d30b4b6a"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

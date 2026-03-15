@@ -1,0 +1,17 @@
+<Abstract language=$en>
+	This paper examines the relationship between semantic type systems and
+	document authoring. We demonstrate that treating discourse units as typed
+	values yields deterministic, reproducible documents.
+</Abstract>
+
+<Introduction language=$en>
+	The gap between human-authored prose and machine-processable data has
+	persisted for decades. Documents remain opaque strings while data remains
+	inaccessible prose. This work bridges that gap.
+</Introduction>
+
+<Conclusion language=$en>
+	Typed discourse units eliminate the artificial boundary between prose and
+	structured data. The system produces identical output for identical input
+	across all conforming implementations.
+</Conclusion>

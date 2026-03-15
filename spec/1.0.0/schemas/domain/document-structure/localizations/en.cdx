@@ -1,0 +1,33 @@
+<LocalizationBundle
+	schema=paperhat:domain:documentstructure
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Abstract" label="Abstract" labelOther="Abstracts" />
+
+	<ConceptLocalization identifier="Introduction" label="Introduction" labelOther="Introductions" />
+
+	<ConceptLocalization identifier="Conclusion" label="Conclusion" labelOther="Conclusions" />
+
+	<ConceptLocalization identifier="Preface" label="Preface" labelOther="Prefaces" />
+
+	<ConceptLocalization identifier="Appendix" label="Appendix" labelOther="Appendices" />
+
+	<ConceptLocalization identifier="Foreword" label="Foreword" labelOther="Forewords" />
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		A stable lookup token for cross-referencing this document division.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="label" label="Label" labelOther="Labels">
+		A display label for identification, such as "Appendix A".
+	</TraitLocalization>
+
+	<TraitLocalization identifier="author" label="Author" labelOther="Authors">
+		The author of a foreword, when different from the document author.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="language" label="Language" labelOther="Languages">
+		The natural language of the content.
+	</TraitLocalization>
+</LocalizationBundle>

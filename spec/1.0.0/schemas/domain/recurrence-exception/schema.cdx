@@ -1,0 +1,54 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description=`
+		An override or cancellation of a single instance in a recurrence pattern — a date that is
+		skipped, moved, or replaced.
+	`
+	id=paperhat:domain:recurrence-exception
+	namespace="recurrence-exception"
+	title="Recurrence Exception Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:recurrence-exception:RecurrenceException
+			name="RecurrenceException"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="originalDate" />
+
+				<AllowsTrait name="reason" />
+
+				<AllowsTrait name="replacementDate" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Date
+			id=paperhat:domain:recurrence-exception:trait:originalDate
+			name="originalDate"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:recurrence-exception:trait:reason
+			name="reason"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Date
+			id=paperhat:domain:recurrence-exception:trait:replacementDate
+			name="replacementDate"
+		/>
+	</TraitDefinitions>
+</Schema>

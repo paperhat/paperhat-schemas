@@ -1,0 +1,23 @@
+<LocalizationBundle language=$En schema=paperhat:domain:cross-reference schemaVersion="1.0.0">
+	<ConceptLocalization
+		identifier="CrossReference"
+		label="Cross Reference"
+		labelOther="Cross References"
+	/>
+
+	<TraitLocalization
+		identifier="crossReferenceKind"
+		label="Cross Reference Kind"
+		labelOther="Cross Reference Kinds"
+	>
+		The type of element being referenced.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="displayText" label="Display Text" labelOther="Display Texts">
+		Override text for the rendered reference.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="target" label="Target" labelOther="Targets">
+		The referenced element.
+	</TraitLocalization>
+</LocalizationBundle>

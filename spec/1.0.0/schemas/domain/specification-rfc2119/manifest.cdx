@@ -1,8 +1,11 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="0df9ea43a49bb2e3f1458604521d5f786bab45ca85213f7e4f145ee6f7f0533c"
+	closureHash="e9061c9e28cb10b09368072725d0ab62b7b11743e44cde46002a11f599a3ecdc"
 	copyright="Copyright 2026 Paperhat"
-	description="RFC 2119 specification schema for authoring formal specifications in Codex. Supports the full RFC 2119 requirement modality keyword set."
+	description=`
+		RFC 2119 specification schema for authoring formal specifications in Codex. Supports the full
+		RFC 2119 requirement modality keyword set.
+	`
 	license="Apache-2.0"
 	packageName="paperhat-specification-rfc2119"
 	packageVersion="1.0.0"
@@ -11,8 +14,8 @@
 	requiredLexisVersion=">=1.0.0 <2.0.0"
 >
 	<PackageDependency
+		closureHash="cae5307b5ce3531f3999601774d48f86469a9648ec8411c7911d528ffefe8de8"
 		packageName="paperhat-specification-foundation"
-		closureHash="c87c0b042f3190b0ccd4caa847fb050be907dd3c6a8f0aceb2877aade2f03346"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

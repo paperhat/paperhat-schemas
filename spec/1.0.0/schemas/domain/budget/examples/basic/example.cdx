@@ -1,0 +1,12 @@
+<Budget
+	budgetStatus=$Active
+	currency=$NZD
+	endDate=date("2026-12-31")
+	name="Paperhat 2026 Operating Budget"
+	startDate=date("2026-01-01")
+	totalAmount=120000
+>
+	<desc:Description>
+		Annual operating budget for all Paperhat development, infrastructure, and go-to-market activities.
+	</desc:Description>
+</Budget>

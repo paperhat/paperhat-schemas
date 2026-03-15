@@ -1,0 +1,2 @@
+[amount and category are required. currency, period, and budgetLineStatus are optional.]
+<BudgetLine amount=0 category="Category Name" />

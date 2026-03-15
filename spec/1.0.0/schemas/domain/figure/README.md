@@ -4,7 +4,7 @@ Version: 1.0.0
 
 # Figure
 
-A semantic figure container for one or more media resources, with optional title and caption metadata.
+A semantic figure container for one or more media resources, with optional title, caption child, and label metadata.
 
 ## When to Use
 
@@ -20,6 +20,15 @@ Allowed child concepts:
 
 - `text:Title` (max 1)
 - `media:MediaReference` (min 1)
+- `caption:Caption` (max 1)
+
+## Imports
+
+| Namespace | Schema |
+|---|---|
+| media | `paperhat:domain:media` |
+| text | `paperhat:domain:text` |
+| caption | `paperhat:domain:caption` |
 
 ## Traits
 
@@ -27,7 +36,6 @@ Allowed child concepts:
 |---|---|---|---|
 | key | $LookupToken | no | Stable token for binding/reference workflows. |
 | label | $Text | no | Optional label text for renderers and references. |
-| caption | $Text | no | Optional figure-level caption text. |
 
 ## Constraints
 
@@ -35,8 +43,8 @@ Allowed child concepts:
 
 ## Design Notes
 
-- A figure can aggregate multiple related media references.
-- `caption` is figure-level metadata and does not replace per-media captions.
+- A figure aggregates one or more related media references.
+- `caption:Caption` is an optional child concept imported from `paperhat-caption`, providing structured caption content rather than a plain text trait.
 
 ---
 

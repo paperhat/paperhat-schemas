@@ -18,7 +18,7 @@ Use `TermsOfUse` for the contractual or quasi-contractual terms governing use of
 | GoverningEntity | Structural | ForbidsContent | — | A referenced governing organization or other governing entity. Requires `target`. |
 | AppliesTo | Structural | ForbidsContent | — | A referenced covered target such as a site, service, product, or application. Requires `target`. |
 | RelatedDocument | Structural | ForbidsContent | — | A referenced related legal document. Requires `target` and `relationshipKind`. |
-| Definitions | Structural | ForbidsContent | term:TermEntry (1..n) | Formal defined terms used by the legal document. |
+| Definitions | Structural | ForbidsContent | lexical:LexicalEntry (1..n) | Formal defined terms used by the legal document. |
 | Acceptance | Semantic | ForbidsContent | text:Paragraph, list:OrderedList, list:UnorderedList, section:Section, notes:Notes | The user acceptance basis. |
 | PermittedUse | Semantic | ForbidsContent | text:Paragraph, list:OrderedList, list:UnorderedList, section:Section, notes:Notes | Allowed uses of the service. |
 | ProhibitedUse | Semantic | ForbidsContent | text:Paragraph, list:OrderedList, list:UnorderedList, section:Section, notes:Notes | Forbidden conduct or misuse. |
@@ -39,7 +39,7 @@ Use `TermsOfUse` for the contractual or quasi-contractual terms governing use of
 | list | `paperhat:domain:list` |
 | section | `paperhat:domain:section` |
 | notes | `paperhat:domain:notes` |
-| term | `paperhat:domain:term-entry` |
+| lexical | `paperhat:domain:lexical-entry` |
 
 ## Traits
 
@@ -54,16 +54,18 @@ Use `TermsOfUse` for the contractual or quasi-contractual terms governing use of
 ## Constraints
 
 - `TermsOfUse` requires `Acceptance` and `PermittedUse`.
-- `Definitions` must contain at least one `term:TermEntry`.
+- `Definitions` must contain at least one `lexical:LexicalEntry`.
 - `GoverningEntity`, `AppliesTo`, and `RelatedDocument` allow only `target` as a reference trait.
 - Every `target` in those concepts must resolve to an entity.
 - `TermsContact` must contain at least one `contact:ContactPoint`.
 
 ## Design Notes
 
-- Defined terms are explicit through `term:TermEntry` instead of being buried in prose paragraphs.
-- Graph references are explicit so terms can connect to governing entities, covered targets, and related legal documents without relying on prose links.
+- Defined terms are explicit through `lexical:LexicalEntry` instead of being buried in prose paragraphs.
+- Graph references are explicit so terms connect to governing entities, covered targets, and related legal documents without relying on prose links.
 - Terms sections preserve internal order through paragraphs, lists, nested sections, and notes.
-- `TermsContact` is separate from general metadata so notice channels can be surfaced distinctly by foundries.
+- `TermsContact` is separate from general metadata so notice channels are surfaced distinctly by foundries.
+
+---
 
 **End of Terms Of Use v1.0.0**

@@ -1,0 +1,6 @@
+[ChangeLog contains ChangeLogEntry children. Each entry requires version and date.]
+<ChangeLog>
+	<ChangeLogEntry date=date("2026-01-01") version="1.0.0">
+		Describe the change here.
+	</ChangeLogEntry>
+</ChangeLog>

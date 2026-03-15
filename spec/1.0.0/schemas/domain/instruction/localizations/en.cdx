@@ -1,0 +1,15 @@
+<LocalizationBundle
+	schema=paperhat:domain:instruction
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Instruction" label="Instruction" labelOther="Instructions" />
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		A stable lookup token for cross-referencing this instruction.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="language" label="Language" labelOther="Languages">
+		The natural language of the instruction content.
+	</TraitLocalization>
+</LocalizationBundle>

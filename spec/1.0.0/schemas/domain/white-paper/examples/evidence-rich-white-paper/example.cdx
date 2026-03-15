@@ -39,10 +39,10 @@
 		track="Compliance"
 	/>
 
-	<Abstract>
+	<documentstructure:Abstract>
 		This white paper evaluates organisational and technical patterns for
 		introducing policy-as-code into delivery pipelines under regulated controls.
-	</Abstract>
+	</documentstructure:Abstract>
 
 	<Narrative>
 		<Section>
@@ -79,10 +79,10 @@
 		</Section>
 	</Narrative>
 
-	<Conclusion>
+	<documentstructure:Conclusion>
 		Policy-as-code succeeds when control logic is versioned with application
 		changes and exceptions are bounded by explicit expiration windows.
-	</Conclusion>
+	</documentstructure:Conclusion>
 
 	<Notes>
 		<Note key=~regulatoryContext>

@@ -1,0 +1,65 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description=`
+		A record of changes to a versioned document or artifact — a chronological list of modifications
+		with dates, authors, and descriptions.
+	`
+	id=paperhat:domain:change-log
+	namespace="change-log"
+	title="Change Log Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:change-log:ChangeLog
+			name="ChangeLog"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="ChangeLogEntry" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:change-log:ChangeLogEntry
+			name="ChangeLogEntry"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="date" />
+
+				<RequiresTrait name="version" />
+
+				<AllowsTrait name="author" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:change-log:trait:author
+			name="author"
+		/>
+
+		<TraitDefinition defaultValueType=$Date id=paperhat:domain:change-log:trait:date name="date" />
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:change-log:trait:version
+			name="version"
+		/>
+	</TraitDefinitions>
+</Schema>

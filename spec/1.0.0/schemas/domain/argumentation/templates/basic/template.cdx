@@ -1,0 +1,6 @@
+[A formal argument with premises, optional inference, and claim.]
+<Argument key=~argument-key label="">
+	<Premise key=~premise-1 label="P1">Supporting proposition.</Premise>
+	<Inference>Logical step connecting premises to claim.</Inference>
+	<Claim key=~claim-1 label="C1">Conclusion.</Claim>
+</Argument>

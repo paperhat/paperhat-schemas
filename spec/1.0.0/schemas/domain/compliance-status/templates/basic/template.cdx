@@ -1,0 +1,2 @@
+[status is required. assessmentDate, assessor, and evidence are optional.]
+<ComplianceStatus status=$Pending />

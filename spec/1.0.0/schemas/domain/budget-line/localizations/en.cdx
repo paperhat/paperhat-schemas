@@ -1,0 +1,27 @@
+<LocalizationBundle language=$En schema=paperhat:domain:budget-line schemaVersion="1.0.0">
+	<ConceptLocalization identifier="BudgetLine" label="Budget Line" labelOther="Budget Lines" />
+
+	<TraitLocalization identifier="amount" label="Amount" labelOther="Amounts">
+		The monetary amount allocated to this line item.
+	</TraitLocalization>
+
+	<TraitLocalization
+		identifier="budgetLineStatus"
+		label="Budget Line Status"
+		labelOther="Budget Line Statuses"
+	>
+		The tracking status of this line item.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="category" label="Category" labelOther="Categories">
+		The budget category for this line item.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="currency" label="Currency" labelOther="Currencies">
+		The ISO 4217 currency code for this amount.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="period" label="Period" labelOther="Periods">
+		The time period this line item covers.
+	</TraitLocalization>
+</LocalizationBundle>

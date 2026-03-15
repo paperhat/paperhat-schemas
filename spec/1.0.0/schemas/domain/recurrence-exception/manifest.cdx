@@ -1,0 +1,15 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="db5f50b56a83cfa5edc1c4275481356f8474f93fb90c811f03eb2c57e62669c9"
+	copyright="Copyright 2026 Paperhat"
+	description=`
+		An override or cancellation of a single instance in a recurrence pattern — a date that is
+		skipped, moved, or replaced.
+	`
+	license="Apache-2.0"
+	packageName="paperhat-recurrence-exception"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

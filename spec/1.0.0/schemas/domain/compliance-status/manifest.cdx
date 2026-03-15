@@ -1,0 +1,15 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="2e84cad033835ee5b063a38a7c8fb115868f04937cd9d81808cb84f093808d17"
+	copyright="Copyright 2026 Paperhat"
+	description=`
+		The compliance state of an obligation, requirement, or control — whether the responsible party
+		has satisfied, failed, or not yet addressed the item.
+	`
+	license="Apache-2.0"
+	packageName="paperhat-compliance-status"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

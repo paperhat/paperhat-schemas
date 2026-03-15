@@ -1,8 +1,8 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="7a8f244045afcc29fd7b82f05172da1300283b657d3020f4f186657e69c1ffb1"
+	closureHash="a7f804d04ec9dbb7f22360d88b6099492fae88f8ce321d7832145f1bbaa178b0"
 	copyright="Copyright 2026 Paperhat"
-	description="A captioned figure containing one or more media references. Supports rich titles via child concepts for Gloss span-bindings."
+	description="A figure containing one or more media references, with optional title and caption. Caption is a semantic concept with opaque content, supporting span bindings via Gloss."
 	license="Apache-2.0"
 	packageName="paperhat-figure"
 	packageVersion="1.0.0"
@@ -19,6 +19,12 @@
 	<PackageDependency
 		packageName="paperhat-text"
 		closureHash="36fc0dd91ce00a6d8caa47b4f17d88d766bf5833cafb9dfeb54c37af38c8aaa1"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-caption"
+		closureHash="671bb4c95c0ba252ee1319b9c851c50912523fe4bc196402edd4e32b914adea8"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

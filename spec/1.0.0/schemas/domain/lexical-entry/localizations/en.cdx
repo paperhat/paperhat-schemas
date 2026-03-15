@@ -1,0 +1,92 @@
+<LocalizationBundle
+	schema=paperhat:domain:lexical-entry
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="LexicalEntry" label="Lexical Entry" labelOther="Lexical Entries" />
+
+	<ConceptLocalization identifier="Sense" label="Sense" labelOther="Senses" />
+
+	<ConceptLocalization identifier="UsageExample" label="Usage Example" labelOther="Usage Examples" />
+
+	<ConceptLocalization identifier="Etymology" label="Etymology" labelOther="Etymologies" />
+
+	<ConceptLocalization identifier="LexicalForm" label="Lexical Form" labelOther="Lexical Forms" />
+
+	<ConceptLocalization identifier="LexicalRelation" label="Lexical Relation" labelOther="Lexical Relations" />
+
+	<TraitLocalization identifier="term" label="Term" labelOther="Terms">
+		The headword or defined term.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		Machine-readable lookup key for cross-references.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="partOfSpeech" label="Part of Speech" labelOther="Parts of Speech">
+		The grammatical category of the sense.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="register" label="Register" labelOther="Registers">
+		The usage register or formality level.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="domain" label="Domain" labelOther="Domains">
+		The subject domain in which this sense applies.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="form" label="Form" labelOther="Forms">
+		An inflected or alternate form of the headword.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="formKind" label="Form Kind" labelOther="Form Kinds">
+		The grammatical relationship of this form to the headword.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="relatedTerm" label="Related Term" labelOther="Related Terms">
+		A term related by synonym, antonym, or other semantic relationship.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="relationKind" label="Relation Kind" labelOther="Relation Kinds">
+		The type of semantic relationship to the related term.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="target" label="Target" labelOther="Targets">
+		Entity reference to the related lexical entry.
+	</TraitLocalization>
+
+	<ConstraintLocalization
+		identifier="paperhat:domain:lexical-entry:requires-definition-or-sense"
+		label="LexicalEntry requires definition or Sense"
+	>
+		A LexicalEntry must contain either direct definition content or at least one Sense child.
+	</ConstraintLocalization>
+
+	<ConstraintLocalization
+		identifier="paperhat:domain:lexical-entry:lexical-relation-reference-trait-allowed"
+		label="LexicalRelation reference trait"
+	>
+		LexicalRelation allows only the target trait as a reference trait.
+	</ConstraintLocalization>
+
+	<ConstraintLocalization
+		identifier="paperhat:domain:lexical-entry:lexical-relation-reference-singleton"
+		label="LexicalRelation reference singleton"
+	>
+		LexicalRelation must declare at most one reference trait.
+	</ConstraintLocalization>
+
+	<ConstraintLocalization
+		identifier="paperhat:domain:lexical-entry:lexical-relation-targets-entity"
+		label="LexicalRelation targets entity"
+	>
+		LexicalRelation target must resolve to an entity.
+	</ConstraintLocalization>
+
+	<ConstraintLocalization
+		identifier="paperhat:domain:lexical-entry:lexical-relation-must-resolve"
+		label="LexicalRelation must resolve"
+	>
+		LexicalRelation target must resolve.
+	</ConstraintLocalization>
+</LocalizationBundle>

@@ -1,0 +1,49 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="An authorial observation or commentary within the flow of a document. Remarks are formal discourse units used in academic, mathematical, and technical writing."
+	id=paperhat:domain:remark
+	namespace="remark"
+	title="Remark Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:remark:Remark
+			name="Remark"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<AllowsTrait name="key" />
+				<AllowsTrait name="label" />
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:remark:trait:key
+			name="key"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:remark:trait:label
+			name="label"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:remark:trait:language
+			name="language"
+		/>
+	</TraitDefinitions>
+</Schema>

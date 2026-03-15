@@ -1,0 +1,6 @@
+[name is required. All other traits are optional. Duration child sets the review period.]
+<ReviewCycle name="Example Review">
+	<desc:Description>
+		Describe what is reviewed here.
+	</desc:Description>
+</ReviewCycle>

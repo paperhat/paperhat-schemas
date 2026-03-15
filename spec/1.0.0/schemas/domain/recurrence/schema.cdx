@@ -1,0 +1,94 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description=`
+		A temporal recurrence pattern — the frequency, interval, and bounds of a repeating event,
+		obligation, or schedule entry.
+	`
+	id=paperhat:domain:recurrence
+	namespace="recurrence"
+	title="Recurrence Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:recurrence:Recurrence
+			name="Recurrence"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="frequency" />
+
+				<AllowsTrait name="count" />
+
+				<AllowsTrait name="dayOfMonth" />
+
+				<AllowsTrait name="dayOfWeek" />
+
+				<AllowsTrait name="endDate" />
+
+				<AllowsTrait name="interval" />
+
+				<AllowsTrait name="monthOfYear" />
+
+				<AllowsTrait name="startDate" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=paperhat:domain:recurrence:trait:count
+			name="count"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=paperhat:domain:recurrence:trait:dayOfMonth
+			name="dayOfMonth"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:recurrence:trait:dayOfWeek
+			name="dayOfWeek"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Date
+			id=paperhat:domain:recurrence:trait:endDate
+			name="endDate"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:recurrence:trait:frequency
+			name="frequency"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=paperhat:domain:recurrence:trait:interval
+			name="interval"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:recurrence:trait:monthOfYear
+			name="monthOfYear"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Date
+			id=paperhat:domain:recurrence:trait:startDate
+			name="startDate"
+		/>
+	</TraitDefinitions>
+</Schema>

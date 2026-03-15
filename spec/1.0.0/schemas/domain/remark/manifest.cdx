@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="a2d0815b0930365028fc906c6b801063cb41e22736889151856b632a037ea050"
+	copyright="Copyright 2026 Paperhat"
+	description="An authorial observation or commentary within the flow of a document. Remarks are formal discourse units used in academic, mathematical, and technical writing."
+	license="Apache-2.0"
+	packageName="paperhat-remark"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

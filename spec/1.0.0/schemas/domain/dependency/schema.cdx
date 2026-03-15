@@ -1,0 +1,67 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description=`
+		A typed directional relationship between two entities where one depends on the other — a
+		blocking dependency, prerequisite, sequencing constraint, or informational link.
+	`
+	id=paperhat:domain:dependency
+	namespace="dependency"
+	title="Dependency Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport
+			namespace="desc"
+			reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641
+		/>
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:dependency:Dependency
+			name="Dependency"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="source" />
+
+				<RequiresTrait name="target" />
+
+				<AllowsTrait name="dependencyKind" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+			</ChildRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:dependency:trait:dependencyKind
+			name="dependencyKind"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:dependency:trait:source
+			isReferenceTrait=true
+			name="source"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:dependency:trait:target
+			isReferenceTrait=true
+			name="target"
+		/>
+	</TraitDefinitions>
+</Schema>

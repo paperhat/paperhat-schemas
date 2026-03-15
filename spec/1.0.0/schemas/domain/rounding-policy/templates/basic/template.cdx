@@ -1,0 +1,2 @@
+[Both method and scale are required. scope is optional.]
+<RoundingPolicy method=$HalfEven scale=2 />

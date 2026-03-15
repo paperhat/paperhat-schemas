@@ -1,7 +1,7 @@
 <Schema
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
-	description="A structured, argument-driven long-form document for technical or policy white papers. Composes imported building blocks for metadata, narrative structure, footnotes, and series membership."
+	description="A structured, argument-driven long-form document for technical or policy white papers. Composes imported building blocks for metadata, narrative structure, footnotes, series membership, and document divisions."
 	id=paperhat:domain:white-paper
 	namespace="wpaper"
 	title="White Paper Schema"
@@ -16,6 +16,8 @@
 		<SchemaImport namespace="notes" reference=urn:cdx:sha256:5169d4469cf2f181b23bfee5510652073ead5e1c6871486dba219bfb6c2b3a2b />
 
 		<SchemaImport namespace="series" reference=urn:cdx:sha256:da07d1db83af05789adbcb6ecda9e9f52f1c879cc5ae9b6273fff96676d1b799 />
+
+		<SchemaImport namespace="documentstructure" reference=urn:cdx:sha256:190f3a2d7847a0bdcb4e3c8cd5d6d8181258a2a445934c6db7d097841eb678e1 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
@@ -41,38 +43,16 @@
 
 				<AllowsChildConcept conceptSelector="series:SeriesInfo" max=1 />
 
-				<RequiresChildConcept conceptSelector="Abstract" max=1 min=1 />
+				<RequiresChildConcept conceptSelector="documentstructure:Abstract" max=1 min=1 />
 
 				<AllowsChildConcept conceptSelector="narrative:Narrative" max=1 min=1 />
 
-				<AllowsChildConcept conceptSelector="Conclusion" max=1 />
+				<AllowsChildConcept conceptSelector="documentstructure:Conclusion" max=1 />
 
 				<AllowsChildConcept conceptSelector="notes:Notes" max=1 />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=false ordering=$Ordered />
-		</ConceptDefinition>
-
-		<ConceptDefinition
-			conceptKind=$Semantic
-			entityEligibility=$MustNotBeEntity
-			id=paperhat:domain:white-paper:Abstract
-			name="Abstract"
-		>
-			<ContentRules>
-				<RequiresContent whitespaceMode=$Flow />
-			</ContentRules>
-		</ConceptDefinition>
-
-		<ConceptDefinition
-			conceptKind=$Semantic
-			entityEligibility=$MustNotBeEntity
-			id=paperhat:domain:white-paper:Conclusion
-			name="Conclusion"
-		>
-			<ContentRules>
-				<RequiresContent whitespaceMode=$Flow />
-			</ContentRules>
 		</ConceptDefinition>
 	</ConceptDefinitions>
 

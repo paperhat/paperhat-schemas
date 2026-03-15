@@ -1,8 +1,11 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="2fea7ac4b8c4f4142c4e25d7cae38640d540beb75e90db2453828f1f6593a4f6"
+	closureHash="d3b7be17a69a8a82408c5f226a55e4444fa22388b57fe2c35d001ce912476709"
 	copyright="Copyright 2026 Paperhat"
-	description="Strict specification schema for authoring formal specifications in Codex. Narrows requirement modality to Must and MustNot only."
+	description=`
+		Strict specification schema for authoring formal specifications in Codex. Narrows requirement
+		modality to Must and MustNot only.
+	`
 	license="Apache-2.0"
 	packageName="paperhat-specification"
 	packageVersion="1.0.0"
@@ -11,8 +14,8 @@
 	requiredLexisVersion=">=1.0.0 <2.0.0"
 >
 	<PackageDependency
+		closureHash="cae5307b5ce3531f3999601774d48f86469a9648ec8411c7911d528ffefe8de8"
 		packageName="paperhat-specification-foundation"
-		closureHash="c87c0b042f3190b0ccd4caa847fb050be907dd3c6a8f0aceb2877aade2f03346"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

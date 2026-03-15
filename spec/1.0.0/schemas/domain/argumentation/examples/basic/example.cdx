@@ -1,0 +1,19 @@
+<Argument key=~determinism-argument label="Argument 1">
+	<Premise key=~p1 label="P1">
+		All Codex documents lower deterministically to RDF.
+	</Premise>
+
+	<Premise key=~p2 label="P2">
+		Two conforming implementations producing different output for identical
+		input constitutes a specification violation.
+	</Premise>
+
+	<Inference>
+		By the determinism invariant and the conformance requirement, any
+		divergence in output is a defect in one or both implementations.
+	</Inference>
+
+	<Claim key=~c1 label="C1">
+		Conforming Codex implementations produce identical output for identical input.
+	</Claim>
+</Argument>

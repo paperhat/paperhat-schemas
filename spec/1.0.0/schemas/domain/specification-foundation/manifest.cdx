@@ -1,8 +1,12 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="c87c0b042f3190b0ccd4caa847fb050be907dd3c6a8f0aceb2877aade2f03346"
+	closureHash="cae5307b5ce3531f3999601774d48f86469a9648ec8411c7911d528ffefe8de8"
 	copyright="Copyright 2026 Paperhat"
-	description="Shared foundation for specification schemas. Provides common traits, enumerated value sets, shared concepts, and constraints consumed by both the strict and RFC 2119 specification schema variants."
+	description=`
+		Shared foundation for specification schemas. Provides common traits, enumerated value sets,
+		shared concepts, and constraints consumed by both the strict and RFC 2119 specification schema
+		variants.
+	`
 	license="Apache-2.0"
 	packageName="paperhat-specification-foundation"
 	packageVersion="1.0.0"
@@ -11,146 +15,146 @@
 	requiredLexisVersion=">=1.0.0 <2.0.0"
 >
 	<PackageDependency
-		packageName="paperhat-admonition"
 		closureHash="740f07045c3f877359e88b1eaf2f45422630c045ed2980402ba6c218c9137788"
+		packageName="paperhat-admonition"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
-		packageName="paperhat-citation"
 		closureHash="546f8f1a3f95d003f86c24c8627a45453b6df95e545dc8f4b9429e046bb0792d"
+		packageName="paperhat-citation"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
-		packageName="paperhat-code"
 		closureHash="f8ba0135730d0cdc0be5e7e714a8bdc1a4c3001ba6995d98254a79cd697f9935"
+		packageName="paperhat-code"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
-		packageName="paperhat-description"
 		closureHash="2a0f7d96f2ae202d211282c9489f7e2adfe381c24fa8a414eede55250457fc8a"
+		packageName="paperhat-description"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
-		packageName="paperhat-document-metadata"
 		closureHash="5ca4100c2fbf71d328baad520cefeb3ebbcb87826218b1f30107f2ae21e7460a"
+		packageName="paperhat-document-metadata"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
-		packageName="paperhat-example"
 		closureHash="331ee0859ccf4b1b0526f43337b1fbfb81a6ea1037a77b31fbc5eeb508b9b3ad"
+		packageName="paperhat-example"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
+		closureHash="a7f804d04ec9dbb7f22360d88b6099492fae88f8ce321d7832145f1bbaa178b0"
 		packageName="paperhat-figure"
-		closureHash="7a8f244045afcc29fd7b82f05172da1300283b657d3020f4f186657e69c1ffb1"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
-		packageName="paperhat-glossary"
-		closureHash="e64aad110828ac21c5ff93d36069dd00a52a4e9254889e13e0a9ad7490f49232"
+		closureHash="b8727daf6dcb34afc2b3e9c0aea8497758265e825774a415bdb7a26aba06d3f8"
+		packageName="paperhat-definition"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
-		packageName="paperhat-list"
 		closureHash="783b2977c16536499d4f21a85438f33bf25c301aa502ec78ee4cd6cb143f60a3"
+		packageName="paperhat-list"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
-		packageName="paperhat-procedure"
 		closureHash="bcbffc6137ed634d22326675903bc24c2ad1e4f8d2a948ac5b26324048e7f1f0"
+		packageName="paperhat-procedure"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
-		packageName="paperhat-relation"
 		closureHash="45da267b585f860017319a27c4182f4cee1c665d7804dc85ae47f3fdee70b2b8"
+		packageName="paperhat-relation"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
-		packageName="paperhat-summary"
 		closureHash="716aa48b4b4460762d44afd592de267803b395b1872035b01e9ad2e67293e2c4"
+		packageName="paperhat-summary"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
-		packageName="paperhat-term-entry"
-		closureHash="efdc6e94ec893fb03eede9ac460db1e434245d1e9278ec6e50eb933bc282de38"
+		closureHash="1895c73f492417c220de207ff65764bd364941f62de6252c7f5c1b47288e6cc8"
+		packageName="paperhat-lexical-entry"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
-		packageName="paperhat-text"
 		closureHash="36fc0dd91ce00a6d8caa47b4f17d88d766bf5833cafb9dfeb54c37af38c8aaa1"
+		packageName="paperhat-text"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
+		closureHash="0000000000000000000000000000000000000000000000000000000000000000"
 		packageName="paperhat-abbreviation"
-		closureHash="0000000000000000000000000000000000000000000000000000000000000000"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
+		closureHash="0000000000000000000000000000000000000000000000000000000000000000"
 		packageName="paperhat-acknowledgments"
-		closureHash="0000000000000000000000000000000000000000000000000000000000000000"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
+		closureHash="0000000000000000000000000000000000000000000000000000000000000000"
 		packageName="paperhat-conformance-class"
-		closureHash="0000000000000000000000000000000000000000000000000000000000000000"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
+		closureHash="0000000000000000000000000000000000000000000000000000000000000000"
 		packageName="paperhat-formal-grammar"
-		closureHash="0000000000000000000000000000000000000000000000000000000000000000"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
+		closureHash="0000000000000000000000000000000000000000000000000000000000000000"
 		packageName="paperhat-intellectual-property"
-		closureHash="0000000000000000000000000000000000000000000000000000000000000000"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
+		closureHash="0000000000000000000000000000000000000000000000000000000000000000"
 		packageName="paperhat-iso-document-metadata"
-		closureHash="0000000000000000000000000000000000000000000000000000000000000000"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
+		closureHash="0000000000000000000000000000000000000000000000000000000000000000"
 		packageName="paperhat-math-expression"
-		closureHash="0000000000000000000000000000000000000000000000000000000000000000"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
+		closureHash="0000000000000000000000000000000000000000000000000000000000000000"
 		packageName="paperhat-revision-history"
-		closureHash="0000000000000000000000000000000000000000000000000000000000000000"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
+		closureHash="0000000000000000000000000000000000000000000000000000000000000000"
 		packageName="paperhat-symbol"
-		closureHash="0000000000000000000000000000000000000000000000000000000000000000"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
-		packageName="paperhat-test-assertion"
 		closureHash="0000000000000000000000000000000000000000000000000000000000000000"
+		packageName="paperhat-test-assertion"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

@@ -1,0 +1,59 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="A formal definition binding a term (definiendum) to its meaning (definiens). Usable in glossaries, specifications, technical documents, and any context that defines terms."
+	id=paperhat:domain:definition
+	namespace="definition"
+	title="Definition Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:definition:Definition
+			name="Definition"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="term" />
+
+				<AllowsTrait name="key" />
+
+				<AllowsTrait name="label" />
+
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:definition:trait:term
+			name="term"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:definition:trait:key
+			name="key"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:definition:trait:label
+			name="label"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:definition:trait:language
+			name="language"
+		/>
+	</TraitDefinitions>
+</Schema>

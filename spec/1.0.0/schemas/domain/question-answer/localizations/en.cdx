@@ -1,0 +1,17 @@
+<LocalizationBundle
+	schema=paperhat:domain:question
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="Question" label="Question" labelOther="Questions" />
+
+	<ConceptLocalization identifier="Answer" label="Answer" labelOther="Answers" />
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		A stable lookup token for cross-referencing this question or answer.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="language" label="Language" labelOther="Languages">
+		The natural language of the question or answer content.
+	</TraitLocalization>
+</LocalizationBundle>

@@ -1,0 +1,5 @@
+<ScenarioModel name="Conservative Growth" scenarioKind=$Pessimistic>
+	<desc:Description>
+		Assumes 50% slower adoption than baseline, no enterprise contracts in year one, and grant funding limited to NLnet.
+	</desc:Description>
+</ScenarioModel>

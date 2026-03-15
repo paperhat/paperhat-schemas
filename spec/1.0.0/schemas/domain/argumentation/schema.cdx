@@ -1,0 +1,121 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Formal argumentation primitives for modeling logical structure. An Argument contains Premises, an optional Inference, and a Claim."
+	id=paperhat:domain:argumentation
+	namespace="argumentation"
+	title="Argumentation Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:argumentation:Argument
+			name="Argument"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Premise" />
+				<AllowsChildConcept conceptSelector="Inference" max=1 />
+				<AllowsChildConcept conceptSelector="Claim" min=1 max=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+
+			<TraitRules>
+				<AllowsTrait name="key" />
+				<AllowsTrait name="label" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:argumentation:Claim
+			name="Claim"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<AllowsTrait name="key" />
+				<AllowsTrait name="label" />
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:argumentation:Premise
+			name="Premise"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<AllowsTrait name="key" />
+				<AllowsTrait name="label" />
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:argumentation:Inference
+			name="Inference"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<AllowsTrait name="key" />
+				<AllowsTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:argumentation:trait:key
+			name="key"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:argumentation:trait:label
+			name="label"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:argumentation:trait:language
+			name="language"
+		/>
+	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=paperhat:domain:argumentation:argument-requires-premise
+			title="Argument requires at least one Premise"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Argument" />
+			</Targets>
+
+			<Rule>
+				<ChildConstraint conceptSelector="Premise" type=$RequiresChildConcept />
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

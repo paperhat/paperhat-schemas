@@ -1,0 +1,11 @@
+<LocalizationBundle language=$En schema=paperhat:domain:defined-term schemaVersion="1.0.0">
+	<ConceptLocalization identifier="DefinedTerm" label="Defined Term" labelOther="Defined Terms" />
+
+	<TraitLocalization identifier="scope" label="Scope" labelOther="Scopes">
+		The scope within which this definition binds.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="term" label="Term" labelOther="Terms">
+		The term being defined.
+	</TraitLocalization>
+</LocalizationBundle>

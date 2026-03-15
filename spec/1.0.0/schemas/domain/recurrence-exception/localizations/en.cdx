@@ -1,0 +1,23 @@
+<LocalizationBundle language=$En schema=paperhat:domain:recurrence-exception schemaVersion="1.0.0">
+	<ConceptLocalization
+		identifier="RecurrenceException"
+		label="Recurrence Exception"
+		labelOther="Recurrence Exceptions"
+	/>
+
+	<TraitLocalization identifier="originalDate" label="Original Date" labelOther="Original Dates">
+		The date of the recurrence instance being overridden or cancelled.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="reason" label="Reason" labelOther="Reasons">
+		The reason for the exception.
+	</TraitLocalization>
+
+	<TraitLocalization
+		identifier="replacementDate"
+		label="Replacement Date"
+		labelOther="Replacement Dates"
+	>
+		The replacement date, if the instance is moved rather than cancelled.
+	</TraitLocalization>
+</LocalizationBundle>

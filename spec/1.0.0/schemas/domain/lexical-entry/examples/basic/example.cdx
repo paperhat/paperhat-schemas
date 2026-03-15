@@ -1,8 +1,8 @@
 <LexicalEntry
+	bodyMode=$content
 	id=urn:lexical:canonical-form
-	term="canonical form"
 	key=~canonicalForm
-	bodyMode=$Content
+	term="canonical form"
 >
 	The normalized representation of a value after all processing rules defined by the value type have been applied. Two values are equal if and only if their canonical forms are identical.
 </LexicalEntry>

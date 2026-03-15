@@ -6,7 +6,7 @@
 	obligationKind=$Contractual
 	obligationStatus=$Active
 >
-	<desc:Description>
+	<desc:Description bodyMode=$content>
 		Deliver functional and complete FOSS beta of Lexis, pending community testing.
 	</desc:Description>
 </Obligation>

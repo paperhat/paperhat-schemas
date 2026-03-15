@@ -7,7 +7,7 @@
 	startDate=date(1 january 2026)
 	totalAmount=120000
 >
-	<desc:Description>
+	<desc:Description bodyMode=$content>
 		Annual operating budget for all Paperhat development, infrastructure, and go-to-market activities.
 	</desc:Description>
 </Budget>

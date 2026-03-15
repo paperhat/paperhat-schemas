@@ -4,7 +4,7 @@
 	nextReviewDate=date(15 march 2027)
 	reviewCycleStatus=$Active
 >
-	<desc:Description>
+	<desc:Description bodyMode=$content>
 		Annual review of all locked Paperhat specifications for accuracy, completeness, and consistency.
 	</desc:Description>
 

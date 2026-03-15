@@ -8,7 +8,7 @@
 	name="Lexis FOSS Beta"
 	targetDate=date(14 may 2026)
 >
-	<desc:Description>
+	<desc:Description bodyMode=$content>
 		First public release of the Lexis semantic processing pipeline. Functional and complete, pending community testing.
 	</desc:Description>
 </Milestone>

@@ -6,11 +6,11 @@
 	repositoryUrl=url("https://github.com/paperhat/codex-lang")
 	websiteUrl=url("https://codex-lang.dev/")
 >
-	<desc:Description>
+	<desc:Description bodyMode=$content>
 		A declarative semantic markup language for structured authoring.
 	</desc:Description>
 
-	<work:Work author="Charles F. Munat" dateCreated={2024-01-01} license="Apache-2.0" />
+	<work:Work author="Charles F. Munat" dateCreated=date(1 january 2024) license=$Apache2Point0 />
 
 	<tags:Tags>
 		<tags:Tag>

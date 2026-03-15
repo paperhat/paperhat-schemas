@@ -1,6 +1,7 @@
 <Annex
 	annexDesignator="A"
 	annexStatus=$Normative
+	bodyMode=$content
 	id=urn:paperhat:example:annex:basic
 	name="Conformance Test Vectors"
 >

@@ -1,9 +1,9 @@
 <Policy
-	effectiveDate="2026-01-15"
+	effectiveDate=date(15 january 2026)
 	id=urn:paperhat:example:policy:basic
 	name="Paperhat Privacy Policy"
 	policyKind=$Privacy
 	policyStatus=$Active
 >
-	<Jurisdiction countryCode=$NZ jurisdictionKind=$Country name="New Zealand" />
+	<jurisdiction:Jurisdiction countryCode=$NZ jurisdictionKind=$Country name="New Zealand" />
 </Policy>

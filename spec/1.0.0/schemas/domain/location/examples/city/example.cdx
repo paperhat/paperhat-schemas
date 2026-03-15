@@ -1,6 +1,1 @@
-<Location
-	locationKind=$Residence
-	locality="Portland"
-	region="Oregon"
-	country="United States"
-/>
+<Location country=$UnitedStates locality="Portland" locationKind=$Residence region="Oregon" />

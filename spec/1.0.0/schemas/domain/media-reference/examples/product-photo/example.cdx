@@ -1,7 +1,7 @@
 <MediaReference
-	url="https://example.com/images/product-hero.jpg"
-	mediaKind=$image
 	caption="Front view of the product"
-	width=1200
 	height=800
+	mediaKind=$Image
+	url=https://example.com/images/product-hero.jpg
+	width=1200
 />

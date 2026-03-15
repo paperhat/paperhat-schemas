@@ -1,4 +1,4 @@
 <Accessibility
-	accessibilityFeature="wheelchairAccessible"
+	accessibilityFeature=$WheelchairAccessible
 	accessibilitySummary="Full wheelchair access including ramps and accessible restrooms"
 />

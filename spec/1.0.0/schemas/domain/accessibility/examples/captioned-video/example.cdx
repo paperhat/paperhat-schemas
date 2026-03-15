@@ -1,5 +1,5 @@
 <Accessibility
 	accessMode=$Visual
-	accessibilityFeature="captions"
+	accessibilityFeature=$Captions
 	accessibilitySummary="Closed captions available in English and Spanish"
 />

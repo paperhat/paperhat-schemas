@@ -1,30 +1,42 @@
 <PrivacyPolicy id=urn:paperhat:policy:privacy:recipe-library title="Recipe Library Privacy Policy">
-	<GoverningEntity target=urn:organization:recipe-library governingRole=$Owner />
-	<AppliesTo target=urn:service:recipe-library scopeKind=$Service />
-	<RelatedDocument target=urn:paperhat:terms:recipe-library relationshipKind=$PairedWith />
-	<RelatedDocument target=urn:paperhat:policy:cookie:recipe-library relationshipKind=$Supplements />
-	<Controller target=urn:organization:recipe-library controllerKind=$Primary />
+	<GoverningEntity governingRole=$Owner target=urn:organization:recipe-library />
+
+	<AppliesTo scopeKind=$Service target=urn:service:recipe-library />
+
+	<RelatedDocument relationshipKind=$PairedWith target=urn:paperhat:terms:recipe-library />
+
+	<RelatedDocument relationshipKind=$Supplements target=urn:paperhat:policy:cookie:recipe-library />
+
+	<Controller controllerKind=$Primary target=urn:organization:recipe-library />
+
 	<DataCollection>
 		<text:Paragraph>
 			The service collects account, contact, and usage data needed to operate the recipe library.
 		</text:Paragraph>
 	</DataCollection>
+
 	<DataUse>
 		<text:Paragraph>
 			Collected data is used to provide the service, improve reliability, and respond to support requests.
 		</text:Paragraph>
 	</DataUse>
+
 	<Retention>
 		<text:Paragraph>
 			Data is retained only for operational, legal, and support purposes and is deleted when no longer required.
 		</text:Paragraph>
 	</Retention>
+
 	<DataRights>
 		<text:Paragraph>
 			Users may request access, correction, or deletion of personal data where applicable law provides those rights.
 		</text:Paragraph>
 	</DataRights>
+
 	<PrivacyContact>
-		<contact:ContactPoint contactKind=$Privacy emailAddress="privacy@recipe-library.example" />
+		<contact:ContactPoint
+			contactKind=$Privacy
+			emailAddress=email("privacy@recipe-library.example")
+		/>
 	</PrivacyContact>
 </PrivacyPolicy>

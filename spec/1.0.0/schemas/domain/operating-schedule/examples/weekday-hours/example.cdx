@@ -1,1 +1,1 @@
-<OperatingSchedule dayOfWeek=$Monday opens="09:00" closes="17:00" />
+<OperatingSchedule closes=time(17:00:00) dayOfWeek=$Monday opens=time(09:00:00) />

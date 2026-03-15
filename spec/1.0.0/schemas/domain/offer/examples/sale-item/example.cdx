@@ -1,7 +1,7 @@
 <Offer
+	availability=$InStock
 	price=49.99
 	priceCurrency=$USD
-	availability=$InStock
-	validFrom="2026-01-15"
-	validThrough="2026-02-15"
+	validFrom=date(15 january 2026)
+	validThrough=date(15 february 2026)
 />

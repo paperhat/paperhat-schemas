@@ -1,6 +1,1 @@
-<Location
-	locationKind=$Setting
-	name="The Shire"
-	region="Eriador"
-	country="Middle-earth"
-/>
+<Location country=$MiddleEarth locationKind=$Setting name="The Shire" region="Eriador" />

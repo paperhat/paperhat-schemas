@@ -1,6 +1,6 @@
 <MediaReference
-	url="https://example.com/audio/episode-42.mp3"
-	mediaKind=$audio
-	encodingFormat="audio/mpeg"
 	contentSize="45MB"
+	encodingFormat=media-type("audio/mpeg")
+	mediaKind=$Audio
+	url=https://example.com/audio/episode-42.mp3
 />

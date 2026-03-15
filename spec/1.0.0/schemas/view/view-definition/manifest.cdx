@@ -1,0 +1,12 @@
+<ViewPackageManifest
+	author="Paperhat"
+	closureHash="0000000000000000000000000000000000000000000000000000000000000000"
+	copyright="Copyright 2026 Paperhat"
+	description="View-family schema for declaring which fields and content from a source concept a view presents, and in what order."
+	license="Apache-2.0"
+	packageName="view-definition"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

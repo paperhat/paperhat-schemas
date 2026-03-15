@@ -1,6 +1,6 @@
 <MediaReference
-	url="https://example.com/videos/promo.mp4"
-	mediaKind=$video
-	encodingFormat="video/mp4"
 	caption="Summer 2026 promotional video"
+	encodingFormat=media-type("video/mp4")
+	mediaKind=$Video
+	url=https://example.com/videos/promo.mp4
 />

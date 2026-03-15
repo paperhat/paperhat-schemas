@@ -1,0 +1,22 @@
+<LocalizationBundle
+	schema=paperhat:view:definition
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="ViewDefinition" label="View Definition" labelOther="View Definitions" />
+	<ConceptLocalization identifier="ViewField" label="View Field" labelOther="View Fields" />
+	<ConceptLocalization identifier="ViewGroup" label="View Group" labelOther="View Groups" />
+
+	<TraitLocalization identifier="targetConcept" label="Target Concept" labelOther="Target Concepts">
+		The concept type this view renders.
+	</TraitLocalization>
+	<TraitLocalization identifier="fieldPath" label="Field Path" labelOther="Field Paths">
+		The trait or child concept path to extract from the source entity.
+	</TraitLocalization>
+	<TraitLocalization identifier="required" label="Required">
+		Whether the field must have a value in the source entity.
+	</TraitLocalization>
+	<TraitLocalization identifier="groupIdentifier" label="Group Identifier" labelOther="Group Identifiers">
+		Machine-readable identifier for the field group.
+	</TraitLocalization>
+</LocalizationBundle>

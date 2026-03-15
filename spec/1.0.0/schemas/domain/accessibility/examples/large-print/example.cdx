@@ -1,6 +1,6 @@
 <Accessibility
 	accessMode=$Textual
-	accessibilityFeature="largePrint"
-	accessibilityHazard="none"
+	accessibilityFeature=$LargePrint
+	accessibilityHazard=$None
 	accessibilitySummary="Available in large print format"
 />

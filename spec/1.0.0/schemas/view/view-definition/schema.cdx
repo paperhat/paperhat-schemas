@@ -1,0 +1,109 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="View-family schema for declaring which fields and content from a source concept a view presents, and in what order."
+	id=paperhat:view:definition
+	namespace="viewdef"
+	title="View Definition Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
+
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:view:definition:ViewDefinition
+			name="ViewDefinition"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Title" min=1 max=1 />
+
+				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
+
+				<AllowsChildConcept conceptSelector="ViewField" min=1 />
+
+				<AllowsChildConcept conceptSelector="ViewGroup" />
+			</ChildRules>
+
+			<TraitRules>
+				<RequiresTrait name="targetConcept" />
+			</TraitRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:view:definition:ViewField
+			name="ViewField"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="fieldPath" />
+
+				<AllowsTrait name="required" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:view:definition:ViewGroup
+			name="ViewGroup"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="ViewField" min=1 />
+			</ChildRules>
+
+			<TraitRules>
+				<RequiresTrait name="groupIdentifier" />
+			</TraitRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:view:definition:trait:targetConcept
+			name="targetConcept"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:view:definition:trait:fieldPath
+			name="fieldPath"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Boolean
+			id=paperhat:view:definition:trait:required
+			name="required"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:view:definition:trait:groupIdentifier
+			name="groupIdentifier"
+		/>
+	</TraitDefinitions>
+</Schema>

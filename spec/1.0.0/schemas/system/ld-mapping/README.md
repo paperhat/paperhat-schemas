@@ -23,7 +23,7 @@ Use this schema when creating a mapping document that translates a Codex domain 
 
 | Trait | Type | Required | Description |
 |---|---|---|---|
-| id | `$IriReference` | SchemaOrgMapping | Stable identity reference for the mapping document. |
+| id | `$Iri` | SchemaOrgMapping | Stable identity reference for the mapping document. |
 | version | `$Text` | SchemaOrgMapping | Version of the mapping document. |
 | sourceConcept | `$Text` | MapType, MapContentToProperty, MapTraitToProperty | The Codex concept being mapped. |
 | sourceTrait | `$Text` | MapTraitToProperty | The Codex trait being mapped. |

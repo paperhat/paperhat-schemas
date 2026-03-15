@@ -1,11 +1,11 @@
 <UnorderedList>
-	<ListItem>
-	Active noise cancellation
-</ListItem>
-	<ListItem>
-	40-hour battery life
-</ListItem>
-	<ListItem>
-	Bluetooth 5.3 with multipoint pairing
-</ListItem>
+	<ListItem bodyMode=$content>
+		Active noise cancellation
+	</ListItem>
+	<ListItem bodyMode=$content>
+		40-hour battery life
+	</ListItem>
+	<ListItem bodyMode=$content>
+		Bluetooth 5.3 with multipoint pairing
+	</ListItem>
 </UnorderedList>

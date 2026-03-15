@@ -30,9 +30,9 @@ This package defines View-family schema concepts for authoring deterministic sem
 
 | Trait | Type | Required | Description |
 |---|---|---|---|
-| ruleIdentifier | `$IriReference` | rule concepts | Stable rule identifier used for provenance and derivation identity. |
+| ruleIdentifier | `$Iri` | rule concepts | Stable rule identifier used for provenance and derivation identity. |
 | parameterName | `$Text` | ProjectionParameter | Parameter identifier. |
-| parameterShapeReference | `$IriReference` | ProjectionParameter | IRI reference to `ValueShapeDefinition` used for parameter validation. |
+| parameterShapeReference | `$Iri` | ProjectionParameter | IRI reference to `ValueShapeDefinition` used for parameter validation. |
 | parameterRequired | `$Boolean` | no | Explicit required flag for parameter binding. |
 | selectorTarget | `$EnumeratedToken` | no | Selector evaluation target (`$CanonicalUniverse` or `$WorkingSet`). |
 | selectorConceptType | `$Text` | ConceptTypeSelector | Concept type selector operand. |

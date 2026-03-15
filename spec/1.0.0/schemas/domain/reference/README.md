@@ -20,7 +20,7 @@ Use `Reference` to point at an entity defined elsewhere rather than embedding it
 
 | Trait | Type | Required | Description |
 |---|---|---|---|
-| target | $IriReference | yes | The IRI of the referenced entity. Marked as a reference trait (`isReferenceTrait=true`). |
+| target | $Iri | yes | The IRI of the referenced entity. Marked as a reference trait (`isReferenceTrait=true`). |
 
 ## Constraints
 

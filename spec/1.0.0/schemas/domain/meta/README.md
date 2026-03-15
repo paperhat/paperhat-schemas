@@ -21,7 +21,7 @@ Use the data meta-schema when defining a new domain schema. Every domain schema 
 
 | Trait | Type | Required | Description |
 |---|---|---|---|
-| id | `$IriReference` | yes | Stable identity reference for the concept or override. |
+| id | `$Iri` | yes | Stable identity reference for the concept or override. |
 | priority | `$EnumeratedToken` | no | Priority level. Allowed values: `$Primary`, `$Secondary`. |
 
 ## Constraints

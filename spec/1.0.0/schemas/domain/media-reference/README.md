@@ -14,7 +14,7 @@ Use `MediaReference` wherever an entity needs to attach or link to media: produc
 
 | Trait | Type | Required | Description |
 |---|---|---|---|
-| url | $IriReference | no | URL of the media resource. |
+| url | $Iri | no | URL of the media resource. |
 | mediaKind | $EnumeratedToken | no | Kind of media, e.g. `$image`, `$video`, `$audio`, `$document`. |
 | encodingFormat | $Text | no | MIME type, e.g. "image/png", "video/mp4". |
 | caption | $Text | no | Human-readable description or alt text. |

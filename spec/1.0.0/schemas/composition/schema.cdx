@@ -212,7 +212,7 @@
 		</TraitDefinition>
 
 		<TraitDefinition
-			defaultValueType=$IriReference
+			defaultValueType=$Iri
 			id=paperhat:composition:document:trait:target
 			name="target"
 		/>
@@ -244,13 +244,13 @@
 		/>
 
 		<TraitDefinition
-			defaultValueType=$IriReference
+			defaultValueType=$Iri
 			id=paperhat:composition:document:trait:audience
 			name="audience"
 		/>
 
 		<TraitDefinition
-			defaultValueType=$IriReference
+			defaultValueType=$Iri
 			id=paperhat:composition:document:trait:source
 			name="source"
 		/>
@@ -272,7 +272,7 @@
 		/>
 
 		<TraitDefinition
-			defaultValueType=$List<$IriReference>
+			defaultValueType=$List<$Iri>
 			id=paperhat:composition:document:trait:members
 			name="members"
 		/>
@@ -288,7 +288,7 @@
 		</TraitDefinition>
 
 		<TraitDefinition
-			defaultValueType=$IriReference
+			defaultValueType=$Iri
 			id=paperhat:composition:document:trait:view
 			name="view"
 		/>
@@ -320,7 +320,7 @@
 		/>
 
 		<TraitDefinition
-			defaultValueType=$IriReference
+			defaultValueType=$Iri
 			id=paperhat:composition:document:trait:condition
 			name="condition"
 		/>

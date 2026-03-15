@@ -1,7 +1,7 @@
 <ReviewCycle
 	id=urn:paperhat:example:review-cycle:basic
 	name="Specification Annual Review"
-	nextReviewDate=date("2027-03-15")
+	nextReviewDate=date(15 march 2027)
 	reviewCycleStatus=$Active
 >
 	<desc:Description>

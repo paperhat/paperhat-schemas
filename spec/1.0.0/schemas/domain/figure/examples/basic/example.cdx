@@ -1,13 +1,13 @@
-<Figure key=~fig-system-overview>
-	<Title>
-	System Overview
-</Title>
-	<Caption>
-	High-level system overview showing the pipeline from parsing through rendering.
-</Caption>
-	<MediaReference
-		url="https://example.com/images/system-overview.svg"
-		mediaKind=$image
+<Figure key=~figSystemOverview>
+	<text:Title>
+		System Overview
+	</text:Title>
+	<caption:Caption>
+		High-level system overview showing the pipeline from parsing through rendering.
+	</caption:Caption>
+	<media:MediaReference
+		url=https://example.com/images/system-overview.svg
+		mediaKind=$Image
 		encodingFormat="image/svg+xml"
 	/>
 </Figure>

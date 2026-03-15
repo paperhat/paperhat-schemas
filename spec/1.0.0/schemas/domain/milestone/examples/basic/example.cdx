@@ -6,7 +6,7 @@
 	id=urn:paperhat:example:milestone:basic
 	milestoneStatus=$Planned
 	name="Lexis FOSS Beta"
-	targetDate=date("2026-05-14")
+	targetDate=date(14 may 2026)
 >
 	<desc:Description>
 		First public release of the Lexis semantic processing pipeline. Functional and complete, pending community testing.

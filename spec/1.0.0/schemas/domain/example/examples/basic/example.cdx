@@ -1,20 +1,20 @@
-<Example key=~api-usage-example label="API Usage Example">
-	<Title>
-	Create a Figure Entry
-</Title>
-	<Paragraph>
+<Example key=~apiUsageExample label="API Usage Example">
+	<text:Title>
+		Create a Figure Entry
+	</text:Title>
+	<text:Paragraph>
 		Call the publish endpoint with a validated figure payload.
-	</Paragraph>
-	<CodeBlock language=$bash>
-curl -X POST https://api.example.com/v1/figures \
-  -H "Content-Type: application/json" \
-  -d '{"caption":"System architecture","url":"https://example.com/arch.svg"}'
-	</CodeBlock>
-	<Figure key=~fig-system-architecture caption="System architecture diagram">
-		<MediaReference
-			url="https://example.com/arch.svg"
-			mediaKind=$image
+	</text:Paragraph>
+	<code:CodeBlock language=$Bash>
+		curl -X POST https://api.example.com/v1/figures \
+		  -H "Content-Type: application/json" \
+		  -d '{"caption":"System architecture","url":"https://example.com/arch.svg"}'
+	</code:CodeBlock>
+	<figure:Figure>
+		<figure:media:MediaReference
+			url=https://example.com/arch.svg
+			mediaKind=$Image
 			encodingFormat="image/svg+xml"
 		/>
-	</Figure>
+	</figure:Figure>
 </Example>

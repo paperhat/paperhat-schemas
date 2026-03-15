@@ -5,6 +5,6 @@
 	<MoveTo key=~mt1 moveIdentifier=~move1 />
 	<Correction key=~corr1 original="recieve" />
 	<Annotation key=~ann1 author="Editor">
-	This paragraph needs a stronger opening sentence.
-</Annotation>
+		This paragraph needs a stronger opening sentence.
+	</Annotation>
 </EditorialMarkup>

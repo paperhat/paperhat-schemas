@@ -52,7 +52,7 @@ Reference traits are reused from Codex language semantics:
 This schema supports multi-valued bindings through the `value` trait union.
 
 - A single binding value may itself be a collection (`$List`, `$Set`, `$Map`, `$Tuple`, `$Range`, `$Record`).
-- Relation-valued attributes use `$IriReference` values that point to another `RelationInstance`.
+- Relation-valued attributes use `$Iri` values that point to another `RelationInstance`.
 - No implicit expansion is defined in canonical form; projection behavior must be explicit.
 
 ## Design Notes

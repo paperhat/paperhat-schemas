@@ -1,5 +1,5 @@
 <Obligation
-	dueDate=date("2026-05-14")
+	dueDate=date(14 may 2026)
 	id=urn:paperhat:example:obligation:basic
 	name="Deliver FOSS Beta"
 	obligatedParty=urn:paperhat:organization:paperhat

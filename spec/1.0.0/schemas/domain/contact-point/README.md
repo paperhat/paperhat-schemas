@@ -37,7 +37,7 @@ A phone number. Note: this is the *number*, not the phone itself. A phone is a d
 
 ### website
 
-An IRI (Internationalized Resource Identifier) for a website. Uses the $IriReference value type, which requires an absolute address.
+An IRI (Internationalized Resource Identifier) for a website. Uses the $Iri value type, which requires an absolute address.
 
 ### effectiveFrom / effectiveTo
 
@@ -59,7 +59,7 @@ At least one of `emailAddress`, `phoneNumber`, or `website` must be present. A C
 
 **Why phoneNumber and not phone?** Same principle. A phone is a device. A phone number is a reachable identifier.
 
-**Why $IriReference for website?** A website is an absolute address. Relative references would be meaningless as a contact method. $IriReference enforces this.
+**Why $Iri for website?** A website is an absolute address. Relative references would be meaningless as a contact method. $Iri enforces this.
 
 **Why contactKind and not just kind?** Follows the naming pattern established by PersonName's `nameKind`. The prefix disambiguates when traits are discussed outside their concept context.
 

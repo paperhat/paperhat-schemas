@@ -1,4 +1,1 @@
-<Identifier
-	scheme=$isbn
-	value="978-0-14-028329-7"
-/>
+<Identifier scheme=$Isbn value="978-0-14-028329-7" />

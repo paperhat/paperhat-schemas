@@ -1,1 +1,1 @@
-<Role roleKind=$editor holder=charlesMunat scope="Codex specification" />
+<Role holder=charlesMunat roleKind=$Editor scope="Codex specification" />

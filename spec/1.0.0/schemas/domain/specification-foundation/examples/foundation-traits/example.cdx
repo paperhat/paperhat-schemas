@@ -17,7 +17,7 @@
 			specification foundation schema.
 		</Paragraph>
 
-		<Requirement modality=$Must key=~foundation-support>
+		<Requirement key=~foundationSupport modality=$Must>
 			Implementations MUST support all foundation concepts.
 		</Requirement>
 
@@ -25,13 +25,13 @@
 			This note is a foundation concept available to both specification variants.
 		</Note>
 
-		<TermBinding term="foundation" source=urn:example:glossary#foundation label="Local glossary" />
+		<TermBinding label="Local glossary" source=urn:example:glossary#foundation term="foundation" />
 
-		<Issue key=~example-issue status=$Open>
+		<Issue key=~exampleIssue status=$Open>
 			Should the foundation define additional structural concepts?
 		</Issue>
 
-		<OpenQuestion key=~example-question status=$Open>
+		<OpenQuestion key=~exampleQuestion status=$Open>
 			Is the current trait set sufficient for all known specification families?
 		</OpenQuestion>
 	</Section>
@@ -43,8 +43,8 @@
 		key=~references
 		title="References"
 	>
-		<SectionReference target=urn:example:foundation-concepts#section/overview label="Overview" />
+		<SectionReference label="Overview" target=urn:example:foundation-concepts#section/overview />
 
-		<ExternalReference uri=https://example.org/foundation-spec label="Companion document" />
+		<ExternalReference label="Companion document" uri=https://example.org/foundation-spec />
 	</Section>
 </Specification>

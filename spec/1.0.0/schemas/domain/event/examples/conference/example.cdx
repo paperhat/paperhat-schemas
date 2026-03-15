@@ -1,9 +1,10 @@
 <Event
+	endDate={2026-09-17}
+	eventAttendanceMode=$offline
+	eventStatus=$scheduled
+	id=urn:paperhat:example:event:conference
 	name="PaperhatCon 2026"
 	startDate={2026-09-15}
-	endDate={2026-09-17}
-	eventStatus=$scheduled
-	eventAttendanceMode=$offline
 >
 	<Description>
 		Annual developer conference covering semantic authoring, document
@@ -11,32 +12,34 @@
 	</Description>
 
 	<Location
+		country="Canada"
+		locality="Vancouver"
 		locationKind=$venue
 		name="Vancouver Convention Centre"
-		locality="Vancouver"
 		region="British Columbia"
-		country="Canada"
 	/>
+
 	<GeographicLocation latitude=49.2888 longitude=-123.1116 />
 
 	<ContactPoint
 		contactKind=$registration
 		emailAddress="register@paperhatcon.example"
-		website=url("https://paperhatcon.example")
+		website=url("https://paperhatcon.example/")
 	/>
 
 	<Identifier scheme=$eventId value="PHC-2026" />
 
-	<Offer price=499 priceCurrency=$CAD availability=$InStock itemCondition=$New />
+	<Offer availability=$InStock itemCondition=$New price=499 priceCurrency=$CAD />
+
 	<Offer
-		price=299
-		priceCurrency=$CAD
 		availability=$InStock
 		itemCondition=$New
+		price=299
+		priceCurrency=$CAD
 		validThrough={2026-06-30}
 	/>
 
-	<Duration value=3 unit=$days />
+	<Duration unit=$days value=3 />
 
 	<Tags>
 		<Tag>

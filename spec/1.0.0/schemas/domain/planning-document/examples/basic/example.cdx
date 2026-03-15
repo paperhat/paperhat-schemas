@@ -1,4 +1,5 @@
 <PlanningDocument
+	id=urn:paperhat:example:planning-document:basic
 	planningDocumentKind=$ProjectPlan
 	planningDocumentStatus=$Active
 	title="Paperhat Plan"

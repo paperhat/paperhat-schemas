@@ -1,14 +1,17 @@
 <WhitePaper
+	coreThesis=`
+		Policy-as-code reduces compliance drift when paired with evidence-first deployment gates.
+	`
+	id=urn:paperhat:example:white-paper:evidence-rich-white-paper
 	title="Adopting Policy-as-Code in Regulated Delivery Pipelines"
-	coreThesis="Policy-as-code reduces compliance drift when paired with evidence-first deployment gates."
 >
 	<DocumentMetadata>
 		<Work
 			author="A. Rivera"
 			datePublished={2026-02-15}
 			language=$en
-			status=$inReview
 			license="CC-BY-4.0"
+			status=$inReview
 		/>
 
 		<Description language=$en>
@@ -30,14 +33,13 @@
 			</Tag>
 		</Tags>
 
-		<Audience audienceKind=$professional audienceDescription="Platform engineering; Security governance; Internal audit" />
+		<Audience
+			audienceDescription="Platform engineering; Security governance; Internal audit"
+			audienceKind=$professional
+		/>
 	</DocumentMetadata>
 
-	<SeriesInfo
-		seriesTitle="Platform Engineering Papers"
-		position=3
-		track="Compliance"
-	/>
+	<SeriesInfo position=3 seriesTitle="Platform Engineering Papers" track="Compliance" />
 
 	<documentstructure:Abstract>
 		This white paper evaluates organisational and technical patterns for

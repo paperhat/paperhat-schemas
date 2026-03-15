@@ -1,1 +1,1 @@
-<Rating ratingValue=8.5 bestRating=10 worstRating=1 ratingKind=$quality />
+<Rating bestRating=10 ratingKind=$Quality ratingValue=8.5 worstRating=1 />

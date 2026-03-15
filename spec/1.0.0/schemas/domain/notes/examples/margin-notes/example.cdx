@@ -1,10 +1,10 @@
 <Notes>
-	<Note key="a" language=$en>
+	<Note key=~a language=$en>
 		The author uses "liberty" here in the Millian sense, referring to freedom
 		from coercion rather than political autonomy.
 	</Note>
 
-	<Note key="b" language=$en>
+	<Note key=~b language=$en>
 		This passage was revised in the second edition; the original read "cannot
 		be sustained."
 	</Note>

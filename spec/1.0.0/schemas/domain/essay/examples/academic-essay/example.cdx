@@ -1,11 +1,14 @@
-<Essay title="The Epistemic Value of Failure in Laboratory Science">
+<Essay
+	id=urn:paperhat:example:essay:academic-essay
+	title="The Epistemic Value of Failure in Laboratory Science"
+>
 	<DocumentMetadata>
 		<Work
 			author="Dr. Rena Okafor"
 			datePublished={2026-01-12}
 			language=$en
-			status=$published
 			license="CC-BY-4.0"
+			status=$published
 		/>
 
 		<Description language=$en>

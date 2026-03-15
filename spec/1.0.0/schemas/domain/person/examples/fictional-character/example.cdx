@@ -1,5 +1,12 @@
-<Person gender="male">
-	<PersonName nameKind=$literary given="Sherlock" family="Holmes" />
-	<Location locationKind=$residence name="221B Baker Street" locality="London" country="United Kingdom" />
+<Person gender="male" id=urn:paperhat:example:person:fictional-character>
+	<PersonName family="Holmes" given="Sherlock" nameKind=$literary />
+
+	<Location
+		country="United Kingdom"
+		locality="London"
+		locationKind=$residence
+		name="221B Baker Street"
+	/>
+
 	<ContactPoint contactKind=$work emailAddress="holmes@bakerstreet.co.uk" />
 </Person>

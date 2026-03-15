@@ -1,3 +1,10 @@
-<Contract name="Lexis Pro Support Agreement" contractKind=$Support contractStatus=$Active effectiveDate="2026-01-01" expirationDate="2027-01-01">
-	<Jurisdiction name="New Zealand" jurisdictionKind=$Country countryCode=$NZ />
+<Contract
+	contractKind=$Support
+	contractStatus=$Active
+	effectiveDate="2026-01-01"
+	expirationDate="2027-01-01"
+	id=urn:paperhat:example:contract:basic
+	name="Lexis Pro Support Agreement"
+>
+	<Jurisdiction countryCode=$NZ jurisdictionKind=$Country name="New Zealand" />
 </Contract>

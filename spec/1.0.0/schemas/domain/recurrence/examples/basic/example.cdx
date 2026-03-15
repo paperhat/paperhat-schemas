@@ -1,1 +1,1 @@
-<Recurrence dayOfWeek=$Tuesday frequency=$Weekly interval=2 startDate=date("2026-03-31") />
+<Recurrence dayOfWeek=$Tuesday frequency=$Weekly interval=2 startDate=date(31 march 2026) />

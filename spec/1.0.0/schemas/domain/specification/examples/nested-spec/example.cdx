@@ -1,16 +1,16 @@
 <Specification
-	title="Schema Loading Rules"
-	normative=true
-	locked=false
-	version=1.2.0-beta.1
 	editor="Paperhat"
+	locked=false
+	normative=true
+	title="Schema Loading Rules"
+	version=1.2.0-beta.1
 >
 	<Section
+		conformance=$Normative
+		division=$Body
 		id=urn:example:schema-loading-rules#section/scope
 		key=~scope
 		title="Scope"
-		conformance=$Normative
-		division=$Body
 	>
 		<Paragraph>
 			This section establishes scope and loading requirements.
@@ -18,7 +18,7 @@
 
 		<Requirement
 			id=urn:example:schema-loading-rules#requirement/single-source-of-truth
-			key=~single-source-of-truth
+			key=~singleSourceOfTruth
 			modality=$Must
 		>
 			The Codex document MUST be the {~single-source-of-truth | single source of truth}.
@@ -26,30 +26,30 @@
 	</Section>
 
 	<Section
+		conformance=$Informative
+		division=$BackMatter
 		id=urn:example:schema-loading-rules#section/references
 		key=~references
 		title="References"
-		conformance=$Informative
-		division=$BackMatter
 	>
-		<SectionReference target=urn:example:schema-loading-rules#section/scope label="Scope" />
+		<SectionReference label="Scope" target=urn:example:schema-loading-rules#section/scope />
 
-		<ExternalReference uri=https://example.org/schema-loading-rules label="Companion explainer" />
+		<ExternalReference label="Companion explainer" uri=https://example.org/schema-loading-rules />
 	</Section>
 
 	<Section
+		conformance=$Informative
+		division=$Appendix
 		id=urn:example:schema-loading-rules#section/appendix-a
 		key=~appendixA
 		title="Appendix A"
-		conformance=$Informative
-		division=$Appendix
 	>
 		<Section
+			conformance=$Informative
+			division=$Appendix
 			id=urn:example:schema-loading-rules#section/appendix-a/notes
 			key=~appendixANotes
 			title="Notes"
-			conformance=$Informative
-			division=$Appendix
 		>
 			<Note>
 				Historical lineage concepts are intentionally excluded from this schema package.
@@ -57,8 +57,8 @@
 
 			<GlossaryEntry
 				id=urn:example:schema-loading-rules#glossary/single-source-of-truth
+				key=~singleSourceOfTruth
 				term="single source of truth"
-				key=~single-source-of-truth
 			>
 				A single authoritative representation from which all projections are derived.
 			</GlossaryEntry>

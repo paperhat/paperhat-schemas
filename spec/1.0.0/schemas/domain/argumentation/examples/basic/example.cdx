@@ -1,4 +1,4 @@
-<Argument key=~determinism-argument label="Argument 1">
+<Argument key=~determinismArgument label="Argument 1">
 	<Premise key=~p1 label="P1">
 		All Codex documents lower deterministically to RDF.
 	</Premise>

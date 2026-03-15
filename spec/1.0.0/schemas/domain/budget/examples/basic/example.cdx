@@ -2,6 +2,7 @@
 	budgetStatus=$Active
 	currency=$NZD
 	endDate=date("2026-12-31")
+	id=urn:paperhat:example:budget:basic
 	name="Paperhat 2026 Operating Budget"
 	startDate=date("2026-01-01")
 	totalAmount=120000

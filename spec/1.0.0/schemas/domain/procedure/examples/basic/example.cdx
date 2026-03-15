@@ -1,1 +1,6 @@
-<Procedure name="Lexis Release Procedure" procedureKind=$Release procedureStatus=$Active />
+<Procedure
+	id=urn:paperhat:example:procedure:basic
+	name="Lexis Release Procedure"
+	procedureKind=$Release
+	procedureStatus=$Active
+/>

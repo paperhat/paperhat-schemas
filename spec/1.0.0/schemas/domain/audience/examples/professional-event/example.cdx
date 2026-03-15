@@ -1,5 +1,5 @@
 <Audience
-	audienceKind=$professional
-	geographicArea="North America"
 	audienceDescription="Software engineering professionals"
+	audienceKind=$Professional
+	geographicArea="North America"
 />

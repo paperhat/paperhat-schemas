@@ -1,1 +1,6 @@
-<Publication name="The Codex Language" publicationKind=$Book publicationStatus=$Published />
+<Publication
+	id=urn:paperhat:example:publication:basic
+	name="The Codex Language"
+	publicationKind=$Book
+	publicationStatus=$Published
+/>

@@ -1,17 +1,18 @@
 <Organization
+	foundingDate={2004-05-24}
+	id=urn:paperhat:example:organization:nonprofit
 	name="Open Knowledge Foundation"
 	organizationKind=$nonprofit
-	foundingDate={2004-05-24}
 >
 	<Description>
 		A global nonprofit promoting free access to knowledge and open data.
 	</Description>
 
-	<ContactPoint contactKind=$work website=url("https://okfn.org") />
+	<ContactPoint contactKind=$work website=url("https://okfn.org/") />
 
 	<Identifier scheme=$taxId value="GB-CHC-1145606" />
 
-	<Location locationKind=$headquarters locality="Cambridge" country="United Kingdom" />
+	<Location country="United Kingdom" locality="Cambridge" locationKind=$headquarters />
 
 	<Tags>
 		<Tag>

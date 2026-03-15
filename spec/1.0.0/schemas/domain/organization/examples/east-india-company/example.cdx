@@ -1,15 +1,16 @@
 <Organization
+	dissolutionDate={1874-06-01}
+	foundingDate={1600-12-31}
+	id=urn:paperhat:example:organization:east-india-company
 	name="East India Company"
 	organizationKind=$corporation
-	foundingDate={1600-12-31}
-	dissolutionDate={1874-06-01}
 >
 	<Description>
 		A chartered trading company that dominated trade across the Indian Ocean
 		for over two centuries.
 	</Description>
 
-	<Location locationKind=$headquarters locality="London" country="England" />
+	<Location country="England" locality="London" locationKind=$headquarters />
 
 	<Tags>
 		<Tag>

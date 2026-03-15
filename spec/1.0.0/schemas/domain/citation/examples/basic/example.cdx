@@ -1,14 +1,15 @@
 <Citation
-	title="Key words for use in RFCs to Indicate Requirement Levels"
 	citationKind=$rfc
-	number="2119"
 	datePublished={1997-03}
+	id=urn:paperhat:example:citation:basic
 	key=~rfc2119
+	number="2119"
+	title="Key words for use in RFCs to Indicate Requirement Levels"
 	uri=url("https://www.rfc-editor.org/rfc/rfc2119")
 >
 	<Contributor contributorKind=$author>
 		<person:Person>
-			<pname:PersonName given="Scott" family="Bradner" />
+			<pname:PersonName family="Bradner" given="Scott" />
 		</person:Person>
 	</Contributor>
 </Citation>

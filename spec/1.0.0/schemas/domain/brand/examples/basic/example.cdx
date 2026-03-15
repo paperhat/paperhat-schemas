@@ -1,1 +1,7 @@
-<Brand name="Lexis" brandKind=$Product owner=paperhatLimited brandStatus=$Active />
+<Brand
+	brandKind=$Product
+	brandStatus=$Active
+	id=urn:paperhat:example:brand:basic
+	name="Lexis"
+	owner=paperhatLimited
+/>

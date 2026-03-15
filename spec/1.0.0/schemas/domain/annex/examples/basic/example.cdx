@@ -1,3 +1,8 @@
-<Annex annexDesignator="A" annexStatus=$Normative name="Conformance Test Vectors">
+<Annex
+	annexDesignator="A"
+	annexStatus=$Normative
+	id=urn:paperhat:example:annex:basic
+	name="Conformance Test Vectors"
+>
 	This annex defines the conformance test vectors for all value literal types.
 </Annex>

@@ -1,1 +1,8 @@
-<LearningOffering name="Codex Authoring Workshop" offeringKind=$Workshop offeringStatus=$Active deliveryMode=$Hybrid product=codex />
+<LearningOffering
+	deliveryMode=$Hybrid
+	id=urn:paperhat:example:learning-offering:basic
+	name="Codex Authoring Workshop"
+	offeringKind=$Workshop
+	offeringStatus=$Active
+	product=codex
+/>

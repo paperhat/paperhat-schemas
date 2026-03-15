@@ -1,20 +1,22 @@
 <Product
-	name="CloudDraft Pro"
 	brand="CloudDraft"
 	category=$software
+	id=urn:paperhat:example:product:software-subscription
 	model="Pro Plan"
+	name="CloudDraft Pro"
 >
 	<Description>
 		Cloud-based document authoring platform with real-time collaboration,
 		version tracking, and API access.
 	</Description>
 
-	<Offer price=19.99 priceCurrency=$USD availability=$InStock />
-	<Offer price=199.99 priceCurrency=$USD availability=$InStock />
+	<Offer availability=$InStock price=19.99 priceCurrency=$USD />
+
+	<Offer availability=$InStock price=199.99 priceCurrency=$USD />
 
 	<Identifier scheme=$productId value="CDP-PRO-2026" />
 
-	<Rating ratingValue=4.2 bestRating=5 ratingCount=567 />
+	<Rating bestRating=5 ratingCount=567 ratingValue=4.2 />
 
 	<Tags>
 		<Tag>

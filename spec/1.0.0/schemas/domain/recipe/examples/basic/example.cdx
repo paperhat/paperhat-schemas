@@ -11,21 +11,21 @@
 
 	<Times>
 		<PreparationTime>
-			<timemeasure:TimeMeasure value=5 unit=$Minute />
+			<timemeasure:TimeMeasure unit=$Minute value=5 />
 		</PreparationTime>
 
 		<CookingTime>
-			<timemeasure:TimeMeasure value=6 unit=$Minute />
+			<timemeasure:TimeMeasure unit=$Minute value=6 />
 		</CookingTime>
 
 		<TotalTime>
-			<timemeasure:TimeMeasure value=11 unit=$Minute />
+			<timemeasure:TimeMeasure unit=$Minute value=11 />
 		</TotalTime>
 	</Times>
 
 	<Ingredients>
 		<Ingredient food=urn:paperhat:food:egg>
-			<measure:Measure value=4 unit=$Item />
+			<measure:Measure unit=$Item value=4 />
 		</Ingredient>
 
 		<IngredientSet>
@@ -62,7 +62,7 @@
 	</tips:Tips>
 
 	<notes:Notes>
-		<notes:Note key="a">
+		<notes:Note key=~a>
 			Adapted from the author's weeknight breakfast method.
 		</notes:Note>
 	</notes:Notes>

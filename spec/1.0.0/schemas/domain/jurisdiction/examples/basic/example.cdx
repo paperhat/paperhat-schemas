@@ -1,1 +1,1 @@
-<Jurisdiction name="New Zealand" jurisdictionKind=$country countryCode=$NZ />
+<Jurisdiction countryCode=$NZ jurisdictionKind=$Country name="New Zealand" />

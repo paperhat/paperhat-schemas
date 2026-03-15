@@ -1,1 +1,8 @@
-<Release version="2.3.1" releaseKind=$Minor releaseStatus=$Stable releaseDate="2026-03-01" product=codex />
+<Release
+	id=urn:paperhat:example:release:basic
+	product=codex
+	releaseDate="2026-03-01"
+	releaseKind=$Minor
+	releaseStatus=$Stable
+	version="2.3.1"
+/>

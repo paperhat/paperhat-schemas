@@ -1,16 +1,16 @@
 <Specification
-	title="Canonical Processing Rules"
-	normative=true
-	locked=true
-	version=1.0.0
 	editor="Paperhat"
+	locked=true
+	normative=true
+	title="Canonical Processing Rules"
+	version=1.0.0
 >
 	<Section
+		conformance=$Normative
+		division=$Body
 		id=urn:example:canonical-processing-rules#section/purpose
 		key=~purpose
 		title="Purpose"
-		conformance=$Normative
-		division=$Body
 	>
 		<Paragraph>
 			This specification defines deterministic processing requirements. See {~deterministic-output | Requirement 1} for the core invariant.
@@ -18,7 +18,7 @@
 
 		<Requirement
 			id=urn:example:canonical-processing-rules#requirement/deterministic-output
-			key=~deterministic-output
+			key=~deterministicOutput
 			modality=$Must
 		>
 			Processors MUST produce deterministic output for identical semantic inputs.

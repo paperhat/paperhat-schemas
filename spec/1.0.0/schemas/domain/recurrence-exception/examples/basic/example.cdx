@@ -1,1 +1,1 @@
-<RecurrenceException originalDate=date("2026-12-22") reason="Holiday break" />
+<RecurrenceException originalDate=date(22 december 2026) reason="Holiday break" />

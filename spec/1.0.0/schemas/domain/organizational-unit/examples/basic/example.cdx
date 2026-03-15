@@ -1,1 +1,6 @@
-<OrganizationalUnit name="Platform Team" unitKind=$Team parentUnit=engineeringDept />
+<OrganizationalUnit
+	id=urn:paperhat:example:organizational-unit:basic
+	name="Platform Team"
+	parentUnit=engineeringDept
+	unitKind=$Team
+/>

@@ -1,1 +1,7 @@
-<Tier name="Pro" tierKind=$Professional product=lexis tierStatus=$Active />
+<Tier
+	id=urn:paperhat:example:tier:basic
+	name="Pro"
+	product=lexis
+	tierKind=$Professional
+	tierStatus=$Active
+/>

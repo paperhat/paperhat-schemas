@@ -1,6 +1,9 @@
 <WhitePaper
+	coreThesis=`
+		A phased zero-trust rollout can reduce breach exposure without disrupting delivery velocity.
+	`
+	id=urn:paperhat:example:white-paper:minimal-white-paper
 	title="Zero-Trust Migration for Mid-Market Enterprises"
-	coreThesis="A phased zero-trust rollout can reduce breach exposure without disrupting delivery velocity."
 >
 	<documentstructure:Abstract>
 		This paper outlines a phased migration strategy for organisations moving

@@ -1,1 +1,1 @@
-<Audience audienceKind=$consumer suggestedMinAge=18 geographicArea="Global" />
+<Audience audienceKind=$Consumer geographicArea="Global" suggestedMinAge=18 />

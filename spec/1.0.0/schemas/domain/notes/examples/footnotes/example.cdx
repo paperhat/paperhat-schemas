@@ -1,14 +1,14 @@
 <Notes>
-	<Note key="1">
+	<Note key=~note1>
 		The original experiment was conducted in 1987, but the results were not
 		published until 1992 due to funding disputes.
 	</Note>
 
-	<Note key="2">
+	<Note key=~note2>
 		All measurements are reported in SI units unless otherwise noted.
 	</Note>
 
-	<Note key="3">
+	<Note key=~note3>
 		See Appendix B for the full derivation.
 	</Note>
 </Notes>

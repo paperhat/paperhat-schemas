@@ -1,6 +1,6 @@
 <ContactPoint
-	contactKind=$work
+	contactKind=$Work
 	emailAddress="info@paperhat.io"
 	phoneNumber="+1 555 867 5309"
-	website=url("https://paperhat.io")
+	website=url("https://paperhat.io/")
 />

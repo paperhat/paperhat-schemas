@@ -1,7 +1,8 @@
 <Organization
+	foundingDate={2019-03-15}
+	id=urn:paperhat:example:organization:tech-company
 	name="Acme Robotics"
 	organizationKind=$corporation
-	foundingDate={2019-03-15}
 >
 	<Description>
 		A robotics startup specializing in autonomous warehouse fulfillment
@@ -9,15 +10,16 @@
 	</Description>
 
 	<ContactPoint contactKind=$work emailAddress="info@acmerobotics.example" />
-	<ContactPoint contactKind=$work website=url("https://acmerobotics.example") />
+
+	<ContactPoint contactKind=$work website=url("https://acmerobotics.example/") />
 
 	<Identifier scheme=$registrationNumber value="BC-2019-048721" />
 
 	<Location
-		locationKind=$headquarters
-		locality="Vancouver"
-		region="British Columbia"
 		country="Canada"
+		locality="Vancouver"
+		locationKind=$headquarters
+		region="British Columbia"
 	/>
 
 	<Tags>

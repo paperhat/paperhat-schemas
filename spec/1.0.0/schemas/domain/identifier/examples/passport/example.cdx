@@ -1,4 +1,1 @@
-<Identifier
-	scheme=$passport
-	value="AB1234567"
-/>
+<Identifier scheme=$Passport value="AB1234567" />

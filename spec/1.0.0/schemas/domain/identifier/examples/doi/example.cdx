@@ -1,4 +1,1 @@
-<Identifier
-	scheme=$doi
-	value="10.1038/nature12373"
-/>
+<Identifier scheme=$Doi value="10.1038/nature12373" />

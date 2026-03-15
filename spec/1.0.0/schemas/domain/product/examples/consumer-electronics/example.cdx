@@ -1,9 +1,10 @@
 <Product
-	name="ProSound X40 Wireless Headphones"
 	brand="ProSound"
 	category=$electronics
 	color="Midnight Black"
+	id=urn:paperhat:example:product:consumer-electronics
 	model="X40"
+	name="ProSound X40 Wireless Headphones"
 	releaseDate={2026-01-10}
 >
 	<Description>
@@ -11,15 +12,17 @@
 		battery life.
 	</Description>
 
-	<Offer price=149.99 priceCurrency=$USD availability=$InStock itemCondition=$New />
-	<Offer price=119.99 priceCurrency=$USD availability=$InStock itemCondition=$Refurbished />
+	<Offer availability=$InStock itemCondition=$New price=149.99 priceCurrency=$USD />
+
+	<Offer availability=$InStock itemCondition=$Refurbished price=119.99 priceCurrency=$USD />
 
 	<Identifier scheme=$gtin value="0123456789012" />
+
 	<Identifier scheme=$sku value="PS-X40-BLK" />
 
-	<Rating ratingValue=4.5 bestRating=5 ratingCount=1283 />
+	<Rating bestRating=5 ratingCount=1283 ratingValue=4.5 />
 
-	<Measure value=250 unit=$grams />
+	<Measure unit=$grams value=250 />
 
 	<Tags>
 		<Tag>

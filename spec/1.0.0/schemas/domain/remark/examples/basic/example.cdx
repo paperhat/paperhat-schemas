@@ -1,4 +1,4 @@
-<Remark key=~converse-does-not-hold label="Remark 3.2">
+<Remark key=~converseDoesNotHold label="Remark 3.2">
 	The converse of Theorem 3.1 does not hold in general. A counterexample
 	is given in Example 3.4 below.
 </Remark>

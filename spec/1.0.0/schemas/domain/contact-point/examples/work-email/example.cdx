@@ -1,4 +1,1 @@
-<ContactPoint
-	contactKind=$work
-	emailAddress="ada@lovelace.dev"
-/>
+<ContactPoint contactKind=$Work emailAddress="ada@lovelace.dev" />

@@ -1,6 +1,6 @@
 <Audience
-	audienceKind=$consumer
-	suggestedMinAge=6
-	suggestedMaxAge=12
 	audienceDescription="Children ages 6-12"
+	audienceKind=$Consumer
+	suggestedMaxAge=12
+	suggestedMinAge=6
 />

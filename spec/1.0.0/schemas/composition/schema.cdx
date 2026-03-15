@@ -108,13 +108,28 @@
 				<ForbidsContent />
 			</ContentRules>
 
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Filter" max=1 />
+			</ChildRules>
+
 			<TraitRules>
 				<RequiresTrait name="source" />
-
-				<RequiresTrait name="selectionKind" />
-
-				<AllowsTrait name="rule" />
 			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:composition:document:Filter
+			name="Filter"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -135,6 +150,8 @@
 				<RequiresTrait name="members" />
 
 				<AllowsTrait name="organization" />
+
+				<AllowsTrait name="orderingKey" />
 			</TraitRules>
 		</ConceptDefinition>
 
@@ -192,9 +209,11 @@
 				<ForbidsContent />
 			</ContentRules>
 
-			<TraitRules>
-				<RequiresTrait name="expression" />
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
 
+			<TraitRules>
 				<RequiresTrait name="effect" />
 			</TraitRules>
 		</ConceptDefinition>
@@ -256,22 +275,6 @@
 		/>
 
 		<TraitDefinition
-			defaultValueType=$EnumeratedToken
-			id=paperhat:composition:document:trait:selectionKind
-			name="selectionKind"
-		>
-			<AllowedValues>
-				<ValueIsOneOf values=[$All, $Explicit, $Tagged, $Referenced, $Related] />
-			</AllowedValues>
-		</TraitDefinition>
-
-		<TraitDefinition
-			defaultValueType=$Text
-			id=paperhat:composition:document:trait:rule
-			name="rule"
-		/>
-
-		<TraitDefinition
 			defaultValueType=$List<$Iri>
 			id=paperhat:composition:document:trait:members
 			name="members"
@@ -286,6 +289,12 @@
 				<ValueIsOneOf values=[$Ordered, $Unordered, $Chronological, $Alphabetical, $Hierarchical] />
 			</AllowedValues>
 		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:composition:document:trait:orderingKey
+			name="orderingKey"
+		/>
 
 		<TraitDefinition
 			defaultValueType=$Iri
@@ -323,12 +332,6 @@
 			defaultValueType=$Iri
 			id=paperhat:composition:document:trait:condition
 			name="condition"
-		/>
-
-		<TraitDefinition
-			defaultValueType=$Text
-			id=paperhat:composition:document:trait:expression
-			name="expression"
 		/>
 
 		<TraitDefinition

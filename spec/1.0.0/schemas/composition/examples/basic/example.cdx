@@ -23,7 +23,7 @@
 		<text:Title>
 			Recipes
 		</text:Title>
-		<Selection id=urn:paperhat:composition:selection:all-recipes source=urn:paperhat:composition:import:recipes selectionKind=$All />
+		<Selection id=urn:paperhat:composition:selection:all-recipes source=urn:paperhat:composition:import:recipes />
 		<Collection id=urn:paperhat:composition:collection:featured members=[urn:paperhat:recipe:aloo-fry, urn:paperhat:recipe:shakshuka] organization=$Alphabetical>
 			<text:Title>
 				Featured Recipes

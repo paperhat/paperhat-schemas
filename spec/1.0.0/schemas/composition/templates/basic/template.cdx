@@ -14,7 +14,7 @@
 		<text:Title>
 			Primary Artifact
 		</text:Title>
-		<Selection id=urn:paperhat:composition:selection:primary source=urn:paperhat:composition:import:source selectionKind=$Explicit rule="Primary selection rule" />
+		<Selection id=urn:paperhat:composition:selection:primary source=urn:paperhat:composition:import:source />
 		<Binding id=urn:paperhat:composition:binding:primary source=urn:paperhat:composition:selection:primary view=urn:paperhat:view:example:primary bindingIntent=$Primary realization=[$Website] />
 	</Artifact>
 </Document>

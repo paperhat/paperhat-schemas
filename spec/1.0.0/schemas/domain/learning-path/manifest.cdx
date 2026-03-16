@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="41a09e8b4c5f89c5ccc229a6d3b987127f59901446958aa5089616e312536781"
+	copyright="Copyright 2026 Paperhat"
+	description="Package manifest for a Praxis learning path: metadata, domain classification, frontier configuration, and prerequisite declarations."
+	license="Apache-2.0"
+	packageName="paperhat-learning-path"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

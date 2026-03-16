@@ -1,0 +1,31 @@
+<LocalizationBundle language=$En schema=paperhat:domain:learningPath schemaVersion="1.0.0">
+	<ConceptLocalization identifier="LearningPath" label="Learning Path" labelOther="Learning Paths" />
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		The name of the learning path.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="description" label="Description" labelOther="Descriptions">
+		What the learner accomplishes by completing this path.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="author" label="Author" labelOther="Authors">
+		Author or organization that created this learning path.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="version" label="Version" labelOther="Versions">
+		Semantic version of this learning path.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="domain" label="Domain" labelOther="Domains">
+		Domain tags classifying this learning path.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="maximumFrontierSize" label="Maximum Frontier Size" labelOther="Maximum Frontier Sizes">
+		Maximum number of frontier atoms exposed simultaneously (1 through 7).
+	</TraitLocalization>
+
+	<TraitLocalization identifier="prerequisitePaths" label="Prerequisite Paths" labelOther="Prerequisite Paths">
+		Learning paths the learner completes before starting this one.
+	</TraitLocalization>
+</LocalizationBundle>

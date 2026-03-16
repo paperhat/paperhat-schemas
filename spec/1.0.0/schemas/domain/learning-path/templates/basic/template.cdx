@@ -1,0 +1,10 @@
+[A learning path manifest. All required traits must be provided.]
+<LearningPath
+	author="Author Name"
+	description="What the learner accomplishes."
+	domain=["domain-tag"]
+	id=urn:paperhat:example:learningPath:placeholder
+	maximumFrontierSize=5
+	name="Learning Path Name"
+	version=1.0.0
+/>

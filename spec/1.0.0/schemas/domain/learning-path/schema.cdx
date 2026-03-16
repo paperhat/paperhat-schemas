@@ -1,0 +1,97 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description=`
+		Package manifest for a Praxis learning path: metadata, domain classification, frontier
+		configuration, and prerequisite declarations.
+	`
+	id=paperhat:domain:learningPath
+	namespace="learningPath"
+	title="Learning Path Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description=`
+				A learning path package manifest declaring metadata, domain, frontier size, and
+				prerequisites.
+			`
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:learningPath:LearningPath
+			name="LearningPath"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="description" />
+
+				<RequiresTrait name="author" />
+
+				<RequiresTrait name="version" />
+
+				<RequiresTrait name="domain" />
+
+				<RequiresTrait name="maximumFrontierSize" />
+
+				<AllowsTrait name="prerequisitePaths" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			description="Human-readable name of the learning path."
+			id=paperhat:domain:learningPath:trait:name
+			name="name"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			description="What the learner accomplishes by completing this path."
+			id=paperhat:domain:learningPath:trait:description
+			name="description"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			description="Author or organization that created this learning path."
+			id=paperhat:domain:learningPath:trait:author
+			name="author"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Semver
+			description="Semantic version of this learning path."
+			id=paperhat:domain:learningPath:trait:version
+			name="version"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			description="Domain tags classifying this learning path."
+			id=paperhat:domain:learningPath:trait:domain
+			name="domain"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			description="Maximum frontier size N for this path (1 through 7, default 5)."
+			id=paperhat:domain:learningPath:trait:maximumFrontierSize
+			name="maximumFrontierSize"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			description="IRIs of learning paths that the learner completes before starting this one."
+			id=paperhat:domain:learningPath:trait:prerequisitePaths
+			name="prerequisitePaths"
+		/>
+	</TraitDefinitions>
+</Schema>

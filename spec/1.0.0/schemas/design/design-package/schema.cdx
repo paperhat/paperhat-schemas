@@ -1,0 +1,62 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Design-family schema for bundling design annotation documents into an ordered, referenceable package."
+	id=paperhat:design:package
+	namespace="designpackage"
+	title="Design Package Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
+
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:design:package:DesignPackage
+			name="DesignPackage"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Title" min=1 max=1 />
+
+				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
+
+				<AllowsChildConcept conceptSelector="DesignMember" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:design:package:DesignMember
+			name="DesignMember"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="annotation" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:design:package:trait:annotation
+			name="annotation"
+		/>
+	</TraitDefinitions>
+</Schema>

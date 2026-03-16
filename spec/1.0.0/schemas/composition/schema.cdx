@@ -37,6 +37,8 @@
 				<AllowsChildConcept conceptSelector="Relationship" />
 
 				<AllowsChildConcept conceptSelector="Condition" />
+
+				<AllowsChildConcept conceptSelector="DesignReference" />
 			</ChildRules>
 
 			<TraitRules>
@@ -215,6 +217,21 @@
 
 			<TraitRules>
 				<RequiresTrait name="effect" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:composition:document:DesignReference
+			name="DesignReference"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="target" />
 			</TraitRules>
 		</ConceptDefinition>
 	</ConceptDefinitions>

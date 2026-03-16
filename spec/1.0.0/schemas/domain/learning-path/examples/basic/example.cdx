@@ -1,7 +1,10 @@
 <LearningPath
 	author="Paperhat"
-	description="Navigate the Praxis learning environment, complete skills, experience friction and clarification, finish a project, and receive a next-path recommendation."
-	domain=["praxis"]
+	description=`
+		Navigate the Praxis learning environment, complete skills, experience friction and
+		clarification, finish a project, and receive a next-path recommendation.
+	`
+	domain="praxis"
 	id=urn:paperhat:praxis-graphs:learn-to-use-praxis
 	maximumFrontierSize=3
 	name="Start Learning with Praxis"

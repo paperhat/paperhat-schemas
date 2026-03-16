@@ -2,7 +2,7 @@
 	id=urn:paperhat:example:learningProcedure:htmlHeading
 	name="Create an HTML heading"
 >
-	<LearningStep>
+	<LearningStep bodyMode=$content>
 		Open a text editor and create a new file called recipe.html.
 	</LearningStep>
 
@@ -17,11 +17,12 @@
 		</text:Paragraph>
 
 		<code:CodeBlock language=$Html>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;&lt;title&gt;My Recipe&lt;/title&gt;&lt;/head&gt;
-&lt;body&gt;&lt;/body&gt;
-&lt;/html&gt;
+			&lt;!DOCTYPE html&gt;
+			&lt;html&gt;
+			&lt;head&gt;&lt;title&gt;My Recipe&lt;/title&gt;&lt;/head&gt;
+			&lt;body&gt;&lt;/body&gt;
+			&lt;/html&gt;
+
 		</code:CodeBlock>
 	</LearningStep>
 
@@ -29,7 +30,12 @@
 		Opening recipe.html in a browser shows a blank page with "My Recipe" in the title bar.
 	</ExpectedOutcome>
 
-	<admonition:Tip key=~browserRefresh text="If the page does not update after saving, try a hard refresh with Ctrl+Shift+R or Cmd+Shift+R." />
+	<admonition:Tip
+		key=~browserRefresh
+		text=`
+			If the page does not update after saving, try a hard refresh with Ctrl+Shift+R or Cmd+Shift+R.
+		`
+	/>
 
 	<LearningStep bodyMode=$children>
 		<text:Paragraph>
@@ -37,9 +43,10 @@
 		</text:Paragraph>
 
 		<code:CodeBlock language=$Html>
-&lt;body&gt;
-&lt;h1&gt;Chocolate Chip Cookies&lt;/h1&gt;
-&lt;/body&gt;
+			&lt;body&gt;
+			&lt;h1&gt;Chocolate Chip Cookies&lt;/h1&gt;
+			&lt;/body&gt;
+
 		</code:CodeBlock>
 	</LearningStep>
 

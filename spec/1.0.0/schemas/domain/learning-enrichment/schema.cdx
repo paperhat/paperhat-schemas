@@ -39,7 +39,7 @@
 
 		<SchemaImport
 			namespace="section"
-			reference=urn:cdx:sha256:2ca37d16001c74ef978702d41e6ca5312bad104061e79fb6c0b774773cd34e7d
+			reference=urn:cdx:sha256:c0fe7d0290f053b4fec0de1c1815f20848912689c1c15abb2a83e78959a53c13
 		/>
 
 		<SchemaImport

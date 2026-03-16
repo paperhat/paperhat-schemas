@@ -19,6 +19,16 @@
 		/>
 
 		<SchemaImport
+			namespace="rubric"
+			reference=urn:cdx:sha256:b7bd2b7ec1f31ea9addb6c2d29d0069664c0256241b12d0904670b9e37baf47f
+		/>
+
+		<SchemaImport
+			namespace="text"
+			reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df
+		/>
+
+		<SchemaImport
 			namespace="budget"
 			reference=urn:cdx:sha256:4e2807c139842c8b8a01bdc8d10df99d4f10d8def80553195e624ecf536cdf5c
 		/>
@@ -55,7 +65,7 @@
 
 		<SchemaImport
 			namespace="narrative"
-			reference=urn:cdx:sha256:d5080fc725ba9b8641d5a8f09aecb46f659a9783f3b0a7dfad7f1d831807f433
+			reference=urn:cdx:sha256:1a79e517e9fb8f19f2871c39748c981465bc053ce88d04e7ebc39c1798768971
 		/>
 
 		<SchemaImport
@@ -70,7 +80,7 @@
 
 		<SchemaImport
 			namespace="section"
-			reference=urn:cdx:sha256:2ca37d16001c74ef978702d41e6ca5312bad104061e79fb6c0b774773cd34e7d
+			reference=urn:cdx:sha256:c0fe7d0290f053b4fec0de1c1815f20848912689c1c15abb2a83e78959a53c13
 		/>
 
 		<SchemaImport

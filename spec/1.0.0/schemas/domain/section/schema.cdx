@@ -47,7 +47,7 @@
 				<AllowsChildConcept conceptSelector="notes:Notes" />
 			</ChildRules>
 
-			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
 		</ConceptDefinition>
 	</ConceptDefinitions>
 </Schema>

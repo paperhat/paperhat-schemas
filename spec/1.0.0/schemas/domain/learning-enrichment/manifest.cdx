@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="6879a1029c17744ee397a071991129d82b503e7b74847cb0fae243205a414048"
+	copyright="Copyright 2026 Paperhat"
+	description="Optional curiosity-driven enrichment content: history, naming, failure cases, and tangential connections that deepen understanding without gating progress."
+	license="Apache-2.0"
+	packageName="paperhat-learning-enrichment"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

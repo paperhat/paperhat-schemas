@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="aa214dfec25666849d2ed6b219b9a53afda2a0a4e53a5baf43a11eda18c29f13"
+	copyright="Copyright 2026 Paperhat"
+	description="A structured conceptual explanation for friction-gated clarification: the content that surfaces when a learner encounters difficulty with a skill."
+	license="Apache-2.0"
+	packageName="paperhat-learning-explanation"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

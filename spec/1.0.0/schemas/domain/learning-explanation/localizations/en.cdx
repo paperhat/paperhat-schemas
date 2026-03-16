@@ -1,0 +1,11 @@
+<LocalizationBundle language=$En schema=paperhat:domain:learningExplanation schemaVersion="1.0.0">
+	<ConceptLocalization
+		identifier="LearningExplanation"
+		label="Learning Explanation"
+		labelOther="Learning Explanations"
+	/>
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		The name of the learning explanation.
+	</TraitLocalization>
+</LocalizationBundle>

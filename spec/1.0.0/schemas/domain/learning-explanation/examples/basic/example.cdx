@@ -1,0 +1,21 @@
+<LearningExplanation
+	id=urn:paperhat:example:learningExplanation:htmlElements
+	name="HTML Elements and Tags"
+>
+	<explanation:Explanation id=urn:paperhat:example:explanation:htmlElements name="HTML Elements">
+		<text:Paragraph>
+			An HTML element is a structural unit in a web page. Elements consist of an opening tag, content,
+			and a closing tag. The opening tag declares the element type; the closing tag marks where the
+			element ends.
+		</text:Paragraph>
+
+		<example:Example>
+			<code:CodeBlock language=$Html>
+&lt;h1&gt;This is a heading&lt;/h1&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+			</code:CodeBlock>
+		</example:Example>
+
+		<admonition:Warning key=~closingTags text="Forgetting a closing tag causes the browser to guess where the element ends. The result is unpredictable layout." />
+	</explanation:Explanation>
+</LearningExplanation>

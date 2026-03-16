@@ -1,0 +1,18 @@
+<LearningEnrichment
+	id=urn:paperhat:example:learningEnrichment:htmlHistory
+	name="A Brief History of HTML"
+>
+	<text:Paragraph>
+		Tim Berners-Lee created HTML in 1991 at CERN as a way for physicists to share research
+		documents. The first version had only 18 elements. There was no styling, no scripting, and no
+		images — just text with hyperlinks.
+	</text:Paragraph>
+
+	<text:Paragraph>
+		The h1 through h6 heading elements were part of the original design. They mirror the heading
+		hierarchy in academic papers, where sections, subsections, and sub-subsections each get a
+		distinct heading level.
+	</text:Paragraph>
+
+	<admonition:Informational key=~headingLevels text="Most web pages use only h1 through h3. Using all six levels is rare and usually indicates the page structure is too deep." />
+</LearningEnrichment>

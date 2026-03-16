@@ -1,0 +1,63 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description=`
+		A structured conceptual explanation for friction-gated clarification: the content that surfaces
+		when a learner encounters difficulty with a skill.
+	`
+	id=paperhat:domain:learningExplanation
+	namespace="learningExplanation"
+	title="Learning Explanation Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport
+			namespace="explanation"
+			reference=urn:cdx:sha256:81e30527768ebf949244a196d08d5a90aab065c9767fbbfce9acd976326e2c44
+		/>
+
+		<SchemaImport
+			namespace="text"
+			reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df
+		/>
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description=`
+				A learning explanation document containing one or more Explanation children, each addressing
+				a distinct concept that helps resolve learner friction.
+			`
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:learningExplanation:LearningExplanation
+			name="LearningExplanation"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Title" max=1 />
+
+				<RequiresChildConcept conceptSelector="explanation:Explanation" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			description="Human-readable name of the learning explanation."
+			id=paperhat:domain:learningExplanation:trait:name
+			name="name"
+		/>
+	</TraitDefinitions>
+</Schema>

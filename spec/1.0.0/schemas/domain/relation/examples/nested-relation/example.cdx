@@ -1,17 +1,15 @@
-<RelationType
-	id=urn:paperhat:relation-type:project
-	name="Project"
->
+<RelationType id=urn:paperhat:relation-type:project name="Project">
 	<Attribute
 		id=urn:paperhat:relation-type:project:attribute:name
 		name="name"
-		valueType=$Text
 		required=true
+		valueType=$Text
 	/>
+
 	<Attribute
 		id=urn:paperhat:relation-type:project:attribute:budget
 		name="budget"
-		valueType=$Number
 		required=true
+		valueType=$Number
 	/>
 </RelationType>

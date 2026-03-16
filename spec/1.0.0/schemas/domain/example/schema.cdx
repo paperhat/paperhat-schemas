@@ -34,7 +34,7 @@
 
 		<SchemaImport
 			namespace="relation"
-			reference=urn:cdx:sha256:d0a5249cddda2afd63895ea534253b534111ea5f4094dcf17d99a51587483447
+			reference=urn:cdx:sha256:3cdb9ada1d7a4543695e4da9bfef94e19368c8cb821269bd557d516b6a9f45a1
 		/>
 
 		<SchemaImport

@@ -40,7 +40,7 @@
 
 		<SchemaImport
 			namespace="example"
-			reference=urn:cdx:sha256:bde5283c13c8d93b24c3aa6c01dab3d363cc253adc9ac8c79ad7e858959a3cd3
+			reference=urn:cdx:sha256:59511a9721c020b957af1b021e151fb77f91f35928f14352143b51f801fc9e8f
 		/>
 
 		<SchemaImport
@@ -65,7 +65,7 @@
 
 		<SchemaImport
 			namespace="relation"
-			reference=urn:cdx:sha256:d0a5249cddda2afd63895ea534253b534111ea5f4094dcf17d99a51587483447
+			reference=urn:cdx:sha256:3cdb9ada1d7a4543695e4da9bfef94e19368c8cb821269bd557d516b6a9f45a1
 		/>
 
 		<SchemaImport
@@ -297,7 +297,7 @@
 
 				<AllowsTrait name="status">
 					<AllowedValues>
-						<EnumeratedConstraint set="IssueStatus" />
+						<ValueIsOneOf values=[$Open, $Resolved, $Deferred] />
 					</AllowedValues>
 				</AllowsTrait>
 
@@ -320,7 +320,7 @@
 
 				<AllowsTrait name="status">
 					<AllowedValues>
-						<EnumeratedConstraint set="OpenQuestionStatus" />
+						<ValueIsOneOf values=[$Open, $Answered, $Deferred] />
 					</AllowedValues>
 				</AllowsTrait>
 
@@ -352,7 +352,7 @@
 			name="conformance"
 		>
 			<AllowedValues>
-				<EnumeratedConstraint set="SectionConformance" />
+				<ValueIsOneOf values=[$Normative, $Informative] />
 			</AllowedValues>
 		</TraitDefinition>
 
@@ -380,7 +380,7 @@
 			name="division"
 		>
 			<AllowedValues>
-				<EnumeratedConstraint set="SectionDivision" />
+				<ValueIsOneOf values=[$Body, $Appendix, $FrontMatter, $BackMatter] />
 			</AllowedValues>
 		</TraitDefinition>
 
@@ -420,7 +420,7 @@
 			name="modality"
 		>
 			<AllowedValues>
-				<EnumeratedConstraint set="RequirementModality" />
+				<ValueIsOneOf values=[$Must, $MustNot, $Shall, $ShallNot] />
 			</AllowedValues>
 		</TraitDefinition>
 

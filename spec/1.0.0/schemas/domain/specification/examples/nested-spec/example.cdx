@@ -5,63 +5,33 @@
 	title="Schema Loading Rules"
 	version=1.2.0-beta.1
 >
-	<Section
+	<specbase:Section
 		conformance=$Normative
 		division=$Body
 		id=urn:example:schema-loading-rules#section/scope
 		key=~scope
 		title="Scope"
 	>
-		<Paragraph>
+		<text:Paragraph>
 			This section establishes scope and loading requirements.
-		</Paragraph>
+		</text:Paragraph>
+	</specbase:Section>
 
-		<Requirement
-			id=urn:example:schema-loading-rules#requirement/single-source-of-truth
-			key=~singleSourceOfTruth
-			modality=$Must
-		>
-			The Codex document MUST be the {~single-source-of-truth | single source of truth}.
-		</Requirement>
-	</Section>
-
-	<Section
+	<specbase:Section
 		conformance=$Informative
 		division=$BackMatter
 		id=urn:example:schema-loading-rules#section/references
 		key=~references
 		title="References"
 	>
-		<SectionReference label="Scope" target=urn:example:schema-loading-rules#section/scope />
+		<specbase:SectionReference
+			label="Scope"
+			target=urn:example:schema-loading-rules#section/scope
+		/>
 
-		<ExternalReference label="Companion explainer" uri=https://example.org/schema-loading-rules />
-	</Section>
-
-	<Section
-		conformance=$Informative
-		division=$Appendix
-		id=urn:example:schema-loading-rules#section/appendix-a
-		key=~appendixA
-		title="Appendix A"
-	>
-		<Section
-			conformance=$Informative
-			division=$Appendix
-			id=urn:example:schema-loading-rules#section/appendix-a/notes
-			key=~appendixANotes
-			title="Notes"
-		>
-			<Note>
-				Historical lineage concepts are intentionally excluded from this schema package.
-			</Note>
-
-			<GlossaryEntry
-				id=urn:example:schema-loading-rules#glossary/single-source-of-truth
-				key=~singleSourceOfTruthGlossary
-				term="single source of truth"
-			>
-				A single authoritative representation from which all projections are derived.
-			</GlossaryEntry>
-		</Section>
-	</Section>
+		<specbase:ExternalReference
+			label="Companion explainer"
+			uri=https://example.org/schema-loading-rules
+		/>
+	</specbase:Section>
 </Specification>

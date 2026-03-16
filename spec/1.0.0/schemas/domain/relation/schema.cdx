@@ -39,7 +39,7 @@
 				<AllowsChildConcept conceptSelector="AttributeKey" />
 			</ChildRules>
 
-			<CollectionRules allowsDuplicates=false ordering=$Unordered />
+			<CollectionRules allowsDuplicates=true ordering=$Unordered />
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -198,7 +198,7 @@
 			name="valueType"
 		>
 			<AllowedValues>
-				<ValueIsOneOf values="$Text,$Word,$Sentence,$Paragraph,$Character,$Boolean,$Number,$Integer,$Zero,$NegativeInteger,$NonPositiveInteger,$DecimalNumber,$ExponentialNumber,$PrecisionNumber,$Fraction,$ImaginaryNumber,$ComplexNumber,$NonNegativeInteger,$PositiveInteger,$PositiveInfinity,$NegativeInfinity,$Infinity,$RealNumber,$FiniteNumber,$FiniteRealNumber,$ExactNumber,$EnumeratedToken,$Iri,$LookupToken,$Uuid,$DomainName,$EmailAddress,$Url,$Ipa,$Regex,$Semver,$LanguageTag,$MediaType,$Slug,$RgbRed,$RgbGreen,$RgbBlue,$HslHue,$HslSaturation,$HslLightness,$HwbWhiteness,$HwbBlackness,$LabLightness,$LabA,$LabB,$LchChroma,$LchHue,$OklabLightness,$OklabA,$OklabB,$OklchChroma,$OklchHue,$CmykCyan,$CmykMagenta,$CmykYellow,$CmykKey,$Opacity,$ColorPrimitive,$NamedColor,$RgbColor,$HslColor,$HwbColor,$LabColor,$LchColor,$OklabColor,$OklchColor,$ColorSpaceColor,$ColorSpaceColorFunction,$ColorMix,$DeviceCmyk,$Color,$Year,$Month,$Week,$Day,$Weekday,$Hour,$Minute,$Second,$Timezone,$Offset,$Date,$HourMinute,$Time,$DateTime,$YearMonth,$MonthDay,$YearWeek,$YearWeekWeekday,$DateWithTimezone,$TimeWithTimezone,$DateTimeWithTimezone,$TimeWithOffset,$DateTimeWithOffset,$Instant,$Duration,$TemporalKeyword,$List,$Set,$Map,$Record,$Tuple,$Group,$Range" />
+				<ValueIsOneOf values=[$Text, $Word, $Sentence, $Paragraph, $Character, $Boolean, $Number, $Integer, $Zero, $NegativeInteger, $NonPositiveInteger, $DecimalNumber, $ExponentialNumber, $PrecisionNumber, $Fraction, $ImaginaryNumber, $ComplexNumber, $NonNegativeInteger, $PositiveInteger, $PositiveInfinity, $NegativeInfinity, $Infinity, $RealNumber, $FiniteNumber, $FiniteRealNumber, $ExactNumber, $EnumeratedToken, $Iri, $LookupToken, $Uuid, $DomainName, $EmailAddress, $Url, $Ipa, $Regex, $Semver, $LanguageTag, $MediaType, $Slug, $RgbRed, $RgbGreen, $RgbBlue, $HslHue, $HslSaturation, $HslLightness, $HwbWhiteness, $HwbBlackness, $LabLightness, $LabA, $LabB, $LchChroma, $LchHue, $OklabLightness, $OklabA, $OklabB, $OklchChroma, $OklchHue, $CmykCyan, $CmykMagenta, $CmykYellow, $CmykKey, $Opacity, $ColorPrimitive, $NamedColor, $RgbColor, $HslColor, $HwbColor, $LabColor, $LchColor, $OklabColor, $OklchColor, $ColorSpaceColor, $ColorSpaceColorFunction, $ColorMix, $DeviceCmyk, $Color, $Year, $Month, $Week, $Day, $Weekday, $Hour, $Minute, $Second, $Timezone, $Offset, $Date, $HourMinute, $Time, $DateTime, $YearMonth, $MonthDay, $YearWeek, $YearWeekWeekday, $DateWithTimezone, $TimeWithTimezone, $DateTimeWithTimezone, $TimeWithOffset, $DateTimeWithOffset, $Instant, $Duration, $TemporalKeyword, $List, $Set, $Map, $Record, $Tuple, $Group, $Range] />
 			</AllowedValues>
 		</TraitDefinition>
 

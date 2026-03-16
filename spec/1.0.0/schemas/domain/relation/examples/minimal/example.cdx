@@ -1,25 +1,26 @@
-<RelationType
-	id=urn:paperhat:relation-type:inventory
-	name="Inventory"
->
+<RelationType id=urn:paperhat:relation-type:inventory name="Inventory">
 	<text:Title>
 		Inventory relation type
 	</text:Title>
+
 	<desc:Description bodyMode=$content>
 		Warehouse stock levels by SKU.
 	</desc:Description>
+
 	<Attribute
 		id=urn:paperhat:relation-type:inventory:attribute:sku
 		name="sku"
-		valueType=$Text
 		required=true
+		valueType=$Text
 	/>
+
 	<Attribute
 		id=urn:paperhat:relation-type:inventory:attribute:quantity
 		name="quantity"
-		valueType=$Integer
 		required=true
+		valueType=$Integer
 	/>
+
 	<AttributeKey name="primary">
 		<KeyAttribute target=urn:paperhat:relation-type:inventory:attribute:sku />
 	</AttributeKey>

@@ -1,50 +1,30 @@
-<Specification
-	editor="Paperhat"
-	locked=false
-	normative=true
-	title="Foundation Concepts Example"
-	version=0.1.0
+<Section
+	conformance=$Normative
+	division=$Body
+	id=urn:example:foundation-concepts#section/overview
+	key=~overview
+	title="Overview"
 >
-	<Section
-		conformance=$Normative
-		division=$Body
-		id=urn:example:foundation-concepts#section/overview
-		key=~overview
-		title="Overview"
+	<text:Paragraph>
+		This example demonstrates the shared concepts defined in the
+		specification foundation schema.
+	</text:Paragraph>
+
+	<Note>
+		This note is a foundation concept available to both specification variants.
+	</Note>
+
+	<TermBinding label="Local glossary" source=urn:example:glossary#foundation term="foundation" />
+
+	<Issue id=urn:example:foundation-concepts#issue/example key=~exampleIssue status=$Open>
+		The foundation does not yet define additional structural concepts.
+	</Issue>
+
+	<OpenQuestion
+		id=urn:example:foundation-concepts#question/example
+		key=~exampleQuestion
+		status=$Open
 	>
-		<Paragraph>
-			This example demonstrates the shared concepts defined in the
-			specification foundation schema.
-		</Paragraph>
-
-		<Requirement key=~foundationSupport modality=$Must>
-			Implementations MUST support all foundation concepts.
-		</Requirement>
-
-		<Note>
-			This note is a foundation concept available to both specification variants.
-		</Note>
-
-		<TermBinding label="Local glossary" source=urn:example:glossary#foundation term="foundation" />
-
-		<Issue id=urn:example:foundation-concepts#issue/example key=~exampleIssue status=$Open>
-			Should the foundation define additional structural concepts?
-		</Issue>
-
-		<OpenQuestion key=~exampleQuestion status=$Open>
-			Is the current trait set sufficient for all known specification families?
-		</OpenQuestion>
-	</Section>
-
-	<Section
-		conformance=$Informative
-		division=$BackMatter
-		id=urn:example:foundation-concepts#section/references
-		key=~references
-		title="References"
-	>
-		<SectionReference label="Overview" target=urn:example:foundation-concepts#section/overview />
-
-		<ExternalReference label="Companion document" uri=https://example.org/foundation-spec />
-	</Section>
-</Specification>
+		Is the current trait set sufficient for all known specification families?
+	</OpenQuestion>
+</Section>

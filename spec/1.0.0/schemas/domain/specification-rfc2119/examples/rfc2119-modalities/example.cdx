@@ -1,43 +1,23 @@
 <Specification
-	title="Transport Protocol Requirements"
-	normative=true
-	locked=false
-	version=0.1.0
 	editor="Paperhat"
+	locked=false
+	normative=true
+	title="Transport Protocol Requirements"
+	version=0.1.0
 >
-	<Section
+	<specbase:Section
+		conformance=$Normative
+		division=$Body
 		id=urn:example:transport-protocol#section/encoding
 		key=~encoding
 		title="Encoding"
-		conformance=$Normative
-		division=$Body
 	>
-		<Paragraph>
+		<text:Paragraph>
 			This section defines encoding requirements for the transport protocol.
-		</Paragraph>
+		</text:Paragraph>
 
-		<Requirement modality=$Must requirementId=~utf8Encoding>
-			Implementations MUST encode all text payloads as UTF-8.
-		</Requirement>
-
-		<Requirement modality=$MustNot requirementId=~noBom>
-			Implementations MUST NOT prepend a byte order mark to encoded payloads.
-		</Requirement>
-
-		<Requirement modality=$Should requirementId=~compressLargePayloads>
-			Implementations SHOULD compress payloads exceeding 1024 bytes.
-		</Requirement>
-
-		<Requirement modality=$May requirementId=~customHeaders>
-			Implementations MAY include custom extension headers prefixed with X-.
-		</Requirement>
-
-		<Requirement modality=$Recommended requirementId=~keepAlive>
-			It is RECOMMENDED that implementations support persistent connections.
-		</Requirement>
-
-		<Requirement modality=$Optional requirementId=~debugLogging>
-			Debug logging is OPTIONAL and has no effect on conformance.
-		</Requirement>
-	</Section>
+		<specbase:Note>
+			All text payloads use UTF-8 encoding without a byte order mark.
+		</specbase:Note>
+	</specbase:Section>
 </Specification>

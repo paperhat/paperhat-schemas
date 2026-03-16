@@ -29,7 +29,7 @@
 
 		<SchemaImport
 			namespace="example"
-			reference=urn:cdx:sha256:bde5283c13c8d93b24c3aa6c01dab3d363cc253adc9ac8c79ad7e858959a3cd3
+			reference=urn:cdx:sha256:59511a9721c020b957af1b021e151fb77f91f35928f14352143b51f801fc9e8f
 		/>
 
 		<SchemaImport

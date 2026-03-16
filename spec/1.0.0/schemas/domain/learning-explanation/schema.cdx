@@ -14,7 +14,7 @@
 	<SchemaImports>
 		<SchemaImport
 			namespace="explanation"
-			reference=urn:cdx:sha256:81e30527768ebf949244a196d08d5a90aab065c9767fbbfce9acd976326e2c44
+			reference=urn:cdx:sha256:cf8ff1f987d2102e747a46747ebf12fdfb4f6e08f64bff62806bc7b670d5e4e9
 		/>
 
 		<SchemaImport

@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="81e30527768ebf949244a196d08d5a90aab065c9767fbbfce9acd976326e2c44"
+	closureHash="cf8ff1f987d2102e747a46747ebf12fdfb4f6e08f64bff62806bc7b670d5e4e9"
 	copyright="Copyright 2026 Paperhat"
 	description="A structured conceptual explanation: prose, examples, defined terms, code illustrations, figures, and admonitions arranged to convey understanding of a single idea."
 	license="Apache-2.0"

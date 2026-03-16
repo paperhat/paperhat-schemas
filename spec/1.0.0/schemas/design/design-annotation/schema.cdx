@@ -1,0 +1,321 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Design-family schema for attaching SDL semantic roles, CDL constraints, and PDL adaptive rules to ViewDefinition fields and composition elements."
+	id=paperhat:design:annotation
+	namespace="design"
+	title="Design Annotation Schema"
+	version="1.0.0"
+	versionScheme=$Semver
+>
+	<SchemaImports>
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
+
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:design:annotation:DesignAnnotation
+			name="DesignAnnotation"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Title" min=1 max=1 />
+
+				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
+
+				<AllowsChildConcept conceptSelector="DesignElement" min=1 />
+
+				<AllowsChildConcept conceptSelector="DesignConstraint" />
+
+				<AllowsChildConcept conceptSelector="AdaptiveRule" />
+			</ChildRules>
+
+			<TraitRules>
+				<RequiresTrait name="target" />
+
+				<AllowsTrait name="maxStructuralDelta" />
+			</TraitRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:design:annotation:DesignElement
+			name="DesignElement"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="elementReference" />
+
+				<RequiresTrait name="role" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:design:annotation:DesignConstraint
+			name="DesignConstraint"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="operator" />
+
+				<RequiresTrait name="level" />
+
+				<RequiresTrait name="elements" />
+
+				<AllowsTrait name="relativeTo" />
+
+				<AllowsTrait name="weight" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:design:annotation:AdaptiveRule
+			name="AdaptiveRule"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Predicate" min=1 />
+
+				<AllowsChildConcept conceptSelector="WeightOperation" />
+
+				<AllowsChildConcept conceptSelector="FreezeOperation" />
+
+				<AllowsChildConcept conceptSelector="RelaxOperation" />
+
+				<AllowsChildConcept conceptSelector="GuardOperation" />
+			</ChildRules>
+
+			<TraitRules>
+				<AllowsTrait name="confidenceFloor" />
+
+				<AllowsTrait name="maxStructuralDelta" />
+			</TraitRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:design:annotation:Predicate
+			name="Predicate"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="variable" />
+
+				<RequiresTrait name="comparison" />
+
+				<RequiresTrait name="value" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:design:annotation:WeightOperation
+			name="WeightOperation"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="constraintTarget" />
+
+				<RequiresTrait name="targetWeight" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:design:annotation:FreezeOperation
+			name="FreezeOperation"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="constraintTarget" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:design:annotation:RelaxOperation
+			name="RelaxOperation"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="constraintTarget" />
+
+				<AllowsTrait name="steps" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:design:annotation:GuardOperation
+			name="GuardOperation"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="constraintTarget" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:design:annotation:trait:target
+			name="target"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=paperhat:design:annotation:trait:maxStructuralDelta
+			name="maxStructuralDelta"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:design:annotation:trait:elementReference
+			name="elementReference"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:design:annotation:trait:role
+			name="role"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Heading, $Subheading, $Body, $Caption, $Label, $Annotation, $DataValue, $Media, $Figure, $Container, $Group, $Separator, $Landmark, $Table, $TableHeader, $TableCell, $List, $ListItem, $PrimaryAction, $SecondaryAction, $DestructiveAction, $Navigation, $Input, $Toggle, $Search, $Control, $Success, $Warning, $Error, $Info, $Progress, $CostDisclosure, $RiskDisclosure, $ConsentGate, $LegalDisclosure, $IdentityDisclosure] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:design:annotation:trait:operator
+			name="operator"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Proximity, $Contrast, $Alignment, $Repetition, $Separation, $Foregrounding, $Grouping, $NegativeSpace] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:design:annotation:trait:level
+			name="level"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$ProximityTight, $ProximityNear, $ProximityFar, $ContrastSoft, $ContrastClear, $ContrastStrong, $AlignmentLoose, $AlignmentAligned, $AlignmentLocked, $RepetitionLoose, $RepetitionCohesive, $RepetitionLocked, $SeparationSubtle, $SeparationClear, $SeparationStrong, $ForegroundingSubtle, $ForegroundingProminent, $ForegroundingDominant, $GroupingLoose, $GroupingCohesive, $GroupingLocked, $NegativeSpaceMinimal, $NegativeSpaceBalanced, $NegativeSpaceGenerous] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$List<$Text>
+			id=paperhat:design:annotation:trait:elements
+			name="elements"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$List<$Text>
+			id=paperhat:design:annotation:trait:relativeTo
+			name="relativeTo"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=paperhat:design:annotation:trait:weight
+			name="weight"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:design:annotation:trait:variable
+			name="variable"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$ViewportClass, $InputMode, $AccessibilityProfile, $Locale, $Intent, $Phase, $Density] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:design:annotation:trait:comparison
+			name="comparison"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Equal, $NotEqual, $MemberOf] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:design:annotation:trait:value
+			name="value"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:design:annotation:trait:constraintTarget
+			name="constraintTarget"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=paperhat:design:annotation:trait:targetWeight
+			name="targetWeight"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=paperhat:design:annotation:trait:steps
+			name="steps"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=paperhat:design:annotation:trait:confidenceFloor
+			name="confidenceFloor"
+		/>
+	</TraitDefinitions>
+</Schema>

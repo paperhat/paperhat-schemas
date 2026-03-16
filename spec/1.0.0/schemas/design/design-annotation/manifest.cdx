@@ -1,0 +1,12 @@
+<DesignPackageManifest
+	author="Paperhat"
+	closureHash="0000000000000000000000000000000000000000000000000000000000000000"
+	copyright="Copyright 2026 Paperhat"
+	description="Design-family schema for attaching SDL semantic roles, CDL constraints, and PDL adaptive rules to ViewDefinition fields and composition elements."
+	license="Apache-2.0"
+	packageName="design-annotation"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

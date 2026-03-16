@@ -1,0 +1,27 @@
+<LocalizationBundle language=$En schema=paperhat:domain:learningProcedure schemaVersion="1.0.0">
+	<ConceptLocalization
+		identifier="LearningProcedure"
+		label="Learning Procedure"
+		labelOther="Learning Procedures"
+	/>
+
+	<ConceptLocalization
+		identifier="LearningStep"
+		label="Learning Step"
+		labelOther="Learning Steps"
+	/>
+
+	<ConceptLocalization
+		identifier="ExpectedOutcome"
+		label="Expected Outcome"
+		labelOther="Expected Outcomes"
+	/>
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		The name of the learning procedure.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="isOptional" label="Is Optional" labelOther="Is Optional">
+		Whether this learning step is optional.
+	</TraitLocalization>
+</LocalizationBundle>

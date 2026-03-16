@@ -1,7 +1,10 @@
 <Schema
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
-	description="A structured instructional procedure for skill acquisition: ordered learning steps with expected outcomes, code examples, figures, troubleshooting guidance, and tips."
+	description=`
+		A structured instructional procedure for skill acquisition: ordered learning steps with expected
+		outcomes, code examples, figures, troubleshooting guidance, and tips.
+	`
 	id=paperhat:domain:learningProcedure
 	namespace="learningProcedure"
 	title="Learning Procedure Schema"
@@ -48,7 +51,10 @@
 	<ConceptDefinitions>
 		<ConceptDefinition
 			conceptKind=$Semantic
-			description="A structured instructional procedure composed of ordered learning steps with associated guidance, examples, and expected outcomes."
+			description=`
+				A structured instructional procedure composed of ordered learning steps with associated
+				guidance, examples, and expected outcomes.
+			`
 			entityEligibility=$MustBeEntity
 			id=paperhat:domain:learningProcedure:LearningProcedure
 			name="LearningProcedure"
@@ -100,7 +106,10 @@
 
 		<ConceptDefinition
 			conceptKind=$Semantic
-			description="A single instructional action the learner performs. In content mode, a plain text instruction. In children mode, rich structured guidance with code, figures, and admonitions."
+			description=`
+				A single instructional action the learner performs. In content mode, a plain text
+				instruction. In children mode, rich structured guidance with code, figures, and admonitions.
+			`
 			entityEligibility=$MustNotBeEntity
 			id=paperhat:domain:learningProcedure:LearningStep
 			name="LearningStep"
@@ -144,7 +153,9 @@
 
 		<ConceptDefinition
 			conceptKind=$Semantic
-			description="The observable result the learner expects after completing the preceding learning step."
+			description=`
+				The observable result the learner expects after completing the preceding learning step.
+			`
 			entityEligibility=$MustNotBeEntity
 			id=paperhat:domain:learningProcedure:ExpectedOutcome
 			name="ExpectedOutcome"

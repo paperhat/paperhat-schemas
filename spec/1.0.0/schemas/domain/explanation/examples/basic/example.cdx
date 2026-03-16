@@ -5,7 +5,7 @@
 		dropped.
 	</text:Paragraph>
 
-	<definedTerm:DefinedTerm term="Owner">
+	<definedTerm:DefinedTerm id=urn:paperhat:example:defined-term:owner term="Owner">
 		The variable binding that holds the value and is responsible for its lifetime.
 	</definedTerm:DefinedTerm>
 
@@ -16,11 +16,18 @@
 		</text:Paragraph>
 
 		<code:CodeBlock language=$Rust>
-let s1 = String::from("hello");
-let s2 = s1; // ownership moves to s2
-// println!("{s1}"); // compile error: s1 no longer valid
+			let s1 = String::from("hello");
+			let s2 = s1; // ownership moves to s2
+			// println!("{s1}"); // compile error: s1 no longer valid
+
 		</code:CodeBlock>
 	</example:Example>
 
-	<admonition:Warning key=~copyVsMove text="Primitive types that implement Copy (integers, booleans, characters) are copied on assignment, not moved. Ownership transfer applies to heap-allocated types." />
+	<admonition:Warning
+		key=~copyVsMove
+		text=`
+			Primitive types that implement Copy (integers, booleans, characters) are copied on assignment,
+			not moved. Ownership transfer applies to heap-allocated types.
+		`
+	/>
 </Explanation>

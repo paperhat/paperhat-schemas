@@ -1,0 +1,49 @@
+<LearningProcedure
+	id=urn:paperhat:example:learningProcedure:htmlHeading
+	name="Create an HTML heading"
+>
+	<LearningStep>
+		Open a text editor and create a new file called recipe.html.
+	</LearningStep>
+
+	<ExpectedOutcome>
+		A new empty file named recipe.html exists in the project folder.
+	</ExpectedOutcome>
+
+	<LearningStep bodyMode=$children>
+		<text:Paragraph>
+			Type the basic HTML structure: doctype declaration, html element, head element with a title,
+			and an empty body element.
+		</text:Paragraph>
+
+		<code:CodeBlock language=$Html>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;My Recipe&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;
+		</code:CodeBlock>
+	</LearningStep>
+
+	<ExpectedOutcome>
+		Opening recipe.html in a browser shows a blank page with "My Recipe" in the title bar.
+	</ExpectedOutcome>
+
+	<admonition:Tip key=~browserRefresh text="If the page does not update after saving, try a hard refresh with Ctrl+Shift+R or Cmd+Shift+R." />
+
+	<LearningStep bodyMode=$children>
+		<text:Paragraph>
+			Add an h1 element inside the body with the recipe name.
+		</text:Paragraph>
+
+		<code:CodeBlock language=$Html>
+&lt;body&gt;
+&lt;h1&gt;Chocolate Chip Cookies&lt;/h1&gt;
+&lt;/body&gt;
+		</code:CodeBlock>
+	</LearningStep>
+
+	<ExpectedOutcome>
+		Refreshing the browser shows the recipe name displayed as a large heading.
+	</ExpectedOutcome>
+</LearningProcedure>

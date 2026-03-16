@@ -1,0 +1,2 @@
+[An instructional procedure with learning steps and expected outcomes. name is required. Add LearningStep and ExpectedOutcome children in reading order.]
+<LearningProcedure id=urn:paperhat:example:learningProcedure:placeholder name="Procedure Name" />

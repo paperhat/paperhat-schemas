@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="00c48ff34f7cc3382329516da3acfea56988615dbe55a880069f62c850ca51b1"
+	copyright="Copyright 2026 Paperhat"
+	description="A structured instructional procedure for skill acquisition: ordered learning steps with expected outcomes, code examples, figures, troubleshooting guidance, and tips."
+	license="Apache-2.0"
+	packageName="paperhat-learning-procedure"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

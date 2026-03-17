@@ -242,7 +242,7 @@
 			name="role"
 		>
 			<AllowedValues>
-				<ValueIsOneOf values=[$Heading, $Subheading, $Body, $Caption, $Label, $Annotation, $DataValue, $Media, $Figure, $Container, $Group, $Separator, $Landmark, $Table, $TableHeader, $TableCell, $List, $ListItem, $PrimaryAction, $SecondaryAction, $DestructiveAction, $Navigation, $Input, $Toggle, $Search, $Control, $Success, $Warning, $Error, $Info, $Progress, $CostDisclosure, $RiskDisclosure, $ConsentGate, $LegalDisclosure, $IdentityDisclosure] />
+				<ValueIsOneOf values=[$Rubric, $Body, $Caption, $Label, $Annotation, $DataValue, $Media, $Exhibit, $Container, $Group, $Relation, $List, $PrimaryAction, $SecondaryAction, $DestructiveAction, $Reference, $Input, $Toggle, $Search, $Control, $Success, $Caution, $Issue, $Progress, $Notice, $CostDisclosure, $RiskDisclosure, $ConsentGate, $LegalDisclosure, $IdentityDisclosure] />
 			</AllowedValues>
 		</TraitDefinition>
 
@@ -342,7 +342,7 @@
 			name="sourceRole"
 		>
 			<AllowedValues>
-				<ValueIsOneOf values=[$Heading, $Subheading, $Body, $Caption, $Label, $Annotation, $DataValue, $Media, $Figure, $Container, $Group, $Separator, $Landmark, $Table, $TableHeader, $TableCell, $List, $ListItem, $PrimaryAction, $SecondaryAction, $DestructiveAction, $Navigation, $Input, $Toggle, $Search, $Control, $Success, $Warning, $Error, $Info, $Progress, $CostDisclosure, $RiskDisclosure, $ConsentGate, $LegalDisclosure, $IdentityDisclosure] />
+				<ValueIsOneOf values=[$Rubric, $Body, $Caption, $Label, $Annotation, $DataValue, $Media, $Exhibit, $Container, $Group, $Relation, $List, $PrimaryAction, $SecondaryAction, $DestructiveAction, $Reference, $Input, $Toggle, $Search, $Control, $Success, $Caution, $Issue, $Progress, $Notice, $CostDisclosure, $RiskDisclosure, $ConsentGate, $LegalDisclosure, $IdentityDisclosure] />
 			</AllowedValues>
 		</TraitDefinition>
 

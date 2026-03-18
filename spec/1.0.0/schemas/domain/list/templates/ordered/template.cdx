@@ -1,4 +1,4 @@
-[An ordered list. At least one ListItem is required. Items may contain plain text or child Paragraphs and nested lists.]
+[An ordered list. At least one ListItem is required. Items contain plain text or child Paragraphs and nested lists.]
 <OrderedList>
 	<ListItem>First item</ListItem>
 </OrderedList>

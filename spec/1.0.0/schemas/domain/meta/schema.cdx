@@ -1,7 +1,7 @@
 <Schema
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
-	description="Authorizes domain ontology schemas. Defines what domain schemas may declare and forbids individuals, views, policies, layout, and assembly. Content is forbidden by default and must be explicitly allowed per Concept. Sequence and Group are permitted only as ordering overrides under CollectionOverride."
+	description="Authorizes domain ontology schemas. Defines what domain schemas declare and forbids individuals, views, policies, layout, and assembly. Content is forbidden by default and must be explicitly allowed per Concept. Sequence and Group are permitted only as ordering overrides under CollectionOverride."
 	id=paperhat:domain:meta
 	namespace="meta"
 	title="Codex Data Meta-Schema"

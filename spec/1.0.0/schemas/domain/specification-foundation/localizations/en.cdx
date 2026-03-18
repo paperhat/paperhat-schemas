@@ -32,7 +32,7 @@
 	<TraitLocalization identifier="conformance" label="Conformance" />
 
 	<TraitLocalization identifier="deprecated" label="Deprecated">
-		Whether this item is deprecated and should no longer be relied upon.
+		Whether this item is deprecated and no longer relied upon.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="deprecatedSince" label="Deprecated Since">
@@ -78,7 +78,7 @@
 	</TraitLocalization>
 
 	<TraitLocalization identifier="supersedes" label="Supersedes">
-		IRI of a specification that this specification supersedes. The target may still be valid for historical reference.
+		IRI of a specification that this specification supersedes. The target remains valid for historical reference.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="target" label="Target" />

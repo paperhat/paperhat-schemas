@@ -2,7 +2,7 @@
 	author="Paperhat"
 	closureHash="2ea9a35d722c4caf5d46227c5614ec35d50171bf2f28387700be9264e1117a91"
 	copyright="Copyright 2026 Paperhat"
-	description="A named function or capacity that a person or organization can hold, such as author, editor, maintainer, or approver."
+	description="A named function or capacity that a person or organization holds, such as author, editor, maintainer, or approver."
 	license="Apache-2.0"
 	packageName="paperhat-role"
 	packageVersion="1.0.0"

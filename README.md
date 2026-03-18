@@ -2,7 +2,7 @@
 
 Paperhat Schemas is the canonical repository for the universal Paperhat schema corpus.
 
-It contains reusable schema packages, behavior packages, system packages, and reference vocabularies consumed by Paperhat systems. These schemas are not owned by Lexis. Lexis consumes them. Other Paperhat implementations can consume them as well.
+It contains reusable schema packages, behavior packages, system packages, and reference vocabularies consumed by Paperhat systems. These schemas are not owned by Lexis. Lexis consumes them. Other Paperhat implementations consume them as well.
 
 ## What This Repository Contains
 

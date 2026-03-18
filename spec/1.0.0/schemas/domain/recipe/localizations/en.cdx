@@ -56,7 +56,7 @@
 	</TraitLocalization>
 
 	<TraitLocalization identifier="preparation" label="Preparation" labelOther="Preparations">
-		How the ingredient should be prepared before use.
+		How the ingredient is prepared before use.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="optional" label="Optional">
@@ -64,7 +64,7 @@
 	</TraitLocalization>
 
 	<TraitLocalization identifier="toTaste" label="To Taste">
-		Whether the ingredient amount should be adjusted to taste.
+		Whether the ingredient amount is adjusted to taste.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="language" label="Language" labelOther="Languages">

@@ -2,7 +2,7 @@
 	author="Paperhat"
 	closureHash="8f0ec58aeddc3f8b4d23a5f60c06a5591509358c2a6453fac3121d8f15823397"
 	copyright="Copyright 2026 Paperhat"
-	description="Authorizes domain ontology schemas. Defines what domain schemas may declare and forbids individuals, views, policies, layout, and assembly."
+	description="Authorizes domain ontology schemas. Defines what domain schemas declare and forbids individuals, views, policies, layout, and assembly."
 	license="Apache-2.0"
 	packageName="paperhat-meta"
 	packageVersion="1.0.0"

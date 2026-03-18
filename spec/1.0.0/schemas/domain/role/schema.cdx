@@ -1,7 +1,7 @@
 <Schema
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
-	description="A named function or capacity that a person or organization can hold, such as author, editor, maintainer, or approver."
+	description="A named function or capacity that a person or organization holds, such as author, editor, maintainer, or approver."
 	id=paperhat:domain:role
 	namespace="role"
 	title="Role Schema"

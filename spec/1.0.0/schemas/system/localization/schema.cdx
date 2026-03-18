@@ -3,7 +3,7 @@
 	compatibilityClass=$Initial
 	description="Defines localization bundles that provide human-readable labels and descriptions for schema elements in any natural language."
 	id=paperhat:system:localization
-	namespace="l10n"
+	namespace="localization"
 	title="Localization Schema"
 	version="1.0.0"
 	versionScheme=$Semver

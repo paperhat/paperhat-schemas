@@ -195,7 +195,7 @@
 
 	<RepositoryPackageEntry packageFamily="system" packageName="paperhat-localization" packagePath="spec/1.0.0/schemas/system/localization" />
 
-	<RepositoryPackageEntry packageFamily="system" packageName="paperhat-ld-mapping" packagePath="spec/1.0.0/schemas/system/ld-mapping" />
+	<RepositoryPackageEntry packageFamily="system" packageName="paperhat-linked-data-mapping" packagePath="spec/1.0.0/schemas/system/linked-data-mapping" />
 
 	<RepositoryPackageEntry packageFamily="vocabulary" packageName="bcp-47-languages" packagePath="spec/1.0.0/schemas/vocabularies/bcp-47-languages" />
 

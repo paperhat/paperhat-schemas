@@ -1,5 +1,5 @@
 <LocalizationBundle
-	schema=paperhat:system:ld-mapping
+	schema=paperhat:system:linked-data-mapping
 	schemaVersion="1.0.0"
 	language=$En
 >
@@ -10,10 +10,6 @@
 	<ConceptLocalization identifier="MapContentToProperty" label="Map Content to Property" labelOther="Map Content to Property Entries" />
 
 	<ConceptLocalization identifier="MapTraitToProperty" label="Map Trait to Property" labelOther="Map Trait to Property Entries" />
-
-	<TraitLocalization identifier="id" label="Identifier" labelOther="Identifiers">
-		Stable identity reference for the mapping document.
-	</TraitLocalization>
 
 	<TraitLocalization identifier="version" label="Version" labelOther="Versions">
 		Version of the mapping document.
@@ -36,7 +32,7 @@
 	</TraitLocalization>
 
 	<ConstraintLocalization
-		identifier="paperhat:system:ld-mapping:root-only"
+		identifier="paperhat:system:linked-data-mapping:root-only"
 		label="Root only"
 	>
 		A mapping document must have exactly one root SchemaOrgMapping.

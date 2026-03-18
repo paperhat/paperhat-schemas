@@ -2,8 +2,8 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="Defines a one-way mapping document format used to project Codex-authored data into linked data vocabularies for JSON-LD, RDFa, or microdata emitters."
-	id=paperhat:system:ld-mapping
-	namespace="ld-mapping"
+	id=paperhat:system:linked-data-mapping
+	namespace="linked-data-mapping"
 	title="Linked Data Mapping Schema"
 	version="1.0.0"
 	versionScheme=$Semver
@@ -11,8 +11,8 @@
 	<ConceptDefinitions>
 		<ConceptDefinition
 			conceptKind=$Semantic
-			entityEligibility=$MustNotBeEntity
-			id=paperhat:system:ld-mapping:SchemaOrgMapping
+			entityEligibility=$MustBeEntity
+			id=paperhat:system:linked-data-mapping:SchemaOrgMapping
 			name="SchemaOrgMapping"
 		>
 			<ContentRules>
@@ -20,8 +20,6 @@
 			</ContentRules>
 
 			<TraitRules>
-				<RequiresTrait name="id" />
-
 				<RequiresTrait name="version" />
 			</TraitRules>
 
@@ -37,7 +35,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=paperhat:system:ld-mapping:MapType
+			id=paperhat:system:linked-data-mapping:MapType
 			name="MapType"
 		>
 			<ContentRules>
@@ -54,7 +52,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=paperhat:system:ld-mapping:MapContentToProperty
+			id=paperhat:system:linked-data-mapping:MapContentToProperty
 			name="MapContentToProperty"
 		>
 			<ContentRules>
@@ -71,7 +69,7 @@
 		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
-			id=paperhat:system:ld-mapping:MapTraitToProperty
+			id=paperhat:system:linked-data-mapping:MapTraitToProperty
 			name="MapTraitToProperty"
 		>
 			<ContentRules>
@@ -90,46 +88,39 @@
 
 	<TraitDefinitions>
 		<TraitDefinition
-			defaultValueType=$Iri
-			id=paperhat:system:ld-mapping:trait:id
-			isReferenceTrait=true
-			name="id"
-		/>
-
-		<TraitDefinition
 			defaultValueType=$Text
-			id=paperhat:system:ld-mapping:trait:version
+			id=paperhat:system:linked-data-mapping:trait:version
 			name="version"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=paperhat:system:ld-mapping:trait:sourceConcept
+			id=paperhat:system:linked-data-mapping:trait:sourceConcept
 			name="sourceConcept"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=paperhat:system:ld-mapping:trait:sourceTrait
+			id=paperhat:system:linked-data-mapping:trait:sourceTrait
 			name="sourceTrait"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=paperhat:system:ld-mapping:trait:targetType
+			id=paperhat:system:linked-data-mapping:trait:targetType
 			name="targetType"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
-			id=paperhat:system:ld-mapping:trait:targetProperty
+			id=paperhat:system:linked-data-mapping:trait:targetProperty
 			name="targetProperty"
 		/>
 	</TraitDefinitions>
 
 	<ConstraintDefinitions>
 		<ConstraintDefinition
-			id=paperhat:system:ld-mapping:root-only
+			id=paperhat:system:linked-data-mapping:root-only
 			title="Mapping document must have exactly one root SchemaOrgMapping"
 		>
 			<Targets>

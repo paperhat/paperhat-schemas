@@ -4,7 +4,7 @@
 	copyright="Copyright 2026 Paperhat"
 	description="Defines a one-way mapping document format used to project Codex-authored data into linked data vocabularies for JSON-LD, RDFa, or microdata emitters."
 	license="Apache-2.0"
-	packageName="paperhat-ld-mapping"
+	packageName="paperhat-linked-data-mapping"
 	packageVersion="1.0.0"
 	primaryDocument="schema.cdx"
 	requiredCodexVersion=">=1.0.0 <2.0.0"

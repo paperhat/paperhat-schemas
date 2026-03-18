@@ -2,7 +2,7 @@
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
 	description="Schema for defining ValueShapeDefinition and EntityShapeDefinition with behavioral semantics."
-	id=urn:paperhat:behavior:shapes:1.0.0
+	id=paperhat:behavior:shape
 	namespace="shape"
 	title="Behavior Shape Schema"
 	version="1.0.0"
@@ -16,13 +16,11 @@
 			conceptKind=$Semantic
 			description="Extends ValueTypeDefinition with behavioral constraints and derivations."
 			entityEligibility=$MustBeEntity
-			id=urn:paperhat:behavior:concept:ValueShapeDefinition
+			id=paperhat:behavior:shape:ValueShapeDefinition
 			key=~valueShapeDefinition
 			name="ValueShapeDefinition"
 		>
 			<TraitRules>
-				<RequiresTrait name="id" />
-
 				<RequiresTrait name="name" />
 
 				<RequiresTrait name="baseValueType" />
@@ -41,13 +39,11 @@
 			conceptKind=$Semantic
 			description="Attaches behavioral constraints and derivations to entity nodes."
 			entityEligibility=$MustBeEntity
-			id=urn:paperhat:behavior:concept:EntityShapeDefinition
+			id=paperhat:behavior:shape:EntityShapeDefinition
 			key=~entityShapeDefinition
 			name="EntityShapeDefinition"
 		>
 			<TraitRules>
-				<RequiresTrait name="id" />
-
 				<RequiresTrait name="targetConcept" />
 
 				<AllowsTrait name="description" />
@@ -68,7 +64,7 @@
 			conceptKind=$Structural
 			description="A validity condition that must evaluate to true for the shape to be satisfied."
 			entityEligibility=$MustNotBeEntity
-			id=urn:paperhat:behavior:concept:Constraint
+			id=paperhat:behavior:shape:Constraint
 			key=~constraint
 			name="Constraint"
 		>
@@ -87,7 +83,7 @@
 			conceptKind=$Structural
 			description="A computed value that must be materialized for the shape."
 			entityEligibility=$MustNotBeEntity
-			id=urn:paperhat:behavior:concept:Derivation
+			id=paperhat:behavior:shape:Derivation
 			key=~derivation
 			name="Derivation"
 		>
@@ -116,49 +112,49 @@
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
 			description="The underlying Codex ValueType for a ValueShapeDefinition."
-			id=urn:paperhat:behavior:trait:baseValueType
+			id=paperhat:behavior:shape:trait:baseValueType
 			name="baseValueType"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
 			description="The concept name that this EntityShapeDefinition applies to."
-			id=urn:paperhat:behavior:trait:targetConcept
+			id=paperhat:behavior:shape:trait:targetConcept
 			name="targetConcept"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
 			description="The trait name where the derived value will be materialized."
-			id=urn:paperhat:behavior:trait:targetTrait
+			id=paperhat:behavior:shape:trait:targetTrait
 			name="targetTrait"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
 			description="Human-readable error message when a constraint fails."
-			id=urn:paperhat:behavior:trait:message
+			id=paperhat:behavior:shape:trait:message
 			name="message"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
 			description="The ValueShape that the derived value conforms to."
-			id=urn:paperhat:behavior:trait:outputShape
+			id=paperhat:behavior:shape:trait:outputShape
 			name="outputShape"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
 			description="Whether the derived value is ephemeral (used only downstream) or materialized (written to the graph)."
-			id=urn:paperhat:behavior:trait:derivationClass
+			id=paperhat:behavior:shape:trait:derivationClass
 			name="derivationClass"
 		/>
 
 		<TraitDefinition
 			defaultValueType=$Boolean
 			description="Optional guard condition for conditional derivations."
-			id=urn:paperhat:behavior:trait:when
+			id=paperhat:behavior:shape:trait:when
 			name="when"
 		/>
 	</TraitDefinitions>

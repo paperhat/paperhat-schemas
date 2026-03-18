@@ -26,8 +26,6 @@
 			</ContentRules>
 
 			<TraitRules>
-				<RequiresTrait name="id" />
-
 				<RequiresTrait name="name" />
 
 				<AllowsTrait name="description" />

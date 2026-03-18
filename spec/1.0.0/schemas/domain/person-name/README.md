@@ -29,7 +29,7 @@ This is an open vocabulary. The consuming schema constrains which values are acc
 
 ### full
 
-The complete name as a single unstructured string. Use this when the name is not decomposable into parts (mononyms, names in unfamiliar scripts, names where decomposition would lose meaning).
+The complete name as a single unstructured string. Use this when the name is not decomposable into parts (mononyms, names in unfamiliar scripts, names where decomposition loses meaning).
 
 Examples: `full="Pelé"`, `full="Prince"`, `full="Banksy"`.
 
@@ -77,7 +77,7 @@ At least one of `full`, `given`, or `family` must be present. A PersonName with 
 
 **Why `$List<$Text>` for middle, title, honorific, suffix?** Order matters and duplicates are possible. `$List<$Text>` preserves both.
 
-**Why is nameKind an $EnumeratedToken?** Name kinds vary across cultures and contexts. A closed enumeration would be incomplete. The token vocabulary is open; consuming schemas constrain it as needed.
+**Why is nameKind an $EnumeratedToken?** Name kinds vary across cultures and contexts. A closed enumeration is incomplete. The token vocabulary is open; consuming schemas constrain it as needed.
 
 **Why effectiveFrom/effectiveTo?** Names change. A person's birth name, married name, and legal name all have different validity periods. Temporal traits allow precise biographical modeling.
 

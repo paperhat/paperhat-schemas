@@ -45,4 +45,4 @@ Defines the structure for conformance clauses in technical specifications. A con
 - `ConformanceRequirement` uses a reference trait (`target`) pointing to Requirement entities. This creates a machine-verifiable link between conformance classes and their requirements.
 - `conditional` trait on ConformanceRequirement supports the common pattern where some requirements only apply if an implementation supports an optional feature.
 - No `ReferenceTargetsConcept` constraint on ConformanceRequirement because the target Requirement concept is defined in variant schemas (not in this schema's import closure). The constraint that targets must resolve is still enforced.
-- ConformanceClass is MustBeEntity so it can be cross-referenced from other parts of the specification (e.g. "implementations conforming to ConformanceClass X must...").
+- ConformanceClass is MustBeEntity so it is cross-referenceable from other parts of the specification (e.g. "implementations conforming to ConformanceClass X must...").

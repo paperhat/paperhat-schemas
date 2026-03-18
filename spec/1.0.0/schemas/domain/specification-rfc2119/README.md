@@ -41,7 +41,7 @@ No concept-level modality narrowing. The full 10-member RequirementModality set 
 ## Design Decisions
 
 - This schema imports only the specification foundation. All content-schema dependencies are transitively available through the foundation.
-- Requirement makes `key` optional (AllowsTrait), since external specifications being modeled after the fact may not have clean identifiers for every requirement.
+- Requirement makes `key` optional (AllowsTrait), since external specifications being modeled after the fact often lack clean identifiers for every requirement.
 - `requirementId` is surfaced as an additional optional trait for organizations that use separate requirement numbering.
 - Requirement allows optional structured children (Rationale, Note, Paragraph, OrderedList, UnorderedList, Citation) beneath the normative statement text.
 - `deprecated` and `deprecatedSince` are optional on Requirement for marking individual requirements as deprecated.

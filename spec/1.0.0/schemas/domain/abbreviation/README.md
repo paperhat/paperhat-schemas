@@ -39,7 +39,7 @@ Defines three semantically distinct shortened-form concepts for technical specif
 
 - Three distinct concepts rather than one concept with a "type" trait. The semantic difference between abbreviation, initialism, and acronym is meaningful: it affects how a projection layer handles the text (e.g. screen readers spell out initialisms but pronounce acronyms).
 - `pronunciation` is only allowed on Acronym because initialisms are by definition spelled out and general abbreviations have conventional readings.
-- All three are MustBeEntity so they can be cross-referenced from inline abbreviation usage elsewhere in the document.
+- All three are MustBeEntity so they are cross-referenceable from inline abbreviation usage elsewhere in the document.
 - `shortForm` and `expansion` are both required traits. You cannot define an abbreviation without both pieces.
-- AbbreviationList uses a union selector (`Abbreviation|Initialism|Acronym`) so all three types can be mixed in a single list, which matches real specification practice.
+- AbbreviationList uses a union selector (`Abbreviation|Initialism|Acronym`) so all three types mix freely in a single list, which matches real specification practice.
 - Description is allowed as a child for cases where the expansion alone is insufficient (e.g. explaining what an organization does, not just its name).

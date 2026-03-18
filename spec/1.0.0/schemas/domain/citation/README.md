@@ -166,7 +166,7 @@ Here `target=who` points to an `<org:Organization id=who name="World Health Orga
 - **Publisher is a Contributor.** Rather than a separate concept, publisher is a Contributor with `contributorKind=$publisher`. This unifies the model — every entity associated with a cited work has the same structural pattern.
 - **Three ways to identify a contributor.** Embed a Person (creates the entity inline), embed an Organization, or use Reference to point to an entity defined elsewhere. This covers external persons cited for the first time, internal persons already in the corpus, and institutional authors.
 - **Identifier children for structured IDs.** DOI, ISBN, ISSN, PMID, etc. use the existing Identifier leaf with `scheme=$doi`, `scheme=$isbn`, etc. This avoids trait proliferation and reuses the established pattern.
-- **`$MayBeEntity`** because citations in a bibliography section need stable identity for Gloss cross-references (`{~rfc2119 | RFC 2119}`), but inline citations in a footnote might not.
+- **`$MayBeEntity`** because citations in a bibliography section need stable identity for Gloss cross-references (`{~rfc2119 | RFC 2119}`), but inline citations in a footnote do not.
 
 ---
 

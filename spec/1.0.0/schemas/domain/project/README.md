@@ -8,7 +8,7 @@ A named initiative, effort, or body of work with identity — a software project
 
 ## When to Use
 
-Use `Project` to represent any bounded endeavor: a software project, a specification effort, a research program, a publication series, or an infrastructure initiative. Projects are entities (`$MustBeEntity`) and can be referenced from other schemas. Project is distinct from Product (a commercial offering) and Organization (an institution).
+Use `Project` to represent any bounded endeavor: a software project, a specification effort, a research program, a publication series, or an infrastructure initiative. Projects are entities (`$MustBeEntity`) and are referenceable from other schemas. Project is distinct from Product (a commercial offering) and Organization (an institution).
 
 ## Traits
 

@@ -8,7 +8,7 @@ A typed link to an entity, used to express relationships between concepts withou
 
 ## When to Use
 
-Use `Reference` to point at an entity defined elsewhere rather than embedding it inline. For example, an event's organiser might be a Reference to a Person entity rather than a nested Person.
+Use `Reference` to point at an entity defined elsewhere rather than embedding it inline. For example, an event's organiser is a Reference to a Person entity rather than a nested Person.
 
 ## Concepts
 

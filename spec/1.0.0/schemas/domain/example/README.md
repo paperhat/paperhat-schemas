@@ -8,7 +8,7 @@ A rich, ordered container for worked examples that combine narrative, code, figu
 
 ## When to Use
 
-Use `Example` when you want a bounded, reusable example block that can be referenced or rendered as a coherent unit in documentation and specifications.
+Use `Example` when you want a bounded, reusable example block that is referenceable and renderable as a coherent unit in documentation and specifications.
 
 ## Concepts
 

@@ -4,7 +4,7 @@ Version: 1.0.0
 
 # Role
 
-A named function or capacity that a person or organization can hold, such as author, editor, maintainer, or approver. Role represents the abstract function independent of who fills it or where it is assigned.
+A named function or capacity that a person or organization holds, such as author, editor, maintainer, or approver. Role represents the abstract function independent of who fills it or where it is assigned.
 
 ## When to Use
 

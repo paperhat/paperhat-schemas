@@ -24,7 +24,7 @@ Use `Accessibility` wherever an entity needs to describe how accessible it is: p
 
 - All traits are optional because different contexts need different subsets. The "at least one" constraint prevents empty Accessibility elements.
 - `accessMode` uses $EnumeratedToken because the set of sensory modes is small and well-defined (auditory, textual, visual, tactile).
-- Feature, hazard, and control traits are $Text because the W3C accessibility vocabulary is large and continuously updated; consuming schemas can impose constraints as needed.
+- Feature, hazard, and control traits are $Text because the W3C accessibility vocabulary is large and continuously updated; consuming schemas impose constraints as needed.
 - Use multiple Accessibility children on a single entity to describe multiple access modes or features independently.
 - Mirrors schema.org CreativeWork's accessibility properties: accessMode, accessibilityFeature, accessibilityHazard, accessibilitySummary, accessibilityControl.
 

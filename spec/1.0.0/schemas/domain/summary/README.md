@@ -20,7 +20,7 @@ Use `Summary` when you need to capture the substance of a document's content in 
 
 - Summary is content-bearing: the summary text is the element's content, not a trait.
 - Distinct from Description (`paperhat:domain:description`), which captures what something *is about* rather than what it *says*.
-- Multiple summaries in different languages can coexist as siblings inside a DocumentMetadata container, each with a different `language` value.
+- Multiple summaries in different languages coexist as siblings inside a DocumentMetadata container, each with a different `language` value.
 
 ---
 

@@ -28,7 +28,7 @@ Text content is required. A step with no instruction is meaningless.
 
 - `$MustNotBeEntity` because steps are embedded within procedures, not cross-referenced independently.
 - `RequiresContent` follows the same pattern as Paragraph and Requirement — the instruction text IS the content, not a trait.
-- Pure leaf with no imports. The composing schema wires Step as a child of Procedure and can also wire substep nesting (Step within Step) or Admonition children for warnings mid-procedure.
+- Pure leaf with no imports. The composing schema wires Step as a child of Procedure and also wires substep nesting (Step within Step) or Admonition children for warnings mid-procedure.
 - `isOptional` is the only trait because step semantics are minimal: the instruction text is content, and ordering comes from the parent's CollectionRules.
 
 ---

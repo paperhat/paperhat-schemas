@@ -49,7 +49,7 @@ These concepts forbid content. All require a `key` trait. All allow an optional 
 
 - CodeBlock uses `whitespaceMode=$Preserve` because code formatting (indentation, line breaks) is semantically significant.
 - CodeBlock is not a child of the CodeNotation container. It is a block-level content element placed by entity schemas.
-- The `language` trait uses $EnumeratedToken so consuming schemas can constrain allowed values via a vocabulary of language identifiers.
+- The `language` trait uses $EnumeratedToken so consuming schemas constrain allowed values via a vocabulary of language identifiers.
 - Code marks what something IS (computer code), not how it looks. The foundry decides rendering (monospace, syntax highlighting, etc.).
 
 **End of Code v1.0.0**

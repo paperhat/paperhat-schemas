@@ -15,7 +15,7 @@ Defines three semantically distinct symbol concepts for technical specifications
 | Symbol | Semantic | MustBeEntity | ForbidsContent | Description | A typographic or technical symbol with its Unicode codepoint, canonical name, and optional description. |
 | MathSymbol | Semantic | MustBeEntity | ForbidsContent | Description | A symbol used as a mathematical variable or operator, with meaning binding, optional unit, and domain. Supports the "let X denote Y" pattern common in specifications. |
 | Emoji | Semantic | MustBeEntity | ForbidsContent | Description | An emoji character with its canonical name, codepoint, and optional cultural context notes. |
-| SymbolTable | Semantic | MustNotBeEntity | ForbidsContent | Symbol (1+), MathSymbol (1+), Emoji (1+) | Container for a table of symbols. Uses union selector so all three types can be mixed. |
+| SymbolTable | Semantic | MustNotBeEntity | ForbidsContent | Symbol (1+), MathSymbol (1+), Emoji (1+) | Container for a table of symbols. Uses union selector so all three types mix freely. |
 
 ## Imports
 
@@ -42,8 +42,8 @@ Defines three semantically distinct symbol concepts for technical specifications
 
 - Three distinct concepts because the metadata shapes differ meaningfully: MathSymbol has meaning/unit/domain, Emoji has culturalContext, and plain Symbol needs neither.
 - `glyph` is required on all three because a symbol definition without the actual glyph is meaningless. `symbolName` is also required for accessibility and machine processing.
-- `codepoint` is optional because some symbols are multi-character sequences (e.g. combined emoji) or the author may not know the codepoint.
+- `codepoint` is optional because some symbols are multi-character sequences (e.g. combined emoji) or the author does not know the codepoint.
 - `meaning` is required on MathSymbol because the entire purpose of a math symbol definition is to bind a symbol to a meaning ("let τ denote..."). Without it, it's just a Symbol.
 - `unit` and `domain` are optional on MathSymbol: not all math symbols represent quantities with units, and domain categorization is helpful but not essential.
-- All three are MustBeEntity for cross-referencing: inline occurrences of a symbol elsewhere in the document can reference back to its definition.
+- All three are MustBeEntity for cross-referencing: inline occurrences of a symbol elsewhere in the document reference back to its definition.
 - SymbolTable parallels AbbreviationList in the abbreviation schema — a container with a union selector and no duplicates.

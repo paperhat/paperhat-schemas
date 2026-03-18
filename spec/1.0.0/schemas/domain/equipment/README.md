@@ -8,7 +8,7 @@ Kitchen and general-purpose equipment, with canonical name, category, and option
 
 ## When to Use
 
-Use `Equipment` to author a reusable equipment entity that can be referenced from recipes and other consuming schemas. The package covers a canonical name, a broad category, optional description, optional measurements, and optional tags.
+Use `Equipment` to author a reusable equipment entity that is referenceable from recipes and other consuming schemas. The package covers a canonical name, a broad category, optional description, optional measurements, and optional tags.
 
 ## Concepts
 
@@ -35,7 +35,7 @@ Use `Equipment` to author a reusable equipment entity that can be referenced fro
 
 - `Equipment` is intentionally broad enough to cover cookware, utensils, appliances, and serving tools.
 - Measurements remain child concepts so the package does not flatten dimensions into local traits.
-- Tags remain external so recipe-specific classification can compose over the same equipment entity.
+- Tags remain external so recipe-specific classification composes over the same equipment entity.
 
 ---
 

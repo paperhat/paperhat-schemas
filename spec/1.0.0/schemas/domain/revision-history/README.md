@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Defines structured revision history for specifications. Each revision entry records a version, date, editor or author, and a list of individual changes classified by kind. Changes can optionally reference the affected section, requirement, or other entity by IRI. This is distinct from `release:Release` (which tracks product snapshots) — revision history is about the evolution of the specification document itself.
+Defines structured revision history for specifications. Each revision entry records a version, date, editor or author, and a list of individual changes classified by kind. Changes optionally reference the affected section, requirement, or other entity by IRI. This is distinct from `release:Release` (which tracks product snapshots) — revision history is about the evolution of the specification document itself.
 
 ## Concepts
 
@@ -60,9 +60,9 @@ Defines structured revision history for specifications. Each revision entry reco
 
 ## Design Decisions
 
-- `RevisionEntry` is MustBeEntity so individual revisions can be cross-referenced (e.g. "see changes in revision 2.1.0").
+- `RevisionEntry` is MustBeEntity so individual revisions are cross-referenceable (e.g. "see changes in revision 2.1.0").
 - `Change` requires at least one Paragraph child for the change description. This is structured prose, not a simple text trait, because change descriptions often span multiple sentences.
-- `affectedItem` is a reference trait pointing to any entity (Section, Requirement, etc.). No `ReferenceTargetsConcept` constraint because the target could be any entity type in the specification.
+- `affectedItem` is a reference trait pointing to any entity (Section, Requirement, etc.). No `ReferenceTargetsConcept` constraint because the target is any entity type in the specification.
 - `affectedItemLabel` complements `affectedItem` for cases where the referenced item has been removed (the reference cannot resolve, but the label preserves what was affected).
 - `Clarified` and `Reorganized` are distinct from `Modified`: clarifications don't change meaning, and reorganizations don't change substance. This distinction matters for conformance impact analysis.
 - `version` uses `$Semver` to ensure machine-parseable version strings. `date` is `$Text` because Codex lacks a native date type.

@@ -36,7 +36,7 @@ Use `DocumentMetadata` to collect the metadata of any document-like entity. It h
 - DocumentMetadata is unordered because metadata has no reading sequence. Author, publication date, tags, and description are all equally accessible regardless of position.
 - The generous set of allowed children covers the metadata needs of most document types. Not every document will use all of them.
 - Person and PersonName children support structured attribution (editors, translators, contributors) beyond the plain-text `author` trait on Work.
-- Multiple Description or Summary children can coexist for multilingual documents, each with a different `language` trait.
+- Multiple Description or Summary children coexist for multilingual documents, each with a different `language` trait.
 - Media attachment uses the `media-reference` schema package.
 
 **End of Document Metadata v1.0.0**

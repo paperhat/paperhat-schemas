@@ -8,7 +8,7 @@ A storage and retrieval system for artifacts, such as a source code repository, 
 
 ## When to Use
 
-Use `Repository` to represent a named storage system that holds and serves artifacts. Examples include Git repositories, document management systems, package registries (npm, PyPI), container registries, or archive systems. Repository is an entity (`$MustBeEntity`) and can be referenced from Project, Organization, or any schema that needs to point to where artifacts live. Repository is distinct from Project (an endeavor) and MediaAsset (a single file).
+Use `Repository` to represent a named storage system that holds and serves artifacts. Examples include Git repositories, document management systems, package registries (npm, PyPI), container registries, or archive systems. Repository is an entity (`$MustBeEntity`) and is referenceable from Project, Organization, or any schema that needs to point to where artifacts live. Repository is distinct from Project (an endeavor) and MediaAsset (a single file).
 
 ## Traits
 

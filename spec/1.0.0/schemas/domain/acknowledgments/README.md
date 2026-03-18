@@ -61,7 +61,7 @@ Defines structured, machine-readable acknowledgments for technical specification
 ## Design Decisions
 
 - `Participant` is MayBeEntity: participants who need cross-referencing (e.g. the editor referenced from the foreword) get entity IDs; minor acknowledgees do not.
-- `ParticipantGroup` enables the common standards pattern of listing participants by group ("The following were members of the Working Group at the time of publication:"). The `groupRole` trait provides the default role for all members; individual Participant `role` traits can override it.
+- `ParticipantGroup` enables the common standards pattern of listing participants by group ("The following were members of the Working Group at the time of publication:"). The `groupRole` trait provides the default role for all members; individual Participant `role` traits override it.
 - `name` is a single `$Text` trait rather than importing the person-name schema. Acknowledgment sections typically list display names ("Jane Q. Smith, Acme Corp."), not structured name components. The person-name schema is available via document-metadata for richer person modeling where needed.
 - `email` is `$Text` rather than a dedicated email type because Codex has no native email value type.
 - `FormerEditor` is a distinct role because standards documents frequently list former editors separately (e.g. W3C specifications).

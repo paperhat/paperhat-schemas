@@ -34,7 +34,7 @@ An emotional or tonal marker. Bound from Gloss spans via `{~key}` or `{~key | la
 ## Design Notes
 
 - A single Tone concept with an `emotion` trait is preferred over separate concepts per emotion (Joy, Anger, etc.) because the set of emotions is open-ended and culturally variable.
-- The `emotion` trait uses $EnumeratedToken so consuming schemas can constrain allowed values via a vocabulary, or authors can use freeform tokens.
+- The `emotion` trait uses $EnumeratedToken so consuming schemas constrain allowed values via a vocabulary, or authors use freeform tokens.
 - The `intensity` trait is a rendering hint. The foundry decides how (or whether) to visually distinguish intensity levels.
 - Tone is a standalone schema. Authors either use it or not. It composes cleanly with any entity schema.
 

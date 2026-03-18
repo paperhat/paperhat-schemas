@@ -34,7 +34,7 @@ A single foreign term. Requires content (the term itself in its original script)
 ## Design Notes
 
 - ForeignTerm requires content because the term text IS the concept. The content carries the term in its original script/language.
-- The `translation` trait has `$Multiple` cardinality because a term may have several valid translations.
+- The `translation` trait has `$Multiple` cardinality because a term has several valid translations.
 - The `pronunciation` trait uses $Text. Values are expected to be IPA notation.
 - When referenced from Gloss without a label, the content (the foreign term text) provides the display text.
 

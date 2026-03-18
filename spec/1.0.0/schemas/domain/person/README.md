@@ -8,7 +8,7 @@ A person, real or fictional, composed from leaf concepts for names, contact poin
 
 ## When to Use
 
-Use `Person` to represent any human being — an author, a character, a well-known figure, a contributor, or anyone who needs identity within a document. Person is an entity (`$MustBeEntity`) and can be referenced from other schemas.
+Use `Person` to represent any human being — an author, a character, a well-known figure, a contributor, or anyone who needs identity within a document. Person is an entity (`$MustBeEntity`) and is referenceable from other schemas.
 
 ## Traits
 
@@ -42,7 +42,7 @@ Use `Person` to represent any human being — an author, a character, a well-kno
 
 ## Design Notes
 
-- Person is an entity; PersonName is not. A PersonName is a value — it describes a name but has no independent identity. A Person is an individual who can be referenced from citations, attributions, or character lists.
+- Person is an entity; PersonName is not. A PersonName is a value — it describes a name but has no independent identity. A Person is an individual who is referenceable from citations, attributions, or character lists.
 - No Description or biography trait. Biographical prose belongs in a document *about* the person, not *inside* the Person entity.
 - Media attachment uses the `media-reference` schema package.
 

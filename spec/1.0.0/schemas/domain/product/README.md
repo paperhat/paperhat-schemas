@@ -8,7 +8,7 @@ A product or service offered for sale, rental, or subscription — physical good
 
 ## When to Use
 
-Use `Product` to represent any item offered commercially: consumer electronics, clothing, handmade goods, software licenses, or professional services. Products are entities (`$MustBeEntity`) and can be referenced from other schemas.
+Use `Product` to represent any item offered commercially: consumer electronics, clothing, handmade goods, software licenses, or professional services. Products are entities (`$MustBeEntity`) and are referenceable from other schemas.
 
 ## Traits
 
@@ -56,8 +56,8 @@ Use `Product` to represent any item offered commercially: consumer electronics, 
 
 ## Design Notes
 
-- Product is the canonical consumer of the Offer and Measure leaves. A single Product can compose multiple Offers (different sellers, conditions, or date ranges) and multiple Measures (weight, height, width, etc.).
-- The `brand` trait is a simple string rather than a reference to Organization. Once the cross-entity Reference pattern is established, brand can optionally reference an Organization entity.
+- Product is the canonical consumer of the Offer and Measure leaves. A single Product composes multiple Offers (different sellers, conditions, or date ranges) and multiple Measures (weight, height, width, etc.).
+- The `brand` trait is a simple string rather than a reference to Organization. Once the cross-entity Reference pattern is established, brand optionally references an Organization entity.
 - Media attachment uses the `media-reference` schema package.
 
 ---

@@ -51,7 +51,7 @@ Reference traits are reused from Codex language semantics:
 
 This schema supports multi-valued bindings through the `value` trait union.
 
-- A single binding value may itself be a collection (`$List`, `$Set`, `$Map`, `$Tuple`, `$Range`, `$Record`).
+- A single binding value is itself a collection (`$List`, `$Set`, `$Map`, `$Tuple`, `$Range`, `$Record`).
 - Relation-valued attributes use `$Iri` values that point to another `RelationInstance`.
 - No implicit expansion is defined in canonical form; projection behavior must be explicit.
 
@@ -59,7 +59,7 @@ This schema supports multi-valued bindings through the `value` trait union.
 
 - Canonical relation semantics are separated from presentation semantics.
 - Existing reusable concepts are imported from `paperhat-text` and `paperhat-description`; no duplicate text/list/description concepts are introduced.
-- Reference associations use language-defined reference traits (`for`, `target`) so constraints can be validated with Codex reference constraints.
+- Reference associations use language-defined reference traits (`for`, `target`) so Codex reference constraints validate them.
 
 ---
 

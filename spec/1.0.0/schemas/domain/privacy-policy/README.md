@@ -8,7 +8,7 @@ A structured privacy policy document defining governing entities, covered target
 
 ## When to Use
 
-Use `PrivacyPolicy` for a real privacy policy document whose semantics must be machine-readable. The policy identifies its governing entity or entities, states what targets it covers, names controllers, states what data is collected, how that data is used, whether it is shared, how long it is retained, what rights data subjects have, and how privacy requests can be directed.
+Use `PrivacyPolicy` for a real privacy policy document whose semantics must be machine-readable. The policy identifies its governing entity or entities, states what targets it covers, names controllers, states what data is collected, how that data is used, whether it is shared, how long it is retained, what rights data subjects have, and where to direct privacy requests.
 
 ## Concepts
 
@@ -61,7 +61,7 @@ Use `PrivacyPolicy` for a real privacy policy document whose semantics must be m
 
 - This schema models the policy itself, not its page layout.
 - `Retention` is harmonized with the wider legal package set.
-- Graph references are explicit so a policy can be connected to its governing entity, covered targets, and related legal documents without relying on prose links.
-- `PrivacyContact` is separated from general document metadata so privacy-specific contact channels can be surfaced distinctly by foundries.
+- Graph references are explicit so a policy connects to its governing entity, covered targets, and related legal documents without relying on prose links.
+- `PrivacyContact` is separated from general document metadata so foundries surface privacy-specific contact channels distinctly.
 
 **End of Privacy Policy v1.0.0**

@@ -16,7 +16,7 @@ Use `notes:Notes` for referenced annotations. Use `admonition` for callout seman
 
 ### Tips
 
-The ordered container. Order matters because the author can express importance, progression, or preferred reading sequence through the authored order.
+The ordered container. Order matters because the author expresses importance, progression, or preferred reading sequence through the authored order.
 
 ### Tip
 
@@ -29,7 +29,7 @@ A single advisory item. The tip text is the element's content.
 
 ## Design Notes
 
-- `Tips` is ordered because advisory content can carry authored priority or sequence.
+- `Tips` is ordered because advisory content carries authored priority or sequence.
 - `Tips` forbids duplicates so the same advisory item does not appear twice in one container.
 - `Tip` carries flow content so the package remains a reusable leaf-style advice surface.
 

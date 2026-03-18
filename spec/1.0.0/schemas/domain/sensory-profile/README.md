@@ -8,7 +8,7 @@ Compositional sensory characteristics of food and beverage items, covering taste
 
 ## When to Use
 
-Use `SensoryProfile` to author a reusable sensory description that can be attached to foods and other ingestible entities. The package captures sensory observations as structured notes across taste, aroma, and mouthfeel, with optional descriptive prose and optional intensity markers.
+Use `SensoryProfile` to author a reusable sensory description attached to foods and other ingestible entities. The package captures sensory observations as structured notes across taste, aroma, and mouthfeel, with optional descriptive prose and optional intensity markers.
 
 ## Concepts
 

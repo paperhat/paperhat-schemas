@@ -36,6 +36,6 @@ Use `Essay` for personal essays, opinion pieces, reflective writing, literary es
 - DocumentMetadata and Notes are optional. A minimal essay is just a title and a Narrative.
 - The Essay is ordered so that metadata, body, and notes appear in a predictable sequence. Within DocumentMetadata, order does not matter. Within Narrative, order is preserved.
 - All body-level metadata (author, dates, licensing, tags) belongs inside DocumentMetadata via the Work, Description, Summary, Tags, and Audience leaf concepts.
-- Section-scoped footnotes can also appear inside individual Sections within the Narrative.
+- Section-scoped footnotes also appear inside individual Sections within the Narrative.
 
 **End of Essay v1.0.0**

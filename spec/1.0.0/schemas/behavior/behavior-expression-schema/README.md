@@ -4,7 +4,7 @@ Version: 1.0.0
 
 # Behavior Expression Schema
 
-The expression language for authoring computable behaviors in Codex surface form. Defines the full vocabulary of expression nodes that Calculation, Validation, and Derivation blocks can contain.
+The expression language for authoring computable behaviors in Codex surface form. Defines the full vocabulary of expression nodes that Calculation, Validation, and Derivation blocks contain.
 
 ## When to Use
 

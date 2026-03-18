@@ -29,8 +29,8 @@ Clause requires text content (`RequiresContent whitespaceMode=$Flow`). The opera
 
 - `$MayBeEntity` because clauses are sometimes cross-referenced ("per Clause 7.2") and sometimes embedded without external reference.
 - `RequiresContent` follows the same pattern as Requirement in the specification schema — the operative text IS the content.
-- `clauseKind` absorbs what would otherwise be separate schemas for Obligation, Right, PaymentTerm, ServiceLevel, Renewal, and Termination — these are all clause types, not independent concepts.
-- Pure leaf with no imports. The composing schema wires Clause as a child of Contract and can also wire subclause nesting (Clause within Clause) for hierarchical clause structures.
+- `clauseKind` absorbs what are otherwise separate schemas for Obligation, Right, PaymentTerm, ServiceLevel, Renewal, and Termination — these are all clause types, not independent concepts.
+- Pure leaf with no imports. The composing schema wires Clause as a child of Contract and also wires subclause nesting (Clause within Clause) for hierarchical clause structures.
 - Parallel to Step for Procedure: Clause is the fundamental semantic building block of a Contract.
 
 ---

@@ -13,7 +13,7 @@ A method of contact such as email address, phone number, or website, with option
 
 ## When to Use
 
-Use ContactPoint whenever you need to represent a way to reach a person, organization, or other entity. A single entity may have multiple ContactPoint instances to capture work contacts, personal contacts, emergency contacts, and other variants.
+Use ContactPoint whenever you need to represent a way to reach a person, organization, or other entity. A single entity has multiple ContactPoint instances to capture work contacts, personal contacts, emergency contacts, and other variants.
 
 ContactPoint is a leaf concept with no concept dependencies. It is designed to be composed into higher-level schemas such as Person or Organization.
 
@@ -25,7 +25,7 @@ ContactPoint is a leaf concept with no concept dependencies. It is designed to b
 
 A token classifying the role this contact point plays. Common values include `$work`, `$personal`, `$home`, `$emergency`, `$billing`, `$support`.
 
-This is an open vocabulary — any token value is valid. The consuming schema may constrain which values are accepted.
+This is an open vocabulary — any token value is valid. The consuming schema constrains which values are accepted.
 
 ### emailAddress
 
@@ -59,7 +59,7 @@ At least one of `emailAddress`, `phoneNumber`, or `website` must be present. A C
 
 **Why phoneNumber and not phone?** Same principle. A phone is a device. A phone number is a reachable identifier.
 
-**Why $Iri for website?** A website is an absolute address. Relative references would be meaningless as a contact method. $Iri enforces this.
+**Why $Iri for website?** A website is an absolute address. Relative references are meaningless as a contact method. $Iri enforces this.
 
 **Why contactKind and not just kind?** Follows the naming pattern established by PersonName's `nameKind`. The prefix disambiguates when traits are discussed outside their concept context.
 

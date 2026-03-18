@@ -8,7 +8,7 @@ A food or comestible, with canonical name, aliases, category, sensory profile, n
 
 ## When to Use
 
-Use `Food` to define a food entity that can be referenced by recipes and other consuming schemas. The package supports a canonical name, alternate names, category, nutritional information, availability, location, sensory profile, and named varieties.
+Use `Food` to define a food entity that is referenceable by recipes and other consuming schemas. The package supports a canonical name, alternate names, category, nutritional information, availability, location, sensory profile, and named varieties.
 
 ## Concepts
 

@@ -48,7 +48,7 @@ Defines the structure for formal grammars embedded in technical specifications. 
 | `EBNF` | Extended Backus-Naur Form. Variants used by W3C (XML, XPath) and ISO 14977. |
 | `BNF` | Classic Backus-Naur Form. |
 | `PEG` | Parsing Expression Grammar. Unambiguous, prioritized-choice formalism. |
-| `Custom` | A notation not covered by the standard options. The grammar description should explain the custom notation. |
+| `Custom` | A notation not covered by the standard options. The grammar description explains the custom notation. |
 
 ## Constraints
 
@@ -60,9 +60,9 @@ Defines the structure for formal grammars embedded in technical specifications. 
 ## Design Decisions
 
 - Production rule bodies use `RequiresContent` with `$Preserve` whitespace mode because grammar notation is whitespace-sensitive (especially ABNF's continuation lines and EBNF's layout).
-- `ProductionAlternative` is a separate concept (not just inline text) so that individual alternatives can carry their own descriptions or annotations, which is common in specification grammars with prose explanations per alternative.
-- `Grammar` is MustBeEntity so it can be cross-referenced from prose (e.g. "see Grammar G.1 for the message syntax").
-- `ProductionRule` is MustBeEntity so RuleReference can target it. This supports the common pattern of hyperlinking nonterminal names to their definitions.
+- `ProductionAlternative` is a separate concept (not just inline text) so that individual alternatives carry their own descriptions or annotations, which is common in specification grammars with prose explanations per alternative.
+- `Grammar` is MustBeEntity so it is cross-referenceable from prose (e.g. "see Grammar G.1 for the message syntax").
+- `ProductionRule` is MustBeEntity so RuleReference targets it. This supports the common pattern of hyperlinking nonterminal names to their definitions.
 - `notation` is required on Grammar rather than optional because the rendering layer needs to know the notation family to format the grammar correctly.
 - `startSymbol` is a text trait (not a reference) because it names a rule within the grammar's own scope. The `isStart` boolean on ProductionRule provides the complementary in-rule marker.
 - The `Custom` notation value is an escape hatch for grammars that use a bespoke notation (e.g. railroad diagrams described textually, or domain-specific syntax).

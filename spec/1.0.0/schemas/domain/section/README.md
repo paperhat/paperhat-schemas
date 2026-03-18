@@ -8,7 +8,7 @@ An ordered subdivision of a long-form document. Sections nest recursively and co
 
 ## When to Use
 
-Use `Section` to divide any long-form document into logical parts: chapters, subsections, numbered clauses, or thematic groupings. Sections appear in essays, articles, scientific papers, white papers, legal documents, and technical manuals. They nest: a top-level section can contain subsections, which can contain sub-subsections, to any depth.
+Use `Section` to divide any long-form document into logical parts: chapters, subsections, numbered clauses, or thematic groupings. Sections appear in essays, articles, scientific papers, white papers, legal documents, and technical manuals. They nest: a top-level section contains subsections, which contain sub-subsections, to any depth.
 
 ## Concepts
 

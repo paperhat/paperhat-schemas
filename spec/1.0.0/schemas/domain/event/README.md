@@ -8,7 +8,7 @@ An occurrence happening at a certain time and place — a concert, conference, l
 
 ## When to Use
 
-Use `Event` to represent any named occurrence with a time dimension: scheduled happenings, recurring meetings, performances, sporting events, or ceremonies. Events are entities (`$MustBeEntity`) and can be referenced from other schemas.
+Use `Event` to represent any named occurrence with a time dimension: scheduled happenings, recurring meetings, performances, sporting events, or ceremonies. Events are entities (`$MustBeEntity`) and are referenceable from other schemas.
 
 ## Traits
 

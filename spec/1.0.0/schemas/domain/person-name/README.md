@@ -13,7 +13,7 @@ A structured personal name with support for cultural variants, multiple name kin
 
 ## When to Use
 
-Use PersonName whenever you need to represent a person's name in a structured way. A single Person may have multiple PersonName instances to capture legal names, birth names, preferred names, aliases, stage names, religious names, and other variants.
+Use PersonName whenever you need to represent a person's name in a structured way. A single Person has multiple PersonName instances to capture legal names, birth names, preferred names, aliases, stage names, religious names, and other variants.
 
 PersonName is a leaf concept with no concept dependencies. It is designed to be composed into higher-level schemas such as Person.
 
@@ -25,11 +25,11 @@ PersonName is a leaf concept with no concept dependencies. It is designed to be 
 
 A token classifying the role this name plays. Common values include `$Legal`, `$Birth`, `$Preferred`, `$Maiden`, `$Married`, `$Stage`, `$Pen`, `$Religious`, `$Alias`, `$Regnal`.
 
-This is an open vocabulary. The consuming schema can constrain which values are accepted.
+This is an open vocabulary. The consuming schema constrains which values are accepted.
 
 ### full
 
-The complete name as a single unstructured string. Use this when the name cannot be decomposed into parts (mononyms, names in unfamiliar scripts, names where decomposition would lose meaning).
+The complete name as a single unstructured string. Use this when the name is not decomposable into parts (mononyms, names in unfamiliar scripts, names where decomposition would lose meaning).
 
 Examples: `full="Pelé"`, `full="Prince"`, `full="Banksy"`.
 
@@ -73,13 +73,13 @@ At least one of `full`, `given`, or `family` must be present. A PersonName with 
 
 ## Design Notes
 
-**Why PersonName and not Name?** The structure of this schema is specific to personal names. An organization name, a place name, or a product name would have different decomposition. The concept is named for what it models.
+**Why PersonName and not Name?** The structure of this schema is specific to personal names. An organization name, a place name, or a product name has different decomposition. The concept is named for what it models.
 
 **Why `$List<$Text>` for middle, title, honorific, suffix?** Order matters and duplicates are possible. `$List<$Text>` preserves both.
 
 **Why is nameKind an $EnumeratedToken?** Name kinds vary across cultures and contexts. A closed enumeration would be incomplete. The token vocabulary is open; consuming schemas constrain it as needed.
 
-**Why effectiveFrom/effectiveTo?** Names change. A person's birth name, married name, and legal name may all have different validity periods. Temporal traits allow precise biographical modeling.
+**Why effectiveFrom/effectiveTo?** Names change. A person's birth name, married name, and legal name all have different validity periods. Temporal traits allow precise biographical modeling.
 
 ---
 

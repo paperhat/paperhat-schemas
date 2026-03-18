@@ -35,7 +35,7 @@ Each concept requires:
 - `key` — `$LookupToken`
 - `value` — the concept's temporal value type
 
-Each concept may also carry:
+Each concept also carries (optionally):
 
 - `text` — `$Text`
 - `format` — `$EnumeratedToken`

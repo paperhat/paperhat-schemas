@@ -8,7 +8,7 @@ A named brand identity owned by an organization, such as a product brand, instit
 
 ## When to Use
 
-Use `Brand` to represent a brand as a first-class entity with stable identity. Examples include "Paperhat" (institutional brand), "Lexis" (product brand), or "Codex" (technology brand). Brand is an entity (`$MustBeEntity`) and can be referenced from Product, Organization, and other schemas by IRI. It is distinct from Organization (the legal/institutional entity that owns the brand) and Product (a specific offering sold under the brand).
+Use `Brand` to represent a brand as a first-class entity with stable identity. Examples include "Paperhat" (institutional brand), "Lexis" (product brand), or "Codex" (technology brand). Brand is an entity (`$MustBeEntity`) and is referenceable from Product, Organization, and other schemas by IRI. It is distinct from Organization (the legal/institutional entity that owns the brand) and Product (a specific offering sold under the brand).
 
 ## Traits
 
@@ -27,7 +27,7 @@ Use `Brand` to represent a brand as a first-class entity with stable identity. E
 
 - Brand is an entity (`$MustBeEntity`) because brands need stable identity for cross-references. Products, marketing materials, legal documents, and organizational records all reference brands.
 - This is a pure leaf with no imports and no children. Higher-level composers will compose Brand with Description, MediaAsset (for logos), Tags, and other leaf schemas as needed.
-- Product currently has a `brand` trait as `$Text`. When Brand is composed into a higher-level schema alongside Product, the Product's `brand` trait can hold a brand name while the Brand entity holds the canonical record. Alternatively, importing schemas can add a reference trait pointing to a Brand entity.
+- Product currently has a `brand` trait as `$Text`. When Brand is composed into a higher-level schema alongside Product, the Product's `brand` trait holds a brand name while the Brand entity holds the canonical record. Alternatively, importing schemas add a reference trait pointing to a Brand entity.
 - Visual identity (logo, colors, fonts) is a projection concern. Brand captures the semantic identity; presentation details belong in projection schemas or theme configuration.
 
 ---

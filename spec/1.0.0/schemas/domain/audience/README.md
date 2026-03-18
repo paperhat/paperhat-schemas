@@ -26,7 +26,7 @@ Use `Audience` wherever an entity has an intended audience: products with target
 - All traits are optional because different contexts need different subsets. The "at least one" constraint prevents empty Audience elements.
 - `suggestedGender` is $Text rather than $EnumeratedToken to accommodate the full range of gender expressions without prescribing a fixed vocabulary.
 - Age traits are $Number (in years) rather than $Text to enable range comparisons by tooling.
-- `audienceKind` uses $EnumeratedToken so consuming schemas can constrain the allowed values via vocabularies.
+- `audienceKind` uses $EnumeratedToken so consuming schemas constrain the allowed values via vocabularies.
 - Mirrors schema.org's Audience and PeopleAudience: audienceType, suggestedMinAge, suggestedMaxAge, suggestedGender, geographicArea.
 
 **End of Audience v1.0.0**

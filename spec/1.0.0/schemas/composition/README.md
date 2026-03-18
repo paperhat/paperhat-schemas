@@ -49,7 +49,7 @@ Use `Document` when an authored run needs to gather content from multiple docume
 - Composition is semantic and graph-native.
 - Composition MUST NOT encode headers, footers, dropdowns, sidebars, widget slots, or page sections.
 - Foundries interpret composition semantics and adaptive-plan outputs into concrete realization choices.
-- `Relationship` is reified as an entity so graph edges can be weighted and conditioned directly.
+- `Relationship` is reified as an entity so graph edges are weighted and conditioned directly.
 - `Selection` uses Behavior predicate expressions for filtering. Without a `Filter` child, all entities from the source are selected. With a `Filter`, only matching entities are selected. The Behavior expression evaluates with each candidate entity as the evaluation context.
 - `Collection` membership is explicit through `members`, not inferred from layout order. `Collection` is for curated named sets; `Selection` is for dynamic filtered subsets.
 - `Condition` expressions are Behavior predicate trees authored as child elements, not text strings.

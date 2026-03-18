@@ -13,7 +13,7 @@ Defines test assertions for verifying conformance to specification requirements.
 | Concept | Kind | Entity | Content | Children | Description |
 |---|---|---|---|---|---|
 | TestAssertion | Semantic | MustBeEntity | ForbidsContent | Precondition, ExpectedOutcome, TestProcedure, Description, Paragraph | A verifiable assertion linked to a requirement. Cross-referenceable by key. |
-| Precondition | Semantic | MustNotBeEntity | ForbidsContent | Paragraph (1+, ordered) | Conditions that must hold before the test can be executed. |
+| Precondition | Semantic | MustNotBeEntity | ForbidsContent | Paragraph (1+, ordered) | Conditions that must hold before the test executes. |
 | ExpectedOutcome | Semantic | MustNotBeEntity | ForbidsContent | Paragraph (1+, ordered) | The expected result if the implementation conforms. |
 | TestProcedure | Semantic | MustNotBeEntity | ForbidsContent | Paragraph (1+, ordered) | Step-by-step procedure for executing the test. |
 | TestSuite | Semantic | MustNotBeEntity | ForbidsContent | TestAssertion (1+), Description, Paragraph | Named container grouping related test assertions. |
@@ -47,7 +47,7 @@ Defines test assertions for verifying conformance to specification requirements.
 | `Pass` | The implementation satisfies the assertion. |
 | `Fail` | The implementation does not satisfy the assertion. |
 | `NotApplicable` | The assertion does not apply to this implementation. |
-| `Error` | The test could not be completed due to an error in the test environment. |
+| `Error` | The test did not complete due to an error in the test environment. |
 
 ### TestMethod (4 members)
 
@@ -63,7 +63,7 @@ Defines test assertions for verifying conformance to specification requirements.
 | Member | Description |
 |---|---|
 | `Critical` | Failure blocks conformance; must pass. |
-| `Major` | Significant conformance impact; should pass. |
+| `Major` | Significant conformance impact; expected to pass. |
 | `Minor` | Low conformance impact; desirable to pass. |
 | `Informational` | Informational check only; does not affect conformance. |
 

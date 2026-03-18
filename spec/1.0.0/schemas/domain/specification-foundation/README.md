@@ -62,7 +62,7 @@ Note: `Section` and `RequirementSet` allow `Requirement` children. The `Requirem
 | `amends` | `$Iri` | -- | IRI of a specification that this specification amends without replacing. |
 | `answer` | `$Text` | -- | The answer to an open question once decided. |
 | `conformance` | `$EnumeratedToken` | SectionConformance | Whether a section is normative or informative. |
-| `deprecated` | `$Boolean` | -- | Whether this item is deprecated and should no longer be relied upon. |
+| `deprecated` | `$Boolean` | -- | Whether this item is deprecated and is no longer relied upon. |
 | `deprecatedSince` | `$Semver` | -- | The specification version at which this item was deprecated. |
 | `designation` | `$Text` | -- | Projection-layer display label for a section. |
 | `division` | `$EnumeratedToken` | SectionDivision | Structural division of a section within the document. |
@@ -78,7 +78,7 @@ Note: `Section` and `RequirementSet` allow `Requirement` children. The `Requirem
 | `resolution` | `$Text` | -- | How an issue was resolved. |
 | `source` | `$Iri` | -- | Reference to a definition source (internal entity or external IRI). |
 | `status` | `$EnumeratedToken` | -- | Current status of a draft item (Issue or OpenQuestion). |
-| `supersedes` | `$Iri` | -- | IRI of a specification superseded by this one. Target may still be valid for historical reference. |
+| `supersedes` | `$Iri` | -- | IRI of a specification superseded by this one. Target remains valid for historical reference. |
 | `target` | `$Iri` | reference | Reference trait pointing to a target entity. |
 | `term` | `$Text` | -- | The term being defined in a definition block. |
 | `title` | `$Text` | -- | Title of a specification or section. |

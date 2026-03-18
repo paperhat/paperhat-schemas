@@ -74,7 +74,7 @@
 		/>
 
 		<TraitDefinition
-			defaultValueType=$Text
+			defaultValueType=$List<$Text>
 			description="Domain tags classifying this learning path."
 			id=paperhat:domain:learningPath:trait:domain
 			name="domain"
@@ -88,10 +88,31 @@
 		/>
 
 		<TraitDefinition
-			defaultValueType=$Iri
+			defaultValueType=$List<$Iri>
 			description="IRIs of learning paths that the learner completes before starting this one."
 			id=paperhat:domain:learningPath:trait:prerequisitePaths
 			name="prerequisitePaths"
 		/>
 	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=paperhat:domain:learningPath:maximumFrontierSize-range
+			title="maximumFrontierSize must be between 1 and 7 inclusive"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="LearningPath" />
+			</Targets>
+
+			<Rule>
+				<OnPathForAll>
+					<TraitPath traitName="maximumFrontierSize" />
+
+					<Rule>
+						<ValueInNumericRange min=1 max=7 />
+					</Rule>
+				</OnPathForAll>
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
 </Schema>

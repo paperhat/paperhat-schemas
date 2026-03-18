@@ -51,6 +51,8 @@ A schema package uses this structure:
 └── localizations/
 ```
 
+Vocabulary packages use `vocabulary.cdx` instead of `schema.cdx` as their primary document. Vocabularies define closed token sets, not structural schemas.
+
 ## Schema Identifier Policy
 
 Paperhat-authored schema vocabulary identifiers MUST use the `paperhat:` namespace.

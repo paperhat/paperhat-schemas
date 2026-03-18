@@ -63,7 +63,7 @@ Derived domains:
 - `NegativeInfinity`
 - `NegativeZero`
 
-NaN is not a Behavior value. Any operation that would produce IEEE 754 NaN MUST return `Invalid(...)` with an appropriate diagnostic code.
+NaN is not a Behavior value. Any operation that produces IEEE 754 NaN MUST return `Invalid(...)` with an appropriate diagnostic code.
 
 ### 2.4 Presence
 

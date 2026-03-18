@@ -250,7 +250,7 @@ Emulate:
 Emulate:
 
 - `(1 - t) * start + t * end`
-- For numerical stability in some cases you may use `start + t*(end-start)`; semantics are the same.
+- For numerical stability, `start + t*(end-start)` is an acceptable alternative; semantics are the same.
 
 ---
 

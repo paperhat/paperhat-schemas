@@ -117,7 +117,7 @@ Provide the common semantic substrate used by specifications, white papers, poli
 | Responsibility | REJECTED | Descriptive, not structural. Responsibilities are expressed through Description children on Role instances. |
 | Authority | REJECTED | A property of a role assignment, not a standalone entity. If Stage 5 needs permission/prohibition modeling, that belongs in policy concepts. |
 | Party | REJECTED | Union type that adds indirection without semantic value. Import Person and Organization separately where needed. |
-| EffectivePeriod | REJECTED | Temporal already handles date ranges. A separate concept for start/end date pairs would duplicate existing capability. |
+| EffectivePeriod | REJECTED | Temporal already handles date ranges. A separate concept for start/end date pairs duplicates existing capability. |
 | Status | REJECTED | Status is a trait pattern, not an entity. Work has a `status` trait. Schemas define their own status trait with domain-appropriate tokens. |
 | Document | REJECTED | DocumentMetadata already serves as the shared metadata container. An abstract Document base adds no compositional value. |
 | StructuralUnit | REJECTED | Section covers hierarchical document structure. An abstraction over Section/Paragraph/ListItem carries no meaning of its own. |
@@ -510,7 +510,7 @@ None specific to documentation/guides. Will import from Stage 1 leaves, narrativ
 | TroubleshootingItem | REJECTED | Pattern (symptom/cause/resolution) is thin — three text traits. KB articles are Works; troubleshooting entries are content within them. |
 | KnownIssue | REJECTED | Specification schema already defines Issue and OpenQuestion. If standalone known-issue tracking is needed, extract later. |
 | ReferenceEntry | REJECTED | TermEntry covers term + definition pairs. API-specific reference structure is too specialized for a generic schema. |
-| Environment / Platform | REJECTED | Borderline — has version constraints Tags can't model. But too specialized for v1.0.0. Can be added later if platform requirements become a recurring pattern. |
+| Environment / Platform | REJECTED | Borderline — has version constraints Tags do not model. But too specialized for v1.0.0. Add later if platform requirements become a recurring pattern. |
 | ChecklistItem | REJECTED | Checked/unchecked is runtime state, not schema structure. A checklist is a List with semantic annotation. |
 
 ### Stage 7 Checklist
@@ -682,7 +682,7 @@ Represent books, series, releases, downloadable assets, and publication metadata
 
 ## Stage 10. Training / Learning Description Linkage
 
-Praxis may own the deeper learning engine, but Lexis still holds semantically useful descriptive and publishing layers.
+Praxis owns the deeper learning engine, but Lexis still holds semantically useful descriptive and publishing layers.
 
 ### Purpose
 
@@ -696,7 +696,7 @@ None.
 
 | Proposed Concept | Decision | Rationale |
 |---|---|---|
-| LearningOffering | CREATED | `learning-offering` package exists (6/6). Training catalog entity with unique `deliveryMode` trait. Product can't cover this (wrong traits, LOCKED). `$MustBeEntity`. |
+| LearningOffering | CREATED | `learning-offering` package exists (6/6). Training catalog entity with unique `deliveryMode` trait. Product does not cover this (wrong traits, LOCKED). `$MustBeEntity`. |
 | Module | REJECTED | Section with `sectionKind=$Module`. Deeper module semantics belong in Praxis. |
 | LearningObjective | REJECTED | List items for the descriptive layer. Pedagogical metadata (Bloom's taxonomy) belongs in Praxis. |
 | Prerequisite | REJECTED | Description for text prerequisites. Relation with `relationKind=$Requires` for structured references. Already rejected in Stage 7. |

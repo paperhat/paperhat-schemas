@@ -228,9 +228,9 @@ This table consolidates all diagnostic codes defined in the Data Shapes and Vali
 | Code | Operators | Expected | Message | Suggestion |
 |------|-----------|----------|---------|------------|
 | `AllKeysSatisfy::NEED_RECORD` | AllKeysSatisfy | Record | "Lexis expected a record for the first operand, but found {received}." | "Please provide a record value — AllKeysSatisfy iterates over record keys." |
-| `AllKeysSatisfy::NEED_BOOLEAN` | AllKeysSatisfy | Boolean predicate result | "Lexis expected the predicate to return true or false, but it returned {received}." | "You might check that the predicate expression evaluates to a boolean value." |
+| `AllKeysSatisfy::NEED_BOOLEAN` | AllKeysSatisfy | Boolean predicate result | "Lexis expected the predicate to return true or false, but it returned {received}." | "Check that the predicate expression evaluates to a boolean value." |
 | `AllValuesSatisfy::NEED_RECORD` | AllValuesSatisfy | Record | "Lexis expected a record for the first operand, but found {received}." | "Please provide a record value — AllValuesSatisfy iterates over record values." |
-| `AllValuesSatisfy::NEED_BOOLEAN` | AllValuesSatisfy | Boolean predicate result | "Lexis expected the predicate to return true or false, but it returned {received}." | "You might check that the predicate expression evaluates to a boolean value." |
+| `AllValuesSatisfy::NEED_BOOLEAN` | AllValuesSatisfy | Boolean predicate result | "Lexis expected the predicate to return true or false, but it returned {received}." | "Check that the predicate expression evaluates to a boolean value." |
 
 ---
 

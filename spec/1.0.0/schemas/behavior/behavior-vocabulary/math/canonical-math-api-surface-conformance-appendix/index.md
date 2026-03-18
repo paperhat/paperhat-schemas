@@ -197,7 +197,7 @@ Use `dividend = -7.0`, `divisor = 2.0`:
 
 ## G. Next representable (spot checks)
 
-These tests require that the backend can observe ±0 and step floats by representable increments.
+These tests require that the backend observes ±0 and step floats by representable increments.
 
 ### G.1 Around zero
 
@@ -214,7 +214,7 @@ Normative requirement:
 
 4. `NextRepresentableDown(-0) → largest negative subnormal`
 
-(If your target collapses signed zero, you may mark signed-zero tests as “not applicable”, but then you must not claim full IEEE conformance.)
+(If the target collapses signed zero, mark signed-zero tests as “not applicable”, but then do not claim full IEEE conformance.)
 
 ### G.2 Infinity boundaries
 

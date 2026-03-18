@@ -56,7 +56,7 @@ Equality is structural equality.
 
 ## 4. Record satisfaction
 
-These operators are higher-order and can fail when misapplied.
+These operators are higher-order and fail when misapplied.
 
 ### 4.1 `AllKeysSatisfy`
 

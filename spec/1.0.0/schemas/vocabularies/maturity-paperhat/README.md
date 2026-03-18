@@ -22,4 +22,4 @@ Defines the general-purpose Paperhat specification maturity track. Suitable for 
 
 - Five stages cover the full lifecycle from inception through retirement.
 - `Review` is distinct from `Draft` to signal that content is feature-complete and soliciting feedback.
-- `Deprecated` and `Retired` are separate: deprecated specs may still be referenced; retired specs should not.
+- `Deprecated` and `Retired` are separate: deprecated specs are still referenced; retired specs are not.

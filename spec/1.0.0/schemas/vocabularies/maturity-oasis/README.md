@@ -14,7 +14,7 @@ Defines the OASIS specification maturity levels as established by the OASIS Stan
 |---|---|---|
 | `$WorkingDraft` | working-draft | In-progress document developed by an OASIS Technical Committee. |
 | `$CommitteeSpecificationDraft` | committee-specification-draft | CSD: Draft approved by the TC for public review. |
-| `$CommitteeSpecification` | committee-specification | CS: Approved by the TC after public review; may be submitted as a Candidate OASIS Standard. |
+| `$CommitteeSpecification` | committee-specification | CS: Approved by the TC after public review; eligible for submission as a Candidate OASIS Standard. |
 | `$CandidateOasisStandard` | candidate-oasis-standard | COS: Committee Specification submitted for OASIS-wide membership ballot. |
 | `$OasisStandard` | oasis-standard | OS: Approved by OASIS membership ballot as a full OASIS Standard. |
 | `$CommitteeNote` | committee-note | Non-normative informational document published by a TC. |

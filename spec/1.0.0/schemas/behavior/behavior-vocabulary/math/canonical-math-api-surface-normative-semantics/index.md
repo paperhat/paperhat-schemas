@@ -26,7 +26,7 @@ Conformance note:
 ### 1.1 Infinities and NaN exclusion
 
 - `PositiveInfinity` and `NegativeInfinity` denote `<PositiveInfinity />` and `<NegativeInfinity />` (IEEE infinities).
-- NaN is not a Behavior value. Operations that would produce IEEE 754 NaN MUST return `Invalid(...)` with an appropriate diagnostic code. See the Math vocabulary specification §4.7 for the complete set of indeterminate forms.
+- NaN is not a Behavior value. Operations that produce IEEE 754 NaN MUST return `Invalid(...)` with an appropriate diagnostic code. See the Math vocabulary specification §4.7 for the complete set of indeterminate forms.
 
 If a target does not support IEEE 754 semantics for the chosen `RealNumber` representation, that representation **MUST NOT** be used for this surface.
 

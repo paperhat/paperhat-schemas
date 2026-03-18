@@ -283,7 +283,7 @@ Allowed syntax:
 Prohibited syntax:
 
 - Backreferences (`\1`, `\k<name>`) MUST NOT be supported. Backreferences make the matching problem NP-hard, violating Lexis's resource-boundedness guarantees.
-- Lookahead and lookbehind assertions (`(?=...)`, `(?!...)`, `(?<=...)`, `(?<!...)`) MUST NOT be supported in v1. These constructs introduce implementation-dependent matching behavior that can break determinism.
+- Lookahead and lookbehind assertions (`(?=...)`, `(?!...)`, `(?<=...)`, `(?<!...)`) MUST NOT be supported in v1. These constructs introduce implementation-dependent matching behavior that breaks determinism.
 
 Requirements:
 
@@ -653,15 +653,15 @@ This table consolidates all diagnostic codes defined in the Text operator family
 
 | Code | Operators | Expected | Message | Suggestion |
 |------|-----------|----------|---------|------------|
-| `Text::INVALID_PATTERN` | MatchesPattern, DoesNotMatchPattern, FindFirstMatch, FindAllMatches, TestPattern, ExtractFirstMatch, ExtractAllMatches, ExtractGroups, ReplaceFirstPattern, ReplaceAllPattern, SplitByPattern | Valid regular expression | "Lexis expected a valid regular expression, but the pattern could not be parsed." | "Please check the regular expression syntax — it must conform to §7.0 (Regular Expression Profile)." |
+| `Text::INVALID_PATTERN` | MatchesPattern, DoesNotMatchPattern, FindFirstMatch, FindAllMatches, TestPattern, ExtractFirstMatch, ExtractAllMatches, ExtractGroups, ReplaceFirstPattern, ReplaceAllPattern, SplitByPattern | Valid regular expression | "Lexis expected a valid regular expression, but the pattern failed to parse." | "Please check the regular expression syntax — it must conform to §7.0 (Regular Expression Profile)." |
 | `Text::INVALID_CODE_POINT` | MakeCharacter, CharacterFromCodePoint, TextFromCodePoints | Valid Unicode scalar value | "Lexis expected a valid Unicode scalar value, but found {received}." | "Unicode scalar values range from 0 to D7FF and E000 to 10FFFF — please provide a value in this range." |
 | `TextByteLength::INVALID_ENCODING_NAME` | TextByteLength | Recognized encoding name | "Lexis expected a recognized encoding name, but found {received}." | "Please use one of the supported encoding names: \"utf-8\", \"utf-16\", or \"utf-32\"." |
 | `CharacterFromText::NEED_SINGLE_CHARACTER` | CharacterFromText | Text of length 1 | "Lexis expected text containing exactly one character, but found text of length {received}." | "Please provide a single-character text value." |
 | `ReplaceCharacters::LENGTH_MISMATCH` | ReplaceCharacters | Equal-length character strings | "Lexis expected fromChars and toChars to have the same length, but they differ." | "Please provide character strings of equal length for the replacement mapping." |
 | `IsNormalized::INVALID_NORMALIZATION_FORM` | IsNormalized | Recognized normalization form | "Lexis expected a recognized normalization form, but found {received}." | "Please use one of the supported forms: \"NFC\", \"NFD\", \"NFKC\", or \"NFKD\"." |
-| `FromBase64::INVALID_FORMAT` | FromBase64 | Valid base64 string | "Lexis expected valid base64-encoded text, but the input could not be decoded." | "Please check that the input contains only valid base64 characters (A-Z, a-z, 0-9, +, /) with correct padding." |
-| `FromBase64Url::INVALID_FORMAT` | FromBase64Url | Valid base64url string | "Lexis expected valid base64url-encoded text, but the input could not be decoded." | "Please check that the input contains only valid base64url characters (A-Z, a-z, 0-9, -, _)." |
-| `FromHex::INVALID_FORMAT` | FromHex | Valid hexadecimal string | "Lexis expected valid hexadecimal text, but the input could not be decoded." | "Please check that the input contains only valid hex characters (0-9, A-F, a-f) with even length." |
+| `FromBase64::INVALID_FORMAT` | FromBase64 | Valid base64 string | "Lexis expected valid base64-encoded text, but the input failed to decode." | "Please check that the input contains only valid base64 characters (A-Z, a-z, 0-9, +, /) with correct padding." |
+| `FromBase64Url::INVALID_FORMAT` | FromBase64Url | Valid base64url string | "Lexis expected valid base64url-encoded text, but the input failed to decode." | "Please check that the input contains only valid base64url characters (A-Z, a-z, 0-9, -, _)." |
+| `FromHex::INVALID_FORMAT` | FromHex | Valid hexadecimal string | "Lexis expected valid hexadecimal text, but the input failed to decode." | "Please check that the input contains only valid hex characters (0-9, A-F, a-f) with even length." |
 | `UrlDecode::INVALID_FORMAT` | UrlDecode | Valid percent-encoded string | "Lexis expected valid percent-encoded text, but found malformed encoding." | "Please check that all percent-encoded sequences (e.g., %20) use valid two-digit hexadecimal values." |
 | `UrlDecodeComponent::INVALID_FORMAT` | UrlDecodeComponent | Valid percent-encoded string | "Lexis expected valid percent-encoded text, but found malformed encoding." | "Please check that all percent-encoded sequences (e.g., %20) use valid two-digit hexadecimal values." |
 

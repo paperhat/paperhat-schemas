@@ -28,4 +28,4 @@ Defines the ISO/IEC document maturity levels as established by the ISO/IEC Direc
 
 - Includes both the main standards track (PWI → NP → WD → CD → DIS → FDIS → IS) and the alternative deliverables (TS, TR, PAS) because specifications commonly carry these labels.
 - ISO/IEC JTC 1 follows the same process; no separate JTC 1 vocabulary is needed.
-- `Withdrawn` is a terminal state; systematic review may also result in confirmation or revision but those are process actions, not maturity labels.
+- `Withdrawn` is a terminal state; systematic review also results in confirmation or revision, but those are process actions, not maturity labels.

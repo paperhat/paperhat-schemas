@@ -21,7 +21,7 @@ These operators provide bounded, deterministic collection and record transforms.
 
 ### 2.1 Value Model Terms
 
-- `List` — ordered collection, may contain duplicates
+- `List` — ordered collection, permits duplicates
 - `Set` — unordered collection, unique elements
 - `Tuple` — ordered, fixed-length, positional semantics
 - `Map` — key-value collection with unique keys
@@ -320,7 +320,7 @@ ChunkElements(list, size) -> List<List>
 
 Semantics:
 - Split into chunks of specified size.
-- Last chunk may be smaller.
+- Last chunk is potentially smaller.
 
 ### 3.22 `WindowElements`
 
@@ -1375,31 +1375,31 @@ This table consolidates all diagnostic codes defined in the Core Safe Transforms
 
 | Code | Operators | Expected | Message | Suggestion |
 |------|-----------|----------|---------|------------|
-| `CoreSafeTransforms::LIMIT_EXCEEDED` | RangeToList, and any transform that exceeds resource bounds | Output within resource limits | "Lexis found that this operation exceeds the configured resource limit." | "You might reduce the input size or check the limit configuration for this evaluator." |
+| `CoreSafeTransforms::LIMIT_EXCEEDED` | RangeToList, and any transform that exceeds resource bounds | Output within resource limits | "Lexis found that this operation exceeds the configured resource limit." | "Reduce the input size or check the limit configuration for this evaluator." |
 | `MapElements::NEED_LIST` | MapElements | List | "Lexis expected a list for the first operand, but found {received}." | "Please provide a list value to map over." |
 | `FilterElements::NEED_LIST` | FilterElements | List | "Lexis expected a list for the first operand, but found {received}." | "Please provide a list value to filter." |
-| `FilterElements::NEED_BOOLEAN` | FilterElements | Boolean predicate result | "Lexis expected the predicate to return true or false, but it returned {received}." | "You might check that the predicate expression evaluates to a boolean value." |
+| `FilterElements::NEED_BOOLEAN` | FilterElements | Boolean predicate result | "Lexis expected the predicate to return true or false, but it returned {received}." | "Check that the predicate expression evaluates to a boolean value." |
 | `ReduceElements::NEED_LIST` | ReduceElements | List | "Lexis expected a list for the first operand, but found {received}." | "Please provide a list value to reduce." |
 | `ReduceElementsRight::NEED_LIST` | ReduceElementsRight | List | "Lexis expected a list for the first operand, but found {received}." | "Please provide a list value to reduce." |
 | `FoldElements::NEED_LIST` | FoldElements | List | "Lexis expected a list for the first operand, but found {received}." | "Please provide a list value to fold." |
-| `FoldElements::NEED_NONEMPTY_LIST` | FoldElements | Non-empty List | "Lexis expected a non-empty list for folding, but the list is empty." | "FoldElements requires at least one element to use as the initial accumulator — you might use ReduceElements with an explicit initial value instead." |
-| `SortElements::NEED_COMPARABLE_ELEMENTS` | SortElements | Mutually comparable elements | "Lexis expected all elements to be mutually comparable, but found incompatible types." | "You might check that all elements in the list are of comparable types (e.g., all numbers or all text)." |
-| `SortElementsDescending::NEED_COMPARABLE_ELEMENTS` | SortElementsDescending | Mutually comparable elements | "Lexis expected all elements to be mutually comparable, but found incompatible types." | "You might check that all elements in the list are of comparable types (e.g., all numbers or all text)." |
-| `SortElementsBy::NEED_COMPARABLE_KEYS` | SortElementsBy | Mutually comparable keys | "Lexis expected all sort keys to be mutually comparable, but found incompatible types." | "You might check that the key expression produces comparable values for all elements." |
-| `SortElementsByDescending::NEED_COMPARABLE_KEYS` | SortElementsByDescending | Mutually comparable keys | "Lexis expected all sort keys to be mutually comparable, but found incompatible types." | "You might check that the key expression produces comparable values for all elements." |
-| `FlattenElements::NEED_LIST_ELEMENTS` | FlattenElements | List of Lists | "Lexis expected every element to be a list, but found {received}." | "FlattenElements requires a list of lists — you might check that all elements are lists before flattening." |
-| `FlatMapElements::NEED_LIST_RESULTS` | FlatMapElements | List results from mapping expression | "Lexis expected the mapping expression to return a list, but it returned {received}." | "FlatMapElements requires each mapping result to be a list — you might check the mapping expression." |
-| `GroupElementsByKey::NEED_NONABSENT_KEY` | GroupElementsByKey | Non-absent key | "Lexis expected a present value for the grouping key, but found Absent." | "You might check that the key expression produces a value for every element." |
+| `FoldElements::NEED_NONEMPTY_LIST` | FoldElements | Non-empty List | "Lexis expected a non-empty list for folding, but the list is empty." | "FoldElements requires at least one element to use as the initial accumulator — use ReduceElements with an explicit initial value instead." |
+| `SortElements::NEED_COMPARABLE_ELEMENTS` | SortElements | Mutually comparable elements | "Lexis expected all elements to be mutually comparable, but found incompatible types." | "Check that all elements in the list are of comparable types (e.g., all numbers or all text)." |
+| `SortElementsDescending::NEED_COMPARABLE_ELEMENTS` | SortElementsDescending | Mutually comparable elements | "Lexis expected all elements to be mutually comparable, but found incompatible types." | "Check that all elements in the list are of comparable types (e.g., all numbers or all text)." |
+| `SortElementsBy::NEED_COMPARABLE_KEYS` | SortElementsBy | Mutually comparable keys | "Lexis expected all sort keys to be mutually comparable, but found incompatible types." | "Check that the key expression produces comparable values for all elements." |
+| `SortElementsByDescending::NEED_COMPARABLE_KEYS` | SortElementsByDescending | Mutually comparable keys | "Lexis expected all sort keys to be mutually comparable, but found incompatible types." | "Check that the key expression produces comparable values for all elements." |
+| `FlattenElements::NEED_LIST_ELEMENTS` | FlattenElements | List of Lists | "Lexis expected every element to be a list, but found {received}." | "FlattenElements requires a list of lists — check that all elements are lists before flattening." |
+| `FlatMapElements::NEED_LIST_RESULTS` | FlatMapElements | List results from mapping expression | "Lexis expected the mapping expression to return a list, but it returned {received}." | "FlatMapElements requires each mapping result to be a list — check the mapping expression." |
+| `GroupElementsByKey::NEED_NONABSENT_KEY` | GroupElementsByKey | Non-absent key | "Lexis expected a present value for the grouping key, but found Absent." | "Check that the key expression produces a value for every element." |
 | `SumElements::NEED_NUMERIC_ELEMENTS` | SumElements | Numeric elements | "Lexis expected all elements to be numeric, but found {received}." | "Please check that every element in the list is a number." |
 | `ProductElements::NEED_NUMERIC_ELEMENTS` | ProductElements | Numeric elements | "Lexis expected all elements to be numeric, but found {received}." | "Please check that every element in the list is a number." |
 | `AverageElements::NEED_NUMERIC_ELEMENTS` | AverageElements | Numeric elements | "Lexis expected all elements to be numeric, but found {received}." | "Please check that every element in the list is a number." |
-| `AverageElements::NEED_NONEMPTY_LIST` | AverageElements | Non-empty List | "Lexis expected a non-empty list for averaging, but the list is empty." | "An average requires at least one element — you might check that the list is not empty before this step." |
-| `MapFromEntries::DUPLICATE_KEY` | MapFromEntries | Unique keys | "Lexis found duplicate keys in the entry list." | "You might check the entry list for duplicate keys before building the map." |
+| `AverageElements::NEED_NONEMPTY_LIST` | AverageElements | Non-empty List | "Lexis expected a non-empty list for averaging, but the list is empty." | "An average requires at least one element — check that the list is not empty before this step." |
+| `MapFromEntries::DUPLICATE_KEY` | MapFromEntries | Unique keys | "Lexis found duplicate keys in the entry list." | "Check the entry list for duplicate keys before building the map." |
 | `MapFromLists::LENGTH_MISMATCH` | MapFromLists | Lists of equal length | "Lexis expected the keys list and values list to have the same length, but they differ." | "Please provide a keys list and a values list with the same number of elements." |
-| `MapFromLists::DUPLICATE_KEY` | MapFromLists | Unique keys | "Lexis found duplicate keys in the keys list." | "You might check the keys list for duplicates before building the map." |
-| `RecordFromMap::NEED_TEXT_KEYS` | RecordFromMap | Text keys | "Lexis expected all map keys to be text, but found {received}." | "Records require text keys — you might check that every key in the map is a text value." |
-| `JoinCollectionsOnKey::DUPLICATE_KEY` | JoinCollectionsOnKey | Unique join keys | "Lexis found duplicate keys in a join operand." | "You might check that the key expression produces unique values for each collection." |
-| `JoinCollectionsOnKey::NEED_NONABSENT_KEY` | JoinCollectionsOnKey | Non-absent join key | "Lexis expected a present value for the join key, but found Absent." | "You might check that the key expression produces a value for every element in both collections." |
+| `MapFromLists::DUPLICATE_KEY` | MapFromLists | Unique keys | "Lexis found duplicate keys in the keys list." | "Check the keys list for duplicates before building the map." |
+| `RecordFromMap::NEED_TEXT_KEYS` | RecordFromMap | Text keys | "Lexis expected all map keys to be text, but found {received}." | "Records require text keys — check that every key in the map is a text value." |
+| `JoinCollectionsOnKey::DUPLICATE_KEY` | JoinCollectionsOnKey | Unique join keys | "Lexis found duplicate keys in a join operand." | "Check that the key expression produces unique values for each collection." |
+| `JoinCollectionsOnKey::NEED_NONABSENT_KEY` | JoinCollectionsOnKey | Non-absent join key | "Lexis expected a present value for the join key, but found Absent." | "Check that the key expression produces a value for every element in both collections." |
 | `SplitString::NEED_NONEMPTY_SEPARATOR` | SplitString | Non-empty separator | "Lexis expected a non-empty separator string, but found an empty string." | "Please provide a separator with at least one character." |
 | `JoinStrings::NEED_TEXT_ELEMENTS` | JoinStrings | Text elements | "Lexis expected all elements to be text, but found {received}." | "Please check that every element in the list is a text value before joining." |
 

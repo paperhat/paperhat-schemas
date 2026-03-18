@@ -14,7 +14,7 @@ This document is **Normative**.
 
 ## 1. Purpose
 
-Behavior programs may use temporal construction, validation, decomposition,
+Behavior programs use temporal construction, validation, decomposition,
 comparison, conversion, arithmetic, parsing, formatting, and timezone
 resolution operations.
 
@@ -111,7 +111,7 @@ In particular:
 - `DateTimeWithTimezone` resolution MUST preserve the `unique-only`,
   `Earlier`, and `Later` distinction.
 - overlap and gap handling MUST follow the exact Paperhat Temporal rules.
-- no binding may silently apply `compatible`, gap snapping, host-library
+- no binding MUST NOT silently apply `compatible`, gap snapping, host-library
   defaults, or any other hidden policy.
 
 ### 3.2 Runtime and Ambient Time
@@ -145,7 +145,7 @@ The following legacy behaviors are invalid and MUST NOT be reintroduced:
 
 ## 5. Derived Behavior Functions
 
-Derived temporal convenience functions MAY be specified separately, but only if
+Derived temporal convenience functions are specified separately only if
 all of the following are true:
 
 - they are defined strictly in terms of `paperhat-temporal`

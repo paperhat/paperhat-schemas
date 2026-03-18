@@ -8,7 +8,7 @@ A material or substance from which objects are made, with canonical name, aliase
 
 ## When to Use
 
-Use `Material` to author a reusable material entity that can be referenced by products, equipment, and other consuming schemas. The package covers a canonical name, alternate names, material category, optional color and finish, sustainability flags, optional location, optional measurements, and optional tags.
+Use `Material` to author a reusable material entity referenced by products, equipment, and other consuming schemas. The package covers a canonical name, alternate names, material category, optional color and finish, sustainability flags, optional location, optional measurements, and optional tags.
 
 ## Concepts
 

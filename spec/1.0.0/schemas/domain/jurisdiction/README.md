@@ -25,7 +25,7 @@ Use `Jurisdiction` to attach legal or regulatory scope to policies, contracts, o
 
 ## Design Notes
 
-- `$MustNotBeEntity` because Jurisdiction is a descriptor attached to policies, contracts, and organizations — not a standalone referenceable object. If a jurisdiction needs to be referenced across documents, a future revision can promote it to `$MayBeEntity`.
+- `$MustNotBeEntity` because Jurisdiction is a descriptor attached to policies, contracts, and organizations — not a standalone referenceable object. If a jurisdiction needs to be referenced across documents, a future revision promotes it to `$MayBeEntity`.
 - `countryCode` binds to the existing `iso-3166-countries` vocabulary, providing machine-readable country identification.
 - `subdivisionCode` is `$Text` rather than `$EnumeratedToken` because ISO 3166-2 has thousands of subdivision codes and a vocabulary package for all of them is not warranted.
 - Supranational jurisdictions (e.g., European Union, ASEAN) use `jurisdictionKind=$supranational` with no country code.

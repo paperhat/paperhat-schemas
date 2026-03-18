@@ -29,7 +29,7 @@ A single annotation. The note text is the element's content.
 
 - Notes is unordered because notes are looked up by key, not read sequentially. Presentation order (numeric, alphabetical) is a rendering concern.
 - The `key` trait is required so every note is addressable. Keys must be unique within a Notes container (enforced by LookupToken semantics).
-- Notes can appear inside Sections (for section-scoped footnotes) or at the document level (for endnotes).
+- Notes appear inside Sections (for section-scoped footnotes) or at the document level (for endnotes).
 
 ---
 

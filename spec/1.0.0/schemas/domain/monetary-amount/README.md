@@ -15,12 +15,12 @@ Use `MonetaryAmount` wherever a financial value must be recorded unambiguously: 
 | Trait | Type | Required | Description |
 |---|---|---|---|
 | amount | $Number | yes | The numeric value. |
-| currency | $EnumeratedToken | yes | ISO 4217 currency code, e.g. `$USD`, `$EUR`, `$GBP`, `$JPY`. Consuming schemas may constrain the allowed currencies. |
+| currency | $EnumeratedToken | yes | ISO 4217 currency code, e.g. `$USD`, `$EUR`, `$GBP`, `$JPY`. Consuming schemas constrain the allowed currencies. |
 
 ## Design Notes
 
 - Both traits are required. A monetary amount without a currency is ambiguous; a currency without an amount is meaningless.
-- The `currency` trait uses `$EnumeratedToken` so consuming schemas can constrain accepted currencies via the "leaves are open, composers constrain" pattern.
+- The `currency` trait uses `$EnumeratedToken` so consuming schemas constrain accepted currencies via the "leaves are open, composers constrain" pattern.
 - No `minAmount`/`maxAmount` traits — use two MonetaryAmount children with a qualifying token if a range is needed.
 
 **End of MonetaryAmount v1.0.0**

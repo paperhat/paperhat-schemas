@@ -92,4 +92,4 @@ Standards-essential patent licensing commitments as used by W3C, IETF, ISO, IEEE
 - `LicensingCommitment` covers the major patent policy frameworks: RAND (IETF/ISO/IEEE), FRAND (European standard), RoyaltyFree (W3C default), and variations.
 - `spdxIdentifier` on LicenseGrant enables machine-readable license identification using the industry-standard SPDX License List.
 - `IPNotice` is the section-level container paralleling ConformanceClause, AbbreviationList, SymbolTable, etc.
-- All IP concepts are MustBeEntity so they can be cross-referenced from the body of the specification (e.g. "as required by Patent P-1234...").
+- All IP concepts are MustBeEntity so they are cross-referenceable from the body of the specification (e.g. "as required by Patent P-1234...").

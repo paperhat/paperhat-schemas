@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Defines a semantic expression tree for mathematical content in technical specifications. Unlike presentational math markup (LaTeX, MathML Presentation), this schema captures the *meaning* of mathematical expressions so that a machine can reason about the math, not just render it. Projection layers emit MathML Content Markup, LaTeX, or other formats at render time from this semantic representation.
+Defines a semantic expression tree for mathematical content in technical specifications. Unlike presentational math markup (LaTeX, MathML Presentation), this schema captures the *meaning* of mathematical expressions so that a machine reasons about the math, not just render it. Projection layers emit MathML Content Markup, LaTeX, or other formats at render time from this semantic representation.
 
 ## Concepts
 
@@ -156,7 +156,7 @@ Enumerated, BuilderNotation, Interval.
 - `Variable` is MayBeEntity: when used as a formal definition ("let τ denote..."), it gets an entity ID for cross-referencing. In-expression occurrences reference the defined entity.
 - `Equation` is MayBeEntity for the same reason: named equations (e.g. "Equation 3.1") get entity IDs.
 - `Apply` follows the MathML Content Markup model: operator/function first, operands follow in order. This is unambiguous and easy to serialize.
-- Named structural helpers (Operand, Condition, IndexVariable, LowerBound, UpperBound, etc.) exist so that the tree is self-describing. A projection layer or validator can find the integrand vs. the differential variable by concept name rather than positional convention.
+- Named structural helpers (Operand, Condition, IndexVariable, LowerBound, UpperBound, etc.) exist so that the tree is self-describing. A projection layer or validator finds the integrand vs. the differential variable by concept name rather than positional convention.
 - `Number.value` is `$Text` not `$Integer` or `$Decimal` to support arbitrary precision, scientific notation, and non-decimal bases.
 - The `function` trait on Apply handles named functions not in the MathOperator set (e.g. "Gamma", "Bessel_J", custom domain functions).
 - `MathBlock` is the top-level container for embedding math in a specification section. It parallels CodeBlock, Figure, and Example as a display-level block.

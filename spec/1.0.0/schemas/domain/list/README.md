@@ -8,7 +8,7 @@ Ordered and unordered lists with nestable items.
 
 ## When to Use
 
-Use `OrderedList` when sequence matters (steps, rankings, instructions). Use `UnorderedList` when it does not (ingredients, features, bullet points). Lists nest: a ListItem in children mode can contain paragraphs and sub-lists.
+Use `OrderedList` when sequence matters (steps, rankings, instructions). Use `UnorderedList` when it does not (ingredients, features, bullet points). Lists nest: a ListItem in children mode contains paragraphs and sub-lists.
 
 ## Concepts
 

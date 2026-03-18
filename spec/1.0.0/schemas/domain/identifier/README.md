@@ -13,7 +13,7 @@ A scheme-qualified identifier for referencing external systems, standards, or re
 
 ## When to Use
 
-Use Identifier whenever you need to attach an external reference to an entity. A Person might carry a passport number, an ISBN identifies a book, a DOI identifies a research paper. The Identifier concept pairs a scheme with a value, making the namespace explicit.
+Use Identifier whenever you need to attach an external reference to an entity. A Person carries a passport number, an ISBN identifies a book, a DOI identifies a research paper. The Identifier concept pairs a scheme with a value, making the namespace explicit.
 
 Identifier is a leaf concept with no concept dependencies. It is designed to be composed into higher-level schemas such as Person, Organization, or any entity that needs external identification.
 
@@ -25,7 +25,7 @@ Identifier is a leaf concept with no concept dependencies. It is designed to be 
 
 **Required.** A token identifying the namespace or registry this identifier belongs to. Common values include `$isbn`, `$doi`, `$orcid`, `$passport`, `$ssn`, `$driverLicense`, `$nationalId`, `$ean`, `$issn`, `$oclc`.
 
-This is an open vocabulary — any token value is valid. The consuming schema (such as Person or Product) may constrain which schemes are accepted.
+This is an open vocabulary — any token value is valid. The consuming schema (such as Person or Product) constrains which schemes are accepted.
 
 ### value
 
@@ -41,9 +41,9 @@ Both `scheme` and `value` are required. An Identifier without a scheme is ambigu
 
 ## Design Notes
 
-**Why are both traits required?** A value without a scheme is meaningless — "978-0-14-028329-7" could be anything without knowing it's an ISBN. A scheme without a value is empty. Both must be present.
+**Why are both traits required?** A value without a scheme is meaningless — "978-0-14-028329-7" is ambiguous without knowing it's an ISBN. A scheme without a value is empty. Both must be present.
 
-**Who defines the schemes?** Nobody, yet. Scheme tokens correspond to external standards and registries. The Identifier leaf keeps the vocabulary open; consuming schemas constrain which schemes they accept. A Person schema might allow `$passport` and `$ssn`; a Book schema might allow `$isbn` and `$doi`. This follows the pattern: leaves are open, composers constrain.
+**Who defines the schemes?** Nobody, yet. Scheme tokens correspond to external standards and registries. The Identifier leaf keeps the vocabulary open; consuming schemas constrain which schemes they accept. A Person schema allows `$passport` and `$ssn`; a Book schema allows `$isbn` and `$doi`. This follows the pattern: leaves are open, composers constrain.
 
 **Why $EnumeratedToken for scheme?** Tokens are machine-readable classifiers. They use the `$` prefix in instance data (e.g., `scheme=$isbn`) and signal a controlled vocabulary without requiring a closed enumeration.
 

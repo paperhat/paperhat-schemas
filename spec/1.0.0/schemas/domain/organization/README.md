@@ -8,7 +8,7 @@ An organization with identity — a company, nonprofit, government body, educati
 
 ## When to Use
 
-Use `Organization` to represent any named entity that is not a person: corporations, charities, government agencies, universities, clubs, or bands. Organizations are entities (`$MustBeEntity`) and can be referenced from other schemas.
+Use `Organization` to represent any named entity that is not a person: corporations, charities, government agencies, universities, clubs, or bands. Organizations are entities (`$MustBeEntity`) and are referenceable from other schemas.
 
 ## Traits
 

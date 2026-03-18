@@ -23,6 +23,6 @@ Use `GeographicLocation` when you need exact coordinates rather than named place
 - Both `latitude` and `longitude` are required. A coordinate without both axes is meaningless.
 - Coordinates use decimal degrees (WGS 84), the universal standard for web and data interchange.
 - Elevation is optional because most use cases only need a 2D position.
-- Distinct from `Location`, which captures named places with administrative hierarchy. A consuming schema can use both: `Location` for the human-readable name and `GeographicLocation` for the machine-readable coordinates.
+- Distinct from `Location`, which captures named places with administrative hierarchy. A consuming schema uses both: `Location` for the human-readable name and `GeographicLocation` for the machine-readable coordinates.
 
 **End of GeographicLocation v1.0.0**

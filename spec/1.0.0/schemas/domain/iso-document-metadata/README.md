@@ -95,10 +95,10 @@ The ISO harmonized stage code system covering the full document lifecycle.
 
 ## Design Decisions
 
-- `ISODocumentMetadata` is a separate top-level container rather than extending DocumentMetadata. Composition over inheritance: a specification can include both a generic DocumentMetadata and an ISODocumentMetadata. This avoids polluting the generic schema with ISO-specific structure.
-- `ISOStage` uses the ISO harmonized stage code names (Preliminary through Withdrawal) rather than raw numeric codes (00–95). The numeric codes are implementation details; the stage names are the semantic content. A projection layer can emit the numeric codes if needed.
+- `ISODocumentMetadata` is a separate top-level container rather than extending DocumentMetadata. Composition over inheritance: a specification includes both a generic DocumentMetadata and an ISODocumentMetadata when needed. This avoids polluting the generic schema with ISO-specific structure.
+- `ISOStage` uses the ISO harmonized stage code names (Preliminary through Withdrawal) rather than raw numeric codes (00–95). The numeric codes are implementation details; the stage names are the semantic content. A projection layer emits the numeric codes when needed.
 - Committee, Subcommittee, and WorkingGroup are separate concepts rather than a single "CommitteeLevel" with a depth trait. The ISO hierarchy is fixed at exactly three levels, so three concepts is clearer and more type-safe.
 - `ISOForeword` is a distinct concept because ISO/IEC Directives Part 2 mandates specific foreword structure (committee identification, edition history, part relationships). This is not a generic foreword.
 - `EditionHistory` contains ordered `EditionEntry` children to capture the full publication history required by ISO forewords.
 - `RelatedPart` with `PartRelationship` captures the mandatory foreword text about relationships to other parts of a multi-part standard.
-- All number and date traits are `$Text` because ISO document numbers can include slashes, colons, and other punctuation (e.g. "ISO/IEC 27001:2022"), and Codex lacks a native date type.
+- All number and date traits are `$Text` because ISO document numbers include slashes, colons, and other punctuation (e.g. "ISO/IEC 27001:2022"), and Codex lacks a native date type.

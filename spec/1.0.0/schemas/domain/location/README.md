@@ -15,7 +15,7 @@ A named geographic or fictional location with optional administrative subdivisio
 
 Use `Location` whenever you need to represent a place such as a city, a country, a fictional realm, or any other named location. `Location` is deliberately simpler than a full mailing-address concept; it captures where something is, not how to route mail there.
 
-A single entity can have multiple `Location` instances to capture birthplaces, residences, workplaces, settings, and other location roles. The `locationKind` trait distinguishes those roles.
+A single entity has multiple `Location` instances to capture birthplaces, residences, workplaces, settings, and other location roles. The `locationKind` trait distinguishes those roles.
 
 `Location` is a leaf concept with no concept dependencies. It is designed to be composed into higher-level schemas such as `Person`, `Organization`, `Food`, and `Event`.
 
@@ -27,7 +27,7 @@ A single entity can have multiple `Location` instances to capture birthplaces, r
 
 A token classifying the role this location plays for its parent entity. Common values include `$birthPlace`, `$residence`, `$workplace`, `$deathPlace`, `$hometown`, and `$setting`.
 
-This vocabulary is open. A consuming schema can constrain accepted values.
+This vocabulary is open. Consuming schemas constrain accepted values.
 
 ### name
 

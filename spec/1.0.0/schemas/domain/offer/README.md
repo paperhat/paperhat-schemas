@@ -15,7 +15,7 @@ Use `Offer` wherever something is being sold, rented, or made available at a pri
 | Trait | Type | Required | Description |
 |---|---|---|---|
 | price | $Number | yes | The numeric price. |
-| priceCurrency | $EnumeratedToken | yes | ISO 4217 currency code, e.g. `$USD`, `$EUR`, `$GBP`. Consuming schemas may constrain the allowed currencies. |
+| priceCurrency | $EnumeratedToken | yes | ISO 4217 currency code, e.g. `$USD`, `$EUR`, `$GBP`. Consuming schemas constrain the allowed currencies. |
 | availability | $EnumeratedToken | no | Stock or availability status, e.g. `$InStock`, `$OutOfStock`, `$PreOrder`, `$Discontinued`. |
 | itemCondition | $EnumeratedToken | no | Condition of the offered item, e.g. `$New`, `$Used`, `$Refurbished`. |
 | validFrom | $Date | no | Date from which the offer is valid. |
@@ -24,8 +24,8 @@ Use `Offer` wherever something is being sold, rented, or made available at a pri
 ## Design Notes
 
 - Both `price` and `priceCurrency` are required. An offer without a price is incomplete; a price without a currency is ambiguous.
-- Offer does not compose MonetaryAmount — the price/currency pair is integral to what an offer is, not a separate child concept. Consuming schemas that need both an Offer and a standalone MonetaryAmount can use them side by side.
-- The `availability` and `itemCondition` traits use `$EnumeratedToken` so consuming schemas can define their own vocabularies.
+- Offer does not compose MonetaryAmount — the price/currency pair is integral to what an offer is, not a separate child concept. Consuming schemas that need both an Offer and a standalone MonetaryAmount use them side by side.
+- The `availability` and `itemCondition` traits use `$EnumeratedToken` so consuming schemas define their own vocabularies.
 - Validity dates are plain dates, not timestamps — sufficient for most commercial contexts.
 
 ---

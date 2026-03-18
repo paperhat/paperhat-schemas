@@ -4,7 +4,7 @@ Version: 1.0.0
 
 # Codex Data Meta-Schema
 
-Authorizes domain ontology schemas. Defines what domain schemas may declare and forbids individuals, views, policies, layout, and assembly. Content is forbidden by default and must be explicitly allowed per Concept. Sequence and Group are permitted only as ordering overrides under CollectionOverride.
+Authorizes domain ontology schemas. Defines what domain schemas declare and forbids individuals, views, policies, layout, and assembly. Content is forbidden by default and must be explicitly allowed per Concept. Sequence and Group are permitted only as ordering overrides under CollectionOverride.
 
 ## When to Use
 
@@ -26,7 +26,7 @@ Use the data meta-schema when defining a new domain schema. Every domain schema 
 
 ## Constraints
 
-- **no-instances** — Domain schemas must not define individuals. No concept may use `$MustBeEntity`.
+- **no-instances** — Domain schemas must not define individuals. No concept uses `$MustBeEntity`.
 - **content-opt-in** — Content is forbidden by default in domain concepts. Content must be explicitly allowed.
 - **ordering-declared** — Default collection ordering must be declared for every DomainConcept.
 - **override-context-only** — Sequence and Group are permitted only within CollectionOverride.

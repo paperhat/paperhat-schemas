@@ -185,6 +185,72 @@
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-meta" packagePath="spec/1.0.0/schemas/domain/meta" />
 
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-abbreviation" packagePath="spec/1.0.0/schemas/domain/abbreviation" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-acknowledgments" packagePath="spec/1.0.0/schemas/domain/acknowledgments" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-annex" packagePath="spec/1.0.0/schemas/domain/annex" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-budget" packagePath="spec/1.0.0/schemas/domain/budget" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-budget-line" packagePath="spec/1.0.0/schemas/domain/budget-line" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-change-log" packagePath="spec/1.0.0/schemas/domain/change-log" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-compliance-status" packagePath="spec/1.0.0/schemas/domain/compliance-status" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-conformance-class" packagePath="spec/1.0.0/schemas/domain/conformance-class" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-cross-reference" packagePath="spec/1.0.0/schemas/domain/cross-reference" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-deadline" packagePath="spec/1.0.0/schemas/domain/deadline" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-defined-term" packagePath="spec/1.0.0/schemas/domain/defined-term" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-dependency" packagePath="spec/1.0.0/schemas/domain/dependency" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-editor-note" packagePath="spec/1.0.0/schemas/domain/editor-note" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-explanation" packagePath="spec/1.0.0/schemas/domain/explanation" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-formal-grammar" packagePath="spec/1.0.0/schemas/domain/formal-grammar" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-intellectual-property" packagePath="spec/1.0.0/schemas/domain/intellectual-property" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-iso-document-metadata" packagePath="spec/1.0.0/schemas/domain/iso-document-metadata" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-learning-enrichment" packagePath="spec/1.0.0/schemas/domain/learning-enrichment" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-learning-explanation" packagePath="spec/1.0.0/schemas/domain/learning-explanation" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-learning-path" packagePath="spec/1.0.0/schemas/domain/learning-path" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-learning-procedure" packagePath="spec/1.0.0/schemas/domain/learning-procedure" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-math-expression" packagePath="spec/1.0.0/schemas/domain/math-expression" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-milestone" packagePath="spec/1.0.0/schemas/domain/milestone" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-obligation" packagePath="spec/1.0.0/schemas/domain/obligation" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-planning-document" packagePath="spec/1.0.0/schemas/domain/planning-document" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-recurrence" packagePath="spec/1.0.0/schemas/domain/recurrence" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-recurrence-exception" packagePath="spec/1.0.0/schemas/domain/recurrence-exception" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-review-cycle" packagePath="spec/1.0.0/schemas/domain/review-cycle" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-revision-history" packagePath="spec/1.0.0/schemas/domain/revision-history" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-rounding-policy" packagePath="spec/1.0.0/schemas/domain/rounding-policy" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-scenario-model" packagePath="spec/1.0.0/schemas/domain/scenario-model" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-symbol" packagePath="spec/1.0.0/schemas/domain/symbol" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-test-assertion" packagePath="spec/1.0.0/schemas/domain/test-assertion" />
+
 	<RepositoryPackageEntry packageFamily="composition" packageName="paperhat-composition" packagePath="spec/1.0.0/schemas/composition" />
 
 	<RepositoryPackageEntry packageFamily="behavior" packageName="behavior-expression-schema" packagePath="spec/1.0.0/schemas/behavior/behavior-expression-schema" />
@@ -192,6 +258,12 @@
 	<RepositoryPackageEntry packageFamily="behavior" packageName="behavior-shape-schema" packagePath="spec/1.0.0/schemas/behavior/behavior-shape-schema" />
 
 	<RepositoryPackageEntry packageFamily="view" packageName="paperhat-semantic-projection-view" packagePath="spec/1.0.0/schemas/view/semantic-projection" />
+
+	<RepositoryPackageEntry packageFamily="design" packageName="adaptive-plan" packagePath="spec/1.0.0/schemas/design/adaptive-plan" />
+
+	<RepositoryPackageEntry packageFamily="design" packageName="design-annotation" packagePath="spec/1.0.0/schemas/design/design-annotation" />
+
+	<RepositoryPackageEntry packageFamily="design" packageName="design-package" packagePath="spec/1.0.0/schemas/design/design-package" />
 
 	<RepositoryPackageEntry packageFamily="system" packageName="paperhat-localization" packagePath="spec/1.0.0/schemas/system/localization" />
 
@@ -238,4 +310,16 @@
 	<RepositoryPackageEntry packageFamily="vocabulary" packageName="units-time" packagePath="spec/1.0.0/schemas/vocabularies/units-time" />
 
 	<RepositoryPackageEntry packageFamily="vocabulary" packageName="units-volume" packagePath="spec/1.0.0/schemas/vocabularies/units-volume" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="maturity-ieee" packagePath="spec/1.0.0/schemas/vocabularies/maturity-ieee" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="maturity-ietf" packagePath="spec/1.0.0/schemas/vocabularies/maturity-ietf" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="maturity-iso" packagePath="spec/1.0.0/schemas/vocabularies/maturity-iso" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="maturity-oasis" packagePath="spec/1.0.0/schemas/vocabularies/maturity-oasis" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="maturity-paperhat" packagePath="spec/1.0.0/schemas/vocabularies/maturity-paperhat" />
+
+	<RepositoryPackageEntry packageFamily="vocabulary" packageName="maturity-w3c" packagePath="spec/1.0.0/schemas/vocabularies/maturity-w3c" />
 </LexisRepositoryManifest>

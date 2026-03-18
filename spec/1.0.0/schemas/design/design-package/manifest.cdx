@@ -1,6 +1,6 @@
 <DesignPackageManifest
 	author="Paperhat"
-	closureHash="0000000000000000000000000000000000000000000000000000000000000000"
+	closureHash="ba0742f5b435f89746c32e446b2c8516b2b1afcd604fd5c32a98bf4180f73444"
 	copyright="Copyright 2026 Paperhat"
 	description="Design-family schema for bundling design annotation documents into an ordered, referenceable package."
 	license="Apache-2.0"

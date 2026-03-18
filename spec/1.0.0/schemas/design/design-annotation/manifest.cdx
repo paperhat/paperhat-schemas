@@ -1,6 +1,6 @@
 <DesignPackageManifest
 	author="Paperhat"
-	closureHash="0000000000000000000000000000000000000000000000000000000000000000"
+	closureHash="56b8c36a5d63a09aab7ff81d38803864744e3be9a9d59c0e5cacd15bc8dffceb"
 	copyright="Copyright 2026 Paperhat"
 	description="Design-family schema for attaching SDL semantic roles, CDL constraints, and PDL adaptive rules to ViewDefinition fields and composition elements."
 	license="Apache-2.0"

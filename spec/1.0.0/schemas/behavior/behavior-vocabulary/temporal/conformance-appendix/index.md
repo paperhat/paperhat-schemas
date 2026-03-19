@@ -16,7 +16,7 @@ This document is **Informative**.
 
 Core temporal conformance is defined by:
 
-- [Paperhat Temporal](/Users/guy/Workspace/@paperhat/specifications/paperhat-temporal/spec/1.0.0/index.md)
+- [Paperhat Temporal](/Users/guy/Workspace/@paperhat/specifications/libraries/paperhat-temporal/spec/1.0.0/index.md)
 
 The temporal Behavior binding does not define an independent temporal algebra,
 independent temporal diagnostics, or independent temporal test vectors.

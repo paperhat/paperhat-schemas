@@ -28,7 +28,7 @@ independent temporal operator family. Those semantics belong to
 
 Temporal semantics used by Behavior are owned by:
 
-- [Paperhat Temporal](/Users/guy/Workspace/@paperhat/specifications/paperhat-temporal/spec/1.0.0/index.md)
+- [Paperhat Temporal](/Users/guy/Workspace/@paperhat/specifications/libraries/paperhat-temporal/spec/1.0.0/index.md)
 
 Behavior bindings MUST preserve the exact temporal type distinctions, operation
 semantics, diagnostic behavior, and determinism guarantees defined there.

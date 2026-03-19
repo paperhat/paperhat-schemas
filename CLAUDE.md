@@ -16,7 +16,7 @@ Rules:
 2. Canonical surface output and digest values from the real Codex command-line interface override bridge or fallback tooling whenever they disagree.
 3. `SchemaImport` references MUST resolve through the real Codex command-line interface over the real repository tree.
 4. If local manifest tooling disagrees with the real Codex command-line interface, the mismatch MUST be reported and repaired. It MUST NOT be ignored.
-5. Schema and corpus work for active Lexis integration MUST follow `/Users/guy/Workspace/@paperhat/specifications/lexis-spec/plans/implementation-program/codex-active-closure-conformance-policy.md`.
+5. Schema and corpus work for active Lexis integration MUST follow `/Users/guy/Workspace/@paperhat/specifications/applications/lexis-spec/plans/implementation-program/codex-active-closure-conformance-policy.md`.
 
 ## Architectural Rule
 
@@ -32,7 +32,7 @@ Paperhat-authored corpus entities and authored documents MUST use the `urn:paper
 
 `SchemaImport.reference` MUST remain `urn:cdx:sha256:<hex-digest>`.
 
-Read `/Users/guy/Workspace/@paperhat/specifications/paperhat-schemas/IDENTIFIER_POLICY.md` before changing schema identifiers.
+Read `/Users/guy/Workspace/@paperhat/specifications/schemas/paperhat-schemas/IDENTIFIER_POLICY.md` before changing schema identifiers.
 
 ## Package Boundary Rule
 

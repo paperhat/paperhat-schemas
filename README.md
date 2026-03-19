@@ -104,11 +104,11 @@ Lexis currently points to this repository through compatibility links while the 
 
 Canonical schema location:
 
-- `/Users/guy/Workspace/@paperhat/specifications/paperhat-schemas`
+- `/Users/guy/Workspace/@paperhat/specifications/schemas/paperhat-schemas`
 
 Compatibility location still present inside Lexis:
 
-- `/Users/guy/Workspace/@paperhat/specifications/lexis-spec/spec/1.0.0/schemas`
-- `/Users/guy/Workspace/@paperhat/specifications/lexis-spec/manifest.cdx`
+- `/Users/guy/Workspace/@paperhat/specifications/applications/lexis-spec/spec/1.0.0/schemas`
+- `/Users/guy/Workspace/@paperhat/specifications/applications/lexis-spec/manifest.cdx`
 
 The canonical source is this repository.

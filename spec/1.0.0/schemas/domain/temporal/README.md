@@ -15,7 +15,7 @@ spans in prose. Each concept wraps a canonical temporal value type and adds
 
 Temporal semantics are owned by:
 
-- [Paperhat Temporal](/Users/guy/Workspace/@paperhat/specifications/paperhat-temporal/spec/1.0.0/index.md)
+- [Paperhat Temporal](/Users/guy/Workspace/@paperhat/specifications/libraries/paperhat-temporal/spec/1.0.0/index.md)
 
 This schema does not define independent temporal meanings and does not restore
 the obsolete `Plain*`, `Zoned*`, `TimeZone`, or `Calendar` surface.

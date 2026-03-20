@@ -6,7 +6,7 @@ Version: 1.0.0
 
 A strict specification schema for authoring formal specifications in Codex. Narrows requirement modality to Must and MustNot only. All shared concepts, traits, constraints, and content-schema imports are provided by `paperhat-specification-foundation`.
 
-For the full RFC 2119 keyword set (Must, MustNot, Shall, ShallNot, Should, ShouldNot, May, Required, Recommended, Optional), use `paperhat-specification-rfc2119` instead.
+The RFC 2119 variant is defined in `paperhat-specification-rfc2119`.
 
 ## When to Use
 
@@ -19,7 +19,7 @@ This schema defines only the variant-specific concepts. All other concepts (Sect
 | Concept | Kind | Entity | Content | Description |
 |---|---|---|---|---|
 | Specification | Semantic | MustNotBeEntity | ForbidsContent | Root specification concept with required front-matter traits. Children: Section (1+). |
-| Requirement | Semantic | MustBeEntity | RequiresContent (Flow) | A normative requirement statement with strict modality and stable identity. Optional structured children: Rationale, Note, Paragraph, OrderedList, UnorderedList, Citation. |
+| Requirement | Semantic | MustBeEntity | ForbidsContent | A normative requirement container with strict modality and stable identity. Children: Paragraph (1+), optional Rationale, Note, OrderedList, UnorderedList, Citation. |
 
 ## Requirement Traits
 
@@ -42,7 +42,7 @@ The `modality` trait is narrowed at concept level to strict modality only via th
 - This schema imports only the specification foundation. All content-schema dependencies (text, list, code, figure, example, admonition, citation, glossary, relation) are transitively available through the foundation.
 - Requirement requires `key` (RequiresTrait), unlike the RFC 2119 variant where it is optional.
 - No `requirementId` trait is surfaced. The strict variant uses `key` alone for requirement identity.
-- Requirement allows optional structured children (Rationale, Note, Paragraph, OrderedList, UnorderedList, Citation) beneath the normative statement text. This supports explanatory paragraphs, justification blocks, and citations within a requirement.
+- Requirement is a children-only container. It requires at least one Paragraph child and allows optional Rationale, Note, OrderedList, UnorderedList, and Citation children within the same requirement.
 - `deprecated` and `deprecatedSince` are optional on Requirement for marking individual requirements as deprecated.
 
 ---

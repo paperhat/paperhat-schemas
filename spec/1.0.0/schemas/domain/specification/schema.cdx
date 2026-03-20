@@ -81,15 +81,15 @@
 			</TraitRules>
 
 			<ContentRules>
-				<RequiresContent whitespaceMode=$Flow />
+				<ForbidsContent />
 			</ContentRules>
 
 			<ChildRules>
+				<RequiresChildConcept conceptSelector="text:Paragraph" min=1 />
+
 				<AllowsChildConcept conceptSelector="specbase:Rationale" />
 
 				<AllowsChildConcept conceptSelector="specbase:Note" />
-
-				<AllowsChildConcept conceptSelector="text:Paragraph" />
 
 				<AllowsChildConcept conceptSelector="list:OrderedList" />
 

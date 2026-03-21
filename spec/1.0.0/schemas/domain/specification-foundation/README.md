@@ -63,7 +63,7 @@ Note: `Section` and `RequirementSet` allow `Requirement` children. The `Requirem
 | `answer` | `$Text` | -- | The answer to an open question once decided. |
 | `conformance` | `$EnumeratedToken` | SectionConformance | Whether a section is normative or informative. |
 | `deprecated` | `$Boolean` | -- | Whether this item is deprecated and is no longer relied upon. |
-| `deprecatedSince` | `$Semver` | -- | The specification version at which this item was deprecated. |
+| `deprecatedSince` | `$Semantic Version` | -- | The specification version at which this item was deprecated. |
 | `designation` | `$Text` | -- | Projection-layer display label for a section. |
 | `division` | `$EnumeratedToken` | SectionDivision | Structural division of a section within the document. |
 | `editor` | `$Text` | -- | Name of the responsible editor. |
@@ -83,7 +83,7 @@ Note: `Section` and `RequirementSet` allow `Requirement` children. The `Requirem
 | `term` | `$Text` | -- | The term being defined in a definition block. |
 | `title` | `$Text` | -- | Title of a specification or section. |
 | `uri` | `$Iri` | -- | External IRI for an external reference. |
-| `version` | `$Semver` | -- | Semantic version of the specification. |
+| `version` | `$Semantic Version` | -- | Semantic version of the specification. |
 
 ## Enumerated Value Sets
 

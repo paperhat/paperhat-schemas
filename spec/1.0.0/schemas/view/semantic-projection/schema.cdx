@@ -6,7 +6,7 @@
 	namespace="projection"
 	title="Semantic Projection View Schema"
 	version="1.0.0"
-	versionScheme=$Semver
+	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
 		<SchemaImport namespace="behavior" reference=urn:cdx:sha256:65cc0f997728c5d3628a1d575d4e8eebd65128381f3004d4f95f7874db5bef7b />

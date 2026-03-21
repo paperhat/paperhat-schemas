@@ -9,17 +9,17 @@
 	namespace="review-cycle"
 	title="Review Cycle Schema"
 	version="1.0.0"
-	versionScheme=$Semver
+	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
 		<SchemaImport
 			namespace="desc"
-			reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641
+			reference=urn:cdx:sha256:9bf51d505f8fc4af7c7a97a46613509b6912d3402ef7cbf6ac0dfdf6094a43a0
 		/>
 
 		<SchemaImport
 			namespace="dur"
-			reference=urn:cdx:sha256:af406058ee6760ac08123519cad8423b77a16bc15aa085a59d9d2fe53cadfad8
+			reference=urn:cdx:sha256:d535fcd15f8f717616fa335070d5a2f4d95ec6ac1b9b72a386f535d8778144b9
 		/>
 	</SchemaImports>
 

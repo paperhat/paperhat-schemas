@@ -18,7 +18,7 @@ Use `Work` wherever an entity carries creative-work metadata: articles, books, s
 | dateCreated | $Date | no | When the work was created. |
 | datePublished | $Date | no | When first published or released. |
 | dateModified | $Date | no | When last modified. |
-| version | $Text | no | Version identifier (supports semver, edition numbers, etc.). |
+| version | $Text | no | Version identifier (supports semantic version, edition numbers, etc.). |
 | language | $EnumeratedToken | no | Content language, e.g. `$en`, `$fr`, `$zh`. Consuming schemas constrain via a vocabulary. |
 | status | $EnumeratedToken | no | Lifecycle status, e.g. `$draft`, `$published`, `$archived`, `$retired`. |
 | license | $Text | no | License name or SPDX identifier, e.g. "CC-BY-4.0", "MIT". |

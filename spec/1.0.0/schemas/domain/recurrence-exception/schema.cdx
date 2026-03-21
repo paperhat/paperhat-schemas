@@ -9,7 +9,7 @@
 	namespace="recurrence-exception"
 	title="Recurrence Exception Schema"
 	version="1.0.0"
-	versionScheme=$Semver
+	versionScheme=$SemanticVersion
 >
 	<ConceptDefinitions>
 		<ConceptDefinition

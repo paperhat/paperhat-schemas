@@ -6,12 +6,12 @@
 	namespace="test"
 	title="Test Assertion Schema"
 	version="1.0.0"
-	versionScheme=$Semver
+	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="desc" reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:9bf51d505f8fc4af7c7a97a46613509b6912d3402ef7cbf6ac0dfdf6094a43a0 />
 
-		<SchemaImport namespace="text" reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:5818aaf21ef3dad7987216f6068689a1a67f7bbd48381e420c85706489849929 />
 	</SchemaImports>
 
 	<ConceptDefinitions>

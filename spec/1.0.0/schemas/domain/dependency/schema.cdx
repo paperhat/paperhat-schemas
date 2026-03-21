@@ -9,12 +9,12 @@
 	namespace="dependency"
 	title="Dependency Schema"
 	version="1.0.0"
-	versionScheme=$Semver
+	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
 		<SchemaImport
 			namespace="desc"
-			reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641
+			reference=urn:cdx:sha256:9bf51d505f8fc4af7c7a97a46613509b6912d3402ef7cbf6ac0dfdf6094a43a0
 		/>
 	</SchemaImports>
 

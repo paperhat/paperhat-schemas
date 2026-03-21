@@ -9,37 +9,37 @@
 	namespace="example"
 	title="Example Schema"
 	version="1.0.0"
-	versionScheme=$Semver
+	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
 		<SchemaImport
 			namespace="admonition"
-			reference=urn:cdx:sha256:f676d06cf578a8fa377b961fcd4d8e5676f8def5ba6b298eaee92f0d3614a890
+			reference=urn:cdx:sha256:24041a98e7ab5fec737fe6081c6e2c80d24ca49630d81ab51b4c61e09b4b6373
 		/>
 
 		<SchemaImport
 			namespace="code"
-			reference=urn:cdx:sha256:70c45e812f5306b69dad783ea4c84546284dfaeeba6f1342918372e385da0cea
+			reference=urn:cdx:sha256:f55db71c90dd92321f6f59683139642e85b0d60b26704c8f510159a36858ca0f
 		/>
 
 		<SchemaImport
 			namespace="figure"
-			reference=urn:cdx:sha256:eda5e8b1f99a572938c9abb04885ee27383aa0946663797779f551208737ddf7
+			reference=urn:cdx:sha256:70a0b2230fdb08fc4ef95c51455aee3f0336a179b32073c09c2e9b376fb63097
 		/>
 
 		<SchemaImport
 			namespace="list"
-			reference=urn:cdx:sha256:10cc30a2245e8480bb2564cba4c09c243f84285d5219b06a1899272917da2caa
+			reference=urn:cdx:sha256:eb0433eaaf3f24b9057ccd4ca318e2ab6deb7b7940adaeac7b023b27ecf00365
 		/>
 
 		<SchemaImport
 			namespace="relation"
-			reference=urn:cdx:sha256:3cdb9ada1d7a4543695e4da9bfef94e19368c8cb821269bd557d516b6a9f45a1
+			reference=urn:cdx:sha256:ea0075937dd3bc6685f3048091830619467f816380ee47158a504e1326344203
 		/>
 
 		<SchemaImport
 			namespace="text"
-			reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df
+			reference=urn:cdx:sha256:5818aaf21ef3dad7987216f6068689a1a67f7bbd48381e420c85706489849929
 		/>
 	</SchemaImports>
 

@@ -28,7 +28,7 @@ Defines structured revision history for specifications. Each revision entry reco
 | Trait | Value Type | Constrained | Description |
 |---|---|---|---|
 | `title` | `$Text` | -- | Optional title for the revision history section. |
-| `version` | `$Semver` | -- | Semantic version of the specification for this revision. |
+| `version` | `$Semantic Version` | -- | Semantic version of the specification for this revision. |
 | `date` | `$Text` | -- | Revision date in ISO 8601 format. |
 | `editor` | `$Text` | -- | Editor responsible for this revision. |
 | `author` | `$Text` | -- | Author of this revision. |
@@ -65,5 +65,5 @@ Defines structured revision history for specifications. Each revision entry reco
 - `affectedItem` is a reference trait pointing to any entity (Section, Requirement, etc.). No `ReferenceTargetsConcept` constraint because the target is any entity type in the specification.
 - `affectedItemLabel` complements `affectedItem` for cases where the referenced item has been removed (the reference cannot resolve, but the label preserves what was affected).
 - `Clarified` and `Reorganized` are distinct from `Modified`: clarifications don't change meaning, and reorganizations don't change substance. This distinction matters for conformance impact analysis.
-- `version` uses `$Semver` to ensure machine-parseable version strings. `date` is `$Text` because Codex lacks a native date type.
+- `version` uses `$Semantic Version` to ensure machine-parseable version strings. `date` is `$Text` because Codex lacks a native date type.
 - RevisionHistory is distinct from ISO EditionHistory (in iso-document-metadata): edition history records major ISO publication milestones; revision history records granular per-version changes.

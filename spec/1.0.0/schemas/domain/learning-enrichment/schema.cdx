@@ -9,42 +9,42 @@
 	namespace="learningEnrichment"
 	title="Learning Enrichment Schema"
 	version="1.0.0"
-	versionScheme=$Semver
+	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
 		<SchemaImport
 			namespace="admonition"
-			reference=urn:cdx:sha256:f676d06cf578a8fa377b961fcd4d8e5676f8def5ba6b298eaee92f0d3614a890
+			reference=urn:cdx:sha256:24041a98e7ab5fec737fe6081c6e2c80d24ca49630d81ab51b4c61e09b4b6373
 		/>
 
 		<SchemaImport
 			namespace="code"
-			reference=urn:cdx:sha256:70c45e812f5306b69dad783ea4c84546284dfaeeba6f1342918372e385da0cea
+			reference=urn:cdx:sha256:f55db71c90dd92321f6f59683139642e85b0d60b26704c8f510159a36858ca0f
 		/>
 
 		<SchemaImport
 			namespace="example"
-			reference=urn:cdx:sha256:59511a9721c020b957af1b021e151fb77f91f35928f14352143b51f801fc9e8f
+			reference=urn:cdx:sha256:513555d93286d052db9eb1c165fa57985faa5773e31076dd591bb8cc97569f4e
 		/>
 
 		<SchemaImport
 			namespace="figure"
-			reference=urn:cdx:sha256:eda5e8b1f99a572938c9abb04885ee27383aa0946663797779f551208737ddf7
+			reference=urn:cdx:sha256:70a0b2230fdb08fc4ef95c51455aee3f0336a179b32073c09c2e9b376fb63097
 		/>
 
 		<SchemaImport
 			namespace="list"
-			reference=urn:cdx:sha256:10cc30a2245e8480bb2564cba4c09c243f84285d5219b06a1899272917da2caa
+			reference=urn:cdx:sha256:eb0433eaaf3f24b9057ccd4ca318e2ab6deb7b7940adaeac7b023b27ecf00365
 		/>
 
 		<SchemaImport
 			namespace="section"
-			reference=urn:cdx:sha256:c0fe7d0290f053b4fec0de1c1815f20848912689c1c15abb2a83e78959a53c13
+			reference=urn:cdx:sha256:76a92ea55a4eabeb9f90ca93fd42e2cba8c91f3d4427eda87d63846a46cc3a5c
 		/>
 
 		<SchemaImport
 			namespace="text"
-			reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df
+			reference=urn:cdx:sha256:5818aaf21ef3dad7987216f6068689a1a67f7bbd48381e420c85706489849929
 		/>
 	</SchemaImports>
 

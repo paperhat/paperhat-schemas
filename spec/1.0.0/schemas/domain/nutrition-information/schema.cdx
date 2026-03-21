@@ -6,14 +6,14 @@
 	namespace="nutrition"
 	title="Nutrition Information Schema"
 	version="1.0.0"
-	versionScheme=$Semver
+	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="energymeasure" reference=urn:cdx:sha256:06e2db6ce35e820cef24f32844770be9ea62c6c2f256c7070598f10c5cb69f91 />
+		<SchemaImport namespace="energymeasure" reference=urn:cdx:sha256:e037b7171c67275c299f1d49fd1d61194cb16375e0fb18740641c325d2b5dcdf />
 
-		<SchemaImport namespace="massmeasure" reference=urn:cdx:sha256:97d990dfd254f4506ddbbee2ac3a2d2e73f99430980f41b568f7eced111b7cc7 />
+		<SchemaImport namespace="massmeasure" reference=urn:cdx:sha256:187401c21acaa33371558d67b8b5f3ff0be8dc5ece1051908ba04120c4db562c />
 
-		<SchemaImport namespace="volumemeasure" reference=urn:cdx:sha256:54cd771145ce25e43cbe318ab6e97af5457f69d4abacee7edb2366265c019f75 />
+		<SchemaImport namespace="volumemeasure" reference=urn:cdx:sha256:f95d026cd749569fc48700f7ffc9455ca784633213a6e85d1208b2d8520efe49 />
 	</SchemaImports>
 
 	<ConceptDefinitions>

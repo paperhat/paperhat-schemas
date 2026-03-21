@@ -6,17 +6,17 @@
 	namespace="terms"
 	title="Terms Of Use Schema"
 	version="1.0.0"
-	versionScheme=$Semver
+	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="docmeta" reference=urn:cdx:sha256:0ffeb450318da8f137940409b424d0c77a821386985526ee9f0a0f50bfc61f81 />
-		<SchemaImport namespace="jurisdiction" reference=urn:cdx:sha256:c420d5337b090d64b1004a8b047d34b7c400ce39fdc32f0bc0d475a523c9c519 />
-		<SchemaImport namespace="contact" reference=urn:cdx:sha256:0623b3bc48dfd1632919af1704725cc24b3e1ead90f4ce3a59117485e64335eb />
-		<SchemaImport namespace="text" reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
-		<SchemaImport namespace="list" reference=urn:cdx:sha256:10cc30a2245e8480bb2564cba4c09c243f84285d5219b06a1899272917da2caa />
-		<SchemaImport namespace="section" reference=urn:cdx:sha256:c0fe7d0290f053b4fec0de1c1815f20848912689c1c15abb2a83e78959a53c13 />
-		<SchemaImport namespace="notes" reference=urn:cdx:sha256:5169d4469cf2f181b23bfee5510652073ead5e1c6871486dba219bfb6c2b3a2b />
-		<SchemaImport namespace="lexical" reference=urn:cdx:sha256:c67c13b5ac551cb36bc2c7dacb27d4dda92eae85cfe8ad63aff3a8831ec43985 />
+		<SchemaImport namespace="docmeta" reference=urn:cdx:sha256:278b611aa10acc61150c7c511b3b1f29aa64c99d8c4d8e1f73bfe5f66aa95a08 />
+		<SchemaImport namespace="jurisdiction" reference=urn:cdx:sha256:9a811a3f0fa9e2bd1c83fcbdb296b201253dcf1216bece6972cd785865fc709c />
+		<SchemaImport namespace="contact" reference=urn:cdx:sha256:4dcf202ed45c68bb753328fa3f0983b6d7a6e0cd7db7dfc1b5629071d279bfc1 />
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:5818aaf21ef3dad7987216f6068689a1a67f7bbd48381e420c85706489849929 />
+		<SchemaImport namespace="list" reference=urn:cdx:sha256:eb0433eaaf3f24b9057ccd4ca318e2ab6deb7b7940adaeac7b023b27ecf00365 />
+		<SchemaImport namespace="section" reference=urn:cdx:sha256:76a92ea55a4eabeb9f90ca93fd42e2cba8c91f3d4427eda87d63846a46cc3a5c />
+		<SchemaImport namespace="notes" reference=urn:cdx:sha256:4958e507c62d747d5f5cbe89c577bae8cba182b0ac3518d751540841c154bf63 />
+		<SchemaImport namespace="lexical" reference=urn:cdx:sha256:fd0d2c454fd123cb0d6c0221d6b452ee2c03ef900a7819cb0e829fdd40a99bb9 />
 	</SchemaImports>
 
 	<ConceptDefinitions>

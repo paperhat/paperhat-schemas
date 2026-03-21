@@ -6,7 +6,7 @@
 	namespace="asset"
 	title="Media Asset Schema"
 	version="1.0.0"
-	versionScheme=$Semver
+	versionScheme=$SemanticVersion
 >
 	<ConceptDefinitions>
 		<ConceptDefinition

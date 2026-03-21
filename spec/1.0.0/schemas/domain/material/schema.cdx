@@ -6,16 +6,16 @@
 	namespace="material"
 	title="Material Schema"
 	version="1.0.0"
-	versionScheme=$Semver
+	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="desc" reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:9bf51d505f8fc4af7c7a97a46613509b6912d3402ef7cbf6ac0dfdf6094a43a0 />
 
-		<SchemaImport namespace="tags" reference=urn:cdx:sha256:af138b9c8bbc16117f2d8553c482253f9144721ab3a9d411992a2035e2094206 />
+		<SchemaImport namespace="tags" reference=urn:cdx:sha256:e29b72473f6c9222db43b054c3ae6cfc8c518e7d4965219f49d1ba54a5738d87 />
 
-		<SchemaImport namespace="measure" reference=urn:cdx:sha256:c39ffedc2e8321d6351ba3743c8d66abd10d51c005e259a3d01cc6334593207b />
+		<SchemaImport namespace="measure" reference=urn:cdx:sha256:e5711c77b75c981d2b628f87f0788f0ed45c2652657bc7b25501c728c50e36ab />
 
-		<SchemaImport namespace="loc" reference=urn:cdx:sha256:69ebdc66422b5962b2521ef49b174550c9b45c369ddd60c9967699566c0b16f0 />
+		<SchemaImport namespace="loc" reference=urn:cdx:sha256:4b65ec14457b81e9aa1d74a8e2cd6a1438a14c6b3a5205092965adea2eb75710 />
 	</SchemaImports>
 
 	<ConceptDefinitions>

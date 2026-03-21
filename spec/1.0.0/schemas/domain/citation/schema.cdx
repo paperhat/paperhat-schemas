@@ -6,16 +6,16 @@
 	namespace="cite"
 	title="Citation Schema"
 	version="1.0.0"
-	versionScheme=$Semver
+	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="person" reference=urn:cdx:sha256:83caafa54bd0c990f7368ed964c673b1d379a594ab038795c243d4be7c86f000 />
+		<SchemaImport namespace="person" reference=urn:cdx:sha256:7af6eaa441addb1c25c7ed87658360b433db4b02b364b62fae98b2029ab68236 />
 
-		<SchemaImport namespace="org" reference=urn:cdx:sha256:28dee680a33f91f7e2b1a4c85a16ad9088851f23d63353905284c1fcc8d99510 />
+		<SchemaImport namespace="org" reference=urn:cdx:sha256:3c0f905a597d2fbdc380ff28ac973823b17083a89f47383544df051d217e2a24 />
 
-		<SchemaImport namespace="ident" reference=urn:cdx:sha256:5fafd42cd5ebaa41ecaf7b26d4ea2be9fb9c6a6c68c56ab3c8f2483fdbe1cf28 />
+		<SchemaImport namespace="ident" reference=urn:cdx:sha256:8618dd5c8870a03d40e375bc5390cd193b356f8adfc461ac1f68de2f3e52dde5 />
 
-		<SchemaImport namespace="ref" reference=urn:cdx:sha256:fbdf30cc77a348bc8ef500d860500457f7b636aff40e073645278a873425e0ae />
+		<SchemaImport namespace="ref" reference=urn:cdx:sha256:a8f79acf2c9b632e12547fb918a474e32c72223f76156cedea74f0b29b353f62 />
 	</SchemaImports>
 
 	<ConceptDefinitions>

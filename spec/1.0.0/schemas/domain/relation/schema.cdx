@@ -6,12 +6,12 @@
 	namespace="relation"
 	title="Relation Schema"
 	version="1.0.0"
-	versionScheme=$Semver
+	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="desc" reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:9bf51d505f8fc4af7c7a97a46613509b6912d3402ef7cbf6ac0dfdf6094a43a0 />
 
-		<SchemaImport namespace="text" reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:5818aaf21ef3dad7987216f6068689a1a67f7bbd48381e420c85706489849929 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
@@ -198,7 +198,7 @@
 			name="valueType"
 		>
 			<AllowedValues>
-				<ValueIsOneOf values=[$Text, $Word, $Sentence, $Paragraph, $Character, $Boolean, $Number, $Integer, $Zero, $NegativeInteger, $NonPositiveInteger, $DecimalNumber, $ExponentialNumber, $PrecisionNumber, $Fraction, $ImaginaryNumber, $ComplexNumber, $NonNegativeInteger, $PositiveInteger, $PositiveInfinity, $NegativeInfinity, $Infinity, $RealNumber, $FiniteNumber, $FiniteRealNumber, $ExactNumber, $EnumeratedToken, $Iri, $LookupToken, $Uuid, $DomainName, $EmailAddress, $Url, $Ipa, $Regex, $Semver, $LanguageTag, $MediaType, $Slug, $RgbRed, $RgbGreen, $RgbBlue, $HslHue, $HslSaturation, $HslLightness, $HwbWhiteness, $HwbBlackness, $LabLightness, $LabA, $LabB, $LchChroma, $LchHue, $OklabLightness, $OklabA, $OklabB, $OklchChroma, $OklchHue, $CmykCyan, $CmykMagenta, $CmykYellow, $CmykKey, $Opacity, $ColorPrimitive, $NamedColor, $RgbColor, $HslColor, $HwbColor, $LabColor, $LchColor, $OklabColor, $OklchColor, $ColorSpaceColor, $ColorSpaceColorFunction, $ColorMix, $DeviceCmyk, $Color, $Year, $Month, $Week, $Day, $Weekday, $Hour, $Minute, $Second, $Timezone, $Offset, $Date, $HourMinute, $Time, $DateTime, $YearMonth, $MonthDay, $YearWeek, $YearWeekWeekday, $DateWithTimezone, $TimeWithTimezone, $DateTimeWithTimezone, $TimeWithOffset, $DateTimeWithOffset, $Instant, $Duration, $TemporalKeyword, $List, $Set, $Map, $Record, $Tuple, $Group, $Range] />
+				<ValueIsOneOf values=[$Text, $Word, $Sentence, $Paragraph, $Character, $Boolean, $Number, $Integer, $Zero, $NegativeInteger, $NonPositiveInteger, $DecimalNumber, $ExponentialNumber, $PrecisionNumber, $Fraction, $ImaginaryNumber, $ComplexNumber, $NonNegativeInteger, $PositiveInteger, $PositiveInfinity, $NegativeInfinity, $Infinity, $RealNumber, $FiniteNumber, $FiniteRealNumber, $ExactNumber, $EnumeratedToken, $Iri, $LookupToken, $Uuid, $DomainName, $EmailAddress, $Url, $Ipa, $RegularExpression, $SemanticVersion, $LanguageTag, $MediaType, $Slug, $RgbRed, $RgbGreen, $RgbBlue, $HslHue, $HslSaturation, $HslLightness, $HwbWhiteness, $HwbBlackness, $LabLightness, $LabA, $LabB, $LchChroma, $LchHue, $OklabLightness, $OklabA, $OklabB, $OklchChroma, $OklchHue, $CmykCyan, $CmykMagenta, $CmykYellow, $CmykKey, $Opacity, $ColorPrimitive, $NamedColor, $RgbColor, $HslColor, $HwbColor, $LabColor, $LchColor, $OklabColor, $OklchColor, $ColorSpaceColor, $ColorSpaceColorFunction, $ColorMix, $DeviceCmyk, $Color, $Year, $Month, $Week, $Day, $Weekday, $Hour, $Minute, $Second, $Timezone, $Offset, $Date, $HourMinute, $Time, $DateTime, $YearMonth, $MonthDay, $YearWeek, $YearWeekWeekday, $DateWithTimezone, $TimeWithTimezone, $DateTimeWithTimezone, $TimeWithOffset, $DateTimeWithOffset, $Instant, $Duration, $TemporalKeyword, $List, $Set, $Map, $Record, $Tuple, $Group, $Range] />
 			</AllowedValues>
 		</TraitDefinition>
 
@@ -209,7 +209,7 @@
 		/>
 
 		<TraitDefinition
-			defaultValueTypes=[$Text, $Word, $Sentence, $Paragraph, $Character, $Boolean, $Number, $Integer, $Zero, $NegativeInteger, $NonPositiveInteger, $DecimalNumber, $ExponentialNumber, $PrecisionNumber, $Fraction, $ImaginaryNumber, $ComplexNumber, $NonNegativeInteger, $PositiveInteger, $PositiveInfinity, $NegativeInfinity, $Infinity, $RealNumber, $FiniteNumber, $FiniteRealNumber, $ExactNumber, $EnumeratedToken, $Iri, $LookupToken, $Uuid, $DomainName, $EmailAddress, $Url, $Ipa, $Regex, $Semver, $LanguageTag, $MediaType, $Slug, $RgbRed, $RgbGreen, $RgbBlue, $HslHue, $HslSaturation, $HslLightness, $HwbWhiteness, $HwbBlackness, $LabLightness, $LabA, $LabB, $LchChroma, $LchHue, $OklabLightness, $OklabA, $OklabB, $OklchChroma, $OklchHue, $CmykCyan, $CmykMagenta, $CmykYellow, $CmykKey, $Opacity, $ColorPrimitive, $NamedColor, $RgbColor, $HslColor, $HwbColor, $LabColor, $LchColor, $OklabColor, $OklchColor, $ColorSpaceColor, $ColorSpaceColorFunction, $ColorMix, $DeviceCmyk, $Color, $Year, $Month, $Week, $Day, $Weekday, $Hour, $Minute, $Second, $Timezone, $Offset, $Date, $HourMinute, $Time, $DateTime, $YearMonth, $MonthDay, $YearWeek, $YearWeekWeekday, $DateWithTimezone, $TimeWithTimezone, $DateTimeWithTimezone, $TimeWithOffset, $DateTimeWithOffset, $Instant, $Duration, $TemporalKeyword, $List, $Set, $Map, $Record, $Tuple, $Group, $Range]
+			defaultValueTypes=[$Text, $Word, $Sentence, $Paragraph, $Character, $Boolean, $Number, $Integer, $Zero, $NegativeInteger, $NonPositiveInteger, $DecimalNumber, $ExponentialNumber, $PrecisionNumber, $Fraction, $ImaginaryNumber, $ComplexNumber, $NonNegativeInteger, $PositiveInteger, $PositiveInfinity, $NegativeInfinity, $Infinity, $RealNumber, $FiniteNumber, $FiniteRealNumber, $ExactNumber, $EnumeratedToken, $Iri, $LookupToken, $Uuid, $DomainName, $EmailAddress, $Url, $Ipa, $RegularExpression, $SemanticVersion, $LanguageTag, $MediaType, $Slug, $RgbRed, $RgbGreen, $RgbBlue, $HslHue, $HslSaturation, $HslLightness, $HwbWhiteness, $HwbBlackness, $LabLightness, $LabA, $LabB, $LchChroma, $LchHue, $OklabLightness, $OklabA, $OklabB, $OklchChroma, $OklchHue, $CmykCyan, $CmykMagenta, $CmykYellow, $CmykKey, $Opacity, $ColorPrimitive, $NamedColor, $RgbColor, $HslColor, $HwbColor, $LabColor, $LchColor, $OklabColor, $OklchColor, $ColorSpaceColor, $ColorSpaceColorFunction, $ColorMix, $DeviceCmyk, $Color, $Year, $Month, $Week, $Day, $Weekday, $Hour, $Minute, $Second, $Timezone, $Offset, $Date, $HourMinute, $Time, $DateTime, $YearMonth, $MonthDay, $YearWeek, $YearWeekWeekday, $DateWithTimezone, $TimeWithTimezone, $DateTimeWithTimezone, $TimeWithOffset, $DateTimeWithOffset, $Instant, $Duration, $TemporalKeyword, $List, $Set, $Map, $Record, $Tuple, $Group, $Range]
 			id=paperhat:domain:relation:trait:value
 			name="value"
 		/>

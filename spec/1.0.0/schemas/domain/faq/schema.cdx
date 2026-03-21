@@ -6,10 +6,10 @@
 	namespace="faq"
 	title="Frequently Asked Questions Schema"
 	version="1.0.0"
-	versionScheme=$Semver
+	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="question" reference=urn:cdx:sha256:f3c0e777dbf641db72204a55ff21394b2a9743499d567870b04b5febc95a0b7d />
+		<SchemaImport namespace="question" reference=urn:cdx:sha256:03d3d243cb749e30ff99cffb880adbeaaa7181ebe73cc18802554e279bebb850 />
 	</SchemaImports>
 
 	<ConceptDefinitions>

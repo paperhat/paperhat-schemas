@@ -6,10 +6,10 @@
 	namespace="list"
 	title="List Schema"
 	version="1.0.0"
-	versionScheme=$Semver
+	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="text" reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:5818aaf21ef3dad7987216f6068689a1a67f7bbd48381e420c85706489849929 />
 	</SchemaImports>
 
 	<ConceptDefinitions>

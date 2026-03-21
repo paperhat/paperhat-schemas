@@ -6,14 +6,14 @@
 	namespace="figure"
 	title="Figure Schema"
 	version="1.0.0"
-	versionScheme=$Semver
+	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="media" reference=urn:cdx:sha256:756650982e04bd54efb9710a756c84b04ae15db9d7b119f016264240a35b8725 />
+		<SchemaImport namespace="media" reference=urn:cdx:sha256:9678146f55f9111201029c131f10bdcd22c1eec41cb43b93dafc54a05228f15d />
 
-		<SchemaImport namespace="text" reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:5818aaf21ef3dad7987216f6068689a1a67f7bbd48381e420c85706489849929 />
 
-		<SchemaImport namespace="caption" reference=urn:cdx:sha256:d9414870c9dbfd9a59c5aa6904cd1395db48638d7e446ec80b005e4cd5e0d046 />
+		<SchemaImport namespace="caption" reference=urn:cdx:sha256:4f67566808f6a1826a304be163f186baa81349655556d7fd6eae3ea52d4c55cb />
 	</SchemaImports>
 
 	<ConceptDefinitions>

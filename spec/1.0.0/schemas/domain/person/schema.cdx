@@ -6,16 +6,16 @@
 	namespace="person"
 	title="Person Schema"
 	version="1.0.0"
-	versionScheme=$Semver
+	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="pname" reference=urn:cdx:sha256:43ee55dc78ff2c04b294272064481d98a3be7087af7cb2564c5e8a6862905394 />
+		<SchemaImport namespace="pname" reference=urn:cdx:sha256:26fe52f622e30a7601a373061d34069fce101bc1d86e3d0f040bdaaa38608b10 />
 
-		<SchemaImport namespace="contact" reference=urn:cdx:sha256:0623b3bc48dfd1632919af1704725cc24b3e1ead90f4ce3a59117485e64335eb />
+		<SchemaImport namespace="contact" reference=urn:cdx:sha256:4dcf202ed45c68bb753328fa3f0983b6d7a6e0cd7db7dfc1b5629071d279bfc1 />
 
-		<SchemaImport namespace="ident" reference=urn:cdx:sha256:5fafd42cd5ebaa41ecaf7b26d4ea2be9fb9c6a6c68c56ab3c8f2483fdbe1cf28 />
+		<SchemaImport namespace="ident" reference=urn:cdx:sha256:8618dd5c8870a03d40e375bc5390cd193b356f8adfc461ac1f68de2f3e52dde5 />
 
-		<SchemaImport namespace="loc" reference=urn:cdx:sha256:69ebdc66422b5962b2521ef49b174550c9b45c369ddd60c9967699566c0b16f0 />
+		<SchemaImport namespace="loc" reference=urn:cdx:sha256:4b65ec14457b81e9aa1d74a8e2cd6a1438a14c6b3a5205092965adea2eb75710 />
 	</SchemaImports>
 
 	<ConceptDefinitions>

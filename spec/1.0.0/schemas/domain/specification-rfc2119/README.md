@@ -32,7 +32,7 @@ Optional (imported from `specbase`):
 - `key` (`$LookupToken`) — stable lookup key
 - `requirementId` (`$LookupToken`) — stable identifier for a specific requirement
 - `deprecated` (`$Boolean`) — whether this requirement is deprecated
-- `deprecatedSince` (`$Semver`) — version at which this requirement was deprecated
+- `deprecatedSince` (`$Semantic Version`) — version at which this requirement was deprecated
 
 ## Requirement Modality
 

@@ -31,7 +31,7 @@ Required (imported from `specbase`):
 Optional (imported from `specbase`):
 
 - `deprecated` (`$Boolean`) — whether this requirement is deprecated
-- `deprecatedSince` (`$Semver`) — version at which this requirement was deprecated
+- `deprecatedSince` (`$Semantic Version`) — version at which this requirement was deprecated
 
 ## Requirement Modality
 

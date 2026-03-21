@@ -10,97 +10,97 @@
 	namespace="plan"
 	title="Planning Document Schema"
 	version="1.0.0"
-	versionScheme=$Semver
+	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
 		<SchemaImport
 			namespace="audience"
-			reference=urn:cdx:sha256:eeb4cfc2a3574d6de35e3cfa7efd3daa750ffacc91c57ca046b9d1a2da903c43
+			reference=urn:cdx:sha256:09e279c4160fcd4fe86c77f266519037f6034c859dcc797f447fec030decf0e3
 		/>
 
 		<SchemaImport
 			namespace="rubric"
-			reference=urn:cdx:sha256:b7bd2b7ec1f31ea9addb6c2d29d0069664c0256241b12d0904670b9e37baf47f
+			reference=urn:cdx:sha256:9f544377aa50b0ebdff87e31196c4ebe72e5ad86cbdadc274c2bdb6155e42973
 		/>
 
 		<SchemaImport
 			namespace="text"
-			reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df
+			reference=urn:cdx:sha256:5818aaf21ef3dad7987216f6068689a1a67f7bbd48381e420c85706489849929
 		/>
 
 		<SchemaImport
 			namespace="budget"
-			reference=urn:cdx:sha256:4e2807c139842c8b8a01bdc8d10df99d4f10d8def80553195e624ecf536cdf5c
+			reference=urn:cdx:sha256:5303fab398058f8da95f0131a8a0f07166b33bccc26fb2283a911ef63b56ca2b
 		/>
 
 		<SchemaImport
 			namespace="budgetLine"
-			reference=urn:cdx:sha256:a67d27050efaeafe93669ebb2fb3ad90ab8f2d23d4238798430662efd3503962
+			reference=urn:cdx:sha256:74eb18131c69223535ce44cd9a17f5ca4d85fbfdec034bd2eeef0bccc8c015aa
 		/>
 
 		<SchemaImport
 			namespace="deadline"
-			reference=urn:cdx:sha256:b9c5c385b701d5bdf4c40a8c6c101ce127f7bb16eb71b26e2c0c5d028c276f6e
+			reference=urn:cdx:sha256:c3c812c75788d6b6c1e3293cf030210653d12d0f233a5a9a955b8e4a1b0ff52d
 		/>
 
 		<SchemaImport
 			namespace="dependency"
-			reference=urn:cdx:sha256:dcb47e6b6b5b8a6dc598f1afffda981debac49ea8943a630487192e2315e0709
+			reference=urn:cdx:sha256:f5b3a130a2da4772db9b21c9974f55a4b2385a1c3c4a56f06408bdd3fb6b26c4
 		/>
 
 		<SchemaImport
 			namespace="desc"
-			reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641
+			reference=urn:cdx:sha256:9bf51d505f8fc4af7c7a97a46613509b6912d3402ef7cbf6ac0dfdf6094a43a0
 		/>
 
 		<SchemaImport
 			namespace="docmeta"
-			reference=urn:cdx:sha256:0ffeb450318da8f137940409b424d0c77a821386985526ee9f0a0f50bfc61f81
+			reference=urn:cdx:sha256:278b611aa10acc61150c7c511b3b1f29aa64c99d8c4d8e1f73bfe5f66aa95a08
 		/>
 
 		<SchemaImport
 			namespace="milestone"
-			reference=urn:cdx:sha256:83a4eb90527e7b53efc419633c0d49429bdffc323b040ecf50d2220f23b2ae01
+			reference=urn:cdx:sha256:66b09e9e78daf322ca01556733fe889f96032fed96c70066cf71bdaea3cda56b
 		/>
 
 		<SchemaImport
 			namespace="narrative"
-			reference=urn:cdx:sha256:1a79e517e9fb8f19f2871c39748c981465bc053ce88d04e7ebc39c1798768971
+			reference=urn:cdx:sha256:00edb47a13c59125836df34eb7c1b0a6db0b952443a83ee6f7db760389903ca1
 		/>
 
 		<SchemaImport
 			namespace="product"
-			reference=urn:cdx:sha256:6984027bd8b11d9fb42444228b3139d2ec58a3a6cd9acce564b6709174b645f2
+			reference=urn:cdx:sha256:d7f60a4c14f9c4b2d9ad2d9f4e23b8d64e259bccc7aef4d9e3b57ee2c269684f
 		/>
 
 		<SchemaImport
 			namespace="release"
-			reference=urn:cdx:sha256:66ad157b1371ca7acd8eb324a33c3a6839a72ca48fd896550c7e3c351052a4a4
+			reference=urn:cdx:sha256:fc872876f280a8d01092fa4c25369fd33abd9499fbdff252068655245c35f931
 		/>
 
 		<SchemaImport
 			namespace="section"
-			reference=urn:cdx:sha256:c0fe7d0290f053b4fec0de1c1815f20848912689c1c15abb2a83e78959a53c13
+			reference=urn:cdx:sha256:76a92ea55a4eabeb9f90ca93fd42e2cba8c91f3d4427eda87d63846a46cc3a5c
 		/>
 
 		<SchemaImport
 			namespace="series"
-			reference=urn:cdx:sha256:da07d1db83af05789adbcb6ecda9e9f52f1c879cc5ae9b6273fff96676d1b799
+			reference=urn:cdx:sha256:2358dff7b19e2eadd71c52eab401b8ddb1e1a4a1b3d3b04e62aea24a563f7f72
 		/>
 
 		<SchemaImport
 			namespace="tags"
-			reference=urn:cdx:sha256:af138b9c8bbc16117f2d8553c482253f9144721ab3a9d411992a2035e2094206
+			reference=urn:cdx:sha256:e29b72473f6c9222db43b054c3ae6cfc8c518e7d4965219f49d1ba54a5738d87
 		/>
 
 		<SchemaImport
 			namespace="temporal"
-			reference=urn:cdx:sha256:57f585f81073ed18263c65e27890ce0853e00be17efe01763a325d17c6445ce6
+			reference=urn:cdx:sha256:51152bb6f4bdfac8851d1ca9dd2e5a6775bfbab9b366841e05e51efc6fd876c0
 		/>
 
 		<SchemaImport
 			namespace="work"
-			reference=urn:cdx:sha256:7d8e5217434f3f577ec3d65a10d50846c5140722b229029517aba371c6aeda67
+			reference=urn:cdx:sha256:8728b7201c1893af53111b22cbf733ac89089783f1e8841983061561293dacf9
 		/>
 	</SchemaImports>
 

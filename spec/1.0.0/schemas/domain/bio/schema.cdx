@@ -6,16 +6,16 @@
 	namespace="bio"
 	title="Bio Schema"
 	version="1.0.0"
-	versionScheme=$Semver
+	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="docmeta" reference=urn:cdx:sha256:0ffeb450318da8f137940409b424d0c77a821386985526ee9f0a0f50bfc61f81 />
+		<SchemaImport namespace="docmeta" reference=urn:cdx:sha256:278b611aa10acc61150c7c511b3b1f29aa64c99d8c4d8e1f73bfe5f66aa95a08 />
 
-		<SchemaImport namespace="narrative" reference=urn:cdx:sha256:1a79e517e9fb8f19f2871c39748c981465bc053ce88d04e7ebc39c1798768971 />
+		<SchemaImport namespace="narrative" reference=urn:cdx:sha256:00edb47a13c59125836df34eb7c1b0a6db0b952443a83ee6f7db760389903ca1 />
 
-		<SchemaImport namespace="text" reference=urn:cdx:sha256:41dd6cc084a5a5d124cdfbfa17b4e4e640a864c52b13eb624b482c0f3d7f62df />
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:5818aaf21ef3dad7987216f6068689a1a67f7bbd48381e420c85706489849929 />
 
-		<SchemaImport namespace="notes" reference=urn:cdx:sha256:5169d4469cf2f181b23bfee5510652073ead5e1c6871486dba219bfb6c2b3a2b />
+		<SchemaImport namespace="notes" reference=urn:cdx:sha256:4958e507c62d747d5f5cbe89c577bae8cba182b0ac3518d751540841c154bf63 />
 	</SchemaImports>
 
 	<ConceptDefinitions>

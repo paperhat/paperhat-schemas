@@ -6,7 +6,7 @@
 	namespace="behavior"
 	title="Behavior Expression Schema"
 	version="1.0.0"
-	versionScheme=$Semver
+	versionScheme=$SemanticVersion
 >
 	<EnumeratedValueSets>
 		<EnumeratedValueSet

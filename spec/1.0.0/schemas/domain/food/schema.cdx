@@ -6,18 +6,18 @@
 	namespace="food"
 	title="Food Schema"
 	version="1.0.0"
-	versionScheme=$Semver
+	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="desc" reference=urn:cdx:sha256:a4b26166df726e9c0125b331fc41555d0fd1b455fb93da24b592ba5f2293c641 />
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:9bf51d505f8fc4af7c7a97a46613509b6912d3402ef7cbf6ac0dfdf6094a43a0 />
 
-		<SchemaImport namespace="nutrition" reference=urn:cdx:sha256:c61007345cffcfed0a46ceaccb06cd4349c52af0bcca2c1e5bc33636a66e9fa1 />
+		<SchemaImport namespace="nutrition" reference=urn:cdx:sha256:4bf13c758d3521e569545d4451b451a2f7c97e8f77b60da2f6dc17ce675ce63b />
 
-		<SchemaImport namespace="tags" reference=urn:cdx:sha256:af138b9c8bbc16117f2d8553c482253f9144721ab3a9d411992a2035e2094206 />
+		<SchemaImport namespace="tags" reference=urn:cdx:sha256:e29b72473f6c9222db43b054c3ae6cfc8c518e7d4965219f49d1ba54a5738d87 />
 
-		<SchemaImport namespace="loc" reference=urn:cdx:sha256:69ebdc66422b5962b2521ef49b174550c9b45c369ddd60c9967699566c0b16f0 />
+		<SchemaImport namespace="loc" reference=urn:cdx:sha256:4b65ec14457b81e9aa1d74a8e2cd6a1438a14c6b3a5205092965adea2eb75710 />
 
-		<SchemaImport namespace="sensory" reference=urn:cdx:sha256:9356c072581fa0447bfdd5bb98dc49acf89520c8ef1c4d069dd3aa1e012dcfd4 />
+		<SchemaImport namespace="sensory" reference=urn:cdx:sha256:b678352a6d273e29a49626ce6a18229a42eadd2d812dab8361635314b4a21f11 />
 	</SchemaImports>
 
 	<ConceptDefinitions>

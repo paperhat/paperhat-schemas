@@ -1,0 +1,215 @@
+<PrismProject
+	id=urn:paperhat:example:prism-project:paperhat-brand-system
+	prismProjectStatus=$Active
+	title="Paperhat Brand System"
+>
+	<desc:Description bodyMode=$content>
+		Primary Prism project authority for Paperhat brand colors, token publication, and governance review.
+	</desc:Description>
+
+	<project:Project
+		id=urn:paperhat:example:project:paperhat-brand-system
+		name="Paperhat Brand System"
+		projectKind=$DesignSystem
+		projectStatus=$Active
+		repositoryUrl=url("https://github.com/paperhat/brand-system")
+	/>
+
+	<SourceReference
+		id=urn:paperhat:example:source-reference:figma-library
+		key=~figmaLibrary
+		label="Figma Library"
+		sourceKind=$DesignSource
+		sourceLocator=https://www.figma.com/file/paperhat-brand-library
+		sourceStatus=$Active
+	>
+		<desc:Description bodyMode=$content>
+			Primary upstream design-library source used for Prism review and synchronization.
+		</desc:Description>
+	</SourceReference>
+
+	<colorgovernance:ColorSystem
+		colorSystemStatus=$Active
+		id=urn:paperhat:example:color-system:paperhat-core
+		name="Paperhat Core Color System"
+	>
+		<desc:Description bodyMode=$content>
+			The primary governed color system for Paperhat products and publications.
+		</desc:Description>
+
+		<colorgovernance:SemanticRole
+			id=urn:paperhat:example:semantic-role:brand
+			key=~brand
+			label="Brand"
+			roleStatus=$Active
+			roleType=$Brand
+		/>
+
+		<colorgovernance:SemanticRole
+			id=urn:paperhat:example:semantic-role:surface
+			key=~surface
+			label="Surface"
+			roleStatus=$Active
+			roleType=$Surface
+		/>
+
+		<colorgovernance:SemanticRole
+			id=urn:paperhat:example:semantic-role:text
+			key=~text
+			label="Text"
+			roleStatus=$Active
+			roleType=$Text
+		/>
+
+		<colorgovernance:Palette
+			id=urn:paperhat:example:palette:core
+			name="Core Palette"
+			paletteKind=$Brand
+			paletteStatus=$Active
+		>
+			<colorgovernance:PaletteMember
+				colorValue=#0b1f33
+				id=urn:paperhat:example:palette-member:core-ink
+				key=~coreInk
+				label="Core Ink"
+				paletteMemberStatus=$Active
+			/>
+
+			<colorgovernance:PaletteMember
+				colorValue=#f4efe6
+				id=urn:paperhat:example:palette-member:core-paper
+				key=~corePaper
+				label="Core Paper"
+				paletteMemberStatus=$Active
+			/>
+
+			<colorgovernance:PaletteMember
+				colorValue=#cc5500
+				id=urn:paperhat:example:palette-member:core-signal
+				key=~coreSignal
+				label="Core Signal"
+				paletteMemberStatus=$Active
+			/>
+		</colorgovernance:Palette>
+
+		<colorgovernance:TokenSet
+			id=urn:paperhat:example:token-set:css
+			name="CSS Tokens"
+			publicationIntent=$Css
+			tokenSetStatus=$Active
+		>
+			<colorgovernance:Token
+				colorValue=#0b1f33
+				id=urn:paperhat:example:token:surface-background
+				key=~surfaceBackground
+				label="Surface Background"
+				semanticRole=urn:paperhat:example:semantic-role:surface
+				tokenKind=$Background
+				tokenStatus=$Active
+			/>
+
+			<colorgovernance:Token
+				colorValue=#f4efe6
+				id=urn:paperhat:example:token:text-primary
+				key=~textPrimary
+				label="Text Primary"
+				semanticRole=urn:paperhat:example:semantic-role:text
+				tokenKind=$Foreground
+				tokenStatus=$Active
+			/>
+
+			<colorgovernance:Token
+				colorValue=#cc5500
+				id=urn:paperhat:example:token:brand-accent
+				key=~brandAccent
+				label="Brand Accent"
+				semanticRole=urn:paperhat:example:semantic-role:brand
+				tokenKind=$Accent
+				tokenStatus=$Active
+			/>
+		</colorgovernance:TokenSet>
+	</colorgovernance:ColorSystem>
+
+	<colorpolicy:AccessibilityPolicy
+		accessibilityPolicyStatus=$Active
+		complianceStandard=$Wcag22AA
+		contrastComputationMode=$WcagRelativeLuminance
+		id=urn:paperhat:example:accessibility-policy:core
+		name="Core Accessibility Policy"
+		scopeLevel=$TokenSet
+	>
+		<colorpolicy:ContrastRequirement
+			backgroundRoleType=$Surface
+			contrastContext=$NormalText
+			contrastRequirementStatus=$Active
+			foregroundRoleType=$Text
+			id=urn:paperhat:example:contrast-requirement:text-on-surface
+			key=~textOnSurface
+			label="Text on Surface"
+			minimumContrastRatio=4.5
+		/>
+	</colorpolicy:AccessibilityPolicy>
+
+	<colorpolicy:ProofPolicy
+		id=urn:paperhat:example:proof-policy:screen-and-print
+		name="Screen and Print Proof Policy"
+		proofPolicyStatus=$Active
+		scopeLevel=$Palette
+	>
+		<colorpolicy:ProofTarget
+			gamutMappingMode=$Perceptual
+			id=urn:paperhat:example:proof-target:coated-sheet
+			key=~coatedSheet
+			label="Coated Sheet"
+			proofColorSpace=$Cmyk
+			proofComparisonMode=$SideBySide
+			proofTargetStatus=$Active
+			renderingIntent=$RelativeColorimetric
+			targetMedium=$PrintCoated
+			toleranceDeltaE=2
+		/>
+
+		<colorpolicy:ProofTarget
+			gamutMappingMode=$None
+			id=urn:paperhat:example:proof-target:screen-preview
+			key=~screenPreview
+			label="Screen Preview"
+			proofColorSpace=$Srgb
+			proofComparisonMode=$Toggle
+			proofTargetStatus=$Active
+			renderingIntent=$Perceptual
+			targetMedium=$DisplaySrgb
+			toleranceDeltaE=1
+		/>
+	</colorpolicy:ProofPolicy>
+
+	<GovernancePack
+		governancePackStatus=$Active
+		id=urn:paperhat:example:governance-pack:core
+		name="Core Governance"
+	>
+		<PublicationScope
+			id=urn:paperhat:example:publication-scope:css
+			key=~cssScope
+			label="CSS Publication Scope"
+			publicationIntent=$Css
+			publicationScopeStatus=$Active
+			scopeLevel=$TokenSet
+			targetMedium=$DisplaySrgb
+		>
+			<ref:Reference target=urn:paperhat:example:token-set:css />
+		</PublicationScope>
+
+		<ReviewDisposition
+			approvalState=$Approved
+			dispositionKind=$AccessibilityReview
+			id=urn:paperhat:example:review-disposition:core-accessibility
+			key=~coreAccessibilityReview
+			label="Core Accessibility Review"
+			reviewDate=date(1 april 2026)
+			reviewDispositionStatus=$Recorded
+		>
+			<ref:Reference target=urn:paperhat:example:accessibility-policy:core />
+		</ReviewDisposition>
+	</GovernancePack>
+</PrismProject>

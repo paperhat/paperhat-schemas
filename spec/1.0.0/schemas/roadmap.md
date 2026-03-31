@@ -765,9 +765,9 @@ No Stage 11 package defines view-shaped, pane-shaped, or foundry-shaped structur
 
 ### Stage 11 Checklist
 
-- [ ] `paperhat-color-governance` — author 6 artifacts
-- [ ] `paperhat-color-policy` — author 6 artifacts
-- [ ] `paperhat-prism-project` — author 6 artifacts
+- [x] `paperhat-color-governance` — author 6 artifacts
+- [x] `paperhat-color-policy` — author 6 artifacts
+- [x] `paperhat-prism-project` — author 6 artifacts
 - [ ] `paperhat-prism-result-bundle` — author 6 artifacts
 - [x] ~~paperhat-color-audit~~ — rejected
 - [x] ~~paperhat-color-proof~~ — rejected

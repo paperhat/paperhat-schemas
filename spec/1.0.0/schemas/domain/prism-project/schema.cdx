@@ -1,0 +1,288 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Root Prism project-document composer. Defines PrismProject assembly, project-scoped source references, governance packs, review dispositions, and publication scopes above color-governance and color-policy packages."
+	id=paperhat:domain:prism-project
+	namespace="prismproject"
+	title="Prism Project Schema"
+	version="1.0.0"
+	versionScheme=$SemanticVersion
+>
+	<SchemaImports>
+		<SchemaImport namespace="colorgovernance" reference=urn:cdx:sha256:4cbefb9340d46f26e6777cd896e2284cc716901e1bf5beb00a2e3501150ca391 />
+
+		<SchemaImport namespace="colorpolicy" reference=urn:cdx:sha256:1743dd0a4f99ac7f19c1b3a541802c8bca6b80401b45c82a83df34a8629748c5 />
+
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:9bf51d505f8fc4af7c7a97a46613509b6912d3402ef7cbf6ac0dfdf6094a43a0 />
+
+		<SchemaImport namespace="docmeta" reference=urn:cdx:sha256:278b611aa10acc61150c7c511b3b1f29aa64c99d8c4d8e1f73bfe5f66aa95a08 />
+
+		<SchemaImport namespace="project" reference=urn:cdx:sha256:5b5b0e5151a05675f39bdaf4154fc5076c83185fce972f195f7b276daeadf3e8 />
+
+		<SchemaImport namespace="ref" reference=urn:cdx:sha256:a8f79acf2c9b632e12547fb918a474e32c72223f76156cedea74f0b29b353f62 />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			defaultLabelSource="title"
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:prism-project:PrismProject
+			name="PrismProject"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="title" />
+
+				<AllowsTrait name="prismProjectStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
+
+				<AllowsChildConcept conceptSelector="docmeta:DocumentMetadata" max=1 />
+
+				<AllowsChildConcept conceptSelector="project:Project" max=1 />
+
+				<RequiresChildConcept conceptSelector="colorgovernance:ColorSystem" min=1 />
+
+				<AllowsChildConcept conceptSelector="colorpolicy:AccessibilityPolicy" />
+
+				<AllowsChildConcept conceptSelector="colorpolicy:ProofPolicy" />
+
+				<AllowsChildConcept conceptSelector="SourceReference" />
+
+				<AllowsChildConcept conceptSelector="GovernancePack" max=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:prism-project:GovernancePack
+			name="GovernancePack"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<AllowsTrait name="governancePackStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
+
+				<RequiresChildConcept conceptSelector="PublicationScope" min=1 />
+
+				<AllowsChildConcept conceptSelector="ReviewDisposition" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:prism-project:SourceReference
+			name="SourceReference"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="sourceKind" />
+
+				<RequiresTrait name="sourceLocator" />
+
+				<AllowsTrait name="label" />
+
+				<AllowsTrait name="sourceStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:prism-project:ReviewDisposition
+			name="ReviewDisposition"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="dispositionKind" />
+
+				<RequiresTrait name="approvalState" />
+
+				<AllowsTrait name="label" />
+
+				<AllowsTrait name="reviewDate" />
+
+				<AllowsTrait name="reviewDispositionStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
+
+				<RequiresChildConcept conceptSelector="ref:Reference" max=1 min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:prism-project:PublicationScope
+			name="PublicationScope"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="scopeLevel" />
+
+				<RequiresTrait name="publicationIntent" />
+
+				<AllowsTrait name="label" />
+
+				<AllowsTrait name="targetMedium" />
+
+				<AllowsTrait name="publicationScopeStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
+
+				<RequiresChildConcept conceptSelector="ref:Reference" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:prism-project:trait:title
+			name="title"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:prism-project:trait:prismProjectStatus
+			name="prismProjectStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:prism-project:trait:name
+			name="name"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:prism-project:trait:governancePackStatus
+			name="governancePackStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:prism-project:trait:key
+			name="key"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:prism-project:trait:label
+			name="label"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:prism-project:trait:sourceKind
+			name="sourceKind"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:prism-project:trait:sourceLocator
+			name="sourceLocator"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:prism-project:trait:sourceStatus
+			name="sourceStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:prism-project:trait:dispositionKind
+			name="dispositionKind"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:prism-project:trait:approvalState
+			name="approvalState"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Date
+			id=paperhat:domain:prism-project:trait:reviewDate
+			name="reviewDate"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:prism-project:trait:reviewDispositionStatus
+			name="reviewDispositionStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:prism-project:trait:scopeLevel
+			name="scopeLevel"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:prism-project:trait:publicationIntent
+			name="publicationIntent"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:prism-project:trait:targetMedium
+			name="targetMedium"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:prism-project:trait:publicationScopeStatus
+			name="publicationScopeStatus"
+		/>
+	</TraitDefinitions>
+</Schema>

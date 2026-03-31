@@ -1,0 +1,83 @@
+<LocalizationBundle
+	schema=paperhat:domain:prism-project
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="PrismProject" label="Prism Project" labelOther="Prism Projects" />
+
+	<ConceptLocalization identifier="GovernancePack" label="Governance Pack" labelOther="Governance Packs" />
+
+	<ConceptLocalization identifier="SourceReference" label="Source Reference" labelOther="Source References" />
+
+	<ConceptLocalization identifier="ReviewDisposition" label="Review Disposition" labelOther="Review Dispositions" />
+
+	<ConceptLocalization identifier="PublicationScope" label="Publication Scope" labelOther="Publication Scopes" />
+
+	<TraitLocalization identifier="title" label="Title" labelOther="Titles">
+		Human-readable project title.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="prismProjectStatus" label="Prism Project Status" labelOther="Prism Project Statuses">
+		Lifecycle or governance status for a Prism project.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		Human-readable governance-pack name.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="governancePackStatus" label="Governance Pack Status" labelOther="Governance Pack Statuses">
+		Lifecycle or governance status for a governance pack.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		Stable document-scoped lookup key.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="label" label="Label" labelOther="Labels">
+		Human-readable display label.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="sourceKind" label="Source Kind" labelOther="Source Kinds">
+		Open classification for a source reference.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="sourceLocator" label="Source Locator" labelOther="Source Locators">
+		External IRI for a source reference.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="sourceStatus" label="Source Status" labelOther="Source Statuses">
+		Lifecycle or governance status for a source reference.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="dispositionKind" label="Disposition Kind" labelOther="Disposition Kinds">
+		Open classification for a review disposition.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="approvalState" label="Approval State" labelOther="Approval States">
+		Governance approval state for a review disposition.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="reviewDate" label="Review Date" labelOther="Review Dates">
+		Date on which a review disposition was recorded.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="reviewDispositionStatus" label="Review Disposition Status" labelOther="Review Disposition Statuses">
+		Lifecycle or governance status for a review disposition.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="scopeLevel" label="Scope Level" labelOther="Scope Levels">
+		Intended publication scope level.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="publicationIntent" label="Publication Intent" labelOther="Publication Intents">
+		Intention for publication or export of the targeted entities.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="targetMedium" label="Target Medium" labelOther="Target Media">
+		Declared target medium for a publication scope.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="publicationScopeStatus" label="Publication Scope Status" labelOther="Publication Scope Statuses">
+		Lifecycle or governance status for a publication scope.
+	</TraitLocalization>
+</LocalizationBundle>

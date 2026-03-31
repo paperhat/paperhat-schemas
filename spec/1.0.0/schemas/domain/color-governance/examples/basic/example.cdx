@@ -1,0 +1,105 @@
+<ColorSystem
+	colorSystemStatus=$Active
+	id=urn:paperhat:example:color-system:paperhat-core
+	name="Paperhat Core Color System"
+>
+	<desc:Description bodyMode=$content>
+		The primary governed color system for Paperhat products and publications.
+	</desc:Description>
+
+	<SemanticRole
+		id=urn:paperhat:example:semantic-role:brand
+		key=~brand
+		label="Brand"
+		roleStatus=$Active
+		roleType=$Brand
+	>
+		<desc:Description bodyMode=$content>
+			Brand-signifying color role for identity-bearing surfaces and accents.
+		</desc:Description>
+	</SemanticRole>
+
+	<SemanticRole
+		id=urn:paperhat:example:semantic-role:surface
+		key=~surface
+		label="Surface"
+		roleStatus=$Active
+		roleType=$Surface
+	/>
+
+	<SemanticRole
+		id=urn:paperhat:example:semantic-role:text
+		key=~text
+		label="Text"
+		roleStatus=$Active
+		roleType=$Text
+	/>
+
+	<Palette
+		id=urn:paperhat:example:palette:core
+		name="Core Palette"
+		paletteKind=$Brand
+		paletteStatus=$Active
+	>
+		<PaletteMember
+			colorValue=#0b1f33
+			id=urn:paperhat:example:palette-member:core-ink
+			key=~coreInk
+			label="Core Ink"
+			paletteMemberStatus=$Active
+		/>
+
+		<PaletteMember
+			colorValue=#f4efe6
+			id=urn:paperhat:example:palette-member:core-paper
+			key=~corePaper
+			label="Core Paper"
+			paletteMemberStatus=$Active
+		/>
+
+		<PaletteMember
+			colorValue=#cc5500
+			id=urn:paperhat:example:palette-member:core-signal
+			key=~coreSignal
+			label="Core Signal"
+			paletteMemberStatus=$Active
+		/>
+	</Palette>
+
+	<TokenSet
+		id=urn:paperhat:example:token-set:css
+		name="CSS Tokens"
+		publicationIntent=$Css
+		tokenSetStatus=$Active
+	>
+		<Token
+			colorValue=#0b1f33
+			id=urn:paperhat:example:token:surface-background
+			key=~surfaceBackground
+			label="Surface Background"
+			semanticRole=urn:paperhat:example:semantic-role:surface
+			tokenKind=$Background
+			tokenStatus=$Active
+		/>
+
+		<Token
+			colorValue=#f4efe6
+			id=urn:paperhat:example:token:text-primary
+			key=~textPrimary
+			label="Text Primary"
+			semanticRole=urn:paperhat:example:semantic-role:text
+			tokenKind=$Foreground
+			tokenStatus=$Active
+		/>
+
+		<Token
+			colorValue=#cc5500
+			id=urn:paperhat:example:token:brand-accent
+			key=~brandAccent
+			label="Brand Accent"
+			semanticRole=urn:paperhat:example:semantic-role:brand
+			tokenKind=$Accent
+			tokenStatus=$Active
+		/>
+	</TokenSet>
+</ColorSystem>

@@ -19,6 +19,8 @@
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-citation" packagePath="spec/1.0.0/schemas/domain/citation" />
 
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-color-governance" packagePath="spec/1.0.0/schemas/domain/color-governance" />
+
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-clause" packagePath="spec/1.0.0/schemas/domain/clause" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-code" packagePath="spec/1.0.0/schemas/domain/code" />

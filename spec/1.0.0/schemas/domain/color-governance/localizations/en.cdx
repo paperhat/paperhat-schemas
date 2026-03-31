@@ -1,0 +1,85 @@
+<LocalizationBundle
+	schema=paperhat:domain:color-governance
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="ColorSystem" label="Color System" labelOther="Color Systems" />
+
+	<ConceptLocalization identifier="Palette" label="Palette" labelOther="Palettes" />
+
+	<ConceptLocalization identifier="PaletteMember" label="Palette Member" labelOther="Palette Members" />
+
+	<ConceptLocalization identifier="TokenSet" label="Token Set" labelOther="Token Sets" />
+
+	<ConceptLocalization identifier="Token" label="Token" labelOther="Tokens" />
+
+	<ConceptLocalization identifier="SemanticRole" label="Semantic Role" labelOther="Semantic Roles" />
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		Human-readable name for the governed object.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="colorSystemKind" label="Color System Kind" labelOther="Color System Kinds">
+		Open classification for a color system.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="colorSystemStatus" label="Color System Status" labelOther="Color System Statuses">
+		Lifecycle or governance status for a color system.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="paletteKind" label="Palette Kind" labelOther="Palette Kinds">
+		Open classification for a palette.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="paletteStatus" label="Palette Status" labelOther="Palette Statuses">
+		Lifecycle or governance status for a palette.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		Stable document-scoped lookup key.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="label" label="Label" labelOther="Labels">
+		Human-readable display label.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="colorValue" label="Color Value" labelOther="Color Values">
+		Retained substrate color value.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="paletteMemberStatus" label="Palette Member Status" labelOther="Palette Member Statuses">
+		Lifecycle or governance status for a palette member.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="publicationIntent" label="Publication Intent" labelOther="Publication Intents">
+		Publication-target intent for a token set or token.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="tokenSetStatus" label="Token Set Status" labelOther="Token Set Statuses">
+		Lifecycle or governance status for a token set.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="semanticRole" label="Semantic Role" labelOther="Semantic Roles">
+		Reference to the governed semantic role for a token.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="tokenKind" label="Token Kind" labelOther="Token Kinds">
+		Open classification for a token.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="tokenStatus" label="Token Status" labelOther="Token Statuses">
+		Lifecycle or governance status for a token.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="roleType" label="Role Type" labelOther="Role Types">
+		Base semantic role type.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="parentRole" label="Parent Role" labelOther="Parent Roles">
+		Optional reference to a parent semantic role.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="roleStatus" label="Role Status" labelOther="Role Statuses">
+		Lifecycle or governance status for a semantic role.
+	</TraitLocalization>
+</LocalizationBundle>

@@ -1,0 +1,17 @@
+[A governed color system. name is required. Include at least one Palette, at least one SemanticRole, and at least one PaletteMember inside each Palette.]
+<ColorSystem id=urn:paperhat:example:color-system:example name="Color System Name">
+	<SemanticRole id=urn:paperhat:example:semantic-role:surface key=~surface roleType=$Surface />
+
+	<Palette id=urn:paperhat:example:palette:core name="Palette Name">
+		<PaletteMember colorValue=#000000 id=urn:paperhat:example:palette-member:core-1 key=~core1 />
+	</Palette>
+
+	<TokenSet id=urn:paperhat:example:token-set:css name="Token Set Name">
+		<Token
+			colorValue=#000000
+			id=urn:paperhat:example:token:text-primary
+			key=~textPrimary
+			semanticRole=urn:paperhat:example:semantic-role:surface
+		/>
+	</TokenSet>
+</ColorSystem>

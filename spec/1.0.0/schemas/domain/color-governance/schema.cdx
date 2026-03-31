@@ -1,0 +1,388 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Deterministic color-governance primitives for Prism. Defines color systems, palettes, palette members, token sets, tokens, and semantic roles above retained substrate color values."
+	id=paperhat:domain:color-governance
+	namespace="colorgovernance"
+	title="Color Governance Schema"
+	version="1.0.0"
+	versionScheme=$SemanticVersion
+>
+	<SchemaImports>
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:9bf51d505f8fc4af7c7a97a46613509b6912d3402ef7cbf6ac0dfdf6094a43a0 />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:color-governance:ColorSystem
+			name="ColorSystem"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<AllowsTrait name="colorSystemKind" />
+
+				<AllowsTrait name="colorSystemStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+
+				<RequiresChildConcept conceptSelector="Palette" min=1 />
+
+				<RequiresChildConcept conceptSelector="SemanticRole" min=1 />
+
+				<AllowsChildConcept conceptSelector="TokenSet" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:color-governance:Palette
+			name="Palette"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<AllowsTrait name="paletteKind" />
+
+				<AllowsTrait name="paletteStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+
+				<RequiresChildConcept conceptSelector="PaletteMember" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:color-governance:PaletteMember
+			name="PaletteMember"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="colorValue" />
+
+				<AllowsTrait name="label" />
+
+				<AllowsTrait name="paletteMemberStatus" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:color-governance:TokenSet
+			name="TokenSet"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<AllowsTrait name="publicationIntent" />
+
+				<AllowsTrait name="tokenSetStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+
+				<RequiresChildConcept conceptSelector="Token" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:color-governance:Token
+			name="Token"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="colorValue" />
+
+				<RequiresTrait name="semanticRole" />
+
+				<AllowsTrait name="label" />
+
+				<AllowsTrait name="tokenKind" />
+
+				<AllowsTrait name="publicationIntent" />
+
+				<AllowsTrait name="tokenStatus" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:color-governance:SemanticRole
+			name="SemanticRole"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="roleType" />
+
+				<AllowsTrait name="label" />
+
+				<AllowsTrait name="parentRole" />
+
+				<AllowsTrait name="roleStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+			</ChildRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:color-governance:trait:name
+			name="name"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-governance:trait:colorSystemKind
+			name="colorSystemKind"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-governance:trait:colorSystemStatus
+			name="colorSystemStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-governance:trait:paletteKind
+			name="paletteKind"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-governance:trait:paletteStatus
+			name="paletteStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:color-governance:trait:key
+			name="key"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:color-governance:trait:label
+			name="label"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Color
+			id=paperhat:domain:color-governance:trait:colorValue
+			name="colorValue"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-governance:trait:paletteMemberStatus
+			name="paletteMemberStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-governance:trait:publicationIntent
+			name="publicationIntent"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-governance:trait:tokenSetStatus
+			name="tokenSetStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:color-governance:trait:semanticRole
+			isReferenceTrait=true
+			name="semanticRole"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-governance:trait:tokenKind
+			name="tokenKind"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-governance:trait:tokenStatus
+			name="tokenStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-governance:trait:roleType
+			name="roleType"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:color-governance:trait:parentRole
+			isReferenceTrait=true
+			name="parentRole"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-governance:trait:roleStatus
+			name="roleStatus"
+		/>
+	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=paperhat:domain:color-governance:token-reference-trait-allowed
+			title="Token allows only semanticRole as a reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Token" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTraitAllowed traitName="semanticRole" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:color-governance:token-reference-singleton
+			title="Token must declare at most one reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Token" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceSingleton />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:color-governance:token-semantic-role-target-type
+			title="Token semanticRole must target SemanticRole"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Token" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="SemanticRole" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:color-governance:token-semantic-role-must-resolve
+			title="Token semanticRole must resolve"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Token" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceMustResolve />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:color-governance:semantic-role-reference-trait-allowed
+			title="SemanticRole allows only parentRole as a reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="SemanticRole" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTraitAllowed traitName="parentRole" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:color-governance:semantic-role-reference-singleton
+			title="SemanticRole must declare at most one reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="SemanticRole" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceSingleton />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:color-governance:semantic-role-parent-role-target-type
+			title="SemanticRole parentRole must target SemanticRole"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="SemanticRole" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="SemanticRole" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:color-governance:semantic-role-parent-role-must-resolve
+			title="SemanticRole parentRole must resolve"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="SemanticRole" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceMustResolve />
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

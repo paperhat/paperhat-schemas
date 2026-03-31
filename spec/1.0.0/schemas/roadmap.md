@@ -734,6 +734,62 @@ None.
 
 ---
 
+## Stage 11. Prism / Color Governance Application Schema Family
+
+### Purpose
+
+Represent Codex-native Prism project repositories and Prism result bundles as semantic color-governance artifacts.
+
+This stage does not define retained color value semantics. `paperhat-color` owns retained color value semantics. This stage defines the authored document shapes that Prism, CLI surfaces, Lexis, and foundries consume above the Color substrate and extension-family crates.
+
+### Proposed Package Set — Triage Results
+
+| Proposed Package | Decision | Boundary |
+|---|---|---|
+| `paperhat-color-governance` | CREATED | Durable authored color-governance truth inside Prism project documents: `ColorSystem`, `Palette`, `PaletteMember`, `TokenSet`, `Token`, `SemanticRoleAssignment`, variant families, and publication-intent attachments. Owns authored organization of retained colors. Does not own derived audit findings, proof comparisons, or publication bundles. |
+| `paperhat-color-policy` | CREATED | Durable authored policy objects referenced by Prism project documents: `AccessibilityPolicy`, `ContrastPolicy`, color-vision-deficiency simulation policy, `ProofPolicy`, `GamutMappingPolicy`, and governance approval rules. Owns thresholds, mapping strategy, and approval logic. Does not own derived findings or rendered outputs. |
+| `paperhat-prism-project` | CREATED | Root Prism project-document composer. Imports generic Paperhat packages plus `paperhat-color-governance` and `paperhat-color-policy`. Owns `PrismProject`, project-scoped source references, review dispositions that are durable semantic governance state, and top-level publication scopes. Does not duplicate inner color-governance or policy concept definitions. |
+| `paperhat-prism-result-bundle` | CREATED | Root Prism result-bundle package. Owns derived workflow outputs: accessibility audit bundles, proof bundles, export bundles, semantic-change bundles, and governance bundles with provenance snapshot, policy snapshot, and source references. Result bundles are not project authority. |
+| `paperhat-color-audit` | REJECTED | Audit findings, repair suggestions, and regression entries belong inside Prism result bundles. A standalone audit package splits one workflow family across two authorities with no semantic gain. |
+| `paperhat-color-proof` | REJECTED | Authored proof policy belongs in `paperhat-color-policy`. Derived proof outputs belong in `paperhat-prism-result-bundle`. A separate proof package cuts one coherent proof workflow in half. |
+| `paperhat-color-role-graph` | REJECTED | Role graph and role assignment are inseparable from color-governance truth and belong inside `paperhat-color-governance`. |
+
+### Package Boundary Rule
+
+The Stage 11 package family follows one hard boundary:
+
+- authored, durable semantic truth belongs in `paperhat-color-governance`, `paperhat-color-policy`, and `paperhat-prism-project`
+- derived workflow outputs belong in `paperhat-prism-result-bundle`
+
+No Stage 11 package defines view-shaped, pane-shaped, or foundry-shaped structures as primary truth.
+
+### Stage 11 Checklist
+
+- [ ] `paperhat-color-governance` — author 6 artifacts
+- [ ] `paperhat-color-policy` — author 6 artifacts
+- [ ] `paperhat-prism-project` — author 6 artifacts
+- [ ] `paperhat-prism-result-bundle` — author 6 artifacts
+- [x] ~~paperhat-color-audit~~ — rejected
+- [x] ~~paperhat-color-proof~~ — rejected
+- [x] ~~paperhat-color-role-graph~~ — rejected
+- [ ] Gate: Prism project documents and Prism result bundles validate as external schema packages in `schemas/paperhat-schemas`, and `prism-spec` references those packages rather than redefining them inline.
+
+### Dependencies
+
+* Stage 1 foundational vocabulary
+* Stage 5 policy / governance / rule schema family
+* Stage 9 publishing / media asset schema family
+
+### First Paperhat Examples
+
+* a brand palette project with semantic roles and accessibility policy
+* an imported design-token set under explicit contrast and proof policy
+* a cross-medium proof bundle for screen and print targets
+* a semantic change bundle with role drift and contrast regression
+* a governance bundle with approval outcome and policy snapshot
+
+---
+
 # Recommended Dependency Order
 
 1. **Foundational vocabulary** (Stage 1)
@@ -741,11 +797,12 @@ None.
 3. **White Paper / Article / Publication** (Stage 3)
 4. **Organization / Governance structure** (Stage 4)
 5. **Policy / Governance / Rules** (Stage 5)
-6. **Product / Service / Offering** (Stage 6)
-7. **Documentation / Guide / Procedure** (Stage 7)
-8. **Contract / Agreement** (Stage 8)
-9. **Publishing / Book / Media asset** (Stage 9)
-10. **Training / Learning linkage** (Stage 10)
+6. **Prism / Color Governance application schemas** (Stage 11)
+7. **Product / Service / Offering** (Stage 6)
+8. **Documentation / Guide / Procedure** (Stage 7)
+9. **Contract / Agreement** (Stage 8)
+10. **Publishing / Book / Media asset** (Stage 9)
+11. **Training / Learning linkage** (Stage 10)
 
 ---
 
@@ -758,6 +815,7 @@ None.
 * white paper / publication (Stage 3)
 * organization (Stage 4)
 * policy / governance (Stage 5)
+* Prism / color governance application schemas (Stage 11)
 
 These are essential for Paperhat to explain and govern itself.
 
@@ -782,7 +840,7 @@ These are strategically important but depend on earlier coherence.
 
 ## Domain Packages
 
-All 79 committed domain packages are complete (6/6 artifacts). No domain package gaps remain.
+All currently committed domain packages are complete (6/6 artifacts). The planned Prism / color governance application schema family in Stage 11 is not authored yet.
 
 ## Vocabulary Packages
 

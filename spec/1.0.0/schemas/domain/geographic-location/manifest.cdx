@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="2d699efab780b585033f385263d99511b9bfbfd592e1fa5eb0b6f1031a64a039"
+	closureHash="d8c5bbcd3a7733c12438c3c7bc7e1447b2b71e54c6991d490b529ca2da7e8c13"
 	copyright="Copyright 2026 Paperhat"
 	description="A precise geographic position expressed as latitude, longitude, and optional elevation."
 	license="Apache-2.0"

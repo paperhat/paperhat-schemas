@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="2eb2b5d97ed53c299494cd26dbbbf3dd3a8cdb6edc844d1a7892d1c76c0baec7"
+	closureHash="b407bd84b9fc980a1e16353952d2dd6dfd3a1f22889aed346f502dc373df90bc"
 	copyright="Copyright 2026 Paperhat"
 	description="A named binding agreement between parties — a software license, support agreement, consulting contract, partnership memorandum, or other commercial/legal commitment."
 	license="Apache-2.0"
@@ -12,7 +12,7 @@
 >
 	<PackageDependency
 		packageName="paperhat-jurisdiction"
-		closureHash="d41e824916e78824e2092576e198069aa55695ec5a74ade740ab35a0aeacad10"
+		closureHash="9de7d8d2f89e256883d91272b645c605af66ac2928b0fcd83b6d6dddb5b41e1e"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

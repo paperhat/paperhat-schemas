@@ -1,6 +1,6 @@
 <LexisRepositoryManifest
 	author="Paperhat"
-	closureHash="968a4478422ea9a016c6f32ef5749fae1847771533a76daddc029b417f5f7828"
+	closureHash="b833958281a0893439de577019f567567ba93af362c14f3da926422ec7aa811d"
 	copyright="Copyright 2026 Paperhat"
 	description="Paperhat schema repository. Contains universal schema packages, behavior definitions, and reference vocabularies consumed by Paperhat systems."
 	license="Apache-2.0"
@@ -262,6 +262,8 @@
 	<RepositoryPackageEntry packageFamily="behavior" packageName="behavior-shape-schema" packagePath="spec/1.0.0/schemas/behavior/behavior-shape-schema" />
 
 	<RepositoryPackageEntry packageFamily="view" packageName="paperhat-semantic-projection-view" packagePath="spec/1.0.0/schemas/view/semantic-projection" />
+
+	<RepositoryPackageEntry packageFamily="view" packageName="paperhat-view-definition-view" packagePath="spec/1.0.0/schemas/view/view-definition" />
 
 	<RepositoryPackageEntry packageFamily="design" packageName="adaptive-plan" packagePath="spec/1.0.0/schemas/design/adaptive-plan" />
 

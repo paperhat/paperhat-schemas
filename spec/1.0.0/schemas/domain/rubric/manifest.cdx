@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="0875ebc2b864ea7302583f1c5bb5535aefa2c2bff20dc888e3ca9fbdd25e2e27"
+	closureHash="6e3a2733418fc7aca0ac0b43da112f78c6e29b598b45886aa6852559c7cc921f"
 	copyright="Copyright 2026 Paperhat"
 	description="A structured heading block containing title, subtitle, teaser, and difficulty metadata."
 	license="Apache-2.0"
@@ -12,7 +12,7 @@
 >
 	<PackageDependency
 		packageName="paperhat-text"
-		closureHash="36fc0dd91ce00a6d8caa47b4f17d88d766bf5833cafb9dfeb54c37af38c8aaa1"
+		closureHash="5e988d831f58ee9c18514f4cf536c49e10c3216b0bf2ebbc022a27e50eb1fc0f"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

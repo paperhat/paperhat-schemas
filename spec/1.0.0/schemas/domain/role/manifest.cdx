@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="2ea9a35d722c4caf5d46227c5614ec35d50171bf2f28387700be9264e1117a91"
+	closureHash="a310eb30cdba85fa4697d1db18cbc459688e0496b222229e5037f8e30a5674a7"
 	copyright="Copyright 2026 Paperhat"
 	description="A named function or capacity that a person or organization holds, such as author, editor, maintainer, or approver."
 	license="Apache-2.0"

@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="4c7a170afde99926a8421bf0fe7c4a41e1412cc64cc59fe688a476e695631503"
+	closureHash="10d012e0489337e864989e85e11b1735cba4f355e986b914c6d507a41b019fdb"
 	copyright="Copyright 2026 Paperhat"
 	description="A named packaging level within a product or service — a tier, plan, or edition that bundles specific features and pricing."
 	license="Apache-2.0"

@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="41e713256e1b0e89528e49bf022d4e7e14614d5d1069a1e29473749cd47d6752"
+	closureHash="3b36dfcb3f049aa871327add994f37a528493c9b89a51791e65445fe3c021e03"
 	copyright="Copyright 2026 Paperhat"
 	description=`
 		An explicit declaration of rounding behavior — the method, scale, and scope of numeric rounding

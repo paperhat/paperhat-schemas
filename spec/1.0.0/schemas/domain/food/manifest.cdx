@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="431f6457fb84103f45d300f71afee11b1efdd312c105fe126d77967d250e8544"
+	closureHash="00dc73e63d6f4f3472463ea61caa587a2756f676825470cb5158560caec6eda5"
 	copyright="Copyright 2026 Paperhat"
 	description="A food or comestible, with canonical name, aliases, category, sensory profile, nutritional information, and varieties."
 	license="Apache-2.0"
@@ -12,31 +12,31 @@
 >
 	<PackageDependency
 		packageName="paperhat-description"
-		closureHash="2a0f7d96f2ae202d211282c9489f7e2adfe381c24fa8a414eede55250457fc8a"
+		closureHash="22cf4b8dadca12ecce39893a67970957e971882d924867b59e4d185318fea0ce"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-nutrition-information"
-		closureHash="df57f4bf14337d34484858397ff1b78cbf83620571c7487b60273fa2196743ec"
+		closureHash="1427d800c098c0521148eac340ab78cac6ea30f4344c3e44a989910cd8cb6fdf"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-tags"
-		closureHash="c8bae75e8068cc05e3f31704fec12c990ea729c4b00c72a53652f031ffe424d9"
+		closureHash="79f56b4d0ef59b20975c37f01fe635c56349f6e3841542fe6f45befc1bd244b7"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-location"
-		closureHash="798b5e790d4bcf62880d1573b1bb39c0d35350862aa714b2899ec9ec9b696cfd"
+		closureHash="1ebd1c1fdc051d7c19f9f462e0d5e0c5bcd5937e5ba026c33dc3e20f064a1f8a"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-sensory-profile"
-		closureHash="f5a48dcff9d9e045ff6a883bc3a00634357e704323e758744a2c1e00916dbc04"
+		closureHash="27c4d39264d4e5a61ab4e8f616ff4977d37b5286348f406cc1db7f2409a00062"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

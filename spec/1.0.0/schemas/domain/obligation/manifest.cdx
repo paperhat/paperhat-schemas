@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="7a6fc00293758b23346f7fbd07791bfd82c057ceb243e1dcd545f677e61bf14f"
+	closureHash="5c7d84df1ec13adf48cd2641c210597e2a1a923da6773cf5a32cdcc12055eb33"
 	copyright="Copyright 2026 Paperhat"
 	description=`
 		A binding commitment by a party to perform or refrain from an action — a contractual,
@@ -14,8 +14,8 @@
 	requiredLexisVersion=">=1.0.0 <2.0.0"
 >
 	<PackageDependency
-		closureHash="2a0f7d96f2ae202d211282c9489f7e2adfe381c24fa8a414eede55250457fc8a"
 		packageName="paperhat-description"
+		closureHash="22cf4b8dadca12ecce39893a67970957e971882d924867b59e4d185318fea0ce"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

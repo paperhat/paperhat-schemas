@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="41489c2efddda237d03e15059af93b2cc5eab445c297971d3831ea1b8bf3868b"
+	closureHash="94259d0fb06855f0aa8a599b287da94019f4010c556069398915333e5185c77a"
 	copyright="Copyright 2026 Paperhat"
 	description="Emotional or tonal annotation on a text span, marking the intended feeling, mood, or voice of the passage."
 	license="Apache-2.0"

@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="eb0121ba44ee9947e27b2edb6674cec4cad8f57bf3f592772cf3b048246094a0"
+	closureHash="70623a5393dbe094705590f4e7c30cb1f67e555c4560f9fc0837473e79aec25d"
 	copyright="Copyright 2026 Paperhat"
 	description="A general-purpose quantitative measurement expressed as a numeric value and a unit."
 	license="Apache-2.0"

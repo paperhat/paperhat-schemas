@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="671bb4c95c0ba252ee1319b9c851c50912523fe4bc196402edd4e32b914adea8"
+	closureHash="35ce68cce8d48a3ff3baf4f3556a6521f99497040421ec5cf86f937fc31c319d"
 	copyright="Copyright 2026 Paperhat"
 	description="A descriptive or explanatory text fragment accompanying a figure, table, or other visual element. Caption is a semantic concept with opaque content, supporting span bindings via Gloss."
 	license="Apache-2.0"

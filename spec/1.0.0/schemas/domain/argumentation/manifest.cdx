@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="d7fd7aaf276f09337778c1562d60fd5d2e1224eb3448b8c59a3bccdab29643c5"
+	closureHash="bc5a9c294d4fdc17b5d4dc5ce428cf886dba26c8090601df04bc55c907eb9cae"
 	copyright="Copyright 2026 Paperhat"
 	description="Formal argumentation primitives for modeling logical structure. An Argument contains Premises, an optional Inference, and a Claim."
 	license="Apache-2.0"

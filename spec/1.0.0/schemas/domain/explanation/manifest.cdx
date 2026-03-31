@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="cf8ff1f987d2102e747a46747ebf12fdfb4f6e08f64bff62806bc7b670d5e4e9"
+	closureHash="5691f1016225ce6f2fc96011f533993a23015921f44bdf8b62a8cf54454c3b00"
 	copyright="Copyright 2026 Paperhat"
 	description="A structured conceptual explanation: prose, examples, defined terms, code illustrations, figures, and admonitions arranged to convey understanding of a single idea."
 	license="Apache-2.0"
@@ -9,4 +9,46 @@
 	primaryDocument="schema.cdx"
 	requiredCodexVersion=">=1.0.0 <2.0.0"
 	requiredLexisVersion=">=1.0.0 <2.0.0"
-/>
+>
+	<PackageDependency
+		packageName="paperhat-admonition"
+		closureHash="2271794a8e58b5de1cf7f0b3aabe4c9642beedc1f9ce1c5110e4b222d9f71d5b"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-code"
+		closureHash="d41d04ed51722095f735722dcc089b4b4941def5983aec95cd10ba060e3325b1"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-defined-term"
+		closureHash="27699b217d3e9b5e44336592ad873921730e2043d3fa18d60442e95c3aebe105"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-example"
+		closureHash="135ba4bdfc518fe323fbea045a9e7019f3e3b7f3cba8f2d0f7470051dce21b58"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-figure"
+		closureHash="9aa61110d5177c7887911533b30025750a00bda3205d4f82b424ac1228296220"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-list"
+		closureHash="8a91086c5a5ca1032bb4db3b0df00f6921599442bbec56da01bc41e9838c36e4"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-text"
+		closureHash="5e988d831f58ee9c18514f4cf536c49e10c3216b0bf2ebbc022a27e50eb1fc0f"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</DomainPackageManifest>

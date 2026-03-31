@@ -1,6 +1,6 @@
 <VocabularyPackageManifest
 	author="Paperhat"
-	closureHash="e2ff7d9c80b9f26c55fc72b0344bd9be15f169ff2ec50cc97d2544d761234f30"
+	closureHash="dd8d8b3f0145a21ad7ac2084904e43a17ab9f8138e678a72d9099d7dac927874"
 	copyright="Copyright 2026 Paperhat"
 	description="Canonical time zone identifiers from the IANA Time Zone Database (tzdata)."
 	license="Apache-2.0"

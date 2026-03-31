@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="48a29747c18c492202f663086e7246a138e155a510cd75a82b34f9921cf8c00a"
+	closureHash="b2c29c68f6d25d66a21579b92f4b5fcd88d6aa59405a330fdcd969550d476e30"
 	copyright="Copyright 2026 Paperhat"
 	description=`
 		A temporal recurrence pattern — the frequency, interval, and bounds of a repeating event,

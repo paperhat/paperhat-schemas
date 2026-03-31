@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="580dd6f1011b4f4225063958bf1f20d92c636a1dc60b1cc916002660ca75349c"
+	closureHash="97346b9c5c08549327159fe0924824b10117185a9f42bc9d1783937de9084bb3"
 	copyright="Copyright 2026 Paperhat"
 	description="Linguistic metadata applied to text spans, including ruby annotations for displaying reading aids above or beside base text."
 	license="Apache-2.0"

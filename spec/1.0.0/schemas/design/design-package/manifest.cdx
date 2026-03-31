@@ -1,6 +1,6 @@
 <DesignPackageManifest
 	author="Paperhat"
-	closureHash="ba0742f5b435f89746c32e446b2c8516b2b1afcd604fd5c32a98bf4180f73444"
+	closureHash="9cf24a6601a5932e73be8deab5c5dd5895e52212dde88cb0f32b176e615d33bd"
 	copyright="Copyright 2026 Paperhat"
 	description="Design-family schema for bundling design annotation documents into an ordered, referenceable package."
 	license="Apache-2.0"
@@ -9,4 +9,16 @@
 	primaryDocument="schema.cdx"
 	requiredCodexVersion=">=1.0.0 <2.0.0"
 	requiredLexisVersion=">=1.0.0 <2.0.0"
-/>
+>
+	<PackageDependency
+		packageName="paperhat-description"
+		closureHash="22cf4b8dadca12ecce39893a67970957e971882d924867b59e4d185318fea0ce"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-text"
+		closureHash="5e988d831f58ee9c18514f4cf536c49e10c3216b0bf2ebbc022a27e50eb1fc0f"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</DesignPackageManifest>

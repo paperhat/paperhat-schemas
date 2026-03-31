@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="59b38a1f0a00ace6f908a00714c81ecd5ae127a466944dfdcfa1518961ca6586"
+	closureHash="5cf32888ef01ebd33d4ac40366acfcbf7729fe7661424bc8bdc2986e70a796e0"
 	copyright="Copyright 2026 Paperhat"
 	description=`
 		A supplementary section of a specification or formal document with an explicit normative status
@@ -14,8 +14,8 @@
 	requiredLexisVersion=">=1.0.0 <2.0.0"
 >
 	<PackageDependency
-		closureHash="2a0f7d96f2ae202d211282c9489f7e2adfe381c24fa8a414eede55250457fc8a"
 		packageName="paperhat-description"
+		closureHash="22cf4b8dadca12ecce39893a67970957e971882d924867b59e4d185318fea0ce"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="0012ccd0216403a2086df96c27daacfc90fdf736681ee7654da1280e02a98127"
+	closureHash="79ac84bfd284b71e2e6d9d977b6d0a1e5608a543cdee0a406cd04679abb7ec88"
 	copyright="Copyright 2026 Paperhat"
 	description="Temporal annotations for text spans using the canonical Paperhat Temporal type family together with formatting and internationalisation support."
 	license="Apache-2.0"

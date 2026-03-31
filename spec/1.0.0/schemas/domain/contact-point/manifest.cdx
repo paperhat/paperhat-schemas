@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="fe881dddebc868859e5c082ec46ea4663f47da9e2c19259a7d60ed7886bf26dc"
+	closureHash="a550bf91b3c6e12d7cb825507404276f08b7b3a02a5d3f0f58986228ec515226"
 	copyright="Copyright 2026 Paperhat"
 	description="A method of contact such as email address, phone number, or website, with optional temporal validity."
 	license="Apache-2.0"

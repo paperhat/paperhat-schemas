@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="edc7b2d312123e7af492fbecbb88e77b3d09c7ba5e434d4263af1087cc90ee06"
+	closureHash="cccbff2f31a7ae0a9448a9d3c4b7ecbdc1eed11817da61779d40695f714c049c"
 	copyright="Copyright 2026 Paperhat"
 	description="A term in a language other than the document's primary language, with pronunciation, translation, and language identification."
 	license="Apache-2.0"

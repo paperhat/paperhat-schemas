@@ -1,6 +1,6 @@
 <BehaviorPackageManifest
 	author="Paperhat"
-	closureHash="19fc18e7a271473df66b5150529cdb2b1f18ac998fb0a5e26e5d5fedc596db52"
+	closureHash="01acd4351fddd8ea128b1a7ab492648edaa08194bedd1263c6313f3577ea7d0f"
 	copyright="Copyright 2026 Paperhat"
 	description="Schema for defining ValueShapeDefinition and EntityShapeDefinition with behavioral semantics."
 	license="Apache-2.0"

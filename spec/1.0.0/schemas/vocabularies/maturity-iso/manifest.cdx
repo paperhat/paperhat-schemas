@@ -1,6 +1,6 @@
 <VocabularyPackageManifest
 	author="Paperhat"
-	closureHash="0000000000000000000000000000000000000000000000000000000000000000"
+	closureHash="540cc639c6c69849abc8956c6d057721a4e9c1af3ce1f2efdd7519c66e26770e"
 	copyright="Copyright 2026 Paperhat"
 	description="ISO/IEC specification maturity levels following the ISO standards development process (ISO/IEC Directives, Part 1)."
 	license="Apache-2.0"

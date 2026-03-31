@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="1a7fa13c38afdc1b7e9e1a45d3c74e17b36147faebd86e7a5503b91bd8ca2faf"
+	closureHash="bddf3d06835c5bdd057c7e6e98ad531967b908f56f26bb7c519c6233db33778d"
 	copyright="Copyright 2026 Paperhat"
 	description="A quantitative measurement of volume or capacity, with unit constrained to the units-volume vocabulary."
 	license="Apache-2.0"

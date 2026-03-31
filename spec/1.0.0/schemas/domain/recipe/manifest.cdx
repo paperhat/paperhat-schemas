@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="3fbc7f2b3cbc73f914e61e393836788ff6374a2bb5fe1cdbb6d01c8b464e074e"
+	closureHash="960bf8d34932b6fc91486b6a1453a6d31bf2d6a67120c7fd4b83607c3e732576"
 	copyright="Copyright 2026 Paperhat"
 	description="Recipe authoring schema with structured ingredient sets, timing, serving guidance, and imported advice and annotation support."
 	license="Apache-2.0"
@@ -12,85 +12,85 @@
 >
 	<PackageDependency
 		packageName="paperhat-audience"
-		closureHash="e192824a1a7bbb2f4e0dc6a3a4b2342541e274963c299fe34507f6d12e907cdf"
+		closureHash="14817d7616b3727a416344a1afb66c8278d0472a776196eca42dad51c46f8522"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-description"
-		closureHash="2a0f7d96f2ae202d211282c9489f7e2adfe381c24fa8a414eede55250457fc8a"
+		closureHash="22cf4b8dadca12ecce39893a67970957e971882d924867b59e4d185318fea0ce"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-equipment"
-		closureHash="b5b6ead0e727a9609974ed827ecd3a7e23d65b4b94740af3b6bc85c4ebeed903"
+		closureHash="c1ef52ee41de6ad5f6ef92d777e9e1c2695026a797bc28cd4e2290321fee954a"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-food"
-		closureHash="431f6457fb84103f45d300f71afee11b1efdd312c105fe126d77967d250e8544"
+		closureHash="00dc73e63d6f4f3472463ea61caa587a2756f676825470cb5158560caec6eda5"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-mass-measure"
-		closureHash="917e605fa7f9a41cd68f9019d1cf681401ac8520fc198a7d3a1d8c7d100aad92"
+		closureHash="09052dddd7c6aa467295678917ab2a83ef779fd4c940fec75ff600b7c9c2da5e"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-measure"
-		closureHash="eb0121ba44ee9947e27b2edb6674cec4cad8f57bf3f592772cf3b048246094a0"
+		closureHash="70623a5393dbe094705590f4e7c30cb1f67e555c4560f9fc0837473e79aec25d"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-notes"
-		closureHash="fc81a3ba3e3fbf84149c3668a2c29fa3fc9cfad7dd93d9e2cdffa96ac528d19e"
+		closureHash="1b84eec836365e41fa608e3c95b6b9314306db71f16e2cc373641445c8466644"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-nutrition-information"
-		closureHash="df57f4bf14337d34484858397ff1b78cbf83620571c7487b60273fa2196743ec"
+		closureHash="1427d800c098c0521148eac340ab78cac6ea30f4344c3e44a989910cd8cb6fdf"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-tags"
-		closureHash="c8bae75e8068cc05e3f31704fec12c990ea729c4b00c72a53652f031ffe424d9"
+		closureHash="79f56b4d0ef59b20975c37f01fe635c56349f6e3841542fe6f45befc1bd244b7"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-text"
-		closureHash="36fc0dd91ce00a6d8caa47b4f17d88d766bf5833cafb9dfeb54c37af38c8aaa1"
+		closureHash="5e988d831f58ee9c18514f4cf536c49e10c3216b0bf2ebbc022a27e50eb1fc0f"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-time-measure"
-		closureHash="fb0f3f4bce46d989d34ede0dc6cc39068f4e796daffaf38c749cd71d1ce63856"
+		closureHash="77d0f3a20b29f7d24df90bbb8975e1d7571d0f0271e192c854818a91421da9f4"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-tips"
-		closureHash="1e2fb7d9b1a02cd8f2be22a671c897dd373c131f6255e17a428f8e60aa9ff199"
+		closureHash="dca95599873ecd538fb3bf6a1754c2529b9dfe47531c37dc30db2776a0346880"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-volume-measure"
-		closureHash="1a7fa13c38afdc1b7e9e1a45d3c74e17b36147faebd86e7a5503b91bd8ca2faf"
+		closureHash="bddf3d06835c5bdd057c7e6e98ad531967b908f56f26bb7c519c6233db33778d"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-work"
-		closureHash="03267f2a018d40c9671ff9e987ac09c10f6b79c705050a4ba3b01e294159c368"
+		closureHash="7fad7a46d28f39be9efbf233ea3e4d370ea6e8947a40026bb207e9bdf8039cc0"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

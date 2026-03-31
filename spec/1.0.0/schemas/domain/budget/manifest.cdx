@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="177129f686bc025ee9371e25ee1c6a9a887d689b06a00331ab70b6c67d3411fd"
+	closureHash="4a7c05b7a7bce9871c8d15f7f1efaeefb681d7bea0b83d0a02d1af4f2ff86813"
 	copyright="Copyright 2026 Paperhat"
 	description=`
 		A named financial plan with categorized line items over a defined period — a project budget,
@@ -14,8 +14,8 @@
 	requiredLexisVersion=">=1.0.0 <2.0.0"
 >
 	<PackageDependency
-		closureHash="2a0f7d96f2ae202d211282c9489f7e2adfe381c24fa8a414eede55250457fc8a"
 		packageName="paperhat-description"
+		closureHash="22cf4b8dadca12ecce39893a67970957e971882d924867b59e4d185318fea0ce"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

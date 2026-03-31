@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="fb0f3f4bce46d989d34ede0dc6cc39068f4e796daffaf38c749cd71d1ce63856"
+	closureHash="77d0f3a20b29f7d24df90bbb8975e1d7571d0f0271e192c854818a91421da9f4"
 	copyright="Copyright 2026 Paperhat"
 	description="A quantitative measurement of time or duration, with unit constrained to the units-time vocabulary."
 	license="Apache-2.0"

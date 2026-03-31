@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="092779788e6b38975a9a3bd09ee045e349ced09d7d5fc0aef1a5b27044167496"
+	closureHash="b57623aad2bf45a1b4f69fb1e9a3729b079a0181ed2bfe7e846239ef55e27c46"
 	copyright="Copyright 2026 Paperhat"
 	description="Structured personal name with support for cultural variants, multiple name kinds, and decomposed name parts."
 	license="Apache-2.0"

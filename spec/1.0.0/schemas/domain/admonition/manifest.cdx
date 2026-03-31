@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="740f07045c3f877359e88b1eaf2f45422630c045ed2980402ba6c218c9137788"
+	closureHash="2271794a8e58b5de1cf7f0b3aabe4c9642beedc1f9ce1c5110e4b222d9f71d5b"
 	copyright="Copyright 2026 Paperhat"
 	description="Callout-level semantic markers for informational notices, warnings, dangers, critical alerts, tips, and general notices."
 	license="Apache-2.0"

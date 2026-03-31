@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="88553c68660fc5b1816b247a8d3fcafb6785feaf3e8d7795592e3126883a34cf"
+	closureHash="02a9f618c67997f64b3e2f378ca5fdc2b99777eb1a873d5e1c9de402cbb30ac6"
 	copyright="Copyright 2026 Paperhat"
 	description=`
 		A typed internal reference from one document element to another — a section reference,

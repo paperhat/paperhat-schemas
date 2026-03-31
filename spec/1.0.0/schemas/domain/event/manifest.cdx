@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="e1805c68b2627854fda8ef00b9e1df36e3b693ec7e6b0fb9752c29191522a649"
+	closureHash="a8d563a81ac6dbfc81ed609c00b8f0404a809481cfa68b9554054fab6b54b078"
 	copyright="Copyright 2026 Paperhat"
 	description="An occurrence happening at a certain time and place, such as a concert, conference, lecture, festival, or community gathering."
 	license="Apache-2.0"
@@ -12,85 +12,85 @@
 >
 	<PackageDependency
 		packageName="paperhat-description"
-		closureHash="2a0f7d96f2ae202d211282c9489f7e2adfe381c24fa8a414eede55250457fc8a"
+		closureHash="22cf4b8dadca12ecce39893a67970957e971882d924867b59e4d185318fea0ce"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-location"
-		closureHash="798b5e790d4bcf62880d1573b1bb39c0d35350862aa714b2899ec9ec9b696cfd"
+		closureHash="1ebd1c1fdc051d7c19f9f462e0d5e0c5bcd5937e5ba026c33dc3e20f064a1f8a"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-geographic-location"
-		closureHash="2d699efab780b585033f385263d99511b9bfbfd592e1fa5eb0b6f1031a64a039"
+		closureHash="d8c5bbcd3a7733c12438c3c7bc7e1447b2b71e54c6991d490b529ca2da7e8c13"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-contact-point"
-		closureHash="fe881dddebc868859e5c082ec46ea4663f47da9e2c19259a7d60ed7886bf26dc"
+		closureHash="a550bf91b3c6e12d7cb825507404276f08b7b3a02a5d3f0f58986228ec515226"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-identifier"
-		closureHash="92a41d386d392b5bee505fbca1425b2d3923888b63dcd0a80af5ef27074516d0"
+		closureHash="d957905bf5f8bb0e22cd2f88c4dbbd7b773d923c632fb7f270f14cb95e865a7b"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-offer"
-		closureHash="b78bb0b3d7a258b54f31cb0c5a5a9b1003db3454e9510867351b918e6122171b"
+		closureHash="e75a1c79985e99fb9ab785b810b7f2342620860aefadb5f7ea27add0e6e850b5"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-duration"
-		closureHash="05088fd9fe50fb8d534ef6db7fab92772c543ade3fb223e2370fb9e024090626"
+		closureHash="a6192858aedece7eb918419659df61315593e171817d0b092a812c3a39c9490f"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-rating"
-		closureHash="a5c784f1114edfc4584e0e960316c9aa7dfb62a20edde489b5e42fde04c84d71"
+		closureHash="9d7fc654628221d3302e8f97cb122e4ed3e34d152b081e1ca020737f850deebc"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-monetary-amount"
-		closureHash="3768d973b323057c03519758c40154a67614b52534ce6f32e3014f640a45db03"
+		closureHash="432c4d627992c4797a87c624fba6fca59da406fc9f740374c84af1228a9da1cb"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-tags"
-		closureHash="c8bae75e8068cc05e3f31704fec12c990ea729c4b00c72a53652f031ffe424d9"
+		closureHash="79f56b4d0ef59b20975c37f01fe635c56349f6e3841542fe6f45befc1bd244b7"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-work"
-		closureHash="03267f2a018d40c9671ff9e987ac09c10f6b79c705050a4ba3b01e294159c368"
+		closureHash="7fad7a46d28f39be9efbf233ea3e4d370ea6e8947a40026bb207e9bdf8039cc0"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-operating-schedule"
-		closureHash="7be6ec23e2fade3dda384afc44195082866d006918460c50f053277183ca9a47"
+		closureHash="77c68bc0d432d16326723d4cfdd8f689c708d6d8805f7f4065a992c76ee364bc"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-audience"
-		closureHash="e192824a1a7bbb2f4e0dc6a3a4b2342541e274963c299fe34507f6d12e907cdf"
+		closureHash="14817d7616b3727a416344a1afb66c8278d0472a776196eca42dad51c46f8522"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-accessibility"
-		closureHash="5f09647c6534c3527c0a2ffd2f866889c3b218203da7bac5ae838fee8e531341"
+		closureHash="0a414ad5aa809433a3e2aa13b0c69f27bb8588006926f5d091849175d06c7413"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

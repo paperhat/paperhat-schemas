@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="2e84cad033835ee5b063a38a7c8fb115868f04937cd9d81808cb84f093808d17"
+	closureHash="170753d14a42f38dd28652564b6b0f4d08efcb2fec2fcb954223cae0fe9c6a18"
 	copyright="Copyright 2026 Paperhat"
 	description=`
 		The compliance state of an obligation, requirement, or control — whether the responsible party

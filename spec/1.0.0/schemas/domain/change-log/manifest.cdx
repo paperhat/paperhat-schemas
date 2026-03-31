@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="cb684fa8f918a229b561d95de218902472a13813ec539e4c581cdec33fb57998"
+	closureHash="6b41267223e9f40dcd393118e7ed589639421d6750bf6aa987030e9580ec44af"
 	copyright="Copyright 2026 Paperhat"
 	description=`
 		A record of changes to a versioned document or artifact — a chronological list of modifications

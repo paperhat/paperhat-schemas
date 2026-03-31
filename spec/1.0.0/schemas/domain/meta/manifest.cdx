@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="8f0ec58aeddc3f8b4d23a5f60c06a5591509358c2a6453fac3121d8f15823397"
+	closureHash="f1efe315b7adb2f7bcf923f24f481732e036516618ebcfe87e71d34fb7895b73"
 	copyright="Copyright 2026 Paperhat"
 	description="Authorizes domain ontology schemas. Defines what domain schemas declare and forbids individuals, views, policies, layout, and assembly."
 	license="Apache-2.0"

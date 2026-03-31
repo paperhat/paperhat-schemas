@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="7be6ec23e2fade3dda384afc44195082866d006918460c50f053277183ca9a47"
+	closureHash="77c68bc0d432d16326723d4cfdd8f689c708d6d8805f7f4065a992c76ee364bc"
 	copyright="Copyright 2026 Paperhat"
 	description="Operating hours for a specific day of the week, with optional seasonal validity."
 	license="Apache-2.0"

@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="d85d8a89b5d243c32848f3a5d25a4ff10a4afc916d13102b6f532af86e1c0acb"
+	closureHash="30364f11e58cab2d50821933cd783f68a6b612e4f5932ac801b50ea85f3adceb"
 	copyright="Copyright 2026 Paperhat"
 	description=`
 		An editorial annotation intended for reviewers and editors, excluded from published output — a

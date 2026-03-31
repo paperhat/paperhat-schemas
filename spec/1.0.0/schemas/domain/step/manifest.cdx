@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="f8cdc13f32e85675f1b614e6cfff05845dd2fb7196d0f2a3f66c973546e7dd67"
+	closureHash="f61b61629776b36f39afceb0e9a7c2ee8cb717f879c7e37179e21d6d90bc5f18"
 	copyright="Copyright 2026 Paperhat"
 	description="A single action in a procedure — an instruction to be performed, with optional metadata indicating whether the step is required or optional."
 	license="Apache-2.0"

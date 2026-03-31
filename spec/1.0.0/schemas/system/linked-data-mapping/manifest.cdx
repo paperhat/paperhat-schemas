@@ -1,6 +1,6 @@
 <SystemPackageManifest
 	author="Paperhat"
-	closureHash="665bb85eeb5cfa6805ec8fcd416254d68ecefad22766954accbface1593ed364"
+	closureHash="084e845060979419548695dbe14f4ac33f1e891b0422b00be0c721dd6af00c84"
 	copyright="Copyright 2026 Paperhat"
 	description="Defines a one-way mapping document format used to project Codex-authored data into linked data vocabularies for JSON-LD, RDFa, or microdata emitters."
 	license="Apache-2.0"

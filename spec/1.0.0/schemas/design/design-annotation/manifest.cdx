@@ -1,6 +1,6 @@
 <DesignPackageManifest
 	author="Paperhat"
-	closureHash="56b8c36a5d63a09aab7ff81d38803864744e3be9a9d59c0e5cacd15bc8dffceb"
+	closureHash="759630d787f01276c1a76558f0f8a43198d5cfa931d74d662105d3c11ecd9d2c"
 	copyright="Copyright 2026 Paperhat"
 	description="Design-family schema for attaching SDL semantic roles, CDL constraints, and PDL adaptive rules to ViewDefinition fields and composition elements."
 	license="Apache-2.0"
@@ -9,4 +9,16 @@
 	primaryDocument="schema.cdx"
 	requiredCodexVersion=">=1.0.0 <2.0.0"
 	requiredLexisVersion=">=1.0.0 <2.0.0"
-/>
+>
+	<PackageDependency
+		packageName="paperhat-description"
+		closureHash="22cf4b8dadca12ecce39893a67970957e971882d924867b59e4d185318fea0ce"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-text"
+		closureHash="5e988d831f58ee9c18514f4cf536c49e10c3216b0bf2ebbc022a27e50eb1fc0f"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</DesignPackageManifest>

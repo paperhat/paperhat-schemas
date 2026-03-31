@@ -1,6 +1,6 @@
 <VocabularyPackageManifest
 	author="Paperhat"
-	closureHash="0000000000000000000000000000000000000000000000000000000000000000"
+	closureHash="fd2bf5349bd44767a592c9ac1b41f8b8e5782473bdeb910b208ba0c220db0dc1"
 	copyright="Copyright 2026 Paperhat"
 	description="OASIS specification maturity levels following the OASIS Standards Process."
 	license="Apache-2.0"

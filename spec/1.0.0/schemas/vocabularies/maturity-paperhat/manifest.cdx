@@ -1,6 +1,6 @@
 <VocabularyPackageManifest
 	author="Paperhat"
-	closureHash="0000000000000000000000000000000000000000000000000000000000000000"
+	closureHash="ccaa493502f15adf53f2e130de9897e1bff1ed4bed0f586d5a50d0c4f94d5565"
 	copyright="Copyright 2026 Paperhat"
 	description="General-purpose specification maturity levels for the Paperhat standards track."
 	license="Apache-2.0"

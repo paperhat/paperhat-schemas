@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="917e605fa7f9a41cd68f9019d1cf681401ac8520fc198a7d3a1d8c7d100aad92"
+	closureHash="09052dddd7c6aa467295678917ab2a83ef779fd4c940fec75ff600b7c9c2da5e"
 	copyright="Copyright 2026 Paperhat"
 	description="A quantitative measurement of mass, with unit constrained to the units-mass vocabulary."
 	license="Apache-2.0"

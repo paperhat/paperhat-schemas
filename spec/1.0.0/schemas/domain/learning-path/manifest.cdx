@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="41a09e8b4c5f89c5ccc229a6d3b987127f59901446958aa5089616e312536781"
+	closureHash="73170df6242d61fee39741762c8c73f969c719654e0aaa161cee42f6f2aa3442"
 	copyright="Copyright 2026 Paperhat"
 	description="Package manifest for a Praxis learning path: metadata, domain classification, frontier configuration, and prerequisite declarations."
 	license="Apache-2.0"

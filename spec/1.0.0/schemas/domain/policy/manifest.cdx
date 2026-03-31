@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="9de8fd5bfe7f34865685ca2bfcb4846d53e1981afe316b9373c4164390a7e080"
+	closureHash="dcd1e9cfb994615752fa80205a2f87e668cc168543ea2bf9418ddc4e0cfbfa63"
 	copyright="Copyright 2026 Paperhat"
 	description="A named institutional policy — a set of rules, obligations, or commitments governing behavior within an organization or jurisdiction."
 	license="Apache-2.0"
@@ -12,7 +12,7 @@
 >
 	<PackageDependency
 		packageName="paperhat-jurisdiction"
-		closureHash="d41e824916e78824e2092576e198069aa55695ec5a74ade740ab35a0aeacad10"
+		closureHash="9de7d8d2f89e256883d91272b645c605af66ac2928b0fcd83b6d6dddb5b41e1e"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

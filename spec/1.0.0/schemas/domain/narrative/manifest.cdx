@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="ec753407a2561dfd987c7a04a7e0f3d3b045ee2de618fa866a9028ded5d88bb4"
+	closureHash="f05a8d42cf3d30c9d7f940130b8c788de6b62d88332e55d5666f31cf6d25de88"
 	copyright="Copyright 2026 Paperhat"
 	description="An ordered container for the body content of a document, holding sections and paragraphs in reading order."
 	license="Apache-2.0"
@@ -12,13 +12,13 @@
 >
 	<PackageDependency
 		packageName="paperhat-section"
-		closureHash="dd4d1185452ac3fec3a40fa160a9c54ffbb9e7f6fb3d5f77b0aecebb780b8b49"
+		closureHash="a7262ce87782dbcb615045afecffaa4c93e19e9fa6e3bfc7861783e254f843a0"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-text"
-		closureHash="36fc0dd91ce00a6d8caa47b4f17d88d766bf5833cafb9dfeb54c37af38c8aaa1"
+		closureHash="5e988d831f58ee9c18514f4cf536c49e10c3216b0bf2ebbc022a27e50eb1fc0f"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="bcbffc6137ed634d22326675903bc24c2ad1e4f8d2a948ac5b26324048e7f1f0"
+	closureHash="34f1da0432bb334e913469d053d552e1f37e574208b658d22474f6219a3a3ba3"
 	copyright="Copyright 2026 Paperhat"
 	description="A named, ordered sequence of steps that accomplishes a specific operational task — a release procedure, deployment workflow, or setup guide."
 	license="Apache-2.0"

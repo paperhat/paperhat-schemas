@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="30c413cce6095b67ca2aa23ca691c6280a60eae3d705bbfd5e9125a17594ea07"
+	closureHash="0c794b393581b6945ccdf08bc7e7156fbb88c89ccfa4eb3a95343a97b55bb371"
 	copyright="Copyright 2026 Paperhat"
 	description="General-purpose discourse primitives for questions and answers. These are semantically paired but structurally independent — a Question exists without requiring an Answer, and vice versa."
 	license="Apache-2.0"

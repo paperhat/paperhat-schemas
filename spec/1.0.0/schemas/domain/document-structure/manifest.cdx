@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="d314a7459d97c55aa6313d910956a6fad7bfe9eabdb88ada4d8b8251d30b4b6a"
+	closureHash="7e330c31a3de4121e5a60ca58ddbff896ca076bb5f577049b15499b91dd3bebb"
 	copyright="Copyright 2026 Paperhat"
 	description="Named structural divisions of a document with semantic identity. Abstract, Introduction, Conclusion, Preface, Appendix, and Foreword are general-purpose discourse primitives usable across document types."
 	license="Apache-2.0"

@@ -1,12 +1,24 @@
 <ViewPackageManifest
 	author="Paperhat"
-	closureHash="0000000000000000000000000000000000000000000000000000000000000000"
+	closureHash="e8390de635b8058eb333323126ca49fdd43a5fb3556e8297b7ff78b2547bafcd"
 	copyright="Copyright 2026 Paperhat"
 	description="View-family schema for declaring which fields and content from a source concept a view presents, and in what order."
 	license="Apache-2.0"
-	packageName="view-definition"
+	packageName="paperhat-view-definition-view"
 	packageVersion="1.0.0"
 	primaryDocument="schema.cdx"
 	requiredCodexVersion=">=1.0.0 <2.0.0"
 	requiredLexisVersion=">=1.0.0 <2.0.0"
-/>
+>
+	<PackageDependency
+		packageName="paperhat-description"
+		closureHash="22cf4b8dadca12ecce39893a67970957e971882d924867b59e4d185318fea0ce"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-text"
+		closureHash="5e988d831f58ee9c18514f4cf536c49e10c3216b0bf2ebbc022a27e50eb1fc0f"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</ViewPackageManifest>

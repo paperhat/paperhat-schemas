@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="a7f804d04ec9dbb7f22360d88b6099492fae88f8ce321d7832145f1bbaa178b0"
+	closureHash="9aa61110d5177c7887911533b30025750a00bda3205d4f82b424ac1228296220"
 	copyright="Copyright 2026 Paperhat"
 	description="A figure containing one or more media references, with optional title and caption. Caption is a semantic concept with opaque content, supporting span bindings via Gloss."
 	license="Apache-2.0"
@@ -12,19 +12,19 @@
 >
 	<PackageDependency
 		packageName="paperhat-media-reference"
-		closureHash="d5c472233ddeb1b530167ac573f325321a893124b06e5841b5a38b73ce9c7a5f"
+		closureHash="12116c2b8e708f1bd3c78ce9ec47414d8ff13970ca1b64f0b5201ba05baf28fc"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-text"
-		closureHash="36fc0dd91ce00a6d8caa47b4f17d88d766bf5833cafb9dfeb54c37af38c8aaa1"
+		closureHash="5e988d831f58ee9c18514f4cf536c49e10c3216b0bf2ebbc022a27e50eb1fc0f"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-caption"
-		closureHash="671bb4c95c0ba252ee1319b9c851c50912523fe4bc196402edd4e32b914adea8"
+		closureHash="35ce68cce8d48a3ff3baf4f3556a6521f99497040421ec5cf86f937fc31c319d"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

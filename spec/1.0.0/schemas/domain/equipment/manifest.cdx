@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="b5b6ead0e727a9609974ed827ecd3a7e23d65b4b94740af3b6bc85c4ebeed903"
+	closureHash="c1ef52ee41de6ad5f6ef92d777e9e1c2695026a797bc28cd4e2290321fee954a"
 	copyright="Copyright 2026 Paperhat"
 	description="Kitchen and general-purpose equipment, with canonical name, category, and physical characteristics."
 	license="Apache-2.0"
@@ -12,19 +12,19 @@
 >
 	<PackageDependency
 		packageName="paperhat-description"
-		closureHash="2a0f7d96f2ae202d211282c9489f7e2adfe381c24fa8a414eede55250457fc8a"
+		closureHash="22cf4b8dadca12ecce39893a67970957e971882d924867b59e4d185318fea0ce"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-measure"
-		closureHash="eb0121ba44ee9947e27b2edb6674cec4cad8f57bf3f592772cf3b048246094a0"
+		closureHash="70623a5393dbe094705590f4e7c30cb1f67e555c4560f9fc0837473e79aec25d"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-tags"
-		closureHash="c8bae75e8068cc05e3f31704fec12c990ea729c4b00c72a53652f031ffe424d9"
+		closureHash="79f56b4d0ef59b20975c37f01fe635c56349f6e3841542fe6f45befc1bd244b7"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

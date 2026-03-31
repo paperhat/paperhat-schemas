@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="05088fd9fe50fb8d534ef6db7fab92772c543ade3fb223e2370fb9e024090626"
+	closureHash="a6192858aedece7eb918419659df61315593e171817d0b092a812c3a39c9490f"
 	copyright="Copyright 2026 Paperhat"
 	description="A temporal duration expressed as an amount and a unit."
 	license="Apache-2.0"

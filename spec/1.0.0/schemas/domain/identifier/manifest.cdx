@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="92a41d386d392b5bee505fbca1425b2d3923888b63dcd0a80af5ef27074516d0"
+	closureHash="d957905bf5f8bb0e22cd2f88c4dbbd7b773d923c632fb7f270f14cb95e865a7b"
 	copyright="Copyright 2026 Paperhat"
 	description="A scheme-qualified identifier for referencing external systems, standards, or registries."
 	license="Apache-2.0"

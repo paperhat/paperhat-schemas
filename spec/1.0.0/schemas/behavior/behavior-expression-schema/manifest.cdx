@@ -1,6 +1,6 @@
 <BehaviorPackageManifest
 	author="Paperhat"
-	closureHash="c19f3569f5a5ffd1831dc5ac6579f39e5102d96158074259917d46ae0670973f"
+	closureHash="088099aceb9417a860fdd00a5ea708a07dbb42ef38cc5c0412bb99392ad6cf8f"
 	copyright="Copyright 2026 Paperhat"
 	description="Schema for authoring Behavior expressions in Codex surface form."
 	license="Apache-2.0"

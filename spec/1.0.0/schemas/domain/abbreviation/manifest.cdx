@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="0000000000000000000000000000000000000000000000000000000000000000"
+	closureHash="0a5162783204a1dfd049b5d21cafe42caee978b53311b21d90787e2a14e67f90"
 	copyright="Copyright 2026 Paperhat"
 	description="Abbreviations, initialisms, and acronyms with their expansions. Three semantically distinct concept kinds covering all shortened-form conventions used in technical specifications."
 	license="Apache-2.0"
@@ -12,7 +12,7 @@
 >
 	<PackageDependency
 		packageName="paperhat-description"
-		closureHash="2a0f7d96f2ae202d211282c9489f7e2adfe381c24fa8a414eede55250457fc8a"
+		closureHash="22cf4b8dadca12ecce39893a67970957e971882d924867b59e4d185318fea0ce"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

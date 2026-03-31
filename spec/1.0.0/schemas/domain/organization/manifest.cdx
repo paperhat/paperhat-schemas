@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="5c3484316624f7fb7a7635d081fd02f653354c9350725a165bfa97169f861732"
+	closureHash="12696b1e182a9daba3975eedfd21623ed61a3ea85a08db698bcb12efcd32c1dd"
 	copyright="Copyright 2026 Paperhat"
 	description="An organization such as a company, nonprofit, government body, or educational institution, composed from leaf concepts for contact points, identifiers, and locations."
 	license="Apache-2.0"
@@ -12,55 +12,55 @@
 >
 	<PackageDependency
 		packageName="paperhat-description"
-		closureHash="2a0f7d96f2ae202d211282c9489f7e2adfe381c24fa8a414eede55250457fc8a"
+		closureHash="22cf4b8dadca12ecce39893a67970957e971882d924867b59e4d185318fea0ce"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-contact-point"
-		closureHash="fe881dddebc868859e5c082ec46ea4663f47da9e2c19259a7d60ed7886bf26dc"
+		closureHash="a550bf91b3c6e12d7cb825507404276f08b7b3a02a5d3f0f58986228ec515226"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-identifier"
-		closureHash="92a41d386d392b5bee505fbca1425b2d3923888b63dcd0a80af5ef27074516d0"
+		closureHash="d957905bf5f8bb0e22cd2f88c4dbbd7b773d923c632fb7f270f14cb95e865a7b"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-location"
-		closureHash="798b5e790d4bcf62880d1573b1bb39c0d35350862aa714b2899ec9ec9b696cfd"
+		closureHash="1ebd1c1fdc051d7c19f9f462e0d5e0c5bcd5937e5ba026c33dc3e20f064a1f8a"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-tags"
-		closureHash="c8bae75e8068cc05e3f31704fec12c990ea729c4b00c72a53652f031ffe424d9"
+		closureHash="79f56b4d0ef59b20975c37f01fe635c56349f6e3841542fe6f45befc1bd244b7"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-work"
-		closureHash="03267f2a018d40c9671ff9e987ac09c10f6b79c705050a4ba3b01e294159c368"
+		closureHash="7fad7a46d28f39be9efbf233ea3e4d370ea6e8947a40026bb207e9bdf8039cc0"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-operating-schedule"
-		closureHash="7be6ec23e2fade3dda384afc44195082866d006918460c50f053277183ca9a47"
+		closureHash="77c68bc0d432d16326723d4cfdd8f689c708d6d8805f7f4065a992c76ee364bc"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-audience"
-		closureHash="e192824a1a7bbb2f4e0dc6a3a4b2342541e274963c299fe34507f6d12e907cdf"
+		closureHash="14817d7616b3727a416344a1afb66c8278d0472a776196eca42dad51c46f8522"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-accessibility"
-		closureHash="5f09647c6534c3527c0a2ffd2f866889c3b218203da7bac5ae838fee8e531341"
+		closureHash="0a414ad5aa809433a3e2aa13b0c69f27bb8588006926f5d091849175d06c7413"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

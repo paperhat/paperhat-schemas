@@ -1,6 +1,6 @@
 <VocabularyPackageManifest
 	author="Paperhat"
-	closureHash="0000000000000000000000000000000000000000000000000000000000000000"
+	closureHash="6b27fa2418296aa4687a78bc6c632b2ac05bdcbf05217078ca88fb42cddb9fe0"
 	copyright="Copyright 2026 Paperhat"
 	description="IETF specification maturity levels following the Internet Standards Process (RFC 2026, updated by RFC 6410 and RFC 9280)."
 	license="Apache-2.0"

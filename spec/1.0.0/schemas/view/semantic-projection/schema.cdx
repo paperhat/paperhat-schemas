@@ -9,9 +9,9 @@
 	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="behavior" reference=urn:cdx:sha256:65cc0f997728c5d3628a1d575d4e8eebd65128381f3004d4f95f7874db5bef7b />
+		<SchemaImport namespace="behavior" reference=urn:cdx:sha256:724662942082cc86e2fc6e6055e272b8598efe84f0c146bc4b57410935341031 />
 
-		<SchemaImport namespace="shape" reference=urn:cdx:sha256:74cecb49232434267108caf27bdb7403fa900cf2213347e6ce7b22080b331d5c />
+		<SchemaImport namespace="shape" reference=urn:cdx:sha256:85b0641988fa0f8274a8318d20d48e6ff4f830b028c8328fda2459ab2a1ba7ca />
 	</SchemaImports>
 
 	<ConceptDefinitions>

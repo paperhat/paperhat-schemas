@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="0000000000000000000000000000000000000000000000000000000000000000"
+	closureHash="d6b3e41fb7e9eb5984126c28a0f75a205b3d38775cb603657121b7bb5a2ca7f5"
 	copyright="Copyright 2026 Paperhat"
 	description="Authored accessibility and proof policy objects for Prism. Defines accessibility policies, contrast requirements, simulation conditions, proof policies, and proof targets."
 	license="Apache-2.0"
@@ -12,7 +12,7 @@
 >
 	<PackageDependency
 		packageName="paperhat-description"
-		closureHash="2a0f7d96f2ae202d211282c9489f7e2adfe381c24fa8a414eede55250457fc8a"
+		closureHash="22cf4b8dadca12ecce39893a67970957e971882d924867b59e4d185318fea0ce"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

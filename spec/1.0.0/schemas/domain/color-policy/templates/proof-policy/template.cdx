@@ -1,0 +1,4 @@
+[A proof policy. name and scopeLevel are required. Include at least one ProofTarget.]
+<ProofPolicy id=urn:paperhat:example:proof-policy:example name="Proof Policy Name" scopeLevel=$Palette>
+	<ProofTarget id=urn:paperhat:example:proof-target:screen key=~screen targetMedium=$DisplaySrgb />
+</ProofPolicy>

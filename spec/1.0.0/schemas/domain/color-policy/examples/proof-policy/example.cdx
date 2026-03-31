@@ -1,0 +1,36 @@
+<ProofPolicy
+	id=urn:paperhat:example:proof-policy:print
+	name="Print Proof Policy"
+	proofPolicyStatus=$Active
+	scopeLevel=$Palette
+>
+	<desc:Description bodyMode=$content>
+		Proof policy for palette review across coated print and screen preview targets.
+	</desc:Description>
+
+	<ProofTarget
+		gamutMappingMode=$Perceptual
+		id=urn:paperhat:example:proof-target:coated-sheet
+		key=~coatedSheet
+		label="Coated Sheet"
+		proofColorSpace=$Cmyk
+		proofComparisonMode=$SideBySide
+		proofTargetStatus=$Active
+		renderingIntent=$RelativeColorimetric
+		targetMedium=$PrintCoated
+		toleranceDeltaE=2
+	/>
+
+	<ProofTarget
+		gamutMappingMode=$None
+		id=urn:paperhat:example:proof-target:screen-preview
+		key=~screenPreview
+		label="Screen Preview"
+		proofColorSpace=$Srgb
+		proofComparisonMode=$Toggle
+		proofTargetStatus=$Active
+		renderingIntent=$Perceptual
+		targetMedium=$DisplaySrgb
+		toleranceDeltaE=1
+	/>
+</ProofPolicy>

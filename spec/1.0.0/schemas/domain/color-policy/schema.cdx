@@ -1,0 +1,285 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Authored accessibility and proof policy objects for Prism. Defines accessibility policies, contrast requirements, simulation conditions, proof policies, and proof targets."
+	id=paperhat:domain:color-policy
+	namespace="colorpolicy"
+	title="Color Policy Schema"
+	version="1.0.0"
+	versionScheme=$SemanticVersion
+>
+	<SchemaImports>
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:9bf51d505f8fc4af7c7a97a46613509b6912d3402ef7cbf6ac0dfdf6094a43a0 />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:color-policy:AccessibilityPolicy
+			name="AccessibilityPolicy"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="scopeLevel" />
+
+				<AllowsTrait name="accessibilityPolicyStatus" />
+
+				<AllowsTrait name="complianceStandard" />
+
+				<AllowsTrait name="contrastComputationMode" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+
+				<RequiresChildConcept conceptSelector="ContrastRequirement" min=1 />
+
+				<AllowsChildConcept conceptSelector="SimulationCondition" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:color-policy:ContrastRequirement
+			name="ContrastRequirement"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="minimumContrastRatio" />
+
+				<RequiresTrait name="foregroundRoleType" />
+
+				<RequiresTrait name="backgroundRoleType" />
+
+				<AllowsTrait name="label" />
+
+				<AllowsTrait name="contrastContext" />
+
+				<AllowsTrait name="contrastRequirementStatus" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:color-policy:SimulationCondition
+			name="SimulationCondition"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="simulationMode" />
+
+				<AllowsTrait name="simulationConditionStatus" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:color-policy:ProofPolicy
+			name="ProofPolicy"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="scopeLevel" />
+
+				<AllowsTrait name="proofPolicyStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="desc:Description" />
+
+				<RequiresChildConcept conceptSelector="ProofTarget" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:color-policy:ProofTarget
+			name="ProofTarget"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="targetMedium" />
+
+				<AllowsTrait name="label" />
+
+				<AllowsTrait name="proofColorSpace" />
+
+				<AllowsTrait name="gamutMappingMode" />
+
+				<AllowsTrait name="proofComparisonMode" />
+
+				<AllowsTrait name="renderingIntent" />
+
+				<AllowsTrait name="toleranceDeltaE" />
+
+				<AllowsTrait name="proofTargetStatus" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:color-policy:trait:name
+			name="name"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-policy:trait:scopeLevel
+			name="scopeLevel"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-policy:trait:accessibilityPolicyStatus
+			name="accessibilityPolicyStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-policy:trait:complianceStandard
+			name="complianceStandard"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-policy:trait:contrastComputationMode
+			name="contrastComputationMode"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:color-policy:trait:key
+			name="key"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$FiniteRealNumber
+			id=paperhat:domain:color-policy:trait:minimumContrastRatio
+			name="minimumContrastRatio"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-policy:trait:foregroundRoleType
+			name="foregroundRoleType"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-policy:trait:backgroundRoleType
+			name="backgroundRoleType"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:color-policy:trait:label
+			name="label"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-policy:trait:contrastContext
+			name="contrastContext"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-policy:trait:contrastRequirementStatus
+			name="contrastRequirementStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-policy:trait:simulationMode
+			name="simulationMode"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-policy:trait:simulationConditionStatus
+			name="simulationConditionStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-policy:trait:proofPolicyStatus
+			name="proofPolicyStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-policy:trait:targetMedium
+			name="targetMedium"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-policy:trait:proofColorSpace
+			name="proofColorSpace"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-policy:trait:gamutMappingMode
+			name="gamutMappingMode"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-policy:trait:proofComparisonMode
+			name="proofComparisonMode"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-policy:trait:renderingIntent
+			name="renderingIntent"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$FiniteRealNumber
+			id=paperhat:domain:color-policy:trait:toleranceDeltaE
+			name="toleranceDeltaE"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:color-policy:trait:proofTargetStatus
+			name="proofTargetStatus"
+		/>
+	</TraitDefinitions>
+</Schema>

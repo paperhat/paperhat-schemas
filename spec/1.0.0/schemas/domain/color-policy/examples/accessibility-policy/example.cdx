@@ -1,0 +1,38 @@
+<AccessibilityPolicy
+	accessibilityPolicyStatus=$Active
+	complianceStandard=$Wcag22AA
+	contrastComputationMode=$WcagRelativeLuminance
+	id=urn:paperhat:example:accessibility-policy:core
+	name="Core Accessibility Policy"
+	scopeLevel=$TokenSet
+>
+	<desc:Description bodyMode=$content>
+		Accessibility policy for token-set publication and interface review.
+	</desc:Description>
+
+	<ContrastRequirement
+		backgroundRoleType=$Surface
+		contrastContext=$NormalText
+		contrastRequirementStatus=$Active
+		foregroundRoleType=$Text
+		id=urn:paperhat:example:contrast-requirement:text-on-surface
+		key=~textOnSurface
+		label="Text on Surface"
+		minimumContrastRatio=4.5
+	/>
+
+	<ContrastRequirement
+		backgroundRoleType=$Surface
+		contrastContext=$NonText
+		contrastRequirementStatus=$Active
+		foregroundRoleType=$Status
+		id=urn:paperhat:example:contrast-requirement:status-on-surface
+		key=~statusOnSurface
+		label="Status on Surface"
+		minimumContrastRatio=3
+	/>
+
+	<SimulationCondition simulationConditionStatus=$Active simulationMode=$Protanopia />
+
+	<SimulationCondition simulationConditionStatus=$Active simulationMode=$Deuteranopia />
+</AccessibilityPolicy>

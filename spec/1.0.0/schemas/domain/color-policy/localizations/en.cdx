@@ -1,0 +1,103 @@
+<LocalizationBundle
+	schema=paperhat:domain:color-policy
+	schemaVersion="1.0.0"
+	language=$En
+>
+	<ConceptLocalization identifier="AccessibilityPolicy" label="Accessibility Policy" labelOther="Accessibility Policies" />
+
+	<ConceptLocalization identifier="ContrastRequirement" label="Contrast Requirement" labelOther="Contrast Requirements" />
+
+	<ConceptLocalization identifier="SimulationCondition" label="Simulation Condition" labelOther="Simulation Conditions" />
+
+	<ConceptLocalization identifier="ProofPolicy" label="Proof Policy" labelOther="Proof Policies" />
+
+	<ConceptLocalization identifier="ProofTarget" label="Proof Target" labelOther="Proof Targets" />
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		Human-readable policy name.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="scopeLevel" label="Scope Level" labelOther="Scope Levels">
+		Intended Prism scope level for the policy.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="accessibilityPolicyStatus" label="Accessibility Policy Status" labelOther="Accessibility Policy Statuses">
+		Lifecycle or governance status for an accessibility policy.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="complianceStandard" label="Compliance Standard" labelOther="Compliance Standards">
+		Declared compliance standard for accessibility evaluation.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="contrastComputationMode" label="Contrast Computation Mode" labelOther="Contrast Computation Modes">
+		Declared contrast-computation mode.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		Stable document-scoped lookup key.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="minimumContrastRatio" label="Minimum Contrast Ratio" labelOther="Minimum Contrast Ratios">
+		Minimum acceptable contrast ratio.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="foregroundRoleType" label="Foreground Role Type" labelOther="Foreground Role Types">
+		Governing foreground semantic role type.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="backgroundRoleType" label="Background Role Type" labelOther="Background Role Types">
+		Governing background semantic role type.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="label" label="Label" labelOther="Labels">
+		Human-readable display label.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="contrastContext" label="Contrast Context" labelOther="Contrast Contexts">
+		Context classification for a contrast requirement.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="contrastRequirementStatus" label="Contrast Requirement Status" labelOther="Contrast Requirement Statuses">
+		Lifecycle or governance status for a contrast requirement.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="simulationMode" label="Simulation Mode" labelOther="Simulation Modes">
+		Simulation mode required during evaluation.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="simulationConditionStatus" label="Simulation Condition Status" labelOther="Simulation Condition Statuses">
+		Lifecycle or governance status for a simulation condition.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="proofPolicyStatus" label="Proof Policy Status" labelOther="Proof Policy Statuses">
+		Lifecycle or governance status for a proof policy.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="targetMedium" label="Target Medium" labelOther="Target Media">
+		Declared proof target medium.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="proofColorSpace" label="Proof Color Space" labelOther="Proof Color Spaces">
+		Declared proof color space.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="gamutMappingMode" label="Gamut Mapping Mode" labelOther="Gamut Mapping Modes">
+		Declared gamut-mapping mode.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="proofComparisonMode" label="Proof Comparison Mode" labelOther="Proof Comparison Modes">
+		Declared proof comparison mode.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="renderingIntent" label="Rendering Intent" labelOther="Rendering Intents">
+		Declared rendering intent.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="toleranceDeltaE" label="Tolerance Delta E" labelOther="Tolerance Delta E Values">
+		Declared acceptable color-difference tolerance.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="proofTargetStatus" label="Proof Target Status" labelOther="Proof Target Statuses">
+		Lifecycle or governance status for a proof target.
+	</TraitLocalization>
+</LocalizationBundle>

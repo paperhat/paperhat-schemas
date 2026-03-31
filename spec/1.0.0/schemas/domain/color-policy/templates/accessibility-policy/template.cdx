@@ -1,0 +1,10 @@
+[An accessibility policy. name and scopeLevel are required. Include at least one ContrastRequirement.]
+<AccessibilityPolicy id=urn:paperhat:example:accessibility-policy:example name="Accessibility Policy Name" scopeLevel=$TokenSet>
+	<ContrastRequirement
+		backgroundRoleType=$Surface
+		foregroundRoleType=$Text
+		id=urn:paperhat:example:contrast-requirement:text-on-surface
+		key=~textOnSurface
+		minimumContrastRatio=4.5
+	/>
+</AccessibilityPolicy>

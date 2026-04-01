@@ -4,9 +4,9 @@
 	proofPolicyStatus=$Active
 	scopeLevel=$Palette
 >
-	<desc:Description bodyMode=$content>
+	<description:Description bodyMode=$content>
 		Proof policy for palette review across coated print and screen preview targets.
-	</desc:Description>
+	</description:Description>
 
 	<ProofTarget
 		gamutMappingMode=$Perceptual

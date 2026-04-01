@@ -28,7 +28,7 @@
 	</TraitLocalization>
 
 	<TraitLocalization identifier="paletteKind" label="Palette Kind" labelOther="Palette Kinds">
-		Open classification for a palette.
+		Palette classification.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="paletteStatus" label="Palette Status" labelOther="Palette Statuses">
@@ -72,7 +72,7 @@
 	</TraitLocalization>
 
 	<TraitLocalization identifier="roleType" label="Role Type" labelOther="Role Types">
-		Base semantic role type.
+		Base semantic role type from the Prism role vocabulary.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="parentRole" label="Parent Role" labelOther="Parent Roles">

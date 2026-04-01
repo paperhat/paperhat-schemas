@@ -4,9 +4,9 @@
 	prismProjectStatus=$Draft
 	title="Example Prism Project"
 >
-	<desc:Description bodyMode=$content>
+	<description:Description bodyMode=$content>
 		Describe the Prism project here.
-	</desc:Description>
+	</description:Description>
 
 	<project:Project
 		id=urn:paperhat:template:project:example
@@ -24,9 +24,9 @@
 		sourceLocator=https://example.com/source
 		sourceStatus=$Active
 	>
-		<desc:Description bodyMode=$content>
+		<description:Description bodyMode=$content>
 			Describe the upstream source here.
-		</desc:Description>
+		</description:Description>
 	</SourceReference>
 
 	<colorgovernance:ColorSystem
@@ -99,6 +99,16 @@
 		/>
 	</colorpolicy:AccessibilityPolicy>
 
+	<AccessibilityPolicyBinding
+		id=urn:paperhat:template:accessibility-policy-binding:example
+		key=~accessibilityBinding
+		label="Example Accessibility Binding"
+	>
+		<AccessibilityPolicyReference target=urn:paperhat:template:accessibility-policy:example />
+
+		<GovernedScopeReference target=urn:paperhat:template:token-set:example />
+	</AccessibilityPolicyBinding>
+
 	<colorpolicy:ProofPolicy
 		id=urn:paperhat:template:proof-policy:example
 		name="Example Proof Policy"
@@ -114,6 +124,16 @@
 		/>
 	</colorpolicy:ProofPolicy>
 
+	<ProofPolicyBinding
+		id=urn:paperhat:template:proof-policy-binding:example
+		key=~proofBinding
+		label="Example Proof Binding"
+	>
+		<ProofPolicyReference target=urn:paperhat:template:proof-policy:example />
+
+		<GovernedScopeReference target=urn:paperhat:template:palette:example />
+	</ProofPolicyBinding>
+
 	<GovernancePack
 		governancePackStatus=$Active
 		id=urn:paperhat:template:governance-pack:example
@@ -127,7 +147,7 @@
 			publicationScopeStatus=$Active
 			scopeLevel=$TokenSet
 		>
-			<ref:Reference target=urn:paperhat:template:token-set:example />
+			<GovernedScopeReference target=urn:paperhat:template:token-set:example />
 		</PublicationScope>
 	</GovernancePack>
 </PrismProject>

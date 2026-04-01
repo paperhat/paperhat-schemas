@@ -25,23 +25,23 @@ Use this package to author durable rule objects that govern accessibility evalua
 | Trait | Type | Required On | Description |
 |---|---|---|---|
 | name | $Text | AccessibilityPolicy, ProofPolicy | Human-readable policy name. |
-| scopeLevel | $EnumeratedToken | AccessibilityPolicy, ProofPolicy | Intended Prism scope level, such as project, color system, palette, or token set. |
+| scopeLevel | $EnumeratedToken | AccessibilityPolicy, ProofPolicy | Intended Prism scope level. Allowed values: `$Project`, `$ColorSystem`, `$Palette`, `$TokenSet`, `$Token`. |
 | accessibilityPolicyStatus | $EnumeratedToken | no | Lifecycle or governance status for an accessibility policy. |
 | complianceStandard | $EnumeratedToken | no | Declared compliance standard, such as WCAG profile or institutional rule set. |
-| contrastComputationMode | $EnumeratedToken | no | Declared contrast-computation mode. |
+| contrastComputationMode | $EnumeratedToken | no | Declared contrast-computation mode. Allowed values: `$WcagRelativeLuminance`, `$ApcaW3`. |
 | key | $LookupToken | ContrastRequirement, ProofTarget | Stable document-scoped lookup key. |
 | minimumContrastRatio | $FiniteRealNumber | ContrastRequirement | Minimum acceptable contrast ratio. |
-| foregroundRoleType | $EnumeratedToken | ContrastRequirement | Governing foreground semantic role type. |
-| backgroundRoleType | $EnumeratedToken | ContrastRequirement | Governing background semantic role type. |
+| foregroundRoleType | $EnumeratedToken | ContrastRequirement | Governing foreground semantic role type. Allowed values: `$Brand`, `$Surface`, `$Text`, `$Border`, `$Action`, `$Status`, `$DataVisualization`, `$Focus`, `$Disabled`. |
+| backgroundRoleType | $EnumeratedToken | ContrastRequirement | Governing background semantic role type. Allowed values: `$Brand`, `$Surface`, `$Text`, `$Border`, `$Action`, `$Status`, `$DataVisualization`, `$Focus`, `$Disabled`. |
 | label | $Text | ContrastRequirement, ProofTarget | Human-readable display label. |
-| contrastContext | $EnumeratedToken | no | Context classification such as normal text, large text, or non-text. |
+| contrastContext | $EnumeratedToken | no | Context classification. Allowed values: `$NormalText`, `$LargeText`, `$NonText`. |
 | contrastRequirementStatus | $EnumeratedToken | no | Lifecycle or governance status for a contrast requirement. |
-| simulationMode | $EnumeratedToken | SimulationCondition | Simulation mode required during evaluation. |
+| simulationMode | $EnumeratedToken | SimulationCondition | Simulation mode required during evaluation. Allowed values: `$Protanopia`, `$Deuteranopia`, `$Tritanopia`. |
 | simulationConditionStatus | $EnumeratedToken | no | Lifecycle or governance status for a simulation condition. |
 | proofPolicyStatus | $EnumeratedToken | no | Lifecycle or governance status for a proof policy. |
 | targetMedium | $EnumeratedToken | ProofTarget | Declared proof target medium. |
 | proofColorSpace | $EnumeratedToken | no | Declared proof color space. |
-| gamutMappingMode | $EnumeratedToken | no | Declared gamut-mapping mode. |
+| gamutMappingMode | $EnumeratedToken | no | Declared gamut-mapping mode. Allowed values: `$None`, `$Perceptual`, `$Clip`, `$ChromaReduction`. |
 | proofComparisonMode | $EnumeratedToken | no | Declared proof comparison mode. |
 | renderingIntent | $EnumeratedToken | no | Declared rendering intent. |
 | toleranceDeltaE | $FiniteRealNumber | no | Declared acceptable color-difference tolerance. |
@@ -51,10 +51,10 @@ Use this package to author durable rule objects that govern accessibility evalua
 
 | Parent | Child | Source | Description |
 |---|---|---|---|
-| AccessibilityPolicy | desc:Description | `paperhat:domain:description` | Human-readable descriptive text for the accessibility policy. |
+| AccessibilityPolicy | description:Description | `paperhat:domain:description` | Human-readable descriptive text for the accessibility policy. |
 | AccessibilityPolicy | ContrastRequirement | local | One or more authored contrast requirements. |
 | AccessibilityPolicy | SimulationCondition | local | Optional simulation conditions to include during accessibility evaluation. |
-| ProofPolicy | desc:Description | `paperhat:domain:description` | Human-readable descriptive text for the proof policy. |
+| ProofPolicy | description:Description | `paperhat:domain:description` | Human-readable descriptive text for the proof policy. |
 | ProofPolicy | ProofTarget | local | One or more authored proof targets. |
 
 ## Constraints
@@ -67,7 +67,7 @@ Use this package to author durable rule objects that govern accessibility evalua
 
 | Namespace | Schema | Purpose |
 |---|---|---|
-| desc | `paperhat:domain:description` | Provides descriptive text for authored policy objects. |
+| description | `paperhat:domain:description` | Provides descriptive text for authored policy objects. |
 
 ## Design Notes
 

@@ -9,7 +9,7 @@
 	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="desc" reference=urn:cdx:sha256:9bf51d505f8fc4af7c7a97a46613509b6912d3402ef7cbf6ac0dfdf6094a43a0 />
+		<SchemaImport namespace="description" reference=urn:cdx:sha256:9bf51d505f8fc4af7c7a97a46613509b6912d3402ef7cbf6ac0dfdf6094a43a0 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
@@ -36,7 +36,7 @@
 			</TraitRules>
 
 			<ChildRules>
-				<AllowsChildConcept conceptSelector="desc:Description" />
+				<AllowsChildConcept conceptSelector="description:Description" />
 
 				<RequiresChildConcept conceptSelector="ContrastRequirement" min=1 />
 
@@ -109,7 +109,7 @@
 			</TraitRules>
 
 			<ChildRules>
-				<AllowsChildConcept conceptSelector="desc:Description" />
+				<AllowsChildConcept conceptSelector="description:Description" />
 
 				<RequiresChildConcept conceptSelector="ProofTarget" min=1 />
 			</ChildRules>
@@ -160,7 +160,11 @@
 			defaultValueType=$EnumeratedToken
 			id=paperhat:domain:color-policy:trait:scopeLevel
 			name="scopeLevel"
-		/>
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Project, $ColorSystem, $Palette, $TokenSet, $Token] />
+			</AllowedValues>
+		</TraitDefinition>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
@@ -178,7 +182,11 @@
 			defaultValueType=$EnumeratedToken
 			id=paperhat:domain:color-policy:trait:contrastComputationMode
 			name="contrastComputationMode"
-		/>
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$WcagRelativeLuminance, $ApcaW3] />
+			</AllowedValues>
+		</TraitDefinition>
 
 		<TraitDefinition
 			defaultValueType=$LookupToken
@@ -196,13 +204,21 @@
 			defaultValueType=$EnumeratedToken
 			id=paperhat:domain:color-policy:trait:foregroundRoleType
 			name="foregroundRoleType"
-		/>
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Brand, $Surface, $Text, $Border, $Action, $Status, $DataVisualization, $Focus, $Disabled] />
+			</AllowedValues>
+		</TraitDefinition>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
 			id=paperhat:domain:color-policy:trait:backgroundRoleType
 			name="backgroundRoleType"
-		/>
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Brand, $Surface, $Text, $Border, $Action, $Status, $DataVisualization, $Focus, $Disabled] />
+			</AllowedValues>
+		</TraitDefinition>
 
 		<TraitDefinition
 			defaultValueType=$Text
@@ -214,7 +230,11 @@
 			defaultValueType=$EnumeratedToken
 			id=paperhat:domain:color-policy:trait:contrastContext
 			name="contrastContext"
-		/>
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$NormalText, $LargeText, $NonText] />
+			</AllowedValues>
+		</TraitDefinition>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
@@ -226,7 +246,11 @@
 			defaultValueType=$EnumeratedToken
 			id=paperhat:domain:color-policy:trait:simulationMode
 			name="simulationMode"
-		/>
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Protanopia, $Deuteranopia, $Tritanopia] />
+			</AllowedValues>
+		</TraitDefinition>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
@@ -256,7 +280,11 @@
 			defaultValueType=$EnumeratedToken
 			id=paperhat:domain:color-policy:trait:gamutMappingMode
 			name="gamutMappingMode"
-		/>
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$None, $Perceptual, $Clip, $ChromaReduction] />
+			</AllowedValues>
+		</TraitDefinition>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken

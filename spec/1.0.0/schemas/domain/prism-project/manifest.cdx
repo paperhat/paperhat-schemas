@@ -1,8 +1,8 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="173f5f2f6adf4cab77fd13eae53460c0e440203add96c9f60ca83e817014d8d4"
+	closureHash="7138b8d81f59ae40c55cdaf3a7cce9fabd576015808737c752eb56b99cc570ea"
 	copyright="Copyright 2026 Paperhat"
-	description="Root Prism project-document composer. Imports generic Paperhat packages plus color-governance and color-policy packages, and defines project-scoped source references, governance packs, review dispositions, and publication scopes."
+	description="Root Prism project-document composer. Imports generic Paperhat packages plus color-governance and color-policy packages, and defines project-scoped source references, durable policy bindings, governance packs, review dispositions, and publication scopes."
 	license="Apache-2.0"
 	packageName="paperhat-prism-project"
 	packageVersion="1.0.0"
@@ -12,13 +12,13 @@
 >
 	<PackageDependency
 		packageName="paperhat-color-governance"
-		closureHash="8bd1046ff72eb480d296865f30bf22187f5f16487315a06ce32a56e41ce41611"
+		closureHash="723d1a2b8a8181aaa512f821da34b69b500743c9d7a284bab8eb0fec6952603f"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-color-policy"
-		closureHash="d6b3e41fb7e9eb5984126c28a0f75a205b3d38775cb603657121b7bb5a2ca7f5"
+		closureHash="acbcad0b22ea96a6a00842a83560f42b1b3a59754e82858733171cb0b35b02a3"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
@@ -37,12 +37,6 @@
 	<PackageDependency
 		packageName="paperhat-project"
 		closureHash="dc6b21e17fbce065495041df0f8e4b3f3439c4fd14e592156cebcca54f0a4e8e"
-		versionRange=">=1.0.0 <2.0.0"
-	/>
-
-	<PackageDependency
-		packageName="paperhat-reference"
-		closureHash="aa41aacb3868d557b90a683712e767319933bf141a65d167acce7ca9a8d14480"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

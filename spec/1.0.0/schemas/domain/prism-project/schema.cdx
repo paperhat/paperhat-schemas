@@ -1,7 +1,7 @@
 <Schema
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
-	description="Root Prism project-document composer. Defines PrismProject assembly, project-scoped source references, governance packs, review dispositions, and publication scopes above color-governance and color-policy packages."
+	description="Root Prism project-document composer. Defines PrismProject assembly, project-scoped source references, policy bindings, governance packs, review dispositions, and publication scopes above color-governance and color-policy packages."
 	id=paperhat:domain:prism-project
 	namespace="prismproject"
 	title="Prism Project Schema"
@@ -9,17 +9,15 @@
 	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="colorgovernance" reference=urn:cdx:sha256:4cbefb9340d46f26e6777cd896e2284cc716901e1bf5beb00a2e3501150ca391 />
+		<SchemaImport namespace="colorgovernance" reference=urn:cdx:sha256:ec837d682aa4f7a0626287cb078268fe5241eaab24cd0035a0ed52bf684cf273 />
 
-		<SchemaImport namespace="colorpolicy" reference=urn:cdx:sha256:1743dd0a4f99ac7f19c1b3a541802c8bca6b80401b45c82a83df34a8629748c5 />
+		<SchemaImport namespace="colorpolicy" reference=urn:cdx:sha256:88bb053e7d8bf33025b1469a4f899aa17213b795220359cede2545dcf8939fa2 />
 
-		<SchemaImport namespace="desc" reference=urn:cdx:sha256:9bf51d505f8fc4af7c7a97a46613509b6912d3402ef7cbf6ac0dfdf6094a43a0 />
+		<SchemaImport namespace="description" reference=urn:cdx:sha256:9bf51d505f8fc4af7c7a97a46613509b6912d3402ef7cbf6ac0dfdf6094a43a0 />
 
-		<SchemaImport namespace="docmeta" reference=urn:cdx:sha256:278b611aa10acc61150c7c511b3b1f29aa64c99d8c4d8e1f73bfe5f66aa95a08 />
+		<SchemaImport namespace="documentMetadata" reference=urn:cdx:sha256:278b611aa10acc61150c7c511b3b1f29aa64c99d8c4d8e1f73bfe5f66aa95a08 />
 
 		<SchemaImport namespace="project" reference=urn:cdx:sha256:5b5b0e5151a05675f39bdaf4154fc5076c83185fce972f195f7b276daeadf3e8 />
-
-		<SchemaImport namespace="ref" reference=urn:cdx:sha256:a8f79acf2c9b632e12547fb918a474e32c72223f76156cedea74f0b29b353f62 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
@@ -41,9 +39,9 @@
 			</TraitRules>
 
 			<ChildRules>
-				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
+				<AllowsChildConcept conceptSelector="description:Description" max=1 />
 
-				<AllowsChildConcept conceptSelector="docmeta:DocumentMetadata" max=1 />
+				<AllowsChildConcept conceptSelector="documentMetadata:DocumentMetadata" max=1 />
 
 				<AllowsChildConcept conceptSelector="project:Project" max=1 />
 
@@ -54,6 +52,10 @@
 				<AllowsChildConcept conceptSelector="colorpolicy:ProofPolicy" />
 
 				<AllowsChildConcept conceptSelector="SourceReference" />
+
+				<AllowsChildConcept conceptSelector="AccessibilityPolicyBinding" />
+
+				<AllowsChildConcept conceptSelector="ProofPolicyBinding" />
 
 				<AllowsChildConcept conceptSelector="GovernancePack" max=1 />
 			</ChildRules>
@@ -78,7 +80,7 @@
 			</TraitRules>
 
 			<ChildRules>
-				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
+				<AllowsChildConcept conceptSelector="description:Description" max=1 />
 
 				<RequiresChildConcept conceptSelector="PublicationScope" min=1 />
 
@@ -111,8 +113,62 @@
 			</TraitRules>
 
 			<ChildRules>
-				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
+				<AllowsChildConcept conceptSelector="description:Description" max=1 />
 			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:prism-project:AccessibilityPolicyBinding
+			name="AccessibilityPolicyBinding"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<AllowsTrait name="label" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="description:Description" max=1 />
+
+				<RequiresChildConcept conceptSelector="AccessibilityPolicyReference" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="GovernedScopeReference" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:prism-project:ProofPolicyBinding
+			name="ProofPolicyBinding"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<AllowsTrait name="label" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="description:Description" max=1 />
+
+				<RequiresChildConcept conceptSelector="ProofPolicyReference" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="GovernedScopeReference" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -140,9 +196,9 @@
 			</TraitRules>
 
 			<ChildRules>
-				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
+				<AllowsChildConcept conceptSelector="description:Description" max=1 />
 
-				<RequiresChildConcept conceptSelector="ref:Reference" max=1 min=1 />
+				<RequiresChildConcept conceptSelector="ReviewTargetReference" max=1 min=1 />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=false ordering=$Ordered />
@@ -173,12 +229,72 @@
 			</TraitRules>
 
 			<ChildRules>
-				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
+				<AllowsChildConcept conceptSelector="description:Description" max=1 />
 
-				<RequiresChildConcept conceptSelector="ref:Reference" min=1 />
+				<RequiresChildConcept conceptSelector="GovernedScopeReference" min=1 />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:prism-project:AccessibilityPolicyReference
+			name="AccessibilityPolicyReference"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="target" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:prism-project:ProofPolicyReference
+			name="ProofPolicyReference"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="target" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:prism-project:GovernedScopeReference
+			name="GovernedScopeReference"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="target" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:prism-project:ReviewTargetReference
+			name="ReviewTargetReference"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="target" />
+			</TraitRules>
 		</ConceptDefinition>
 	</ConceptDefinitions>
 
@@ -223,7 +339,11 @@
 			defaultValueType=$EnumeratedToken
 			id=paperhat:domain:prism-project:trait:sourceKind
 			name="sourceKind"
-		/>
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$DesignSource, $TokenRegistry, $BrandSource] />
+			</AllowedValues>
+		</TraitDefinition>
 
 		<TraitDefinition
 			defaultValueType=$Iri
@@ -265,13 +385,21 @@
 			defaultValueType=$EnumeratedToken
 			id=paperhat:domain:prism-project:trait:scopeLevel
 			name="scopeLevel"
-		/>
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Project, $ColorSystem, $Palette, $TokenSet, $Token] />
+			</AllowedValues>
+		</TraitDefinition>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
 			id=paperhat:domain:prism-project:trait:publicationIntent
 			name="publicationIntent"
-		/>
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Css, $ApplicationTokens, $PrintSwatches, $Proof, $Report, $Governance] />
+			</AllowedValues>
+		</TraitDefinition>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
@@ -284,5 +412,298 @@
 			id=paperhat:domain:prism-project:trait:publicationScopeStatus
 			name="publicationScopeStatus"
 		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:prism-project:trait:target
+			isReferenceTrait=true
+			name="target"
+		/>
 	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=paperhat:domain:prism-project:local-reference-trait-allowed-accessibility-policy
+			title="AccessibilityPolicyReference allows only target as a reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AccessibilityPolicyReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:prism-project:local-reference-trait-allowed-proof-policy
+			title="ProofPolicyReference allows only target as a reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ProofPolicyReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:prism-project:local-reference-trait-allowed-governed-scope
+			title="GovernedScopeReference allows only target as a reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="GovernedScopeReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:prism-project:local-reference-trait-allowed-review-target
+			title="ReviewTargetReference allows only target as a reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ReviewTargetReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:prism-project:local-reference-singleton-accessibility-policy
+			title="AccessibilityPolicyReference must declare at most one reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AccessibilityPolicyReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceSingleton />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:prism-project:local-reference-singleton-proof-policy
+			title="ProofPolicyReference must declare at most one reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ProofPolicyReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceSingleton />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:prism-project:local-reference-singleton-governed-scope
+			title="GovernedScopeReference must declare at most one reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="GovernedScopeReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceSingleton />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:prism-project:local-reference-singleton-review-target
+			title="ReviewTargetReference must declare at most one reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ReviewTargetReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceSingleton />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:prism-project:local-reference-must-resolve-accessibility-policy
+			title="AccessibilityPolicyReference must resolve"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AccessibilityPolicyReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceMustResolve />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:prism-project:local-reference-must-resolve-proof-policy
+			title="ProofPolicyReference must resolve"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ProofPolicyReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceMustResolve />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:prism-project:local-reference-must-resolve-governed-scope
+			title="GovernedScopeReference must resolve"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="GovernedScopeReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceMustResolve />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:prism-project:local-reference-must-resolve-review-target
+			title="ReviewTargetReference must resolve"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ReviewTargetReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceMustResolve />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:prism-project:accessibility-policy-reference-target-type
+			title="AccessibilityPolicyReference target must be AccessibilityPolicy"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AccessibilityPolicyReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="colorpolicy:AccessibilityPolicy" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:prism-project:proof-policy-reference-target-type
+			title="ProofPolicyReference target must be ProofPolicy"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ProofPolicyReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="colorpolicy:ProofPolicy" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:prism-project:governed-scope-reference-target-type
+			title="GovernedScopeReference target must be a Prism governed scope"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="GovernedScopeReference" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="PrismProject" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="colorgovernance:ColorSystem" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="colorgovernance:Palette" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="colorgovernance:TokenSet" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="colorgovernance:Token" />
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:prism-project:review-target-reference-target-type
+			title="ReviewTargetReference target must be a Prism reviewable entity"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ReviewTargetReference" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="PrismProject" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="GovernancePack" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="SourceReference" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="AccessibilityPolicyBinding" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="ProofPolicyBinding" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="PublicationScope" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="colorpolicy:AccessibilityPolicy" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="colorpolicy:ProofPolicy" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="colorgovernance:ColorSystem" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="colorgovernance:Palette" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="colorgovernance:PaletteMember" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="colorgovernance:TokenSet" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="colorgovernance:Token" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="colorgovernance:SemanticRole" />
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
 </Schema>

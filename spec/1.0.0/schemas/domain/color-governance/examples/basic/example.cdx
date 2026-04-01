@@ -3,9 +3,9 @@
 	id=urn:paperhat:example:color-system:paperhat-core
 	name="Paperhat Core Color System"
 >
-	<desc:Description bodyMode=$content>
+	<description:Description bodyMode=$content>
 		The primary governed color system for Paperhat products and publications.
-	</desc:Description>
+	</description:Description>
 
 	<SemanticRole
 		id=urn:paperhat:example:semantic-role:brand
@@ -14,9 +14,9 @@
 		roleStatus=$Active
 		roleType=$Brand
 	>
-		<desc:Description bodyMode=$content>
+		<description:Description bodyMode=$content>
 			Brand-signifying color role for identity-bearing surfaces and accents.
-		</desc:Description>
+		</description:Description>
 	</SemanticRole>
 
 	<SemanticRole

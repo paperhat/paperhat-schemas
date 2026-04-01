@@ -9,9 +9,21 @@
 
 	<ConceptLocalization identifier="SourceReference" label="Source Reference" labelOther="Source References" />
 
+	<ConceptLocalization identifier="AccessibilityPolicyBinding" label="Accessibility Policy Binding" labelOther="Accessibility Policy Bindings" />
+
+	<ConceptLocalization identifier="ProofPolicyBinding" label="Proof Policy Binding" labelOther="Proof Policy Bindings" />
+
 	<ConceptLocalization identifier="ReviewDisposition" label="Review Disposition" labelOther="Review Dispositions" />
 
 	<ConceptLocalization identifier="PublicationScope" label="Publication Scope" labelOther="Publication Scopes" />
+
+	<ConceptLocalization identifier="AccessibilityPolicyReference" label="Accessibility Policy Reference" labelOther="Accessibility Policy References" />
+
+	<ConceptLocalization identifier="ProofPolicyReference" label="Proof Policy Reference" labelOther="Proof Policy References" />
+
+	<ConceptLocalization identifier="GovernedScopeReference" label="Governed Scope Reference" labelOther="Governed Scope References" />
+
+	<ConceptLocalization identifier="ReviewTargetReference" label="Review Target Reference" labelOther="Review Target References" />
 
 	<TraitLocalization identifier="title" label="Title" labelOther="Titles">
 		Human-readable project title.
@@ -38,7 +50,7 @@
 	</TraitLocalization>
 
 	<TraitLocalization identifier="sourceKind" label="Source Kind" labelOther="Source Kinds">
-		Open classification for a source reference.
+		Source classification for a source reference.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="sourceLocator" label="Source Locator" labelOther="Source Locators">
@@ -50,7 +62,7 @@
 	</TraitLocalization>
 
 	<TraitLocalization identifier="dispositionKind" label="Disposition Kind" labelOther="Disposition Kinds">
-		Open classification for a review disposition.
+		Classification for a review disposition.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="approvalState" label="Approval State" labelOther="Approval States">
@@ -79,5 +91,9 @@
 
 	<TraitLocalization identifier="publicationScopeStatus" label="Publication Scope Status" labelOther="Publication Scope Statuses">
 		Lifecycle or governance status for a publication scope.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="target" label="Target" labelOther="Targets">
+		Reference target for a typed Prism local reference wrapper.
 	</TraitLocalization>
 </LocalizationBundle>

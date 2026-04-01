@@ -28,18 +28,18 @@ Use this package to author durable semantic grouping and role-governance state f
 | name | $Text | ColorSystem, Palette, TokenSet | Human-readable name for the governed object. |
 | colorSystemKind | $EnumeratedToken | no | Open classification for a ColorSystem. |
 | colorSystemStatus | $EnumeratedToken | no | Lifecycle or governance status for a ColorSystem. |
-| paletteKind | $EnumeratedToken | no | Open classification for a Palette, such as brand, semantic, neutral, or diagnostic. |
+| paletteKind | $EnumeratedToken | no | Palette classification. Allowed values: `$Brand`, `$Semantic`, `$Neutral`, `$Diagnostic`. |
 | paletteStatus | $EnumeratedToken | no | Lifecycle or governance status for a Palette. |
 | key | $LookupToken | PaletteMember, Token, SemanticRole | Stable document-scoped lookup key. |
 | label | $Text | PaletteMember, Token, SemanticRole | Human-readable display label. |
 | colorValue | $Color | PaletteMember, Token | Retained substrate color value. |
 | paletteMemberStatus | $EnumeratedToken | no | Lifecycle or governance status for a PaletteMember. |
-| publicationIntent | $EnumeratedToken | TokenSet, Token | Open publication-target intent, such as CSS tokens, application tokens, or print swatches. |
+| publicationIntent | $EnumeratedToken | TokenSet, Token | Publication-target intent. Allowed values: `$Css`, `$ApplicationTokens`, `$PrintSwatches`. |
 | tokenSetStatus | $EnumeratedToken | no | Lifecycle or governance status for a TokenSet. |
 | semanticRole | $Iri (reference trait) | Token | Reference to the SemanticRole governed by the token. |
 | tokenKind | $EnumeratedToken | no | Open classification for a Token. |
 | tokenStatus | $EnumeratedToken | no | Lifecycle or governance status for a Token. |
-| roleType | $EnumeratedToken | SemanticRole | Base semantic role type. |
+| roleType | $EnumeratedToken | SemanticRole | Base semantic role type. Allowed values: `$Brand`, `$Surface`, `$Text`, `$Border`, `$Action`, `$Status`, `$DataVisualization`, `$Focus`, `$Disabled`. |
 | parentRole | $Iri (reference trait) | no | Optional reference to a parent SemanticRole for role-graph structure. |
 | roleStatus | $EnumeratedToken | no | Lifecycle or governance status for a SemanticRole. |
 
@@ -47,15 +47,15 @@ Use this package to author durable semantic grouping and role-governance state f
 
 | Parent | Child | Source | Description |
 |---|---|---|---|
-| ColorSystem | desc:Description | `paperhat:domain:description` | Human-readable descriptive text for the color system. |
+| ColorSystem | description:Description | `paperhat:domain:description` | Human-readable descriptive text for the color system. |
 | ColorSystem | Palette | local | One or more ordered palettes inside the governed system. |
 | ColorSystem | SemanticRole | local | One or more governed semantic roles inside the system. |
 | ColorSystem | TokenSet | local | Optional token sets for publication or application use. |
-| Palette | desc:Description | `paperhat:domain:description` | Human-readable descriptive text for the palette. |
+| Palette | description:Description | `paperhat:domain:description` | Human-readable descriptive text for the palette. |
 | Palette | PaletteMember | local | One or more ordered palette members. |
-| TokenSet | desc:Description | `paperhat:domain:description` | Human-readable descriptive text for the token set. |
+| TokenSet | description:Description | `paperhat:domain:description` | Human-readable descriptive text for the token set. |
 | TokenSet | Token | local | One or more ordered tokens. |
-| SemanticRole | desc:Description | `paperhat:domain:description` | Human-readable descriptive text for the role. |
+| SemanticRole | description:Description | `paperhat:domain:description` | Human-readable descriptive text for the role. |
 
 ## Constraints
 
@@ -74,7 +74,7 @@ Use this package to author durable semantic grouping and role-governance state f
 
 | Namespace | Schema | Purpose |
 |---|---|---|
-| desc | `paperhat:domain:description` | Provides descriptive text for color systems, palettes, token sets, and semantic roles. |
+| description | `paperhat:domain:description` | Provides descriptive text for color systems, palettes, token sets, and semantic roles. |
 
 ## Design Notes
 

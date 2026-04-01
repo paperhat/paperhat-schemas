@@ -6,9 +6,9 @@
 	name="Core Accessibility Policy"
 	scopeLevel=$TokenSet
 >
-	<desc:Description bodyMode=$content>
+	<description:Description bodyMode=$content>
 		Accessibility policy for token-set publication and interface review.
-	</desc:Description>
+	</description:Description>
 
 	<ContrastRequirement
 		backgroundRoleType=$Surface

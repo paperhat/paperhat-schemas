@@ -6,7 +6,7 @@
 		status=$Draft
 	/>
 
-	<desc:Description bodyMode=$content language=$En>
+	<desc:Description bodyMode=$content language=language-tag("en")>
 		Quarterly assessment of bridge and tunnel maintenance needs across the
 		northern district.
 	</desc:Description>

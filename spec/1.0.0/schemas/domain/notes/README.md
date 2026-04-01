@@ -23,7 +23,7 @@ A single annotation. The note text is the element's content.
 | Trait | Type | Required | Description |
 |---|---|---|---|
 | key | $LookupToken | yes | The reference key used to cite this note from the body text, e.g. `1`, `a`, `smith2024`. |
-| language | $EnumeratedToken | no | BCP 47 language tag identifying the language of the note text. |
+| language | $LanguageTag | no | BCP 47 language tag identifying the language of the note text. |
 
 ## Design Notes
 

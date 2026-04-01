@@ -1,7 +1,7 @@
 <LocalizationBundle
 	schema=paperhat:domain:terms-of-use
 	schemaVersion="1.0.0"
-	language=$En
+	language=language-tag("en")
 >
 	<ConceptLocalization identifier="TermsOfUse" label="Terms Of Use" />
 	<ConceptLocalization identifier="GoverningEntity" label="Governing Entity" labelOther="Governing Entities" />

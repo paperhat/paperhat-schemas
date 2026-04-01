@@ -9,15 +9,15 @@
 	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="colorgovernance" reference=urn:cdx:sha256:ec837d682aa4f7a0626287cb078268fe5241eaab24cd0035a0ed52bf684cf273 />
+		<SchemaImport namespace="colorgovernance" reference=urn:cdx:sha256:3ad00e53971952f5fe41fe031100b8f6367ea662c20f4fb221708454b5527d5f />
 
-		<SchemaImport namespace="colorpolicy" reference=urn:cdx:sha256:88bb053e7d8bf33025b1469a4f899aa17213b795220359cede2545dcf8939fa2 />
+		<SchemaImport namespace="colorpolicy" reference=urn:cdx:sha256:db64fa39247b9814ce534e4b58308644bafa0433591fee18bd00eba52a461860 />
 
-		<SchemaImport namespace="description" reference=urn:cdx:sha256:9bf51d505f8fc4af7c7a97a46613509b6912d3402ef7cbf6ac0dfdf6094a43a0 />
+		<SchemaImport namespace="description" reference=urn:cdx:sha256:aedb0f8af35a38f088a3e99cb0297df7c0a252cdb58cf3072a2d20103e23c3e8 />
 
-		<SchemaImport namespace="documentMetadata" reference=urn:cdx:sha256:278b611aa10acc61150c7c511b3b1f29aa64c99d8c4d8e1f73bfe5f66aa95a08 />
+		<SchemaImport namespace="documentMetadata" reference=urn:cdx:sha256:a44cca2beec670d2c38b4b429c67aefc5d5b556bbb88758a4928f13dca0cfdf0 />
 
-		<SchemaImport namespace="project" reference=urn:cdx:sha256:5b5b0e5151a05675f39bdaf4154fc5076c83185fce972f195f7b276daeadf3e8 />
+		<SchemaImport namespace="project" reference=urn:cdx:sha256:1ed1947584fb85d447dc0ff8255564fba667269b928f682ee54349581239211c />
 	</SchemaImports>
 
 	<ConceptDefinitions>

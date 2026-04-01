@@ -3,7 +3,7 @@
 	id=urn:paperhat:example:white-paper:minimal
 	title="A Minimal White Paper"
 >
-	<documentstructure:Abstract language=$En>
+	<documentstructure:Abstract language=language-tag("en")>
 		This white paper demonstrates the minimal valid structure.
 	</documentstructure:Abstract>
 

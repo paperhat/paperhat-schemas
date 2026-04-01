@@ -1,3 +1,3 @@
-<Question key=~whatIsCodex language=$En>
+<Question key=~whatIsCodex language=language-tag("en")>
 	What is Codex?
 </Question>

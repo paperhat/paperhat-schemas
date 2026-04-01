@@ -1,4 +1,4 @@
-<LocalizationBundle language=$En schema=paperhat:domain:defined-term schemaVersion="1.0.0">
+<LocalizationBundle language=language-tag("en") schema=paperhat:domain:defined-term schemaVersion="1.0.0">
 	<ConceptLocalization identifier="DefinedTerm" label="Defined Term" labelOther="Defined Terms" />
 
 	<TraitLocalization identifier="scope" label="Scope" labelOther="Scopes">

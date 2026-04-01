@@ -1,1 +1,1 @@
-<Work author="John Smith" dateCreated=date(1 february 2026) language=$En status=$Draft />
+<Work author="John Smith" dateCreated=date(1 february 2026) language=language-tag("en") status=$Draft />

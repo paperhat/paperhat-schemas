@@ -41,7 +41,7 @@
 		/>
 
 		<TraitDefinition
-			defaultValueType=$EnumeratedToken
+			defaultValueType=$LanguageTag
 			id=paperhat:domain:remark:trait:language
 			name="language"
 		/>

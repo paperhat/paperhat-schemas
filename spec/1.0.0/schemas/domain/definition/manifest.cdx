@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="7cd2c8bb70f33933edaa7dd76ed8c675a0b1d42eb66c79b9bb526fcc915454e3"
+	closureHash="ec6f866b9489cc0555ad794127061cfc0f71450ef32e61df58bac0c20c6285fa"
 	copyright="Copyright 2026 Paperhat"
 	description="A formal definition binding a term (definiendum) to its meaning (definiens). Usable in glossaries, specifications, technical documents, and any context that defines terms."
 	license="Apache-2.0"

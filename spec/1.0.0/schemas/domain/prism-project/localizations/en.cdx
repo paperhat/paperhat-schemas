@@ -1,7 +1,7 @@
 <LocalizationBundle
 	schema=paperhat:domain:prism-project
 	schemaVersion="1.0.0"
-	language=$En
+	language=language-tag("en")
 >
 	<ConceptLocalization identifier="PrismProject" label="Prism Project" labelOther="Prism Projects" />
 

@@ -34,7 +34,7 @@
 		/>
 
 		<TraitDefinition
-			defaultValueType=$EnumeratedToken
+			defaultValueType=$LanguageTag
 			id=paperhat:domain:instruction:trait:language
 			name="language"
 		/>

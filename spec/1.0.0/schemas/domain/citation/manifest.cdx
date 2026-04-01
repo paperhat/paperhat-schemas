@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="392540e040c639711035cc90850565892c34c5eef6f1f22852140cc872b23ad6"
+	closureHash="dec249bd258b5aca7da2937b2129b25f7a077957b6b15263d1b11eb79d7b471b"
 	copyright="Copyright 2026 Paperhat"
 	description="A structured bibliographic citation with ordered contributors (persons or organizations), publication metadata, and identifiers."
 	license="Apache-2.0"
@@ -18,7 +18,7 @@
 
 	<PackageDependency
 		packageName="paperhat-organization"
-		closureHash="12696b1e182a9daba3975eedfd21623ed61a3ea85a08db698bcb12efcd32c1dd"
+		closureHash="85ed4ba5da597242148b201d522fbd976527e7d78ff8f2bbaaf5bbf4f661d3ea"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 

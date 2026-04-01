@@ -1,7 +1,7 @@
 <LocalizationBundle
 	schema=paperhat:view:definition
 	schemaVersion="1.0.0"
-	language=$En
+	language=language-tag("en")
 >
 	<ConceptLocalization identifier="ViewDefinition" label="View Definition" labelOther="View Definitions" />
 	<ConceptLocalization identifier="ViewField" label="View Field" labelOther="View Fields" />

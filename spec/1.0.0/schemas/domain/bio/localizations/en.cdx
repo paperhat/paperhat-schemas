@@ -1,7 +1,7 @@
 <LocalizationBundle
 	schema=paperhat:domain:bio
 	schemaVersion="1.0.0"
-	language=$En
+	language=language-tag("en")
 >
 	<ConceptLocalization identifier="Bio" label="Bio" labelOther="Bios" />
 

@@ -1,7 +1,7 @@
 <Work
 	dateCreated=date(1 june 2025)
 	dateModified=date(10 february 2026)
-	language=$En
+	language=language-tag("en")
 	license=$CcBy4Point0
 	status=$Published
 	version="3.2.1"

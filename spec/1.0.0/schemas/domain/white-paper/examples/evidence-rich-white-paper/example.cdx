@@ -3,7 +3,7 @@
 	id=urn:paperhat:example:white-paper:evidence-rich
 	title="Evidence-Based Document Processing"
 >
-	<documentstructure:Abstract language=$En>
+	<documentstructure:Abstract language=language-tag("en")>
 		An analysis of deterministic document processing systems and their advantages
 		over probabilistic approaches.
 	</documentstructure:Abstract>

@@ -37,7 +37,7 @@
 				<AllowsChildConcept conceptSelector="ConstraintLocalization" />
 			</ChildRules>
 
-			<CollectionRules allowsDuplicates=false ordering=$Unordered />
+			<CollectionRules allowsDuplicates=true ordering=$Unordered />
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -157,7 +157,7 @@
 		/>
 
 		<TraitDefinition
-			defaultValueType=$EnumeratedToken
+			defaultValueType=$LanguageTag
 			id=paperhat:system:localization:trait:language
 			name="language"
 		/>
@@ -210,4 +210,58 @@
 			name="grammaticalGender"
 		/>
 	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=paperhat:system:localization:concept-localization-identifiers-unique-within-bundle
+			title="Concept localization identifiers must be unique within a bundle"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ConceptLocalization" />
+			</Targets>
+
+			<Rule>
+				<UniqueConstraint scope="LocalizationBundle" trait="identifier" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:system:localization:trait-localization-identifiers-unique-within-bundle
+			title="Trait localization identifiers must be unique within a bundle"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="TraitLocalization" />
+			</Targets>
+
+			<Rule>
+				<UniqueConstraint scope="LocalizationBundle" trait="identifier" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:system:localization:token-localization-identifiers-unique-within-bundle
+			title="Token localization identifiers must be unique within a bundle"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="TokenLocalization" />
+			</Targets>
+
+			<Rule>
+				<UniqueConstraint scope="LocalizationBundle" trait="identifier" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:system:localization:constraint-localization-identifiers-unique-within-bundle
+			title="Constraint localization identifiers must be unique within a bundle"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ConstraintLocalization" />
+			</Targets>
+
+			<Rule>
+				<UniqueConstraint scope="LocalizationBundle" trait="identifier" />
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
 </Schema>

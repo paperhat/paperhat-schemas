@@ -7,7 +7,7 @@
 	recyclable=true
 >
 	<Aliases>
-		<Alias language=$EnNz>
+		<Alias language=language-tag("en-NZ")>
 			Cast-iron
 		</Alias>
 	</Aliases>

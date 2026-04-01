@@ -1,7 +1,7 @@
 <LocalizationBundle
 	schema=paperhat:domain:color-policy
 	schemaVersion="1.0.0"
-	language=$En
+	language=language-tag("en")
 >
 	<ConceptLocalization identifier="AccessibilityPolicy" label="Accessibility Policy" labelOther="Accessibility Policies" />
 

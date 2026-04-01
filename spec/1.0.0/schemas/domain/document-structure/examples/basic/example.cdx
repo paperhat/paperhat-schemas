@@ -1,4 +1,4 @@
-<Abstract language=$En>
+<Abstract language=language-tag("en")>
 	This paper examines the relationship between semantic type systems and
 	document authoring. Treating discourse units as typed values yields
 	deterministic, reproducible documents.

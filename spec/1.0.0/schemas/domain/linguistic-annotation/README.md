@@ -24,7 +24,7 @@ A ruby annotation: text displayed above or beside the base text of a Gloss span.
 |---|---|---|---|---|
 | key | $LookupToken | Single | yes | Gloss binding key. |
 | annotation | $Text | Single | yes | The annotation text displayed above or beside the base text (e.g. furigana, pinyin). |
-| language | $EnumeratedToken | Single | no | Language of the annotation text, if different from the base text. |
+| language | $LanguageTag | Single | no | Language of the annotation text, if different from the base text. |
 | position | $EnumeratedToken | Single | no | Where to display the annotation relative to the base text (e.g. `$above`, `$beside`). Foundry default is `$above`. |
 
 ## Constraints

@@ -1,7 +1,7 @@
 <LocalizationBundle
 	schema=paperhat:domain:jurisdiction
 	schemaVersion="1.0.0"
-	language=$En
+	language=language-tag("en")
 >
 	<ConceptLocalization identifier="Jurisdiction" label="Jurisdiction" labelOther="Jurisdictions" />
 

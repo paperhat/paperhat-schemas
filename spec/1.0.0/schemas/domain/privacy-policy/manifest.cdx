@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="71c56e077abcc5a2d7722bef2ec5bd3ef4ca74ebc7535fd9850965ab2253c6a6"
+	closureHash="4187890f5e11afd4c284184e6a486e8fdcec08647d76211a9a5cffebb86c7795"
 	copyright="Copyright 2026 Paperhat"
 	description="A structured privacy policy document defining controllers, collection, use, sharing, retention, rights, and privacy contact information."
 	license="Apache-2.0"
@@ -12,7 +12,7 @@
 >
 	<PackageDependency
 		packageName="paperhat-document-metadata"
-		closureHash="93c31e229a7717e48f9f52802a4585dd5541da850bdbf342476fbac698c31fb7"
+		closureHash="3d5b047c84e55df55a59f649b2335c53f8faf0c922b78d08452eb06fa8793e1c"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
@@ -30,25 +30,25 @@
 
 	<PackageDependency
 		packageName="paperhat-text"
-		closureHash="5e988d831f58ee9c18514f4cf536c49e10c3216b0bf2ebbc022a27e50eb1fc0f"
+		closureHash="cd2819edcdfd0f1f6506ced617b55588e882dad2c30665ede6355cd9b9b3a805"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-list"
-		closureHash="8a91086c5a5ca1032bb4db3b0df00f6921599442bbec56da01bc41e9838c36e4"
+		closureHash="5f0de477f8a63609527571e7817612956244cd3db0e1539f7267ff20126f71a5"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-section"
-		closureHash="a7262ce87782dbcb615045afecffaa4c93e19e9fa6e3bfc7861783e254f843a0"
+		closureHash="9a979069e51c57b93892d4685e1d0102f5aa6d75908b94c49167e3dd89010c35"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-notes"
-		closureHash="1b84eec836365e41fa608e3c95b6b9314306db71f16e2cc373641445c8466644"
+		closureHash="c8f25e1ac604ff6cadccc971b65c9207617d515ba59183d8f2b29ddee61d11ef"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

@@ -25,7 +25,7 @@ Use these concepts to model formal or semi-formal reasoning in academic papers, 
 |---|---|---|---|
 | key | $LookupToken | no | A stable identifier for cross-referencing. |
 | label | $Text | no | A display label for numbering, such as "Argument 2.1". |
-| language | $EnumeratedToken | no | BCP 47 language tag. |
+| language | $LanguageTag | no | BCP 47 language tag. |
 
 ## Constraints
 

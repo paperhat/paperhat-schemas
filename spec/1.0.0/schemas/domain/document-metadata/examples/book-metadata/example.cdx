@@ -1,7 +1,7 @@
 <DocumentMetadata>
 	<work:Work
 		datePublished=date(15 september 2025)
-		language=$En
+		language=language-tag("en")
 		license=$AllRightsReserved
 		status=$Published
 		version="1st edition"
@@ -9,7 +9,7 @@
 
 	<pname:PersonName family="Vargas" given="Elena" />
 
-	<summary:Summary language=$En>
+	<summary:Summary language=language-tag("en")>
 		A field guide to the freshwater mollusks of Central America, covering 340
 		species with identification keys, habitat descriptions, and conservation
 		status.

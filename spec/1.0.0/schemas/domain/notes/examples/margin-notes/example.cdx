@@ -1,5 +1,5 @@
 <Notes>
-	<Note key=~a language=$En>
+	<Note key=~a language=language-tag("en")>
 		The author uses "liberty" here in the Millian sense, referring to freedom
 		from coercion rather than political autonomy.
 	</Note>

@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="135fce2e94ab71c62d17ee3a01f937c00c417fd16115c95db6c51c306a96296b"
+	closureHash="7d5060b088f09f0bb7108bad2e7df350bcc1b89018c17f1715da70fe0b1f8d7c"
 	copyright="Copyright 2026 Paperhat"
 	description="An authorial observation or commentary within the flow of a document. Remarks are formal discourse units used in academic, mathematical, and technical writing."
 	license="Apache-2.0"

@@ -1,7 +1,7 @@
 <LocalizationBundle
 	schema=paperhat:domain:clause
 	schemaVersion="1.0.0"
-	language=$En
+	language=language-tag("en")
 >
 	<ConceptLocalization identifier="Clause" label="Clause" labelOther="Clauses" />
 

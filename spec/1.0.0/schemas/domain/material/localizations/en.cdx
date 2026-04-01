@@ -1,7 +1,7 @@
 <LocalizationBundle
 	schema=paperhat:domain:material
 	schemaVersion="1.0.0"
-	language=$En
+	language=language-tag("en")
 >
 	<ConceptLocalization identifier="Material" label="Material" labelOther="Materials" />
 

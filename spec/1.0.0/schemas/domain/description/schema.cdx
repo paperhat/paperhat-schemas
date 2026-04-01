@@ -9,9 +9,9 @@
 	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="text" reference=urn:cdx:sha256:5818aaf21ef3dad7987216f6068689a1a67f7bbd48381e420c85706489849929 />
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:56710936ccb873445f40c284809a6753878a18a19c1a0a56e43de8c8075ec4fc />
 
-		<SchemaImport namespace="list" reference=urn:cdx:sha256:eb0433eaaf3f24b9057ccd4ca318e2ab6deb7b7940adaeac7b023b27ecf00365 />
+		<SchemaImport namespace="list" reference=urn:cdx:sha256:d121178b869452797377ede05fb08319b0c0ed5bcfff2fcc9cc1c56e911a4666 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
@@ -41,7 +41,7 @@
 
 	<TraitDefinitions>
 		<TraitDefinition
-			defaultValueType=$EnumeratedToken
+			defaultValueType=$LanguageTag
 			id=paperhat:domain:description:trait:language
 			name="language"
 		/>

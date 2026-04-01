@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="12696b1e182a9daba3975eedfd21623ed61a3ea85a08db698bcb12efcd32c1dd"
+	closureHash="85ed4ba5da597242148b201d522fbd976527e7d78ff8f2bbaaf5bbf4f661d3ea"
 	copyright="Copyright 2026 Paperhat"
 	description="An organization such as a company, nonprofit, government body, or educational institution, composed from leaf concepts for contact points, identifiers, and locations."
 	license="Apache-2.0"
@@ -12,7 +12,7 @@
 >
 	<PackageDependency
 		packageName="paperhat-description"
-		closureHash="22cf4b8dadca12ecce39893a67970957e971882d924867b59e4d185318fea0ce"
+		closureHash="1d52385bd993afa202cdda224e86fce0da4a104de6bbf26a1910b5d74cc7b04c"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
@@ -42,7 +42,7 @@
 
 	<PackageDependency
 		packageName="paperhat-work"
-		closureHash="7fad7a46d28f39be9efbf233ea3e4d370ea6e8947a40026bb207e9bdf8039cc0"
+		closureHash="eba7bed868543a7c36b2d2f6d575d69a814408a3b8b65aedb7ac830aafb25520"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 

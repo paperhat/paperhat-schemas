@@ -1,2 +1,2 @@
 [A summary with explicit language identification.]
-<Summary language=$en></Summary>
+<Summary language=language-tag("en")></Summary>

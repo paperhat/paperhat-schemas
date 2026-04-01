@@ -20,17 +20,17 @@
 
 		<SchemaImport
 			namespace="rubric"
-			reference=urn:cdx:sha256:9f544377aa50b0ebdff87e31196c4ebe72e5ad86cbdadc274c2bdb6155e42973
+			reference=urn:cdx:sha256:4b43d55619ba6560d6ff3c7e55b5fe8c70e195061438fca63b34db25a806b607
 		/>
 
 		<SchemaImport
 			namespace="text"
-			reference=urn:cdx:sha256:5818aaf21ef3dad7987216f6068689a1a67f7bbd48381e420c85706489849929
+			reference=urn:cdx:sha256:56710936ccb873445f40c284809a6753878a18a19c1a0a56e43de8c8075ec4fc
 		/>
 
 		<SchemaImport
 			namespace="budget"
-			reference=urn:cdx:sha256:5303fab398058f8da95f0131a8a0f07166b33bccc26fb2283a911ef63b56ca2b
+			reference=urn:cdx:sha256:1d3dacfce3454503418b0e7c176b45db8680f185cbea33b8eee3ae61fba02b93
 		/>
 
 		<SchemaImport
@@ -40,37 +40,37 @@
 
 		<SchemaImport
 			namespace="deadline"
-			reference=urn:cdx:sha256:c3c812c75788d6b6c1e3293cf030210653d12d0f233a5a9a955b8e4a1b0ff52d
+			reference=urn:cdx:sha256:0c7469f10b0702a2a9cfab427b061e1f78a4e5aa0a5fde3395f865e43353c323
 		/>
 
 		<SchemaImport
 			namespace="dependency"
-			reference=urn:cdx:sha256:f5b3a130a2da4772db9b21c9974f55a4b2385a1c3c4a56f06408bdd3fb6b26c4
+			reference=urn:cdx:sha256:a4ae9585531f4def40d3317f9cfec99612953e7a35c9116cbae1c5eb780cdaa7
 		/>
 
 		<SchemaImport
 			namespace="desc"
-			reference=urn:cdx:sha256:9bf51d505f8fc4af7c7a97a46613509b6912d3402ef7cbf6ac0dfdf6094a43a0
+			reference=urn:cdx:sha256:aedb0f8af35a38f088a3e99cb0297df7c0a252cdb58cf3072a2d20103e23c3e8
 		/>
 
 		<SchemaImport
 			namespace="docmeta"
-			reference=urn:cdx:sha256:278b611aa10acc61150c7c511b3b1f29aa64c99d8c4d8e1f73bfe5f66aa95a08
+			reference=urn:cdx:sha256:a44cca2beec670d2c38b4b429c67aefc5d5b556bbb88758a4928f13dca0cfdf0
 		/>
 
 		<SchemaImport
 			namespace="milestone"
-			reference=urn:cdx:sha256:66b09e9e78daf322ca01556733fe889f96032fed96c70066cf71bdaea3cda56b
+			reference=urn:cdx:sha256:881ae8057c8eb68c28a4aa475bc531bda344420626793dcdc080348057352199
 		/>
 
 		<SchemaImport
 			namespace="narrative"
-			reference=urn:cdx:sha256:00edb47a13c59125836df34eb7c1b0a6db0b952443a83ee6f7db760389903ca1
+			reference=urn:cdx:sha256:4971f0990bccc514b83b98745bebfa8124bbe5f72cd169511edaf7b6af934d7a
 		/>
 
 		<SchemaImport
 			namespace="product"
-			reference=urn:cdx:sha256:d7f60a4c14f9c4b2d9ad2d9f4e23b8d64e259bccc7aef4d9e3b57ee2c269684f
+			reference=urn:cdx:sha256:ed0b482340df5e7659675a31cb37b3bc8458508c583e3db9386433fcdc488dca
 		/>
 
 		<SchemaImport
@@ -80,7 +80,7 @@
 
 		<SchemaImport
 			namespace="section"
-			reference=urn:cdx:sha256:76a92ea55a4eabeb9f90ca93fd42e2cba8c91f3d4427eda87d63846a46cc3a5c
+			reference=urn:cdx:sha256:8b931785937b4b8c885b099fffceadc29a6904e1323f699b60770e08ecbd8a7f
 		/>
 
 		<SchemaImport
@@ -100,7 +100,7 @@
 
 		<SchemaImport
 			namespace="work"
-			reference=urn:cdx:sha256:8728b7201c1893af53111b22cbf733ac89089783f1e8841983061561293dacf9
+			reference=urn:cdx:sha256:73fd6fb17a3965067bade5d1790cf53346eac1d840f51ccec11ac7ba21ce66f0
 		/>
 	</SchemaImports>
 

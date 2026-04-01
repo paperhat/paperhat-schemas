@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="f471788a265f239d09006602731b378ae04616aa5219582eb533409a7b2791e4"
+	closureHash="65ebc26db90309539121db5eb1bdb8e9edbc1f701579b3c724f36cc00ab0e0af"
 	copyright="Copyright 2026 Paperhat"
 	description="Intellectual property declarations for technical specifications. Covers copyright, trademarks, service marks, registered trademarks, patents with licensing commitments, and license grants."
 	license="Apache-2.0"
@@ -12,13 +12,13 @@
 >
 	<PackageDependency
 		packageName="paperhat-description"
-		closureHash="22cf4b8dadca12ecce39893a67970957e971882d924867b59e4d185318fea0ce"
+		closureHash="1d52385bd993afa202cdda224e86fce0da4a104de6bbf26a1910b5d74cc7b04c"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-text"
-		closureHash="5e988d831f58ee9c18514f4cf536c49e10c3216b0bf2ebbc022a27e50eb1fc0f"
+		closureHash="cd2819edcdfd0f1f6506ced617b55588e882dad2c30665ede6355cd9b9b3a805"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

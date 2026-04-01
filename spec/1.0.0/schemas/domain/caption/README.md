@@ -15,7 +15,7 @@ Use `Caption` to attach descriptive text to a visual or structural element such 
 | Trait | Type | Required | Description |
 |---|---|---|---|
 | key | $LookupToken | no | A stable identifier for cross-referencing this caption. |
-| language | $EnumeratedToken | no | BCP 47 language tag identifying the language of the caption text. |
+| language | $LanguageTag | no | BCP 47 language tag identifying the language of the caption text. |
 
 ## Content
 

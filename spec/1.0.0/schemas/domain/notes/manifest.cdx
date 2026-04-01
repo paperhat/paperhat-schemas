@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="1b84eec836365e41fa608e3c95b6b9314306db71f16e2cc373641445c8466644"
+	closureHash="c8f25e1ac604ff6cadccc971b65c9207617d515ba59183d8f2b29ddee61d11ef"
 	copyright="Copyright 2026 Paperhat"
 	description="A container for keyed annotations such as footnotes, endnotes, or bibliographic references."
 	license="Apache-2.0"

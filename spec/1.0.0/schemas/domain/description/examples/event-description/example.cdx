@@ -1,3 +1,3 @@
-<Description bodyMode=$content language=$En>
+<Description bodyMode=$content language=language-tag("en")>
 	An annual gathering of open-source contributors and maintainers, featuring three days of talks, workshops, and unconference sessions.
 </Description>

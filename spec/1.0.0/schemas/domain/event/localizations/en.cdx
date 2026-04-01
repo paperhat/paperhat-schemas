@@ -1,7 +1,7 @@
 <LocalizationBundle
 	schema=paperhat:domain:event
 	schemaVersion="1.0.0"
-	language=$En
+	language=language-tag("en")
 >
 	<ConceptLocalization identifier="Event" label="Event" labelOther="Events" />
 

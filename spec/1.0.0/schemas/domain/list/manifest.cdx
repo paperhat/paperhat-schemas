@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="8a91086c5a5ca1032bb4db3b0df00f6921599442bbec56da01bc41e9838c36e4"
+	closureHash="5f0de477f8a63609527571e7817612956244cd3db0e1539f7267ff20126f71a5"
 	copyright="Copyright 2026 Paperhat"
 	description="Ordered and unordered lists with nestable items."
 	license="Apache-2.0"
@@ -12,7 +12,7 @@
 >
 	<PackageDependency
 		packageName="paperhat-text"
-		closureHash="5e988d831f58ee9c18514f4cf536c49e10c3216b0bf2ebbc022a27e50eb1fc0f"
+		closureHash="cd2819edcdfd0f1f6506ced617b55588e882dad2c30665ede6355cd9b9b3a805"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

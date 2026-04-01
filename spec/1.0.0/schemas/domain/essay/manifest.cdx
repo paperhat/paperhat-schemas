@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="e556edd4b3617b3c08c5b6ac40c6fea6fe8b1f854ce02d1ec0cc0127bda8c7d8"
+	closureHash="502a40f09c703c7baf262a7c48d99cb5c55c7c7d1beab352b619afc54baf81b9"
 	copyright="Copyright 2026 Paperhat"
 	description="A short-to-medium-length prose composition expressing the author's perspective on a single subject."
 	license="Apache-2.0"
@@ -12,43 +12,43 @@
 >
 	<PackageDependency
 		packageName="paperhat-document-metadata"
-		closureHash="93c31e229a7717e48f9f52802a4585dd5541da850bdbf342476fbac698c31fb7"
+		closureHash="3d5b047c84e55df55a59f649b2335c53f8faf0c922b78d08452eb06fa8793e1c"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-narrative"
-		closureHash="f05a8d42cf3d30c9d7f940130b8c788de6b62d88332e55d5666f31cf6d25de88"
+		closureHash="69ec605c62bc4892a247275e707b973dfd205ec2a5a5eb7c5864269a9f3ab9a3"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-work"
-		closureHash="7fad7a46d28f39be9efbf233ea3e4d370ea6e8947a40026bb207e9bdf8039cc0"
+		closureHash="eba7bed868543a7c36b2d2f6d575d69a814408a3b8b65aedb7ac830aafb25520"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-rubric"
-		closureHash="6e3a2733418fc7aca0ac0b43da112f78c6e29b598b45886aa6852559c7cc921f"
+		closureHash="4ace61fc93a7db8c5a7cb55af5b365cf7634f8cbc674961f240825a229dab467"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-section"
-		closureHash="a7262ce87782dbcb615045afecffaa4c93e19e9fa6e3bfc7861783e254f843a0"
+		closureHash="9a979069e51c57b93892d4685e1d0102f5aa6d75908b94c49167e3dd89010c35"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-text"
-		closureHash="5e988d831f58ee9c18514f4cf536c49e10c3216b0bf2ebbc022a27e50eb1fc0f"
+		closureHash="cd2819edcdfd0f1f6506ced617b55588e882dad2c30665ede6355cd9b9b3a805"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-notes"
-		closureHash="1b84eec836365e41fa608e3c95b6b9314306db71f16e2cc373641445c8466644"
+		closureHash="c8f25e1ac604ff6cadccc971b65c9207617d515ba59183d8f2b29ddee61d11ef"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

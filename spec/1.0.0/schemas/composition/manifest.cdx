@@ -1,6 +1,6 @@
 <CompositionPackageManifest
 	author="Paperhat"
-	closureHash="b02997d29eff9761732bf7bd759309e2fee67f0fcfb22371978c3f7b7c241ce8"
+	closureHash="c60d59afacd7292e1daa8bebf6a66d3628d36d8481f693e9dfeed63d9c869eab"
 	copyright="Copyright 2026 Paperhat"
 	description="Composition-family schema package for graph-native output composition rooted in Document."
 	license="Apache-2.0"
@@ -12,13 +12,13 @@
 >
 	<PackageDependency
 		packageName="paperhat-description"
-		closureHash="22cf4b8dadca12ecce39893a67970957e971882d924867b59e4d185318fea0ce"
+		closureHash="1d52385bd993afa202cdda224e86fce0da4a104de6bbf26a1910b5d74cc7b04c"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-text"
-		closureHash="5e988d831f58ee9c18514f4cf536c49e10c3216b0bf2ebbc022a27e50eb1fc0f"
+		closureHash="cd2819edcdfd0f1f6506ced617b55588e882dad2c30665ede6355cd9b9b3a805"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </CompositionPackageManifest>

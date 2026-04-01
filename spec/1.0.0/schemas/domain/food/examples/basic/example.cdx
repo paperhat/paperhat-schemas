@@ -1,6 +1,6 @@
 <Food category=$Herb id=urn:food:chive name="Chive">
 	<Aliases>
-		<Alias language=$EnNz>
+		<Alias language=language-tag("en-NZ")>
 			Spring onion greens
 		</Alias>
 	</Aliases>

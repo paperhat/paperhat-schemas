@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="1676946df0ec86b1a1380a6b01a978b15fedd6ed24b9386215c9817a48bf5d68"
+	closureHash="7280a87c86954bbd51b18aad63560b7ddd352602af5cac9dde0cca7258c3c940"
 	copyright="Copyright 2026 Paperhat"
 	description="Semantic treatments applied to text spans: emphasis, importance, highlighting, track-changes operations, annotations, corrections, redactions, spoilers, and quotations."
 	license="Apache-2.0"

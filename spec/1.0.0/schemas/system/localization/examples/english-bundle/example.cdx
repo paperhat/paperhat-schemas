@@ -5,7 +5,7 @@
 <LocalizationBundle
 	schema=paperhat:domain:book
 	schemaVersion="1.0.0"
-	language=$en
+	language=language-tag("en")
 >
 	<ConceptLocalization identifier="Book" label="Book" labelOther="Books" />
 	<ConceptLocalization identifier="Chapter" label="Chapter" labelOther="Chapters" />

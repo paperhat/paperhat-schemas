@@ -1,4 +1,4 @@
-<LocalizationBundle language=$En schema=paperhat:domain:change-log schemaVersion="1.0.0">
+<LocalizationBundle language=language-tag("en") schema=paperhat:domain:change-log schemaVersion="1.0.0">
 	<ConceptLocalization identifier="ChangeLog" label="Change Log" labelOther="Change Logs" />
 
 	<ConceptLocalization

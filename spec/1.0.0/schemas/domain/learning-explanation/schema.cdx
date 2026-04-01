@@ -14,12 +14,12 @@
 	<SchemaImports>
 		<SchemaImport
 			namespace="explanation"
-			reference=urn:cdx:sha256:3f81589e7df3e54e10813feea8438196af12e44cd432f70d63f0cbfa1b0c08df
+			reference=urn:cdx:sha256:04b8e20d32a50920a9bfe11051aa282ab830b2ea6e394e67fe20fb0c4b81a6b9
 		/>
 
 		<SchemaImport
 			namespace="text"
-			reference=urn:cdx:sha256:5818aaf21ef3dad7987216f6068689a1a67f7bbd48381e420c85706489849929
+			reference=urn:cdx:sha256:56710936ccb873445f40c284809a6753878a18a19c1a0a56e43de8c8075ec4fc
 		/>
 	</SchemaImports>
 

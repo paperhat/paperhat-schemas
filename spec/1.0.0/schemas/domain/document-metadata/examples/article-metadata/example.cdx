@@ -2,12 +2,12 @@
 	<work:Work
 		author="Maria Chen"
 		datePublished=date(20 january 2026)
-		language=$En
+		language=language-tag("en")
 		license=$CcBy4Point0
 		status=$Published
 	/>
 
-	<desc:Description bodyMode=$content language=$En>
+	<desc:Description bodyMode=$content language=language-tag("en")>
 		An examination of participatory budgeting outcomes in mid-sized European
 		cities between 2018 and 2025.
 	</desc:Description>

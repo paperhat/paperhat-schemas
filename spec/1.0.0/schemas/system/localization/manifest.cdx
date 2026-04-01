@@ -1,6 +1,6 @@
 <SystemPackageManifest
 	author="Paperhat"
-	closureHash="2b6b1b05b37728020110b0e4d2d1a22991115d80559febd182661cc995560793"
+	closureHash="b8675d3a31d0a413fdb4aca7d26cb2ce1256f6dfa5a61de2b05e043d501b2fc8"
 	copyright="Copyright 2026 Paperhat"
 	description="Defines localization bundles that provide human-readable labels and descriptions for schema elements in any natural language."
 	license="Apache-2.0"

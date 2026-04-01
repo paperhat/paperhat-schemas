@@ -14,7 +14,7 @@ Use `Summary` when you need to capture the substance of a document's content in 
 
 | Trait | Type | Required | Description |
 |---|---|---|---|
-| language | $EnumeratedToken | no | BCP 47 language tag identifying the language of the summary text. |
+| language | $LanguageTag | no | BCP 47 language tag identifying the language of the summary text. |
 
 ## Design Notes
 

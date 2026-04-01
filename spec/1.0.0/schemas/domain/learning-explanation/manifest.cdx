@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="c4afeef806852a28931c1f410968b0f45d72ad3e2b862bf26788c7c59f410f17"
+	closureHash="d88341f8292b57cf6e84702fd6919691f35009a17b0d8881e8b0850863157bf7"
 	copyright="Copyright 2026 Paperhat"
 	description="A structured conceptual explanation for friction-gated clarification: the content that surfaces when a learner encounters difficulty with a skill."
 	license="Apache-2.0"
@@ -12,13 +12,13 @@
 >
 	<PackageDependency
 		packageName="paperhat-explanation"
-		closureHash="5691f1016225ce6f2fc96011f533993a23015921f44bdf8b62a8cf54454c3b00"
+		closureHash="a8985707af375ee62a60d5218b8e8ab13724f68149fb896fc3145eec8cffae26"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-text"
-		closureHash="5e988d831f58ee9c18514f4cf536c49e10c3216b0bf2ebbc022a27e50eb1fc0f"
+		closureHash="cd2819edcdfd0f1f6506ced617b55588e882dad2c30665ede6355cd9b9b3a805"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

@@ -1,7 +1,7 @@
 <LocalizationBundle
 	schema=paperhat:domain:media-asset
 	schemaVersion="1.0.0"
-	language=$En
+	language=language-tag("en")
 >
 	<ConceptLocalization identifier="MediaAsset" label="Media Asset" labelOther="Media Assets" />
 

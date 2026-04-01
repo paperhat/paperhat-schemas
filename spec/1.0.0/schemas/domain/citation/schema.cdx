@@ -11,7 +11,7 @@
 	<SchemaImports>
 		<SchemaImport namespace="person" reference=urn:cdx:sha256:7af6eaa441addb1c25c7ed87658360b433db4b02b364b62fae98b2029ab68236 />
 
-		<SchemaImport namespace="org" reference=urn:cdx:sha256:3c0f905a597d2fbdc380ff28ac973823b17083a89f47383544df051d217e2a24 />
+		<SchemaImport namespace="org" reference=urn:cdx:sha256:51e445554a242914c55186549690cf8cac3c66f84d3b2b5e714bd61786e29c67 />
 
 		<SchemaImport namespace="ident" reference=urn:cdx:sha256:8618dd5c8870a03d40e375bc5390cd193b356f8adfc461ac1f68de2f3e52dde5 />
 
@@ -166,7 +166,7 @@
 		/>
 
 		<TraitDefinition
-			defaultValueType=$EnumeratedToken
+			defaultValueType=$LanguageTag
 			id=paperhat:domain:citation:trait:language
 			name="language"
 		/>

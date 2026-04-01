@@ -23,7 +23,7 @@ A single foreign term. Requires content (the term itself in its original script)
 | Trait | Type | Cardinality | Required | Description |
 |---|---|---|---|---|
 | key | $LookupToken | Single | yes | Gloss binding key. |
-| language | $EnumeratedToken | Single | yes | BCP-47 language code identifying the term's language. |
+| language | $LanguageTag | Single | yes | BCP 47 language tag identifying the term's language. |
 | pronunciation | $Text | Single | no | IPA pronunciation of the term (e.g. "sɯɕi"). |
 | translation | $Text | Multiple | no | One or more translations into the document's language. |
 

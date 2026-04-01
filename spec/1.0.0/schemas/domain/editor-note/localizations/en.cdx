@@ -1,4 +1,4 @@
-<LocalizationBundle language=$En schema=paperhat:domain:editor-note schemaVersion="1.0.0">
+<LocalizationBundle language=language-tag("en") schema=paperhat:domain:editor-note schemaVersion="1.0.0">
 	<ConceptLocalization identifier="EditorNote" label="Editor Note" labelOther="Editor Notes" />
 
 	<TraitLocalization identifier="author" label="Author" labelOther="Authors">

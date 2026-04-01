@@ -1,4 +1,4 @@
-<Summary language=$En>
+<Summary language=language-tag("en")>
 	This paper presents a novel approach to distributed consensus that reduces
 	message complexity from O(n squared) to O(n log n) while maintaining Byzantine
 	fault tolerance for up to one-third of participants.

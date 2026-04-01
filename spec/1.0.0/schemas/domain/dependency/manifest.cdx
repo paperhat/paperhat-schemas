@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="0d6ebbfd646aed38c69b183de3a158ae3750b9030c6480c8cd1b9d80e64b533d"
+	closureHash="8bd6655d8d6dbb1ab4c517fb30309c7e7c5c7e0453367d4cf2dceaafa68d8625"
 	copyright="Copyright 2026 Paperhat"
 	description=`
 		A typed directional relationship between two entities where one depends on the other — a
@@ -15,7 +15,7 @@
 >
 	<PackageDependency
 		packageName="paperhat-description"
-		closureHash="22cf4b8dadca12ecce39893a67970957e971882d924867b59e4d185318fea0ce"
+		closureHash="1d52385bd993afa202cdda224e86fce0da4a104de6bbf26a1910b5d74cc7b04c"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

@@ -12,11 +12,13 @@ Localization bundles provide human-readable labels and descriptions for schema e
 
 ## Concepts
 
-- **LocalizationBundle** — Root container. Targets one schema, one language. Traits: `schema` (IRI), `schemaVersion` (text), `language` (BCP 47 token).
+- **LocalizationBundle** — Root container. Targets one schema, one language. Traits: `schema` (IRI), `schemaVersion` (text), `language` (`$LanguageTag`).
 - **ConceptLocalization** — Label for a concept name. No content.
 - **TraitLocalization** — Label for a trait name. Optional prose description as content.
 - **TokenLocalization** — Label for a vocabulary token. Optional prose description as content.
 - **ConstraintLocalization** — Label for a constraint. Optional prose description as content.
+
+Within one bundle, `identifier` values are unique within each localization concept type.
 
 ## Pluralization
 
@@ -32,9 +34,9 @@ Bundles live inside each schema package at `localizations/<language>.cdx` (e.g.,
 
 ## Fallback Chain
 
-1. Exact locale match (e.g., `$fr-CA`)
-2. General language match (e.g., `$fr`)
-3. English (`$en`) as the universal fallback
+1. Exact locale match (e.g., `language-tag("fr-CA")`)
+2. General language match (e.g., `language-tag("fr")`)
+3. English (`language-tag("en")`) as the universal fallback
 
 English bundles must always exist.
 

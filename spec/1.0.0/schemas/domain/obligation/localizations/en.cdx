@@ -1,4 +1,4 @@
-<LocalizationBundle language=$En schema=paperhat:domain:obligation schemaVersion="1.0.0">
+<LocalizationBundle language=language-tag("en") schema=paperhat:domain:obligation schemaVersion="1.0.0">
 	<ConceptLocalization identifier="Obligation" label="Obligation" labelOther="Obligations" />
 
 	<TraitLocalization identifier="dueDate" label="Due Date" labelOther="Due Dates">

@@ -31,7 +31,7 @@ Use `Rubric` at the top of a section, chapter, or document to declare its headin
 | timeToRead | Rubric | $Duration | no | Estimated reading time. |
 | publishedOn | Rubric | $Date | no | Publication date. |
 | lastModifiedAt | Rubric | $DateTime | no | Last modification timestamp. |
-| language | Subtitle | $EnumeratedToken | no | Language of the subtitle text. |
+| language | Subtitle | $LanguageTag | no | Language of the subtitle text. |
 | scale | Difficulty | $EnumeratedToken | yes | The grading system, e.g. `$gradeLevel`, `$categorical`, `$numeric`. |
 | value | Difficulty | $Text | yes | The difficulty value, e.g. `"4"` (grade level) or `$intermediate` (categorical). |
 

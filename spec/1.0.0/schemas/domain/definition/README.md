@@ -19,7 +19,7 @@ Distinct from LexicalEntry (`paperhat:domain:lexical-entry`), which is a rich le
 | term | $Text | yes | The term being defined (the definiendum). |
 | key | $LookupToken | no | A stable identifier for cross-referencing this definition. |
 | label | $Text | no | A display label for numbering, such as "Definition 3.1". |
-| language | $EnumeratedToken | no | BCP 47 language tag. |
+| language | $LanguageTag | no | BCP 47 language tag. |
 
 ## Content
 

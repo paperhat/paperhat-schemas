@@ -2,7 +2,7 @@
 <LocalizationBundle
 	schema=paperhat:FAMILY:SCHEMA_NAME
 	schemaVersion="1.0.0"
-	language=$en
+	language=language-tag("en")
 >
 	[One per concept.]
 	<ConceptLocalization identifier="" label="" labelOther="" />

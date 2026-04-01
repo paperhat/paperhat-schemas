@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="37f003b1a99e41885de35cb00a44ea81d34e462d6bb7970f57ba568f55902601"
+	closureHash="94e2136e802cbb6b68b1511f35666cdcb67129d8cc29106156db968270c2f177"
 	copyright="Copyright 2026 Paperhat"
 	description="A standalone directive addressed to the reader or user. Distinct from Step, which is a sequential action within a Procedure."
 	license="Apache-2.0"

@@ -1,7 +1,7 @@
 <LocalizationBundle
 	schema=paperhat:domain:audience
 	schemaVersion="1.0.0"
-	language=$En
+	language=language-tag("en")
 >
 	<ConceptLocalization identifier="Audience" label="Audience" labelOther="Audiences" />
 

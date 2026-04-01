@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="161d83ddcc3b66f832234c5e79556e4300ba3861329db6c100fa53ffff6ba8c9"
+	closureHash="2e7d1b7964d07820eb8d5080e0d871ff747a113551d2705755f43247c397f52f"
 	copyright="Copyright 2026 Paperhat"
 	description=`
 		A scheduled recurring review of a document, policy, contract, or process — a periodic obligation
@@ -15,7 +15,7 @@
 >
 	<PackageDependency
 		packageName="paperhat-description"
-		closureHash="22cf4b8dadca12ecce39893a67970957e971882d924867b59e4d185318fea0ce"
+		closureHash="1d52385bd993afa202cdda224e86fce0da4a104de6bbf26a1910b5d74cc7b04c"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 

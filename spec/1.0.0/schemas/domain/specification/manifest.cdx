@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="550f41c637138e8b84a8baef8c079a8a1768b1523637a48b4a62e4f7defc3986"
+	closureHash="d42e4774da8c13b19fa3b3b9b1b6dd61e3354a0a66c7a8e78f961ba798bb7b7f"
 	copyright="Copyright 2026 Paperhat"
 	description=`
 		Strict specification schema for authoring formal specifications in Codex. Narrows requirement
@@ -15,7 +15,7 @@
 >
 	<PackageDependency
 		packageName="paperhat-specification-foundation"
-		closureHash="1a9b8d4a7bc461546eba0ce035467b70eb4c556aebd550789c548c564c651d6f"
+		closureHash="627436f2bd9e48329c89a94e1471310407a91353bcb19597c6c0479579c974a0"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
@@ -27,7 +27,7 @@
 
 	<PackageDependency
 		packageName="paperhat-citation"
-		closureHash="392540e040c639711035cc90850565892c34c5eef6f1f22852140cc872b23ad6"
+		closureHash="dec249bd258b5aca7da2937b2129b25f7a077957b6b15263d1b11eb79d7b471b"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
@@ -39,37 +39,37 @@
 
 	<PackageDependency
 		packageName="paperhat-description"
-		closureHash="22cf4b8dadca12ecce39893a67970957e971882d924867b59e4d185318fea0ce"
+		closureHash="1d52385bd993afa202cdda224e86fce0da4a104de6bbf26a1910b5d74cc7b04c"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-document-metadata"
-		closureHash="93c31e229a7717e48f9f52802a4585dd5541da850bdbf342476fbac698c31fb7"
+		closureHash="3d5b047c84e55df55a59f649b2335c53f8faf0c922b78d08452eb06fa8793e1c"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-example"
-		closureHash="135ba4bdfc518fe323fbea045a9e7019f3e3b7f3cba8f2d0f7470051dce21b58"
+		closureHash="bb64a0ef67e9b31812be6d5bde2974099ff5c5eb315d42d2f36d62cd008610bb"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-figure"
-		closureHash="9aa61110d5177c7887911533b30025750a00bda3205d4f82b424ac1228296220"
+		closureHash="a5c5801ddd6ad9ac2a5d71fcf03da8c535afb81720754261460e0954c28cea5c"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-definition"
-		closureHash="7cd2c8bb70f33933edaa7dd76ed8c675a0b1d42eb66c79b9bb526fcc915454e3"
+		closureHash="ec6f866b9489cc0555ad794127061cfc0f71450ef32e61df58bac0c20c6285fa"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-list"
-		closureHash="8a91086c5a5ca1032bb4db3b0df00f6921599442bbec56da01bc41e9838c36e4"
+		closureHash="5f0de477f8a63609527571e7817612956244cd3db0e1539f7267ff20126f71a5"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
@@ -81,13 +81,13 @@
 
 	<PackageDependency
 		packageName="paperhat-relation"
-		closureHash="24709cc509a31385a53d25a1dea1186684a3bad2364a47f0e55d65bca0f6f5c6"
+		closureHash="8eeb2148cd5b017bfce701031a73c66cc413c859d3f9e47e709bc4006b343785"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-summary"
-		closureHash="ab3586a78db99eac7963c44735687b0340d44797c931ef42bae6f7e4552f096a"
+		closureHash="a9e14ca5143293a025d703124bef761ad0c53d80ea1725ea90154da8ce9dda9b"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
@@ -99,7 +99,7 @@
 
 	<PackageDependency
 		packageName="paperhat-text"
-		closureHash="5e988d831f58ee9c18514f4cf536c49e10c3216b0bf2ebbc022a27e50eb1fc0f"
+		closureHash="cd2819edcdfd0f1f6506ced617b55588e882dad2c30665ede6355cd9b9b3a805"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

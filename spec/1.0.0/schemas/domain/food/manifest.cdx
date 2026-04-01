@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="00dc73e63d6f4f3472463ea61caa587a2756f676825470cb5158560caec6eda5"
+	closureHash="4752e8e258200c5c08f715e1f8a38c30e40db0e9679c7cbd6c2eb0e95e7d2615"
 	copyright="Copyright 2026 Paperhat"
 	description="A food or comestible, with canonical name, aliases, category, sensory profile, nutritional information, and varieties."
 	license="Apache-2.0"
@@ -12,7 +12,7 @@
 >
 	<PackageDependency
 		packageName="paperhat-description"
-		closureHash="22cf4b8dadca12ecce39893a67970957e971882d924867b59e4d185318fea0ce"
+		closureHash="1d52385bd993afa202cdda224e86fce0da4a104de6bbf26a1910b5d74cc7b04c"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
@@ -36,7 +36,7 @@
 
 	<PackageDependency
 		packageName="paperhat-sensory-profile"
-		closureHash="27c4d39264d4e5a61ab4e8f616ff4977d37b5286348f406cc1db7f2409a00062"
+		closureHash="86becdddb386819674626186ba453e48e75da31f78ce65d0a385126c98d81041"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

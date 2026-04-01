@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="d058138a374055d63a8539f330e4b80fdd032be75a8ee83b6be5a4a9baf95aa2"
+	closureHash="ecd0d290149d8e049dc26c81159155cfa2ebacc9724a052947f82fbbcc967d78"
 	copyright="Copyright 2026 Paperhat"
 	description="Symbols, math symbols, and emoji with semantic metadata. Covers typographic symbols with Unicode codepoints, math variable bindings for formal definitions, and emoji with cultural context."
 	license="Apache-2.0"
@@ -12,7 +12,7 @@
 >
 	<PackageDependency
 		packageName="paperhat-description"
-		closureHash="22cf4b8dadca12ecce39893a67970957e971882d924867b59e4d185318fea0ce"
+		closureHash="1d52385bd993afa202cdda224e86fce0da4a104de6bbf26a1910b5d74cc7b04c"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

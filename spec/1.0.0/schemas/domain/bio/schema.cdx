@@ -9,13 +9,13 @@
 	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="docmeta" reference=urn:cdx:sha256:278b611aa10acc61150c7c511b3b1f29aa64c99d8c4d8e1f73bfe5f66aa95a08 />
+		<SchemaImport namespace="docmeta" reference=urn:cdx:sha256:a44cca2beec670d2c38b4b429c67aefc5d5b556bbb88758a4928f13dca0cfdf0 />
 
-		<SchemaImport namespace="narrative" reference=urn:cdx:sha256:00edb47a13c59125836df34eb7c1b0a6db0b952443a83ee6f7db760389903ca1 />
+		<SchemaImport namespace="narrative" reference=urn:cdx:sha256:4971f0990bccc514b83b98745bebfa8124bbe5f72cd169511edaf7b6af934d7a />
 
-		<SchemaImport namespace="text" reference=urn:cdx:sha256:5818aaf21ef3dad7987216f6068689a1a67f7bbd48381e420c85706489849929 />
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:56710936ccb873445f40c284809a6753878a18a19c1a0a56e43de8c8075ec4fc />
 
-		<SchemaImport namespace="notes" reference=urn:cdx:sha256:4958e507c62d747d5f5cbe89c577bae8cba182b0ac3518d751540841c154bf63 />
+		<SchemaImport namespace="notes" reference=urn:cdx:sha256:820002c6c669aa053eb1c0dfb1f2463e0fddfb3fe2e83dc0de0ffc699cead264 />
 	</SchemaImports>
 
 	<ConceptDefinitions>

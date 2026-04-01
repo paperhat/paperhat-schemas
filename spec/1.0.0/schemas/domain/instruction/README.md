@@ -15,7 +15,7 @@ Use `Instruction` for standalone directives that exist outside a procedural sequ
 | Trait | Type | Required | Description |
 |---|---|---|---|
 | key | $LookupToken | no | A stable identifier for cross-referencing this instruction. |
-| language | $EnumeratedToken | no | BCP 47 language tag identifying the language of the instruction text. |
+| language | $LanguageTag | no | BCP 47 language tag identifying the language of the instruction text. |
 
 ## Content
 

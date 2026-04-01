@@ -28,7 +28,7 @@ Use `Material` to author a reusable material entity referenced by products, equi
 | finish | $EnumeratedToken | no | Surface finish. |
 | recyclable | $Boolean | no | Whether the material is recyclable. |
 | biodegradable | $Boolean | no | Whether the material is biodegradable. |
-| language | $EnumeratedToken | no | Language of the alias. |
+| language | $LanguageTag | no | Language of the alias. |
 
 ## Imports
 

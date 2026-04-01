@@ -9,15 +9,15 @@
 	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="text" reference=urn:cdx:sha256:5818aaf21ef3dad7987216f6068689a1a67f7bbd48381e420c85706489849929 />
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:56710936ccb873445f40c284809a6753878a18a19c1a0a56e43de8c8075ec4fc />
 
-		<SchemaImport namespace="rubric" reference=urn:cdx:sha256:9f544377aa50b0ebdff87e31196c4ebe72e5ad86cbdadc274c2bdb6155e42973 />
+		<SchemaImport namespace="rubric" reference=urn:cdx:sha256:4b43d55619ba6560d6ff3c7e55b5fe8c70e195061438fca63b34db25a806b607 />
 
-		<SchemaImport namespace="desc" reference=urn:cdx:sha256:9bf51d505f8fc4af7c7a97a46613509b6912d3402ef7cbf6ac0dfdf6094a43a0 />
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:aedb0f8af35a38f088a3e99cb0297df7c0a252cdb58cf3072a2d20103e23c3e8 />
 
-		<SchemaImport namespace="list" reference=urn:cdx:sha256:eb0433eaaf3f24b9057ccd4ca318e2ab6deb7b7940adaeac7b023b27ecf00365 />
+		<SchemaImport namespace="list" reference=urn:cdx:sha256:d121178b869452797377ede05fb08319b0c0ed5bcfff2fcc9cc1c56e911a4666 />
 
-		<SchemaImport namespace="notes" reference=urn:cdx:sha256:4958e507c62d747d5f5cbe89c577bae8cba182b0ac3518d751540841c154bf63 />
+		<SchemaImport namespace="notes" reference=urn:cdx:sha256:820002c6c669aa053eb1c0dfb1f2463e0fddfb3fe2e83dc0de0ffc699cead264 />
 	</SchemaImports>
 
 	<ConceptDefinitions>

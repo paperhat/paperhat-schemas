@@ -27,7 +27,7 @@ Use `Description` wherever content needs a "what is this?" block. For simple cas
 
 | Trait | Type | Required | Description |
 |---|---|---|---|
-| language | $EnumeratedToken | no | Language of the description text. |
+| language | $LanguageTag | no | Language of the description text. |
 
 ## Design Notes
 

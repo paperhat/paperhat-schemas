@@ -1,4 +1,4 @@
-<LocalizationBundle language=$En schema=paperhat:domain:budget-line schemaVersion="1.0.0">
+<LocalizationBundle language=language-tag("en") schema=paperhat:domain:budget-line schemaVersion="1.0.0">
 	<ConceptLocalization identifier="BudgetLine" label="Budget Line" labelOther="Budget Lines" />
 
 	<TraitLocalization identifier="amount" label="Amount" labelOther="Amounts">

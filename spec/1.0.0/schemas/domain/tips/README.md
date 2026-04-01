@@ -25,7 +25,7 @@ A single advisory item. The tip text is the element's content.
 | Trait | Type | Required | Description |
 |---|---|---|---|
 | title | $Text | no | A short authored label for the advisory item when a distinct title is needed. |
-| language | $EnumeratedToken | no | BCP 47 language tag identifying the language of the tip content. |
+| language | $LanguageTag | no | BCP 47 language tag identifying the language of the tip content. |
 
 ## Design Notes
 

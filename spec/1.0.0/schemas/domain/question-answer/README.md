@@ -22,7 +22,7 @@ Use `Question` and `Answer` as general discourse primitives wherever interrogati
 | Trait | Type | Required | Description |
 |---|---|---|---|
 | key | $LookupToken | no | A stable identifier for cross-referencing this question or answer. |
-| language | $EnumeratedToken | no | BCP 47 language tag identifying the language of the content. |
+| language | $LanguageTag | no | BCP 47 language tag identifying the language of the content. |
 
 ## Design Notes
 

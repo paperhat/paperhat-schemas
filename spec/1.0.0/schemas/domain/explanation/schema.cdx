@@ -29,22 +29,22 @@
 
 		<SchemaImport
 			namespace="example"
-			reference=urn:cdx:sha256:513555d93286d052db9eb1c165fa57985faa5773e31076dd591bb8cc97569f4e
+			reference=urn:cdx:sha256:c4ba0affdc8cb2255c6b69ff4d58f2fd015f046bcb35a5a0c456fd00997019ea
 		/>
 
 		<SchemaImport
 			namespace="figure"
-			reference=urn:cdx:sha256:70a0b2230fdb08fc4ef95c51455aee3f0336a179b32073c09c2e9b376fb63097
+			reference=urn:cdx:sha256:d081a2b49d09efbef4995a0df247d208952762a0724b1e2de32e6d4af15f1eec
 		/>
 
 		<SchemaImport
 			namespace="list"
-			reference=urn:cdx:sha256:eb0433eaaf3f24b9057ccd4ca318e2ab6deb7b7940adaeac7b023b27ecf00365
+			reference=urn:cdx:sha256:d121178b869452797377ede05fb08319b0c0ed5bcfff2fcc9cc1c56e911a4666
 		/>
 
 		<SchemaImport
 			namespace="text"
-			reference=urn:cdx:sha256:5818aaf21ef3dad7987216f6068689a1a67f7bbd48381e420c85706489849929
+			reference=urn:cdx:sha256:56710936ccb873445f40c284809a6753878a18a19c1a0a56e43de8c8075ec4fc
 		/>
 	</SchemaImports>
 

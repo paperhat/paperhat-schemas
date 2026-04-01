@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="7477f6ba99b048ee2ed641624796465a682b12000ac2202fa907ac49fb200d60"
+	closureHash="38b9ce519779512a4643d2355bdab61e6b231a5a3cd1cf2d5950b916a13146da"
 	copyright="Copyright 2026 Paperhat"
 	description="A structured instructional procedure for skill acquisition: ordered learning steps with expected outcomes, code examples, figures, troubleshooting guidance, and tips."
 	license="Apache-2.0"
@@ -24,31 +24,31 @@
 
 	<PackageDependency
 		packageName="paperhat-example"
-		closureHash="135ba4bdfc518fe323fbea045a9e7019f3e3b7f3cba8f2d0f7470051dce21b58"
+		closureHash="bb64a0ef67e9b31812be6d5bde2974099ff5c5eb315d42d2f36d62cd008610bb"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-figure"
-		closureHash="9aa61110d5177c7887911533b30025750a00bda3205d4f82b424ac1228296220"
+		closureHash="a5c5801ddd6ad9ac2a5d71fcf03da8c535afb81720754261460e0954c28cea5c"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-list"
-		closureHash="8a91086c5a5ca1032bb4db3b0df00f6921599442bbec56da01bc41e9838c36e4"
+		closureHash="5f0de477f8a63609527571e7817612956244cd3db0e1539f7267ff20126f71a5"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-text"
-		closureHash="5e988d831f58ee9c18514f4cf536c49e10c3216b0bf2ebbc022a27e50eb1fc0f"
+		closureHash="cd2819edcdfd0f1f6506ced617b55588e882dad2c30665ede6355cd9b9b3a805"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-tips"
-		closureHash="dca95599873ecd538fb3bf6a1754c2529b9dfe47531c37dc30db2776a0346880"
+		closureHash="1c92ccc7a89779b5cd4380ba9f4a2c20b8852adb28d351f8b509e6c594fdaf1e"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

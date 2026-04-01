@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="39b61181ceb27516d7a8623d9c4bf36bb6243a6cd6243852feb8e46dceb5e078"
+	closureHash="90a7844eb65a23142b3a048e242d992e07e3359a00efd6c61286c0a9af368268"
 	copyright="Copyright 2026 Paperhat"
 	description=`
 		A named set of parameter assumptions for comparative analysis — a scenario in a financial
@@ -15,7 +15,7 @@
 >
 	<PackageDependency
 		packageName="paperhat-description"
-		closureHash="22cf4b8dadca12ecce39893a67970957e971882d924867b59e4d185318fea0ce"
+		closureHash="1d52385bd993afa202cdda224e86fce0da4a104de6bbf26a1910b5d74cc7b04c"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

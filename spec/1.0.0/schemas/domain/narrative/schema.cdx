@@ -9,9 +9,9 @@
 	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="section" reference=urn:cdx:sha256:76a92ea55a4eabeb9f90ca93fd42e2cba8c91f3d4427eda87d63846a46cc3a5c />
+		<SchemaImport namespace="section" reference=urn:cdx:sha256:8b931785937b4b8c885b099fffceadc29a6904e1323f699b60770e08ecbd8a7f />
 
-		<SchemaImport namespace="text" reference=urn:cdx:sha256:5818aaf21ef3dad7987216f6068689a1a67f7bbd48381e420c85706489849929 />
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:56710936ccb873445f40c284809a6753878a18a19c1a0a56e43de8c8075ec4fc />
 	</SchemaImports>
 
 	<ConceptDefinitions>

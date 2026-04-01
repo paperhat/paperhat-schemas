@@ -16,7 +16,7 @@ Use `Remark` for authorial observations that appear within the body of a documen
 |---|---|---|---|
 | key | $LookupToken | no | A stable identifier for cross-referencing this remark. |
 | label | $Text | no | A display label for numbering or identification, such as "Remark 3.2". |
-| language | $EnumeratedToken | no | BCP 47 language tag identifying the language of the remark text. |
+| language | $LanguageTag | no | BCP 47 language tag identifying the language of the remark text. |
 
 ## Content
 

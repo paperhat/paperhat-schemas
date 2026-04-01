@@ -1,7 +1,7 @@
 <LocalizationBundle
 	schema=paperhat:domain:recipe
 	schemaVersion="1.0.0"
-	language=$En
+	language=language-tag("en")
 >
 	<ConceptLocalization identifier="Recipe" label="Recipe" labelOther="Recipes" />
 

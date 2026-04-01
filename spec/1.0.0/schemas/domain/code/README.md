@@ -39,7 +39,7 @@ These concepts forbid content. All require a `key` trait. All allow an optional 
 |---|---|---|---|
 | key | $LookupToken | Single | Gloss binding key for `{~key}` references. |
 | text | $Text | Single | Display text for label-less Gloss references (Pattern B). |
-| language | $EnumeratedToken | Single | Programming or markup language identifier (e.g. `$javascript`, `$python`, `$rust`). |
+| language | $LanguageTag | Single | Programming or markup language identifier (e.g. `$javascript`, `$python`, `$rust`). |
 
 ## Constraints
 

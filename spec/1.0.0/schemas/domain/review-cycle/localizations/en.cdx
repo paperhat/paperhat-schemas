@@ -1,4 +1,4 @@
-<LocalizationBundle language=$En schema=paperhat:domain:review-cycle schemaVersion="1.0.0">
+<LocalizationBundle language=language-tag("en") schema=paperhat:domain:review-cycle schemaVersion="1.0.0">
 	<ConceptLocalization identifier="ReviewCycle" label="Review Cycle" labelOther="Review Cycles" />
 
 	<TraitLocalization identifier="name" label="Name" labelOther="Names">

@@ -1,4 +1,4 @@
-<FrequentlyAskedQuestions language=$En title="Codex FAQ">
+<FrequentlyAskedQuestions language=language-tag("en") title="Codex FAQ">
 	<Entry key=~whatIsCodex>
 		<question:Question>
 			What is Codex?

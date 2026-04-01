@@ -13,21 +13,21 @@
 	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="specbase" reference=urn:cdx:sha256:025bfb5d53de6c83e621a26014387929065b78057325e81600cd1690619d78c5 />
+		<SchemaImport namespace="specbase" reference=urn:cdx:sha256:4856bc3fcab434c8762c8be84f7fe20e3f37676b793f8cf283d53c53d2674436 />
 		<SchemaImport namespace="admonition" reference=urn:cdx:sha256:24041a98e7ab5fec737fe6081c6e2c80d24ca49630d81ab51b4c61e09b4b6373 />
-		<SchemaImport namespace="cite" reference=urn:cdx:sha256:947c08150f058232b5382245bd4713aebbd281e81e7db4f95030618b431bb8ae />
+		<SchemaImport namespace="cite" reference=urn:cdx:sha256:6058646e95877f9292e5993af7003b794905476837e718a47a99daade4b8f53e />
 		<SchemaImport namespace="code" reference=urn:cdx:sha256:f55db71c90dd92321f6f59683139642e85b0d60b26704c8f510159a36858ca0f />
-		<SchemaImport namespace="desc" reference=urn:cdx:sha256:9bf51d505f8fc4af7c7a97a46613509b6912d3402ef7cbf6ac0dfdf6094a43a0 />
-		<SchemaImport namespace="docmeta" reference=urn:cdx:sha256:278b611aa10acc61150c7c511b3b1f29aa64c99d8c4d8e1f73bfe5f66aa95a08 />
-		<SchemaImport namespace="example" reference=urn:cdx:sha256:513555d93286d052db9eb1c165fa57985faa5773e31076dd591bb8cc97569f4e />
-		<SchemaImport namespace="figure" reference=urn:cdx:sha256:70a0b2230fdb08fc4ef95c51455aee3f0336a179b32073c09c2e9b376fb63097 />
-		<SchemaImport namespace="definition" reference=urn:cdx:sha256:826a1373a0f996745e8fc5dd5fb2c5f0d263eb1736ee31c1470883a1b805fe1e />
-		<SchemaImport namespace="list" reference=urn:cdx:sha256:eb0433eaaf3f24b9057ccd4ca318e2ab6deb7b7940adaeac7b023b27ecf00365 />
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:aedb0f8af35a38f088a3e99cb0297df7c0a252cdb58cf3072a2d20103e23c3e8 />
+		<SchemaImport namespace="docmeta" reference=urn:cdx:sha256:a44cca2beec670d2c38b4b429c67aefc5d5b556bbb88758a4928f13dca0cfdf0 />
+		<SchemaImport namespace="example" reference=urn:cdx:sha256:c4ba0affdc8cb2255c6b69ff4d58f2fd015f046bcb35a5a0c456fd00997019ea />
+		<SchemaImport namespace="figure" reference=urn:cdx:sha256:d081a2b49d09efbef4995a0df247d208952762a0724b1e2de32e6d4af15f1eec />
+		<SchemaImport namespace="definition" reference=urn:cdx:sha256:16bd2a3bb9805b4a8891bac749cbe76254bd4d411e7bed24a6738f72c1a01fb8 />
+		<SchemaImport namespace="list" reference=urn:cdx:sha256:d121178b869452797377ede05fb08319b0c0ed5bcfff2fcc9cc1c56e911a4666 />
 		<SchemaImport namespace="procedure" reference=urn:cdx:sha256:acb5f723d1a0070a17217926b3d12916411160137312c774a05d6f9dc54fef62 />
-		<SchemaImport namespace="relation" reference=urn:cdx:sha256:ea0075937dd3bc6685f3048091830619467f816380ee47158a504e1326344203 />
-		<SchemaImport namespace="summary" reference=urn:cdx:sha256:1061da8d3d625c94df0dc1821f343dab58d99f521f47a96eb79bd6c2d0daeb46 />
+		<SchemaImport namespace="relation" reference=urn:cdx:sha256:f9aaf649fbd25b7fdf4d5eb9e23f774aeb727101479936971617be4e560d34f2 />
+		<SchemaImport namespace="summary" reference=urn:cdx:sha256:76e655e3f54495277ba821aa12360b3f5bd2cca1799992d3223137560acc4944 />
 		<SchemaImport namespace="lexical" reference=urn:cdx:sha256:fd0d2c454fd123cb0d6c0221d6b452ee2c03ef900a7819cb0e829fdd40a99bb9 />
-		<SchemaImport namespace="text" reference=urn:cdx:sha256:5818aaf21ef3dad7987216f6068689a1a67f7bbd48381e420c85706489849929 />
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:56710936ccb873445f40c284809a6753878a18a19c1a0a56e43de8c8075ec4fc />
 	</SchemaImports>
 
 	<ConceptDefinitions>

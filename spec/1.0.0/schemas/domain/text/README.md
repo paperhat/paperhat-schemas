@@ -22,7 +22,7 @@ Use `Title` for the primary name of any content block. Use `Teaser` for a short 
 
 | Trait | Type | Required | Description |
 |---|---|---|---|
-| language | $EnumeratedToken | no | The language of the text content, e.g. `$en`, `$fr`. |
+| language | $LanguageTag | no | The language of the text content, e.g. `language-tag("en")`, `language-tag("fr")`. |
 
 ## Design Notes
 

@@ -9,7 +9,7 @@
 	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="desc" reference=urn:cdx:sha256:9bf51d505f8fc4af7c7a97a46613509b6912d3402ef7cbf6ac0dfdf6094a43a0 />
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:aedb0f8af35a38f088a3e99cb0297df7c0a252cdb58cf3072a2d20103e23c3e8 />
 
 		<SchemaImport namespace="offer" reference=urn:cdx:sha256:bd23c2a9dbd8f7b6cfd9f53bc768b26bd7a68734dbee1a3d67b9fc28292d4ae5 />
 
@@ -23,7 +23,7 @@
 
 		<SchemaImport namespace="tags" reference=urn:cdx:sha256:e29b72473f6c9222db43b054c3ae6cfc8c518e7d4965219f49d1ba54a5738d87 />
 
-		<SchemaImport namespace="work" reference=urn:cdx:sha256:8728b7201c1893af53111b22cbf733ac89089783f1e8841983061561293dacf9 />
+		<SchemaImport namespace="work" reference=urn:cdx:sha256:73fd6fb17a3965067bade5d1790cf53346eac1d840f51ccec11ac7ba21ce66f0 />
 
 		<SchemaImport namespace="audience" reference=urn:cdx:sha256:09e279c4160fcd4fe86c77f266519037f6034c859dcc797f447fec030decf0e3 />
 
@@ -31,7 +31,7 @@
 
 		<SchemaImport namespace="nutrition" reference=urn:cdx:sha256:4bf13c758d3521e569545d4451b451a2f7c97e8f77b60da2f6dc17ce675ce63b />
 
-		<SchemaImport namespace="material" reference=urn:cdx:sha256:5b781355f8c178079b5a03552cf68b2127368dadd698b96d31a467a760e98762 />
+		<SchemaImport namespace="material" reference=urn:cdx:sha256:f3a1cab43822fbb14aae07e83e33ab241b1fb7ca77efbf3ab654a4a500c2ec72 />
 	</SchemaImports>
 
 	<ConceptDefinitions>

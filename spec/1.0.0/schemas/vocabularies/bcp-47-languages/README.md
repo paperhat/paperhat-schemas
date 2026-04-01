@@ -9,7 +9,7 @@ A closed vocabulary of language identification tags from IETF BCP 47 (RFC 5646).
 
 ## Purpose
 
-Constrains `$EnumeratedToken` traits that identify the natural language of text content. Used by any concept that carries human-readable text and needs to declare its language for rendering, sorting, accessibility, or export.
+Provides a curated closed reference set of BCP 47 language tags for workflows that need a bounded language menu or a stable application vocabulary. Natural-language traits in Codex use the built-in `$LanguageTag` value type.
 
 ## Token format
 

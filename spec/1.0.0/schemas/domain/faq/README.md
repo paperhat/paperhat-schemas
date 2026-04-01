@@ -23,7 +23,7 @@ Use `FrequentlyAskedQuestions` to model a structured FAQ section in a document, 
 |---|---|---|---|
 | title | $Text | no | A title for the FAQ collection. |
 | key | $LookupToken | no | A stable identifier for cross-referencing a specific entry. |
-| language | $EnumeratedToken | no | BCP 47 language tag. |
+| language | $LanguageTag | no | BCP 47 language tag. |
 
 ## Imports
 

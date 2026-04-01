@@ -28,7 +28,7 @@ Use these concepts to mark named divisions within a document. Essays, white pape
 | key | $LookupToken | no | All concepts | A stable identifier for cross-referencing. |
 | label | $Text | no | Appendix | A display label such as "Appendix A". |
 | author | $Text | no | Foreword | The author of the foreword. |
-| language | $EnumeratedToken | no | All concepts | BCP 47 language tag. |
+| language | $LanguageTag | no | All concepts | BCP 47 language tag. |
 
 ## Design Notes
 

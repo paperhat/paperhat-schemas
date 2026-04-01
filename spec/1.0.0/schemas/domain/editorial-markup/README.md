@@ -63,7 +63,7 @@ These concepts require content and are placed by the importing entity schema, no
 | text | $Text | Single | Display text for Pattern B (label-less Gloss references). |
 | author | $Text | Single | Creator of the annotation, quotation, or comment. |
 | source | $Text | Single | Origin or attribution of a quotation. |
-| language | $EnumeratedToken | Single | Language of the quoted or annotated text (BCP-47). |
+| language | $LanguageTag | Single | Language of the quoted or annotated text (BCP 47). |
 | moveIdentifier | $LookupToken | Single | Links a MoveFrom/MoveTo pair. Both must share the same identifier. |
 | reason | $Text | Single | Why text was redacted. |
 | original | $Text | Single | Pre-correction text for a Correction. |

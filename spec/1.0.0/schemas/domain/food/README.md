@@ -28,7 +28,7 @@ Use `Food` to define a food entity that is referenceable by recipes and other co
 | category | $EnumeratedToken | `Food` | Food category. |
 | availability | $Range<$MonthDay> | `Food` | Seasonal or annual availability range. |
 | shelfLife | $Duration | `Food` | Typical shelf-life duration. |
-| language | $EnumeratedToken | `Alias` | Language of the alias. |
+| language | $LanguageTag | `Alias` | Language of the alias. |
 | region | $Text | `Alias` | Regional context for the alias. |
 
 ## Imports

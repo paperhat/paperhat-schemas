@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="fbfb83a130e69a371b141e09504c7723cd9575a88dc2255d9545ecc3b82b6330"
+	closureHash="efcea744e1651102ab2be15ef07718a7fd5c7d7c6ad804c3a8fdb07a584081e1"
 	copyright="Copyright 2026 Paperhat"
 	description="A structured, argument-driven long-form document for technical or policy white papers. Composes imported building blocks for metadata, narrative structure, footnotes, series membership, and document divisions."
 	license="Apache-2.0"
@@ -12,19 +12,19 @@
 >
 	<PackageDependency
 		packageName="paperhat-document-metadata"
-		closureHash="93c31e229a7717e48f9f52802a4585dd5541da850bdbf342476fbac698c31fb7"
+		closureHash="3d5b047c84e55df55a59f649b2335c53f8faf0c922b78d08452eb06fa8793e1c"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-narrative"
-		closureHash="f05a8d42cf3d30c9d7f940130b8c788de6b62d88332e55d5666f31cf6d25de88"
+		closureHash="69ec605c62bc4892a247275e707b973dfd205ec2a5a5eb7c5864269a9f3ab9a3"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-notes"
-		closureHash="1b84eec836365e41fa608e3c95b6b9314306db71f16e2cc373641445c8466644"
+		closureHash="c8f25e1ac604ff6cadccc971b65c9207617d515ba59183d8f2b29ddee61d11ef"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
@@ -36,7 +36,7 @@
 
 	<PackageDependency
 		packageName="paperhat-document-structure"
-		closureHash="7e330c31a3de4121e5a60ca58ddbff896ca076bb5f577049b15499b91dd3bebb"
+		closureHash="0524d35e2e7fea9bf990bbb80c8b11d8e4e322ad128a9adf73dab2c046c6756c"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

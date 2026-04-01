@@ -11,31 +11,31 @@
 	<SchemaImports>
 		<SchemaImport namespace="audience" reference=urn:cdx:sha256:09e279c4160fcd4fe86c77f266519037f6034c859dcc797f447fec030decf0e3 />
 
-		<SchemaImport namespace="desc" reference=urn:cdx:sha256:9bf51d505f8fc4af7c7a97a46613509b6912d3402ef7cbf6ac0dfdf6094a43a0 />
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:aedb0f8af35a38f088a3e99cb0297df7c0a252cdb58cf3072a2d20103e23c3e8 />
 
-		<SchemaImport namespace="equip" reference=urn:cdx:sha256:923a458f821ce6ca75acef7d8a1039af95324f4a673bf425be86c756f676db27 />
+		<SchemaImport namespace="equip" reference=urn:cdx:sha256:e8a83c5d49a35245db3ecae41d41f879a4d3d3cab17ccf4e26af1b2175f172be />
 
-		<SchemaImport namespace="food" reference=urn:cdx:sha256:5f0ca50f084b7ae05f033144a3383df9733c3bbfa234995c05b2f56d7cedfffd />
+		<SchemaImport namespace="food" reference=urn:cdx:sha256:754d77d8750e8ed12b6fb669821b48303e8ce43d17a34c14a74b8a03a13aa7c6 />
 
 		<SchemaImport namespace="massmeasure" reference=urn:cdx:sha256:187401c21acaa33371558d67b8b5f3ff0be8dc5ece1051908ba04120c4db562c />
 
 		<SchemaImport namespace="measure" reference=urn:cdx:sha256:e5711c77b75c981d2b628f87f0788f0ed45c2652657bc7b25501c728c50e36ab />
 
-		<SchemaImport namespace="notes" reference=urn:cdx:sha256:4958e507c62d747d5f5cbe89c577bae8cba182b0ac3518d751540841c154bf63 />
+		<SchemaImport namespace="notes" reference=urn:cdx:sha256:820002c6c669aa053eb1c0dfb1f2463e0fddfb3fe2e83dc0de0ffc699cead264 />
 
 		<SchemaImport namespace="nutrition" reference=urn:cdx:sha256:4bf13c758d3521e569545d4451b451a2f7c97e8f77b60da2f6dc17ce675ce63b />
 
 		<SchemaImport namespace="tags" reference=urn:cdx:sha256:e29b72473f6c9222db43b054c3ae6cfc8c518e7d4965219f49d1ba54a5738d87 />
 
-		<SchemaImport namespace="text" reference=urn:cdx:sha256:5818aaf21ef3dad7987216f6068689a1a67f7bbd48381e420c85706489849929 />
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:56710936ccb873445f40c284809a6753878a18a19c1a0a56e43de8c8075ec4fc />
 
 		<SchemaImport namespace="timemeasure" reference=urn:cdx:sha256:c34b535134e83cb9a5167c2512628ef1fd95262a190b95f0644adb6d42f4aa12 />
 
-		<SchemaImport namespace="tips" reference=urn:cdx:sha256:018e65310508e8a803212da0d7d7f517e6b37a0f8bcc0936db9b3b3657fefa30 />
+		<SchemaImport namespace="tips" reference=urn:cdx:sha256:15417c9e17017a331ef6cd6532e54e3725d6237afcbca27bd77b363c2b33aa1a />
 
 		<SchemaImport namespace="volumemeasure" reference=urn:cdx:sha256:f95d026cd749569fc48700f7ffc9455ca784633213a6e85d1208b2d8520efe49 />
 
-		<SchemaImport namespace="work" reference=urn:cdx:sha256:8728b7201c1893af53111b22cbf733ac89089783f1e8841983061561293dacf9 />
+		<SchemaImport namespace="work" reference=urn:cdx:sha256:73fd6fb17a3965067bade5d1790cf53346eac1d840f51ccec11ac7ba21ce66f0 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
@@ -439,7 +439,7 @@
 		/>
 
 		<TraitDefinition
-			defaultValueType=$EnumeratedToken
+			defaultValueType=$LanguageTag
 			id=paperhat:domain:recipe:trait:language
 			name="language"
 			priority=$Secondary

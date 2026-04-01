@@ -1,5 +1,5 @@
 <LocalizationBundle
-	language=$En
+	language=language-tag("en")
 	schema=paperhat:domain:figure
 	schemaVersion="1.0.0"
 >

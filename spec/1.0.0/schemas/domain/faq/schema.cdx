@@ -9,7 +9,7 @@
 	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="question" reference=urn:cdx:sha256:03d3d243cb749e30ff99cffb880adbeaaa7181ebe73cc18802554e279bebb850 />
+		<SchemaImport namespace="question" reference=urn:cdx:sha256:4a32e21d32717cbb34830e255f18a40b742dc8315aa6472dc2425be7c90e2314 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
@@ -72,7 +72,7 @@
 		/>
 
 		<TraitDefinition
-			defaultValueType=$EnumeratedToken
+			defaultValueType=$LanguageTag
 			id=paperhat:domain:faq:trait:language
 			name="language"
 		/>

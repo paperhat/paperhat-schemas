@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="c1ef52ee41de6ad5f6ef92d777e9e1c2695026a797bc28cd4e2290321fee954a"
+	closureHash="541f50e5b435137ee0aea8113e0b47cba77f0051c20b242cdf5f642ce49b6012"
 	copyright="Copyright 2026 Paperhat"
 	description="Kitchen and general-purpose equipment, with canonical name, category, and physical characteristics."
 	license="Apache-2.0"
@@ -12,7 +12,7 @@
 >
 	<PackageDependency
 		packageName="paperhat-description"
-		closureHash="22cf4b8dadca12ecce39893a67970957e971882d924867b59e4d185318fea0ce"
+		closureHash="1d52385bd993afa202cdda224e86fce0da4a104de6bbf26a1910b5d74cc7b04c"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 

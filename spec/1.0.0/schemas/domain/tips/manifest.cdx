@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="dca95599873ecd538fb3bf6a1754c2529b9dfe47531c37dc30db2776a0346880"
+	closureHash="1c92ccc7a89779b5cd4380ba9f4a2c20b8852adb28d351f8b509e6c594fdaf1e"
 	copyright="Copyright 2026 Paperhat"
 	description="An ordered container for reusable advisory content such as cooking tips, preparation hints, or handling guidance."
 	license="Apache-2.0"

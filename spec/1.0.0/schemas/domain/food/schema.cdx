@@ -9,7 +9,7 @@
 	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="desc" reference=urn:cdx:sha256:9bf51d505f8fc4af7c7a97a46613509b6912d3402ef7cbf6ac0dfdf6094a43a0 />
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:aedb0f8af35a38f088a3e99cb0297df7c0a252cdb58cf3072a2d20103e23c3e8 />
 
 		<SchemaImport namespace="nutrition" reference=urn:cdx:sha256:4bf13c758d3521e569545d4451b451a2f7c97e8f77b60da2f6dc17ce675ce63b />
 
@@ -17,7 +17,7 @@
 
 		<SchemaImport namespace="loc" reference=urn:cdx:sha256:4b65ec14457b81e9aa1d74a8e2cd6a1438a14c6b3a5205092965adea2eb75710 />
 
-		<SchemaImport namespace="sensory" reference=urn:cdx:sha256:b678352a6d273e29a49626ce6a18229a42eadd2d812dab8361635314b4a21f11 />
+		<SchemaImport namespace="sensory" reference=urn:cdx:sha256:05103763a3879049ff68cbcc54353869db7f0b33c16877741737bcb3e6d15134 />
 	</SchemaImports>
 
 	<ConceptDefinitions>
@@ -160,7 +160,7 @@
 		/>
 
 		<TraitDefinition
-			defaultValueType=$EnumeratedToken
+			defaultValueType=$LanguageTag
 			id=paperhat:domain:food:trait:language
 			name="language"
 		/>

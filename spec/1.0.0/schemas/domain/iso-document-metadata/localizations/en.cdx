@@ -1,7 +1,7 @@
 <LocalizationBundle
 	schema=paperhat:domain:iso-document-metadata
 	schemaVersion="1.0.0"
-	language=$En
+	language=language-tag("en")
 >
 	<ConceptLocalization identifier="ISODocumentMetadata" label="ISO Document Metadata" labelOther="ISO Document Metadata" />
 

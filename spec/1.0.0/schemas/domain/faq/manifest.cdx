@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="45f1f1ed102f4df53bb1c82de6f88f05abbcea3e97dd89340038825db08f6e3b"
+	closureHash="92c54ca76f0635b99930a372f903a9d7af2e907a99cb169657699a18bc1471d4"
 	copyright="Copyright 2026 Paperhat"
 	description="A frequently asked questions collection composed of question-answer pairs. Imports the general-purpose Question and Answer discourse primitives."
 	license="Apache-2.0"
@@ -12,7 +12,7 @@
 >
 	<PackageDependency
 		packageName="paperhat-question-answer"
-		closureHash="0c794b393581b6945ccdf08bc7e7156fbb88c89ccfa4eb3a95343a97b55bb371"
+		closureHash="567baa4ea061a24087b19fbc781f38a25cb3b0e55d8c95953994a0b1ee361b88"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

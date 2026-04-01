@@ -1,7 +1,7 @@
 <LocalizationBundle
 	schema=paperhat:domain:temporal
 	schemaVersion="1.0.0"
-	language=$En
+	language=language-tag("en")
 >
 	<ConceptLocalization identifier="TemporalAnnotations" label="Temporal Annotations" />
 	<ConceptLocalization identifier="Date" label="Date" labelOther="Dates" />

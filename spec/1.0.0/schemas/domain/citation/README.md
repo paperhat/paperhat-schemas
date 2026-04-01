@@ -33,7 +33,7 @@ Use `Citation` to represent a reference to a published work with enough metadata
 | publicationPlace | $Text | no | City or region of publication (e.g., "Cambridge, MA"). |
 | datePublished | $Date | no | Publication date. |
 | dateAccessed | $Date | no | Date the resource was last accessed (for web resources). |
-| language | $EnumeratedToken | no | Language of the cited work. Binds to `bcp-47-languages` vocabulary. |
+| language | $LanguageTag | no | Language of the cited work. |
 | uri | $Url | no | URL to the cited work. |
 | key | $LookupToken | no | Machine-readable lookup key for Gloss cross-references (e.g., `~rfc2119`). |
 

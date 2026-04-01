@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="960bf8d34932b6fc91486b6a1453a6d31bf2d6a67120c7fd4b83607c3e732576"
+	closureHash="a314dd803ab37966a092dbc8db79b5f4ba179ed8d091cb274784eb00f859fa31"
 	copyright="Copyright 2026 Paperhat"
 	description="Recipe authoring schema with structured ingredient sets, timing, serving guidance, and imported advice and annotation support."
 	license="Apache-2.0"
@@ -18,19 +18,19 @@
 
 	<PackageDependency
 		packageName="paperhat-description"
-		closureHash="22cf4b8dadca12ecce39893a67970957e971882d924867b59e4d185318fea0ce"
+		closureHash="1d52385bd993afa202cdda224e86fce0da4a104de6bbf26a1910b5d74cc7b04c"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-equipment"
-		closureHash="c1ef52ee41de6ad5f6ef92d777e9e1c2695026a797bc28cd4e2290321fee954a"
+		closureHash="541f50e5b435137ee0aea8113e0b47cba77f0051c20b242cdf5f642ce49b6012"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-food"
-		closureHash="00dc73e63d6f4f3472463ea61caa587a2756f676825470cb5158560caec6eda5"
+		closureHash="4752e8e258200c5c08f715e1f8a38c30e40db0e9679c7cbd6c2eb0e95e7d2615"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
@@ -48,7 +48,7 @@
 
 	<PackageDependency
 		packageName="paperhat-notes"
-		closureHash="1b84eec836365e41fa608e3c95b6b9314306db71f16e2cc373641445c8466644"
+		closureHash="c8f25e1ac604ff6cadccc971b65c9207617d515ba59183d8f2b29ddee61d11ef"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
@@ -66,7 +66,7 @@
 
 	<PackageDependency
 		packageName="paperhat-text"
-		closureHash="5e988d831f58ee9c18514f4cf536c49e10c3216b0bf2ebbc022a27e50eb1fc0f"
+		closureHash="cd2819edcdfd0f1f6506ced617b55588e882dad2c30665ede6355cd9b9b3a805"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
@@ -78,7 +78,7 @@
 
 	<PackageDependency
 		packageName="paperhat-tips"
-		closureHash="dca95599873ecd538fb3bf6a1754c2529b9dfe47531c37dc30db2776a0346880"
+		closureHash="1c92ccc7a89779b5cd4380ba9f4a2c20b8852adb28d351f8b509e6c594fdaf1e"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
@@ -90,7 +90,7 @@
 
 	<PackageDependency
 		packageName="paperhat-work"
-		closureHash="7fad7a46d28f39be9efbf233ea3e4d370ea6e8947a40026bb207e9bdf8039cc0"
+		closureHash="eba7bed868543a7c36b2d2f6d575d69a814408a3b8b65aedb7ac830aafb25520"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

@@ -32,7 +32,7 @@ Defines three semantically distinct shortened-form concepts for technical specif
 | `expansion` | `$Text` | -- | The full expanded form (e.g. "National Aeronautics and Space Administration"). |
 | `pronunciation` | `$Text` | -- | How the acronym is spoken aloud. Only meaningful for Acronym. |
 | `label` | `$Text` | -- | Short display label for projection. |
-| `language` | `$EnumeratedToken` | -- | Natural language of the abbreviation and its expansion. |
+| `language` | `$LanguageTag` | -- | Natural language of the abbreviation and its expansion. |
 | `listTitle` | `$Text` | -- | Optional title for an AbbreviationList container. |
 
 ## Design Decisions

@@ -1,0 +1,5 @@
+<ViewDefinition targetConcept=paperhat:domain:recipe:Recipe>
+	<text:Title>Recipe Card</text:Title>
+	<desc:Description>Displays the primary recipe fields in a fixed order.</desc:Description>
+	<ViewField fieldPath="Title" required=true />
+</ViewDefinition>

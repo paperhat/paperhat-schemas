@@ -1,0 +1,5 @@
+[A view definition with one required field.]
+<ViewDefinition targetConcept="">
+	<text:Title></text:Title>
+	<ViewField fieldPath="" />
+</ViewDefinition>

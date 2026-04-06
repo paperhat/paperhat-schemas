@@ -1,0 +1,4 @@
+<TestAssertion
+	key=~recipeTitleRequirement
+	requirementRef="REQ-1"
+/>

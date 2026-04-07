@@ -65,11 +65,15 @@
 			</ContentRules>
 
 			<TraitRules>
+				<RequiresTrait name="derivedRiskLevel" />
+
 				<RequiresTrait name="elementReference" />
 
-				<RequiresTrait name="role" />
+				<RequiresTrait name="encodingCompatibility" />
 
 				<RequiresTrait name="protectionLevel" />
+
+				<RequiresTrait name="role" />
 
 				<RequiresTrait name="scope" />
 
@@ -267,10 +271,30 @@
 		/>
 
 		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:design:adaptive-plan:trait:derivedRiskLevel
+			name="derivedRiskLevel"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Standard, $Elevated, $Critical] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
 			defaultValueType=$Text
 			id=paperhat:design:adaptive-plan:trait:elementReference
 			name="elementReference"
 		/>
+
+		<TraitDefinition
+			defaultValueType=$List<$EnumeratedToken>
+			id=paperhat:design:adaptive-plan:trait:encodingCompatibility
+			name="encodingCompatibility"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Position, $Size, $Value, $Shape, $Hue, $Texture, $Orientation] />
+			</AllowedValues>
+		</TraitDefinition>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken

@@ -11,6 +11,12 @@
 	requiredLexisVersion=">=1.0.0 <2.0.0"
 >
 	<PackageDependency
+		packageName="behavior-expression-schema"
+		closureHash="088099aceb9417a860fdd00a5ea708a07dbb42ef38cc5c0412bb99392ad6cf8f"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
 		packageName="paperhat-description"
 		closureHash="1d52385bd993afa202cdda224e86fce0da4a104de6bbf26a1910b5d74cc7b04c"
 		versionRange=">=1.0.0 <2.0.0"

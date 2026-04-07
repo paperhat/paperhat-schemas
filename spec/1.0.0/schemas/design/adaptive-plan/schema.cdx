@@ -227,9 +227,37 @@
 
 	<TraitDefinitions>
 		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:design:adaptive-plan:trait:adaptivePlanProjectionDefinitionClosureHash
+			name="adaptivePlanProjectionDefinitionClosureHash"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:design:adaptive-plan:trait:closureHash
+			name="closureHash"
+		/>
+
+		<TraitDefinition
 			defaultValueType=$Iri
 			id=paperhat:design:adaptive-plan:trait:compositionTarget
 			name="compositionTarget"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:design:adaptive-plan:trait:contentHashAlgorithm
+			name="contentHashAlgorithm"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$SHA256] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:design:adaptive-plan:trait:lexisVersion
+			name="lexisVersion"
 		/>
 
 		<TraitDefinition

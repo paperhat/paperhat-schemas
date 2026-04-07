@@ -30,11 +30,11 @@
 
 				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
 
-				<AllowsChildConcept conceptSelector="PlanElement" min=1 />
+				<AllowsChildConcept conceptSelector="AdaptationPath" min=1 />
 
 				<AllowsChildConcept conceptSelector="PlanConstraint" min=1 />
 
-				<AllowsChildConcept conceptSelector="PlanRule" />
+				<AllowsChildConcept conceptSelector="PlanElement" min=1 />
 			</ChildRules>
 
 			<TraitRules>
@@ -49,6 +49,27 @@
 				<RequiresTrait name="lexisVersion" />
 
 				<RequiresTrait name="maxStructuralDelta" />
+			</TraitRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:design:adaptive-plan:AdaptationPath
+			name="AdaptationPath"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="PlanRule" />
+			</ChildRules>
+
+			<TraitRules>
+				<RequiresTrait name="adaptationResultClass" />
 			</TraitRules>
 
 			<CollectionRules allowsDuplicates=false ordering=$Ordered />
@@ -238,6 +259,16 @@
 	</ConceptDefinitions>
 
 	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:design:adaptive-plan:trait:adaptationResultClass
+			name="adaptationResultClass"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Baseline, $Adapted, $Constrained] />
+			</AllowedValues>
+		</TraitDefinition>
+
 		<TraitDefinition
 			defaultValueType=$Text
 			id=paperhat:design:adaptive-plan:trait:adaptivePlanProjectionDefinitionClosureHash

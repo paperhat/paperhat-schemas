@@ -9,6 +9,8 @@
 	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
+		<SchemaImport namespace="behavior" reference=urn:cdx:sha256:724662942082cc86e2fc6e6055e272b8598efe84f0c146bc4b57410935341031 />
+
 		<SchemaImport namespace="desc" reference=urn:cdx:sha256:aedb0f8af35a38f088a3e99cb0297df7c0a252cdb58cf3072a2d20103e23c3e8 />
 
 		<SchemaImport namespace="text" reference=urn:cdx:sha256:56710936ccb873445f40c284809a6753878a18a19c1a0a56e43de8c8075ec4fc />
@@ -31,6 +33,10 @@
 				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
 
 				<AllowsChildConcept conceptSelector="AdaptationPath" min=1 />
+
+				<AllowsChildConcept conceptSelector="behavior:Calculation" />
+
+				<AllowsChildConcept conceptSelector="behavior:Validation" />
 
 				<AllowsChildConcept conceptSelector="PlanConstraint" min=1 />
 

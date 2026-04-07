@@ -94,19 +94,27 @@
 			</ContentRules>
 
 			<TraitRules>
-				<RequiresTrait name="operator" />
-
-				<RequiresTrait name="level" />
-
 				<RequiresTrait name="elements" />
 
 				<RequiresTrait name="hardness" />
 
+				<RequiresTrait name="level" />
+
+				<RequiresTrait name="operator" />
+
+				<RequiresTrait name="solvedHardness" />
+
+				<RequiresTrait name="solvedLevel" />
+
+				<RequiresTrait name="solvedWeight" />
+
 				<RequiresTrait name="source" />
 
-				<AllowsTrait name="relativeTo" />
+				<RequiresTrait name="validationFamilies" />
 
 				<RequiresTrait name="weight" />
+
+				<AllowsTrait name="relativeTo" />
 
 				<AllowsTrait name="sourceRole" />
 			</TraitRules>
@@ -403,6 +411,42 @@
 		>
 			<AllowedValues>
 				<ValueIsOneOf values=[$Rubric, $Body, $Caption, $Label, $Annotation, $DataValue, $Media, $Exhibit, $Container, $Group, $Relation, $List, $PrimaryAction, $SecondaryAction, $DestructiveAction, $Reference, $Input, $Toggle, $Search, $Control, $Success, $Caution, $Issue, $Progress, $Notice, $CostDisclosure, $RiskDisclosure, $ConsentGate, $LegalDisclosure, $IdentityDisclosure] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:design:adaptive-plan:trait:solvedHardness
+			name="solvedHardness"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Soft, $Hard] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:design:adaptive-plan:trait:solvedLevel
+			name="solvedLevel"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$ProximityTight, $ProximityNear, $ProximityFar, $ContrastSoft, $ContrastClear, $ContrastStrong, $AlignmentLoose, $AlignmentAligned, $AlignmentLocked, $RepetitionLoose, $RepetitionCohesive, $RepetitionLocked, $SeparationSubtle, $SeparationClear, $SeparationStrong, $ForegroundingSubtle, $ForegroundingProminent, $ForegroundingDominant, $GroupingLoose, $GroupingCohesive, $GroupingLocked, $NegativeSpaceMinimal, $NegativeSpaceBalanced, $NegativeSpaceGenerous] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=paperhat:design:adaptive-plan:trait:solvedWeight
+			name="solvedWeight"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$List<$EnumeratedToken>
+			id=paperhat:design:adaptive-plan:trait:validationFamilies
+			name="validationFamilies"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$GroupingCoherence, $SalienceProportionality, $EntryClarity, $NavigationContinuity, $DisclosureIntegrity, $ProtectionCompleteness] />
 			</AllowedValues>
 		</TraitDefinition>
 

@@ -38,7 +38,15 @@
 			</ChildRules>
 
 			<TraitRules>
+				<RequiresTrait name="adaptivePlanProjectionDefinitionClosureHash" />
+
+				<RequiresTrait name="closureHash" />
+
 				<RequiresTrait name="compositionTarget" />
+
+				<RequiresTrait name="contentHashAlgorithm" />
+
+				<RequiresTrait name="lexisVersion" />
 
 				<RequiresTrait name="maxStructuralDelta" />
 			</TraitRules>
@@ -94,7 +102,7 @@
 
 				<AllowsTrait name="relativeTo" />
 
-				<AllowsTrait name="weight" />
+				<RequiresTrait name="weight" />
 
 				<AllowsTrait name="sourceRole" />
 			</TraitRules>
@@ -352,7 +360,7 @@
 			name="variable"
 		>
 			<AllowedValues>
-				<ValueIsOneOf values=[$ViewportClass, $InputMode, $AccessibilityProfile, $Locale, $Intent, $Phase, $Density] />
+				<ValueIsOneOf values=[$ViewportClass, $InputMode, $AccessibilityProfile, $Locale, $Intent, $Phase, $Density, $Confidence] />
 			</AllowedValues>
 		</TraitDefinition>
 

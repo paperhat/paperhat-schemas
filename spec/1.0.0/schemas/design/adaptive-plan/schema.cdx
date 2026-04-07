@@ -41,6 +41,8 @@
 				<AllowsChildConcept conceptSelector="PlanConstraint" min=1 />
 
 				<AllowsChildConcept conceptSelector="PlanElement" min=1 />
+
+				<AllowsChildConcept conceptSelector="ResolvedGlossReference" />
 			</ChildRules>
 
 			<TraitRules>
@@ -107,6 +109,25 @@
 				<RequiresTrait name="sourceAnnotation" />
 
 				<AllowsTrait name="parentElement" />
+
+				<AllowsTrait name="sequentialIdentifierSignal" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:design:adaptive-plan:ResolvedGlossReference
+			name="ResolvedGlossReference"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="referenceTarget" />
+
+				<RequiresTrait name="resolvedDisplayText" />
 			</TraitRules>
 		</ConceptDefinition>
 
@@ -381,6 +402,24 @@
 			defaultValueType=$Iri
 			id=paperhat:design:adaptive-plan:trait:parentElement
 			name="parentElement"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:design:adaptive-plan:trait:referenceTarget
+			name="referenceTarget"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:design:adaptive-plan:trait:resolvedDisplayText
+			name="resolvedDisplayText"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Boolean
+			id=paperhat:design:adaptive-plan:trait:sequentialIdentifierSignal
+			name="sequentialIdentifierSignal"
 		/>
 
 		<TraitDefinition

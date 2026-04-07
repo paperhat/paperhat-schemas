@@ -1,6 +1,6 @@
 <DesignPackageManifest
 	author="Paperhat"
-	closureHash="2ea6eb03e38735a8380745d5efd17d0eafda94ced379d0db3cdea189fde60629"
+	closureHash="8727a745e9d97cdb6061c9d8950c612ebbda3cdefb24e6ff431d5ad3b3f824f8"
 	copyright="Copyright 2026 Paperhat"
 	description="Design-family schema for the compiled adaptive plan — the self-contained artifact that the pipeline produces from design annotations and the foundry consumes as its sole semantic input."
 	license="Apache-2.0"

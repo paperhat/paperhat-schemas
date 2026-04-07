@@ -32,11 +32,17 @@
 
 				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
 
+				<AllowsChildConcept conceptSelector="AccessibilityConstraint" min=1 />
+
+				<AllowsChildConcept conceptSelector="AccessibilityThresholdOverride" />
+
 				<AllowsChildConcept conceptSelector="AdaptationPath" min=1 />
 
 				<AllowsChildConcept conceptSelector="behavior:Calculation" />
 
 				<AllowsChildConcept conceptSelector="behavior:Validation" />
+
+				<AllowsChildConcept conceptSelector="PerceptualInvariant" min=1 />
 
 				<AllowsChildConcept conceptSelector="PlanConstraint" min=1 />
 
@@ -54,12 +60,52 @@
 
 				<RequiresTrait name="contentHashAlgorithm" />
 
+				<RequiresTrait name="cumulativeDeltaLimit" />
+
 				<RequiresTrait name="lexisVersion" />
 
 				<RequiresTrait name="maxStructuralDelta" />
 			</TraitRules>
 
 			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:design:adaptive-plan:AccessibilityConstraint
+			name="AccessibilityConstraint"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="constraintType" />
+
+				<RequiresTrait name="elements" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:design:adaptive-plan:AccessibilityThresholdOverride
+			name="AccessibilityThresholdOverride"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="defaultThreshold" />
+
+				<RequiresTrait name="operator" />
+
+				<RequiresTrait name="ordinalLevel" />
+
+				<RequiresTrait name="replacementThreshold" />
+			</TraitRules>
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -81,6 +127,23 @@
 			</TraitRules>
 
 			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:design:adaptive-plan:PerceptualInvariant
+			name="PerceptualInvariant"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="elements" />
+
+				<RequiresTrait name="invariantType" />
+			</TraitRules>
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -325,6 +388,12 @@
 		</TraitDefinition>
 
 		<TraitDefinition
+			defaultValueType=$Number
+			id=paperhat:design:adaptive-plan:trait:cumulativeDeltaLimit
+			name="cumulativeDeltaLimit"
+		/>
+
+		<TraitDefinition
 			defaultValueType=$Text
 			id=paperhat:design:adaptive-plan:trait:lexisVersion
 			name="lexisVersion"
@@ -420,6 +489,48 @@
 			defaultValueType=$Boolean
 			id=paperhat:design:adaptive-plan:trait:sequentialIdentifierSignal
 			name="sequentialIdentifierSignal"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:design:adaptive-plan:trait:constraintType
+			name="constraintType"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$ContrastMinimum, $TargetSizeMinimum, $ReadingOrderPreservation, $LanguageMetadata, $StructuralRegionIdentification, $NonDecorativeAltText] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=paperhat:design:adaptive-plan:trait:defaultThreshold
+			name="defaultThreshold"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:design:adaptive-plan:trait:invariantType
+			name="invariantType"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$SemanticReadingOrder, $IntraGroupSeparation, $RoleEncodingStability, $FigureDominance, $ContainerBoundaryIntegrity] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:design:adaptive-plan:trait:ordinalLevel
+			name="ordinalLevel"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$ProximityTight, $ProximityNear, $ProximityFar, $ContrastSoft, $ContrastClear, $ContrastStrong, $AlignmentLoose, $AlignmentAligned, $AlignmentLocked, $RepetitionLoose, $RepetitionCohesive, $RepetitionLocked, $SeparationSubtle, $SeparationClear, $SeparationStrong, $ForegroundingSubtle, $ForegroundingProminent, $ForegroundingDominant, $GroupingLoose, $GroupingCohesive, $GroupingLocked, $NegativeSpaceMinimal, $NegativeSpaceBalanced, $NegativeSpaceGenerous] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Number
+			id=paperhat:design:adaptive-plan:trait:replacementThreshold
+			name="replacementThreshold"
 		/>
 
 		<TraitDefinition

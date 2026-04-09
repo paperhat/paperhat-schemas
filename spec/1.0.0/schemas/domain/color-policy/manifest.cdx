@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="b5a39e6164425f279c6c1ea9f08efcb58730d47b0820407fa0e453be6e7c7821"
+	closureHash="520039f92342d146b2f0749f71f6af7e52894192c34ab4f337814957ce208f32"
 	copyright="Copyright 2026 Paperhat"
 	description="Authored accessibility and proof policy objects for Prism. Defines accessibility policies, ordered policy rules, proof policies, proof targets, and Delta E 94 application constants."
 	license="Apache-2.0"

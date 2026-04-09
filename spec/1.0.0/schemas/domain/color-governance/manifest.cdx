@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="99edd47734a06fc604edde66aa585509af04f1b5afe448219eb1c78f5ce5f130"
+	closureHash="2054e9e3f1066eff80a057f49d2e1f9bcdc4a41e19136fcb820d845fadfca41f"
 	copyright="Copyright 2026 Paperhat"
 	description="Deterministic color-governance primitives for Prism. Defines color systems, palettes, palette members, token sets, tokens, and semantic roles above retained substrate color values."
 	license="Apache-2.0"

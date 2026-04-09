@@ -169,7 +169,7 @@
 			defaultValueType=$EnumeratedToken
 			id=paperhat:domain:color-policy:trait:accessibilityPolicyStatus
 			name="accessibilityPolicyStatus"
-		</TraitDefinition>
+		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
@@ -187,7 +187,7 @@
 			defaultValueType=$FiniteRealNumber
 			id=paperhat:domain:color-policy:trait:entryValue
 			name="entryValue"
-		</TraitDefinition>
+		/>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken

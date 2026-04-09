@@ -2,7 +2,7 @@
 	author="Paperhat"
 	closureHash="b5a39e6164425f279c6c1ea9f08efcb58730d47b0820407fa0e453be6e7c7821"
 	copyright="Copyright 2026 Paperhat"
-	description="Authored accessibility and proof policy objects for Prism. Defines accessibility policies, contrast requirements, simulation conditions, proof policies, and proof targets."
+	description="Authored accessibility and proof policy objects for Prism. Defines accessibility policies, ordered policy rules, proof policies, proof targets, and Delta E 94 application constants."
 	license="Apache-2.0"
 	packageName="paperhat-color-policy"
 	packageVersion="1.0.0"

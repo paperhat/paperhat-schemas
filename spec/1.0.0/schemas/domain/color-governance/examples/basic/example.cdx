@@ -38,7 +38,7 @@
 	<Palette
 		id=urn:paperhat:example:palette:core
 		name="Core Palette"
-		paletteKind=$Brand
+		palettePurpose=$Brand
 		paletteStatus=$Active
 	>
 		<PaletteMember
@@ -69,7 +69,6 @@
 	<TokenSet
 		id=urn:paperhat:example:token-set:css
 		name="CSS Tokens"
-		publicationIntent=$Css
 		tokenSetStatus=$Active
 	>
 		<Token

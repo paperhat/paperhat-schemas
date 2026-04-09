@@ -27,8 +27,8 @@
 		Lifecycle or governance status for a color system.
 	</TraitLocalization>
 
-	<TraitLocalization identifier="paletteKind" label="Palette Kind" labelOther="Palette Kinds">
-		Palette classification.
+	<TraitLocalization identifier="palettePurpose" label="Palette Purpose" labelOther="Palette Purposes">
+		Palette purpose classification.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="paletteStatus" label="Palette Status" labelOther="Palette Statuses">
@@ -51,16 +51,12 @@
 		Lifecycle or governance status for a palette member.
 	</TraitLocalization>
 
-	<TraitLocalization identifier="publicationIntent" label="Publication Intent" labelOther="Publication Intents">
-		Publication-target intent for a token set or token.
-	</TraitLocalization>
-
 	<TraitLocalization identifier="tokenSetStatus" label="Token Set Status" labelOther="Token Set Statuses">
 		Lifecycle or governance status for a token set.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="semanticRole" label="Semantic Role" labelOther="Semantic Roles">
-		Reference to the governed semantic role for a token.
+		Optional reference to the governed semantic role for a token.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="tokenKind" label="Token Kind" labelOther="Token Kinds">

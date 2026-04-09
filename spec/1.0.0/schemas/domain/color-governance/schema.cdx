@@ -57,7 +57,7 @@
 			<TraitRules>
 				<RequiresTrait name="name" />
 
-				<AllowsTrait name="paletteKind" />
+				<AllowsTrait name="palettePurpose" />
 
 				<AllowsTrait name="paletteStatus" />
 			</TraitRules>
@@ -105,8 +105,6 @@
 			<TraitRules>
 				<RequiresTrait name="name" />
 
-				<AllowsTrait name="publicationIntent" />
-
 				<AllowsTrait name="tokenSetStatus" />
 			</TraitRules>
 
@@ -134,13 +132,11 @@
 
 				<RequiresTrait name="colorValue" />
 
-				<RequiresTrait name="semanticRole" />
+				<AllowsTrait name="semanticRole" />
 
 				<AllowsTrait name="label" />
 
 				<AllowsTrait name="tokenKind" />
-
-				<AllowsTrait name="publicationIntent" />
 
 				<AllowsTrait name="tokenStatus" />
 			</TraitRules>
@@ -195,8 +191,8 @@
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=paperhat:domain:color-governance:trait:paletteKind
-			name="paletteKind"
+			id=paperhat:domain:color-governance:trait:palettePurpose
+			name="palettePurpose"
 		>
 			<AllowedValues>
 				<ValueIsOneOf values=[$Brand, $Semantic, $Neutral, $Diagnostic] />
@@ -232,16 +228,6 @@
 			id=paperhat:domain:color-governance:trait:paletteMemberStatus
 			name="paletteMemberStatus"
 		/>
-
-		<TraitDefinition
-			defaultValueType=$EnumeratedToken
-			id=paperhat:domain:color-governance:trait:publicationIntent
-			name="publicationIntent"
-		>
-			<AllowedValues>
-				<ValueIsOneOf values=[$Css, $ApplicationTokens, $PrintSwatches] />
-			</AllowedValues>
-		</TraitDefinition>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken

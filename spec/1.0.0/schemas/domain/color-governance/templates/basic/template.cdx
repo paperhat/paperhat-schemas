@@ -2,7 +2,7 @@
 <ColorSystem id=urn:paperhat:example:color-system:example name="Color System Name">
 	<SemanticRole id=urn:paperhat:example:semantic-role:surface key=~surface semanticRoleType=$Surface />
 
-	<Palette id=urn:paperhat:example:palette:core name="Palette Name">
+	<Palette id=urn:paperhat:example:palette:core name="Palette Name" palettePurpose=$Brand>
 		<PaletteMember colorValue=#000000 id=urn:paperhat:example:palette-member:core-1 key=~core1 />
 	</Palette>
 
@@ -11,7 +11,6 @@
 			colorValue=#000000
 			id=urn:paperhat:example:token:text-primary
 			key=~textPrimary
-			semanticRole=urn:paperhat:example:semantic-role:surface
 		/>
 	</TokenSet>
 </ColorSystem>

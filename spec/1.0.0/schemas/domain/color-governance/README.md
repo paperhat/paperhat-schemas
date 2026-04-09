@@ -17,8 +17,8 @@ Use this package to author durable semantic grouping and role-governance state f
 | ColorSystem | yes | Top-level governed color domain containing palettes, token sets, and semantic roles. |
 | Palette | yes | Ordered collection of retained color values with stable membership identity. |
 | PaletteMember | yes | One stable palette entry carrying a retained color value. |
-| TokenSet | yes | Ordered collection of published or publishable color-bearing tokens. |
-| Token | yes | One stable named token carrying a retained color value and a semantic-role reference. |
+| TokenSet | yes | Ordered collection of color-bearing tokens. |
+| Token | yes | One stable named token carrying a retained color value and an optional semantic-role reference. |
 | SemanticRole | yes | One stable governed role such as brand, surface, text, border, action, status, data-visualization, focus, or disabled. |
 
 ## Traits
@@ -28,15 +28,14 @@ Use this package to author durable semantic grouping and role-governance state f
 | name | $Text | ColorSystem, Palette, TokenSet | Human-readable name for the governed object. |
 | colorSystemKind | $EnumeratedToken | no | Open classification for a ColorSystem. |
 | colorSystemStatus | $EnumeratedToken | no | Lifecycle or governance status for a ColorSystem. |
-| paletteKind | $EnumeratedToken | no | Palette classification. Allowed values: `$Brand`, `$Semantic`, `$Neutral`, `$Diagnostic`. |
+| palettePurpose | $EnumeratedToken | no | Palette purpose classification. Allowed values: `$Brand`, `$Semantic`, `$Neutral`, `$Diagnostic`. |
 | paletteStatus | $EnumeratedToken | no | Lifecycle or governance status for a Palette. |
 | key | $LookupToken | PaletteMember, Token, SemanticRole | Stable document-scoped lookup key. |
 | label | $Text | PaletteMember, Token, SemanticRole | Human-readable display label. |
 | colorValue | $Color | PaletteMember, Token | Retained substrate color value. |
 | paletteMemberStatus | $EnumeratedToken | no | Lifecycle or governance status for a PaletteMember. |
-| publicationIntent | $EnumeratedToken | TokenSet, Token | Publication-target intent. Allowed values: `$Css`, `$ApplicationTokens`, `$PrintSwatches`. |
 | tokenSetStatus | $EnumeratedToken | no | Lifecycle or governance status for a TokenSet. |
-| semanticRole | $Iri (reference trait) | Token | Reference to the SemanticRole governed by the token. |
+| semanticRole | $Iri (reference trait) | no | Optional reference to the SemanticRole governed by the token. |
 | tokenKind | $EnumeratedToken | no | Open classification for a Token. |
 | tokenStatus | $EnumeratedToken | no | Lifecycle or governance status for a Token. |
 | semanticRoleType | $EnumeratedToken | SemanticRole | Base semantic role type. Allowed values: `$Surface`, `$Text`, `$Border`, `$Icon`, `$Link`, `$Action`, `$Focus`, `$Overlay`, `$DataVisualization`, `$Brand`, `$Status`, `$Disabled`. |
@@ -63,8 +62,8 @@ Use this package to author durable semantic grouping and role-governance state f
 |---|---|
 | token-reference-trait-allowed | `Token` allows only `semanticRole` as a reference trait. |
 | token-reference-singleton | `Token` declares at most one reference trait. |
-| token-semantic-role-target-type | `Token.semanticRole` targets `SemanticRole`. |
-| token-semantic-role-must-resolve | `Token.semanticRole` resolves. |
+| token-semantic-role-target-type | `Token.semanticRole`, when present, targets `SemanticRole`. |
+| token-semantic-role-must-resolve | `Token.semanticRole`, when present, resolves. |
 | semantic-role-reference-trait-allowed | `SemanticRole` allows only `parentRole` as a reference trait. |
 | semantic-role-reference-singleton | `SemanticRole` declares at most one reference trait. |
 | semantic-role-parent-role-target-type | `SemanticRole.parentRole` targets `SemanticRole`. |
@@ -82,6 +81,7 @@ Use this package to author durable semantic grouping and role-governance state f
 - This package keeps retained color values as `$Color` substrate values. It does not redefine color parsing, canonicalization, or gamut semantics.
 - Policy objects are intentionally absent. Accessibility policy, proof policy, repair policy, and other rule-governing objects belong in `paperhat-color-policy`.
 - `Token` carries a direct retained color value rather than a palette-member reference. This keeps publication-facing token semantics explicit and avoids making palettes the hidden authority for token color assignment.
+- `Token.semanticRole` is optional so authored token inventories can admit unresolved or intentionally role-free tokens while still enforcing exact target and resolution behavior whenever a role reference is present.
 - `SemanticRole.parentRole` gives the first version a role-graph hook without forcing a separate role-graph package.
 
 ---

@@ -71,8 +71,8 @@
 		Lifecycle or governance status for a token.
 	</TraitLocalization>
 
-	<TraitLocalization identifier="roleType" label="Role Type" labelOther="Role Types">
-		Base semantic role type from the Prism role vocabulary.
+	<TraitLocalization identifier="semanticRoleType" label="Semantic Role Type" labelOther="Semantic Role Types">
+		Base semantic role type from the locked twelve-value vocabulary.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="parentRole" label="Parent Role" labelOther="Parent Roles">

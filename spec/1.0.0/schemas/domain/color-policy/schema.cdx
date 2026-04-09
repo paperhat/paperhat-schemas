@@ -61,9 +61,9 @@
 
 				<RequiresTrait name="minimumContrastRatio" />
 
-				<RequiresTrait name="foregroundRoleType" />
+				<RequiresTrait name="foregroundSemanticRoleType" />
 
-				<RequiresTrait name="backgroundRoleType" />
+				<RequiresTrait name="backgroundSemanticRoleType" />
 
 				<AllowsTrait name="label" />
 
@@ -202,21 +202,21 @@
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=paperhat:domain:color-policy:trait:foregroundRoleType
-			name="foregroundRoleType"
+			id=paperhat:domain:color-policy:trait:foregroundSemanticRoleType
+			name="foregroundSemanticRoleType"
 		>
 			<AllowedValues>
-				<ValueIsOneOf values=[$Brand, $Surface, $Text, $Border, $Action, $Status, $DataVisualization, $Focus, $Disabled] />
+				<ValueIsOneOf values=[$Surface, $Text, $Border, $Icon, $Link, $Action, $Focus, $Overlay, $DataVisualization, $Brand, $Status, $Disabled] />
 			</AllowedValues>
 		</TraitDefinition>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=paperhat:domain:color-policy:trait:backgroundRoleType
-			name="backgroundRoleType"
+			id=paperhat:domain:color-policy:trait:backgroundSemanticRoleType
+			name="backgroundSemanticRoleType"
 		>
 			<AllowedValues>
-				<ValueIsOneOf values=[$Brand, $Surface, $Text, $Border, $Action, $Status, $DataVisualization, $Focus, $Disabled] />
+				<ValueIsOneOf values=[$Surface, $Text, $Border, $Icon, $Link, $Action, $Focus, $Overlay, $DataVisualization, $Brand, $Status, $Disabled] />
 			</AllowedValues>
 		</TraitDefinition>
 

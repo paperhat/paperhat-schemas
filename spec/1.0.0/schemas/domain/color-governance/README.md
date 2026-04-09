@@ -39,7 +39,7 @@ Use this package to author durable semantic grouping and role-governance state f
 | semanticRole | $Iri (reference trait) | Token | Reference to the SemanticRole governed by the token. |
 | tokenKind | $EnumeratedToken | no | Open classification for a Token. |
 | tokenStatus | $EnumeratedToken | no | Lifecycle or governance status for a Token. |
-| roleType | $EnumeratedToken | SemanticRole | Base semantic role type. Allowed values: `$Brand`, `$Surface`, `$Text`, `$Border`, `$Action`, `$Status`, `$DataVisualization`, `$Focus`, `$Disabled`. |
+| semanticRoleType | $EnumeratedToken | SemanticRole | Base semantic role type. Allowed values: `$Surface`, `$Text`, `$Border`, `$Icon`, `$Link`, `$Action`, `$Focus`, `$Overlay`, `$DataVisualization`, `$Brand`, `$Status`, `$Disabled`. |
 | parentRole | $Iri (reference trait) | no | Optional reference to a parent SemanticRole for role-graph structure. |
 | roleStatus | $EnumeratedToken | no | Lifecycle or governance status for a SemanticRole. |
 

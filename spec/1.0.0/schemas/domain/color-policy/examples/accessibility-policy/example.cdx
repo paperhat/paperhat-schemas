@@ -11,10 +11,10 @@
 	</description:Description>
 
 	<ContrastRequirement
-		backgroundRoleType=$Surface
+		backgroundSemanticRoleType=$Surface
 		contrastContext=$NormalText
 		contrastRequirementStatus=$Active
-		foregroundRoleType=$Text
+		foregroundSemanticRoleType=$Text
 		id=urn:paperhat:example:contrast-requirement:text-on-surface
 		key=~textOnSurface
 		label="Text on Surface"
@@ -22,10 +22,10 @@
 	/>
 
 	<ContrastRequirement
-		backgroundRoleType=$Surface
+		backgroundSemanticRoleType=$Surface
 		contrastContext=$NonText
 		contrastRequirementStatus=$Active
-		foregroundRoleType=$Status
+		foregroundSemanticRoleType=$Status
 		id=urn:paperhat:example:contrast-requirement:status-on-surface
 		key=~statusOnSurface
 		label="Status on Surface"

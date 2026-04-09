@@ -12,7 +12,7 @@
 		key=~brand
 		label="Brand"
 		roleStatus=$Active
-		roleType=$Brand
+		semanticRoleType=$Brand
 	>
 		<description:Description bodyMode=$content>
 			Brand-signifying color role for identity-bearing surfaces and accents.
@@ -24,7 +24,7 @@
 		key=~surface
 		label="Surface"
 		roleStatus=$Active
-		roleType=$Surface
+		semanticRoleType=$Surface
 	/>
 
 	<SemanticRole
@@ -32,7 +32,7 @@
 		key=~text
 		label="Text"
 		roleStatus=$Active
-		roleType=$Text
+		semanticRoleType=$Text
 	/>
 
 	<Palette

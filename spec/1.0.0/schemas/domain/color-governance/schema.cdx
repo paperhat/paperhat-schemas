@@ -159,7 +159,7 @@
 			<TraitRules>
 				<RequiresTrait name="key" />
 
-				<RequiresTrait name="roleType" />
+				<RequiresTrait name="semanticRoleType" />
 
 				<AllowsTrait name="label" />
 
@@ -270,11 +270,11 @@
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
-			id=paperhat:domain:color-governance:trait:roleType
-			name="roleType"
+			id=paperhat:domain:color-governance:trait:semanticRoleType
+			name="semanticRoleType"
 		>
 			<AllowedValues>
-				<ValueIsOneOf values=[$Brand, $Surface, $Text, $Border, $Action, $Status, $DataVisualization, $Focus, $Disabled] />
+				<ValueIsOneOf values=[$Surface, $Text, $Border, $Icon, $Link, $Action, $Focus, $Overlay, $DataVisualization, $Brand, $Status, $Disabled] />
 			</AllowedValues>
 		</TraitDefinition>
 

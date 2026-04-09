@@ -31,8 +31,8 @@ Use this package to author durable rule objects that govern accessibility evalua
 | contrastComputationMode | $EnumeratedToken | no | Declared contrast-computation mode. Allowed values: `$WcagRelativeLuminance`, `$ApcaW3`. |
 | key | $LookupToken | ContrastRequirement, ProofTarget | Stable document-scoped lookup key. |
 | minimumContrastRatio | $FiniteRealNumber | ContrastRequirement | Minimum acceptable contrast ratio. |
-| foregroundRoleType | $EnumeratedToken | ContrastRequirement | Governing foreground semantic role type. Allowed values: `$Brand`, `$Surface`, `$Text`, `$Border`, `$Action`, `$Status`, `$DataVisualization`, `$Focus`, `$Disabled`. |
-| backgroundRoleType | $EnumeratedToken | ContrastRequirement | Governing background semantic role type. Allowed values: `$Brand`, `$Surface`, `$Text`, `$Border`, `$Action`, `$Status`, `$DataVisualization`, `$Focus`, `$Disabled`. |
+| foregroundSemanticRoleType | $EnumeratedToken | ContrastRequirement | Governing foreground semantic role type. Allowed values: `$Surface`, `$Text`, `$Border`, `$Icon`, `$Link`, `$Action`, `$Focus`, `$Overlay`, `$DataVisualization`, `$Brand`, `$Status`, `$Disabled`. |
+| backgroundSemanticRoleType | $EnumeratedToken | ContrastRequirement | Governing background semantic role type. Allowed values: `$Surface`, `$Text`, `$Border`, `$Icon`, `$Link`, `$Action`, `$Focus`, `$Overlay`, `$DataVisualization`, `$Brand`, `$Status`, `$Disabled`. |
 | label | $Text | ContrastRequirement, ProofTarget | Human-readable display label. |
 | contrastContext | $EnumeratedToken | no | Context classification. Allowed values: `$NormalText`, `$LargeText`, `$NonText`. |
 | contrastRequirementStatus | $EnumeratedToken | no | Lifecycle or governance status for a contrast requirement. |

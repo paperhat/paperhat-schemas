@@ -41,12 +41,12 @@
 		Minimum acceptable contrast ratio.
 	</TraitLocalization>
 
-	<TraitLocalization identifier="foregroundRoleType" label="Foreground Role Type" labelOther="Foreground Role Types">
-		Governing foreground semantic role type from the Prism role vocabulary.
+	<TraitLocalization identifier="foregroundSemanticRoleType" label="Foreground Semantic Role Type" labelOther="Foreground Semantic Role Types">
+		Governing foreground semantic role type from the locked twelve-value vocabulary.
 	</TraitLocalization>
 
-	<TraitLocalization identifier="backgroundRoleType" label="Background Role Type" labelOther="Background Role Types">
-		Governing background semantic role type from the Prism role vocabulary.
+	<TraitLocalization identifier="backgroundSemanticRoleType" label="Background Semantic Role Type" labelOther="Background Semantic Role Types">
+		Governing background semantic role type from the locked twelve-value vocabulary.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="label" label="Label" labelOther="Labels">

@@ -1,4 +1,14 @@
-[A proof policy. name and scopeLevel are required. Include at least one ProofTarget.]
-<ProofPolicy id=urn:paperhat:example:proof-policy:example name="Proof Policy Name" scopeLevel=$Palette>
-	<ProofTarget id=urn:paperhat:example:proof-target:screen key=~screen targetMedium=$DisplaySrgb />
+[A proof policy. name is required. Include at least one ProofTarget.]
+<ProofPolicy id=urn:paperhat:example:proof-policy:example name="Proof Policy Name">
+	<ProofTarget
+		id=urn:paperhat:example:proof-target:screen
+		proofComparisonMode=$RetainedDeltaE
+		proofGamutMappingMode=$Reject
+		proofMedium=$Web
+		proofTargetIdentifier="web-srgb-proof"
+		renderingIntent=$RelativeColorimetric
+		retainedComparisonMetric="Ok"
+		retainedComparisonTolerance=0.03
+		targetProfileIdentifier="web-srgb"
+	/>
 </ProofPolicy>

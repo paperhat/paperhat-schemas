@@ -5,99 +5,89 @@
 >
 	<ConceptLocalization identifier="AccessibilityPolicy" label="Accessibility Policy" labelOther="Accessibility Policies" />
 
-	<ConceptLocalization identifier="ContrastRequirement" label="Contrast Requirement" labelOther="Contrast Requirements" />
+	<ConceptLocalization identifier="PolicyRule" label="Policy Rule" labelOther="Policy Rules" />
 
-	<ConceptLocalization identifier="SimulationCondition" label="Simulation Condition" labelOther="Simulation Conditions" />
+	<ConceptLocalization identifier="NamedValueEntry" label="Named Value Entry" labelOther="Named Value Entries" />
 
 	<ConceptLocalization identifier="ProofPolicy" label="Proof Policy" labelOther="Proof Policies" />
 
 	<ConceptLocalization identifier="ProofTarget" label="Proof Target" labelOther="Proof Targets" />
 
+	<ConceptLocalization identifier="DeltaE94ApplicationConstants" label="Delta E 94 Application Constants" labelOther="Delta E 94 Application Constants" />
+
 	<TraitLocalization identifier="name" label="Name" labelOther="Names">
 		Human-readable policy name.
-	</TraitLocalization>
-
-	<TraitLocalization identifier="scopeLevel" label="Scope Level" labelOther="Scope Levels">
-		Intended Prism scope level for the policy.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="accessibilityPolicyStatus" label="Accessibility Policy Status" labelOther="Accessibility Policy Statuses">
 		Lifecycle or governance status for an accessibility policy.
 	</TraitLocalization>
 
-	<TraitLocalization identifier="complianceStandard" label="Compliance Standard" labelOther="Compliance Standards">
-		Declared compliance standard for accessibility evaluation.
+	<TraitLocalization identifier="policyRuleIdentifier" label="Policy Rule Identifier" labelOther="Policy Rule Identifiers">
+		Exact policy-rule identifier.
 	</TraitLocalization>
 
-	<TraitLocalization identifier="contrastComputationMode" label="Contrast Computation Mode" labelOther="Contrast Computation Modes">
-		Declared contrast-computation mode.
+	<TraitLocalization identifier="entryName" label="Entry Name" labelOther="Entry Names">
+		Exact policy-rule parameter name.
 	</TraitLocalization>
 
-	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
-		Stable document-scoped lookup key.
-	</TraitLocalization>
-
-	<TraitLocalization identifier="minimumContrastRatio" label="Minimum Contrast Ratio" labelOther="Minimum Contrast Ratios">
-		Minimum acceptable contrast ratio.
-	</TraitLocalization>
-
-	<TraitLocalization identifier="foregroundSemanticRoleType" label="Foreground Semantic Role Type" labelOther="Foreground Semantic Role Types">
-		Governing foreground semantic role type from the locked twelve-value vocabulary.
-	</TraitLocalization>
-
-	<TraitLocalization identifier="backgroundSemanticRoleType" label="Background Semantic Role Type" labelOther="Background Semantic Role Types">
-		Governing background semantic role type from the locked twelve-value vocabulary.
-	</TraitLocalization>
-
-	<TraitLocalization identifier="label" label="Label" labelOther="Labels">
-		Human-readable display label.
-	</TraitLocalization>
-
-	<TraitLocalization identifier="contrastContext" label="Contrast Context" labelOther="Contrast Contexts">
-		Context classification for a contrast requirement.
-	</TraitLocalization>
-
-	<TraitLocalization identifier="contrastRequirementStatus" label="Contrast Requirement Status" labelOther="Contrast Requirement Statuses">
-		Lifecycle or governance status for a contrast requirement.
-	</TraitLocalization>
-
-	<TraitLocalization identifier="simulationMode" label="Simulation Mode" labelOther="Simulation Modes">
-		Simulation mode required during evaluation.
-	</TraitLocalization>
-
-	<TraitLocalization identifier="simulationConditionStatus" label="Simulation Condition Status" labelOther="Simulation Condition Statuses">
-		Lifecycle or governance status for a simulation condition.
+	<TraitLocalization identifier="entryValue" label="Entry Value" labelOther="Entry Values">
+		Exact finite decimal parameter value.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="proofPolicyStatus" label="Proof Policy Status" labelOther="Proof Policy Statuses">
 		Lifecycle or governance status for a proof policy.
 	</TraitLocalization>
 
-	<TraitLocalization identifier="targetMedium" label="Target Medium" labelOther="Target Media">
-		Declared proof target medium.
+	<TraitLocalization identifier="proofTargetIdentifier" label="Proof Target Identifier" labelOther="Proof Target Identifiers">
+		Exact proof target identifier.
 	</TraitLocalization>
 
-	<TraitLocalization identifier="proofColorSpace" label="Proof Color Space" labelOther="Proof Color Spaces">
-		Declared proof color space.
+	<TraitLocalization identifier="proofMedium" label="Proof Medium" labelOther="Proof Media">
+		Declared proof medium.
 	</TraitLocalization>
 
-	<TraitLocalization identifier="gamutMappingMode" label="Gamut Mapping Mode" labelOther="Gamut Mapping Modes">
-		Declared gamut-mapping mode.
+	<TraitLocalization identifier="targetProfileIdentifier" label="Target Profile Identifier" labelOther="Target Profile Identifiers">
+		Exact target profile identifier.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="label" label="Label" labelOther="Labels">
+		Human-readable display label.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="proofGamutMappingMode" label="Proof Gamut Mapping Mode" labelOther="Proof Gamut Mapping Modes">
+		Exact authored gamut-mapping mode.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="proofComparisonMode" label="Proof Comparison Mode" labelOther="Proof Comparison Modes">
-		Declared proof comparison mode.
+		Exact authored proof comparison mode.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="renderingIntent" label="Rendering Intent" labelOther="Rendering Intents">
-		Declared rendering intent.
+		Exact authored rendering intent.
 	</TraitLocalization>
 
-	<TraitLocalization identifier="toleranceDeltaE" label="Tolerance Delta E" labelOther="Tolerance Delta E Values">
-		Declared acceptable color-difference tolerance.
+	<TraitLocalization identifier="retainedComparisonMetric" label="Retained Comparison Metric" labelOther="Retained Comparison Metrics">
+		Exact retained Delta E metric.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="retainedComparisonTolerance" label="Retained Comparison Tolerance" labelOther="Retained Comparison Tolerances">
+		Exact retained-comparison tolerance.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="proofTargetStatus" label="Proof Target Status" labelOther="Proof Target Statuses">
 		Lifecycle or governance status for a proof target.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="kL" label="kL" labelOther="kL Values">
+		Exact Delta E 94 `kL` application constant.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="k1" label="k1" labelOther="k1 Values">
+		Exact Delta E 94 `k1` application constant.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="k2" label="k2" labelOther="k2 Values">
+		Exact Delta E 94 `k2` application constant.
 	</TraitLocalization>
 </LocalizationBundle>

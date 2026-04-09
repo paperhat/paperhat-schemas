@@ -1,38 +1,25 @@
 <AccessibilityPolicy
 	accessibilityPolicyStatus=$Active
-	complianceStandard=$Wcag22AA
-	contrastComputationMode=$WcagRelativeLuminance
 	id=urn:paperhat:example:accessibility-policy:core
 	name="Core Accessibility Policy"
-	scopeLevel=$TokenSet
 >
 	<description:Description bodyMode=$content>
-		Accessibility policy for token-set publication and interface review.
+		Accessibility policy for token publication and interface review.
 	</description:Description>
 
-	<ContrastRequirement
-		backgroundSemanticRoleType=$Surface
-		contrastContext=$NormalText
-		contrastRequirementStatus=$Active
-		foregroundSemanticRoleType=$Text
-		id=urn:paperhat:example:contrast-requirement:text-on-surface
-		key=~textOnSurface
-		label="Text on Surface"
-		minimumContrastRatio=4.5
-	/>
+	<PolicyRule policyRuleIdentifier="minimum-apca-lc">
+		<NamedValueEntry entryName="minimumApcaLc" entryValue=60 />
+	</PolicyRule>
 
-	<ContrastRequirement
-		backgroundSemanticRoleType=$Surface
-		contrastContext=$NonText
-		contrastRequirementStatus=$Active
-		foregroundSemanticRoleType=$Status
-		id=urn:paperhat:example:contrast-requirement:status-on-surface
-		key=~statusOnSurface
-		label="Status on Surface"
-		minimumContrastRatio=3
-	/>
+	<PolicyRule policyRuleIdentifier="minimum-wcag-contrast-ratio">
+		<NamedValueEntry entryName="minimumWcagContrastRatio" entryValue=4.5 />
+	</PolicyRule>
 
-	<SimulationCondition simulationConditionStatus=$Active simulationMode=$Protanopia />
+	<PolicyRule policyRuleIdentifier="require-distinction-preservation" />
 
-	<SimulationCondition simulationConditionStatus=$Active simulationMode=$Deuteranopia />
+	<PolicyRule policyRuleIdentifier="require-state-exposure" />
+
+	<PolicyRule policyRuleIdentifier="require-consequence-exposure" />
+
+	<PolicyRule policyRuleIdentifier="require-no-color-alone-risk" />
 </AccessibilityPolicy>

@@ -77,16 +77,12 @@
 		Lifecycle or governance status for a review disposition.
 	</TraitLocalization>
 
-	<TraitLocalization identifier="scopeLevel" label="Scope Level" labelOther="Scope Levels">
-		Intended publication scope level.
-	</TraitLocalization>
-
 	<TraitLocalization identifier="publicationIntent" label="Publication Intent" labelOther="Publication Intents">
 		Intention for publication or export of the targeted entities.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="targetMedium" label="Target Medium" labelOther="Target Media">
-		Declared target medium for a publication scope.
+		Declared target medium for a publication scope. Publication intent Proof or PrintSwatches requires this trait.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="publicationScopeStatus" label="Publication Scope Status" labelOther="Publication Scope Statuses">
@@ -94,6 +90,6 @@
 	</TraitLocalization>
 
 	<TraitLocalization identifier="target" label="Target" labelOther="Targets">
-		Reference target for a typed Prism local reference wrapper.
+		Reference target for a typed Prism project or result-bundle reference wrapper.
 	</TraitLocalization>
 </LocalizationBundle>

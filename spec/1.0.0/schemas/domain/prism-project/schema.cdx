@@ -1,7 +1,7 @@
 <Schema
 	authoringMode=$SimplifiedMode
 	compatibilityClass=$Initial
-	description="Root Prism project-document composer. Defines PrismProject assembly, project-scoped source references, policy bindings, governance packs, review dispositions, and publication scopes above color-governance and color-policy packages."
+	description="Root Prism project-document composer. Defines PrismProject assembly, project-scoped source references, policy bindings, governance packs, review dispositions, and publication scopes above color-governance, color-policy, and prism-result-bundle packages."
 	id=paperhat:domain:prism-project
 	namespace="prismproject"
 	title="Prism Project Schema"
@@ -12,6 +12,8 @@
 		<SchemaImport namespace="colorgovernance" reference=urn:cdx:sha256:762414766dd9719916dd25b3012330064d9d9be672be14a0c7a65a28c5d3cb73 />
 
 		<SchemaImport namespace="colorpolicy" reference=urn:cdx:sha256:58ee2ddc3bba6da8f4340057bff33a9bc26ed2a3816c305a4e2d89cc0d0aa6a3 />
+
+		<SchemaImport namespace="prismresultbundle" reference=urn:cdx:sha256:8a63a8f986048a229b2044865fdafb3e78f8ed8a0d7f948903d93989a77165af />
 
 		<SchemaImport namespace="description" reference=urn:cdx:sha256:aedb0f8af35a38f088a3e99cb0297df7c0a252cdb58cf3072a2d20103e23c3e8 />
 
@@ -217,8 +219,6 @@
 			<TraitRules>
 				<RequiresTrait name="key" />
 
-				<RequiresTrait name="scopeLevel" />
-
 				<RequiresTrait name="publicationIntent" />
 
 				<AllowsTrait name="label" />
@@ -380,16 +380,6 @@
 			id=paperhat:domain:prism-project:trait:reviewDispositionStatus
 			name="reviewDispositionStatus"
 		/>
-
-		<TraitDefinition
-			defaultValueType=$EnumeratedToken
-			id=paperhat:domain:prism-project:trait:scopeLevel
-			name="scopeLevel"
-		>
-			<AllowedValues>
-				<ValueIsOneOf values=[$Project, $ColorSystem, $Palette, $TokenSet, $Token] />
-			</AllowedValues>
-		</TraitDefinition>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
@@ -639,7 +629,7 @@
 
 		<ConstraintDefinition
 			id=paperhat:domain:prism-project:review-target-reference-target-type
-			title="ReviewTargetReference target must be a Prism reviewable entity"
+			title="ReviewTargetReference target must be a Prism reviewable entity or result-bundle RepairSuggestion"
 		>
 			<Targets>
 				<TargetConcept conceptSelector="ReviewTargetReference" />
@@ -701,6 +691,10 @@
 
 					<Rule>
 						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="colorgovernance:SemanticRole" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="prismresultbundle:RepairSuggestion" />
 					</Rule>
 				</AnyOf>
 			</Rule>

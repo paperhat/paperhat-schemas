@@ -4,11 +4,11 @@ Version: 1.0.0
 
 # Prism Project
 
-Root Prism project-document composer. Defines PrismProject assembly, project-scoped source references, durable policy bindings, governance packs, review dispositions, and publication scopes above color-governance and color-policy packages.
+Root Prism project-document composer. Defines PrismProject assembly, project-scoped source references, durable policy bindings, governance packs, review dispositions, and publication scopes above color-governance, color-policy, and prism-result-bundle packages.
 
 ## When to Use
 
-Use this package to author the durable root document that Prism, terminal workflows, Lexis, and foundries consume. `paperhat-prism-project` composes governed color systems, policy objects, and project-local governance bindings into one project authority. It does not define retained color semantics, inner policy primitives, or derived workflow results.
+Use this package to author the durable root document that Prism, terminal workflows, Lexis, and foundries consume. `paperhat-prism-project` composes governed color systems, policy objects, project-local governance bindings, and typed references to derived review artifacts into one project authority. It does not define retained color semantics, inner policy primitives, or derived workflow results.
 
 ## Concepts
 
@@ -19,12 +19,12 @@ Use this package to author the durable root document that Prism, terminal workfl
 | SourceReference | yes | Stable project-scoped external source reference, such as an imported token registry or brand source. |
 | AccessibilityPolicyBinding | yes | Durable attachment of one accessibility policy to one or more governed Prism scopes. |
 | ProofPolicyBinding | yes | Durable attachment of one proof policy to one or more governed Prism scopes. |
-| ReviewDisposition | yes | Stable governance review decision that targets one reviewable Prism entity through a typed local reference. |
-| PublicationScope | yes | Stable publication grouping that targets one or more governed Prism scopes through typed local references. |
+| ReviewDisposition | yes | Stable governance review decision that targets one reviewable Prism or result-bundle entity through a typed reference. |
+| PublicationScope | yes | Stable publication grouping that targets one or more governed Prism scopes through typed references. |
 | AccessibilityPolicyReference | no | Typed reference wrapper that targets exactly one `AccessibilityPolicy`. |
 | ProofPolicyReference | no | Typed reference wrapper that targets exactly one `ProofPolicy`. |
 | GovernedScopeReference | no | Typed reference wrapper that targets a Prism governed scope: project, color system, palette, token set, or token. |
-| ReviewTargetReference | no | Typed reference wrapper that targets a reviewable Prism entity. |
+| ReviewTargetReference | no | Typed reference wrapper that targets a reviewable Prism entity or one result-bundle `RepairSuggestion`. |
 
 ## Traits
 
@@ -43,11 +43,10 @@ Use this package to author the durable root document that Prism, terminal workfl
 | approvalState | $EnumeratedToken | ReviewDisposition | Governance approval state for one review disposition. |
 | reviewDate | $Date | no | Date on which the review disposition was recorded. |
 | reviewDispositionStatus | $EnumeratedToken | no | Lifecycle or governance status for a ReviewDisposition. |
-| scopeLevel | $EnumeratedToken | PublicationScope | Intended publication scope level. Allowed values: `$Project`, `$ColorSystem`, `$Palette`, `$TokenSet`, `$Token`. |
 | publicationIntent | $EnumeratedToken | PublicationScope | Intended publication target. Allowed values: `$Css`, `$ApplicationTokens`, `$PrintSwatches`, `$Proof`, `$Report`, `$Governance`. |
-| targetMedium | $EnumeratedToken | no | Target medium for the publication scope when one medium is declared explicitly. |
+| targetMedium | $EnumeratedToken | no | Target medium for the publication scope when one medium is declared explicitly. Publication scopes with `publicationIntent` `Proof` or `PrintSwatches` require `targetMedium`. |
 | publicationScopeStatus | $EnumeratedToken | no | Lifecycle or governance status for a PublicationScope. |
-| target | $Iri (reference trait) | AccessibilityPolicyReference, ProofPolicyReference, GovernedScopeReference, ReviewTargetReference | Typed reference target for local Prism reference wrappers. |
+| target | $Iri (reference trait) | AccessibilityPolicyReference, ProofPolicyReference, GovernedScopeReference, ReviewTargetReference | Typed reference target for Prism project and result-bundle reference wrappers. |
 
 ## Children
 
@@ -97,7 +96,8 @@ Use this package to author the durable root document that Prism, terminal workfl
 | accessibility-policy-reference-target-type | `AccessibilityPolicyReference.target` targets `colorpolicy:AccessibilityPolicy`. |
 | proof-policy-reference-target-type | `ProofPolicyReference.target` targets `colorpolicy:ProofPolicy`. |
 | governed-scope-reference-target-type | `GovernedScopeReference.target` targets `PrismProject`, `colorgovernance:ColorSystem`, `colorgovernance:Palette`, `colorgovernance:TokenSet`, or `colorgovernance:Token`. |
-| review-target-reference-target-type | `ReviewTargetReference.target` targets a reviewable Prism entity: project, governance pack, source reference, policy binding, publication scope, authored policy, color system, palette member, token set, token, or semantic role. |
+| review-target-reference-target-type | `ReviewTargetReference.target` targets a reviewable Prism entity or one result-bundle `RepairSuggestion`: project, governance pack, source reference, policy binding, publication scope, authored policy, color system, palette member, token set, token, semantic role, or `prismresultbundle:RepairSuggestion`. |
+| publication-scope-proof-medium-rule | `PublicationScope` with `publicationIntent` `Proof` or `PrintSwatches` requires `targetMedium`. |
 
 ## Imports
 
@@ -105,6 +105,7 @@ Use this package to author the durable root document that Prism, terminal workfl
 |---|---|---|
 | colorgovernance | `paperhat:domain:color-governance` | Provides durable color-system, palette, token-set, token, and semantic-role objects. |
 | colorpolicy | `paperhat:domain:color-policy` | Provides authored accessibility and proof policy objects. |
+| prismresultbundle | `paperhat:domain:prism-result-bundle` | Provides derived review artifacts referenced by review dispositions. |
 | description | `paperhat:domain:description` | Provides descriptive text for project-scoped governance objects. |
 | documentMetadata | `paperhat:domain:document-metadata` | Provides optional shared document metadata. |
 | project | `paperhat:domain:project` | Provides optional generic project identity metadata. |
@@ -115,8 +116,8 @@ Use this package to author the durable root document that Prism, terminal workfl
 - Concrete policy attachment belongs in this composer package rather than in `paperhat-color-policy`. `AccessibilityPolicyBinding` and `ProofPolicyBinding` make those attachments durable and reviewable.
 - `GovernancePack` keeps publication scopes and review dispositions together as durable governance state. Derived audit bundles and proof bundles remain outside this package.
 - `SourceReference` uses an external IRI locator rather than a local entity reference because the source often exists outside the Prism repository boundary.
-- Typed local reference wrappers replace unconstrained generic entity references. Publication scopes, review dispositions, and policy bindings remain constrained to Prism-relevant entities.
-- `RepairSuggestion`, `Proof`, `AuditReport`, `ContrastPair`, and other derived workflow artifacts remain intentionally absent. They belong in `paperhat-prism-result-bundle`.
+- Typed reference wrappers replace unconstrained generic entity references. Publication scopes, review dispositions, and policy bindings remain constrained to Prism-relevant entities and explicit result-bundle review targets.
+- `RepairSuggestion`, `Proof`, `AuditReport`, `ContrastPair`, and other derived workflow artifacts remain intentionally absent as embedded children. They belong in `paperhat-prism-result-bundle`.
 
 ---
 

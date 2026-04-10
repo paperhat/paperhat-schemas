@@ -42,7 +42,7 @@
 			key=~brand
 			label="Brand"
 			roleStatus=$Active
-			roleType=$Brand
+			semanticRoleType=$Brand
 		/>
 
 		<colorgovernance:SemanticRole
@@ -50,7 +50,7 @@
 			key=~surface
 			label="Surface"
 			roleStatus=$Active
-			roleType=$Surface
+			semanticRoleType=$Surface
 		/>
 
 		<colorgovernance:SemanticRole
@@ -58,13 +58,13 @@
 			key=~text
 			label="Text"
 			roleStatus=$Active
-			roleType=$Text
+			semanticRoleType=$Text
 		/>
 
 		<colorgovernance:Palette
 			id=urn:paperhat:example:palette:core
 			name="Core Palette"
-			paletteKind=$Brand
+			palettePurpose=$Brand
 			paletteStatus=$Active
 		>
 			<colorgovernance:PaletteMember
@@ -95,7 +95,6 @@
 		<colorgovernance:TokenSet
 			id=urn:paperhat:example:token-set:css
 			name="CSS Tokens"
-			publicationIntent=$Css
 			tokenSetStatus=$Active
 		>
 			<colorgovernance:Token
@@ -132,22 +131,16 @@
 
 	<colorpolicy:AccessibilityPolicy
 		accessibilityPolicyStatus=$Active
-		complianceStandard=$Wcag22AA
-		contrastComputationMode=$WcagRelativeLuminance
 		id=urn:paperhat:example:accessibility-policy:core
 		name="Core Accessibility Policy"
-		scopeLevel=$TokenSet
 	>
-		<colorpolicy:ContrastRequirement
-			backgroundRoleType=$Surface
-			contrastContext=$NormalText
-			contrastRequirementStatus=$Active
-			foregroundRoleType=$Text
-			id=urn:paperhat:example:contrast-requirement:text-on-surface
-			key=~textOnSurface
-			label="Text on Surface"
-			minimumContrastRatio=4.5
-		/>
+		<colorpolicy:PolicyRule policyRuleIdentifier="minimum-apca-lc">
+			<colorpolicy:NamedValueEntry entryName="minimumApcaLc" entryValue=60 />
+		</colorpolicy:PolicyRule>
+
+		<colorpolicy:PolicyRule policyRuleIdentifier="minimum-wcag-contrast-ratio">
+			<colorpolicy:NamedValueEntry entryName="minimumWcagContrastRatio" entryValue=4.5 />
+		</colorpolicy:PolicyRule>
 	</colorpolicy:AccessibilityPolicy>
 
 	<AccessibilityPolicyBinding
@@ -164,32 +157,33 @@
 		id=urn:paperhat:example:proof-policy:screen-and-print
 		name="Screen and Print Proof Policy"
 		proofPolicyStatus=$Active
-		scopeLevel=$Palette
 	>
 		<colorpolicy:ProofTarget
-			gamutMappingMode=$Perceptual
 			id=urn:paperhat:example:proof-target:coated-sheet
-			key=~coatedSheet
 			label="Coated Sheet"
-			proofColorSpace=$Cmyk
-			proofComparisonMode=$SideBySide
+			proofComparisonMode=$RetainedDeltaEAndRenderedArtifact
+			proofGamutMappingMode=$ChromaReduction
+			proofMedium=$Print
 			proofTargetStatus=$Active
+			proofTargetIdentifier="press-proof"
 			renderingIntent=$RelativeColorimetric
-			targetMedium=$PrintCoated
-			toleranceDeltaE=2
+			retainedComparisonMetric="94"
+			retainedComparisonTolerance=2
+			targetProfileIdentifier="press-cmyk"
 		/>
 
 		<colorpolicy:ProofTarget
-			gamutMappingMode=$None
 			id=urn:paperhat:example:proof-target:screen-preview
-			key=~screenPreview
 			label="Screen Preview"
-			proofColorSpace=$Srgb
-			proofComparisonMode=$Toggle
+			proofComparisonMode=$RetainedDeltaE
+			proofGamutMappingMode=$Reject
+			proofMedium=$Web
 			proofTargetStatus=$Active
+			proofTargetIdentifier="web-srgb-proof"
 			renderingIntent=$Perceptual
-			targetMedium=$DisplaySrgb
-			toleranceDeltaE=1
+			retainedComparisonMetric="Ok"
+			retainedComparisonTolerance=0.03
+			targetProfileIdentifier="web-srgb"
 		/>
 	</colorpolicy:ProofPolicy>
 
@@ -214,10 +208,19 @@
 			label="CSS Publication Scope"
 			publicationIntent=$Css
 			publicationScopeStatus=$Active
-			scopeLevel=$TokenSet
-			targetMedium=$DisplaySrgb
 		>
 			<GovernedScopeReference target=urn:paperhat:example:token-set:css />
+		</PublicationScope>
+
+		<PublicationScope
+			id=urn:paperhat:example:publication-scope:proof
+			key=~proofScope
+			label="Proof Publication Scope"
+			publicationIntent=$Proof
+			publicationScopeStatus=$Active
+			targetMedium=$Print
+		>
+			<GovernedScopeReference target=urn:paperhat:example:palette:core />
 		</PublicationScope>
 
 		<ReviewDisposition
@@ -229,7 +232,7 @@
 			reviewDate=date(1 april 2026)
 			reviewDispositionStatus=$Recorded
 		>
-			<ReviewTargetReference target=urn:paperhat:example:accessibility-policy-binding:core />
+			<ReviewTargetReference target=urn:paperhat:example:proof-policy-binding:core />
 		</ReviewDisposition>
 	</GovernancePack>
 </PrismProject>

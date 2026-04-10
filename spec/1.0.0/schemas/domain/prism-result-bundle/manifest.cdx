@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="d93153a6a45dc9c3ac302c95dae1c0ab5c7b1e9ae52a2bbc4fe5950eb4f3f018"
+	copyright="Copyright 2026 Paperhat"
+	description="Derived Prism workflow result documents. Defines Proof, RepairSuggestion, ContrastPair, AuditReport, PublicationTargetMatrix, and ProvenanceTrace as durable snapshot artifacts."
+	license="Apache-2.0"
+	packageName="paperhat-prism-result-bundle"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

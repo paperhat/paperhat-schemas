@@ -441,7 +441,7 @@ Represent what Paperhat offers in a way that is reusable across web, documentati
 | Proposed Concept | Decision | Rationale |
 |---|---|---|
 | Tier / Plan | CREATED | `tier` package exists (6/6). Named packaging level (FOSS/Pro/Premium) with stable identity, distinct from Product. |
-| Service | REJECTED | Product with `productKind=$Service` covers current known needs. Reopen only if real corpus work proves a service-only trait surface that Product cannot express cleanly. |
+| Service | REJECTED | Product with `productKind=$Service` covers current known needs. Reopen only when real corpus work proves a service-only trait surface outside Product. |
 | Offering | REJECTED | Union type over product-or-service. Same reasoning as Party rejection — adds indirection without semantic value. |
 | Feature | REJECTED | Descriptive content within a tier or product. Express as Description/List children, not a standalone entity. |
 | Capability | REJECTED | Synonym for Feature. Same reasoning. |
@@ -749,7 +749,7 @@ This stage does not define retained color value semantics. `paperhat-color` owns
 | `paperhat-color-governance` | CREATED | Durable authored color-governance truth inside Prism project documents: `ColorSystem`, `Palette`, `PaletteMember`, `TokenSet`, `Token`, `SemanticRole`, `palettePurpose`, and optional token semantic-role references. Owns authored organization of retained colors. Does not own derived audit findings, proof comparisons, or publication bundles. |
 | `paperhat-color-policy` | CREATED | Durable authored policy objects referenced by Prism project documents: `AccessibilityPolicy`, ordered `PolicyRule` values with exact `NamedValueEntry` parameter surfaces, `ProofPolicy`, `ProofTarget`, and `DeltaE94ApplicationConstants`. Owns authored accessibility and proof thresholds, mapping modes, comparison modes, and retained-comparison parameters. Does not own derived findings, rendered outputs, project-local bindings, or simulation algorithms. |
 | `paperhat-prism-project` | CREATED | Root Prism project-document composer. Imports generic Paperhat packages plus `paperhat-color-governance` and `paperhat-color-policy`. Owns `PrismProject`, project-scoped source references, review dispositions that are durable semantic governance state, and top-level publication scopes. Does not duplicate inner color-governance or policy concept definitions. |
-| `paperhat-prism-result-bundle` | CREATED | Root Prism result-bundle package. Owns derived workflow outputs: accessibility audit bundles, proof bundles, export bundles, semantic-change bundles, and governance bundles with provenance snapshot, policy snapshot, and source references. Result bundles are not project authority. |
+| `paperhat-prism-result-bundle` | CREATED | Root Prism result-bundle package. Owns derived workflow outputs: `Proof`, `RepairSuggestion`, `ContrastPair`, `AuditReport`, `PublicationTargetMatrix`, and `ProvenanceTrace`. Result-bundle documents are durable review artifacts, not project authority. |
 | `paperhat-color-audit` | REJECTED | Audit findings, repair suggestions, and regression entries belong inside Prism result bundles. A standalone audit package splits one workflow family across two authorities with no semantic gain. |
 | `paperhat-color-proof` | REJECTED | Authored proof policy belongs in `paperhat-color-policy`. Derived proof outputs belong in `paperhat-prism-result-bundle`. A separate proof package cuts one coherent proof workflow in half. |
 | `paperhat-color-role-graph` | REJECTED | Role graph and role assignment are inseparable from color-governance truth and belong inside `paperhat-color-governance`. |
@@ -768,7 +768,7 @@ No Stage 11 package defines view-shaped, pane-shaped, or foundry-shaped structur
 - [x] `paperhat-color-governance` — author 6 artifacts
 - [x] `paperhat-color-policy` — author 6 artifacts
 - [x] `paperhat-prism-project` — author 6 artifacts
-- [ ] `paperhat-prism-result-bundle` — author 6 artifacts
+- [x] `paperhat-prism-result-bundle` — author 6 artifacts
 - [x] ~~paperhat-color-audit~~ — rejected
 - [x] ~~paperhat-color-proof~~ — rejected
 - [x] ~~paperhat-color-role-graph~~ — rejected
@@ -784,9 +784,11 @@ No Stage 11 package defines view-shaped, pane-shaped, or foundry-shaped structur
 
 * a brand palette project with semantic roles and accessibility policy
 * an imported design-token set under explicit contrast and proof policy
-* a cross-medium proof bundle for screen and print targets
-* a semantic change bundle with role drift and contrast regression
-* a governance bundle with approval outcome and policy snapshot
+* a proof result bundle for one screen and print review route
+* a repair suggestion bundle with exact request context and provenance
+* a contrast pair bundle with APCA and WCAG witness values
+* an audit report bundle with ordered scope summaries and direct violations
+* a publication target matrix with a matching provenance trace
 
 ---
 
@@ -840,7 +842,7 @@ These are strategically important but depend on earlier coherence.
 
 ## Domain Packages
 
-All currently committed domain packages are complete (6/6 artifacts). The planned Prism / color governance application schema family in Stage 11 is not authored yet.
+All currently committed domain packages are complete (6/6 artifacts). The Stage 11 package family is authored. The Stage 11 gate remains open until the Prism reference and seam checks close.
 
 ## Vocabulary Packages
 

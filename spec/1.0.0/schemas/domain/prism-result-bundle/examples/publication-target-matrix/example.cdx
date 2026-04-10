@@ -1,0 +1,23 @@
+<PublicationTargetMatrix
+	focalArtifactLocator=urn:paperhat:example:palette:core
+	id=urn:paperhat:example:prism-result-bundle:publication-target-matrix:core-palette
+	publicationTargetMatrixIdentifier="publication-target-matrix-core-palette"
+	selectionKind=$PaletteSelection
+	selectionWorld=$ResolvedColorWorld
+>
+	<CrossWorldCorrespondence
+		artifactLocatorSequence=[urn:paperhat:example:palette:core-authored]
+		selectionWorld=$AuthoredSemanticWorld
+	/>
+
+	<PublicationTargetMatrixEntry
+		artifactLocatorSequence=[urn:paperhat:example:artifact:tokens:core-design-tokens]
+		proofCoverageState=$NotRequired
+		provenanceTraceArtifactLocator=[urn:paperhat:example:prism-result-bundle:provenance-trace:core-palette-publication]
+		publicationArtifactAvailabilityState=$Produced
+		publicationIntent=$ApplicationTokens
+		publicationRepresentabilityState=$Representable
+		publicationScopeKey=~applicationTokens
+		publicationTargetKind=$DesignTokensCommunityGroup
+	/>
+</PublicationTargetMatrix>

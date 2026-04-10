@@ -1,0 +1,32 @@
+<RepairSuggestion
+	effectiveSubjectColor=#cc5500
+	id=urn:paperhat:example:prism-result-bundle:repair-suggestion:brand-accent
+	perceptualDistanceMetric=$Ok
+	perceptualDistanceValue=0.024
+	provenanceTraceArtifactLocator=[urn:paperhat:example:prism-result-bundle:provenance-trace:brand-accent-repair]
+	rank=0
+	repairRequestIdentifier="repair-request-brand-accent"
+	repairStrategyKind=[$HuePreservingChromaReduction, $OklchLightnessSweep]
+	repairSuggestionIdentifier="repair-suggestion-brand-accent-0"
+	satisfiedRepairObjectiveIdentifier=["objective-gamut", "objective-wcag"]
+	subjectColor=#d06212
+	suggestedColor=#c15400
+>
+	<RepairObjective
+		gamutConstraintSnapshot="GamutConstraint(srgb)"
+		governingSourceIdentifier="proof-target-web-srgb"
+		governingSourceKind=$ProofTarget
+		outputColorTargetSnapshot="ColorSpaceOutputTarget(srgb)"
+		repairObjectiveIdentifier="objective-gamut"
+		repairObjectiveKind=$Gamut
+	/>
+
+	<RepairObjective
+		contrastRatioConstraintSnapshot="minimum-wcag-contrast-ratio=4.5"
+		governingPolicyRuleIdentifier="minimum-wcag-contrast-ratio"
+		governingSourceIdentifier="accessibility-policy-core"
+		governingSourceKind=$AccessibilityPolicyRule
+		repairObjectiveIdentifier="objective-wcag"
+		repairObjectiveKind=$WcagContrastRatio
+	/>
+</RepairSuggestion>

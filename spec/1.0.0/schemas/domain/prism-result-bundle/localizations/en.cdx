@@ -1,0 +1,130 @@
+<LocalizationBundle
+	schema=paperhat:domain:prism-result-bundle
+	schemaVersion="1.0.0"
+	language=language-tag("en")
+>
+	<ConceptLocalization identifier="Proof" label="Proof" labelOther="Proofs" />
+	<ConceptLocalization identifier="ProofTargetResult" label="Proof Target Result" labelOther="Proof Target Results" />
+	<ConceptLocalization identifier="ProofSubjectResult" label="Proof Subject Result" labelOther="Proof Subject Results" />
+	<ConceptLocalization identifier="RenderedProofArtifactReference" label="Rendered Proof Artifact Reference" labelOther="Rendered Proof Artifact References" />
+	<ConceptLocalization identifier="RepairSuggestion" label="Repair Suggestion" labelOther="Repair Suggestions" />
+	<ConceptLocalization identifier="RepairObjective" label="Repair Objective" labelOther="Repair Objectives" />
+	<ConceptLocalization identifier="ContrastPair" label="Contrast Pair" labelOther="Contrast Pairs" />
+	<ConceptLocalization identifier="AuditReport" label="Audit Report" labelOther="Audit Reports" />
+	<ConceptLocalization identifier="AuditScopeSummary" label="Audit Scope Summary" labelOther="Audit Scope Summaries" />
+	<ConceptLocalization identifier="AuditCategoryResult" label="Audit Category Result" labelOther="Audit Category Results" />
+	<ConceptLocalization identifier="AuditViolation" label="Audit Violation" labelOther="Audit Violations" />
+	<ConceptLocalization identifier="PublicationTargetMatrix" label="Publication Target Matrix" labelOther="Publication Target Matrices" />
+	<ConceptLocalization identifier="CrossWorldCorrespondence" label="Cross-World Correspondence" labelOther="Cross-World Correspondences" />
+	<ConceptLocalization identifier="PublicationTargetMatrixEntry" label="Publication Target Matrix Entry" labelOther="Publication Target Matrix Entries" />
+	<ConceptLocalization identifier="ProvenanceTrace" label="Provenance Trace" labelOther="Provenance Traces" />
+	<ConceptLocalization identifier="ProvenanceTraceEntry" label="Provenance Trace Entry" labelOther="Provenance Trace Entries" />
+
+	<TraitLocalization identifier="subjectArtifactKind" label="Subject Artifact Kind" labelOther="Subject Artifact Kinds">Exact proof subject kind.</TraitLocalization>
+	<TraitLocalization identifier="subjectArtifactLocator" label="Subject Artifact Locator" labelOther="Subject Artifact Locators">Stable locator for the proof subject root artifact.</TraitLocalization>
+	<TraitLocalization identifier="provenanceTraceArtifactLocator" label="Provenance Trace Artifact Locator" labelOther="Provenance Trace Artifact Locators">Ordered provenance-trace document locators.</TraitLocalization>
+	<TraitLocalization identifier="proofTargetIdentifier" label="Proof Target Identifier" labelOther="Proof Target Identifiers">Exact authored proof-target identifier.</TraitLocalization>
+	<TraitLocalization identifier="proofTargetSnapshot" label="Proof Target Snapshot" labelOther="Proof Target Snapshots">Canonical proof-target snapshot text.</TraitLocalization>
+	<TraitLocalization identifier="proofTargetLabel" label="Proof Target Label" labelOther="Proof Target Labels">Human-readable proof-target label.</TraitLocalization>
+	<TraitLocalization identifier="proofTargetResolutionState" label="Proof Target Resolution State" labelOther="Proof Target Resolution States">Exact proof-target resolution state.</TraitLocalization>
+	<TraitLocalization identifier="resolvedTargetProfileDefinitionSnapshot" label="Resolved Target Profile Definition Snapshot" labelOther="Resolved Target Profile Definition Snapshots">Canonical resolved target-profile definition snapshot.</TraitLocalization>
+	<TraitLocalization identifier="outputColorTargetSnapshot" label="Output Color Target Snapshot" labelOther="Output Color Target Snapshots">Canonical resolved output-color target snapshot.</TraitLocalization>
+	<TraitLocalization identifier="opacityHandlingPolicySnapshot" label="Opacity Handling Policy Snapshot" labelOther="Opacity Handling Policy Snapshots">Canonical resolved opacity-handling policy snapshot.</TraitLocalization>
+	<TraitLocalization identifier="subjectCount" label="Subject Count" labelOther="Subject Counts">Exact subject-stream count.</TraitLocalization>
+	<TraitLocalization identifier="admittedSubjectCount" label="Admitted Subject Count" labelOther="Admitted Subject Counts">Exact count of admitted retained outputs.</TraitLocalization>
+	<TraitLocalization identifier="rejectedSubjectCount" label="Rejected Subject Count" labelOther="Rejected Subject Counts">Exact count of rejected or rendered-only outputs.</TraitLocalization>
+	<TraitLocalization identifier="retainedComparisonWithinToleranceCount" label="Retained Comparison Within Tolerance Count" labelOther="Retained Comparison Within Tolerance Counts">Exact count of retained comparisons within tolerance.</TraitLocalization>
+	<TraitLocalization identifier="retainedComparisonExceededToleranceCount" label="Retained Comparison Exceeded Tolerance Count" labelOther="Retained Comparison Exceeded Tolerance Counts">Exact count of retained comparisons above tolerance.</TraitLocalization>
+	<TraitLocalization identifier="retainedComparisonNotComputableCount" label="Retained Comparison Not Computable Count" labelOther="Retained Comparison Not Computable Counts">Exact count of retained comparisons that were not computable.</TraitLocalization>
+	<TraitLocalization identifier="proofRenderedEvidenceState" label="Proof Rendered Evidence State" labelOther="Proof Rendered Evidence States">Rendered-evidence presence state.</TraitLocalization>
+	<TraitLocalization identifier="subjectIndex" label="Subject Index" labelOther="Subject Indexes">Zero-based subject position.</TraitLocalization>
+	<TraitLocalization identifier="tokenSelectorIdentity" label="Token Selector Identity" labelOther="Token Selector Identities">Exact token-selector identity.</TraitLocalization>
+	<TraitLocalization identifier="effectiveSubjectColorState" label="Effective Subject Color State" labelOther="Effective Subject Color States">Exact effective subject-color state.</TraitLocalization>
+	<TraitLocalization identifier="effectiveSubjectColor" label="Effective Subject Color" labelOther="Effective Subject Colors">Exact effective subject color.</TraitLocalization>
+	<TraitLocalization identifier="proofEvaluationColorState" label="Proof Evaluation Color State" labelOther="Proof Evaluation Color States">Exact proof-evaluation color state.</TraitLocalization>
+	<TraitLocalization identifier="proofEvaluationColor" label="Proof Evaluation Color" labelOther="Proof Evaluation Colors">Exact proof-evaluation color.</TraitLocalization>
+	<TraitLocalization identifier="proofOutputAdmissionState" label="Proof Output Admission State" labelOther="Proof Output Admission States">Exact proof-output admission state.</TraitLocalization>
+	<TraitLocalization identifier="proofGamutState" label="Proof Gamut State" labelOther="Proof Gamut States">Exact proof gamut state.</TraitLocalization>
+	<TraitLocalization identifier="proofOutputColor" label="Proof Output Color" labelOther="Proof Output Colors">Exact retained proof-output color.</TraitLocalization>
+	<TraitLocalization identifier="proofRetainedComparisonOutcome" label="Proof Retained Comparison Outcome" labelOther="Proof Retained Comparison Outcomes">Exact retained-comparison outcome.</TraitLocalization>
+	<TraitLocalization identifier="retainedComparisonMetric" label="Retained Comparison Metric" labelOther="Retained Comparison Metrics">Exact retained Delta E metric token or numeric identifier.</TraitLocalization>
+	<TraitLocalization identifier="retainedComparisonValue" label="Retained Comparison Value" labelOther="Retained Comparison Values">Exact retained-comparison witness value.</TraitLocalization>
+	<TraitLocalization identifier="retainedComparisonTolerance" label="Retained Comparison Tolerance" labelOther="Retained Comparison Tolerances">Exact retained-comparison tolerance.</TraitLocalization>
+	<TraitLocalization identifier="artifactKind" label="Artifact Kind" labelOther="Artifact Kinds">Exact artifact-kind identifier.</TraitLocalization>
+	<TraitLocalization identifier="artifactLocator" label="Artifact Locator" labelOther="Artifact Locators">Stable durable artifact locator.</TraitLocalization>
+	<TraitLocalization identifier="renderingIntent" label="Rendering Intent" labelOther="Rendering Intents">Exact rendering intent.</TraitLocalization>
+	<TraitLocalization identifier="sourceOperationIdentifier" label="Source Operation Identifier" labelOther="Source Operation Identifiers">Exact producing operation identifier.</TraitLocalization>
+	<TraitLocalization identifier="repairRequestIdentifier" label="Repair Request Identifier" labelOther="Repair Request Identifiers">Exact repair-request identifier.</TraitLocalization>
+	<TraitLocalization identifier="subjectColor" label="Subject Color" labelOther="Subject Colors">Exact direct subject color.</TraitLocalization>
+	<TraitLocalization identifier="repairSuggestionIdentifier" label="Repair Suggestion Identifier" labelOther="Repair Suggestion Identifiers">Exact repair-suggestion identifier.</TraitLocalization>
+	<TraitLocalization identifier="rank" label="Rank" labelOther="Ranks">Zero-based rank.</TraitLocalization>
+	<TraitLocalization identifier="suggestedColor" label="Suggested Color" labelOther="Suggested Colors">Exact suggested replacement color.</TraitLocalization>
+	<TraitLocalization identifier="repairStrategyKind" label="Repair Strategy Kind" labelOther="Repair Strategy Kinds">Ordered repair strategy chain.</TraitLocalization>
+	<TraitLocalization identifier="perceptualDistanceMetric" label="Perceptual Distance Metric" labelOther="Perceptual Distance Metrics">Exact perceptual-distance metric token.</TraitLocalization>
+	<TraitLocalization identifier="perceptualDistanceValue" label="Perceptual Distance Value" labelOther="Perceptual Distance Values">Exact perceptual-distance witness value.</TraitLocalization>
+	<TraitLocalization identifier="satisfiedRepairObjectiveIdentifier" label="Satisfied Repair Objective Identifier" labelOther="Satisfied Repair Objective Identifiers">Ordered satisfied repair-objective identifiers.</TraitLocalization>
+	<TraitLocalization identifier="repairObjectiveIdentifier" label="Repair Objective Identifier" labelOther="Repair Objective Identifiers">Exact repair-objective identifier.</TraitLocalization>
+	<TraitLocalization identifier="repairObjectiveKind" label="Repair Objective Kind" labelOther="Repair Objective Kinds">Exact repair-objective kind.</TraitLocalization>
+	<TraitLocalization identifier="governingSourceKind" label="Governing Source Kind" labelOther="Governing Source Kinds">Exact governing source kind.</TraitLocalization>
+	<TraitLocalization identifier="governingSourceIdentifier" label="Governing Source Identifier" labelOther="Governing Source Identifiers">Exact governing source identifier.</TraitLocalization>
+	<TraitLocalization identifier="governingPolicyRuleIdentifier" label="Governing Policy Rule Identifier" labelOther="Governing Policy Rule Identifiers">Exact governing policy-rule identifier.</TraitLocalization>
+	<TraitLocalization identifier="channelRangeConstraintSnapshot" label="Channel Range Constraint Snapshot" labelOther="Channel Range Constraint Snapshots">Canonical channel-range constraint snapshot.</TraitLocalization>
+	<TraitLocalization identifier="gamutConstraintSnapshot" label="Gamut Constraint Snapshot" labelOther="Gamut Constraint Snapshots">Canonical gamut constraint snapshot.</TraitLocalization>
+	<TraitLocalization identifier="contrastRatioConstraintSnapshot" label="Contrast Ratio Constraint Snapshot" labelOther="Contrast Ratio Constraint Snapshots">Canonical contrast constraint snapshot.</TraitLocalization>
+	<TraitLocalization identifier="referenceColor" label="Reference Color" labelOther="Reference Colors">Exact reference color.</TraitLocalization>
+	<TraitLocalization identifier="minimumAbsoluteLc" label="Minimum Absolute Lc" labelOther="Minimum Absolute Lc Values">Exact minimum absolute APCA Lc threshold.</TraitLocalization>
+	<TraitLocalization identifier="repairContrastSubjectRole" label="Repair Contrast Subject Role" labelOther="Repair Contrast Subject Roles">Exact contrast subject role.</TraitLocalization>
+	<TraitLocalization identifier="perceptualDistanceConstraintSnapshot" label="Perceptual Distance Constraint Snapshot" labelOther="Perceptual Distance Constraint Snapshots">Canonical perceptual-distance constraint snapshot.</TraitLocalization>
+	<TraitLocalization identifier="paletteSnapshot" label="Palette Snapshot" labelOther="Palette Snapshots">Canonical palette snapshot.</TraitLocalization>
+	<TraitLocalization identifier="paletteMembershipPolicySnapshot" label="Palette Membership Policy Snapshot" labelOther="Palette Membership Policy Snapshots">Canonical palette-membership policy snapshot.</TraitLocalization>
+	<TraitLocalization identifier="contrastPairIdentifier" label="Contrast Pair Identifier" labelOther="Contrast Pair Identifiers">Exact evaluated contrast-pair identifier.</TraitLocalization>
+	<TraitLocalization identifier="contrastPairOriginKind" label="Contrast Pair Origin Kind" labelOther="Contrast Pair Origin Kinds">Exact pair origin kind.</TraitLocalization>
+	<TraitLocalization identifier="leftColor" label="Left Color" labelOther="Left Colors">Exact left retained color.</TraitLocalization>
+	<TraitLocalization identifier="rightColor" label="Right Color" labelOther="Right Colors">Exact right retained color.</TraitLocalization>
+	<TraitLocalization identifier="leftArtifactLocator" label="Left Artifact Locator" labelOther="Left Artifact Locators">Stable locator of the left governed source.</TraitLocalization>
+	<TraitLocalization identifier="rightArtifactLocator" label="Right Artifact Locator" labelOther="Right Artifact Locators">Stable locator of the right governed source.</TraitLocalization>
+	<TraitLocalization identifier="leftOrdinal" label="Left Ordinal" labelOther="Left Ordinals">Zero-based left ordinal.</TraitLocalization>
+	<TraitLocalization identifier="rightOrdinal" label="Right Ordinal" labelOther="Right Ordinals">Zero-based right ordinal.</TraitLocalization>
+	<TraitLocalization identifier="governingAccessibilityPolicySnapshot" label="Governing Accessibility Policy Snapshot" labelOther="Governing Accessibility Policy Snapshots">Canonical governing accessibility-policy snapshot.</TraitLocalization>
+	<TraitLocalization identifier="apcaPolicyRuleIdentifier" label="APCA Policy Rule Identifier" labelOther="APCA Policy Rule Identifiers">Exact APCA rule identifier.</TraitLocalization>
+	<TraitLocalization identifier="minimumApcaLc" label="Minimum APCA Lc" labelOther="Minimum APCA Lc Values">Exact APCA threshold.</TraitLocalization>
+	<TraitLocalization identifier="apcaAbsoluteLc" label="APCA Absolute Lc" labelOther="APCA Absolute Lc Values">Exact APCA witness value.</TraitLocalization>
+	<TraitLocalization identifier="apcaEvaluationState" label="APCA Evaluation State" labelOther="APCA Evaluation States">Exact APCA evaluation state.</TraitLocalization>
+	<TraitLocalization identifier="wcagPolicyRuleIdentifier" label="WCAG Policy Rule Identifier" labelOther="WCAG Policy Rule Identifiers">Exact WCAG rule identifier.</TraitLocalization>
+	<TraitLocalization identifier="minimumWcagContrastRatio" label="Minimum WCAG Contrast Ratio" labelOther="Minimum WCAG Contrast Ratio Values">Exact WCAG threshold.</TraitLocalization>
+	<TraitLocalization identifier="wcagContrastRatio" label="WCAG Contrast Ratio" labelOther="WCAG Contrast Ratio Values">Exact WCAG witness value.</TraitLocalization>
+	<TraitLocalization identifier="wcagEvaluationState" label="WCAG Evaluation State" labelOther="WCAG Evaluation States">Exact WCAG evaluation state.</TraitLocalization>
+	<TraitLocalization identifier="primaryConstraintCategory" label="Primary Constraint Category" labelOther="Primary Constraint Categories">First violated audit category in exact prominence order.</TraitLocalization>
+	<TraitLocalization identifier="auditReportIdentifier" label="Audit Report Identifier" labelOther="Audit Report Identifiers">Exact audit-report identifier.</TraitLocalization>
+	<TraitLocalization identifier="auditRootScopeKind" label="Audit Root Scope Kind" labelOther="Audit Root Scope Kinds">Exact root audit scope kind.</TraitLocalization>
+	<TraitLocalization identifier="rootScopeArtifactLocator" label="Root Scope Artifact Locator" labelOther="Root Scope Artifact Locators">Exact root scope locator.</TraitLocalization>
+	<TraitLocalization identifier="auditScopeKind" label="Audit Scope Kind" labelOther="Audit Scope Kinds">Exact audit scope kind.</TraitLocalization>
+	<TraitLocalization identifier="scopeArtifactLocator" label="Scope Artifact Locator" labelOther="Scope Artifact Locators">Exact scope artifact locator.</TraitLocalization>
+	<TraitLocalization identifier="auditConstraintCategory" label="Audit Constraint Category" labelOther="Audit Constraint Categories">Exact audit constraint category.</TraitLocalization>
+	<TraitLocalization identifier="auditConstraintState" label="Audit Constraint State" labelOther="Audit Constraint States">Exact audit constraint state.</TraitLocalization>
+	<TraitLocalization identifier="violationCount" label="Violation Count" labelOther="Violation Counts">Exact direct-plus-descendant violation count.</TraitLocalization>
+	<TraitLocalization identifier="firstViolationCode" label="First Violation Code" labelOther="First Violation Codes">Exact first violation code.</TraitLocalization>
+	<TraitLocalization identifier="prominenceRank" label="Prominence Rank" labelOther="Prominence Ranks">Zero-based prominence rank.</TraitLocalization>
+	<TraitLocalization identifier="violationCode" label="Violation Code" labelOther="Violation Codes">Exact direct violation code.</TraitLocalization>
+	<TraitLocalization identifier="publicationScopeKey" label="Publication Scope Key" labelOther="Publication Scope Keys">Exact governing publication-scope key.</TraitLocalization>
+	<TraitLocalization identifier="publicationTargetMatrixIdentifier" label="Publication Target Matrix Identifier" labelOther="Publication Target Matrix Identifiers">Exact publication-target-matrix identifier.</TraitLocalization>
+	<TraitLocalization identifier="selectionKind" label="Selection Kind" labelOther="Selection Kinds">Exact selection kind.</TraitLocalization>
+	<TraitLocalization identifier="selectionWorld" label="Selection World" labelOther="Selection Worlds">Exact selection world.</TraitLocalization>
+	<TraitLocalization identifier="focalArtifactLocator" label="Focal Artifact Locator" labelOther="Focal Artifact Locators">Exact focal artifact locator.</TraitLocalization>
+	<TraitLocalization identifier="artifactLocatorSequence" label="Artifact Locator Sequence" labelOther="Artifact Locator Sequences">Ordered artifact locator list.</TraitLocalization>
+	<TraitLocalization identifier="publicationTargetKind" label="Publication Target Kind" labelOther="Publication Target Kinds">Exact publication target family.</TraitLocalization>
+	<TraitLocalization identifier="publicationIntent" label="Publication Intent" labelOther="Publication Intents">Exact authored publication intent.</TraitLocalization>
+	<TraitLocalization identifier="targetMedium" label="Target Medium" labelOther="Target Media">Exact target medium.</TraitLocalization>
+	<TraitLocalization identifier="targetProfileIdentifier" label="Target Profile Identifier" labelOther="Target Profile Identifiers">Exact target-profile identifier.</TraitLocalization>
+	<TraitLocalization identifier="proofTargetOrdinal" label="Proof Target Ordinal" labelOther="Proof Target Ordinals">Exact proof-target ordinal.</TraitLocalization>
+	<TraitLocalization identifier="publicationRepresentabilityState" label="Publication Representability State" labelOther="Publication Representability States">Exact representability state.</TraitLocalization>
+	<TraitLocalization identifier="proofCoverageState" label="Proof Coverage State" labelOther="Proof Coverage States">Exact proof-coverage state.</TraitLocalization>
+	<TraitLocalization identifier="publicationDiagnosticCode" label="Publication Diagnostic Code" labelOther="Publication Diagnostic Codes">Ordered publication or proof diagnostic codes.</TraitLocalization>
+	<TraitLocalization identifier="publicationArtifactAvailabilityState" label="Publication Artifact Availability State" labelOther="Publication Artifact Availability States">Exact publication artifact availability state.</TraitLocalization>
+	<TraitLocalization identifier="provenanceTraceIdentifier" label="Provenance Trace Identifier" labelOther="Provenance Trace Identifiers">Exact provenance-trace identifier.</TraitLocalization>
+	<TraitLocalization identifier="provenanceTraceRootKind" label="Provenance Trace Root Kind" labelOther="Provenance Trace Root Kinds">Exact provenance-trace root kind.</TraitLocalization>
+	<TraitLocalization identifier="traceEntryIndex" label="Trace Entry Index" labelOther="Trace Entry Indexes">Zero-based source-first trace index.</TraitLocalization>
+	<TraitLocalization identifier="provenanceTraceEntryKind" label="Provenance Trace Entry Kind" labelOther="Provenance Trace Entry Kinds">Exact provenance-trace entry kind.</TraitLocalization>
+	<TraitLocalization identifier="semanticWorld" label="Semantic World" labelOther="Semantic Worlds">Exact semantic world.</TraitLocalization>
+	<TraitLocalization identifier="operationIdentifier" label="Operation Identifier" labelOther="Operation Identifiers">Exact operation identifier.</TraitLocalization>
+</LocalizationBundle>

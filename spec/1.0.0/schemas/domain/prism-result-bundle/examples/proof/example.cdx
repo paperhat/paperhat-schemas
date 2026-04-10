@@ -1,0 +1,47 @@
+<Proof
+	id=urn:paperhat:example:prism-result-bundle:proof:brand-token-set
+	provenanceTraceArtifactLocator=[urn:paperhat:example:prism-result-bundle:provenance-trace:brand-token-set]
+	subjectArtifactKind=$TokenSet
+	subjectArtifactLocator=urn:paperhat:example:prism-project:token-set:brand
+>
+	<ProofTargetResult
+		admittedSubjectCount=1
+		opacityHandlingPolicySnapshot="OpaqueOnlyOpacityPolicy"
+		outputColorTargetSnapshot="ColorSpaceOutputTarget(srgb)"
+		proofRenderedEvidenceState=$Present
+		proofTargetIdentifier="web-srgb-proof"
+		proofTargetLabel="Web sRGB Proof"
+		proofTargetResolutionState=$Resolved
+		proofTargetSnapshot="ProofTarget(id=web-srgb-proof)"
+		rejectedSubjectCount=0
+		resolvedTargetProfileDefinitionSnapshot="TargetProfileDefinition(id=web-srgb)"
+		retainedComparisonExceededToleranceCount=0
+		retainedComparisonNotComputableCount=0
+		retainedComparisonWithinToleranceCount=1
+		subjectCount=1
+	>
+		<ProofSubjectResult
+			effectiveSubjectColor=#cc5500
+			effectiveSubjectColorState=$Resolved
+			proofEvaluationColor=#cc5500
+			proofEvaluationColorState=$Derived
+			proofGamutState=$InGamut
+			proofOutputAdmissionState=$AdmittedRetainedOutput
+			proofOutputColor=#cc5500
+			proofRetainedComparisonOutcome=$WithinTolerance
+			retainedComparisonMetric="Ok"
+			retainedComparisonTolerance=0.03
+			retainedComparisonValue=0.01
+			subjectIndex=0
+			tokenSelectorIdentity="TokenSet(~brand)/Token(~brandAccent)"
+		/>
+	</ProofTargetResult>
+
+	<RenderedProofArtifactReference
+		artifactKind="RenderedProofPreview"
+		artifactLocator=urn:paperhat:example:artifact:proof:web-srgb-proof-preview
+		proofTargetIdentifier="web-srgb-proof"
+		renderingIntent=$Perceptual
+		sourceOperationIdentifier="RenderProofPreview"
+	/>
+</Proof>

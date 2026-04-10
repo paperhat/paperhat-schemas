@@ -1,0 +1,17 @@
+<ContrastPair
+	apcaAbsoluteLc=72.4
+	apcaEvaluationState=$Satisfied
+	contrastPairIdentifier="contrast-pair-core-0-1"
+	contrastPairOriginKind=$PalettePair
+	governingAccessibilityPolicySnapshot="AccessibilityPolicy(id=core-accessibility)"
+	id=urn:paperhat:example:prism-result-bundle:contrast-pair:core-0-1
+	leftArtifactLocator=urn:paperhat:example:palette-member:core-ink
+	leftColor=#0b1f33
+	leftOrdinal=0
+	provenanceTraceArtifactLocator=[urn:paperhat:example:prism-result-bundle:provenance-trace:contrast-pair-core-0-1]
+	rightArtifactLocator=urn:paperhat:example:palette-member:core-paper
+	rightColor=#f4efe6
+	rightOrdinal=1
+	wcagContrastRatio=14.1
+	wcagEvaluationState=$Satisfied
+/>

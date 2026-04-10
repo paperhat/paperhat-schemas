@@ -1,0 +1,28 @@
+<AuditReport
+	auditReportIdentifier="audit-report-core-color-system"
+	auditRootScopeKind=$ColorSystem
+	id=urn:paperhat:example:prism-result-bundle:audit-report:core-color-system
+	rootScopeArtifactLocator=urn:paperhat:example:color-system:paperhat-core
+>
+	<AuditScopeSummary
+		auditScopeKind=$ColorSystem
+		primaryConstraintCategory=$AccessibilityFailure
+		scopeArtifactLocator=urn:paperhat:example:color-system:paperhat-core
+	>
+		<AuditCategoryResult auditConstraintCategory=$AccessibilityFailure auditConstraintState=$Violated firstViolationCode="minimum-wcag-contrast-ratio" violationCount=1 />
+		<AuditCategoryResult auditConstraintCategory=$ResolutionContextInsufficient auditConstraintState=$Satisfied violationCount=0 />
+		<AuditCategoryResult auditConstraintCategory=$PublicationTargetNotRepresentable auditConstraintState=$Satisfied violationCount=0 />
+		<AuditCategoryResult auditConstraintCategory=$ProofCoverageMissing auditConstraintState=$Satisfied violationCount=0 />
+		<AuditCategoryResult auditConstraintCategory=$GamutFailure auditConstraintState=$Satisfied violationCount=0 />
+		<AuditCategoryResult auditConstraintCategory=$RoleUnassigned auditConstraintState=$Satisfied violationCount=0 />
+		<AuditCategoryResult auditConstraintCategory=$PrecisionWarning auditConstraintState=$Satisfied violationCount=0 />
+	</AuditScopeSummary>
+
+	<AuditViolation
+		auditConstraintCategory=$AccessibilityFailure
+		auditScopeKind=$ColorSystem
+		prominenceRank=0
+		scopeArtifactLocator=urn:paperhat:example:color-system:paperhat-core
+		violationCode="minimum-wcag-contrast-ratio"
+	/>
+</AuditReport>

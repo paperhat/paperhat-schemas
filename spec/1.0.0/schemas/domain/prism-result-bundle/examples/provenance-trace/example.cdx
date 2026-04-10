@@ -1,0 +1,33 @@
+<ProvenanceTrace
+	focalArtifactLocator=urn:paperhat:example:palette:core
+	id=urn:paperhat:example:prism-result-bundle:provenance-trace:core-palette-publication
+	provenanceTraceIdentifier="provenance-trace-core-palette-publication"
+	provenanceTraceRootKind=$SelectionRoot
+	selectionKind=$PaletteSelection
+	selectionWorld=$ResolvedColorWorld
+>
+	<CrossWorldCorrespondence
+		artifactLocatorSequence=[urn:paperhat:example:palette:core-authored]
+		selectionWorld=$AuthoredSemanticWorld
+	/>
+
+	<ProvenanceTraceEntry
+		artifactLocator=urn:paperhat:example:palette:core-authored
+		provenanceTraceEntryKind=$AuthoredArtifact
+		semanticWorld=$AuthoredSemanticWorld
+		traceEntryIndex=0
+	/>
+
+	<ProvenanceTraceEntry
+		operationIdentifier="BuildPublicationTargetMatrix"
+		provenanceTraceEntryKind=$Operation
+		traceEntryIndex=1
+	/>
+
+	<ProvenanceTraceEntry
+		artifactLocator=urn:paperhat:example:artifact:tokens:core-design-tokens
+		provenanceTraceEntryKind=$PublishedArtifact
+		semanticWorld=$PublishedArtifactWorld
+		traceEntryIndex=2
+	/>
+</ProvenanceTrace>

@@ -1,6 +1,6 @@
 <LexisRepositoryManifest
 	author="Paperhat"
-	closureHash="e72329c91784ba859532b64c5f0a4bf2bf789f7aa5373725314bd66b439f147b"
+	closureHash="1686f40c8621d9da0de6908120331f9075e81c94274c32951c65a32e53e36531"
 	copyright="Copyright 2026 Paperhat"
 	description="Paperhat schema repository. Contains universal schema packages, behavior definitions, and reference vocabularies consumed by Paperhat systems."
 	license="Apache-2.0"
@@ -24,6 +24,8 @@
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-color-policy" packagePath="spec/1.0.0/schemas/domain/color-policy" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-prism-project" packagePath="spec/1.0.0/schemas/domain/prism-project" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-prism-result-bundle" packagePath="spec/1.0.0/schemas/domain/prism-result-bundle" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-clause" packagePath="spec/1.0.0/schemas/domain/clause" />
 

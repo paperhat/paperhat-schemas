@@ -1,0 +1,548 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Derived Prism workflow result documents. Defines Proof, RepairSuggestion, ContrastPair, AuditReport, PublicationTargetMatrix, and ProvenanceTrace as durable snapshot artifacts."
+	id=paperhat:domain:prism-result-bundle
+	namespace="prismresultbundle"
+	title="Prism Result Bundle Schema"
+	version="1.0.0"
+	versionScheme=$SemanticVersion
+>
+	<ConceptDefinitions>
+		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustBeEntity id=paperhat:domain:prism-result-bundle:Proof name="Proof">
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="subjectArtifactKind" />
+				<RequiresTrait name="subjectArtifactLocator" />
+				<RequiresTrait name="provenanceTraceArtifactLocator" />
+			</TraitRules>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="ProofTargetResult" min=1 />
+				<AllowsChildConcept conceptSelector="RenderedProofArtifactReference" />
+			</ChildRules>
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=paperhat:domain:prism-result-bundle:ProofTargetResult name="ProofTargetResult">
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="proofTargetIdentifier" />
+				<RequiresTrait name="proofTargetSnapshot" />
+				<RequiresTrait name="proofTargetResolutionState" />
+				<RequiresTrait name="subjectCount" />
+				<RequiresTrait name="admittedSubjectCount" />
+				<RequiresTrait name="rejectedSubjectCount" />
+				<RequiresTrait name="retainedComparisonWithinToleranceCount" />
+				<RequiresTrait name="retainedComparisonExceededToleranceCount" />
+				<RequiresTrait name="retainedComparisonNotComputableCount" />
+				<RequiresTrait name="proofRenderedEvidenceState" />
+				<AllowsTrait name="proofTargetLabel" />
+				<AllowsTrait name="resolvedTargetProfileDefinitionSnapshot" />
+				<AllowsTrait name="outputColorTargetSnapshot" />
+				<AllowsTrait name="opacityHandlingPolicySnapshot" />
+			</TraitRules>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="ProofSubjectResult" />
+			</ChildRules>
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=paperhat:domain:prism-result-bundle:ProofSubjectResult name="ProofSubjectResult">
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="subjectIndex" />
+				<RequiresTrait name="effectiveSubjectColorState" />
+				<RequiresTrait name="proofEvaluationColorState" />
+				<RequiresTrait name="proofOutputAdmissionState" />
+				<RequiresTrait name="proofGamutState" />
+				<AllowsTrait name="tokenSelectorIdentity" />
+				<AllowsTrait name="effectiveSubjectColor" />
+				<AllowsTrait name="proofEvaluationColor" />
+				<AllowsTrait name="proofOutputColor" />
+				<AllowsTrait name="proofRetainedComparisonOutcome" />
+				<AllowsTrait name="retainedComparisonMetric" />
+				<AllowsTrait name="retainedComparisonValue" />
+				<AllowsTrait name="retainedComparisonTolerance" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=paperhat:domain:prism-result-bundle:RenderedProofArtifactReference name="RenderedProofArtifactReference">
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="proofTargetIdentifier" />
+				<RequiresTrait name="artifactKind" />
+				<RequiresTrait name="artifactLocator" />
+				<RequiresTrait name="renderingIntent" />
+				<RequiresTrait name="sourceOperationIdentifier" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustBeEntity id=paperhat:domain:prism-result-bundle:RepairSuggestion name="RepairSuggestion">
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="repairRequestIdentifier" />
+				<RequiresTrait name="subjectColor" />
+				<RequiresTrait name="effectiveSubjectColor" />
+				<RequiresTrait name="repairSuggestionIdentifier" />
+				<RequiresTrait name="rank" />
+				<RequiresTrait name="suggestedColor" />
+				<RequiresTrait name="repairStrategyKind" />
+				<RequiresTrait name="perceptualDistanceMetric" />
+				<RequiresTrait name="perceptualDistanceValue" />
+				<RequiresTrait name="satisfiedRepairObjectiveIdentifier" />
+				<RequiresTrait name="provenanceTraceArtifactLocator" />
+			</TraitRules>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="RepairObjective" min=1 />
+			</ChildRules>
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=paperhat:domain:prism-result-bundle:RepairObjective name="RepairObjective">
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="repairObjectiveIdentifier" />
+				<RequiresTrait name="repairObjectiveKind" />
+				<RequiresTrait name="governingSourceKind" />
+				<RequiresTrait name="governingSourceIdentifier" />
+				<AllowsTrait name="governingPolicyRuleIdentifier" />
+				<AllowsTrait name="channelRangeConstraintSnapshot" />
+				<AllowsTrait name="gamutConstraintSnapshot" />
+				<AllowsTrait name="contrastRatioConstraintSnapshot" />
+				<AllowsTrait name="referenceColor" />
+				<AllowsTrait name="minimumAbsoluteLc" />
+				<AllowsTrait name="repairContrastSubjectRole" />
+				<AllowsTrait name="perceptualDistanceConstraintSnapshot" />
+				<AllowsTrait name="paletteSnapshot" />
+				<AllowsTrait name="paletteMembershipPolicySnapshot" />
+				<AllowsTrait name="outputColorTargetSnapshot" />
+				<AllowsTrait name="opacityHandlingPolicySnapshot" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustBeEntity id=paperhat:domain:prism-result-bundle:ContrastPair name="ContrastPair">
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="contrastPairIdentifier" />
+				<RequiresTrait name="contrastPairOriginKind" />
+				<RequiresTrait name="leftColor" />
+				<RequiresTrait name="rightColor" />
+				<RequiresTrait name="leftOrdinal" />
+				<RequiresTrait name="rightOrdinal" />
+				<RequiresTrait name="governingAccessibilityPolicySnapshot" />
+				<RequiresTrait name="apcaEvaluationState" />
+				<RequiresTrait name="wcagEvaluationState" />
+				<RequiresTrait name="provenanceTraceArtifactLocator" />
+				<AllowsTrait name="leftArtifactLocator" />
+				<AllowsTrait name="rightArtifactLocator" />
+				<AllowsTrait name="apcaPolicyRuleIdentifier" />
+				<AllowsTrait name="minimumApcaLc" />
+				<AllowsTrait name="apcaAbsoluteLc" />
+				<AllowsTrait name="wcagPolicyRuleIdentifier" />
+				<AllowsTrait name="minimumWcagContrastRatio" />
+				<AllowsTrait name="wcagContrastRatio" />
+				<AllowsTrait name="primaryConstraintCategory">
+					<AllowedValues>
+						<ValueIsOneOf values=[$AccessibilityFailure] />
+					</AllowedValues>
+				</AllowsTrait>
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustBeEntity id=paperhat:domain:prism-result-bundle:AuditReport name="AuditReport">
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="auditReportIdentifier" />
+				<RequiresTrait name="auditRootScopeKind" />
+				<RequiresTrait name="rootScopeArtifactLocator" />
+			</TraitRules>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="AuditScopeSummary" min=1 />
+				<AllowsChildConcept conceptSelector="AuditViolation" />
+			</ChildRules>
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=paperhat:domain:prism-result-bundle:AuditScopeSummary name="AuditScopeSummary">
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="auditScopeKind" />
+				<RequiresTrait name="scopeArtifactLocator" />
+				<AllowsTrait name="primaryConstraintCategory" />
+			</TraitRules>
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="AuditCategoryResult" min=7 max=7 />
+			</ChildRules>
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=paperhat:domain:prism-result-bundle:AuditCategoryResult name="AuditCategoryResult">
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="auditConstraintCategory" />
+				<RequiresTrait name="auditConstraintState" />
+				<RequiresTrait name="violationCount" />
+				<AllowsTrait name="firstViolationCode" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=paperhat:domain:prism-result-bundle:AuditViolation name="AuditViolation">
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="auditConstraintCategory" />
+				<RequiresTrait name="auditScopeKind" />
+				<RequiresTrait name="scopeArtifactLocator" />
+				<RequiresTrait name="prominenceRank" />
+				<RequiresTrait name="violationCode" />
+				<AllowsTrait name="governingPolicyRuleIdentifier" />
+				<AllowsTrait name="publicationScopeKey" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=paperhat:domain:prism-result-bundle:CrossWorldCorrespondence name="CrossWorldCorrespondence">
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="selectionWorld" />
+				<RequiresTrait name="artifactLocatorSequence" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustBeEntity id=paperhat:domain:prism-result-bundle:PublicationTargetMatrix name="PublicationTargetMatrix">
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="publicationTargetMatrixIdentifier" />
+				<RequiresTrait name="selectionKind">
+					<AllowedValues>
+						<ValueIsOneOf values=[$ColorSelection, $PaletteSelection, $TokenSetSelection] />
+					</AllowedValues>
+				</RequiresTrait>
+				<RequiresTrait name="selectionWorld" />
+				<RequiresTrait name="focalArtifactLocator" />
+			</TraitRules>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="CrossWorldCorrespondence" />
+				<AllowsChildConcept conceptSelector="PublicationTargetMatrixEntry" />
+			</ChildRules>
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=paperhat:domain:prism-result-bundle:PublicationTargetMatrixEntry name="PublicationTargetMatrixEntry">
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="publicationScopeKey" />
+				<RequiresTrait name="publicationTargetKind" />
+				<RequiresTrait name="publicationIntent" />
+				<RequiresTrait name="publicationRepresentabilityState" />
+				<RequiresTrait name="proofCoverageState" />
+				<RequiresTrait name="publicationArtifactAvailabilityState" />
+				<RequiresTrait name="provenanceTraceArtifactLocator" />
+				<AllowsTrait name="targetMedium" />
+				<AllowsTrait name="targetProfileIdentifier" />
+				<AllowsTrait name="proofTargetOrdinal" />
+				<AllowsTrait name="publicationDiagnosticCode" />
+				<AllowsTrait name="artifactLocatorSequence" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustBeEntity id=paperhat:domain:prism-result-bundle:ProvenanceTrace name="ProvenanceTrace">
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="provenanceTraceIdentifier" />
+				<RequiresTrait name="provenanceTraceRootKind" />
+				<RequiresTrait name="focalArtifactLocator" />
+				<AllowsTrait name="selectionKind" />
+				<AllowsTrait name="selectionWorld" />
+			</TraitRules>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="CrossWorldCorrespondence" />
+				<RequiresChildConcept conceptSelector="ProvenanceTraceEntry" min=1 />
+			</ChildRules>
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustNotBeEntity id=paperhat:domain:prism-result-bundle:ProvenanceTraceEntry name="ProvenanceTraceEntry">
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="traceEntryIndex" />
+				<RequiresTrait name="provenanceTraceEntryKind" />
+				<AllowsTrait name="semanticWorld" />
+				<AllowsTrait name="artifactLocator" />
+				<AllowsTrait name="operationIdentifier" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:subjectArtifactKind name="subjectArtifactKind">
+			<AllowedValues>
+				<ValueIsOneOf values=[$ColorValue, $Palette, $TokenSet, $TargetProfileColorPackage] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$Iri id=paperhat:domain:prism-result-bundle:trait:subjectArtifactLocator name="subjectArtifactLocator" />
+		<TraitDefinition defaultValueType=$List<$Iri> id=paperhat:domain:prism-result-bundle:trait:provenanceTraceArtifactLocator name="provenanceTraceArtifactLocator" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:proofTargetIdentifier name="proofTargetIdentifier" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:proofTargetSnapshot name="proofTargetSnapshot" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:proofTargetLabel name="proofTargetLabel" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:proofTargetResolutionState name="proofTargetResolutionState">
+			<AllowedValues>
+				<ValueIsOneOf values=[$Resolved, $TargetProfileNotFound, $ProofMediumMismatch] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:resolvedTargetProfileDefinitionSnapshot name="resolvedTargetProfileDefinitionSnapshot" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:outputColorTargetSnapshot name="outputColorTargetSnapshot" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:opacityHandlingPolicySnapshot name="opacityHandlingPolicySnapshot" />
+		<TraitDefinition defaultValueType=$Integer id=paperhat:domain:prism-result-bundle:trait:subjectCount name="subjectCount" />
+		<TraitDefinition defaultValueType=$Integer id=paperhat:domain:prism-result-bundle:trait:admittedSubjectCount name="admittedSubjectCount" />
+		<TraitDefinition defaultValueType=$Integer id=paperhat:domain:prism-result-bundle:trait:rejectedSubjectCount name="rejectedSubjectCount" />
+		<TraitDefinition defaultValueType=$Integer id=paperhat:domain:prism-result-bundle:trait:retainedComparisonWithinToleranceCount name="retainedComparisonWithinToleranceCount" />
+		<TraitDefinition defaultValueType=$Integer id=paperhat:domain:prism-result-bundle:trait:retainedComparisonExceededToleranceCount name="retainedComparisonExceededToleranceCount" />
+		<TraitDefinition defaultValueType=$Integer id=paperhat:domain:prism-result-bundle:trait:retainedComparisonNotComputableCount name="retainedComparisonNotComputableCount" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:proofRenderedEvidenceState name="proofRenderedEvidenceState">
+			<AllowedValues>
+				<ValueIsOneOf values=[$NotRequired, $RequiredPending, $Present, $Failed] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$Integer id=paperhat:domain:prism-result-bundle:trait:subjectIndex name="subjectIndex" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:tokenSelectorIdentity name="tokenSelectorIdentity" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:effectiveSubjectColorState name="effectiveSubjectColorState">
+			<AllowedValues>
+				<ValueIsOneOf values=[$Resolved, $Unresolved] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$Color id=paperhat:domain:prism-result-bundle:trait:effectiveSubjectColor name="effectiveSubjectColor" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:proofEvaluationColorState name="proofEvaluationColorState">
+			<AllowedValues>
+				<ValueIsOneOf values=[$Derived, $AbsentByUnresolvedSubject, $AbsentByOpacityHandling] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$Color id=paperhat:domain:prism-result-bundle:trait:proofEvaluationColor name="proofEvaluationColor" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:proofOutputAdmissionState name="proofOutputAdmissionState">
+			<AllowedValues>
+				<ValueIsOneOf values=[$AdmittedRetainedOutput, $RejectedUnresolvedSubject, $RejectedOpacityHandling, $RejectedOutputTarget, $RenderedOutputRequired] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:proofGamutState name="proofGamutState">
+			<AllowedValues>
+				<ValueIsOneOf values=[$NotApplicable, $InGamut, $OutOfGamutRejected, $OutOfGamutClipped, $OutOfGamutChromaReduced, $RenderedMappingRequired, $DeviceNative] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$Color id=paperhat:domain:prism-result-bundle:trait:proofOutputColor name="proofOutputColor" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:proofRetainedComparisonOutcome name="proofRetainedComparisonOutcome">
+			<AllowedValues>
+				<ValueIsOneOf values=[$WithinTolerance, $ExceedsTolerance, $NotComputable] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:retainedComparisonMetric name="retainedComparisonMetric" />
+		<TraitDefinition defaultValueType=$FiniteRealNumber id=paperhat:domain:prism-result-bundle:trait:retainedComparisonValue name="retainedComparisonValue" />
+		<TraitDefinition defaultValueType=$FiniteRealNumber id=paperhat:domain:prism-result-bundle:trait:retainedComparisonTolerance name="retainedComparisonTolerance" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:artifactKind name="artifactKind" />
+		<TraitDefinition defaultValueType=$Iri id=paperhat:domain:prism-result-bundle:trait:artifactLocator name="artifactLocator" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:renderingIntent name="renderingIntent">
+			<AllowedValues>
+				<ValueIsOneOf values=[$RelativeColorimetric, $AbsoluteColorimetric, $Perceptual, $Saturation] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:sourceOperationIdentifier name="sourceOperationIdentifier" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:repairRequestIdentifier name="repairRequestIdentifier" />
+		<TraitDefinition defaultValueType=$Color id=paperhat:domain:prism-result-bundle:trait:subjectColor name="subjectColor" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:repairSuggestionIdentifier name="repairSuggestionIdentifier" />
+		<TraitDefinition defaultValueType=$Integer id=paperhat:domain:prism-result-bundle:trait:rank name="rank" />
+		<TraitDefinition defaultValueType=$Color id=paperhat:domain:prism-result-bundle:trait:suggestedColor name="suggestedColor" />
+		<TraitDefinition defaultValueType=$List<$EnumeratedToken> id=paperhat:domain:prism-result-bundle:trait:repairStrategyKind name="repairStrategyKind">
+			<AllowedValues>
+				<ValueIsOneOf values=[$ChannelClamp, $OutputSpaceClip, $HuePreservingChromaReduction, $OklchLightnessSweep, $NeutralAxisBoundary, $ReferenceSegmentSearch, $PaletteMemberSelection, $OpacityForceOpaque] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:perceptualDistanceMetric name="perceptualDistanceMetric">
+			<AllowedValues>
+				<ValueIsOneOf values=[$Ok] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$FiniteRealNumber id=paperhat:domain:prism-result-bundle:trait:perceptualDistanceValue name="perceptualDistanceValue" />
+		<TraitDefinition defaultValueType=$List<$Text> id=paperhat:domain:prism-result-bundle:trait:satisfiedRepairObjectiveIdentifier name="satisfiedRepairObjectiveIdentifier" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:repairObjectiveIdentifier name="repairObjectiveIdentifier" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:repairObjectiveKind name="repairObjectiveKind">
+			<AllowedValues>
+				<ValueIsOneOf values=[$ChannelRange, $Gamut, $WcagContrastRatio, $ApcaContrast, $PerceptualDistance, $ExtensionPaletteMembership, $OutputTargetAdmission, $OpaqueBackground] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:governingSourceKind name="governingSourceKind">
+			<AllowedValues>
+				<ValueIsOneOf values=[$ManualConstraint, $AccessibilityPolicyRule, $PaletteMembershipPolicyRule, $ProofTarget, $PublicationScope] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:governingSourceIdentifier name="governingSourceIdentifier" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:governingPolicyRuleIdentifier name="governingPolicyRuleIdentifier" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:channelRangeConstraintSnapshot name="channelRangeConstraintSnapshot" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:gamutConstraintSnapshot name="gamutConstraintSnapshot" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:contrastRatioConstraintSnapshot name="contrastRatioConstraintSnapshot" />
+		<TraitDefinition defaultValueType=$Color id=paperhat:domain:prism-result-bundle:trait:referenceColor name="referenceColor" />
+		<TraitDefinition defaultValueType=$FiniteRealNumber id=paperhat:domain:prism-result-bundle:trait:minimumAbsoluteLc name="minimumAbsoluteLc" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:repairContrastSubjectRole name="repairContrastSubjectRole">
+			<AllowedValues>
+				<ValueIsOneOf values=[$Foreground, $Background] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:perceptualDistanceConstraintSnapshot name="perceptualDistanceConstraintSnapshot" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:paletteSnapshot name="paletteSnapshot" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:paletteMembershipPolicySnapshot name="paletteMembershipPolicySnapshot" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:contrastPairIdentifier name="contrastPairIdentifier" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:contrastPairOriginKind name="contrastPairOriginKind">
+			<AllowedValues>
+				<ValueIsOneOf values=[$OrderedInputPair, $PalettePair] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$Color id=paperhat:domain:prism-result-bundle:trait:leftColor name="leftColor" />
+		<TraitDefinition defaultValueType=$Color id=paperhat:domain:prism-result-bundle:trait:rightColor name="rightColor" />
+		<TraitDefinition defaultValueType=$Iri id=paperhat:domain:prism-result-bundle:trait:leftArtifactLocator name="leftArtifactLocator" />
+		<TraitDefinition defaultValueType=$Iri id=paperhat:domain:prism-result-bundle:trait:rightArtifactLocator name="rightArtifactLocator" />
+		<TraitDefinition defaultValueType=$Integer id=paperhat:domain:prism-result-bundle:trait:leftOrdinal name="leftOrdinal" />
+		<TraitDefinition defaultValueType=$Integer id=paperhat:domain:prism-result-bundle:trait:rightOrdinal name="rightOrdinal" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:governingAccessibilityPolicySnapshot name="governingAccessibilityPolicySnapshot" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:apcaPolicyRuleIdentifier name="apcaPolicyRuleIdentifier" />
+		<TraitDefinition defaultValueType=$FiniteRealNumber id=paperhat:domain:prism-result-bundle:trait:minimumApcaLc name="minimumApcaLc" />
+		<TraitDefinition defaultValueType=$FiniteRealNumber id=paperhat:domain:prism-result-bundle:trait:apcaAbsoluteLc name="apcaAbsoluteLc" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:apcaEvaluationState name="apcaEvaluationState">
+			<AllowedValues>
+				<ValueIsOneOf values=[$Satisfied, $Violated, $NotRequested] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:wcagPolicyRuleIdentifier name="wcagPolicyRuleIdentifier" />
+		<TraitDefinition defaultValueType=$FiniteRealNumber id=paperhat:domain:prism-result-bundle:trait:minimumWcagContrastRatio name="minimumWcagContrastRatio" />
+		<TraitDefinition defaultValueType=$FiniteRealNumber id=paperhat:domain:prism-result-bundle:trait:wcagContrastRatio name="wcagContrastRatio" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:wcagEvaluationState name="wcagEvaluationState">
+			<AllowedValues>
+				<ValueIsOneOf values=[$Satisfied, $Violated, $NotRequested] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:primaryConstraintCategory name="primaryConstraintCategory">
+			<AllowedValues>
+				<ValueIsOneOf values=[$AccessibilityFailure, $ResolutionContextInsufficient, $PublicationTargetNotRepresentable, $ProofCoverageMissing, $GamutFailure, $RoleUnassigned, $PrecisionWarning] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:auditReportIdentifier name="auditReportIdentifier" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:auditRootScopeKind name="auditRootScopeKind">
+			<AllowedValues>
+				<ValueIsOneOf values=[$ColorSystem, $Palette, $TokenSet, $TokenSelectorIdentity, $ColorValue, $CssDeclaredColor] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$Iri id=paperhat:domain:prism-result-bundle:trait:rootScopeArtifactLocator name="rootScopeArtifactLocator" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:auditScopeKind name="auditScopeKind">
+			<AllowedValues>
+				<ValueIsOneOf values=[$ColorSystem, $Palette, $TokenSet, $TokenSelectorIdentity, $ColorValue, $CssDeclaredColor] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$Iri id=paperhat:domain:prism-result-bundle:trait:scopeArtifactLocator name="scopeArtifactLocator" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:auditConstraintCategory name="auditConstraintCategory">
+			<AllowedValues>
+				<ValueIsOneOf values=[$AccessibilityFailure, $ResolutionContextInsufficient, $PublicationTargetNotRepresentable, $ProofCoverageMissing, $GamutFailure, $RoleUnassigned, $PrecisionWarning] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:auditConstraintState name="auditConstraintState">
+			<AllowedValues>
+				<ValueIsOneOf values=[$Satisfied, $Violated, $NotApplicable] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$Integer id=paperhat:domain:prism-result-bundle:trait:violationCount name="violationCount" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:firstViolationCode name="firstViolationCode" />
+		<TraitDefinition defaultValueType=$Integer id=paperhat:domain:prism-result-bundle:trait:prominenceRank name="prominenceRank" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:violationCode name="violationCode" />
+		<TraitDefinition defaultValueType=$LookupToken id=paperhat:domain:prism-result-bundle:trait:publicationScopeKey name="publicationScopeKey" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:publicationTargetMatrixIdentifier name="publicationTargetMatrixIdentifier" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:selectionKind name="selectionKind">
+			<AllowedValues>
+				<ValueIsOneOf values=[$ColorSelection, $PaletteSelection, $TokenSetSelection, $RoleSelection, $ContrastPairSelection, $TargetProfileSelection, $ArtifactSelection, $GovernancePackSelection, $SemanticDifferenceSelection, $ProvenanceSelection, $CssDeclaredColorSelection, $CssDeclaredResolutionContextSelection] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:selectionWorld name="selectionWorld">
+			<AllowedValues>
+				<ValueIsOneOf values=[$AuthoredSemanticWorld, $ResolvedColorWorld, $PublishedArtifactWorld] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$Iri id=paperhat:domain:prism-result-bundle:trait:focalArtifactLocator name="focalArtifactLocator" />
+		<TraitDefinition defaultValueType=$List<$Iri> id=paperhat:domain:prism-result-bundle:trait:artifactLocatorSequence name="artifactLocatorSequence" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:publicationTargetKind name="publicationTargetKind">
+			<AllowedValues>
+				<ValueIsOneOf values=[$Css, $DesignTokensCommunityGroup, $StyleDictionary, $TargetProfile] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:publicationIntent name="publicationIntent">
+			<AllowedValues>
+				<ValueIsOneOf values=[$Css, $ApplicationTokens, $PrintSwatches, $Proof, $Report, $Governance] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:targetMedium name="targetMedium">
+			<AllowedValues>
+				<ValueIsOneOf values=[$Web, $Print, $Presentation, $Document, $Ebook] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:targetProfileIdentifier name="targetProfileIdentifier" />
+		<TraitDefinition defaultValueType=$Integer id=paperhat:domain:prism-result-bundle:trait:proofTargetOrdinal name="proofTargetOrdinal" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:publicationRepresentabilityState name="publicationRepresentabilityState">
+			<AllowedValues>
+				<ValueIsOneOf values=[$Representable, $NotRepresentable] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:proofCoverageState name="proofCoverageState">
+			<AllowedValues>
+				<ValueIsOneOf values=[$NotRequired, $Covered, $MissingProofPolicyBinding, $MissingProofTarget, $MissingTargetMedium, $MissingTargetProfileCatalog, $TargetProfileNotFound, $ProofMediumMismatch] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$List<$Text> id=paperhat:domain:prism-result-bundle:trait:publicationDiagnosticCode name="publicationDiagnosticCode" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:publicationArtifactAvailabilityState name="publicationArtifactAvailabilityState">
+			<AllowedValues>
+				<ValueIsOneOf values=[$NotProduced, $Produced] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:provenanceTraceIdentifier name="provenanceTraceIdentifier" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:provenanceTraceRootKind name="provenanceTraceRootKind">
+			<AllowedValues>
+				<ValueIsOneOf values=[$SelectionRoot, $ArtifactRoot] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$Integer id=paperhat:domain:prism-result-bundle:trait:traceEntryIndex name="traceEntryIndex" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:provenanceTraceEntryKind name="provenanceTraceEntryKind">
+			<AllowedValues>
+				<ValueIsOneOf values=[$AuthoredArtifact, $PolicyArtifact, $TargetProfileArtifact, $ContextArtifact, $Operation, $DiagnosticArtifact, $DerivedArtifact, $PublishedArtifact] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:prism-result-bundle:trait:semanticWorld name="semanticWorld">
+			<AllowedValues>
+				<ValueIsOneOf values=[$AuthoredSemanticWorld, $ResolvedColorWorld, $PublishedArtifactWorld] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:prism-result-bundle:trait:operationIdentifier name="operationIdentifier" />
+	</TraitDefinitions>
+</Schema>

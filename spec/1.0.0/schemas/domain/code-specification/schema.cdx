@@ -391,7 +391,7 @@
 			<TraitRules>
 				<RequiresTrait name="validationRule" />
 
-				<RequiresTrait name="appliesTo" />
+				<RequiresTrait name="appliesToParameter" />
 
 				<RequiresTrait name="failureMessage" />
 			</TraitRules>
@@ -535,9 +535,13 @@
 			<TraitRules>
 				<RequiresTrait name="name" />
 
-				<RequiresTrait name="appliesTo" />
+				<RequiresTrait name="appliesToType" />
 
 				<RequiresTrait name="semantics" />
+
+				<AllowsTrait name="description" />
+
+				<AllowsTrait name="specRequirement" />
 			</TraitRules>
 		</ConceptDefinition>
 
@@ -944,8 +948,15 @@
 
 		<TraitDefinition
 			defaultValueType=$LookupToken
-			id=paperhat:domain:codeSpecification:trait:appliesTo
-			name="appliesTo"
+			id=paperhat:domain:codeSpecification:trait:appliesToParameter
+			name="appliesToParameter"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:codeSpecification:trait:appliesToType
+			name="appliesToType"
 			priority=$Primary
 		/>
 

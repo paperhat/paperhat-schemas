@@ -17,6 +17,7 @@
 >
 	<ConceptDefinitions>
 
+		[GROUP: Root]
 
 		<ConceptDefinition
 			conceptKind=$Semantic
@@ -67,6 +68,9 @@
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
 		</ConceptDefinition>
 
+		[END: Root]
+
+		[GROUP: Type Definitions]
 
 		<ConceptDefinition
 			conceptKind=$Semantic
@@ -192,6 +196,9 @@
 			</TraitRules>
 		</ConceptDefinition>
 
+		[END: Type Definitions]
+
+		[GROUP: Named Constants]
 
 		<ConceptDefinition
 			conceptKind=$Semantic
@@ -221,6 +228,9 @@
 			</TraitRules>
 		</ConceptDefinition>
 
+		[END: Named Constants]
+
+		[GROUP: Canonical Ordering]
 
 		<ConceptDefinition
 			conceptKind=$Structural
@@ -290,6 +300,9 @@
 			</TraitRules>
 		</ConceptDefinition>
 
+		[END: Canonical Ordering]
+
+		[GROUP: Construction Operations]
 
 		<ConceptDefinition
 			conceptKind=$Semantic
@@ -432,6 +445,9 @@
 			</TraitRules>
 		</ConceptDefinition>
 
+		[END: Construction Operations]
+
+		[GROUP: Accessor Operations]
 
 		<ConceptDefinition
 			conceptKind=$Semantic
@@ -513,6 +529,9 @@
 			</TraitRules>
 		</ConceptDefinition>
 
+		[END: Accessor Operations]
+
+		[GROUP: Validation Rules]
 
 		<ConceptDefinition
 			conceptKind=$Semantic
@@ -538,6 +557,9 @@
 			</TraitRules>
 		</ConceptDefinition>
 
+		[END: Validation Rules]
+
+		[GROUP: Test Cases]
 
 		<ConceptDefinition
 			conceptKind=$Semantic
@@ -695,6 +717,9 @@
 			</TraitRules>
 		</ConceptDefinition>
 
+		[END: Test Cases]
+
+		[GROUP: Interop]
 
 		<ConceptDefinition
 			conceptKind=$Semantic
@@ -718,10 +743,11 @@
 			</TraitRules>
 		</ConceptDefinition>
 
+		[END: Interop]
+
 	</ConceptDefinitions>
 
 	<TraitDefinitions>
-
 
 		<TraitDefinition
 			defaultValueType=$LookupToken

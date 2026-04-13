@@ -17,7 +17,6 @@
 >
 	<ConceptDefinitions>
 
-		<!-- ── Root ─────────────────────────────────────────────────────────── -->
 
 		<ConceptDefinition
 			conceptKind=$Semantic
@@ -65,10 +64,9 @@
 				<AllowsChildConcept conceptSelector="InteropModule" />
 			</ChildRules>
 
-			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
 		</ConceptDefinition>
 
-		<!-- ── Type Definitions ─────────────────────────────────────────────── -->
 
 		<ConceptDefinition
 			conceptKind=$Semantic
@@ -101,7 +99,7 @@
 				<AllowsChildConcept conceptSelector="CanonicalOrderingRule" max=1 />
 			</ChildRules>
 
-			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -135,7 +133,7 @@
 				<AllowsChildConcept conceptSelector="CanonicalOrderingRule" max=1 />
 			</ChildRules>
 
-			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -164,7 +162,7 @@
 				<AllowsChildConcept conceptSelector="Field" />
 			</ChildRules>
 
-			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -194,7 +192,6 @@
 			</TraitRules>
 		</ConceptDefinition>
 
-		<!-- ── Named Constants ──────────────────────────────────────────────── -->
 
 		<ConceptDefinition
 			conceptKind=$Semantic
@@ -224,7 +221,6 @@
 			</TraitRules>
 		</ConceptDefinition>
 
-		<!-- ── Canonical Ordering ───────────────────────────────────────────── -->
 
 		<ConceptDefinition
 			conceptKind=$Structural
@@ -251,7 +247,7 @@
 				<AllowsChildConcept conceptSelector="WithinVariantRule" />
 			</ChildRules>
 
-			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -273,7 +269,7 @@
 				<RequiresChildConcept conceptSelector="ComparisonStep" min=1 />
 			</ChildRules>
 
-			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -294,7 +290,6 @@
 			</TraitRules>
 		</ConceptDefinition>
 
-		<!-- ── Construction Operations ──────────────────────────────────────── -->
 
 		<ConceptDefinition
 			conceptKind=$Semantic
@@ -333,7 +328,7 @@
 				<AllowsChildConcept conceptSelector="ValueMapping" max=1 />
 			</ChildRules>
 
-			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -437,7 +432,6 @@
 			</TraitRules>
 		</ConceptDefinition>
 
-		<!-- ── Accessor Operations ──────────────────────────────────────────── -->
 
 		<ConceptDefinition
 			conceptKind=$Semantic
@@ -468,7 +462,7 @@
 				<RequiresChildConcept conceptSelector="AccessorArm" min=1 />
 			</ChildRules>
 
-			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -519,7 +513,6 @@
 			</TraitRules>
 		</ConceptDefinition>
 
-		<!-- ── Validation Rules ─────────────────────────────────────────────── -->
 
 		<ConceptDefinition
 			conceptKind=$Semantic
@@ -545,7 +538,6 @@
 			</TraitRules>
 		</ConceptDefinition>
 
-		<!-- ── Test Cases ───────────────────────────────────────────────────── -->
 
 		<ConceptDefinition
 			conceptKind=$Semantic
@@ -570,7 +562,7 @@
 				<AllowsChildConcept conceptSelector="ExpectedAccessorResult" />
 			</ChildRules>
 
-			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -596,7 +588,7 @@
 				<AllowsChildConcept conceptSelector="TestArgument" />
 			</ChildRules>
 
-			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -618,7 +610,7 @@
 				<RequiresChildConcept conceptSelector="TestValue" min=2 max=2 />
 			</ChildRules>
 
-			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -640,7 +632,7 @@
 				<RequiresChildConcept conceptSelector="TestValue" min=2 max=2 />
 			</ChildRules>
 
-			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -664,7 +656,7 @@
 				<AllowsChildConcept conceptSelector="TestArgument" />
 			</ChildRules>
 
-			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -703,7 +695,6 @@
 			</TraitRules>
 		</ConceptDefinition>
 
-		<!-- ── Interop ─────────────────────────────────────────────────────── -->
 
 		<ConceptDefinition
 			conceptKind=$Semantic
@@ -731,7 +722,13 @@
 
 	<TraitDefinitions>
 
-		<!-- ── Identity and Metadata ────────────────────────────────────────── -->
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:key
+			name="key"
+			priority=$Primary
+		/>
 
 		<TraitDefinition
 			defaultValueType=$Text
@@ -775,7 +772,6 @@
 			priority=$Primary
 		/>
 
-		<!-- ── Type Structure ───────────────────────────────────────────────── -->
 
 		<TraitDefinition
 			defaultValueType=$Boolean
@@ -819,7 +815,6 @@
 			priority=$Primary
 		/>
 
-		<!-- ── Specification Traceability ───────────────────────────────────── -->
 
 		<TraitDefinition
 			defaultValueType=$Text
@@ -835,7 +830,6 @@
 			priority=$Secondary
 		/>
 
-		<!-- ── Ordering ────────────────────────────────────────────────────── -->
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
@@ -865,7 +859,6 @@
 			priority=$Primary
 		/>
 
-		<!-- ── Operations ──────────────────────────────────────────────────── -->
 
 		<TraitDefinition
 			defaultValueType=$Iri
@@ -937,7 +930,6 @@
 			priority=$Primary
 		/>
 
-		<!-- ── Preconditions ────────────────────────────────────────────────── -->
 
 		<TraitDefinition
 			defaultValueType=$LookupToken
@@ -981,7 +973,6 @@
 			priority=$Primary
 		/>
 
-		<!-- ── Value Mapping ────────────────────────────────────────────────── -->
 
 		<TraitDefinition
 			defaultValueType=$Text
@@ -997,7 +988,6 @@
 			priority=$Primary
 		/>
 
-		<!-- ── Validation Rules ─────────────────────────────────────────────── -->
 
 		<TraitDefinition
 			defaultValueType=$Text
@@ -1006,7 +996,6 @@
 			priority=$Primary
 		/>
 
-		<!-- ── Constants ────────────────────────────────────────────────────── -->
 
 		<TraitDefinition
 			defaultValueType=$Text
@@ -1015,7 +1004,6 @@
 			priority=$Primary
 		/>
 
-		<!-- ── Test Cases ───────────────────────────────────────────────────── -->
 
 		<TraitDefinition
 			defaultValueType=$LookupToken
@@ -1052,7 +1040,6 @@
 			priority=$Primary
 		/>
 
-		<!-- ── Interop ─────────────────────────────────────────────────────── -->
 
 		<TraitDefinition
 			defaultValueType=$Text

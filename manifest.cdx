@@ -1,13 +1,12 @@
-<LexisRepositoryManifest
+<RepositoryManifest
 	author="Paperhat"
-	closureHash="807c2de7677fa2e3544a65104dfac99faa162b3f40fdc1dab867b60b5d31c1df"
+	closureHash="PENDING-HASH"
 	copyright="Copyright 2026 Paperhat"
 	description="Paperhat schema repository. Contains universal schema packages, behavior definitions, and reference vocabularies consumed by Paperhat systems."
 	license="Apache-2.0"
 	repositoryName="paperhat-schemas"
 	repositoryVersion="1.0.0"
 	requiredCodexVersion=">=1.0.0 <2.0.0"
-	requiredLexisVersion=">=1.0.0 <2.0.0"
 >
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-accessibility" packagePath="spec/1.0.0/schemas/domain/accessibility" />
 
@@ -332,4 +331,6 @@
 	<RepositoryPackageEntry packageFamily="vocabulary" packageName="maturity-paperhat" packagePath="spec/1.0.0/schemas/vocabularies/maturity-paperhat" />
 
 	<RepositoryPackageEntry packageFamily="vocabulary" packageName="maturity-w3c" packagePath="spec/1.0.0/schemas/vocabularies/maturity-w3c" />
-</LexisRepositoryManifest>
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-code-specification" packagePath="spec/1.0.0/schemas/domain/code-specification" />
+</RepositoryManifest>

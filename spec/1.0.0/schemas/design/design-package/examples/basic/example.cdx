@@ -1,0 +1,9 @@
+<DesignPackage>
+	<text:Title>Recipe Page Design Package</text:Title>
+
+	<DesignMember annotation=urn:paperhat:design:recipe-hero-annotation />
+
+	<DesignMember annotation=urn:paperhat:design:recipe-ingredients-annotation />
+
+	<DesignMember annotation=urn:paperhat:design:recipe-steps-annotation />
+</DesignPackage>

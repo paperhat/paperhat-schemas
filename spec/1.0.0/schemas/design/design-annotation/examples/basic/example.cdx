@@ -1,0 +1,50 @@
+<DesignAnnotation target=urn:paperhat:view:recipe-page>
+	<text:Title>Recipe Page Design Annotation</text:Title>
+
+	<desc:Description>
+		Assigns semantic roles and perceptual constraints to the recipe page view elements.
+	</desc:Description>
+
+	<DesignElement elementReference="recipeName" role=$Rubric />
+
+	<DesignElement elementReference="recipeDescription" role=$Body />
+
+	<DesignElement elementReference="heroImage" role=$Media />
+
+	<DesignElement elementReference="ingredientsList" role=$List />
+
+	<DesignElement elementReference="prepTime" role=$DataValue />
+
+	<DesignElement elementReference="cookTime" role=$DataValue />
+
+	<DesignConstraint
+		operator=$Proximity
+		level=$ProximityTight
+		elements=["recipeName", "recipeDescription"]
+		weight=0.9
+	/>
+
+	<DesignConstraint
+		operator=$Contrast
+		level=$ContrastStrong
+		elements=["recipeName"]
+		relativeTo=["recipeDescription"]
+		weight=0.8
+	/>
+
+	<DesignConstraint
+		operator=$Grouping
+		level=$GroupingCohesive
+		elements=["prepTime", "cookTime"]
+		weight=0.7
+	/>
+
+	<AdaptiveRule>
+		<Predicate variable=$ViewportClass comparison=$Equal value="compact" />
+
+		<RelaxOperation
+			constraintTarget=urn:paperhat:constraint:recipe-hero-proximity
+			steps=1
+		/>
+	</AdaptiveRule>
+</DesignAnnotation>

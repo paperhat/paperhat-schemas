@@ -1,0 +1,13 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="PENDING-HASH"
+	copyright="Copyright 2026 Paperhat"
+	description="Schema for authoring code specifications in Codex. Defines product types, sum types, named constants, operations, validation rules, and test cases in language-agnostic semantic form."
+	license="Apache-2.0"
+	packageName="paperhat-code-specification"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+>
+</DomainPackageManifest>

@@ -1,0 +1,16 @@
+[A design annotation attaching semantic roles, constraints, and adaptive rules to a view or composition.]
+<DesignAnnotation target=>
+	<text:Title></text:Title>
+
+	<DesignElement elementReference="" role= />
+
+	<DesignConstraint
+		operator=
+		level=
+		elements=[]
+	/>
+
+	<AdaptiveRule>
+		<Predicate variable= comparison= value="" />
+	</AdaptiveRule>
+</DesignAnnotation>

@@ -1,0 +1,87 @@
+<LocalizationBundle
+	schema=paperhat:design:annotation
+	schemaVersion="1.0.0"
+	language=language-tag("en")
+>
+	<ConceptLocalization identifier="DesignAnnotation" label="Design Annotation" labelOther="Design Annotations" />
+
+	<ConceptLocalization identifier="DesignElement" label="Design Element" labelOther="Design Elements" />
+
+	<ConceptLocalization identifier="DesignConstraint" label="Design Constraint" labelOther="Design Constraints" />
+
+	<ConceptLocalization identifier="AdaptiveRule" label="Adaptive Rule" labelOther="Adaptive Rules" />
+
+	<ConceptLocalization identifier="Predicate" label="Predicate" labelOther="Predicates" />
+
+	<ConceptLocalization identifier="WeightOperation" label="Weight Operation" labelOther="Weight Operations" />
+
+	<ConceptLocalization identifier="FreezeOperation" label="Freeze Operation" labelOther="Freeze Operations" />
+
+	<ConceptLocalization identifier="RelaxOperation" label="Relax Operation" labelOther="Relax Operations" />
+
+	<ConceptLocalization identifier="GuardOperation" label="Guard Operation" labelOther="Guard Operations" />
+
+	<TraitLocalization identifier="target" label="Target" labelOther="Targets">
+		IRI of the view definition or composition this annotation targets.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="maxStructuralDelta" label="Maximum Structural Delta" labelOther="Maximum Structural Deltas">
+		Maximum structural delta budget for the annotation or adaptive rule.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="elementReference" label="Element Reference" labelOther="Element References">
+		Reference to the composition or view element being annotated.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="role" label="Role" labelOther="Roles">
+		Semantic role assigned to the element.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="operator" label="Operator" labelOther="Operators">
+		Perceptual operator this constraint applies.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="level" label="Level" labelOther="Levels">
+		Ordinal intensity level for the constraint operator.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="elements" label="Elements" labelOther="Elements">
+		Element references the constraint applies to.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="relativeTo" label="Relative To" labelOther="Relative To">
+		Element references the constraint is measured against.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="weight" label="Weight" labelOther="Weights">
+		Relative importance weight for constraint solving.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="variable" label="Variable" labelOther="Variables">
+		Runtime variable the predicate evaluates.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="comparison" label="Comparison" labelOther="Comparisons">
+		Comparison operator for the predicate.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="value" label="Value" labelOther="Values">
+		The value to compare against.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="constraintTarget" label="Constraint Target" labelOther="Constraint Targets">
+		IRI of the constraint this operation targets.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="targetWeight" label="Target Weight" labelOther="Target Weights">
+		The weight to assign to the target constraint.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="steps" label="Steps" labelOther="Steps">
+		Number of ordinal steps to relax the target constraint.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="confidenceFloor" label="Confidence Floor" labelOther="Confidence Floors">
+		Minimum confidence threshold for rule application.
+	</TraitLocalization>
+</LocalizationBundle>

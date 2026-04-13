@@ -1,0 +1,61 @@
+[Adaptive plan skeleton. Fill in trait values and add children as needed.]
+<AdaptivePlan
+	adaptivePlanProjectionDefinitionClosureHash=""
+	closureHash=""
+	compositionTarget=
+	contentHashAlgorithm=$SHA256
+	cumulativeDeltaLimit=
+	lexisVersion=""
+	maxStructuralDelta=
+>
+	<text:Title></text:Title>
+
+	[Required: at least one PlanElement.]
+	<PlanElement
+		derivedRiskLevel=
+		elementReference=""
+		encodingCompatibility=[]
+		protectionLevel=
+		role=
+		scope=
+		sourceAnnotation=
+	/>
+
+	[Required: at least one AccessibilityConstraint.]
+	<AccessibilityConstraint
+		constraintType=
+		elements=[]
+	/>
+
+	[Required: at least one PerceptualInvariant.]
+	<PerceptualInvariant
+		invariantType=
+		elements=[]
+	/>
+
+	[Required: at least one PlanConstraint.]
+	<PlanConstraint
+		elements=[]
+		hardness=
+		level=
+		operator=
+		solvedHardness=
+		solvedLevel=
+		solvedWeight=
+		source=
+		validationFamilies=[]
+		weight=
+	/>
+
+	[Required: at least one AdaptationPath.]
+	<AdaptationPath adaptationResultClass=$Baseline />
+
+	[Optional: AdaptationPath with PlanRule children.]
+	<AdaptationPath adaptationResultClass=$Adapted>
+		<PlanRule sourceAnnotation=>
+			<PlanPredicate variable= comparison= value="" />
+
+			[Optional: PlanWeightOperation, PlanFreezeOperation, PlanRelaxOperation, PlanGuardOperation.]
+		</PlanRule>
+	</AdaptationPath>
+</AdaptivePlan>

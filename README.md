@@ -29,8 +29,9 @@ Current canonical schema tree:
 manifest.cdx
 spec/1.0.0/
 ├── schemas/
-│   ├── assembly/
 │   ├── behavior/
+│   ├── composition/
+│   ├── design/
 │   ├── domain/
 │   ├── system/
 │   ├── view/
@@ -104,7 +105,7 @@ Lexis currently points to this repository through compatibility links while the 
 
 Canonical schema location:
 
-- `/Users/guy/Workspace/@paperhat/specifications/schemas/paperhat-schemas`
+- `/Users/guy/Workspace/@paperhat/schemas/paperhat-schemas`
 
 Compatibility location still present inside Lexis:
 

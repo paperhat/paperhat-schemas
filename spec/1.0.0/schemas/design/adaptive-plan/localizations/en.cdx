@@ -1,0 +1,205 @@
+<LocalizationBundle
+	schema=paperhat:design:adaptive-plan
+	schemaVersion="1.0.0"
+	language=language-tag("en")
+>
+	<ConceptLocalization identifier="AdaptivePlan" label="Adaptive Plan" labelOther="Adaptive Plans" />
+
+	<ConceptLocalization identifier="AccessibilityConstraint" label="Accessibility Constraint" labelOther="Accessibility Constraints" />
+
+	<ConceptLocalization identifier="AccessibilityThresholdOverride" label="Accessibility Threshold Override" labelOther="Accessibility Threshold Overrides" />
+
+	<ConceptLocalization identifier="AdaptationPath" label="Adaptation Path" labelOther="Adaptation Paths" />
+
+	<ConceptLocalization identifier="PerceptualInvariant" label="Perceptual Invariant" labelOther="Perceptual Invariants" />
+
+	<ConceptLocalization identifier="PlanElement" label="Plan Element" labelOther="Plan Elements" />
+
+	<ConceptLocalization identifier="ResolvedGlossReference" label="Resolved Gloss Reference" labelOther="Resolved Gloss References" />
+
+	<ConceptLocalization identifier="PlanConstraint" label="Plan Constraint" labelOther="Plan Constraints" />
+
+	<ConceptLocalization identifier="PlanRule" label="Plan Rule" labelOther="Plan Rules" />
+
+	<ConceptLocalization identifier="PlanPredicate" label="Plan Predicate" labelOther="Plan Predicates" />
+
+	<ConceptLocalization identifier="PlanWeightOperation" label="Plan Weight Operation" labelOther="Plan Weight Operations" />
+
+	<ConceptLocalization identifier="PlanFreezeOperation" label="Plan Freeze Operation" labelOther="Plan Freeze Operations" />
+
+	<ConceptLocalization identifier="PlanRelaxOperation" label="Plan Relax Operation" labelOther="Plan Relax Operations" />
+
+	<ConceptLocalization identifier="PlanGuardOperation" label="Plan Guard Operation" labelOther="Plan Guard Operations" />
+
+	<TraitLocalization identifier="adaptationResultClass" label="Adaptation Result Class" labelOther="Adaptation Result Classes">
+		Classification of the adaptation path's output: baseline, adapted, or constrained.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="adaptivePlanProjectionDefinitionClosureHash" label="Adaptive Plan Projection Definition Closure Hash" labelOther="Adaptive Plan Projection Definition Closure Hashes">
+		SHA-256 hash of the projection definition closure that produced this plan.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="closureHash" label="Closure Hash" labelOther="Closure Hashes">
+		SHA-256 hash of the entire plan closure.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="comparison" label="Comparison" labelOther="Comparisons">
+		Comparison operator used in a predicate: equal, not equal, or member of.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="compositionTarget" label="Composition Target" labelOther="Composition Targets">
+		IRI of the source composition this plan targets.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="confidenceFloor" label="Confidence Floor" labelOther="Confidence Floors">
+		Minimum confidence threshold below which the rule does not fire.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="constraintTarget" label="Constraint Target" labelOther="Constraint Targets">
+		IRI of the constraint that an operation targets.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="constraintType" label="Constraint Type" labelOther="Constraint Types">
+		Category of accessibility constraint: contrast minimum, target size minimum, reading order preservation, language metadata, structural region identification, or non-decorative alternative text.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="contentHashAlgorithm" label="Content Hash Algorithm" labelOther="Content Hash Algorithms">
+		Hash algorithm used for all content hashes in this plan.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="cumulativeDeltaLimit" label="Cumulative Delta Limit" labelOther="Cumulative Delta Limits">
+		Maximum total structural delta permitted across all adaptation paths.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="defaultThreshold" label="Default Threshold" labelOther="Default Thresholds">
+		The default threshold value being overridden.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="derivedRiskLevel" label="Derived Risk Level" labelOther="Derived Risk Levels">
+		Risk level derived from the element's role and protection level.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="elementReference" label="Element Reference" labelOther="Element References">
+		Stable textual identifier for this element within the plan.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="elements" label="Elements" labelOther="Elements">
+		List of element references that this concept applies to.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="encodingCompatibility" label="Encoding Compatibility" labelOther="Encoding Compatibilities">
+		Visual encoding channels compatible with this element's role.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="hardness" label="Hardness" labelOther="Hardnesses">
+		Whether this constraint is relaxable (soft) or inviolable (hard).
+	</TraitLocalization>
+
+	<TraitLocalization identifier="invariantType" label="Invariant Type" labelOther="Invariant Types">
+		Category of perceptual invariant: semantic reading order, intra-group separation, role encoding stability, figure dominance, or container boundary integrity.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="level" label="Level" labelOther="Levels">
+		Ordinal level of the constraint's design intent.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="lexisVersion" label="Lexis Version" labelOther="Lexis Versions">
+		Lexis version that produced this plan.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="maxStructuralDelta" label="Maximum Structural Delta" labelOther="Maximum Structural Deltas">
+		Maximum structural delta permitted for a single adaptation rule or the entire plan.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="operator" label="Operator" labelOther="Operators">
+		Design operator governing this constraint or threshold override.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="ordinalLevel" label="Ordinal Level" labelOther="Ordinal Levels">
+		Ordinal level at which this threshold override applies.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="parentElement" label="Parent Element" labelOther="Parent Elements">
+		IRI of the parent element in the plan element hierarchy.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="protectionLevel" label="Protection Level" labelOther="Protection Levels">
+		Degree of protection against adaptation for this element.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="referenceTarget" label="Reference Target" labelOther="Reference Targets">
+		IRI of the glossary entry this reference resolves to.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="relativeTo" label="Relative To" labelOther="Relative To Lists">
+		Element references that this constraint is measured relative to.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="replacementThreshold" label="Replacement Threshold" labelOther="Replacement Thresholds">
+		The replacement threshold value for this operator at this ordinal level.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="resolvedDisplayText" label="Resolved Display Text" labelOther="Resolved Display Texts">
+		Pre-resolved display text for the gloss reference.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="role" label="Role" labelOther="Roles">
+		Semantic Design Language role assigned to this element.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="scope" label="Scope" labelOther="Scopes">
+		Whether this element originates from the composition or the view.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="sequentialIdentifierSignal" label="Sequential Identifier Signal" labelOther="Sequential Identifier Signals">
+		Whether this element participates in sequential identifier generation.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="solvedHardness" label="Solved Hardness" labelOther="Solved Hardnesses">
+		Hardness of this constraint after solver processing.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="solvedLevel" label="Solved Level" labelOther="Solved Levels">
+		Ordinal level of this constraint after solver processing.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="solvedWeight" label="Solved Weight" labelOther="Solved Weights">
+		Weight of this constraint after solver processing.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="source" label="Source" labelOther="Sources">
+		Whether this constraint was authored explicitly or derived from a role obligation.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="sourceAnnotation" label="Source Annotation" labelOther="Source Annotations">
+		IRI of the design annotation that produced this element or rule.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="sourceRole" label="Source Role" labelOther="Source Roles">
+		Semantic Design Language role that generated this constraint via role obligation.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="steps" label="Steps" labelOther="Steps">
+		Number of ordinal steps to relax a constraint.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="targetWeight" label="Target Weight" labelOther="Target Weights">
+		Weight value to assign to the targeted constraint when the rule fires.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="validationFamilies" label="Validation Families" labelOther="Validation Families">
+		Validation families this constraint belongs to.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="value" label="Value" labelOther="Values">
+		Operand value in a predicate comparison.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="variable" label="Variable" labelOther="Variables">
+		Runtime variable tested by a predicate.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="weight" label="Weight" labelOther="Weights">
+		Authored weight of this constraint before solver processing.
+	</TraitLocalization>
+</LocalizationBundle>

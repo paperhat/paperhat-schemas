@@ -1,0 +1,6 @@
+[A design package bundling annotation documents into an ordered unit.]
+<DesignPackage>
+	<text:Title></text:Title>
+
+	<DesignMember annotation= />
+</DesignPackage>

@@ -1,0 +1,13 @@
+<LocalizationBundle
+	schema=paperhat:design:package
+	schemaVersion="1.0.0"
+	language=language-tag("en")
+>
+	<ConceptLocalization identifier="DesignPackage" label="Design Package" labelOther="Design Packages" />
+
+	<ConceptLocalization identifier="DesignMember" label="Design Member" labelOther="Design Members" />
+
+	<TraitLocalization identifier="annotation" label="Annotation" labelOther="Annotations">
+		IRI of the design annotation document this member references.
+	</TraitLocalization>
+</LocalizationBundle>

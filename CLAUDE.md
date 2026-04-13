@@ -32,7 +32,7 @@ Paperhat-authored corpus entities and authored documents MUST use the `urn:paper
 
 `SchemaImport.reference` MUST remain `urn:cdx:sha256:<hex-digest>`.
 
-Read `/Users/guy/Workspace/@paperhat/specifications/schemas/paperhat-schemas/IDENTIFIER_POLICY.md` before changing schema identifiers.
+Read `/Users/guy/Workspace/@paperhat/schemas/paperhat-schemas/IDENTIFIER_POLICY.md` before changing schema identifiers.
 
 ## Package Boundary Rule
 

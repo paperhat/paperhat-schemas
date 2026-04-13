@@ -1,0 +1,184 @@
+<AdaptivePlan
+	adaptivePlanProjectionDefinitionClosureHash="a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2"
+	closureHash="f6e5d4c3b2a1f6e5d4c3b2a1f6e5d4c3b2a1f6e5d4c3b2a1f6e5d4c3b2a1f6e5"
+	compositionTarget=urn:paperhat:corpus:recipe-site:classic-tomato-soup
+	contentHashAlgorithm=$SHA256
+	cumulativeDeltaLimit=0.35
+	lexisVersion="1.0.0"
+	maxStructuralDelta=0.15
+>
+	<text:Title>Classic Tomato Soup Recipe Page Adaptive Plan</text:Title>
+
+	<desc:Description>
+		Compiled adaptive plan for the classic tomato soup recipe page composition. Targets a single-page recipe layout with hero image, ingredient list, preparation steps, and nutritional information.
+	</desc:Description>
+
+	<PlanElement
+		derivedRiskLevel=$Standard
+		elementReference="recipe-title"
+		encodingCompatibility=[$Position, $Size]
+		protectionLevel=$Standard
+		role=$Rubric
+		scope=$Composition
+		sourceAnnotation=urn:paperhat:design:recipe-hero-annotation
+	/>
+
+	<PlanElement
+		derivedRiskLevel=$Standard
+		elementReference="hero-image"
+		encodingCompatibility=[$Position, $Size, $Shape]
+		protectionLevel=$Elevated
+		role=$Media
+		scope=$Composition
+		sourceAnnotation=urn:paperhat:design:recipe-hero-annotation
+	/>
+
+	<PlanElement
+		derivedRiskLevel=$Standard
+		elementReference="ingredient-list"
+		encodingCompatibility=[$Position, $Size, $Value]
+		parentElement=urn:paperhat:plan:recipe-page:ingredients-group
+		protectionLevel=$Standard
+		role=$List
+		scope=$Composition
+		sourceAnnotation=urn:paperhat:design:recipe-ingredients-annotation
+		sequentialIdentifierSignal=true
+	/>
+
+	<PlanElement
+		derivedRiskLevel=$Standard
+		elementReference="ingredients-group"
+		encodingCompatibility=[$Position, $Size]
+		protectionLevel=$Standard
+		role=$Group
+		scope=$Composition
+		sourceAnnotation=urn:paperhat:design:recipe-ingredients-annotation
+	/>
+
+	<PlanElement
+		derivedRiskLevel=$Standard
+		elementReference="preparation-steps"
+		encodingCompatibility=[$Position, $Size, $Value]
+		protectionLevel=$Standard
+		role=$Body
+		scope=$Composition
+		sourceAnnotation=urn:paperhat:design:recipe-steps-annotation
+		sequentialIdentifierSignal=true
+	/>
+
+	<PlanElement
+		derivedRiskLevel=$Elevated
+		elementReference="nutrition-disclosure"
+		encodingCompatibility=[$Position, $Size, $Value]
+		protectionLevel=$Elevated
+		role=$CostDisclosure
+		scope=$View
+		sourceAnnotation=urn:paperhat:design:recipe-nutrition-annotation
+	/>
+
+	<AccessibilityConstraint
+		constraintType=$ContrastMinimum
+		elements=["recipe-title", "ingredient-list", "preparation-steps", "nutrition-disclosure"]
+	/>
+
+	<AccessibilityConstraint
+		constraintType=$ReadingOrderPreservation
+		elements=["recipe-title", "hero-image", "ingredients-group", "preparation-steps", "nutrition-disclosure"]
+	/>
+
+	<PerceptualInvariant
+		invariantType=$SemanticReadingOrder
+		elements=["recipe-title", "hero-image", "ingredients-group", "preparation-steps", "nutrition-disclosure"]
+	/>
+
+	<PerceptualInvariant
+		invariantType=$IntraGroupSeparation
+		elements=["ingredient-list", "preparation-steps"]
+	/>
+
+	<PlanConstraint
+		elements=["recipe-title", "hero-image"]
+		hardness=$Hard
+		level=$ProximityNear
+		operator=$Proximity
+		solvedHardness=$Hard
+		solvedLevel=$ProximityNear
+		solvedWeight=1.0
+		source=$Explicit
+		validationFamilies=[$SalienceProportionality]
+		weight=1.0
+	/>
+
+	<PlanConstraint
+		elements=["ingredient-list"]
+		hardness=$Soft
+		level=$GroupingCohesive
+		operator=$Grouping
+		relativeTo=["ingredients-group"]
+		solvedHardness=$Soft
+		solvedLevel=$GroupingCohesive
+		solvedWeight=0.8
+		source=$RoleObligation
+		sourceRole=$List
+		validationFamilies=[$GroupingCoherence]
+		weight=0.8
+	/>
+
+	<PlanConstraint
+		elements=["nutrition-disclosure"]
+		hardness=$Hard
+		level=$ContrastClear
+		operator=$Contrast
+		solvedHardness=$Hard
+		solvedLevel=$ContrastClear
+		solvedWeight=1.0
+		source=$RoleObligation
+		sourceRole=$CostDisclosure
+		validationFamilies=[$DisclosureIntegrity]
+		weight=1.0
+	/>
+
+	<AccessibilityThresholdOverride
+		defaultThreshold=4.5
+		operator=$Contrast
+		ordinalLevel=$ContrastClear
+		replacementThreshold=7.0
+	/>
+
+	<ResolvedGlossReference
+		referenceTarget=urn:paperhat:glossary:culinary:mirepoix
+		resolvedDisplayText="mirepoix"
+	/>
+
+	<AdaptationPath adaptationResultClass=$Baseline />
+
+	<AdaptationPath adaptationResultClass=$Adapted>
+		<PlanRule sourceAnnotation=urn:paperhat:design:recipe-hero-annotation>
+			<PlanPredicate variable=$ViewportClass comparison=$Equal value="compact" />
+
+			<PlanWeightOperation
+				constraintTarget=urn:paperhat:plan:recipe-page:title-hero-proximity
+				targetWeight=0.5
+			/>
+
+			<PlanRelaxOperation
+				constraintTarget=urn:paperhat:plan:recipe-page:ingredient-grouping
+				steps=1
+			/>
+		</PlanRule>
+	</AdaptationPath>
+
+	<AdaptationPath adaptationResultClass=$Constrained>
+		<PlanRule
+			sourceAnnotation=urn:paperhat:design:recipe-hero-annotation
+			confidenceFloor=0.7
+			maxStructuralDelta=0.10
+		>
+			<PlanPredicate variable=$AccessibilityProfile comparison=$MemberOf value="high-contrast,screen-reader" />
+
+			<PlanFreezeOperation constraintTarget=urn:paperhat:plan:recipe-page:nutrition-contrast />
+
+			<PlanGuardOperation constraintTarget=urn:paperhat:plan:recipe-page:title-hero-proximity />
+		</PlanRule>
+	</AdaptationPath>
+</AdaptivePlan>

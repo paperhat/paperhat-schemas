@@ -1,0 +1,1171 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description=`
+		Schema for authoring code specifications in Codex. A code specification defines product types,
+		sum types, named constants, operations, validation rules, and test cases in language-agnostic
+		semantic form. The same document generates human-readable documentation through Lexis media
+		foundries and executable code through Nexus code foundries. All field types reference Paperhat
+		canonical type identifiers, preserving type identity from specification through RDF to generated
+		code with zero erasure.
+	`
+	id=paperhat:domain:codeSpecification
+	namespace="codeSpecification"
+	title="Code Specification Schema"
+	version="1.0.0"
+	versionScheme=$SemanticVersion
+>
+	<ConceptDefinitions>
+
+		<!-- ── Root ─────────────────────────────────────────────────────────── -->
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:CodeSpecification
+			name="CodeSpecification"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="title" />
+
+				<RequiresTrait name="version" />
+
+				<RequiresTrait name="license" />
+
+				<AllowsTrait name="description" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="ProductType" />
+
+				<AllowsChildConcept conceptSelector="SumType" />
+
+				<AllowsChildConcept conceptSelector="NamedConstant" />
+
+				<AllowsChildConcept conceptSelector="ConstructionOperation" />
+
+				<AllowsChildConcept conceptSelector="AccessorOperation" />
+
+				<AllowsChildConcept conceptSelector="UniformAccessorOperation" />
+
+				<AllowsChildConcept conceptSelector="ValidationRule" />
+
+				<AllowsChildConcept conceptSelector="ConstructionTestCase" />
+
+				<AllowsChildConcept conceptSelector="RejectionTestCase" />
+
+				<AllowsChildConcept conceptSelector="InequalityTestCase" />
+
+				<AllowsChildConcept conceptSelector="OrderingTestCase" />
+
+				<AllowsChildConcept conceptSelector="InteropModule" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<!-- ── Type Definitions ─────────────────────────────────────────────── -->
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A product type: a type whose instances carry all fields simultaneously. Projected as a struct in Rust, a record in Haskell, a record in OCaml."
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:codeSpecification:ProductType
+			name="ProductType"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="exported" />
+
+				<AllowsTrait name="description" />
+
+				<AllowsTrait name="specSection" />
+
+				<AllowsTrait name="specRequirement" />
+
+				<AllowsTrait name="capabilities" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Field" min=1 />
+
+				<AllowsChildConcept conceptSelector="CanonicalOrderingRule" max=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A sum type: a type whose instances carry exactly one variant at a time. Projected as an enum in Rust, a data type in Haskell, a variant type in OCaml."
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:codeSpecification:SumType
+			name="SumType"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="exported" />
+
+				<AllowsTrait name="description" />
+
+				<AllowsTrait name="specSection" />
+
+				<AllowsTrait name="specRequirement" />
+
+				<AllowsTrait name="capabilities" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Variant" min=1 />
+
+				<AllowsChildConcept conceptSelector="CanonicalOrderingRule" max=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A variant of a sum type. Carries either named fields or wraps a single unnamed value."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:Variant
+			key=~variant
+			name="Variant"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="position" />
+
+				<AllowsTrait name="description" />
+
+				<AllowsTrait name="wrapsType" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Field" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A named, typed field belonging to a product type or a sum type variant."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:Field
+			key=~field
+			name="Field"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="valueType" />
+
+				<AllowsTrait name="exported" />
+
+				<AllowsTrait name="position" />
+
+				<AllowsTrait name="description" />
+
+				<AllowsTrait name="elementType" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<!-- ── Named Constants ──────────────────────────────────────────────── -->
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A named constant value with a canonical type identifier."
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:codeSpecification:NamedConstant
+			name="NamedConstant"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="exported" />
+
+				<RequiresTrait name="valueType" />
+
+				<RequiresTrait name="value" />
+
+				<AllowsTrait name="description" />
+
+				<AllowsTrait name="specRequirement" />
+
+				<AllowsTrait name="position" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<!-- ── Canonical Ordering ───────────────────────────────────────────── -->
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Defines the canonical total ordering for a type."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:CanonicalOrderingRule
+			name="CanonicalOrderingRule"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="strategy" />
+
+				<AllowsTrait name="specRequirement" />
+
+				<AllowsTrait name="delegateField" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="ComparisonStep" />
+
+				<AllowsChildConcept conceptSelector="WithinVariantRule" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Defines the field comparison order within a specific variant of a sum type."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:WithinVariantRule
+			name="WithinVariantRule"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="forVariant" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="ComparisonStep" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A single step in a comparison chain: compare the values of a specific field."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:ComparisonStep
+			name="ComparisonStep"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="compareField" />
+
+				<RequiresTrait name="position" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<!-- ── Construction Operations ──────────────────────────────────────── -->
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="An operation that constructs a value of a specific type and variant."
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:codeSpecification:ConstructionOperation
+			name="ConstructionOperation"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="exported" />
+
+				<RequiresTrait name="producesType" />
+
+				<RequiresTrait name="producesVariant" />
+
+				<AllowsTrait name="description" />
+
+				<AllowsTrait name="specRequirement" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="OperationParameter" />
+
+				<AllowsChildConcept conceptSelector="ConstantBinding" />
+
+				<AllowsChildConcept conceptSelector="Precondition" max=1 />
+
+				<AllowsChildConcept conceptSelector="ProhibitionPrecondition" max=1 />
+
+				<AllowsChildConcept conceptSelector="ValueMapping" max=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A parameter accepted by an operation."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:OperationParameter
+			key=~operationParameter
+			name="OperationParameter"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="valueType" />
+
+				<RequiresTrait name="position" />
+
+				<AllowsTrait name="mapsToField" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Binds a constant value to a target field during construction."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:ConstantBinding
+			name="ConstantBinding"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="targetField" />
+
+				<RequiresTrait name="boundConstant" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A validation-rule precondition on an operation parameter."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:Precondition
+			name="Precondition"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="validationRule" />
+
+				<RequiresTrait name="appliesTo" />
+
+				<RequiresTrait name="failureMessage" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A precondition that prohibits a parameter from equaling a specific constant."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:ProhibitionPrecondition
+			name="ProhibitionPrecondition"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="parameterToCheck" />
+
+				<RequiresTrait name="prohibitedConstant" />
+
+				<RequiresTrait name="failureMessage" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Maps a boolean parameter to text values for the lexical form field."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:ValueMapping
+			name="ValueMapping"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="targetField" />
+
+				<RequiresTrait name="whenTrue" />
+
+				<RequiresTrait name="whenFalse" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<!-- ── Accessor Operations ──────────────────────────────────────────── -->
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="An accessor operation that returns different values per variant of a sum type."
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:codeSpecification:AccessorOperation
+			name="AccessorOperation"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="exported" />
+
+				<RequiresTrait name="returnType" />
+
+				<RequiresTrait name="belongsToType" />
+
+				<AllowsTrait name="description" />
+
+				<AllowsTrait name="specRequirement" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="AccessorArm" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="An accessor operation that returns the same-named field from every variant of a sum type."
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:codeSpecification:UniformAccessorOperation
+			name="UniformAccessorOperation"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="exported" />
+
+				<RequiresTrait name="returnType" />
+
+				<RequiresTrait name="belongsToType" />
+
+				<RequiresTrait name="accessesFieldNamed" />
+
+				<AllowsTrait name="description" />
+
+				<AllowsTrait name="specRequirement" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="One arm of a variant accessor: specifies what a specific variant returns."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:AccessorArm
+			name="AccessorArm"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="forVariant" />
+
+				<AllowsTrait name="returnsField" />
+
+				<AllowsTrait name="returnsConstant" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<!-- ── Validation Rules ─────────────────────────────────────────────── -->
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A named validation rule with formal semantics. The foundry generates a validation function; conformance tests verify correctness."
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:codeSpecification:ValidationRule
+			name="ValidationRule"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="appliesTo" />
+
+				<RequiresTrait name="semantics" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<!-- ── Test Cases ───────────────────────────────────────────────────── -->
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A test that constructs a value and asserts accessor results."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:ConstructionTestCase
+			name="ConstructionTestCase"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="testName" />
+
+				<RequiresTrait name="operation" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="TestArgument" />
+
+				<AllowsChildConcept conceptSelector="ExpectedAccessorResult" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A test that asserts an operation rejects invalid input."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:RejectionTestCase
+			name="RejectionTestCase"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="testName" />
+
+				<RequiresTrait name="operation" />
+
+				<RequiresTrait name="expectedFailureContaining" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="TestArgument" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A test that asserts two constructed values are not equal."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:InequalityTestCase
+			name="InequalityTestCase"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="testName" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="TestValue" min=2 max=2 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A test that asserts one constructed value is less than another."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:OrderingTestCase
+			name="OrderingTestCase"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="testName" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="TestValue" min=2 max=2 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A value constructed for use in a test case."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:TestValue
+			name="TestValue"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="role" />
+
+				<RequiresTrait name="operation" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="TestArgument" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="An argument passed to an operation in a test case."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:TestArgument
+			name="TestArgument"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="value" />
+
+				<RequiresTrait name="position" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="An expected result from calling an accessor on a constructed value."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:ExpectedAccessorResult
+			name="ExpectedAccessorResult"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="accessor" />
+
+				<RequiresTrait name="expectedValue" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<!-- ── Interop ─────────────────────────────────────────────────────── -->
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A language-specific interop module. Foundries for the target language generate the interop code; other foundries ignore it."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:InteropModule
+			name="InteropModule"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="conditionalOn" />
+
+				<RequiresTrait name="targetLibrary" />
+
+				<AllowsTrait name="description" />
+			</TraitRules>
+		</ConceptDefinition>
+
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+
+		<!-- ── Identity and Metadata ────────────────────────────────────────── -->
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:title
+			name="title"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$SemanticVersion
+			id=paperhat:domain:codeSpecification:trait:version
+			name="version"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:license
+			name="license"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:description
+			name="description"
+			priority=$Secondary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:name
+			name="name"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:testName
+			name="testName"
+			priority=$Primary
+		/>
+
+		<!-- ── Type Structure ───────────────────────────────────────────────── -->
+
+		<TraitDefinition
+			defaultValueType=$Boolean
+			id=paperhat:domain:codeSpecification:trait:exported
+			name="exported"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$NonNegativeInteger
+			id=paperhat:domain:codeSpecification:trait:position
+			name="position"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:codeSpecification:trait:valueType
+			name="valueType"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:codeSpecification:trait:elementType
+			name="elementType"
+			priority=$Secondary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:codeSpecification:trait:wrapsType
+			name="wrapsType"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$List<$EnumeratedToken>
+			id=paperhat:domain:codeSpecification:trait:capabilities
+			name="capabilities"
+			priority=$Primary
+		/>
+
+		<!-- ── Specification Traceability ───────────────────────────────────── -->
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:specSection
+			name="specSection"
+			priority=$Secondary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:specRequirement
+			name="specRequirement"
+			priority=$Secondary
+		/>
+
+		<!-- ── Ordering ────────────────────────────────────────────────────── -->
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:codeSpecification:trait:strategy
+			name="strategy"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:delegateField
+			name="delegateField"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:compareField
+			name="compareField"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:forVariant
+			name="forVariant"
+			priority=$Primary
+		/>
+
+		<!-- ── Operations ──────────────────────────────────────────────────── -->
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:codeSpecification:trait:producesType
+			name="producesType"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:producesVariant
+			name="producesVariant"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:mapsToField
+			name="mapsToField"
+			priority=$Secondary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:targetField
+			name="targetField"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:boundConstant
+			name="boundConstant"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:codeSpecification:trait:belongsToType
+			name="belongsToType"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:codeSpecification:trait:returnType
+			name="returnType"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:accessesFieldNamed
+			name="accessesFieldNamed"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:returnsField
+			name="returnsField"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:returnsConstant
+			name="returnsConstant"
+			priority=$Primary
+		/>
+
+		<!-- ── Preconditions ────────────────────────────────────────────────── -->
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:validationRule
+			name="validationRule"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:appliesTo
+			name="appliesTo"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:failureMessage
+			name="failureMessage"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:parameterToCheck
+			name="parameterToCheck"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:prohibitedConstant
+			name="prohibitedConstant"
+			priority=$Primary
+		/>
+
+		<!-- ── Value Mapping ────────────────────────────────────────────────── -->
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:whenTrue
+			name="whenTrue"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:whenFalse
+			name="whenFalse"
+			priority=$Primary
+		/>
+
+		<!-- ── Validation Rules ─────────────────────────────────────────────── -->
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:semantics
+			name="semantics"
+			priority=$Primary
+		/>
+
+		<!-- ── Constants ────────────────────────────────────────────────────── -->
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:value
+			name="value"
+			priority=$Primary
+		/>
+
+		<!-- ── Test Cases ───────────────────────────────────────────────────── -->
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:operation
+			name="operation"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:accessor
+			name="accessor"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:expectedValue
+			name="expectedValue"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:expectedFailureContaining
+			name="expectedFailureContaining"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:codeSpecification:trait:role
+			name="role"
+			priority=$Primary
+		/>
+
+		<!-- ── Interop ─────────────────────────────────────────────────────── -->
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:conditionalOn
+			name="conditionalOn"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:targetLibrary
+			name="targetLibrary"
+			priority=$Primary
+		/>
+
+	</TraitDefinitions>
+
+	<EnumeratedValueSets>
+
+		<EnumeratedValueSet
+			id=paperhat:domain:codeSpecification:set:Capability
+			name="Capability"
+		>
+			<Member description="Instances are comparable for structural equality." value="Equality" />
+
+			<Member description="Instances produce a deterministic hash value." value="Hashing" />
+
+			<Member description="Instances are duplicatable." value="Cloning" />
+
+			<Member description="Instances have a canonical total ordering." value="CanonicalOrdering" />
+
+			<Member description="Instances have a debug text representation." value="Debugging" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet
+			id=paperhat:domain:codeSpecification:set:OrderingStrategy
+			name="OrderingStrategy"
+		>
+			<Member description="Compare fields in declared order; the first difference determines the result." value="FieldByFieldComparison" />
+
+			<Member description="Compare variant position first; within the same variant, compare fields in declared order." value="VariantThenFieldComparison" />
+
+			<Member description="Delegate the entire comparison to a single field." value="DelegateToField" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet
+			id=paperhat:domain:codeSpecification:set:TestValueRole
+			name="TestValueRole"
+		>
+			<Member description="The left operand in an inequality or comparison test." value="Left" />
+
+			<Member description="The right operand in an inequality or comparison test." value="Right" />
+
+			<Member description="The lesser operand in an ordering test." value="Lesser" />
+
+			<Member description="The greater operand in an ordering test." value="Greater" />
+		</EnumeratedValueSet>
+
+	</EnumeratedValueSets>
+
+	<ConstraintDefinitions>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:variant-fields-or-wraps
+			title="A variant carries either named fields or wraps a single type, not both"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Variant" />
+			</Targets>
+
+			<Rule>
+				<Not>
+					<Rule>
+						<AllOf>
+							<Rule>
+								<TraitExists trait="wrapsType" />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="Field" type=$RequiresChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</Not>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:accessor-arm-returns-one
+			title="An accessor arm returns either a field or a constant, not both"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AccessorArm" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<AllOf>
+							<Rule>
+								<TraitExists trait="returnsField" />
+							</Rule>
+
+							<Rule>
+								<TraitMissing trait="returnsConstant" />
+							</Rule>
+						</AllOf>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<TraitMissing trait="returnsField" />
+							</Rule>
+
+							<Rule>
+								<TraitExists trait="returnsConstant" />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+	</ConstraintDefinitions>
+
+</Schema>

@@ -4,7 +4,7 @@
 	copyright="Copyright 2026 Paperhat"
 	description="Design-family schema for the compiled adaptive plan — the self-contained artifact that the pipeline produces from design annotations and the foundry consumes as its sole semantic input."
 	license="Apache-2.0"
-	packageName="adaptive-plan"
+	packageName="paperhat-adaptive-plan"
 	packageVersion="1.0.0"
 	primaryDocument="schema.cdx"
 	requiredCodexVersion=">=1.0.0 <2.0.0"

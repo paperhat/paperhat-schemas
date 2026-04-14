@@ -268,11 +268,11 @@
 
 	<RepositoryPackageEntry packageFamily="view" packageName="paperhat-view-definition-view" packagePath="spec/1.0.0/schemas/view/view-definition" />
 
-	<RepositoryPackageEntry packageFamily="design" packageName="adaptive-plan" packagePath="spec/1.0.0/schemas/design/adaptive-plan" />
+	<RepositoryPackageEntry packageFamily="design" packageName="paperhat-adaptive-plan" packagePath="spec/1.0.0/schemas/design/adaptive-plan" />
 
-	<RepositoryPackageEntry packageFamily="design" packageName="design-annotation" packagePath="spec/1.0.0/schemas/design/design-annotation" />
+	<RepositoryPackageEntry packageFamily="design" packageName="paperhat-design-annotation" packagePath="spec/1.0.0/schemas/design/design-annotation" />
 
-	<RepositoryPackageEntry packageFamily="design" packageName="design-package" packagePath="spec/1.0.0/schemas/design/design-package" />
+	<RepositoryPackageEntry packageFamily="design" packageName="paperhat-design-package" packagePath="spec/1.0.0/schemas/design/design-package" />
 
 	<RepositoryPackageEntry packageFamily="system" packageName="paperhat-localization" packagePath="spec/1.0.0/schemas/system/localization" />
 

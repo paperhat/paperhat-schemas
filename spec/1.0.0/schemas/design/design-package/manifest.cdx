@@ -4,7 +4,7 @@
 	copyright="Copyright 2026 Paperhat"
 	description="Design-family schema for bundling design annotation documents into an ordered, referenceable package."
 	license="Apache-2.0"
-	packageName="design-package"
+	packageName="paperhat-design-package"
 	packageVersion="1.0.0"
 	primaryDocument="schema.cdx"
 	requiredCodexVersion=">=1.0.0 <2.0.0"

@@ -1,0 +1,18 @@
+[A code specification defining types, operations, validation rules, and test cases.]
+<CodeSpecification title="" version=semantic-version("1.0.0") license="">
+	<ProductType name="" exported=true>
+		<Field name="" valueType= position=0 />
+	</ProductType>
+
+	<ConstructionOperation name="" exported=true producesType= producesVariant=>
+		<OperationParameter name="" valueType= position=0 />
+	</ConstructionOperation>
+
+	<ValidationRule name="" appliesToType= semantics="" />
+
+	<ConstructionTestCase testName="" operation=>
+		<TestArgument value="" position=0 />
+
+		<ExpectedAccessorResult accessor= expectedValue="" />
+	</ConstructionTestCase>
+</CodeSpecification>

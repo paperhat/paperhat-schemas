@@ -1,0 +1,247 @@
+<LocalizationBundle
+	schema=paperhat:domain:codeSpecification
+	schemaVersion="1.0.0"
+	language=language-tag("en")
+>
+	<ConceptLocalization identifier="CodeSpecification" label="Code Specification" labelOther="Code Specifications" />
+
+	<ConceptLocalization identifier="ProductType" label="Product Type" labelOther="Product Types" />
+
+	<ConceptLocalization identifier="SumType" label="Sum Type" labelOther="Sum Types" />
+
+	<ConceptLocalization identifier="Variant" label="Variant" labelOther="Variants" />
+
+	<ConceptLocalization identifier="Field" label="Field" labelOther="Fields" />
+
+	<ConceptLocalization identifier="NamedConstant" label="Named Constant" labelOther="Named Constants" />
+
+	<ConceptLocalization identifier="CanonicalOrderingRule" label="Canonical Ordering Rule" labelOther="Canonical Ordering Rules" />
+
+	<ConceptLocalization identifier="WithinVariantRule" label="Within-Variant Rule" labelOther="Within-Variant Rules" />
+
+	<ConceptLocalization identifier="ComparisonStep" label="Comparison Step" labelOther="Comparison Steps" />
+
+	<ConceptLocalization identifier="ConstructionOperation" label="Construction Operation" labelOther="Construction Operations" />
+
+	<ConceptLocalization identifier="OperationParameter" label="Operation Parameter" labelOther="Operation Parameters" />
+
+	<ConceptLocalization identifier="ConstantBinding" label="Constant Binding" labelOther="Constant Bindings" />
+
+	<ConceptLocalization identifier="Precondition" label="Precondition" labelOther="Preconditions" />
+
+	<ConceptLocalization identifier="ProhibitionPrecondition" label="Prohibition Precondition" labelOther="Prohibition Preconditions" />
+
+	<ConceptLocalization identifier="ValueMapping" label="Value Mapping" labelOther="Value Mappings" />
+
+	<ConceptLocalization identifier="AccessorOperation" label="Accessor Operation" labelOther="Accessor Operations" />
+
+	<ConceptLocalization identifier="UniformAccessorOperation" label="Uniform Accessor Operation" labelOther="Uniform Accessor Operations" />
+
+	<ConceptLocalization identifier="AccessorArm" label="Accessor Arm" labelOther="Accessor Arms" />
+
+	<ConceptLocalization identifier="ValidationRule" label="Validation Rule" labelOther="Validation Rules" />
+
+	<ConceptLocalization identifier="ConstructionTestCase" label="Construction Test Case" labelOther="Construction Test Cases" />
+
+	<ConceptLocalization identifier="RejectionTestCase" label="Rejection Test Case" labelOther="Rejection Test Cases" />
+
+	<ConceptLocalization identifier="InequalityTestCase" label="Inequality Test Case" labelOther="Inequality Test Cases" />
+
+	<ConceptLocalization identifier="OrderingTestCase" label="Ordering Test Case" labelOther="Ordering Test Cases" />
+
+	<ConceptLocalization identifier="TestValue" label="Test Value" labelOther="Test Values" />
+
+	<ConceptLocalization identifier="TestArgument" label="Test Argument" labelOther="Test Arguments" />
+
+	<ConceptLocalization identifier="ExpectedAccessorResult" label="Expected Accessor Result" labelOther="Expected Accessor Results" />
+
+	<ConceptLocalization identifier="InteropModule" label="Interop Module" labelOther="Interop Modules" />
+
+	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
+		Stable lookup key for cross-referencing.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="title" label="Title" labelOther="Titles">
+		Title of the code specification.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="version" label="Version" labelOther="Versions">
+		Semantic version of the specification.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="license" label="License" labelOther="Licenses">
+		License identifier for the specification.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="description" label="Description" labelOther="Descriptions">
+		Human-readable description.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		Name of a type, variant, field, operation, or constant.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="testName" label="Test Name" labelOther="Test Names">
+		Name of a test case.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="exported" label="Exported" labelOther="Exported">
+		Whether the construct is part of the public interface.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="position" label="Position" labelOther="Positions">
+		Ordinal position within a parent container.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="valueType" label="Value Type" labelOther="Value Types">
+		Canonical type identifier for a field or constant value.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="elementType" label="Element Type" labelOther="Element Types">
+		Canonical type identifier for elements within a collection-typed field.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="wrapsType" label="Wraps Type" labelOther="Wraps Types">
+		The single type that a newtype variant wraps.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="capabilities" label="Capabilities" labelOther="Capabilities">
+		Type-level capabilities declared by the type.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="specSection" label="Specification Section" labelOther="Specification Sections">
+		Section reference within the governing specification.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="specRequirement" label="Specification Requirement" labelOther="Specification Requirements">
+		Requirement identifier within the governing specification.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="strategy" label="Strategy" labelOther="Strategies">
+		Ordering strategy for the canonical total ordering.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="delegateField" label="Delegate Field" labelOther="Delegate Fields">
+		The field to delegate comparison to.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="compareField" label="Compare Field" labelOther="Compare Fields">
+		The field whose values are compared in this step.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="forVariant" label="For Variant" labelOther="For Variants">
+		The variant this rule or arm applies to.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="producesType" label="Produces Type" labelOther="Produces Types">
+		Canonical type identifier of the type this operation constructs.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="producesVariant" label="Produces Variant" labelOther="Produces Variants">
+		The variant this operation constructs.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="mapsToField" label="Maps To Field" labelOther="Maps To Fields">
+		The target field this parameter maps to during construction.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="targetField" label="Target Field" labelOther="Target Fields">
+		The field that receives a constant binding or value mapping.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="boundConstant" label="Bound Constant" labelOther="Bound Constants">
+		The named constant bound to a field during construction.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="belongsToType" label="Belongs To Type" labelOther="Belongs To Types">
+		Canonical type identifier of the type this accessor belongs to.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="returnType" label="Return Type" labelOther="Return Types">
+		Canonical type identifier of the value this accessor returns.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="accessesFieldNamed" label="Accesses Field Named" labelOther="Accesses Fields Named">
+		The field name accessed uniformly across all variants.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="returnsField" label="Returns Field" labelOther="Returns Fields">
+		The field this accessor arm returns.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="returnsConstant" label="Returns Constant" labelOther="Returns Constants">
+		The named constant this accessor arm returns.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="validationRule" label="Validation Rule" labelOther="Validation Rules">
+		The validation rule applied as a precondition.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="appliesToParameter" label="Applies To Parameter" labelOther="Applies To Parameters">
+		The operation parameter the precondition validates.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="appliesToType" label="Applies To Type" labelOther="Applies To Types">
+		Canonical type identifier the validation rule validates.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="failureMessage" label="Failure Message" labelOther="Failure Messages">
+		Human-readable error message when a precondition fails.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="parameterToCheck" label="Parameter To Check" labelOther="Parameters To Check">
+		The parameter checked by a prohibition precondition.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="prohibitedConstant" label="Prohibited Constant" labelOther="Prohibited Constants">
+		The constant value that the parameter is prohibited from equaling.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="whenTrue" label="When True" labelOther="When True">
+		The text value mapped when a boolean parameter is true.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="whenFalse" label="When False" labelOther="When False">
+		The text value mapped when a boolean parameter is false.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="semantics" label="Semantics" labelOther="Semantics">
+		Formal semantic description of a validation rule.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="validationPattern" label="Validation Pattern" labelOther="Validation Patterns">
+		Regular expression pattern for pattern-based validation rules.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="value" label="Value" labelOther="Values">
+		The literal value of a constant or test argument.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="operation" label="Operation" labelOther="Operations">
+		The construction operation invoked in a test case.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="accessor" label="Accessor" labelOther="Accessors">
+		The accessor whose result is asserted in an expected result.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="expectedValue" label="Expected Value" labelOther="Expected Values">
+		The expected string representation of an accessor result.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="expectedFailureContaining" label="Expected Failure Containing" labelOther="Expected Failures Containing">
+		A substring that the rejection error message is expected to contain.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="role" label="Role" labelOther="Roles">
+		The role of a test value in a comparison or inequality test case.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="conditionalOn" label="Conditional On" labelOther="Conditional On">
+		The language or platform condition that activates this interop module.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="targetLibrary" label="Target Library" labelOther="Target Libraries">
+		The external library or framework this interop module targets.
+	</TraitLocalization>
+</LocalizationBundle>

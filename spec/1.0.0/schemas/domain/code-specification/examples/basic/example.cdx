@@ -1,0 +1,108 @@
+<CodeSpecification
+	title="Color Channel Specification"
+	version=semantic-version("1.0.0")
+	license="Apache-2.0"
+	description="Defines a color channel as a named wrapper around a normalized floating-point value."
+>
+	<ProductType
+		name="NormalizedValue"
+		exported=true
+		description="A floating-point value clamped to the range [0.0, 1.0]."
+		capabilities=[$Equality, $Hashing, $Cloning, $CanonicalOrdering, $Debugging]
+	>
+		<Field name="value" valueType=urn:paperhat:common-spec#type/Float256 position=0 exported=true />
+
+		<CanonicalOrderingRule strategy=$DelegateToField delegateField=~value />
+	</ProductType>
+
+	<SumType
+		name="ChannelKind"
+		exported=true
+		description="Discriminates between named and indexed color channels."
+		capabilities=[$Equality, $Hashing, $Cloning, $CanonicalOrdering, $Debugging]
+	>
+		<Variant name="Named" position=0>
+			<Field name="label" valueType=urn:paperhat:text-spec#type/NonEmptyText position=0 />
+		</Variant>
+
+		<Variant name="Indexed" position=1>
+			<Field name="index" valueType=urn:paperhat:numeric-spec#type/NonNegativeInteger position=0 />
+		</Variant>
+
+		<CanonicalOrderingRule strategy=$VariantThenFieldComparison>
+			<WithinVariantRule forVariant=~Named>
+				<ComparisonStep compareField=~label position=0 />
+			</WithinVariantRule>
+
+			<WithinVariantRule forVariant=~Indexed>
+				<ComparisonStep compareField=~index position=0 />
+			</WithinVariantRule>
+		</CanonicalOrderingRule>
+	</SumType>
+
+	<NamedConstant
+		name="ZERO"
+		exported=true
+		valueType=urn:paperhat:common-spec#type/Float256
+		value="0.0"
+		description="The minimum normalized value."
+	/>
+
+	<NamedConstant
+		name="ONE"
+		exported=true
+		valueType=urn:paperhat:common-spec#type/Float256
+		value="1.0"
+		description="The maximum normalized value."
+	/>
+
+	<ConstructionOperation
+		name="normalized_value"
+		exported=true
+		producesType=urn:paperhat:color-spec#type/NormalizedValue
+		producesVariant=~NormalizedValue
+		description="Constructs a NormalizedValue from a raw floating-point input, rejecting values outside [0.0, 1.0]."
+	>
+		<OperationParameter name="raw" valueType=urn:paperhat:common-spec#type/Float256 position=0 mapsToField=~value />
+
+		<Precondition validationRule=~in_unit_range appliesToParameter=~raw failureMessage="Value is outside the normalized range [0.0, 1.0]." />
+	</ConstructionOperation>
+
+	<AccessorOperation
+		name="channel_label"
+		exported=true
+		returnType=urn:paperhat:text-spec#type/NonEmptyText
+		belongsToType=urn:paperhat:color-spec#type/ChannelKind
+		description="Returns the display label for any channel kind."
+	>
+		<AccessorArm forVariant=~Named returnsField=~label />
+
+		<AccessorArm forVariant=~Indexed returnsConstant=~CHANNEL_PREFIX />
+	</AccessorOperation>
+
+	<ValidationRule
+		name="in_unit_range"
+		appliesToType=urn:paperhat:common-spec#type/Float256
+		semantics="The value is greater than or equal to 0.0 and less than or equal to 1.0."
+	/>
+
+	<ConstructionTestCase testName="construct_valid_normalized_value" operation=~normalized_value>
+		<TestArgument value="0.5" position=0 />
+
+		<ExpectedAccessorResult accessor=~value expectedValue="0.5" />
+	</ConstructionTestCase>
+
+	<RejectionTestCase testName="reject_negative_normalized_value" operation=~normalized_value expectedFailureContaining="outside the normalized range">
+		<TestArgument value="-0.1" position=0 />
+	</RejectionTestCase>
+
+	<OrderingTestCase testName="normalized_value_ordering">
+		<TestValue role=$Lesser operation=~normalized_value>
+			<TestArgument value="0.25" position=0 />
+		</TestValue>
+
+		<TestValue role=$Greater operation=~normalized_value>
+			<TestArgument value="0.75" position=0 />
+		</TestValue>
+	</OrderingTestCase>
+</CodeSpecification>

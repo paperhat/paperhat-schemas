@@ -12,8 +12,8 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustNotBeEntity
-			id=paperhat:domain:series:SeriesInfo
-			name="SeriesInfo"
+			id=paperhat:domain:series:SeriesInformation
+			name="SeriesInformation"
 		>
 			<ContentRules>
 				<ForbidsContent />

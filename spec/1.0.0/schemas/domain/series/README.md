@@ -8,13 +8,13 @@ Series membership metadata for a document that belongs to an ordered, multi-part
 
 ## When to Use
 
-Use `SeriesInfo` when a document is part of a numbered series, such as a white paper program, a blog series, a multi-volume specification, or a course module sequence. SeriesInfo captures the series title, the document's position within the series, and an optional track or category.
+Use `SeriesInformation` when a document is part of a numbered series, such as a white paper program, a blog series, a multi-volume specification, or a course module sequence. SeriesInformation captures the series title, the document's position within the series, and an optional track or category.
 
 ## Concepts
 
 | Concept | Kind | Content | Description |
 |---|---|---|---|
-| SeriesInfo | Semantic | ForbidsContent | Series membership metadata. Requires a series title. |
+| SeriesInformation | Semantic | ForbidsContent | Series membership metadata. Requires a series title. |
 
 ## Traits
 
@@ -26,7 +26,7 @@ Use `SeriesInfo` when a document is part of a numbered series, such as a white p
 
 ## Design Notes
 
-- SeriesInfo is a leaf concept, not a container. It describes a document's membership in a series, not the series itself.
+- SeriesInformation is a leaf concept, not a container. It describes a document's membership in a series, not the series itself.
 - The `position` trait is optional because some series members do not have a fixed position (e.g., supplementary papers).
 - The `track` trait supports series with internal subdivisions without requiring a separate concept for each subdivision.
 - Presentation of series information (e.g., "Paper 7 of 12" or "Track A — Paper 7") is a rendering concern handled by the foundry.

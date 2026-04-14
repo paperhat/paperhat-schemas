@@ -47,7 +47,7 @@ A named phase within a planning document. Entity with stable identity. Phases co
 | product:Product | paperhat-product | Products described in the plan. |
 | release:Release | paperhat-release | Versioned release milestones. |
 | section:Section | paperhat-section | Titled content sections. |
-| series:SeriesInfo | paperhat-series | Series membership (root only). |
+| series:SeriesInformation | paperhat-series | Series membership (root only). |
 | tags:Tags | paperhat-tags | Freeform categorization. |
 | temporal:TemporalAnnotations | paperhat-temporal | Keyed temporal values. |
 | work:Work | paperhat-work | Authorship and licensing (root only, max 1). |

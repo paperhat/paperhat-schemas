@@ -3,7 +3,7 @@
 	schemaVersion="1.0.0"
 	language=language-tag("en")
 >
-	<ConceptLocalization identifier="SeriesInfo" label="Series Info" />
+	<ConceptLocalization identifier="SeriesInformation" label="Series Information" />
 
 	<TraitLocalization identifier="seriesTitle" label="Series Title" labelOther="Series Titles">
 		The name of the publication series.

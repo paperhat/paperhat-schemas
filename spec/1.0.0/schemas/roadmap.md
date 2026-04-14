@@ -245,7 +245,7 @@ Represent long-form persuasive, explanatory, and analytical publications.
 | document-metadata | LOCKED | Complete — 6 artifacts. Composes Work, Description, Summary, Tags, Audience, Person, etc. |
 | notes | LOCKED | Complete — 6 artifacts. Footnote/endnote support via keyed Notes/Note. |
 | figure | LOCKED | Complete — 6 artifacts. Figure with caption. |
-| series | LOCKED | Complete — 6 artifacts. SeriesInfo for series membership. |
+| series | LOCKED | Complete — 6 artifacts. SeriesInformation for series membership. |
 | citation | LOCKED | Complete — 6 artifacts. Bibliographic citation support. |
 
 ### Proposed Concepts — Gap Analysis
@@ -630,7 +630,7 @@ Represent books, series, releases, downloadable assets, and publication metadata
 
 | Schema | Lock State | Status |
 |---|---|---|
-| series | LOCKED | Complete — 6 artifacts. SeriesInfo (title, position, track). |
+| series | LOCKED | Complete — 6 artifacts. SeriesInformation (title, position, track). |
 | media-reference | LOCKED | Complete — 6 artifacts. Reference to a media resource by URI. |
 | media-asset | UNLOCKED | Complete — 6 artifacts. The asset itself with identity. Leaf from Stage 1 triage. |
 

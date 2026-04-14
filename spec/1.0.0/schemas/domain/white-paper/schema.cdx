@@ -41,7 +41,7 @@
 			<ChildRules>
 				<AllowsChildConcept conceptSelector="docmeta:DocumentMetadata" max=1 />
 
-				<AllowsChildConcept conceptSelector="series:SeriesInfo" max=1 />
+				<AllowsChildConcept conceptSelector="series:SeriesInformation" max=1 />
 
 				<RequiresChildConcept conceptSelector="documentstructure:Abstract" max=1 min=1 />
 

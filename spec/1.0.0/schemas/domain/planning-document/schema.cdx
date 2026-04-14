@@ -150,7 +150,7 @@
 
 				<AllowsChildConcept conceptSelector="section:Section" />
 
-				<AllowsChildConcept conceptSelector="series:SeriesInfo" />
+				<AllowsChildConcept conceptSelector="series:SeriesInformation" />
 
 				<AllowsChildConcept conceptSelector="tags:Tags" />
 

@@ -1,4 +1,4 @@
-[A full white paper with metadata, series info, sectioned body, conclusion, and endnotes. Remove parts you do not need.]
+[A full white paper with metadata, series information, sectioned body, conclusion, and endnotes. Remove parts you do not need.]
 <WhitePaper title="" coreThesis="">
 	<DocumentMetadata>
 		<Work author="" datePublished={} language=$ status=$ />
@@ -10,7 +10,7 @@
 		</Tags>
 	</DocumentMetadata>
 
-	<SeriesInfo seriesTitle="" />
+	<SeriesInformation seriesTitle="" />
 
 	<documentstructure:Abstract />
 

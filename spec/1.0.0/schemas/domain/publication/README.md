@@ -8,7 +8,7 @@ A general published work with stable identity — a book, journal, manual, repor
 
 ## When to Use
 
-Use `Publication` to model published works that need stable identity and cross-referencing but do not fit the specialized structures of WhitePaper (which requires Abstract and coreThesis) or Essay. Examples include books, technical manuals, collected volumes, magazine issues, and standards documents. DocumentMetadata, SeriesInfo, Identifier, MediaAsset, and other children are wired by the composing schema.
+Use `Publication` to model published works that need stable identity and cross-referencing but do not fit the specialized structures of WhitePaper (which requires Abstract and coreThesis) or Essay. Examples include books, technical manuals, collected volumes, magazine issues, and standards documents. DocumentMetadata, SeriesInformation, Identifier, MediaAsset, and other children are wired by the composing schema.
 
 ## Traits
 
@@ -26,7 +26,7 @@ Use `Publication` to model published works that need stable identity and cross-r
 
 - `$MustBeEntity` because publications have stable identity and are cross-referenced from citations, series, releases, and documentation.
 - WhitePaper and Essay are specialized publication types that prescribe specific internal structure. Publication is the general case with no required structural prescriptions.
-- Children (DocumentMetadata, SeriesInfo, Narrative, Notes, Identifier, MediaAsset, Description, Tags, Audience) are wired by composing schemas, not imported here.
+- Children (DocumentMetadata, SeriesInformation, Narrative, Notes, Identifier, MediaAsset, Description, Tags, Audience) are wired by composing schemas, not imported here.
 - Pure leaf with no imports, keeping the dependency graph minimal.
 
 ---

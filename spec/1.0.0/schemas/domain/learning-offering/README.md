@@ -29,7 +29,7 @@ Use `LearningOffering` to model training offerings that appear in catalogs, prop
 - `$MustBeEntity` because offerings have stable identity and are cross-referenced from contracts, events, and documentation.
 - `product` is a reference trait (`isReferenceTrait=true`) pointing to a Product entity. Same pattern as Tier.product and Release.product.
 - This is the descriptive shell for Praxis. Praxis owns the deeper learning engine (modules, objectives, assessments, competency maps). Lexis owns the catalog entity.
-- Children (Description, Duration, Audience, Offer, Tags, SeriesInfo) are wired by composing schemas, not imported here.
+- Children (Description, Duration, Audience, Offer, Tags, SeriesInformation) are wired by composing schemas, not imported here.
 - Pure leaf with no imports, keeping the dependency graph minimal.
 
 ---

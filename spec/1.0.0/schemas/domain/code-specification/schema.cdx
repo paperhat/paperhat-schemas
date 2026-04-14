@@ -750,7 +750,6 @@
 	</ConceptDefinitions>
 
 	<TraitDefinitions>
-
 		<TraitDefinition
 			defaultValueType=$LookupToken
 			id=paperhat:domain:codeSpecification:trait:key
@@ -1089,11 +1088,9 @@
 			name="targetLibrary"
 			priority=$Primary
 		/>
-
 	</TraitDefinitions>
 
 	<EnumeratedValueSets>
-
 		<EnumeratedValueSet
 			id=paperhat:domain:codeSpecification:set:Capability
 			name="Capability"
@@ -1132,11 +1129,9 @@
 
 			<Member description="The greater operand in an ordering test." value="Greater" />
 		</EnumeratedValueSet>
-
 	</EnumeratedValueSets>
 
 	<ConstraintDefinitions>
-
 		<ConstraintDefinition
 			id=paperhat:domain:codeSpecification:variant-fields-or-wraps
 			title="A variant carries either named fields or wraps a single type, not both"
@@ -1198,7 +1193,5 @@
 				</AnyOf>
 			</Rule>
 		</ConstraintDefinition>
-
 	</ConstraintDefinitions>
-
 </Schema>

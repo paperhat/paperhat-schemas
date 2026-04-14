@@ -37,6 +37,8 @@
 				<RequiresTrait name="license" />
 
 				<AllowsTrait name="description" />
+
+				<AllowsTrait name="longDescription" />
 			</TraitRules>
 
 			<ChildRules>
@@ -63,6 +65,8 @@
 				<AllowsChildConcept conceptSelector="OrderingTestCase" />
 
 				<AllowsChildConcept conceptSelector="InteropModule" />
+
+				<AllowsChildConcept conceptSelector="ModuleDescription" />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
@@ -89,6 +93,8 @@
 				<RequiresTrait name="exported" />
 
 				<AllowsTrait name="description" />
+
+				<AllowsTrait name="longDescription" />
 
 				<AllowsTrait name="specSection" />
 
@@ -123,6 +129,8 @@
 				<RequiresTrait name="exported" />
 
 				<AllowsTrait name="description" />
+
+				<AllowsTrait name="longDescription" />
 
 				<AllowsTrait name="specSection" />
 
@@ -159,6 +167,8 @@
 
 				<AllowsTrait name="description" />
 
+				<AllowsTrait name="longDescription" />
+
 				<AllowsTrait name="wrapsType" />
 			</TraitRules>
 
@@ -191,6 +201,8 @@
 				<AllowsTrait name="position" />
 
 				<AllowsTrait name="description" />
+
+				<AllowsTrait name="longDescription" />
 
 				<AllowsTrait name="elementType" />
 			</TraitRules>
@@ -325,6 +337,8 @@
 				<RequiresTrait name="producesVariant" />
 
 				<AllowsTrait name="description" />
+
+				<AllowsTrait name="longDescription" />
 
 				<AllowsTrait name="specRequirement" />
 			</TraitRules>
@@ -471,6 +485,8 @@
 
 				<AllowsTrait name="description" />
 
+				<AllowsTrait name="longDescription" />
+
 				<AllowsTrait name="specRequirement" />
 			</TraitRules>
 
@@ -504,6 +520,8 @@
 				<RequiresTrait name="accessesFieldNamed" />
 
 				<AllowsTrait name="description" />
+
+				<AllowsTrait name="longDescription" />
 
 				<AllowsTrait name="specRequirement" />
 			</TraitRules>
@@ -747,6 +765,28 @@
 
 		[END: Interop]
 
+		[GROUP: Module Descriptions]
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Describes a source module in the generated code. The foundry uses module descriptions to generate module-level documentation comments."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:ModuleDescription
+			name="ModuleDescription"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="description" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		[END: Module Descriptions]
+
 	</ConceptDefinitions>
 
 	<TraitDefinitions>
@@ -782,6 +822,13 @@
 			defaultValueType=$Text
 			id=paperhat:domain:codeSpecification:trait:description
 			name="description"
+			priority=$Secondary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:longDescription
+			name="longDescription"
 			priority=$Secondary
 		/>
 

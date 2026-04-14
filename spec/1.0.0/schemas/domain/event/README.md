@@ -27,7 +27,7 @@ Use `Event` to represent any named occurrence with a time dimension: scheduled h
 | desc:Description | `paperhat:domain:description` | Free-text description of the event. |
 | loc:Location | `paperhat:domain:location` | Venue name, city, region, country. |
 | geo:GeographicLocation | `paperhat:domain:geographic-location` | Precise coordinates of the venue. |
-| contact:ContactPoint | `paperhat:domain:contact-point` | Organizer or box-office contact info. |
+| contact:ContactPoint | `paperhat:domain:contact-point` | Organizer or box-office contact information. |
 | ident:Identifier | `paperhat:domain:identifier` | Event IDs, ticket barcodes, registration codes. |
 | offer:Offer | `paperhat:domain:offer` | Ticket pricing, availability, and conditions. |
 | dur:Duration | `paperhat:domain:duration` | Length of the event. |

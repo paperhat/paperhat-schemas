@@ -13,13 +13,13 @@ This document is **Normative**.
 
 ## 1. Purpose
 
-This spec exists to define:
+This specification exists to define:
 
 - the canonical operator inventory
 - per-operator meaning, domains, and error behavior
 - operator families organized by domain
 
-This spec does not define:
+This specification does not define:
 
 - the evaluation model (see §7)
 
@@ -27,7 +27,7 @@ This spec does not define:
 
 ## 2. General Operator Contract (Normative)
 
-For every operator defined in this vocabulary, the spec MUST include:
+For every operator defined in this vocabulary, the specification MUST include:
 
 - **Name** — stable, human-readable, no abbreviations
 - **Arity** — fixed or variadic, with minimum

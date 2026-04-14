@@ -68,17 +68,24 @@ Authoritative policy file:
 
 ## Naming
 
-Repository package names currently use the `paperhat-` prefix for reusable Paperhat-owned schema packages.
+Paperhat-authored schema packages use the `paperhat-` prefix. This applies to domain, system, view, composition, and design families.
 
 Examples:
 
-- `paperhat-recipe`
-- `paperhat-food`
-- `paperhat-person`
-- `paperhat-location`
-- `paperhat-tips`
+- `paperhat-recipe` (domain)
+- `paperhat-person` (domain)
+- `paperhat-localization` (system)
+- `paperhat-adaptive-plan` (design)
+- `paperhat-composition` (composition)
 
-Reference vocabulary packages keep their existing neutral names.
+Behavior packages use a `behavior-` prefix that identifies the family directly.
+
+Examples:
+
+- `behavior-expression-schema`
+- `behavior-shape-schema`
+
+Reference vocabulary packages keep neutral names derived from their source standards.
 
 Examples:
 

@@ -81,7 +81,7 @@ Use this package to author durable semantic grouping and role-governance state f
 - This package keeps retained color values as `$Color` substrate values. It does not redefine color parsing, canonicalization, or gamut semantics.
 - Policy objects are intentionally absent. Accessibility policy, proof policy, repair policy, and other rule-governing objects belong in `paperhat-color-policy`.
 - `Token` carries a direct retained color value rather than a palette-member reference. This keeps publication-facing token semantics explicit and avoids making palettes the hidden authority for token color assignment.
-- `Token.semanticRole` is optional so authored token inventories can admit unresolved or intentionally role-free tokens while still enforcing exact target and resolution behavior whenever a role reference is present.
+- `Token.semanticRole` is optional. Authored token inventories admit unresolved or intentionally role-free tokens while still enforcing exact target and resolution behavior when a role reference is present.
 - `SemanticRole.parentRole` gives the first version a role-graph hook without forcing a separate role-graph package.
 
 ---

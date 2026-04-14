@@ -66,7 +66,7 @@ Each concept also carries (optionally):
 ## Design Notes
 
 - These concepts exist because a raw temporal trait value has no display or
-  localisation context. The wrapper concept adds `text`, `format`, and
+  localization context. The wrapper concept adds `text`, `format`, and
   `language`.
 - Concept names match the canonical Paperhat Temporal type names.
 - `HourMinute` and `Time` are intentionally distinct because temporal

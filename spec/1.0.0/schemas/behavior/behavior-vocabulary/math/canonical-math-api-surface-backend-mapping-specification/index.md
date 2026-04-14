@@ -18,7 +18,7 @@ Legend:
 - **Emulate**: implement using the normative formula here.
 - **Library**: not in standard library; requires third-party or platform framework.
 
-This spec records the core set that’s broadly “Math-like”. Statistics / Linear Algebra / Calculus mappings follow afterward.
+This specification records the core set that is broadly “Math-like”. Statistics, linear algebra, and calculus mappings follow afterward.
 
 ---
 

@@ -39,6 +39,8 @@
 				<AllowsTrait name="description" />
 
 				<AllowsTrait name="longDescription" />
+
+				<AllowsTrait name="diagnosticType" />
 			</TraitRules>
 
 			<ChildRules>
@@ -107,6 +109,8 @@
 				<RequiresChildConcept conceptSelector="Field" min=1 />
 
 				<AllowsChildConcept conceptSelector="CanonicalOrderingRule" max=1 />
+
+				<AllowsChildConcept conceptSelector="TypeParameter" />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
@@ -143,6 +147,8 @@
 				<RequiresChildConcept conceptSelector="Variant" min=1 />
 
 				<AllowsChildConcept conceptSelector="CanonicalOrderingRule" max=1 />
+
+				<AllowsChildConcept conceptSelector="TypeParameter" />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
@@ -198,6 +204,8 @@
 
 				<AllowsTrait name="exported" />
 
+				<AllowsTrait name="optional" />
+
 				<AllowsTrait name="position" />
 
 				<AllowsTrait name="description" />
@@ -205,6 +213,27 @@
 				<AllowsTrait name="longDescription" />
 
 				<AllowsTrait name="elementType" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A type parameter on a generic product type or sum type. The foundry generates language-appropriate type parameterization with the declared capability constraints as trait bounds."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:TypeParameter
+			key=~typeParameter
+			name="TypeParameter"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<AllowsTrait name="capabilities" />
+
+				<AllowsTrait name="description" />
 			</TraitRules>
 		</ConceptDefinition>
 
@@ -334,7 +363,11 @@
 
 				<RequiresTrait name="producesType" />
 
-				<RequiresTrait name="producesVariant" />
+				<AllowsTrait name="producesVariant" />
+
+				<AllowsTrait name="fallible" />
+
+				<AllowsTrait name="diagnosticVariant" />
 
 				<AllowsTrait name="description" />
 
@@ -945,6 +978,34 @@
 			defaultValueType=$LookupToken
 			id=paperhat:domain:codeSpecification:trait:producesVariant
 			name="producesVariant"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Boolean
+			id=paperhat:domain:codeSpecification:trait:fallible
+			name="fallible"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:diagnosticVariant
+			name="diagnosticVariant"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:codeSpecification:trait:diagnosticType
+			name="diagnosticType"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Boolean
+			id=paperhat:domain:codeSpecification:trait:optional
+			name="optional"
 			priority=$Primary
 		/>
 

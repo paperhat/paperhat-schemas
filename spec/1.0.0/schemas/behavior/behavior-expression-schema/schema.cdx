@@ -5571,6 +5571,13 @@
 	<TraitDefinitions>
 		<TraitDefinition
 			defaultValueType=$Text
+			id=paperhat:behavior:expression:trait:value
+			name="value"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
 			id=paperhat:behavior:expression:trait:name
 			name="name"
 			priority=$Primary

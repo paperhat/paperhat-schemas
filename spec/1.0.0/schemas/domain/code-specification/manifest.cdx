@@ -12,7 +12,7 @@
 >
 	<PackageDependency
 		packageName="paperhat-behavior-expression"
-		closureHash="ae5a5b589e3acecc8eaf6f294b96d1323937e20245b5474281456dbefa3cbdcf"
+		closureHash="8a0a517891a706ca4b990ee7f3ad51b0bab33afd7c57e77c69083c20250482af"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

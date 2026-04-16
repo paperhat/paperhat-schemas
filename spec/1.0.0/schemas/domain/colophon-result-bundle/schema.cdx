@@ -1,0 +1,181 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Derived Colophon workflow result documents. Defines durable rhythm audit results, measure audit results, accessibility audit results, emphasis consistency audit results, and provenance traces as closed snapshots."
+	id=paperhat:domain:colophon-result-bundle
+	namespace="colophonresultbundle"
+	title="Colophon Result Bundle Schema"
+	version="1.0.0"
+	versionScheme=$SemanticVersion
+>
+	<ConceptDefinitions>
+		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustBeEntity id=paperhat:domain:colophon-result-bundle:RhythmAuditResult name="RhythmAuditResult">
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="auditIdentifier" />
+				<RequiresTrait name="passed" />
+				<RequiresTrait name="totalElements" />
+				<RequiresTrait name="alignedElements" />
+				<AllowsTrait name="auditDate" />
+				<AllowsTrait name="baselineGridUnit" />
+				<AllowsTrait name="auditResultStatus" />
+			</TraitRules>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="RhythmViolation" />
+				<RequiresChildConcept conceptSelector="ProvenanceTraceLocator" min=1 />
+			</ChildRules>
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition conceptKind=$Structural entityEligibility=$MustNotBeEntity id=paperhat:domain:colophon-result-bundle:RhythmViolation name="RhythmViolation">
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="role" />
+				<RequiresTrait name="declaredLeading" />
+				<RequiresTrait name="nearestGridLine" />
+				<RequiresTrait name="violationDescription" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustBeEntity id=paperhat:domain:colophon-result-bundle:MeasureAuditResult name="MeasureAuditResult">
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="auditIdentifier" />
+				<RequiresTrait name="passed" />
+				<RequiresTrait name="totalElements" />
+				<RequiresTrait name="compliantElements" />
+				<AllowsTrait name="auditDate" />
+				<AllowsTrait name="minimumMeasureBound" />
+				<AllowsTrait name="maximumMeasureBound" />
+				<AllowsTrait name="auditResultStatus" />
+			</TraitRules>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="MeasureViolation" />
+				<RequiresChildConcept conceptSelector="ProvenanceTraceLocator" min=1 />
+			</ChildRules>
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition conceptKind=$Structural entityEligibility=$MustNotBeEntity id=paperhat:domain:colophon-result-bundle:MeasureViolation name="MeasureViolation">
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="role" />
+				<RequiresTrait name="declaredMeasure" />
+				<RequiresTrait name="nearestBound" />
+				<RequiresTrait name="violationDescription" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustBeEntity id=paperhat:domain:colophon-result-bundle:AccessibilityAuditResult name="AccessibilityAuditResult">
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="auditIdentifier" />
+				<RequiresTrait name="passed" />
+				<RequiresTrait name="totalChecks" />
+				<RequiresTrait name="passedChecks" />
+				<AllowsTrait name="auditDate" />
+				<AllowsTrait name="auditResultStatus" />
+			</TraitRules>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="AccessibilityViolation" />
+				<RequiresChildConcept conceptSelector="ProvenanceTraceLocator" min=1 />
+			</ChildRules>
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition conceptKind=$Structural entityEligibility=$MustNotBeEntity id=paperhat:domain:colophon-result-bundle:AccessibilityViolation name="AccessibilityViolation">
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="checkKind" />
+				<RequiresTrait name="role" />
+				<RequiresTrait name="declaredValue" />
+				<RequiresTrait name="requiredValue" />
+				<RequiresTrait name="violationDescription" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition conceptKind=$Semantic entityEligibility=$MustBeEntity id=paperhat:domain:colophon-result-bundle:EmphasisConsistencyAuditResult name="EmphasisConsistencyAuditResult">
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="auditIdentifier" />
+				<RequiresTrait name="passed" />
+				<RequiresTrait name="totalRules" />
+				<RequiresTrait name="distinguishableRules" />
+				<AllowsTrait name="auditDate" />
+				<AllowsTrait name="auditResultStatus" />
+			</TraitRules>
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="EmphasisViolation" />
+				<RequiresChildConcept conceptSelector="ProvenanceTraceLocator" min=1 />
+			</ChildRules>
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition conceptKind=$Structural entityEligibility=$MustNotBeEntity id=paperhat:domain:colophon-result-bundle:EmphasisViolation name="EmphasisViolation">
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="firstEmphasisLevel" />
+				<RequiresTrait name="secondEmphasisLevel" />
+				<RequiresTrait name="violationDescription" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition conceptKind=$Structural entityEligibility=$MustNotBeEntity id=paperhat:domain:colophon-result-bundle:ProvenanceTraceLocator name="ProvenanceTraceLocator">
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+			<TraitRules>
+				<RequiresTrait name="traceLocator" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:colophon-result-bundle:trait:auditIdentifier name="auditIdentifier" />
+		<TraitDefinition defaultValueType=$Boolean id=paperhat:domain:colophon-result-bundle:trait:passed name="passed" />
+		<TraitDefinition defaultValueType=$NonNegativeInteger id=paperhat:domain:colophon-result-bundle:trait:totalElements name="totalElements" />
+		<TraitDefinition defaultValueType=$NonNegativeInteger id=paperhat:domain:colophon-result-bundle:trait:alignedElements name="alignedElements" />
+		<TraitDefinition defaultValueType=$Date id=paperhat:domain:colophon-result-bundle:trait:auditDate name="auditDate" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:colophon-result-bundle:trait:baselineGridUnit name="baselineGridUnit" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:colophon-result-bundle:trait:auditResultStatus name="auditResultStatus" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:colophon-result-bundle:trait:role name="role" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:colophon-result-bundle:trait:declaredLeading name="declaredLeading" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:colophon-result-bundle:trait:nearestGridLine name="nearestGridLine" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:colophon-result-bundle:trait:violationDescription name="violationDescription" />
+		<TraitDefinition defaultValueType=$NonNegativeInteger id=paperhat:domain:colophon-result-bundle:trait:compliantElements name="compliantElements" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:colophon-result-bundle:trait:minimumMeasureBound name="minimumMeasureBound" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:colophon-result-bundle:trait:maximumMeasureBound name="maximumMeasureBound" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:colophon-result-bundle:trait:declaredMeasure name="declaredMeasure" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:colophon-result-bundle:trait:nearestBound name="nearestBound" />
+		<TraitDefinition defaultValueType=$NonNegativeInteger id=paperhat:domain:colophon-result-bundle:trait:totalChecks name="totalChecks" />
+		<TraitDefinition defaultValueType=$NonNegativeInteger id=paperhat:domain:colophon-result-bundle:trait:passedChecks name="passedChecks" />
+		<TraitDefinition defaultValueType=$EnumeratedToken id=paperhat:domain:colophon-result-bundle:trait:checkKind name="checkKind">
+			<AllowedValues>
+				<ValueIsOneOf values=[$MinimumSize, $MinimumLeading, $MinimumMeasure, $MaximumMeasure, $ScaleDifferentiation] />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:colophon-result-bundle:trait:declaredValue name="declaredValue" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:colophon-result-bundle:trait:requiredValue name="requiredValue" />
+		<TraitDefinition defaultValueType=$NonNegativeInteger id=paperhat:domain:colophon-result-bundle:trait:totalRules name="totalRules" />
+		<TraitDefinition defaultValueType=$NonNegativeInteger id=paperhat:domain:colophon-result-bundle:trait:distinguishableRules name="distinguishableRules" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:colophon-result-bundle:trait:firstEmphasisLevel name="firstEmphasisLevel" />
+		<TraitDefinition defaultValueType=$Text id=paperhat:domain:colophon-result-bundle:trait:secondEmphasisLevel name="secondEmphasisLevel" />
+		<TraitDefinition defaultValueType=$Iri id=paperhat:domain:colophon-result-bundle:trait:traceLocator name="traceLocator" />
+	</TraitDefinitions>
+</Schema>

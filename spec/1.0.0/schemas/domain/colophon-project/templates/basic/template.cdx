@@ -1,0 +1,95 @@
+[A basic Colophon project. Replace the example text and identifiers with project-specific values. ReviewTargetReference target accepts Colophon entities and imported typography-governance and typography-policy entities.]
+<ColophonProject
+	colophonProjectStatus=$Draft
+	id=urn:paperhat:template:colophon-project:example
+	title="Example Colophon Project"
+>
+	<description:Description bodyMode=$content>
+		Describe the Colophon project here.
+	</description:Description>
+
+	<project:Project
+		id=urn:paperhat:template:project:example
+		name="Example Colophon Project"
+		projectKind=$DesignSystem
+		projectStatus=$Draft
+		repositoryUrl=url("https://example.com/repository")
+	/>
+
+	<SourceReference
+		id=urn:paperhat:template:source-reference:example
+		key=~sourceReference
+		label="Example Source"
+		sourceKind=$TypeFoundry
+		sourceLocator=https://example.com/source
+		sourceStatus=$Active
+	>
+		<description:Description bodyMode=$content>
+			Describe the upstream source here.
+		</description:Description>
+	</SourceReference>
+
+	<typographygovernance:TypographySystem
+		id=urn:paperhat:template:typography-system:example
+		name="Example Typography System"
+		typographySystemStatus=$Active
+	>
+		<typographygovernance:FontFamily
+			fallbackStack="sans-serif"
+			fontFamilyName="Example Sans"
+			fontFamilyStatus=$Active
+			id=urn:paperhat:template:font-family:example
+			key=~exampleSans
+			label="Example Sans"
+		/>
+
+		<typographygovernance:FontRoleBinding
+			boundFontFamily=urn:paperhat:template:font-family:example
+			fontRoleBindingStatus=$Active
+			id=urn:paperhat:template:font-role-binding:body
+			key=~bodyBinding
+			label="Body Text Binding"
+			typographicRole=$Body
+		/>
+
+		<typographygovernance:TypeScaleDefinition
+			id=urn:paperhat:template:type-scale-definition:example
+			key=~exampleScale
+			label="Example Scale"
+			scaleRatio=1.25
+			typeScaleDefinitionStatus=$Active
+		/>
+	</typographygovernance:TypographySystem>
+
+	<typographypolicy:TypographyAccessibilityPolicy
+		id=urn:paperhat:template:typography-accessibility-policy:example
+		name="Example Typography Accessibility Policy"
+		typographyAccessibilityPolicyStatus=$Active
+	/>
+
+	<AccessibilityPolicyBinding
+		id=urn:paperhat:template:accessibility-policy-binding:example
+		key=~accessibilityBinding
+		label="Example Accessibility Binding"
+	>
+		<AccessibilityPolicyReference target=urn:paperhat:template:typography-accessibility-policy:example />
+
+		<GovernedScopeReference target=urn:paperhat:template:typography-system:example />
+	</AccessibilityPolicyBinding>
+
+	<GovernancePack
+		governancePackStatus=$Active
+		id=urn:paperhat:template:governance-pack:example
+		name="Example Governance Pack"
+	>
+		<PublicationScope
+			id=urn:paperhat:template:publication-scope:example
+			key=~publicationScope
+			label="Example Publication Scope"
+			publicationIntent=$Css
+			publicationScopeStatus=$Active
+		>
+			<GovernedScopeReference target=urn:paperhat:template:typography-system:example />
+		</PublicationScope>
+	</GovernancePack>
+</ColophonProject>

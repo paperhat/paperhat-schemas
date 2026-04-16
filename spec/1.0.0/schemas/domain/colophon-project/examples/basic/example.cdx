@@ -1,0 +1,140 @@
+<ColophonProject
+	colophonProjectStatus=$Active
+	id=urn:paperhat:example:colophon-project:paperhat-brand-typography
+	title="Paperhat Brand Typography"
+>
+	<description:Description bodyMode=$content>
+		Primary Colophon project authority for Paperhat brand typography governance, type scale publication, and accessibility review.
+	</description:Description>
+
+	<project:Project
+		id=urn:paperhat:example:project:paperhat-brand-typography
+		name="Paperhat Brand Typography"
+		projectKind=$DesignSystem
+		projectStatus=$Active
+		repositoryUrl=url("https://github.com/paperhat/brand-typography")
+	/>
+
+	<SourceReference
+		id=urn:paperhat:example:source-reference:google-fonts
+		key=~googleFonts
+		label="Google Fonts"
+		sourceKind=$TypeFoundry
+		sourceLocator=https://fonts.google.com
+		sourceStatus=$Active
+	>
+		<description:Description bodyMode=$content>
+			Upstream type foundry source for open-source typefaces used in the Paperhat brand system.
+		</description:Description>
+	</SourceReference>
+
+	<typographygovernance:TypographySystem
+		id=urn:paperhat:example:typography-system:paperhat-core
+		name="Paperhat Core Typography System"
+		typographySystemStatus=$Active
+	>
+		<description:Description bodyMode=$content>
+			The primary governed typography system for Paperhat products and publications.
+		</description:Description>
+
+		<typographygovernance:FontFamily
+			fallbackStack="Arial, Helvetica, sans-serif"
+			fontFamilyName="Inter"
+			fontFamilyStatus=$Active
+			id=urn:paperhat:example:font-family:inter
+			key=~inter
+			label="Inter"
+		/>
+
+		<typographygovernance:FontFamily
+			fallbackStack="Georgia, Times New Roman, serif"
+			fontFamilyName="Lora"
+			fontFamilyStatus=$Active
+			id=urn:paperhat:example:font-family:lora
+			key=~lora
+			label="Lora"
+		/>
+
+		<typographygovernance:FontRoleBinding
+			boundFontFamily=urn:paperhat:example:font-family:inter
+			fontRoleBindingStatus=$Active
+			id=urn:paperhat:example:font-role-binding:body
+			key=~bodyBinding
+			label="Body Text Binding"
+			typographicRole=$Body
+		/>
+
+		<typographygovernance:FontRoleBinding
+			boundFontFamily=urn:paperhat:example:font-family:lora
+			fontRoleBindingStatus=$Active
+			id=urn:paperhat:example:font-role-binding:heading
+			key=~headingBinding
+			label="Heading Binding"
+			typographicRole=$Heading
+		/>
+
+		<typographygovernance:TypeScaleDefinition
+			id=urn:paperhat:example:type-scale-definition:major-third
+			key=~majorThird
+			label="Major Third Scale"
+			scaleRatio=1.25
+			typeScaleDefinitionStatus=$Active
+		/>
+	</typographygovernance:TypographySystem>
+
+	<typographypolicy:SpacingPolicy
+		id=urn:paperhat:example:spacing-policy:core
+		name="Core Spacing Policy"
+		spacingPolicyStatus=$Active
+	/>
+
+	<typographypolicy:ParagraphPolicy
+		id=urn:paperhat:example:paragraph-policy:core
+		name="Core Paragraph Policy"
+		paragraphPolicyStatus=$Active
+	/>
+
+	<typographypolicy:TypographyAccessibilityPolicy
+		id=urn:paperhat:example:typography-accessibility-policy:core
+		name="Core Typography Accessibility Policy"
+		typographyAccessibilityPolicyStatus=$Active
+	/>
+
+	<AccessibilityPolicyBinding
+		id=urn:paperhat:example:accessibility-policy-binding:core-typography
+		key=~coreTypographyAccessibilityBinding
+		label="Core Typography Accessibility Binding"
+	>
+		<AccessibilityPolicyReference target=urn:paperhat:example:typography-accessibility-policy:core />
+
+		<GovernedScopeReference target=urn:paperhat:example:typography-system:paperhat-core />
+	</AccessibilityPolicyBinding>
+
+	<GovernancePack
+		governancePackStatus=$Active
+		id=urn:paperhat:example:governance-pack:typography-core
+		name="Typography Core Governance"
+	>
+		<PublicationScope
+			id=urn:paperhat:example:publication-scope:css-typography
+			key=~cssTypographyScope
+			label="CSS Typography Publication Scope"
+			publicationIntent=$Css
+			publicationScopeStatus=$Active
+		>
+			<GovernedScopeReference target=urn:paperhat:example:typography-system:paperhat-core />
+		</PublicationScope>
+
+		<ReviewDisposition
+			approvalState=$Approved
+			dispositionKind=$AccessibilityReview
+			id=urn:paperhat:example:review-disposition:core-typography-accessibility
+			key=~coreTypographyAccessibilityReview
+			label="Core Typography Accessibility Review"
+			reviewDate=date(1 april 2026)
+			reviewDispositionStatus=$Recorded
+		>
+			<ReviewTargetReference target=urn:paperhat:example:typography-accessibility-policy:core />
+		</ReviewDisposition>
+	</GovernancePack>
+</ColophonProject>

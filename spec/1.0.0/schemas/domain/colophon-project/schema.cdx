@@ -1,0 +1,599 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Root Colophon project-document composer. Defines ColophonProject assembly, project-scoped source references, durable policy bindings, governance packs, review dispositions, and publication scopes above typography-governance and typography-policy packages."
+	id=paperhat:domain:colophon-project
+	namespace="colophonproject"
+	title="Colophon Project Schema"
+	version="1.0.0"
+	versionScheme=$SemanticVersion
+>
+	<SchemaImports>
+		<SchemaImport namespace="typographygovernance" reference=urn:cdx:sha256:PENDING-HASH />
+
+		<SchemaImport namespace="typographypolicy" reference=urn:cdx:sha256:PENDING-HASH />
+
+		<SchemaImport namespace="description" reference=urn:cdx:sha256:aedb0f8af35a38f088a3e99cb0297df7c0a252cdb58cf3072a2d20103e23c3e8 />
+
+		<SchemaImport namespace="documentMetadata" reference=urn:cdx:sha256:a44cca2beec670d2c38b4b429c67aefc5d5b556bbb88758a4928f13dca0cfdf0 />
+
+		<SchemaImport namespace="project" reference=urn:cdx:sha256:1ed1947584fb85d447dc0ff8255564fba667269b928f682ee54349581239211c />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			defaultLabelSource="title"
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:colophon-project:ColophonProject
+			name="ColophonProject"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="title" />
+
+				<AllowsTrait name="colophonProjectStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="description:Description" max=1 />
+
+				<AllowsChildConcept conceptSelector="documentMetadata:DocumentMetadata" max=1 />
+
+				<AllowsChildConcept conceptSelector="project:Project" max=1 />
+
+				<RequiresChildConcept conceptSelector="typographygovernance:TypographySystem" min=1 />
+
+				<AllowsChildConcept conceptSelector="typographypolicy:SpacingPolicy" />
+
+				<AllowsChildConcept conceptSelector="typographypolicy:ParagraphPolicy" />
+
+				<AllowsChildConcept conceptSelector="typographypolicy:TypographyAccessibilityPolicy" />
+
+				<AllowsChildConcept conceptSelector="SourceReference" />
+
+				<AllowsChildConcept conceptSelector="AccessibilityPolicyBinding" />
+
+				<AllowsChildConcept conceptSelector="GovernancePack" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:colophon-project:GovernancePack
+			name="GovernancePack"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<AllowsTrait name="governancePackStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="description:Description" max=1 />
+
+				<RequiresChildConcept conceptSelector="PublicationScope" min=1 />
+
+				<AllowsChildConcept conceptSelector="ReviewDisposition" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:colophon-project:SourceReference
+			name="SourceReference"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="label" />
+
+				<RequiresTrait name="sourceKind" />
+
+				<RequiresTrait name="sourceLocator" />
+
+				<AllowsTrait name="sourceStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="description:Description" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:colophon-project:AccessibilityPolicyBinding
+			name="AccessibilityPolicyBinding"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="label" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="description:Description" max=1 />
+
+				<RequiresChildConcept conceptSelector="AccessibilityPolicyReference" max=1 min=1 />
+
+				<RequiresChildConcept conceptSelector="GovernedScopeReference" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:colophon-project:ReviewDisposition
+			name="ReviewDisposition"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="label" />
+
+				<RequiresTrait name="dispositionKind" />
+
+				<RequiresTrait name="approvalState" />
+
+				<AllowsTrait name="reviewDate" />
+
+				<AllowsTrait name="reviewDispositionStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="description:Description" max=1 />
+
+				<RequiresChildConcept conceptSelector="ReviewTargetReference" max=1 min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:colophon-project:PublicationScope
+			name="PublicationScope"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="label" />
+
+				<RequiresTrait name="publicationIntent" />
+
+				<AllowsTrait name="targetMedium" />
+
+				<AllowsTrait name="publicationScopeStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="description:Description" max=1 />
+
+				<RequiresChildConcept conceptSelector="GovernedScopeReference" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:colophon-project:AccessibilityPolicyReference
+			name="AccessibilityPolicyReference"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="target" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:colophon-project:GovernedScopeReference
+			name="GovernedScopeReference"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="target" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:colophon-project:ReviewTargetReference
+			name="ReviewTargetReference"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="target" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:colophon-project:trait:title
+			name="title"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:colophon-project:trait:colophonProjectStatus
+			name="colophonProjectStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:colophon-project:trait:name
+			name="name"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:colophon-project:trait:governancePackStatus
+			name="governancePackStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:colophon-project:trait:key
+			name="key"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:colophon-project:trait:label
+			name="label"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:colophon-project:trait:sourceKind
+			name="sourceKind"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$DesignSource, $TypeFoundry, $BrandSource] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:colophon-project:trait:sourceLocator
+			name="sourceLocator"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:colophon-project:trait:sourceStatus
+			name="sourceStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:colophon-project:trait:dispositionKind
+			name="dispositionKind"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:colophon-project:trait:approvalState
+			name="approvalState"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Date
+			id=paperhat:domain:colophon-project:trait:reviewDate
+			name="reviewDate"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:colophon-project:trait:reviewDispositionStatus
+			name="reviewDispositionStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:colophon-project:trait:publicationIntent
+			name="publicationIntent"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Css, $ApplicationTokens, $PrintStyleGuide, $Report, $Governance] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:colophon-project:trait:targetMedium
+			name="targetMedium"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Web, $Print, $Presentation, $Document, $Ebook] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:colophon-project:trait:publicationScopeStatus
+			name="publicationScopeStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:colophon-project:trait:target
+			isReferenceTrait=true
+			name="target"
+		/>
+	</TraitDefinitions>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=paperhat:domain:colophon-project:local-reference-trait-allowed-accessibility-policy
+			title="AccessibilityPolicyReference allows only target as a reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AccessibilityPolicyReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:colophon-project:local-reference-trait-allowed-governed-scope
+			title="GovernedScopeReference allows only target as a reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="GovernedScopeReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:colophon-project:local-reference-trait-allowed-review-target
+			title="ReviewTargetReference allows only target as a reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ReviewTargetReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTraitAllowed traitName="target" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:colophon-project:local-reference-singleton-accessibility-policy
+			title="AccessibilityPolicyReference must declare at most one reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AccessibilityPolicyReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceSingleton />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:colophon-project:local-reference-singleton-governed-scope
+			title="GovernedScopeReference must declare at most one reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="GovernedScopeReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceSingleton />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:colophon-project:local-reference-singleton-review-target
+			title="ReviewTargetReference must declare at most one reference trait"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ReviewTargetReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceSingleton />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:colophon-project:local-reference-must-resolve-accessibility-policy
+			title="AccessibilityPolicyReference must resolve"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AccessibilityPolicyReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceMustResolve />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:colophon-project:local-reference-must-resolve-governed-scope
+			title="GovernedScopeReference must resolve"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="GovernedScopeReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceMustResolve />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:colophon-project:local-reference-must-resolve-review-target
+			title="ReviewTargetReference must resolve"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ReviewTargetReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceMustResolve />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:colophon-project:accessibility-policy-reference-target-type
+			title="AccessibilityPolicyReference target must be TypographyAccessibilityPolicy"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AccessibilityPolicyReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="typographypolicy:TypographyAccessibilityPolicy" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:colophon-project:governed-scope-reference-target-type
+			title="GovernedScopeReference target must be a Colophon governed scope"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="GovernedScopeReference" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="ColophonProject" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="typographygovernance:TypographySystem" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="typographygovernance:FontFamily" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="typographygovernance:FontRoleBinding" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="typographygovernance:TypeScaleDefinition" />
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:colophon-project:review-target-reference-target-type
+			title="ReviewTargetReference target must be a Colophon reviewable entity"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ReviewTargetReference" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="ColophonProject" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="GovernancePack" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="SourceReference" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="AccessibilityPolicyBinding" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="PublicationScope" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="typographypolicy:SpacingPolicy" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="typographypolicy:ParagraphPolicy" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="typographypolicy:TypographyAccessibilityPolicy" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="typographygovernance:TypographySystem" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="typographygovernance:FontFamily" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="typographygovernance:FontRoleBinding" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="typographygovernance:TypeScaleDefinition" />
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

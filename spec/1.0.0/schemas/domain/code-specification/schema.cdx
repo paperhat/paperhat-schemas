@@ -81,6 +81,8 @@
 				<AllowsChildConcept conceptSelector="ModuleDescription" />
 
 				<AllowsChildConcept conceptSelector="NormativeRequirement" />
+
+				<AllowsChildConcept conceptSelector="TermDefinition" />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
@@ -876,6 +878,30 @@
 
 		[END: Normative Requirements]
 
+		[GROUP: Term Definitions]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A formal terminology definition that establishes the precise meaning of a term used throughout the specification. The media foundry generates a glossary entry. The code foundry generates a doc comment on the module or crate that references the term."
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:codeSpecification:TermDefinition
+			name="TermDefinition"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="term" />
+
+				<RequiresTrait name="description" />
+
+				<AllowsTrait name="longDescription" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		[END: Term Definitions]
+
 	</ConceptDefinitions>
 
 	<TraitDefinitions>
@@ -1005,6 +1031,13 @@
 			id=paperhat:domain:codeSpecification:trait:rationale
 			name="rationale"
 			priority=$Secondary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:term
+			name="term"
+			priority=$Primary
 		/>
 
 

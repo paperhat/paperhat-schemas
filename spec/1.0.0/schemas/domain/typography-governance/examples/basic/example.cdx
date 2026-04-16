@@ -1,0 +1,133 @@
+<TypographySystem
+	id=urn:paperhat:example:typography-system:paperhat-core
+	name="Paperhat Core Typography System"
+	typographySystemStatus=$Active
+>
+	<description:Description bodyMode=$content>
+		The primary governed typography system for Paperhat products and publications.
+	</description:Description>
+
+	<FontFamily
+		classification=$Transitional
+		designerName="Jacques Le Bailly"
+		foundry="Huerta Tipografica"
+		id=urn:paperhat:example:font-family:crimson-pro
+		name="Crimson Pro"
+	>
+		<description:Description bodyMode=$content>
+			A refined transitional serif for long-form body text.
+		</description:Description>
+	</FontFamily>
+
+	<FontFamily
+		classification=$NeoGrotesque
+		designerName="Mike Abbink"
+		foundry="IBM"
+		id=urn:paperhat:example:font-family:ibm-plex-sans
+		name="IBM Plex Sans"
+	>
+		<description:Description bodyMode=$content>
+			A neo-grotesque sans-serif for headings and interface elements.
+		</description:Description>
+	</FontFamily>
+
+	<TypeScaleDefinition
+		baseSize="16"
+		id=urn:paperhat:example:type-scale:major-third
+		levels=6
+		name="Major Third Scale"
+		ratio="1.25"
+		typeScaleStatus=$Active
+	>
+		<description:Description bodyMode=$content>
+			A modular type scale based on the major third ratio (1.25) with a 16-pixel base size and six levels.
+		</description:Description>
+	</TypeScaleDefinition>
+
+	<FontRoleBinding
+		fontFamily="Crimson Pro"
+		id=urn:paperhat:example:font-role-binding:body
+		key=~body
+		label="Body Text"
+		role="body"
+		style=$Upright
+		weight=400
+	>
+		<description:Description bodyMode=$content>
+			Primary body text binding using Crimson Pro at regular weight.
+		</description:Description>
+
+		<OpenTypeFeatureSetting enabled=true featureTag="liga" />
+
+		<OpenTypeFeatureSetting enabled=true featureTag="kern" />
+	</FontRoleBinding>
+
+	<FontRoleBinding
+		fontFamily="IBM Plex Sans"
+		id=urn:paperhat:example:font-role-binding:heading
+		key=~heading
+		label="Heading Text"
+		role="heading"
+		style=$Upright
+		weight=600
+	>
+		<description:Description bodyMode=$content>
+			Heading text binding using IBM Plex Sans at semibold weight.
+		</description:Description>
+	</FontRoleBinding>
+
+	<FontRoleBinding
+		fontFamily="monospace"
+		fontRoleBindingStatus=$Active
+		id=urn:paperhat:example:font-role-binding:code
+		key=~code
+		label="Code Text"
+		role="code"
+		style=$Upright
+		weight=400
+	>
+		<description:Description bodyMode=$content>
+			Code text binding using a generic monospace fallback.
+		</description:Description>
+	</FontRoleBinding>
+
+	<ScaleMapping scaleLevel=-1 semanticLevel="caption" />
+
+	<ScaleMapping scaleLevel=0 semanticLevel="body" />
+
+	<ScaleMapping scaleLevel=1 semanticLevel="rubricDepth3" />
+
+	<ScaleMapping scaleLevel=2 semanticLevel="rubricDepth2" />
+
+	<ScaleMapping scaleLevel=3 semanticLevel="rubricDepth1" />
+
+	<EmphasisRule
+		emphasisLevel="strong"
+		emphasisRuleStatus=$Active
+		id=urn:paperhat:example:emphasis-rule:strong
+		key=~strong
+		label="Strong Emphasis"
+		weight=700
+	>
+		<description:Description bodyMode=$content>
+			Strong emphasis rendered as bold weight (700).
+		</description:Description>
+	</EmphasisRule>
+
+	<EmphasisRule
+		emphasisLevel="mild"
+		emphasisRuleStatus=$Active
+		id=urn:paperhat:example:emphasis-rule:mild
+		key=~mild
+		label="Mild Emphasis"
+		style=$Italic
+	>
+		<description:Description bodyMode=$content>
+			Mild emphasis rendered as italic style.
+		</description:Description>
+	</EmphasisRule>
+
+	<FontFallback classification=$NeoGrotesque fontFamily="Helvetica Neue" position=1 />
+
+	<FontFallback classification=$NeoGrotesque fontFamily="Arial" position=2 />
+</TypographySystem>

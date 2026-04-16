@@ -1,0 +1,18 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="PENDING-HASH"
+	copyright="Copyright 2026 Paperhat"
+	description="Deterministic typography-governance primitives for Colophon. Defines typography systems, font families, font role bindings, font fallbacks, type scale definitions, scale mappings, and emphasis rules above retained substrate typographic values."
+	license="Apache-2.0"
+	packageName="paperhat-typography-governance"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+>
+	<PackageDependency
+		packageName="paperhat-description"
+		closureHash="1d52385bd993afa202cdda224e86fce0da4a104de6bbf26a1910b5d74cc7b04c"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</DomainPackageManifest>

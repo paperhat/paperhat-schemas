@@ -1,0 +1,24 @@
+[A governed typography system. name is required. Include at least one FontFamily, exactly one TypeScaleDefinition, at least one FontRoleBinding, and at least one ScaleMapping.]
+<TypographySystem id=urn:paperhat:example:typography-system:example name="Typography System Name">
+	<FontFamily classification=$NeoGrotesque id=urn:paperhat:example:font-family:example name="Font Family Name" />
+
+	<TypeScaleDefinition baseSize="16" id=urn:paperhat:example:type-scale:example levels=6 name="Scale Name" ratio="1.25" />
+
+	<FontRoleBinding
+		fontFamily="Font Family Name"
+		id=urn:paperhat:example:font-role-binding:body
+		key=~body
+		role="body"
+		style=$Upright
+		weight=400
+	/>
+
+	<ScaleMapping scaleLevel=0 semanticLevel="body" />
+
+	<EmphasisRule
+		emphasisLevel="strong"
+		id=urn:paperhat:example:emphasis-rule:strong
+		key=~strong
+		weight=700
+	/>
+</TypographySystem>

@@ -1,0 +1,390 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Deterministic typography-governance primitives for Colophon. Defines typography systems, font families, font role bindings, font fallbacks, type scale definitions, scale mappings, and emphasis rules above retained substrate typographic values."
+	id=paperhat:domain:typography-governance
+	namespace="typographygovernance"
+	title="Typography Governance Schema"
+	version="1.0.0"
+	versionScheme=$SemanticVersion
+>
+	<SchemaImports>
+		<SchemaImport namespace="description" reference=urn:cdx:sha256:aedb0f8af35a38f088a3e99cb0297df7c0a252cdb58cf3072a2d20103e23c3e8 />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:typography-governance:TypographySystem
+			name="TypographySystem"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<AllowsTrait name="typographySystemStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="description:Description" />
+
+				<RequiresChildConcept conceptSelector="FontFamily" min=1 />
+
+				<RequiresChildConcept conceptSelector="TypeScaleDefinition" min=1 max=1 />
+
+				<RequiresChildConcept conceptSelector="FontRoleBinding" min=1 />
+
+				<RequiresChildConcept conceptSelector="ScaleMapping" min=1 />
+
+				<AllowsChildConcept conceptSelector="EmphasisRule" />
+
+				<AllowsChildConcept conceptSelector="FontFallback" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:typography-governance:FontFamily
+			name="FontFamily"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="classification" />
+
+				<AllowsTrait name="foundry" />
+
+				<AllowsTrait name="designerName" />
+
+				<AllowsTrait name="fontFamilyStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="description:Description" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:typography-governance:FontRoleBinding
+			name="FontRoleBinding"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="role" />
+
+				<RequiresTrait name="fontFamily" />
+
+				<AllowsTrait name="weight" />
+
+				<AllowsTrait name="style" />
+
+				<AllowsTrait name="label" />
+
+				<AllowsTrait name="fontRoleBindingStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="description:Description" />
+
+				<AllowsChildConcept conceptSelector="OpenTypeFeatureSetting" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:typography-governance:OpenTypeFeatureSetting
+			name="OpenTypeFeatureSetting"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="featureTag" />
+
+				<RequiresTrait name="enabled" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:typography-governance:FontFallback
+			name="FontFallback"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="fontFamily" />
+
+				<RequiresTrait name="position" />
+
+				<AllowsTrait name="classification" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:typography-governance:TypeScaleDefinition
+			name="TypeScaleDefinition"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="baseSize" />
+
+				<RequiresTrait name="ratio" />
+
+				<RequiresTrait name="levels" />
+
+				<AllowsTrait name="typeScaleStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="description:Description" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:typography-governance:ScaleMapping
+			name="ScaleMapping"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="semanticLevel" />
+
+				<RequiresTrait name="scaleLevel" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:typography-governance:EmphasisRule
+			name="EmphasisRule"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="emphasisLevel" />
+
+				<AllowsTrait name="weight" />
+
+				<AllowsTrait name="style" />
+
+				<AllowsTrait name="useSmallCaps" />
+
+				<AllowsTrait name="useUnderline" />
+
+				<AllowsTrait name="label" />
+
+				<AllowsTrait name="emphasisRuleStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="description:Description" />
+			</ChildRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-governance:trait:name
+			name="name"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:typography-governance:trait:typographySystemStatus
+			name="typographySystemStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:typography-governance:trait:classification
+			name="classification"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$OldStyle, $Transitional, $Modern, $SlabSerif, $Grotesque, $NeoGrotesque, $Geometric, $Humanist, $Monospace, $Script, $Display] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-governance:trait:foundry
+			name="foundry"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-governance:trait:designerName
+			name="designerName"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:typography-governance:trait:fontFamilyStatus
+			name="fontFamilyStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:typography-governance:trait:key
+			name="key"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-governance:trait:role
+			name="role"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-governance:trait:fontFamily
+			name="fontFamily"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$NonNegativeInteger
+			id=paperhat:domain:typography-governance:trait:weight
+			name="weight"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:typography-governance:trait:style
+			name="style"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Upright, $Italic, $Oblique] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-governance:trait:label
+			name="label"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:typography-governance:trait:fontRoleBindingStatus
+			name="fontRoleBindingStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-governance:trait:featureTag
+			name="featureTag"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Boolean
+			id=paperhat:domain:typography-governance:trait:enabled
+			name="enabled"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$NonNegativeInteger
+			id=paperhat:domain:typography-governance:trait:position
+			name="position"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-governance:trait:baseSize
+			name="baseSize"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-governance:trait:ratio
+			name="ratio"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$NonNegativeInteger
+			id=paperhat:domain:typography-governance:trait:levels
+			name="levels"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:typography-governance:trait:typeScaleStatus
+			name="typeScaleStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-governance:trait:semanticLevel
+			name="semanticLevel"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=paperhat:domain:typography-governance:trait:scaleLevel
+			name="scaleLevel"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-governance:trait:emphasisLevel
+			name="emphasisLevel"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Boolean
+			id=paperhat:domain:typography-governance:trait:useSmallCaps
+			name="useSmallCaps"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Boolean
+			id=paperhat:domain:typography-governance:trait:useUnderline
+			name="useUnderline"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:typography-governance:trait:emphasisRuleStatus
+			name="emphasisRuleStatus"
+		/>
+	</TraitDefinitions>
+</Schema>

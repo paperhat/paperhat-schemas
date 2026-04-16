@@ -1,0 +1,31 @@
+[
+  A registration form for a Person concept. Demonstrates nested FormField
+  expansion for the PersonName child concept, an entityShape reference for
+  cross-field validation (fullName derivation), a read-only derived field,
+  and includeAllFields mode with exclusions.
+]
+<FormDefinition
+	id=urn:paperhat:example:form:registration
+	targetConcept=urn:paperhat:example:schema:Person
+	entityShape=urn:paperhat:example:shape:PersonWithFullName
+>
+	<text:Title>Registration</text:Title>
+
+	<desc:Description>Create a new account. All fields marked as required are needed to complete registration.</desc:Description>
+
+	<FormGroup groupIdentifier="name">
+		<FormField fieldPath="PersonName">
+			<FormField fieldPath="given" overrideRequired=true
+				helpText="Your legal given name as it appears on official documents."
+			/>
+
+			<FormField fieldPath="family" overrideRequired=true />
+		</FormField>
+	</FormGroup>
+
+	<FormField fieldPath="email" overrideRequired=true
+		helpText="A valid email address. Used for account verification."
+	/>
+
+	<FormField fieldPath="fullName" readOnly=true />
+</FormDefinition>

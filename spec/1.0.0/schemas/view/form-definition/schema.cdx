@@ -1,0 +1,185 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description=`
+		View-family schema for declaring which fields from a source concept a form collects,
+		in what order, with what grouping. The form definition is the data-collection counterpart
+		to the view definition. It declares what to collect, not how it looks. The design system
+		(CDL/SDL/PDL) governs perceptual relationships. The foundry decides concrete presentation.
+		Validation rules come from behavior shapes attached to the target concept; the form
+		definition references but does not duplicate them.
+	`
+	id=paperhat:view:formDefinition
+	namespace="formdef"
+	title="Form Definition Schema"
+	version="1.0.0"
+	versionScheme=$SemanticVersion
+>
+	<SchemaImports>
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:aedb0f8af35a38f088a3e99cb0297df7c0a252cdb58cf3072a2d20103e23c3e8 />
+
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:56710936ccb873445f40c284809a6753878a18a19c1a0a56e43de8c8075ec4fc />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+
+		[GROUP: Root]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:view:formDefinition:FormDefinition
+			name="FormDefinition"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Title" min=1 max=1 />
+
+				<AllowsChildConcept conceptSelector="desc:Description" max=1 />
+
+				<AllowsChildConcept conceptSelector="FormField" />
+
+				<AllowsChildConcept conceptSelector="FormExclude" />
+
+				<AllowsChildConcept conceptSelector="FormGroup" />
+			</ChildRules>
+
+			<TraitRules>
+				<RequiresTrait name="targetConcept" />
+
+				<AllowsTrait name="includeAllFields" />
+
+				<AllowsTrait name="entityShape" />
+			</TraitRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		[END: Root]
+
+		[GROUP: Field Concepts]
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:view:formDefinition:FormField
+			name="FormField"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="FormField" />
+			</ChildRules>
+
+			<TraitRules>
+				<RequiresTrait name="fieldPath" />
+
+				<AllowsTrait name="overrideRequired" />
+
+				<AllowsTrait name="readOnly" />
+
+				<AllowsTrait name="helpText" />
+			</TraitRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:view:formDefinition:FormExclude
+			name="FormExclude"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="fieldPath" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		[END: Field Concepts]
+
+		[GROUP: Grouping]
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:view:formDefinition:FormGroup
+			name="FormGroup"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="FormField" min=1 />
+			</ChildRules>
+
+			<TraitRules>
+				<RequiresTrait name="groupIdentifier" />
+			</TraitRules>
+
+			<CollectionRules allowsDuplicates=false ordering=$Ordered />
+		</ConceptDefinition>
+
+		[END: Grouping]
+
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:view:formDefinition:trait:targetConcept
+			name="targetConcept"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Boolean
+			id=paperhat:view:formDefinition:trait:includeAllFields
+			name="includeAllFields"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:view:formDefinition:trait:entityShape
+			name="entityShape"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:view:formDefinition:trait:fieldPath
+			name="fieldPath"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Boolean
+			id=paperhat:view:formDefinition:trait:overrideRequired
+			name="overrideRequired"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Boolean
+			id=paperhat:view:formDefinition:trait:readOnly
+			name="readOnly"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:view:formDefinition:trait:helpText
+			name="helpText"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:view:formDefinition:trait:groupIdentifier
+			name="groupIdentifier"
+		/>
+	</TraitDefinitions>
+</Schema>

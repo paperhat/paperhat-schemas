@@ -1,0 +1,13 @@
+[
+  Starter template for a form definition. Replace placeholder values
+  with the target concept IRI, field paths, and group identifiers
+  appropriate to the target domain schema.
+]
+<FormDefinition
+	id=urn:paperhat:template:form:REPLACE_WITH_FORM_IDENTITY
+	targetConcept=urn:paperhat:REPLACE_WITH_TARGET_CONCEPT_IRI
+>
+	<text:Title>REPLACE_WITH_FORM_TITLE</text:Title>
+
+	<FormField fieldPath="REPLACE_WITH_FIELD_PATH" />
+</FormDefinition>

@@ -1,0 +1,305 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Authored spacing, paragraph, and accessibility policy objects for Colophon. Defines spacing policies, paragraph policies, and typography accessibility policies as durable authored rule documents."
+	id=paperhat:domain:typography-policy
+	namespace="typographypolicy"
+	title="Typography Policy Schema"
+	version="1.0.0"
+	versionScheme=$SemanticVersion
+>
+	<SchemaImports>
+		<SchemaImport namespace="description" reference=urn:cdx:sha256:aedb0f8af35a38f088a3e99cb0297df7c0a252cdb58cf3072a2d20103e23c3e8 />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:typography-policy:SpacingPolicy
+			name="SpacingPolicy"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="bodyLeading" />
+
+				<RequiresTrait name="headingLeading" />
+
+				<RequiresTrait name="captionLeading" />
+
+				<RequiresTrait name="codeLeading" />
+
+				<RequiresTrait name="baselineGridUnit" />
+
+				<RequiresTrait name="paragraphSpacing" />
+
+				<AllowsTrait name="paragraphIndent" />
+
+				<AllowsTrait name="defaultMeasure" />
+
+				<AllowsTrait name="minimumMeasure" />
+
+				<AllowsTrait name="maximumMeasure" />
+
+				<AllowsTrait name="spacingPolicyStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="description:Description" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:typography-policy:ParagraphPolicy
+			name="ParagraphPolicy"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="defaultAlignment" />
+
+				<RequiresTrait name="headingAlignment" />
+
+				<RequiresTrait name="minimumBeforeBreak" />
+
+				<RequiresTrait name="minimumAfterBreak" />
+
+				<RequiresTrait name="maximumConsecutiveHyphens" />
+
+				<RequiresTrait name="minimumWidowLines" />
+
+				<RequiresTrait name="minimumOrphanLines" />
+
+				<AllowsTrait name="justificationMethod" />
+
+				<AllowsTrait name="paragraphPolicyStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="description:Description" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:typography-policy:TypographyAccessibilityPolicy
+			name="TypographyAccessibilityPolicy"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="minimumBodySize" />
+
+				<RequiresTrait name="minimumCaptionSize" />
+
+				<RequiresTrait name="minimumLeadingRatio" />
+
+				<RequiresTrait name="minimumMeasureCharacters" />
+
+				<RequiresTrait name="maximumMeasureCharacters" />
+
+				<AllowsTrait name="minimumScaleLevelDifference" />
+
+				<AllowsTrait name="typographyAccessibilityPolicyStatus" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="description:Description" />
+			</ChildRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-policy:trait:name
+			name="name"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-policy:trait:bodyLeading
+			name="bodyLeading"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-policy:trait:headingLeading
+			name="headingLeading"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-policy:trait:captionLeading
+			name="captionLeading"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-policy:trait:codeLeading
+			name="codeLeading"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-policy:trait:baselineGridUnit
+			name="baselineGridUnit"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-policy:trait:paragraphSpacing
+			name="paragraphSpacing"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-policy:trait:paragraphIndent
+			name="paragraphIndent"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-policy:trait:defaultMeasure
+			name="defaultMeasure"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-policy:trait:minimumMeasure
+			name="minimumMeasure"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-policy:trait:maximumMeasure
+			name="maximumMeasure"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:typography-policy:trait:spacingPolicyStatus
+			name="spacingPolicyStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:typography-policy:trait:defaultAlignment
+			name="defaultAlignment"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Left, $Right, $Center, $Justified] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:typography-policy:trait:headingAlignment
+			name="headingAlignment"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Left, $Right, $Center, $Justified] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$NonNegativeInteger
+			id=paperhat:domain:typography-policy:trait:minimumBeforeBreak
+			name="minimumBeforeBreak"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$NonNegativeInteger
+			id=paperhat:domain:typography-policy:trait:minimumAfterBreak
+			name="minimumAfterBreak"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$NonNegativeInteger
+			id=paperhat:domain:typography-policy:trait:maximumConsecutiveHyphens
+			name="maximumConsecutiveHyphens"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$NonNegativeInteger
+			id=paperhat:domain:typography-policy:trait:minimumWidowLines
+			name="minimumWidowLines"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$NonNegativeInteger
+			id=paperhat:domain:typography-policy:trait:minimumOrphanLines
+			name="minimumOrphanLines"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-policy:trait:justificationMethod
+			name="justificationMethod"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:typography-policy:trait:paragraphPolicyStatus
+			name="paragraphPolicyStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-policy:trait:minimumBodySize
+			name="minimumBodySize"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-policy:trait:minimumCaptionSize
+			name="minimumCaptionSize"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-policy:trait:minimumLeadingRatio
+			name="minimumLeadingRatio"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$NonNegativeInteger
+			id=paperhat:domain:typography-policy:trait:minimumMeasureCharacters
+			name="minimumMeasureCharacters"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$NonNegativeInteger
+			id=paperhat:domain:typography-policy:trait:maximumMeasureCharacters
+			name="maximumMeasureCharacters"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:typography-policy:trait:minimumScaleLevelDifference
+			name="minimumScaleLevelDifference"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:typography-policy:trait:typographyAccessibilityPolicyStatus
+			name="typographyAccessibilityPolicyStatus"
+		/>
+	</TraitDefinitions>
+</Schema>

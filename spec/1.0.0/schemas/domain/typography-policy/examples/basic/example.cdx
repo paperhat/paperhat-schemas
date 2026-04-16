@@ -1,0 +1,50 @@
+<SpacingPolicy
+	baselineGridUnit="12pt"
+	bodyLeading="1.5"
+	captionLeading="1.3"
+	codeLeading="1.4"
+	defaultMeasure="66ch"
+	headingLeading="1.2"
+	id=urn:paperhat:example:spacing-policy:body-text
+	maximumMeasure="75ch"
+	minimumMeasure="45ch"
+	name="Body Text Spacing Policy"
+	paragraphSpacing="12pt"
+	spacingPolicyStatus=$Active
+>
+	<description:Description bodyMode=$content>
+		Spacing policy for long-form body text. Leading values are relative ratios applied to the computed font size. Measure values use character-width units.
+	</description:Description>
+</SpacingPolicy>
+
+<ParagraphPolicy
+	defaultAlignment=$Left
+	headingAlignment=$Left
+	id=urn:paperhat:example:paragraph-policy:body-text
+	maximumConsecutiveHyphens=3
+	minimumAfterBreak=2
+	minimumBeforeBreak=2
+	minimumOrphanLines=2
+	minimumWidowLines=2
+	name="Body Text Paragraph Policy"
+	paragraphPolicyStatus=$Active
+>
+	<description:Description bodyMode=$content>
+		Paragraph policy for long-form body text. Hyphenation allows at most three consecutive hyphenated lines. Widow and orphan controls require at least two lines on each side of a page or column break.
+	</description:Description>
+</ParagraphPolicy>
+
+<TypographyAccessibilityPolicy
+	id=urn:paperhat:example:typography-accessibility-policy:web
+	maximumMeasureCharacters=75
+	minimumBodySize="16pt"
+	minimumCaptionSize="12pt"
+	minimumLeadingRatio="1.5"
+	minimumMeasureCharacters=45
+	name="Web Typography Accessibility Policy"
+	typographyAccessibilityPolicyStatus=$Active
+>
+	<description:Description bodyMode=$content>
+		Accessibility floor for web typography. Body text is at least 16 points. Captions are at least 12 points. Leading ratio is at least 1.5. Line measure falls between 45 and 75 characters.
+	</description:Description>
+</TypographyAccessibilityPolicy>

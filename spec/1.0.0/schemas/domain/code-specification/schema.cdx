@@ -19,6 +19,10 @@
 	version="1.0.0"
 	versionScheme=$SemanticVersion
 >
+	<SchemaImports>
+		<SchemaImport namespace="behavior" reference=urn:cdx:sha256:724662942082cc86e2fc6e6055e272b8598efe84f0c146bc4b57410935341031 />
+	</SchemaImports>
+
 	<ConceptDefinitions>
 
 		[GROUP: Root]
@@ -596,7 +600,7 @@
 
 		<ConceptDefinition
 			conceptKind=$Semantic
-			description="A named validation rule with formal semantics. The foundry generates a validation function; conformance tests verify correctness."
+			description="A named validation rule with a behavior expression tree as the single normative definition. The code foundry generates a validation function from the expression tree. The media foundry generates a human-readable description from the expression tree. Conformance tests verify correctness."
 			entityEligibility=$MustBeEntity
 			id=paperhat:domain:codeSpecification:ValidationRule
 			name="ValidationRule"
@@ -605,12 +609,14 @@
 				<ForbidsContent />
 			</ContentRules>
 
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="behavior:Validation" max=1 />
+			</ChildRules>
+
 			<TraitRules>
 				<RequiresTrait name="name" />
 
 				<RequiresTrait name="appliesToType" />
-
-				<RequiresTrait name="semantics" />
 
 				<AllowsTrait name="description" />
 
@@ -1141,13 +1147,6 @@
 			priority=$Primary
 		/>
 
-
-		<TraitDefinition
-			defaultValueType=$Text
-			id=paperhat:domain:codeSpecification:trait:semantics
-			name="semantics"
-			priority=$Primary
-		/>
 
 		<TraitDefinition
 			defaultValueType=$RegularExpression

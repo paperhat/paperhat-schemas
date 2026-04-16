@@ -30,7 +30,7 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | AccessorOperation | Semantic | MustBeEntity | ForbidsContent | AccessorArm (1+) | An accessor operation that returns different values per variant of a sum type. |
 | UniformAccessorOperation | Semantic | MustBeEntity | ForbidsContent | — | An accessor operation that returns the same-named field from every variant of a sum type. |
 | AccessorArm | Semantic | MustNotBeEntity | ForbidsContent | — | One arm of a variant accessor: specifies what a specific variant returns. |
-| ValidationRule | Semantic | MustBeEntity | ForbidsContent | — | A named validation rule with formal semantics. The foundry generates a validation function; conformance tests verify correctness. |
+| ValidationRule | Semantic | MustBeEntity | ForbidsContent | behavior:Validation (0–1) | A named validation rule with a behavior expression tree as the single normative definition. The code foundry generates a validation function from the expression tree. The media foundry generates a human-readable description from the expression tree. |
 | ConstructionTestCase | Semantic | MustNotBeEntity | ForbidsContent | TestArgument (0+), ExpectedAccessorResult (0+) | A test that constructs a value and asserts accessor results. |
 | RejectionTestCase | Semantic | MustNotBeEntity | ForbidsContent | TestArgument (0+) | A test that asserts an operation rejects invalid input. |
 | InequalityTestCase | Semantic | MustNotBeEntity | ForbidsContent | TestValue (2) | A test that asserts two constructed values are not equal. |
@@ -42,7 +42,9 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 
 ## Imports
 
-This schema has no imports. It is entirely self-contained.
+| Namespace | Schema | Purpose |
+|---|---|---|
+| behavior | `paperhat:behavior:expression` | Provides the `Validation` expression container for ValidationRule behavior expression trees. |
 
 ## Traits
 
@@ -85,8 +87,7 @@ This schema has no imports. It is entirely self-contained.
 | `prohibitedConstant` | `$LookupToken` | Primary | The constant value that the parameter is prohibited from equaling. |
 | `whenTrue` | `$Text` | Primary | The text value mapped when a boolean parameter is true. |
 | `whenFalse` | `$Text` | Primary | The text value mapped when a boolean parameter is false. |
-| `semantics` | `$Text` | Primary | Formal semantic description of a validation rule. |
-| `validationPattern` | `$RegularExpression` | Primary | Regular expression pattern for pattern-based validation rules. |
+| `validationPattern` | `$RegularExpression` | Primary | Regular expression pattern for pattern-based validation rules (convenience shorthand; the behavior expression tree is the normative definition). |
 | `value` | `$Text` | Primary | The literal value of a constant or test argument. |
 | `operation` | `$LookupToken` | Primary | The construction operation invoked in a test case. |
 | `accessor` | `$LookupToken` | Primary | The accessor whose result is asserted in an expected result. |
@@ -116,7 +117,7 @@ This schema has no imports. It is entirely self-contained.
 - CodeSpecification is MustNotBeEntity because it is a root document container, not a referenceable entity. The types, operations, and constants within it are the entities.
 - ProductType and SumType are separate concepts rather than one type with a discriminator trait. The structural differences (variants, field exclusivity, ordering semantics) are fundamental, not parametric.
 - All field type references use `$Iri` pointing to Paperhat canonical type identifiers. This preserves type identity across the specification-to-code pipeline without lossy string matching.
-- Validation rules carry formal `semantics` as prose text rather than an executable expression language. The foundry interprets semantics into language-specific validation code. A future version introduces a structured constraint expression language if the prose-based approach proves insufficient.
+- Validation rules carry a behavior expression tree (from the `paperhat:behavior:expression` schema) as the single normative definition. The code foundry generates validation functions from the expression tree. The media foundry generates human-readable descriptions from the expression tree. The `semantics` prose trait is removed. The `validationPattern` trait remains as a convenience shorthand for simple pattern-based rules, but the behavior expression is the normative authority when both are present.
 - Test cases are first-class schema concepts, not external artifacts. This ensures that the specification and its tests are always co-located, versioned together, and processable by the same foundry pipeline.
 - CanonicalOrderingRule supports three strategies to cover the common patterns: field-by-field comparison for product types, variant-then-field comparison for sum types, and single-field delegation for wrapper types.
 - InteropModule uses `conditionalOn` as a text string rather than a structured language enum. The set of target languages is open-ended and foundry-specific; the schema does not enumerate it.

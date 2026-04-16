@@ -10,4 +10,9 @@
 	requiredCodexVersion=">=1.0.0 <2.0.0"
 	requiredLexisVersion=">=1.0.0 <2.0.0"
 >
+	<PackageDependency
+		packageName="paperhat-behavior-expression"
+		closureHash="724662942082cc86e2fc6e6055e272b8598efe84f0c146bc4b57410935341031"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
 </DomainPackageManifest>

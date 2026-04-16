@@ -20,7 +20,7 @@
 	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="behavior" reference=urn:cdx:sha256:724662942082cc86e2fc6e6055e272b8598efe84f0c146bc4b57410935341031 />
+		<SchemaImport namespace="behavior" reference=urn:cdx:sha256:6337432924e87e31e952895725ccf8ad57437a2ff652300521478b025ff45ff8 />
 	</SchemaImports>
 
 	<ConceptDefinitions>

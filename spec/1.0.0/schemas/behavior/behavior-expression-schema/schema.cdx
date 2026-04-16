@@ -1324,9 +1324,9 @@
 			name="ArcTangentFromCoordinates"
 		>
 			<ChildRules>
-				<RequiresChildConcept conceptSelector="Y" max=1 min=1 />
+				<RequiresChildConcept conceptSelector="CoordinateY" max=1 min=1 />
 
-				<RequiresChildConcept conceptSelector="X" max=1 min=1 />
+				<RequiresChildConcept conceptSelector="CoordinateX" max=1 min=1 />
 			</ChildRules>
 		</ConceptDefinition>
 
@@ -1335,7 +1335,7 @@
 			entityEligibility=$MustNotBeEntity
 			id=paperhat:behavior:expression:trigonometry:Y
 			key=~trigonometryY
-			name="Y"
+			name="CoordinateY"
 		>
 			<ChildRules>
 				<AllowsLocalChildren />
@@ -1347,7 +1347,7 @@
 			entityEligibility=$MustNotBeEntity
 			id=paperhat:behavior:expression:trigonometry:X
 			key=~trigonometryX
-			name="X"
+			name="CoordinateX"
 		>
 			<ChildRules>
 				<AllowsLocalChildren />
@@ -3782,18 +3782,6 @@
 			</ChildRules>
 		</ConceptDefinition>
 
-		<ConceptDefinition
-			conceptKind=$Structural
-			entityEligibility=$MustNotBeEntity
-			id=paperhat:behavior:expression:collection:Element
-			key=~collectionElement
-			name="Element"
-		>
-			<ChildRules>
-				<AllowsLocalChildren />
-			</ChildRules>
-		</ConceptDefinition>
-
 		[END: Collection Operations - Search]
 
 		[GROUP: Collection Operations - Order]
@@ -4978,19 +4966,6 @@
 			id=paperhat:behavior:expression:Zeta
 			key=~zeta
 			name="Zeta"
-		>
-			<ChildRules>
-				<AllowsLocalChildren />
-			</ChildRules>
-		</ConceptDefinition>
-
-		<ConceptDefinition
-			conceptKind=$Structural
-			description="Wrapper for the x parameter in special functions."
-			entityEligibility=$MustNotBeEntity
-			id=paperhat:behavior:expression:special:X
-			key=~specialX
-			name="X"
 		>
 			<ChildRules>
 				<AllowsLocalChildren />

@@ -6,10 +6,10 @@
 	<Derivation name="ApplyDiscount" targetTrait="discountedTotal" outputShape=$Number derivationClass=$Materialize>
 		<Ternary>
 			<Condition>
-				<IsMoreThan>
+				<IsGreaterThan>
 					<Referent><Field name="subtotal" /></Referent>
 					<Comparator><Literal value=1000 /></Comparator>
-				</IsMoreThan>
+				</IsGreaterThan>
 			</Condition>
 			<Then>
 				<Multiply>
@@ -20,10 +20,10 @@
 			<Else>
 				<Ternary>
 					<Condition>
-						<IsMoreThan>
+						<IsGreaterThan>
 							<Referent><Field name="subtotal" /></Referent>
 							<Comparator><Literal value=500 /></Comparator>
-						</IsMoreThan>
+						</IsGreaterThan>
 					</Condition>
 					<Then>
 						<Multiply>

@@ -48,7 +48,7 @@ Each case specifies:
 | `Integer(1)` | `Integer(2)` | `Valid(true)` |
 | `Integer(2)` | `Integer(1)` | `Valid(false)` |
 
-### 3.2 `IsNoMoreThan`
+### 3.2 `IsGreaterThanOrEqualTo`
 
 | Left | Right | Expected |
 | --- | --- | --- |

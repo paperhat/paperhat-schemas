@@ -5,10 +5,10 @@
 	description="A number that must be greater than zero."
 >
 	<Constraint name="MustBePositive" message="Value must be greater than zero.">
-		<IsMoreThan>
+		<IsGreaterThan>
 			<Referent><Input /></Referent>
 			<Comparator><Literal value=0 /></Comparator>
-		</IsMoreThan>
+		</IsGreaterThan>
 	</Constraint>
 
 </ValueShapeDefinition>

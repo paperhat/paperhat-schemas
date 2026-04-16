@@ -1,6 +1,6 @@
 <Validation>
-	<IsMoreThan>
+	<IsGreaterThan>
 		<Referent><Field name="quantity" /></Referent>
 		<Comparator><Literal value=0 /></Comparator>
-	</IsMoreThan>
+	</IsGreaterThan>
 </Validation>

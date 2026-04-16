@@ -37,9 +37,9 @@ All operators in this family are **core operators** whose canonical definitions 
 | Operator | Canonical Definition |
 |----------|---------------------|
 | `IsLessThan` | §7.13.3 |
-| `IsMoreThan` | §7.13.3 |
-| `IsNoLessThan` | §7.13.3 |
-| `IsNoMoreThan` | §7.13.3 |
+| `IsGreaterThan` | §7.13.3 |
+| `IsLessThanOrEqualTo` | §7.13.3 |
+| `IsGreaterThanOrEqualTo` | §7.13.3 |
 
 ### 2.3 Boolean Predicate Composition
 

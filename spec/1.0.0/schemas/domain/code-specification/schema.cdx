@@ -374,6 +374,8 @@
 				<AllowsTrait name="longDescription" />
 
 				<AllowsTrait name="specRequirement" />
+
+				<AllowsTrait name="optional" />
 			</TraitRules>
 
 			<ChildRules>
@@ -381,7 +383,7 @@
 
 				<AllowsChildConcept conceptSelector="ConstantBinding" />
 
-				<AllowsChildConcept conceptSelector="Precondition" max=1 />
+				<AllowsChildConcept conceptSelector="Precondition" />
 
 				<AllowsChildConcept conceptSelector="ProhibitionPrecondition" max=1 />
 
@@ -411,6 +413,10 @@
 				<RequiresTrait name="position" />
 
 				<AllowsTrait name="mapsToField" />
+
+				<AllowsTrait name="description" />
+
+				<AllowsTrait name="elementType" />
 			</TraitRules>
 		</ConceptDefinition>
 
@@ -629,6 +635,8 @@
 				<RequiresTrait name="testName" />
 
 				<RequiresTrait name="operation" />
+
+				<AllowsTrait name="description" />
 			</TraitRules>
 
 			<ChildRules>
@@ -657,6 +665,8 @@
 				<RequiresTrait name="operation" />
 
 				<RequiresTrait name="expectedFailureContaining" />
+
+				<AllowsTrait name="description" />
 			</TraitRules>
 
 			<ChildRules>
@@ -701,6 +711,8 @@
 
 			<TraitRules>
 				<RequiresTrait name="testName" />
+
+				<AllowsTrait name="description" />
 			</TraitRules>
 
 			<ChildRules>
@@ -749,6 +761,8 @@
 				<RequiresTrait name="value" />
 
 				<RequiresTrait name="position" />
+
+				<AllowsTrait name="description" />
 			</TraitRules>
 		</ConceptDefinition>
 

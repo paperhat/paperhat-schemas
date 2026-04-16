@@ -12,7 +12,7 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 
 | Concept | Kind | Entity | Content | Children | Description |
 |---|---|---|---|---|---|
-| CodeSpecification | Semantic | MustNotBeEntity | ForbidsContent | ProductType, SumType, NamedConstant, ConstructionOperation, AccessorOperation, UniformAccessorOperation, ValidationRule, ConstructionTestCase, RejectionTestCase, InequalityTestCase, OrderingTestCase, InteropModule | Root container for a complete code specification. |
+| CodeSpecification | Semantic | MustNotBeEntity | ForbidsContent | ProductType, SumType, NamedConstant, ConstructionOperation, AccessorOperation, UniformAccessorOperation, ValidationRule, ConstructionTestCase, RejectionTestCase, InequalityTestCase, OrderingTestCase, InteropModule, ModuleDescription, NormativeRequirement, TermDefinition, ExternalReference | Root container for a complete code specification. |
 | ProductType | Semantic | MustBeEntity | ForbidsContent | Field (1+), CanonicalOrderingRule (0–1) | A type whose instances carry all fields simultaneously. Projected as a struct in Rust, a record in Haskell. |
 | SumType | Semantic | MustBeEntity | ForbidsContent | Variant (1+), CanonicalOrderingRule (0–1) | A type whose instances carry exactly one variant at a time. Projected as an enum in Rust, a data type in Haskell. |
 | Variant | Semantic | MustNotBeEntity | ForbidsContent | Field (0+) | A variant of a sum type. Carries either named fields or wraps a single unnamed value. |
@@ -39,6 +39,10 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | TestArgument | Semantic | MustNotBeEntity | ForbidsContent | — | An argument passed to an operation in a test case. |
 | ExpectedAccessorResult | Semantic | MustNotBeEntity | ForbidsContent | — | An expected result from calling an accessor on a constructed value. |
 | InteropModule | Semantic | MustNotBeEntity | ForbidsContent | — | A language-specific interop module. Foundries for the target language generate the interop code; other foundries ignore it. |
+| ModuleDescription | Structural | MustNotBeEntity | ForbidsContent | — | Describes a source module in the generated code. The foundry uses module descriptions to generate module-level documentation comments. |
+| NormativeRequirement | Semantic | MustBeEntity | ForbidsContent | — | A normative requirement that governs the specification as a whole or defines a cross-cutting policy, behavioral mandate, or contract clause not tied to a specific type or operation. |
+| TermDefinition | Semantic | MustBeEntity | ForbidsContent | — | A formal terminology definition that establishes the precise meaning of a term used throughout the specification. |
+| ExternalReference | Semantic | MustNotBeEntity | ForbidsContent | — | A reference to an external standard, specification, or resource that this code specification depends on or cites. |
 
 ## Imports
 
@@ -97,6 +101,11 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | `role` | `$EnumeratedToken` | Primary | The role of a test value (Left, Right, Lesser, Greater). |
 | `conditionalOn` | `$Text` | Primary | The language or platform condition that activates this interop module. |
 | `targetLibrary` | `$Text` | Primary | The external library or framework this interop module targets. |
+| `modality` | `$EnumeratedToken` | Primary | The normative modality of a requirement (Must, MustNot). |
+| `rationale` | `$Text` | Secondary | The reasoning behind a normative requirement. |
+| `term` | `$Text` | Primary | The term being defined in a term definition. |
+| `label` | `$Text` | Primary | Human-readable label for an external reference. |
+| `uri` | `$Iri` | Primary | The IRI or URN of a referenced external resource. |
 
 ## Enumerated Value Sets
 
@@ -105,6 +114,7 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | Capability | Equality, Hashing, Cloning, CanonicalOrdering, Debugging | Type-level capabilities that a product type or sum type declares. |
 | OrderingStrategy | FieldByFieldComparison, VariantThenFieldComparison, DelegateToField | Strategies for defining the canonical total ordering of a type. |
 | TestValueRole | Left, Right, Lesser, Greater | The role a test value plays in a comparison or inequality test case. |
+| Modality | Must, MustNot | The normative modality of a requirement. |
 
 ## Constraints
 
@@ -123,3 +133,6 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 - CanonicalOrderingRule supports three strategies to cover the common patterns: field-by-field comparison for product types, variant-then-field comparison for sum types, and single-field delegation for wrapper types.
 - InteropModule uses `conditionalOn` as a text string rather than a structured language enum. The set of target languages is open-ended and foundry-specific; the schema does not enumerate it.
 - AccessorArm enforces a mutual exclusion constraint: it returns either a field or a constant, never both. This is enforced at the schema level through the `accessor-arm-returns-one` constraint rather than through separate concept types.
+- NormativeRequirement is MustBeEntity because requirements have stable IRI identifiers used for cross-referencing, traceability, and conformance auditing. Requirements express cross-cutting policies, behavioral mandates, and contract clauses that are not structurally tied to a single type or operation.
+- TermDefinition is MustBeEntity because definitions have stable IRI identifiers used for glossary generation and cross-referencing from requirement and type descriptions.
+- ExternalReference is MustNotBeEntity because references are citation entries, not individually addressable semantic constructs. They appear in the generated references section and doc-comment links.

@@ -531,6 +531,10 @@
 					<Rule>
 						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="typographygovernance:TypeScaleDefinition" />
 					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="typographygovernance:EmphasisRule" />
+					</Rule>
 				</AnyOf>
 			</Rule>
 		</ConstraintDefinition>
@@ -591,6 +595,10 @@
 
 					<Rule>
 						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="typographygovernance:TypeScaleDefinition" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="typographygovernance:EmphasisRule" />
 					</Rule>
 				</AnyOf>
 			</Rule>

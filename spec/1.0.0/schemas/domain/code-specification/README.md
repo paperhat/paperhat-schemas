@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Defines a language-agnostic schema for authoring code specifications in Codex. A code specification declares product types, sum types, named constants, construction and accessor operations, validation rules, and test cases. The same document generates human-readable documentation through Lexis media foundries and executable code through Nexus code foundries. All field types reference Paperhat canonical type identifiers, preserving type identity from specification through RDF to generated code with zero erasure.
+Defines a language-agnostic schema for authoring code specifications in Codex. A code specification is the single normative source for any Paperhat product: substrate libraries, extension libraries, application workbenches, foundries, language processors, stores, solvers, and graphical, terminal, and command-line interfaces. It declares product types, sum types, named constants, construction and accessor operations, validation rules, behavior mappings, conformance tables, realization rules, and test cases. The same document generates human-readable documentation through Lexis media foundries and executable implementations in every target language through Nexus code foundries. All field types reference Paperhat canonical type identifiers, preserving type identity from specification through RDF to generated code with zero erasure.
 
 ## Concepts
 

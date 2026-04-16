@@ -67,7 +67,7 @@ The adaptive plan is the self-contained artifact that the Lexis pipeline produce
 | `relativeTo` | `$List<$Text>` | -- | Element references that this constraint is measured relative to. |
 | `replacementThreshold` | `$Number` | -- | The replacement threshold value for this operator at this ordinal level. |
 | `resolvedDisplayText` | `$Text` | -- | Pre-resolved display text for the gloss reference. |
-| `role` | `$EnumeratedToken` | 30 SDL roles (`$Rubric` through `$IdentityDisclosure`) | Semantic Design Language role assigned to this element. |
+| `role` | `$EnumeratedToken` | 40 SDL roles (`$Rubric` through `$IdentityDisclosure`) | Semantic Design Language role assigned to this element. |
 | `scope` | `$EnumeratedToken` | `$Composition`, `$View` | Whether this element originates from the composition or the view. |
 | `sequentialIdentifierSignal` | `$Boolean` | -- | Whether this element participates in sequential identifier generation. |
 | `solvedHardness` | `$EnumeratedToken` | `$Soft`, `$Hard` | Hardness of this constraint after solver processing. |
@@ -75,7 +75,7 @@ The adaptive plan is the self-contained artifact that the Lexis pipeline produce
 | `solvedWeight` | `$Number` | -- | Weight of this constraint after solver processing. |
 | `source` | `$EnumeratedToken` | `$Explicit`, `$RoleObligation` | Whether this constraint was authored explicitly or derived from a role obligation. |
 | `sourceAnnotation` | `$Iri` | -- | IRI of the design annotation that produced this element or rule. |
-| `sourceRole` | `$EnumeratedToken` | 30 SDL roles (`$Rubric` through `$IdentityDisclosure`) | SDL role that generated this constraint via role obligation. |
+| `sourceRole` | `$EnumeratedToken` | 40 SDL roles (`$Rubric` through `$IdentityDisclosure`) | SDL role that generated this constraint via role obligation. |
 | `steps` | `$Number` | -- | Number of ordinal steps to relax a constraint. |
 | `targetWeight` | `$Number` | -- | Weight value to assign to the targeted constraint when the rule fires. |
 | `validationFamilies` | `$List<$EnumeratedToken>` | `$GroupingCoherence`, `$SalienceProportionality`, `$EntryClarity`, `$NavigationContinuity`, `$DisclosureIntegrity`, `$ProtectionCompleteness` | Validation families this constraint belongs to. |

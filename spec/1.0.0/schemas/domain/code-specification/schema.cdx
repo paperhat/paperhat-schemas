@@ -83,6 +83,8 @@
 				<AllowsChildConcept conceptSelector="NormativeRequirement" />
 
 				<AllowsChildConcept conceptSelector="TermDefinition" />
+
+				<AllowsChildConcept conceptSelector="ExternalReference" />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
@@ -902,6 +904,30 @@
 
 		[END: Term Definitions]
 
+		[GROUP: External References]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A reference to an external standard, specification, or resource that this code specification depends on or cites. The media foundry generates a references section. The code foundry generates doc-comment links or crate-level documentation references."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:ExternalReference
+			name="ExternalReference"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="label" />
+
+				<RequiresTrait name="uri" />
+
+				<AllowsTrait name="description" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		[END: External References]
+
 	</ConceptDefinitions>
 
 	<TraitDefinitions>
@@ -1037,6 +1063,20 @@
 			defaultValueType=$Text
 			id=paperhat:domain:codeSpecification:trait:term
 			name="term"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:label
+			name="label"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:codeSpecification:trait:uri
+			name="uri"
 			priority=$Primary
 		/>
 

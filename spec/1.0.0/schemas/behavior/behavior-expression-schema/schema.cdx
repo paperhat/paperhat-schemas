@@ -3778,7 +3778,20 @@
 			<ChildRules>
 				<RequiresChildConcept conceptSelector="Collection" max=1 min=1 />
 
-				<RequiresChildConcept conceptSelector="Element" max=1 min=1 />
+				<RequiresChildConcept conceptSelector="CollectionElement" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Wrapper for an element expression in collection operations. Accepts a child expression specifying the element to operate on. Distinct from the core Element concept, which is a ValueLike leaf referencing the current iteration variable."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:behavior:expression:collection:Element
+			key=~collectionElement
+			name="CollectionElement"
+		>
+			<ChildRules>
+				<AllowsLocalChildren />
 			</ChildRules>
 		</ConceptDefinition>
 
@@ -4226,7 +4239,7 @@
 			<ChildRules>
 				<RequiresChildConcept conceptSelector="Collection" max=1 min=1 />
 
-				<RequiresChildConcept conceptSelector="Element" max=1 min=1 />
+				<RequiresChildConcept conceptSelector="CollectionElement" max=1 min=1 />
 			</ChildRules>
 		</ConceptDefinition>
 

@@ -20,7 +20,7 @@
 	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="behavior" reference=urn:cdx:sha256:6337432924e87e31e952895725ccf8ad57437a2ff652300521478b025ff45ff8 />
+		<SchemaImport namespace="behavior" reference=urn:cdx:sha256:ae5a5b589e3acecc8eaf6f294b96d1323937e20245b5474281456dbefa3cbdcf />
 	</SchemaImports>
 
 	<ConceptDefinitions>
@@ -79,6 +79,8 @@
 				<AllowsChildConcept conceptSelector="InteropModule" />
 
 				<AllowsChildConcept conceptSelector="ModuleDescription" />
+
+				<AllowsChildConcept conceptSelector="NormativeRequirement" />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
@@ -846,6 +848,34 @@
 
 		[END: Module Descriptions]
 
+		[GROUP: Normative Requirements]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A normative requirement that governs the specification as a whole or defines a cross-cutting policy, behavioral mandate, or contract clause not tied to a specific type or operation. The media foundry generates requirement prose. The code foundry generates doc comments, compile-time assertions, or policy-enforcement code as appropriate for the target language."
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:codeSpecification:NormativeRequirement
+			name="NormativeRequirement"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="modality" />
+
+				<RequiresTrait name="description" />
+
+				<AllowsTrait name="rationale" />
+
+				<AllowsTrait name="specSection" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		[END: Normative Requirements]
+
 	</ConceptDefinitions>
 
 	<TraitDefinitions>
@@ -960,6 +990,20 @@
 			defaultValueType=$LookupToken
 			id=paperhat:domain:codeSpecification:trait:specRequirement
 			name="specRequirement"
+			priority=$Secondary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:codeSpecification:trait:modality
+			name="modality"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:rationale
+			name="rationale"
 			priority=$Secondary
 		/>
 
@@ -1262,6 +1306,15 @@
 			<Member description="The lesser operand in an ordering test." value="Lesser" />
 
 			<Member description="The greater operand in an ordering test." value="Greater" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet
+			id=paperhat:domain:codeSpecification:set:Modality
+			name="Modality"
+		>
+			<Member description="The requirement mandates behavior." value="Must" />
+
+			<Member description="The requirement prohibits behavior." value="MustNot" />
 		</EnumeratedValueSet>
 	</EnumeratedValueSets>
 

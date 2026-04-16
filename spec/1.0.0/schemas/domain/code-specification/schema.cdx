@@ -49,6 +49,8 @@
 				<AllowsTrait name="longDescription" />
 
 				<AllowsTrait name="diagnosticType" />
+
+				<AllowsTrait name="contentTransformer" />
 			</TraitRules>
 
 			<ChildRules>
@@ -1023,6 +1025,13 @@
 			defaultValueType=$Iri
 			id=paperhat:domain:codeSpecification:trait:diagnosticType
 			name="diagnosticType"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:codeSpecification:trait:contentTransformer
+			name="contentTransformer"
 			priority=$Primary
 		/>
 

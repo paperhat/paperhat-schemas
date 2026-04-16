@@ -55,6 +55,7 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | `version` | `$SemanticVersion` | Primary | Semantic version of the specification. |
 | `license` | `$Text` | Primary | License identifier for the specification. |
 | `description` | `$Text` | Secondary | Human-readable description. |
+| `contentTransformer` | `$Iri` | Primary | IRI of the content transformer that generates human-readable documentation from this code specification. Lexis runs the transformer before composition. |
 | `name` | `$Text` | Primary | Name of a type, variant, field, operation, or constant. |
 | `testName` | `$Text` | Primary | Name of a test case. |
 | `exported` | `$Boolean` | Primary | Whether the construct is part of the public interface. |

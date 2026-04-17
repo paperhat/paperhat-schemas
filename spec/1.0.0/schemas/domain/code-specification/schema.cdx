@@ -840,7 +840,7 @@
 
 		<ConceptDefinition
 			conceptKind=$Semantic
-			description="One typed argument supplied to an operation conformance case. The content is the canonical Codex literal or canonical Codex fragment for the argument value."
+			description="One typed argument supplied to an operation conformance case. The content is the canonical Codex literal or canonical Codex fragment for the argument value. Product values use the product tag; primitive fields may be attributes; complex fields use field-named child wrappers. Sum values use the selected variant tag. Wrapped variants contain one child fragment for the wrapped value. Ordered list fields use one field-named wrapper containing the ordered child fragments."
 			entityEligibility=$MustNotBeEntity
 			id=paperhat:domain:codeSpecification:OperationArgument
 			name="OperationArgument"
@@ -862,7 +862,7 @@
 
 		<ConceptDefinition
 			conceptKind=$Semantic
-			description="The exact success value expected from an operation conformance case. The content is the canonical Codex literal or canonical Codex fragment for the returned value."
+			description="The exact success value expected from an operation conformance case. The content is the canonical Codex literal or canonical Codex fragment for the returned value. Product, sum, wrapped-variant, and ordered-list encoding follow the same canonical fragment rules defined for OperationArgument."
 			entityEligibility=$MustNotBeEntity
 			id=paperhat:domain:codeSpecification:ExpectedOperationValue
 			name="ExpectedOperationValue"
@@ -880,7 +880,7 @@
 
 		<ConceptDefinition
 			conceptKind=$Semantic
-			description="The exact diagnostic value expected from an operation conformance case. The content is the canonical Codex fragment for the returned diagnostic value."
+			description="The exact diagnostic value expected from an operation conformance case. The content is the canonical Codex fragment for the returned diagnostic value. Product, sum, wrapped-variant, and ordered-list encoding follow the same canonical fragment rules defined for OperationArgument."
 			entityEligibility=$MustNotBeEntity
 			id=paperhat:domain:codeSpecification:ExpectedDiagnosticValue
 			name="ExpectedDiagnosticValue"

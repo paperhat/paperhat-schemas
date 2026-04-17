@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Defines a language-agnostic schema for authoring code specifications in Codex. A code specification is the single normative source for any Paperhat product: substrate libraries, extension libraries, application workbenches, foundries, language processors, stores, solvers, and graphical, terminal, and command-line interfaces. It declares product types, sum types, named constants, construction and accessor operations, validation rules, behavior mappings, conformance tables, realization rules, and test cases. The same document generates human-readable documentation through Lexis media foundries and executable implementations in every target language through Nexus code foundries. All field types reference Paperhat canonical type identifiers, preserving type identity from specification through RDF to generated code with zero erasure.
+Defines a language-agnostic schema for authoring code specifications in Codex. A code specification is the single normative source for any Paperhat product: substrate libraries, extension libraries, application workbenches, foundries, language processors, stores, solvers, and graphical, terminal, and command-line interfaces. It declares product types, sum types, named constants, operations, validation rules, normative requirements, terminology definitions, external references, module descriptions, and test cases. The same document generates human-readable documentation through Lexis media foundries and executable implementations in every target language through Nexus code foundries. All field types reference Paperhat canonical type identifiers, preserving type identity from specification through RDF to generated code with zero erasure.
 
 ## Concepts
 
@@ -21,14 +21,14 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | CanonicalOrderingRule | Structural | MustNotBeEntity | ForbidsContent | ComparisonStep (0+), WithinVariantRule (0+) | Defines the canonical total ordering for a type. |
 | WithinVariantRule | Structural | MustNotBeEntity | ForbidsContent | ComparisonStep (1+) | Defines the field comparison order within a specific variant of a sum type. |
 | ComparisonStep | Semantic | MustNotBeEntity | ForbidsContent | — | A single step in a comparison chain: compare the values of a specific field. |
-| ConstructionOperation | Semantic | MustBeEntity | ForbidsContent | OperationParameter (0+), ConstantBinding (0+), Precondition (0–1), ProhibitionPrecondition (0–1), ValueMapping (0–1) | An operation that constructs a value of a specific type and variant. |
+| ConstructionOperation | Semantic | MustBeEntity | ForbidsContent | OperationParameter (0+), ConstantBinding (0+), Precondition (0–1), ProhibitionPrecondition (0–1), ValueMapping (0–1) | A pure operation that produces a value of a specific type. Constructors, parsers, planners, evaluators, transitions, formatters, and other deterministic operations all use this concept. `producesVariant` identifies the produced variant when the result type is a sum type. |
 | OperationParameter | Semantic | MustNotBeEntity | ForbidsContent | — | A parameter accepted by an operation. |
 | ConstantBinding | Semantic | MustNotBeEntity | ForbidsContent | — | Binds a constant value to a target field during construction. |
 | Precondition | Semantic | MustNotBeEntity | ForbidsContent | — | A validation-rule precondition on an operation parameter. |
 | ProhibitionPrecondition | Semantic | MustNotBeEntity | ForbidsContent | — | A precondition that prohibits a parameter from equaling a specific constant. |
 | ValueMapping | Semantic | MustNotBeEntity | ForbidsContent | — | Maps a boolean parameter to text values for the lexical form field. |
 | AccessorOperation | Semantic | MustBeEntity | ForbidsContent | AccessorArm (1+) | An accessor operation that returns different values per variant of a sum type. |
-| UniformAccessorOperation | Semantic | MustBeEntity | ForbidsContent | — | An accessor operation that returns the same-named field from every variant of a sum type. |
+| UniformAccessorOperation | Semantic | MustBeEntity | ForbidsContent | — | An accessor operation that returns a field with a stable name from a product type or from every variant of a sum type that exposes that field. |
 | AccessorArm | Semantic | MustNotBeEntity | ForbidsContent | — | One arm of a variant accessor: specifies what a specific variant returns. |
 | ValidationRule | Semantic | MustBeEntity | ForbidsContent | behavior:Validation (0–1) | A named validation rule with a behavior expression tree as the single normative definition. The code foundry generates a validation function from the expression tree. The media foundry generates a human-readable description from the expression tree. |
 | ConstructionTestCase | Semantic | MustNotBeEntity | ForbidsContent | TestArgument (0+), ExpectedAccessorResult (0+) | A test that constructs a value and asserts accessor results. |
@@ -74,8 +74,8 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | `delegateField` | `$LookupToken` | Primary | The field to delegate comparison to when strategy is DelegateToField. |
 | `compareField` | `$LookupToken` | Primary | The field whose values are compared in this comparison step. |
 | `forVariant` | `$LookupToken` | Primary | The variant this rule or arm applies to. |
-| `producesType` | `$Iri` | Primary | Canonical type identifier of the type this operation constructs. |
-| `producesVariant` | `$LookupToken` | Primary | The variant this operation constructs. |
+| `producesType` | `$Iri` | Primary | Canonical type identifier of the type this operation produces. |
+| `producesVariant` | `$LookupToken` | Primary | The produced variant when the result type is a sum type. |
 | `mapsToField` | `$LookupToken` | Secondary | The target field this parameter maps to during construction. |
 | `targetField` | `$LookupToken` | Primary | The field that receives a constant binding or value mapping. |
 | `boundConstant` | `$LookupToken` | Primary | The named constant bound to a field during construction. |

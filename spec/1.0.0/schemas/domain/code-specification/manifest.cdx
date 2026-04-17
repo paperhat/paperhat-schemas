@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="PENDING-HASH"
+	closureHash="c93b69a079e42e23cc13c91ec741717e289a336478aa905b449157f981bc6f2f"
 	copyright="Copyright 2026 Paperhat"
 	description="Schema for authoring code specifications in Codex. A code specification is the single normative source for any Paperhat product: libraries, applications, foundries, language processors, stores, solvers, and interfaces. Generates human-readable documentation through Lexis and executable implementations in every target language through Nexus."
 	license="Apache-2.0"
@@ -11,8 +11,8 @@
 	requiredLexisVersion=">=1.0.0 <2.0.0"
 >
 	<PackageDependency
-		packageName="paperhat-behavior-expression"
-		closureHash="8a0a517891a706ca4b990ee7f3ad51b0bab33afd7c57e77c69083c20250482af"
+		packageName="behavior-expression-schema"
+		closureHash="7efe15d0e2c8e3e7f0a0633e51630485b59b674a562f17937a5d850c5fd89310"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

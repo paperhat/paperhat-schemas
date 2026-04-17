@@ -4,11 +4,11 @@
 		<Field name="" valueType= position=0 />
 	</ProductType>
 
-	<ConstructionOperation name="" exported=true producesType= producesVariant=>
+	<ConstructionOperation name="" exported=true producesType=>
 		<OperationParameter name="" valueType= position=0 />
 	</ConstructionOperation>
 
-	<ValidationRule name="" appliesToType= semantics="" />
+	<ValidationRule name="" appliesToType= validationPattern="" />
 
 	<ConstructionTestCase testName="" operation=>
 		<TestArgument value="" position=0 />

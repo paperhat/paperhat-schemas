@@ -134,11 +134,11 @@
 	</TraitLocalization>
 
 	<TraitLocalization identifier="producesType" label="Produces Type" labelOther="Produces Types">
-		Canonical type identifier of the type this operation constructs.
+		Canonical type identifier of the type this operation produces.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="producesVariant" label="Produces Variant" labelOther="Produces Variants">
-		The variant this operation constructs.
+		The produced variant when the result type is a sum type.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="mapsToField" label="Maps To Field" labelOther="Maps To Fields">
@@ -203,10 +203,6 @@
 
 	<TraitLocalization identifier="whenFalse" label="When False" labelOther="When False">
 		The text value mapped when a boolean parameter is false.
-	</TraitLocalization>
-
-	<TraitLocalization identifier="semantics" label="Semantics" labelOther="Semantics">
-		Formal semantic description of a validation rule.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="validationPattern" label="Validation Pattern" labelOther="Validation Patterns">

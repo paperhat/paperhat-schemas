@@ -60,7 +60,6 @@
 		name="normalized_value"
 		exported=true
 		producesType=urn:paperhat:color-spec#type/NormalizedValue
-		producesVariant=~NormalizedValue
 		description="Constructs a NormalizedValue from a raw floating-point input, rejecting values outside [0.0, 1.0]."
 	>
 		<OperationParameter name="raw" valueType=urn:paperhat:common-spec#type/Float256 position=0 mapsToField=~value />
@@ -83,7 +82,7 @@
 	<ValidationRule
 		name="in_unit_range"
 		appliesToType=urn:paperhat:common-spec#type/Float256
-		semantics="The value is greater than or equal to 0.0 and less than or equal to 1.0."
+		validationPattern="^(0(\\.[0-9]+)?|1(\\.0+)?)$"
 	/>
 
 	<ConstructionTestCase testName="construct_valid_normalized_value" operation=~normalized_value>

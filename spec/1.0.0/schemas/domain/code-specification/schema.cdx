@@ -6,12 +6,12 @@
 		normative source for any Paperhat product: substrate libraries, extension libraries,
 		application workbenches, foundries, language processors, stores, solvers, and graphical,
 		terminal, and command-line interfaces. It defines product types, sum types, named constants,
-		construction and accessor operations, validation rules, behavior mappings, conformance
-		tables, realization rules, and test cases in language-agnostic semantic form. The same
-		document generates human-readable documentation through Lexis media foundries and executable
-		implementations in every target language through Nexus code foundries. All field types
-		reference Paperhat canonical type identifiers, preserving type identity from specification
-		through RDF to generated code with zero erasure.
+		operations, validation rules, normative requirements, terminology definitions, external
+		references, module descriptions, and test cases in language-agnostic semantic form. The
+		same document generates human-readable documentation through Lexis media foundries and
+		executable implementations in every target language through Nexus code foundries. All field
+		types reference Paperhat canonical type identifiers, preserving type identity from
+		specification through RDF to generated code with zero erasure.
 	`
 	id=paperhat:domain:codeSpecification
 	namespace="codeSpecification"
@@ -363,7 +363,7 @@
 
 		<ConceptDefinition
 			conceptKind=$Semantic
-			description="An operation that constructs a value of a specific type and variant."
+			description="A pure operation that produces a value of a specific type. Constructors, parsers, planners, evaluators, transitions, formatters, and other deterministic operations all use this concept. The producesVariant trait identifies the produced variant when the result type is a sum type."
 			entityEligibility=$MustBeEntity
 			id=paperhat:domain:codeSpecification:ConstructionOperation
 			name="ConstructionOperation"
@@ -554,7 +554,7 @@
 
 		<ConceptDefinition
 			conceptKind=$Semantic
-			description="An accessor operation that returns the same-named field from every variant of a sum type."
+			description="An accessor operation that returns a field with a stable name from a product type or from every variant of a sum type that exposes that field."
 			entityEligibility=$MustBeEntity
 			id=paperhat:domain:codeSpecification:UniformAccessorOperation
 			name="UniformAccessorOperation"

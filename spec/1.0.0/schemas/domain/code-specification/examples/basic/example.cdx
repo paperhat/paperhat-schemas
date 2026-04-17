@@ -67,6 +67,12 @@
 		<Precondition validationRule=~in_unit_range appliesToParameter=~raw failureMessage="Value is outside the normalized range [0.0, 1.0]." />
 	</ConstructionOperation>
 
+	<grammar:Grammar key=~normalizedValueSurface notation=$Custom startSymbol="normalized_value">
+		<grammar:ProductionRule key=~normalizedValueRule ruleName="normalized_value" isStart=true>
+			normalized_value ::= Float256
+		</grammar:ProductionRule>
+	</grammar:Grammar>
+
 	<AccessorOperation
 		name="channel_label"
 		exported=true
@@ -90,6 +96,16 @@
 
 		<ExpectedAccessorResult accessor=~value expectedValue="0.5" />
 	</ConstructionTestCase>
+
+	<OperationConformanceCase testName="normalized_value_exact_result" operation=~normalized_value>
+		<OperationArgument position=0 valueType=urn:paperhat:common-spec#type/Float256>
+			0.5
+		</OperationArgument>
+
+		<ExpectedOperationValue valueType=urn:paperhat:color-spec#type/NormalizedValue>
+			<NormalizedValue value=0.5 />
+		</ExpectedOperationValue>
+	</OperationConformanceCase>
 
 	<RejectionTestCase testName="reject_negative_normalized_value" operation=~normalized_value expectedFailureContaining="outside the normalized range">
 		<TestArgument value="-0.1" position=0 />

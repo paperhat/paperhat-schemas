@@ -55,6 +55,14 @@
 
 	<ConceptLocalization identifier="ExpectedAccessorResult" label="Expected Accessor Result" labelOther="Expected Accessor Results" />
 
+	<ConceptLocalization identifier="OperationConformanceCase" label="Operation Conformance Case" labelOther="Operation Conformance Cases" />
+
+	<ConceptLocalization identifier="OperationArgument" label="Operation Argument" labelOther="Operation Arguments" />
+
+	<ConceptLocalization identifier="ExpectedOperationValue" label="Expected Operation Value" labelOther="Expected Operation Values" />
+
+	<ConceptLocalization identifier="ExpectedDiagnosticValue" label="Expected Diagnostic Value" labelOther="Expected Diagnostic Values" />
+
 	<ConceptLocalization identifier="InteropModule" label="Interop Module" labelOther="Interop Modules" />
 
 	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
@@ -93,8 +101,12 @@
 		Ordinal position within a parent container.
 	</TraitLocalization>
 
+	<TraitLocalization identifier="parameterName" label="Parameter Name" labelOther="Parameter Names">
+		The parameter name associated with an operation conformance argument.
+	</TraitLocalization>
+
 	<TraitLocalization identifier="valueType" label="Value Type" labelOther="Value Types">
-		Canonical type identifier for a field or constant value.
+		Canonical type identifier for a field, constant, argument value, or expected result value.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="elementType" label="Element Type" labelOther="Element Types">

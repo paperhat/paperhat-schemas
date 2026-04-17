@@ -1,8 +1,8 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="c93b69a079e42e23cc13c91ec741717e289a336478aa905b449157f981bc6f2f"
+	closureHash="60ec7f0c235ebae82400c782b353baaa0f58c2086d58826afbf6f656ecda99a3"
 	copyright="Copyright 2026 Paperhat"
-	description="Schema for authoring code specifications in Codex. A code specification is the single normative source for any Paperhat product: libraries, applications, foundries, language processors, stores, solvers, and interfaces. Generates human-readable documentation through Lexis and executable implementations in every target language through Nexus."
+	description="Schema for authoring code specifications in Codex. A code specification is the single normative source for any Paperhat product: libraries, applications, foundries, language processors, stores, solvers, and interfaces. It defines types, operations, formal surface grammars, and exact conformance cases. Generates human-readable documentation through Lexis and executable implementations in every target language through Nexus."
 	license="Apache-2.0"
 	packageName="paperhat-code-specification"
 	packageVersion="1.0.0"
@@ -13,6 +13,12 @@
 	<PackageDependency
 		packageName="behavior-expression-schema"
 		closureHash="7efe15d0e2c8e3e7f0a0633e51630485b59b674a562f17937a5d850c5fd89310"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-formal-grammar"
+		closureHash="a510f0c69cbb090ecd3f079379e9e34b3e7e06c4c177dc9efbf08e9b228c37c6"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 </DomainPackageManifest>

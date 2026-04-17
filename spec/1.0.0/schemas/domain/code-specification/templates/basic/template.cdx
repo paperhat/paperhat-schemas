@@ -4,6 +4,12 @@
 		<Field name="" valueType= position=0 />
 	</ProductType>
 
+	<grammar:Grammar key=~surfaceGrammar notation=$EBNF startSymbol="">
+		<grammar:ProductionRule key=~startRule ruleName="" isStart=true>
+			...
+		</grammar:ProductionRule>
+	</grammar:Grammar>
+
 	<ConstructionOperation name="" exported=true producesType=>
 		<OperationParameter name="" valueType= position=0 />
 	</ConstructionOperation>
@@ -15,4 +21,14 @@
 
 		<ExpectedAccessorResult accessor= expectedValue="" />
 	</ConstructionTestCase>
+
+	<OperationConformanceCase testName="" operation=>
+		<OperationArgument position=0 valueType=>
+			""
+		</OperationArgument>
+
+		<ExpectedOperationValue valueType=>
+			...
+		</ExpectedOperationValue>
+	</OperationConformanceCase>
 </CodeSpecification>

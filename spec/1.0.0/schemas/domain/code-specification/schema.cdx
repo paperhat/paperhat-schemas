@@ -6,12 +6,12 @@
 		normative source for any Paperhat product: substrate libraries, extension libraries,
 		application workbenches, foundries, language processors, stores, solvers, and graphical,
 		terminal, and command-line interfaces. It defines product types, sum types, named constants,
-		operations, validation rules, normative requirements, terminology definitions, external
-		references, module descriptions, and test cases in language-agnostic semantic form. The
-		same document generates human-readable documentation through Lexis media foundries and
-		executable implementations in every target language through Nexus code foundries. All field
-		types reference Paperhat canonical type identifiers, preserving type identity from
-		specification through RDF to generated code with zero erasure.
+		operations, validation rules, formal surface grammars, normative requirements, terminology
+		definitions, external references, module descriptions, and conformance cases in
+		language-agnostic semantic form. The same document generates human-readable documentation
+		through Lexis media foundries and executable implementations in every target language
+		through Nexus code foundries. All field types reference Paperhat canonical type identifiers,
+		preserving type identity from specification through RDF to generated code with zero erasure.
 	`
 	id=paperhat:domain:codeSpecification
 	namespace="codeSpecification"
@@ -21,6 +21,8 @@
 >
 	<SchemaImports>
 		<SchemaImport namespace="behavior" reference=urn:cdx:sha256:8a0a517891a706ca4b990ee7f3ad51b0bab33afd7c57e77c69083c20250482af />
+
+		<SchemaImport namespace="grammar" reference=paperhat:domain:formal-grammar />
 	</SchemaImports>
 
 	<ConceptDefinitions>
@@ -68,6 +70,8 @@
 
 				<AllowsChildConcept conceptSelector="ValidationRule" />
 
+				<AllowsChildConcept conceptSelector="grammar:Grammar" />
+
 				<AllowsChildConcept conceptSelector="ConstructionTestCase" />
 
 				<AllowsChildConcept conceptSelector="RejectionTestCase" />
@@ -75,6 +79,8 @@
 				<AllowsChildConcept conceptSelector="InequalityTestCase" />
 
 				<AllowsChildConcept conceptSelector="OrderingTestCase" />
+
+				<AllowsChildConcept conceptSelector="OperationConformanceCase" />
 
 				<AllowsChildConcept conceptSelector="InteropModule" />
 
@@ -802,6 +808,96 @@
 			</TraitRules>
 		</ConceptDefinition>
 
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A test that invokes any operation with exact typed arguments and asserts one exact success value or one exact diagnostic value."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:OperationConformanceCase
+			name="OperationConformanceCase"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="testName" />
+
+				<RequiresTrait name="operation" />
+
+				<AllowsTrait name="description" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="OperationArgument" />
+
+				<AllowsChildConcept conceptSelector="ExpectedOperationValue" max=1 />
+
+				<AllowsChildConcept conceptSelector="ExpectedDiagnosticValue" max=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="One typed argument supplied to an operation conformance case. The content is the canonical Codex literal or canonical Codex fragment for the argument value."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:OperationArgument
+			name="OperationArgument"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Preformatted />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="position" />
+
+				<RequiresTrait name="valueType" />
+
+				<AllowsTrait name="parameterName" />
+
+				<AllowsTrait name="description" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="The exact success value expected from an operation conformance case. The content is the canonical Codex literal or canonical Codex fragment for the returned value."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:ExpectedOperationValue
+			name="ExpectedOperationValue"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Preformatted />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="valueType" />
+
+				<AllowsTrait name="description" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="The exact diagnostic value expected from an operation conformance case. The content is the canonical Codex fragment for the returned diagnostic value."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:ExpectedDiagnosticValue
+			name="ExpectedDiagnosticValue"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Preformatted />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="valueType" />
+
+				<RequiresTrait name="diagnosticVariant" />
+
+				<AllowsTrait name="description" />
+			</TraitRules>
+		</ConceptDefinition>
+
 		[END: Test Cases]
 
 		[GROUP: Interop]
@@ -1000,6 +1096,13 @@
 			id=paperhat:domain:codeSpecification:trait:position
 			name="position"
 			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:parameterName
+			name="parameterName"
+			priority=$Secondary
 		/>
 
 		<TraitDefinition
@@ -1447,6 +1550,43 @@
 
 							<Rule>
 								<TraitExists trait="returnsConstant" />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:operation-conformance-has-one-expected
+			title="An operation conformance case expects either one success value or one diagnostic value"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="OperationConformanceCase" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ChildConstraint conceptSelector="ExpectedOperationValue" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="ExpectedDiagnosticValue" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ChildConstraint conceptSelector="ExpectedOperationValue" type=$ForbidsChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="ExpectedDiagnosticValue" type=$RequiresChildConcept />
 							</Rule>
 						</AllOf>
 					</Rule>

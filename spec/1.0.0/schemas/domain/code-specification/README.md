@@ -6,13 +6,13 @@
 
 ## Purpose
 
-Defines a language-agnostic schema for authoring code specifications in Codex. A code specification is the single normative source for any Paperhat product: substrate libraries, extension libraries, application workbenches, foundries, language processors, stores, solvers, and graphical, terminal, and command-line interfaces. It declares product types, sum types, named constants, operations, validation rules, normative requirements, terminology definitions, external references, module descriptions, and test cases. The same document generates human-readable documentation through Lexis media foundries and executable implementations in every target language through Nexus code foundries. All field types reference Paperhat canonical type identifiers, preserving type identity from specification through RDF to generated code with zero erasure.
+Defines a language-agnostic schema for authoring code specifications in Codex. A code specification is the single normative source for any Paperhat product: substrate libraries, extension libraries, application workbenches, foundries, language processors, stores, solvers, and graphical, terminal, and command-line interfaces. It declares product types, sum types, named constants, operations, validation rules, formal surface grammars, normative requirements, terminology definitions, external references, module descriptions, and conformance cases. The same document generates human-readable documentation through Lexis media foundries and executable implementations in every target language through Nexus code foundries. All field types reference Paperhat canonical type identifiers, preserving type identity from specification through RDF to generated code with zero erasure.
 
 ## Concepts
 
 | Concept | Kind | Entity | Content | Children | Description |
 |---|---|---|---|---|---|
-| CodeSpecification | Semantic | MustNotBeEntity | ForbidsContent | ProductType, SumType, NamedConstant, ConstructionOperation, AccessorOperation, UniformAccessorOperation, ValidationRule, ConstructionTestCase, RejectionTestCase, InequalityTestCase, OrderingTestCase, InteropModule, ModuleDescription, NormativeRequirement, TermDefinition, ExternalReference | Root container for a complete code specification. |
+| CodeSpecification | Semantic | MustNotBeEntity | ForbidsContent | ProductType, SumType, NamedConstant, ConstructionOperation, AccessorOperation, UniformAccessorOperation, ValidationRule, grammar:Grammar, ConstructionTestCase, RejectionTestCase, InequalityTestCase, OrderingTestCase, OperationConformanceCase, InteropModule, ModuleDescription, NormativeRequirement, TermDefinition, ExternalReference | Root container for a complete code specification. |
 | ProductType | Semantic | MustBeEntity | ForbidsContent | Field (1+), CanonicalOrderingRule (0–1) | A type whose instances carry all fields simultaneously. Projected as a struct in Rust, a record in Haskell. |
 | SumType | Semantic | MustBeEntity | ForbidsContent | Variant (1+), CanonicalOrderingRule (0–1) | A type whose instances carry exactly one variant at a time. Projected as an enum in Rust, a data type in Haskell. |
 | Variant | Semantic | MustNotBeEntity | ForbidsContent | Field (0+) | A variant of a sum type. Carries either named fields or wraps a single unnamed value. |
@@ -38,6 +38,10 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | TestValue | Semantic | MustNotBeEntity | ForbidsContent | TestArgument (0+) | A value constructed for use in a test case. |
 | TestArgument | Semantic | MustNotBeEntity | ForbidsContent | — | An argument passed to an operation in a test case. |
 | ExpectedAccessorResult | Semantic | MustNotBeEntity | ForbidsContent | — | An expected result from calling an accessor on a constructed value. |
+| OperationConformanceCase | Semantic | MustNotBeEntity | ForbidsContent | OperationArgument (0+), ExpectedOperationValue (0–1), ExpectedDiagnosticValue (0–1) | A test that invokes any operation with exact typed arguments and asserts one exact success value or one exact diagnostic value. |
+| OperationArgument | Semantic | MustNotBeEntity | RequiresContent | — | One typed argument supplied to an operation conformance case. The content is the canonical Codex literal or canonical Codex fragment for the argument value. |
+| ExpectedOperationValue | Semantic | MustNotBeEntity | RequiresContent | — | The exact success value expected from an operation conformance case. The content is the canonical Codex literal or canonical Codex fragment for the returned value. |
+| ExpectedDiagnosticValue | Semantic | MustNotBeEntity | RequiresContent | — | The exact diagnostic value expected from an operation conformance case. The content is the canonical Codex fragment for the returned diagnostic value. |
 | InteropModule | Semantic | MustNotBeEntity | ForbidsContent | — | A language-specific interop module. Foundries for the target language generate the interop code; other foundries ignore it. |
 | ModuleDescription | Structural | MustNotBeEntity | ForbidsContent | — | Describes a source module in the generated code. The foundry uses module descriptions to generate module-level documentation comments. |
 | NormativeRequirement | Semantic | MustBeEntity | ForbidsContent | — | A normative requirement that governs the specification as a whole or defines a cross-cutting policy, behavioral mandate, or contract clause not tied to a specific type or operation. |
@@ -49,6 +53,7 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | Namespace | Schema | Purpose |
 |---|---|---|
 | behavior | `paperhat:behavior:expression` | Provides the `Validation` expression container for ValidationRule behavior expression trees. |
+| grammar | `paperhat:domain:formal-grammar` | Provides exact surface-grammar containers and production rules for syntax-governed specifications. |
 
 ## Traits
 
@@ -64,7 +69,8 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | `testName` | `$Text` | Primary | Name of a test case. |
 | `exported` | `$Boolean` | Primary | Whether the construct is part of the public interface. |
 | `position` | `$NonNegativeInteger` | Primary | Ordinal position within a parent container. |
-| `valueType` | `$Iri` | Primary | Canonical type identifier for a field or constant value. |
+| `parameterName` | `$Text` | Secondary | The parameter name associated with an operation conformance argument. |
+| `valueType` | `$Iri` | Primary | Canonical type identifier for a field, constant, argument value, or expected result value. |
 | `elementType` | `$Iri` | Secondary | Canonical type identifier for elements within a collection-typed field. |
 | `wrapsType` | `$Iri` | Primary | The single type that a newtype variant wraps. |
 | `capabilities` | `$List<$EnumeratedToken>` | Primary | Type capabilities (Equality, Hashing, Cloning, CanonicalOrdering, Debugging). |
@@ -122,6 +128,7 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 |---|---|---|
 | variant-fields-or-wraps | Variant | A variant carries either named fields or wraps a single type, not both. |
 | accessor-arm-returns-one | AccessorArm | An accessor arm returns either a field or a constant, not both. |
+| operation-conformance-has-one-expected | OperationConformanceCase | An operation conformance case expects either one success value or one diagnostic value. |
 
 ## Design Decisions
 
@@ -129,7 +136,9 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 - ProductType and SumType are separate concepts rather than one type with a discriminator trait. The structural differences (variants, field exclusivity, ordering semantics) are fundamental, not parametric.
 - All field type references use `$Iri` pointing to Paperhat canonical type identifiers. This preserves type identity across the specification-to-code pipeline without lossy string matching.
 - Validation rules carry a behavior expression tree (from the `paperhat:behavior:expression` schema) as the single normative definition. The code foundry generates validation functions from the expression tree. The media foundry generates human-readable descriptions from the expression tree. The `semantics` prose trait is removed. The `validationPattern` trait remains as a convenience shorthand for simple pattern-based rules, but the behavior expression is the normative authority when both are present.
+- Surface-grammar definitions are imported from the formal-grammar schema rather than redefined locally. Code specifications use those grammar nodes when exact parser behavior is part of the normative contract.
 - Test cases are first-class schema concepts, not external artifacts. This ensures that the specification and its tests are always co-located, versioned together, and processable by the same foundry pipeline.
+- OperationConformanceCase exists alongside the constructor-focused legacy test cases because parser, formatter, planner, evaluator, and transition operations require exact typed arguments and exact structured outcomes that simple accessor assertions cannot express without guesswork.
 - CanonicalOrderingRule supports three strategies to cover the common patterns: field-by-field comparison for product types, variant-then-field comparison for sum types, and single-field delegation for wrapper types.
 - InteropModule uses `conditionalOn` as a text string rather than a structured language enum. The set of target languages is open-ended and foundry-specific; the schema does not enumerate it.
 - AccessorArm enforces a mutual exclusion constraint: it returns either a field or a constant, never both. This is enforced at the schema level through the `accessor-arm-returns-one` constraint rather than through separate concept types.

@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="PENDING-HASH"
+	closureHash="382ba1c5d6658bb06bacc42cfa7cb28b6ee8da1e81617da2ca7c1ea2e0b88589"
 	copyright="Copyright 2026 Paperhat"
 	description="Deterministic typography-governance primitives for Colophon. Defines typography systems, font families, font role bindings, font fallbacks, type scale definitions, scale mappings, and emphasis rules above retained substrate typographic values."
 	license="Apache-2.0"

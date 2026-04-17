@@ -1,0 +1,46 @@
+<GovernanceDocument
+	editor="Paperhat"
+	locked=true
+	normative=true
+	title="Paperhat Governance Example"
+	version=1.0.0
+>
+	<GovernanceSection
+		conformance=$Normative
+		division=$Body
+		id=urn:paperhat:example:governance-document#section/authority
+		key=~authority
+		title="Authority"
+	>
+		<text:Paragraph>
+			This section defines the authority boundary for shared Paperhat governance.
+		</text:Paragraph>
+
+		<GovernanceAuthorityRule
+			id=urn:paperhat:example:governance-document#rule/governance-source-governs
+			key=~governance-source-governs
+			title="The governance source governs"
+		>
+			<text:Paragraph>
+				If a secondary document conflicts with the normative governance source, the normative
+				governance source governs.
+			</text:Paragraph>
+		</GovernanceAuthorityRule>
+
+		<GovernanceRestatementRule
+			id=urn:paperhat:example:governance-document#rule/restatement-clause-required
+			key=~restatement-clause-required
+			title="Repeated governance claims require an explicit source clause"
+		>
+			<text:Paragraph>
+				A repeated governance claim MUST carry an explicit governance-source clause adjacent to the
+				restated claim.
+			</text:Paragraph>
+		</GovernanceRestatementRule>
+
+		<GovernanceSourceClause
+			label="Normative governance source"
+			target=urn:paperhat:example:governance-document#rule/restatement-clause-required
+		/>
+	</GovernanceSection>
+</GovernanceDocument>

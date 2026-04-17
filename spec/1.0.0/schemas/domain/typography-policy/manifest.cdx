@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="PENDING-HASH"
+	closureHash="6366e3f4a37ed88e0c8d044bc5d9ad0f30fc165016850bbeaa2c7efbfe6b3004"
 	copyright="Copyright 2026 Paperhat"
 	description="Authored spacing, paragraph, and accessibility policy objects for Colophon. Defines spacing policies, paragraph policies, and typography accessibility policies as durable authored rule documents."
 	license="Apache-2.0"

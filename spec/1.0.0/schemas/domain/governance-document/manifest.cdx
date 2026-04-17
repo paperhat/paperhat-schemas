@@ -1,0 +1,51 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="cd797900e80baef5b1e75e4ad501dde259e8fab31cd4a16e34ebc9d02f0e1655"
+	copyright="Copyright 2026 Paperhat"
+	description=`
+		Constitutional governance schema for authoring the single normative governance source for
+		Paperhat and other similarly governed semantic systems.
+	`
+	license="Apache-2.0"
+	packageName="paperhat-governance-document"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+>
+	<PackageDependency
+		packageName="paperhat-conformance-class"
+		closureHash="dfc7ea5177285d3d7b64dcf6e5c2483b20586d58a8b94b90e3294853afc292cd"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-specification-foundation"
+		closureHash="627436f2bd9e48329c89a94e1471310407a91353bcb19597c6c0479579c974a0"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-citation"
+		closureHash="dec249bd258b5aca7da2937b2129b25f7a077957b6b15263d1b11eb79d7b471b"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-description"
+		closureHash="1d52385bd993afa202cdda224e86fce0da4a104de6bbf26a1910b5d74cc7b04c"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-list"
+		closureHash="5f0de477f8a63609527571e7817612956244cd3db0e1539f7267ff20126f71a5"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+
+	<PackageDependency
+		packageName="paperhat-text"
+		closureHash="cd2819edcdfd0f1f6506ced617b55588e882dad2c30665ede6355cd9b9b3a805"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</DomainPackageManifest>

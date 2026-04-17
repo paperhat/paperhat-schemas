@@ -1,12 +1,13 @@
-<RepositoryManifest
+<LexisRepositoryManifest
 	author="Paperhat"
-	closureHash="PENDING-HASH"
+	closureHash="5e2e87e76468dffd3dbfe1dd56e59c30f96e72137d89182cef8fdc5e7a5e5238"
 	copyright="Copyright 2026 Paperhat"
 	description="Paperhat schema repository. Contains universal schema packages, behavior definitions, and reference vocabularies consumed by Paperhat systems."
 	license="Apache-2.0"
 	repositoryName="paperhat-schemas"
 	repositoryVersion="1.0.0"
 	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
 >
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-accessibility" packagePath="spec/1.0.0/schemas/domain/accessibility" />
 
@@ -29,6 +30,10 @@
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-clause" packagePath="spec/1.0.0/schemas/domain/clause" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-code" packagePath="spec/1.0.0/schemas/domain/code" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-colophon-project" packagePath="spec/1.0.0/schemas/domain/colophon-project" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-colophon-result-bundle" packagePath="spec/1.0.0/schemas/domain/colophon-result-bundle" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-contract" packagePath="spec/1.0.0/schemas/domain/contract" />
 
@@ -67,6 +72,8 @@
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-foreign-term" packagePath="spec/1.0.0/schemas/domain/foreign-term" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-geographic-location" packagePath="spec/1.0.0/schemas/domain/geographic-location" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-governance-document" packagePath="spec/1.0.0/schemas/domain/governance-document" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-identifier" packagePath="spec/1.0.0/schemas/domain/identifier" />
 
@@ -186,6 +193,10 @@
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-tone" packagePath="spec/1.0.0/schemas/domain/tone" />
 
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-typography-governance" packagePath="spec/1.0.0/schemas/domain/typography-governance" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-typography-policy" packagePath="spec/1.0.0/schemas/domain/typography-policy" />
+
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-work" packagePath="spec/1.0.0/schemas/domain/work" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-white-paper" packagePath="spec/1.0.0/schemas/domain/white-paper" />
@@ -264,6 +275,8 @@
 
 	<RepositoryPackageEntry packageFamily="behavior" packageName="behavior-shape-schema" packagePath="spec/1.0.0/schemas/behavior/behavior-shape-schema" />
 
+	<RepositoryPackageEntry packageFamily="view" packageName="paperhat-form-definition-view" packagePath="spec/1.0.0/schemas/view/form-definition" />
+
 	<RepositoryPackageEntry packageFamily="view" packageName="paperhat-semantic-projection-view" packagePath="spec/1.0.0/schemas/view/semantic-projection" />
 
 	<RepositoryPackageEntry packageFamily="view" packageName="paperhat-view-definition-view" packagePath="spec/1.0.0/schemas/view/view-definition" />
@@ -333,4 +346,4 @@
 	<RepositoryPackageEntry packageFamily="vocabulary" packageName="maturity-w3c" packagePath="spec/1.0.0/schemas/vocabularies/maturity-w3c" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-code-specification" packagePath="spec/1.0.0/schemas/domain/code-specification" />
-</RepositoryManifest>
+</LexisRepositoryManifest>

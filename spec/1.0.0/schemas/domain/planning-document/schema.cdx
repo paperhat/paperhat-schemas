@@ -85,7 +85,7 @@
 
 		<SchemaImport
 			namespace="series"
-			reference=urn:cdx:sha256:2358dff7b19e2eadd71c52eab401b8ddb1e1a4a1b3d3b04e62aea24a563f7f72
+			reference=urn:cdx:sha256:fc5470560e9db72e027b99f546e1549c0305946c46a12ea37a540f4577c8c943
 		/>
 
 		<SchemaImport

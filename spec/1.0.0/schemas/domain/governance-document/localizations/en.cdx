@@ -1,0 +1,29 @@
+<LocalizationBundle
+	schema=paperhat:domain:governance-document
+	schemaVersion="1.0.0"
+	language=language-tag("en")
+>
+	<ConceptLocalization identifier="GovernanceDocument" label="Governance Document" labelOther="Governance Documents" />
+
+	<ConceptLocalization identifier="GovernanceSection" label="Governance Section" labelOther="Governance Sections" />
+
+	<ConceptLocalization identifier="GovernancePrinciple" label="Governance Principle" labelOther="Governance Principles" />
+
+	<ConceptLocalization identifier="GovernanceRequirement" label="Governance Requirement" labelOther="Governance Requirements" />
+
+	<ConceptLocalization identifier="GovernanceAuthorityRule" label="Governance Authority Rule" labelOther="Governance Authority Rules" />
+
+	<ConceptLocalization identifier="GovernanceConflictRule" label="Governance Conflict Rule" labelOther="Governance Conflict Rules" />
+
+	<ConceptLocalization identifier="GovernanceBoundary" label="Governance Boundary" labelOther="Governance Boundaries" />
+
+	<ConceptLocalization identifier="GovernanceRestatementRule" label="Governance Restatement Rule" labelOther="Governance Restatement Rules" />
+
+	<ConceptLocalization identifier="GovernanceSectionReference" label="Governance Section Reference" labelOther="Governance Section References" />
+
+	<ConceptLocalization identifier="GovernanceSourceClause" label="Governance Source Clause" labelOther="Governance Source Clauses" />
+
+	<TraitLocalization identifier="governanceScope" label="Governance Scope" labelOther="Governance Scopes">
+		Open classification for the scope of a governance rule.
+	</TraitLocalization>
+</LocalizationBundle>

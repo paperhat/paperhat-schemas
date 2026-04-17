@@ -9,9 +9,9 @@
 	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="typographygovernance" reference=urn:cdx:sha256:PENDING-HASH />
+		<SchemaImport namespace="typographygovernance" reference=urn:cdx:sha256:70c21e6d3c06e7496d1d78befd560c3ce6b54f7c65218a69e2d5fa3dca683368 />
 
-		<SchemaImport namespace="typographypolicy" reference=urn:cdx:sha256:PENDING-HASH />
+		<SchemaImport namespace="typographypolicy" reference=urn:cdx:sha256:1fd7f33af8c598235949ee6da25a0129426530afab12c22663d8856eda9b6fd3 />
 
 		<SchemaImport namespace="description" reference=urn:cdx:sha256:aedb0f8af35a38f088a3e99cb0297df7c0a252cdb58cf3072a2d20103e23c3e8 />
 

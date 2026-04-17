@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="PENDING-HASH"
+	closureHash="1a970afd510de05709e722074bd8727b78ba243dda885c5b0a632009f1dcfe72"
 	copyright="Copyright 2026 Paperhat"
 	description="Root Colophon project-document composer. Imports generic Paperhat packages plus typography-governance and typography-policy packages, and defines project-scoped source references, durable policy bindings, governance packs, review dispositions, and publication scopes."
 	license="Apache-2.0"
@@ -12,13 +12,13 @@
 >
 	<PackageDependency
 		packageName="paperhat-typography-governance"
-		closureHash="PENDING-HASH"
+		closureHash="382ba1c5d6658bb06bacc42cfa7cb28b6ee8da1e81617da2ca7c1ea2e0b88589"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 
 	<PackageDependency
 		packageName="paperhat-typography-policy"
-		closureHash="PENDING-HASH"
+		closureHash="6366e3f4a37ed88e0c8d044bc5d9ad0f30fc165016850bbeaa2c7efbfe6b3004"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 

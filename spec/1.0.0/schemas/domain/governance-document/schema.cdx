@@ -1,0 +1,529 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description=`
+		Constitutional governance schema for authoring the single normative governance source for
+		Paperhat and other similarly governed semantic systems.
+	`
+	id=paperhat:domain:governance-document
+	namespace="govdoc"
+	title="Governance Document Schema"
+	version="1.0.0"
+	versionScheme=$SemanticVersion
+>
+	<SchemaImports>
+		<SchemaImport
+			namespace="conf"
+			reference=urn:cdx:sha256:10c00bdea986f2ce814337bfa32b6772231c0caea8d7c20ade54590ef6e56141
+		/>
+
+		<SchemaImport
+			namespace="specbase"
+			reference=urn:cdx:sha256:4856bc3fcab434c8762c8be84f7fe20e3f37676b793f8cf283d53c53d2674436
+		/>
+
+		<SchemaImport
+			namespace="cite"
+			reference=urn:cdx:sha256:6058646e95877f9292e5993af7003b794905476837e718a47a99daade4b8f53e
+		/>
+
+		<SchemaImport
+			namespace="desc"
+			reference=urn:cdx:sha256:aedb0f8af35a38f088a3e99cb0297df7c0a252cdb58cf3072a2d20103e23c3e8
+		/>
+
+		<SchemaImport
+			namespace="list"
+			reference=urn:cdx:sha256:d121178b869452797377ede05fb08319b0c0ed5bcfff2fcc9cc1c56e911a4666
+		/>
+
+		<SchemaImport
+			namespace="text"
+			reference=urn:cdx:sha256:56710936ccb873445f40c284809a6753878a18a19c1a0a56e43de8c8075ec4fc
+		/>
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:governance-document:GovernanceDocument
+			name="GovernanceDocument"
+		>
+			<TraitRules>
+				<RequiresTrait name="specbase:editor" />
+
+				<RequiresTrait name="specbase:locked" />
+
+				<RequiresTrait name="specbase:normative" />
+
+				<RequiresTrait name="specbase:title" />
+
+				<RequiresTrait name="specbase:version" />
+
+				<AllowsTrait name="specbase:amends" />
+
+				<AllowsTrait name="specbase:supersedes" />
+
+				<AllowsTrait name="specbase:obsoletes" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="GovernanceSection" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:governance-document:GovernanceSection
+			name="GovernanceSection"
+		>
+			<TraitRules>
+				<RequiresTrait name="specbase:key" />
+
+				<RequiresTrait name="specbase:conformance" />
+
+				<RequiresTrait name="specbase:title" />
+
+				<AllowsTrait name="specbase:designation" />
+
+				<AllowsTrait name="specbase:division" />
+
+				<AllowsTrait name="specbase:deprecated" />
+
+				<AllowsTrait name="specbase:deprecatedSince" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
+
+				<AllowsChildConcept conceptSelector="list:OrderedList" />
+
+				<AllowsChildConcept conceptSelector="list:UnorderedList" />
+
+				<AllowsChildConcept conceptSelector="desc:Description" />
+
+				<AllowsChildConcept conceptSelector="GovernanceSection" />
+
+				<AllowsChildConcept conceptSelector="GovernancePrinciple" />
+
+				<AllowsChildConcept conceptSelector="GovernanceRequirement" />
+
+				<AllowsChildConcept conceptSelector="GovernanceAuthorityRule" />
+
+				<AllowsChildConcept conceptSelector="GovernanceConflictRule" />
+
+				<AllowsChildConcept conceptSelector="GovernanceBoundary" />
+
+				<AllowsChildConcept conceptSelector="GovernanceRestatementRule" />
+
+				<AllowsChildConcept conceptSelector="GovernanceSectionReference" />
+
+				<AllowsChildConcept conceptSelector="GovernanceSourceClause" />
+
+				<AllowsChildConcept conceptSelector="conf:ConformanceClause" />
+
+				<AllowsChildConcept conceptSelector="specbase:Note" />
+
+				<AllowsChildConcept conceptSelector="specbase:ExternalReference" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:governance-document:GovernancePrinciple
+			name="GovernancePrinciple"
+		>
+			<TraitRules>
+				<RequiresTrait name="specbase:key" />
+
+				<RequiresTrait name="specbase:title" />
+
+				<AllowsTrait name="governanceScope" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="text:Paragraph" min=1 />
+
+				<AllowsChildConcept conceptSelector="specbase:Note" />
+
+				<AllowsChildConcept conceptSelector="list:OrderedList" />
+
+				<AllowsChildConcept conceptSelector="list:UnorderedList" />
+
+				<AllowsChildConcept conceptSelector="cite:Citation" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:governance-document:GovernanceRequirement
+			name="GovernanceRequirement"
+		>
+			<TraitRules>
+				<RequiresTrait name="specbase:key" />
+
+				<RequiresTrait name="specbase:title" />
+
+				<RequiresTrait name="specbase:modality">
+					<AllowedValues>
+						<ValueIsOneOf values=[$Must, $MustNot] />
+					</AllowedValues>
+				</RequiresTrait>
+
+				<AllowsTrait name="governanceScope" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="text:Paragraph" min=1 />
+
+				<AllowsChildConcept conceptSelector="specbase:Rationale" />
+
+				<AllowsChildConcept conceptSelector="specbase:Note" />
+
+				<AllowsChildConcept conceptSelector="list:OrderedList" />
+
+				<AllowsChildConcept conceptSelector="list:UnorderedList" />
+
+				<AllowsChildConcept conceptSelector="cite:Citation" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:governance-document:GovernanceAuthorityRule
+			name="GovernanceAuthorityRule"
+		>
+			<TraitRules>
+				<RequiresTrait name="specbase:key" />
+
+				<RequiresTrait name="specbase:title" />
+
+				<AllowsTrait name="governanceScope" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="text:Paragraph" min=1 />
+
+				<AllowsChildConcept conceptSelector="specbase:Rationale" />
+
+				<AllowsChildConcept conceptSelector="specbase:Note" />
+
+				<AllowsChildConcept conceptSelector="list:OrderedList" />
+
+				<AllowsChildConcept conceptSelector="list:UnorderedList" />
+
+				<AllowsChildConcept conceptSelector="cite:Citation" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:governance-document:GovernanceConflictRule
+			name="GovernanceConflictRule"
+		>
+			<TraitRules>
+				<RequiresTrait name="specbase:key" />
+
+				<RequiresTrait name="specbase:title" />
+
+				<AllowsTrait name="governanceScope" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="text:Paragraph" min=1 />
+
+				<AllowsChildConcept conceptSelector="specbase:Rationale" />
+
+				<AllowsChildConcept conceptSelector="specbase:Note" />
+
+				<AllowsChildConcept conceptSelector="list:OrderedList" />
+
+				<AllowsChildConcept conceptSelector="list:UnorderedList" />
+
+				<AllowsChildConcept conceptSelector="cite:Citation" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:governance-document:GovernanceBoundary
+			name="GovernanceBoundary"
+		>
+			<TraitRules>
+				<RequiresTrait name="specbase:key" />
+
+				<RequiresTrait name="specbase:title" />
+
+				<AllowsTrait name="governanceScope" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="text:Paragraph" min=1 />
+
+				<AllowsChildConcept conceptSelector="specbase:Rationale" />
+
+				<AllowsChildConcept conceptSelector="specbase:Note" />
+
+				<AllowsChildConcept conceptSelector="list:OrderedList" />
+
+				<AllowsChildConcept conceptSelector="list:UnorderedList" />
+
+				<AllowsChildConcept conceptSelector="cite:Citation" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:governance-document:GovernanceRestatementRule
+			name="GovernanceRestatementRule"
+		>
+			<TraitRules>
+				<RequiresTrait name="specbase:key" />
+
+				<RequiresTrait name="specbase:title" />
+
+				<AllowsTrait name="governanceScope" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="text:Paragraph" min=1 />
+
+				<AllowsChildConcept conceptSelector="specbase:Rationale" />
+
+				<AllowsChildConcept conceptSelector="specbase:Note" />
+
+				<AllowsChildConcept conceptSelector="list:OrderedList" />
+
+				<AllowsChildConcept conceptSelector="list:UnorderedList" />
+
+				<AllowsChildConcept conceptSelector="cite:Citation" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:governance-document:GovernanceSectionReference
+			name="GovernanceSectionReference"
+		>
+			<TraitRules>
+				<RequiresTrait name="specbase:target" />
+
+				<AllowsTrait name="specbase:label" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:governance-document:GovernanceSourceClause
+			name="GovernanceSourceClause"
+		>
+			<TraitRules>
+				<RequiresTrait name="specbase:target" />
+
+				<AllowsTrait name="specbase:label" />
+			</TraitRules>
+
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:governance-document:trait:governanceScope
+			name="governanceScope"
+		>
+			<AllowedValues>
+				<ValueIsOneOf
+					values=[
+						$Workspace,
+						$Repository,
+						$Document,
+						$InstructionFile,
+						$Plan,
+						$WorkOrder,
+						$Specification,
+						$Schema,
+						$Implementation,
+						$Application,
+						$Library,
+						$Language,
+						$Foundry,
+						$CodeFoundry,
+						$MediaFoundry,
+						$Tool,
+						$Projection,
+						$TripleStore,
+						$Contributor,
+						$LLMContributor
+					]
+				/>
+			</AllowedValues>
+		</TraitDefinition>
+	</TraitDefinitions>
+
+	<EnumeratedValueSets>
+		<EnumeratedValueSet
+			id=paperhat:domain:governance-document:set:GovernanceScope
+			name="GovernanceScope"
+		>
+			<Member value="Workspace" />
+
+			<Member value="Repository" />
+
+			<Member value="Document" />
+
+			<Member value="InstructionFile" />
+
+			<Member value="Plan" />
+
+			<Member value="WorkOrder" />
+
+			<Member value="Specification" />
+
+			<Member value="Schema" />
+
+			<Member value="Implementation" />
+
+			<Member value="Application" />
+
+			<Member value="Library" />
+
+			<Member value="Language" />
+
+			<Member value="Foundry" />
+
+			<Member value="CodeFoundry" />
+
+			<Member value="MediaFoundry" />
+
+			<Member value="Tool" />
+
+			<Member value="Projection" />
+
+			<Member value="TripleStore" />
+
+			<Member value="Contributor" />
+
+			<Member value="LLMContributor" />
+		</EnumeratedValueSet>
+	</EnumeratedValueSets>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=paperhat:domain:governance-document:governance-section-reference-target-type
+			title="GovernanceSectionReference target must be a GovernanceSection"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="GovernanceSectionReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="GovernanceSection" />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:governance-document:governance-section-reference-must-resolve
+			title="GovernanceSectionReference target must resolve"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="GovernanceSectionReference" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceMustResolve />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:governance-document:governance-source-clause-target-entity
+			title="GovernanceSourceClause target must be an entity"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="GovernanceSourceClause" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceTargetsEntity />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:governance-document:governance-source-clause-must-resolve
+			title="GovernanceSourceClause target must resolve"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="GovernanceSourceClause" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint type=$ReferenceMustResolve />
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

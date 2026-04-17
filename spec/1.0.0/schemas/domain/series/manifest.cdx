@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="17e93352a070f95c6cf1073c3a8e661286a1bed8423fb090c65cdff96e1bf83b"
+	closureHash="50d8e69556ec92fa9464d6fbfb5fc2f698e05a5f153f5c2d059de65b01a58eaf"
 	copyright="Copyright 2026 Paperhat"
 	description="Series membership metadata for a document that belongs to an ordered, multi-part publication."
 	license="Apache-2.0"

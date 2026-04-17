@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="PENDING-HASH"
+	closureHash="879203f71f7fa00c7278b4eeea2ac8dcd32bfbc5c655cef9a296c12f7a97ebf9"
 	copyright="Copyright 2026 Paperhat"
 	description="Derived Colophon workflow result documents. Defines durable rhythm audit results, measure audit results, accessibility audit results, emphasis consistency audit results, and provenance traces as closed snapshots."
 	license="Apache-2.0"

@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="4a4eb4eef5d2d900becc8bd5e8cd428f165f16180c48be642f3561ce7af8a006"
+	closureHash="dae26b05323e5ef807ae2c69655214dcb751ad7365503f89f198a4c2f04c334a"
 	copyright="Copyright 2026 Paperhat"
 	description=`
 		A strategic planning document with titled sections, milestones, dependencies, deadlines,
@@ -99,7 +99,7 @@
 
 	<PackageDependency
 		packageName="paperhat-series"
-		closureHash="17e93352a070f95c6cf1073c3a8e661286a1bed8423fb090c65cdff96e1bf83b"
+		closureHash="50d8e69556ec92fa9464d6fbfb5fc2f698e05a5f153f5c2d059de65b01a58eaf"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 

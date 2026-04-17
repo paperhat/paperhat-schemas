@@ -1,6 +1,6 @@
 <ViewPackageManifest
 	author="Paperhat"
-	closureHash="PENDING-HASH"
+	closureHash="b844eb2475a4bfdd8708ab4def185ed21233e4077b3364ace877d42062f4564f"
 	copyright="Copyright 2026 Paperhat"
 	description="View-family schema for declaring which fields from a source concept a form collects, in what order, with what grouping."
 	license="Apache-2.0"

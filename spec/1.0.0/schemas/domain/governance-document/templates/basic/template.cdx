@@ -1,0 +1,30 @@
+[Minimal governance-document template with one section and one authority rule.]
+<GovernanceDocument
+	editor="Editor Name"
+	locked=false
+	normative=true
+	title="Governance Document Title"
+	version=1.0.0
+>
+	<GovernanceSection
+		conformance=$Normative
+		division=$Body
+		id=urn:example:governance-document#section/authority
+		key=~authority
+		title="Authority"
+	>
+		<text:Paragraph>
+			State the governance scope and purpose of this section.
+		</text:Paragraph>
+
+		<GovernanceAuthorityRule
+			id=urn:example:governance-document#rule/governance-precedence
+			key=~governance-precedence
+			title="Governance precedence"
+		>
+			<text:Paragraph>
+				State the authoritative precedence rule for the governed corpus.
+			</text:Paragraph>
+		</GovernanceAuthorityRule>
+	</GovernanceSection>
+</GovernanceDocument>

@@ -58,6 +58,8 @@
 			<ChildRules>
 				<AllowsChildConcept conceptSelector="ProductType" />
 
+				<AllowsChildConcept conceptSelector="PrimitiveType" />
+
 				<AllowsChildConcept conceptSelector="SumType" />
 
 				<AllowsChildConcept conceptSelector="NamedConstant" />
@@ -134,6 +136,38 @@
 
 				<AllowsChildConcept conceptSelector="TypeParameter" />
 			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A primitive type: an atomic type whose instances are indivisible values rather than records or variants. Projected as a native atomic value according to representationKind."
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:codeSpecification:PrimitiveType
+			name="PrimitiveType"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="exported" />
+
+				<RequiresTrait name="representationKind" />
+
+				<AllowsTrait name="description" />
+
+				<AllowsTrait name="longDescription" />
+
+				<AllowsTrait name="specSection" />
+
+				<AllowsTrait name="specRequirement" />
+
+				<AllowsTrait name="capabilities" />
+			</TraitRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
 		</ConceptDefinition>
@@ -369,7 +403,7 @@
 
 		<ConceptDefinition
 			conceptKind=$Semantic
-			description="A pure operation that produces a value of a specific type. Constructors, parsers, planners, evaluators, transitions, formatters, and other deterministic operations all use this concept. The producesVariant trait identifies the produced variant when the result type is a sum type."
+			description="A pure operation that produces a value of a specific type. Constructors, parsers, planners, evaluators, transitions, formatters, and other deterministic operations all use this concept. The producesVariant trait identifies the produced variant when the result type is a sum type. For PrimitiveType targets, an optional behavior Calculation child defines the produced primitive value."
 			entityEligibility=$MustBeEntity
 			id=paperhat:domain:codeSpecification:ConstructionOperation
 			name="ConstructionOperation"
@@ -410,6 +444,8 @@
 				<AllowsChildConcept conceptSelector="ProhibitionPrecondition" max=1 />
 
 				<AllowsChildConcept conceptSelector="ValueMapping" max=1 />
+
+				<AllowsChildConcept conceptSelector="behavior:Calculation" max=1 />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
@@ -1133,6 +1169,13 @@
 			priority=$Primary
 		/>
 
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:codeSpecification:trait:representationKind
+			name="representationKind"
+			priority=$Primary
+		/>
+
 
 		<TraitDefinition
 			defaultValueType=$Text
@@ -1216,6 +1259,7 @@
 		<TraitDefinition
 			defaultValueType=$Iri
 			id=paperhat:domain:codeSpecification:trait:producesType
+			isReferenceTrait=true
 			name="producesType"
 			priority=$Primary
 		/>
@@ -1461,6 +1505,21 @@
 		</EnumeratedValueSet>
 
 		<EnumeratedValueSet
+			id=paperhat:domain:codeSpecification:set:PrimitiveRepresentationKind
+			name="PrimitiveRepresentationKind"
+		>
+			<Member description="A two-valued logical primitive projected to the host boolean representation." value="Boolean" />
+
+			<Member description="A primitive represented by the host text type." value="Text" />
+
+			<Member description="A signed integral primitive represented by the host integer type." value="Integer" />
+
+			<Member description="A non-negative integral primitive represented by the host natural-number type." value="NonNegativeInteger" />
+
+			<Member description="An arbitrary-precision decimal primitive represented by the host decimal or rational type." value="Decimal" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet
 			id=paperhat:domain:codeSpecification:set:OrderingStrategy
 			name="OrderingStrategy"
 		>
@@ -1587,6 +1646,47 @@
 
 							<Rule>
 								<ChildConstraint conceptSelector="ExpectedDiagnosticValue" type=$RequiresChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:primitive-construction-operation-shape
+			title="A primitive-producing construction operation uses calculation-based construction"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ConstructionOperation" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<Not>
+							<Rule>
+								<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="PrimitiveType" />
+							</Rule>
+						</Not>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ChildConstraint conceptSelector="behavior:Calculation" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<TraitMissing trait="producesVariant" />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="ConstantBinding" type=$ForbidsChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="ValueMapping" type=$ForbidsChildConcept />
 							</Rule>
 						</AllOf>
 					</Rule>

@@ -7,11 +7,15 @@
 
 	<ConceptLocalization identifier="ProductType" label="Product Type" labelOther="Product Types" />
 
+	<ConceptLocalization identifier="PrimitiveType" label="Primitive Type" labelOther="Primitive Types" />
+
 	<ConceptLocalization identifier="SumType" label="Sum Type" labelOther="Sum Types" />
 
 	<ConceptLocalization identifier="Variant" label="Variant" labelOther="Variants" />
 
 	<ConceptLocalization identifier="Field" label="Field" labelOther="Fields" />
+
+	<ConceptLocalization identifier="TypeParameter" label="Type Parameter" labelOther="Type Parameters" />
 
 	<ConceptLocalization identifier="NamedConstant" label="Named Constant" labelOther="Named Constants" />
 
@@ -65,6 +69,14 @@
 
 	<ConceptLocalization identifier="InteropModule" label="Interop Module" labelOther="Interop Modules" />
 
+	<ConceptLocalization identifier="ModuleDescription" label="Module Description" labelOther="Module Descriptions" />
+
+	<ConceptLocalization identifier="NormativeRequirement" label="Normative Requirement" labelOther="Normative Requirements" />
+
+	<ConceptLocalization identifier="TermDefinition" label="Term Definition" labelOther="Term Definitions" />
+
+	<ConceptLocalization identifier="ExternalReference" label="External Reference" labelOther="External References" />
+
 	<TraitLocalization identifier="key" label="Key" labelOther="Keys">
 		Stable lookup key for cross-referencing.
 	</TraitLocalization>
@@ -83,6 +95,14 @@
 
 	<TraitLocalization identifier="description" label="Description" labelOther="Descriptions">
 		Human-readable description.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="longDescription" label="Long Description" labelOther="Long Descriptions">
+		Extended human-readable description.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="contentTransformer" label="Content Transformer" labelOther="Content Transformers">
+		IRI of the content transformer that generates human-readable documentation from this code specification.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="name" label="Name" labelOther="Names">
@@ -121,6 +141,10 @@
 		Type-level capabilities declared by the type.
 	</TraitLocalization>
 
+	<TraitLocalization identifier="representationKind" label="Representation Kind" labelOther="Representation Kinds">
+		Primitive representation category for an atomic type.
+	</TraitLocalization>
+
 	<TraitLocalization identifier="specSection" label="Specification Section" labelOther="Specification Sections">
 		Section reference within the governing specification.
 	</TraitLocalization>
@@ -151,6 +175,22 @@
 
 	<TraitLocalization identifier="producesVariant" label="Produces Variant" labelOther="Produces Variants">
 		The produced variant when the result type is a sum type.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="fallible" label="Fallible" labelOther="Fallible">
+		Whether the operation returns a diagnostic result instead of total success.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="diagnosticVariant" label="Diagnostic Variant" labelOther="Diagnostic Variants">
+		The diagnostic variant returned by a fallible operation or exact diagnostic expectation.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="diagnosticType" label="Diagnostic Type" labelOther="Diagnostic Types">
+		Canonical type identifier of the diagnostic type associated with the specification.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="optional" label="Optional" labelOther="Optional">
+		Whether the field or operation result is optional.
 	</TraitLocalization>
 
 	<TraitLocalization identifier="mapsToField" label="Maps To Field" labelOther="Maps To Fields">
@@ -251,5 +291,25 @@
 
 	<TraitLocalization identifier="targetLibrary" label="Target Library" labelOther="Target Libraries">
 		The external library or framework this interop module targets.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="modality" label="Modality" labelOther="Modalities">
+		The normative modality of a requirement.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="rationale" label="Rationale" labelOther="Rationales">
+		The reasoning behind a normative requirement.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="term" label="Term" labelOther="Terms">
+		The term being defined in a term definition.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="label" label="Label" labelOther="Labels">
+		Human-readable label for an external reference.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="uri" label="URI" labelOther="URIs">
+		The IRI or URN of a referenced external resource.
 	</TraitLocalization>
 </LocalizationBundle>

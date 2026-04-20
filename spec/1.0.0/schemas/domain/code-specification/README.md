@@ -6,22 +6,24 @@
 
 ## Purpose
 
-Defines a language-agnostic schema for authoring code specifications in Codex. A code specification is the single normative source for any Paperhat product: substrate libraries, extension libraries, application workbenches, foundries, language processors, stores, solvers, and graphical, terminal, and command-line interfaces. It declares product types, sum types, named constants, operations, validation rules, formal surface grammars, normative requirements, terminology definitions, external references, module descriptions, and conformance cases. The same document generates human-readable documentation through Lexis media foundries and executable implementations in every target language through Nexus code foundries. All field types reference Paperhat canonical type identifiers, preserving type identity from specification through RDF to generated code with zero erasure.
+Defines a language-agnostic schema for authoring code specifications in Codex. A code specification is the single normative source for any Paperhat product: substrate libraries, extension libraries, application workbenches, foundries, language processors, stores, solvers, and graphical, terminal, and command-line interfaces. It declares product types, primitive types, sum types, named constants, operations, validation rules, formal surface grammars, normative requirements, terminology definitions, external references, module descriptions, and conformance cases. The same document generates human-readable documentation through Lexis media foundries and executable implementations in every target language through Nexus code foundries. All field types reference Paperhat canonical type identifiers, preserving type identity from specification through RDF to generated code with zero erasure.
 
 ## Concepts
 
 | Concept | Kind | Entity | Content | Children | Description |
 |---|---|---|---|---|---|
-| CodeSpecification | Semantic | MustNotBeEntity | ForbidsContent | ProductType, SumType, NamedConstant, ConstructionOperation, AccessorOperation, UniformAccessorOperation, ValidationRule, grammar:Grammar, ConstructionTestCase, RejectionTestCase, InequalityTestCase, OrderingTestCase, OperationConformanceCase, InteropModule, ModuleDescription, NormativeRequirement, TermDefinition, ExternalReference | Root container for a complete code specification. |
-| ProductType | Semantic | MustBeEntity | ForbidsContent | Field (1+), CanonicalOrderingRule (0–1) | A type whose instances carry all fields simultaneously. Projected as a struct in Rust, a record in Haskell. |
-| SumType | Semantic | MustBeEntity | ForbidsContent | Variant (1+), CanonicalOrderingRule (0–1) | A type whose instances carry exactly one variant at a time. Projected as an enum in Rust, a data type in Haskell. |
+| CodeSpecification | Semantic | MustNotBeEntity | ForbidsContent | ProductType, PrimitiveType, SumType, NamedConstant, ConstructionOperation, AccessorOperation, UniformAccessorOperation, ValidationRule, grammar:Grammar, ConstructionTestCase, RejectionTestCase, InequalityTestCase, OrderingTestCase, OperationConformanceCase, InteropModule, ModuleDescription, NormativeRequirement, TermDefinition, ExternalReference | Root container for a complete code specification. |
+| ProductType | Semantic | MustBeEntity | ForbidsContent | Field (1+), CanonicalOrderingRule (0–1), TypeParameter (0+) | A type whose instances carry all fields simultaneously. Projected as a struct in Rust, a record in Haskell. |
+| PrimitiveType | Semantic | MustBeEntity | ForbidsContent | — | An atomic type whose instances are indivisible values rather than records or variants. Projected as a native atomic value according to `representationKind`. |
+| SumType | Semantic | MustBeEntity | ForbidsContent | Variant (1+), CanonicalOrderingRule (0–1), TypeParameter (0+) | A type whose instances carry exactly one variant at a time. Projected as an enum in Rust, a data type in Haskell. |
 | Variant | Semantic | MustNotBeEntity | ForbidsContent | Field (0+) | A variant of a sum type. Carries either named fields or wraps a single unnamed value. |
 | Field | Semantic | MustNotBeEntity | ForbidsContent | — | A named, typed field belonging to a product type or a sum type variant. |
+| TypeParameter | Semantic | MustNotBeEntity | ForbidsContent | — | A type parameter declared on a product type or sum type. |
 | NamedConstant | Semantic | MustBeEntity | ForbidsContent | — | A named constant value with a canonical type identifier. |
 | CanonicalOrderingRule | Structural | MustNotBeEntity | ForbidsContent | ComparisonStep (0+), WithinVariantRule (0+) | Defines the canonical total ordering for a type. |
 | WithinVariantRule | Structural | MustNotBeEntity | ForbidsContent | ComparisonStep (1+) | Defines the field comparison order within a specific variant of a sum type. |
 | ComparisonStep | Semantic | MustNotBeEntity | ForbidsContent | — | A single step in a comparison chain: compare the values of a specific field. |
-| ConstructionOperation | Semantic | MustBeEntity | ForbidsContent | OperationParameter (0+), ConstantBinding (0+), Precondition (0–1), ProhibitionPrecondition (0–1), ValueMapping (0–1) | A pure operation that produces a value of a specific type. Constructors, parsers, planners, evaluators, transitions, formatters, and other deterministic operations all use this concept. `producesVariant` identifies the produced variant when the result type is a sum type. |
+| ConstructionOperation | Semantic | MustBeEntity | ForbidsContent | OperationParameter (0+), ConstantBinding (0+), Precondition (0+), ProhibitionPrecondition (0–1), ValueMapping (0–1), behavior:Calculation (0–1) | A pure operation that produces a value of a specific type. Constructors, parsers, planners, evaluators, transitions, formatters, and other deterministic operations all use this concept. `producesVariant` identifies the produced variant when the result type is a sum type. For `PrimitiveType` targets, an optional `behavior:Calculation` child defines the produced primitive value. |
 | OperationParameter | Semantic | MustNotBeEntity | ForbidsContent | — | A parameter accepted by an operation. |
 | ConstantBinding | Semantic | MustNotBeEntity | ForbidsContent | — | Binds a constant value to a target field during construction. |
 | Precondition | Semantic | MustNotBeEntity | ForbidsContent | — | A validation-rule precondition on an operation parameter. |
@@ -52,7 +54,7 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 
 | Namespace | Schema | Purpose |
 |---|---|---|
-| behavior | `paperhat:behavior:expression` | Provides the `Validation` expression container for ValidationRule behavior expression trees. |
+| behavior | `paperhat:behavior:expression` | Provides the `Calculation` and `Validation` expression containers for construction-operation and validation-rule behavior expression trees. |
 | grammar | `paperhat:domain:formal-grammar` | Provides exact surface-grammar containers and production rules for syntax-governed specifications. |
 
 ## Traits
@@ -64,6 +66,7 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | `version` | `$SemanticVersion` | Primary | Semantic version of the specification. |
 | `license` | `$Text` | Primary | License identifier for the specification. |
 | `description` | `$Text` | Secondary | Human-readable description. |
+| `longDescription` | `$Text` | Secondary | Extended human-readable description. |
 | `contentTransformer` | `$Iri` | Primary | IRI of the content transformer that generates human-readable documentation from this code specification. Lexis runs the transformer before composition. |
 | `name` | `$Text` | Primary | Name of a type, variant, field, operation, or constant. |
 | `testName` | `$Text` | Primary | Name of a test case. |
@@ -74,6 +77,7 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | `elementType` | `$Iri` | Secondary | Canonical type identifier for elements within a collection-typed field. |
 | `wrapsType` | `$Iri` | Primary | The single type that a newtype variant wraps. |
 | `capabilities` | `$List<$EnumeratedToken>` | Primary | Type capabilities (Equality, Hashing, Cloning, CanonicalOrdering, Debugging). |
+| `representationKind` | `$EnumeratedToken` | Primary | Primitive representation category (Boolean, Text, Integer, NonNegativeInteger, Decimal). |
 | `specSection` | `$Text` | Secondary | Section reference within the governing specification. |
 | `specRequirement` | `$LookupToken` | Secondary | Requirement identifier within the governing specification. |
 | `strategy` | `$EnumeratedToken` | Primary | Ordering strategy (FieldByFieldComparison, VariantThenFieldComparison, DelegateToField). |
@@ -82,6 +86,10 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | `forVariant` | `$LookupToken` | Primary | The variant this rule or arm applies to. |
 | `producesType` | `$Iri` | Primary | Canonical type identifier of the type this operation produces. |
 | `producesVariant` | `$LookupToken` | Primary | The produced variant when the result type is a sum type. |
+| `fallible` | `$Boolean` | Primary | Whether the operation returns a diagnostic result instead of total success. |
+| `diagnosticVariant` | `$LookupToken` | Primary | The diagnostic variant returned by a fallible operation or exact diagnostic expectation. |
+| `diagnosticType` | `$Iri` | Primary | Canonical type identifier of the diagnostic type associated with the specification. |
+| `optional` | `$Boolean` | Primary | Whether a field or operation result is optional. |
 | `mapsToField` | `$LookupToken` | Secondary | The target field this parameter maps to during construction. |
 | `targetField` | `$LookupToken` | Primary | The field that receives a constant binding or value mapping. |
 | `boundConstant` | `$LookupToken` | Primary | The named constant bound to a field during construction. |
@@ -118,6 +126,7 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | Set | Values | Description |
 |---|---|---|
 | Capability | Equality, Hashing, Cloning, CanonicalOrdering, Debugging | Type-level capabilities that a product type or sum type declares. |
+| PrimitiveRepresentationKind | Boolean, Text, Integer, NonNegativeInteger, Decimal | Primitive representation categories for atomic types. |
 | OrderingStrategy | FieldByFieldComparison, VariantThenFieldComparison, DelegateToField | Strategies for defining the canonical total ordering of a type. |
 | TestValueRole | Left, Right, Lesser, Greater | The role a test value plays in a comparison or inequality test case. |
 | Modality | Must, MustNot | The normative modality of a requirement. |
@@ -129,11 +138,13 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | variant-fields-or-wraps | Variant | A variant carries either named fields or wraps a single type, not both. |
 | accessor-arm-returns-one | AccessorArm | An accessor arm returns either a field or a constant, not both. |
 | operation-conformance-has-one-expected | OperationConformanceCase | An operation conformance case expects either one success value or one diagnostic value. |
+| primitive-construction-operation-shape | ConstructionOperation | A construction operation that produces a primitive type uses `behavior:Calculation`, must not use `producesVariant`, and must not use ConstantBinding or ValueMapping. |
 
 ## Design Decisions
 
 - CodeSpecification is MustNotBeEntity because it is a root document container, not a referenceable entity. The types, operations, and constants within it are the entities.
 - ProductType and SumType are separate concepts rather than one type with a discriminator trait. The structural differences (variants, field exclusivity, ordering semantics) are fundamental, not parametric.
+- PrimitiveType exists separately from ProductType and SumType because atomic values are not records or tagged alternatives. Primitive construction is calculation-based and carries an explicit `representationKind` so host-language lowering remains exact.
 - All field type references use `$Iri` pointing to Paperhat canonical type identifiers. This preserves type identity across the specification-to-code pipeline without lossy string matching.
 - Validation rules carry a behavior expression tree (from the `paperhat:behavior:expression` schema) as the single normative definition. The code foundry generates validation functions from the expression tree. The media foundry generates human-readable descriptions from the expression tree. The `semantics` prose trait is removed. The `validationPattern` trait remains as a convenience shorthand for simple pattern-based rules, but the behavior expression is the normative authority when both are present.
 - Surface-grammar definitions are imported from the formal-grammar schema rather than redefined locally. Code specifications use those grammar nodes when exact parser behavior is part of the normative contract.

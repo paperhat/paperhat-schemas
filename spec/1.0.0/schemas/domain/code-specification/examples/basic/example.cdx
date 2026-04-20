@@ -98,11 +98,18 @@
 	</ConstructionTestCase>
 
 	<OperationConformanceCase testName="normalized_value_exact_result" operation=~normalized_value>
-		<OperationArgument position=0 valueType=urn:paperhat:common-spec#type/Float256>
+		<OperationArgument
+			position=0
+			valueType=urn:paperhat:common-spec#type/Float256
+			bodyMode=$content
+		>
 			0.5
 		</OperationArgument>
 
-		<ExpectedOperationValue valueType=urn:paperhat:color-spec#type/NormalizedValue>
+		<ExpectedOperationValue
+			valueType=urn:paperhat:color-spec#type/NormalizedValue
+			bodyMode=$content
+		>
 			<NormalizedValue value=0.5 />
 		</ExpectedOperationValue>
 	</OperationConformanceCase>

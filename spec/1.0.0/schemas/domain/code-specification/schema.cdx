@@ -818,11 +818,31 @@
 			</ContentRules>
 
 			<TraitRules>
-				<RequiresTrait name="value" />
+				<AllowsTrait name="value" />
 
 				<RequiresTrait name="position" />
 
 				<AllowsTrait name="description" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="TextByScalars" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="A reviewable Text encoding authored as an ordered list of Character values."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:TextByScalars
+			name="TextByScalars"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="scalars" />
 			</TraitRules>
 		</ConceptDefinition>
 
@@ -840,8 +860,12 @@
 			<TraitRules>
 				<RequiresTrait name="accessor" />
 
-				<RequiresTrait name="expectedValue" />
+				<AllowsTrait name="expectedValue" />
 			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="TextByScalars" max=1 />
+			</ChildRules>
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -882,7 +906,7 @@
 			name="OperationArgument"
 		>
 			<ContentRules>
-				<RequiresContent whitespaceMode=$Preformatted />
+				<AllowsContentOrChildren whitespaceMode=$Preformatted />
 			</ContentRules>
 
 			<TraitRules>
@@ -894,6 +918,10 @@
 
 				<AllowsTrait name="description" />
 			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="TextByScalars" max=1 />
+			</ChildRules>
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -904,7 +932,7 @@
 			name="ExpectedOperationValue"
 		>
 			<ContentRules>
-				<RequiresContent whitespaceMode=$Preformatted />
+				<AllowsContentOrChildren whitespaceMode=$Preformatted />
 			</ContentRules>
 
 			<TraitRules>
@@ -912,6 +940,10 @@
 
 				<AllowsTrait name="description" />
 			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="TextByScalars" max=1 />
+			</ChildRules>
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -922,7 +954,7 @@
 			name="ExpectedDiagnosticValue"
 		>
 			<ContentRules>
-				<RequiresContent whitespaceMode=$Preformatted />
+				<AllowsContentOrChildren whitespaceMode=$Preformatted />
 			</ContentRules>
 
 			<TraitRules>
@@ -932,6 +964,10 @@
 
 				<AllowsTrait name="description" />
 			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="TextByScalars" max=1 />
+			</ChildRules>
 		</ConceptDefinition>
 
 		[END: Test Cases]
@@ -1459,6 +1495,13 @@
 		/>
 
 		<TraitDefinition
+			defaultValueType=$List<$Character>
+			id=paperhat:domain:codeSpecification:trait:scalars
+			name="scalars"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
 			defaultValueType=$Text
 			id=paperhat:domain:codeSpecification:trait:expectedFailureContaining
 			name="expectedFailureContaining"
@@ -1609,6 +1652,191 @@
 
 							<Rule>
 								<TraitExists trait="returnsConstant" />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:test-argument-has-one-text-source
+			title="A test argument uses either a direct value trait or one TextByScalars child"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="TestArgument" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<AllOf>
+							<Rule>
+								<TraitExists trait="value" />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="TextByScalars" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<TraitMissing trait="value" />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="TextByScalars" type=$RequiresChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:expected-accessor-result-has-one-text-source
+			title="An expected accessor result uses either expectedValue or one TextByScalars child"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ExpectedAccessorResult" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<AllOf>
+							<Rule>
+								<TraitExists trait="expectedValue" />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="TextByScalars" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<TraitMissing trait="expectedValue" />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="TextByScalars" type=$RequiresChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:operation-argument-has-one-text-source
+			title="An operation argument uses either content or one TextByScalars child"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="OperationArgument" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ContentConstraint type=$ContentRequired />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="TextByScalars" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ContentConstraint type=$ForbidsContent />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="TextByScalars" type=$RequiresChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:expected-operation-value-has-one-text-source
+			title="An expected operation value uses either content or one TextByScalars child"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ExpectedOperationValue" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ContentConstraint type=$ContentRequired />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="TextByScalars" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ContentConstraint type=$ForbidsContent />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="TextByScalars" type=$RequiresChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:expected-diagnostic-value-has-one-text-source
+			title="An expected diagnostic value uses either content or one TextByScalars child"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ExpectedDiagnosticValue" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ContentConstraint type=$ContentRequired />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="TextByScalars" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ContentConstraint type=$ForbidsContent />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="TextByScalars" type=$RequiresChildConcept />
 							</Rule>
 						</AllOf>
 					</Rule>

@@ -23,11 +23,11 @@
 	</ConstructionTestCase>
 
 	<OperationConformanceCase testName="" operation=>
-		<OperationArgument position=0 valueType=>
+		<OperationArgument position=0 valueType= bodyMode=$content>
 			""
 		</OperationArgument>
 
-		<ExpectedOperationValue valueType=>
+		<ExpectedOperationValue valueType= bodyMode=$content>
 			...
 		</ExpectedOperationValue>
 	</OperationConformanceCase>

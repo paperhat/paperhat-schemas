@@ -331,7 +331,7 @@
 
 		<ConceptDefinition
 			conceptKind=$Structural
-			description="Defines the canonical total ordering for a type."
+			description="Defines the canonical total ordering for a type. For sum types, same-variant comparison uses field-order rules for fielded variants, wrapped-value comparison for wrapped variants, and equality for unit variants."
 			entityEligibility=$MustNotBeEntity
 			id=paperhat:domain:codeSpecification:CanonicalOrderingRule
 			name="CanonicalOrderingRule"
@@ -359,7 +359,7 @@
 
 		<ConceptDefinition
 			conceptKind=$Structural
-			description="Defines the field comparison order within a specific variant of a sum type."
+			description="Defines the field comparison order within one field-bearing variant of a sum type."
 			entityEligibility=$MustNotBeEntity
 			id=paperhat:domain:codeSpecification:WithinVariantRule
 			name="WithinVariantRule"
@@ -1268,7 +1268,11 @@
 			id=paperhat:domain:codeSpecification:trait:strategy
 			name="strategy"
 			priority=$Primary
-		/>
+		>
+			<AllowedValues>
+				<ValueIsOneOf values="$FieldByFieldComparison,$VariantThenFieldComparison,$DelegateToField" />
+			</AllowedValues>
+		</TraitDefinition>
 
 		<TraitDefinition
 			defaultValueType=$LookupToken
@@ -1568,7 +1572,7 @@
 		>
 			<Member description="Compare fields in declared order; the first difference determines the result." value="FieldByFieldComparison" />
 
-			<Member description="Compare variant position first; within the same variant, compare fields in declared order." value="VariantThenFieldComparison" />
+			<Member description="Compare variant position first; within the same variant, compare fields for fielded variants, wrapped values for wrapped variants, and treat unit variants as equal." value="VariantThenFieldComparison" />
 
 			<Member description="Delegate the entire comparison to a single field." value="DelegateToField" />
 		</EnumeratedValueSet>
@@ -1915,6 +1919,121 @@
 
 							<Rule>
 								<ChildConstraint conceptSelector="ValueMapping" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:field-by-field-ordering-shape
+			title="FieldByFieldComparison applies only to product-type field comparisons"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="CanonicalOrderingRule" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<Not>
+							<Rule>
+								<TraitEquals trait="strategy" value=$FieldByFieldComparison />
+							</Rule>
+						</Not>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ContextConstraint contextSelector="ProductType" type=$OnlyValidUnderContext />
+							</Rule>
+
+							<Rule>
+								<TraitMissing trait="delegateField" />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="WithinVariantRule" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:variant-then-field-ordering-shape
+			title="VariantThenFieldComparison applies only to sum-type ordering"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="CanonicalOrderingRule" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<Not>
+							<Rule>
+								<TraitEquals trait="strategy" value=$VariantThenFieldComparison />
+							</Rule>
+						</Not>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ContextConstraint contextSelector="SumType" type=$OnlyValidUnderContext />
+							</Rule>
+
+							<Rule>
+								<TraitMissing trait="delegateField" />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="ComparisonStep" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:delegate-ordering-shape
+			title="DelegateToField applies only to product-type single-field delegation"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="CanonicalOrderingRule" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<Not>
+							<Rule>
+								<TraitEquals trait="strategy" value=$DelegateToField />
+							</Rule>
+						</Not>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ContextConstraint contextSelector="ProductType" type=$OnlyValidUnderContext />
+							</Rule>
+
+							<Rule>
+								<TraitExists trait="delegateField" />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="ComparisonStep" type=$ForbidsChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="WithinVariantRule" type=$ForbidsChildConcept />
 							</Rule>
 						</AllOf>
 					</Rule>

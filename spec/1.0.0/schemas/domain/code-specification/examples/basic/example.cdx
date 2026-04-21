@@ -40,6 +40,19 @@
 		</CanonicalOrderingRule>
 	</SumType>
 
+	<SumType
+		name="ChannelSelector"
+		exported=true
+		description="Selects a color channel by wrapped name or wrapped index."
+		capabilities=[$Equality, $Hashing, $Cloning, $CanonicalOrdering, $Debugging]
+	>
+		<Variant name="ByName" position=0 wrapsType=urn:paperhat:text-spec#type/NonEmptyText />
+
+		<Variant name="ByIndex" position=1 wrapsType=urn:paperhat:numeric-spec#type/NonNegativeInteger />
+
+		<CanonicalOrderingRule strategy=$VariantThenFieldComparison />
+	</SumType>
+
 	<NamedConstant
 		name="ZERO"
 		exported=true

@@ -20,8 +20,8 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | Field | Semantic | MustNotBeEntity | ForbidsContent | — | A named, typed field belonging to a product type or a sum type variant. |
 | TypeParameter | Semantic | MustNotBeEntity | ForbidsContent | — | A type parameter declared on a product type or sum type. |
 | NamedConstant | Semantic | MustBeEntity | ForbidsContent | — | A named constant value with a canonical type identifier. |
-| CanonicalOrderingRule | Structural | MustNotBeEntity | ForbidsContent | ComparisonStep (0+), WithinVariantRule (0+) | Defines the canonical total ordering for a type. |
-| WithinVariantRule | Structural | MustNotBeEntity | ForbidsContent | ComparisonStep (1+) | Defines the field comparison order within a specific variant of a sum type. |
+| CanonicalOrderingRule | Structural | MustNotBeEntity | ForbidsContent | ComparisonStep (0+), WithinVariantRule (0+) | Defines the canonical total ordering for a type. For sum types, same-variant comparison uses field-order rules for fielded variants, wrapped-value comparison for wrapped variants, and equality for unit variants. |
+| WithinVariantRule | Structural | MustNotBeEntity | ForbidsContent | ComparisonStep (1+) | Defines the field comparison order within one field-bearing variant of a sum type. |
 | ComparisonStep | Semantic | MustNotBeEntity | ForbidsContent | — | A single step in a comparison chain: compare the values of a specific field. |
 | ConstructionOperation | Semantic | MustBeEntity | ForbidsContent | OperationParameter (0+), ConstantBinding (0+), Precondition (0+), ProhibitionPrecondition (0–1), ValueMapping (0–1), behavior:Calculation (0–1) | A pure operation that produces a value of a specific type. Constructors, parsers, planners, evaluators, transitions, formatters, and other deterministic operations all use this concept. `producesVariant` identifies the produced variant when the result type is a sum type. For `PrimitiveType` targets, an optional `behavior:Calculation` child defines the produced primitive value. |
 | OperationParameter | Semantic | MustNotBeEntity | ForbidsContent | — | A parameter accepted by an operation. |
@@ -80,7 +80,7 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | `representationKind` | `$EnumeratedToken` | Primary | Primitive representation category (Boolean, Text, Integer, NonNegativeInteger, Decimal). |
 | `specSection` | `$Text` | Secondary | Section reference within the governing specification. |
 | `specRequirement` | `$LookupToken` | Secondary | Requirement identifier within the governing specification. |
-| `strategy` | `$EnumeratedToken` | Primary | Ordering strategy (FieldByFieldComparison, VariantThenFieldComparison, DelegateToField). |
+| `strategy` | `$EnumeratedToken` | Primary | Ordering strategy. `FieldByFieldComparison` and `DelegateToField` apply to product types. `VariantThenFieldComparison` applies to sum types. |
 | `delegateField` | `$LookupToken` | Primary | The field to delegate comparison to when strategy is DelegateToField. |
 | `compareField` | `$LookupToken` | Primary | The field whose values are compared in this comparison step. |
 | `forVariant` | `$LookupToken` | Primary | The variant this rule or arm applies to. |
@@ -139,6 +139,9 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | accessor-arm-returns-one | AccessorArm | An accessor arm returns either a field or a constant, not both. |
 | operation-conformance-has-one-expected | OperationConformanceCase | An operation conformance case expects either one success value or one diagnostic value. |
 | primitive-construction-operation-shape | ConstructionOperation | A construction operation that produces a primitive type uses `behavior:Calculation`, must not use `producesVariant`, and must not use ConstantBinding or ValueMapping. |
+| field-by-field-ordering-shape | CanonicalOrderingRule | `FieldByFieldComparison` is valid only under `ProductType`, must not use `delegateField`, and must not contain `WithinVariantRule`. |
+| variant-then-field-ordering-shape | CanonicalOrderingRule | `VariantThenFieldComparison` is valid only under `SumType`, must not use `delegateField`, and must not contain top-level `ComparisonStep` children. |
+| delegate-ordering-shape | CanonicalOrderingRule | `DelegateToField` is valid only under `ProductType`, requires `delegateField`, and must not contain `ComparisonStep` or `WithinVariantRule`. |
 
 ## Design Decisions
 
@@ -151,7 +154,7 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 - Test cases are first-class schema concepts, not external artifacts. This ensures that the specification and its tests are always co-located, versioned together, and processable by the same foundry pipeline.
 - OperationConformanceCase exists alongside the constructor-focused legacy test cases because parser, formatter, planner, evaluator, and transition operations require exact typed arguments and exact structured outcomes that simple accessor assertions cannot express without guesswork.
 - Canonical operation-conformance fragments use one uniform encoding rule: product values use the product tag, complex fields use field-named child wrappers, sum values use variant tags, wrapped variants contain the wrapped child fragment, and ordered list fields contain ordered child fragments inside one field-named wrapper.
-- CanonicalOrderingRule supports three strategies to cover the common patterns: field-by-field comparison for product types, variant-then-field comparison for sum types, and single-field delegation for wrapper types.
+- CanonicalOrderingRule supports three strategies to cover the common patterns: field-by-field comparison for product types, variant-then-field comparison for sum types, and single-field delegation for one named product field. For wrapped sum variants, `VariantThenFieldComparison` compares the wrapped values directly after variant-position comparison.
 - InteropModule uses `conditionalOn` as a text string rather than a structured language enum. The set of target languages is open-ended and foundry-specific; the schema does not enumerate it.
 - AccessorArm enforces a mutual exclusion constraint: it returns either a field or a constant, never both. This is enforced at the schema level through the `accessor-arm-returns-one` constraint rather than through separate concept types.
 - NormativeRequirement is MustBeEntity because requirements have stable IRI identifiers used for cross-referencing, traceability, and conformance auditing. Requirements express cross-cutting policies, behavioral mandates, and contract clauses that are not structurally tied to a single type or operation.

@@ -5,13 +5,15 @@
 		Schema for authoring code specifications in Codex. A code specification is the single
 		normative source for any Paperhat product: substrate libraries, extension libraries,
 		application workbenches, foundries, language processors, stores, solvers, and graphical,
-		terminal, and command-line interfaces. It defines product types, sum types, named constants,
-		operations, validation rules, formal surface grammars, normative requirements, terminology
-		definitions, external references, module descriptions, and conformance cases in
-		language-agnostic semantic form. The same document generates human-readable documentation
-		through Lexis media foundries and executable implementations in every target language
-		through Nexus code foundries. All field types reference Paperhat canonical type identifiers,
-		preserving type identity from specification through RDF to generated code with zero erasure.
+		terminal, and command-line interfaces. It defines product types, primitive types,
+		collection types, sum types, named constants, operations, validation rules,
+		library-owned value-surface contracts, formal surface grammars, normative requirements,
+		terminology definitions, external references, module descriptions, and conformance cases
+		in language-agnostic semantic form. The same document generates human-readable
+		documentation through Lexis media foundries and executable implementations in every
+		target language through Nexus code foundries. All field types reference Paperhat
+		canonical type identifiers, preserving type identity from specification through RDF to
+		generated code with zero erasure.
 	`
 	id=paperhat:domain:codeSpecification
 	namespace="codeSpecification"
@@ -60,6 +62,8 @@
 
 				<AllowsChildConcept conceptSelector="PrimitiveType" />
 
+				<AllowsChildConcept conceptSelector="CollectionType" />
+
 				<AllowsChildConcept conceptSelector="SumType" />
 
 				<AllowsChildConcept conceptSelector="NamedConstant" />
@@ -71,6 +75,8 @@
 				<AllowsChildConcept conceptSelector="UniformAccessorOperation" />
 
 				<AllowsChildConcept conceptSelector="ValidationRule" />
+
+				<AllowsChildConcept conceptSelector="ValueSurfaceDefinition" />
 
 				<AllowsChildConcept conceptSelector="grammar:Grammar" />
 
@@ -174,6 +180,42 @@
 
 		<ConceptDefinition
 			conceptKind=$Semantic
+			description="A collection type constructor identified by a canonical type IRI. Structured type sites apply the constructor through TypeApplication. Legacy field and operation-parameter sites still use elementType. Projected according to collectionKind."
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:codeSpecification:CollectionType
+			name="CollectionType"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="exported" />
+
+				<RequiresTrait name="collectionKind" />
+
+				<AllowsTrait name="description" />
+
+				<AllowsTrait name="longDescription" />
+
+				<AllowsTrait name="specSection" />
+
+				<AllowsTrait name="specRequirement" />
+
+				<AllowsTrait name="capabilities" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="TypeParameter" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
 			description="A sum type: a type whose instances carry exactly one variant at a time. Projected as an enum in Rust, a data type in Haskell, a variant type in OCaml."
 			entityEligibility=$MustBeEntity
 			id=paperhat:domain:codeSpecification:SumType
@@ -243,7 +285,7 @@
 
 		<ConceptDefinition
 			conceptKind=$Semantic
-			description="A named, typed field belonging to a product type or a sum type variant."
+			description="A named field belonging to a product type or a sum type variant."
 			entityEligibility=$MustNotBeEntity
 			id=paperhat:domain:codeSpecification:Field
 			key=~field
@@ -256,7 +298,7 @@
 			<TraitRules>
 				<RequiresTrait name="name" />
 
-				<RequiresTrait name="valueType" />
+				<AllowsTrait name="valueType" />
 
 				<AllowsTrait name="exported" />
 
@@ -270,11 +312,15 @@
 
 				<AllowsTrait name="elementType" />
 			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="TypeSlot" max=1 />
+			</ChildRules>
 		</ConceptDefinition>
 
 		<ConceptDefinition
 			conceptKind=$Semantic
-			description="A type parameter on a generic product type or sum type. The foundry generates language-appropriate type parameterization with the declared capability constraints as trait bounds."
+			description="A type parameter on a generic product type, collection type, or sum type. The foundry generates language-appropriate type parameterization with the declared capability constraints as trait bounds."
 			entityEligibility=$MustNotBeEntity
 			id=paperhat:domain:codeSpecification:TypeParameter
 			key=~typeParameter
@@ -291,6 +337,126 @@
 
 				<AllowsTrait name="description" />
 			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="A recursive type expression. It resolves to exactly one named type reference, type-parameter reference, or type application."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:TypeExpression
+			name="TypeExpression"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="NamedTypeReference" max=1 />
+
+				<AllowsChildConcept conceptSelector="TypeParameterReference" max=1 />
+
+				<AllowsChildConcept conceptSelector="TypeApplication" max=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Binds one site role to one structured type expression."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:TypeSlot
+			name="TypeSlot"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="typeRole" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="TypeExpression" min=1 max=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="A direct reference to one declared type."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:NamedTypeReference
+			name="NamedTypeReference"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="referencedType" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="A reference to one in-scope type parameter."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:TypeParameterReference
+			name="TypeParameterReference"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="referencedTypeParameter" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="An application of one declared type constructor to one or more ordered type arguments."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:TypeApplication
+			name="TypeApplication"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="constructorType" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="TypeArgument" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="One ordered type argument supplied to a type application."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:TypeArgument
+			name="TypeArgument"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="position" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="TypeExpression" min=1 max=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
 		</ConceptDefinition>
 
 		[END: Type Definitions]
@@ -403,7 +569,7 @@
 
 		<ConceptDefinition
 			conceptKind=$Semantic
-			description="A pure operation that produces a value of a specific type. Constructors, parsers, planners, evaluators, transitions, formatters, and other deterministic operations all use this concept. The producesVariant trait identifies the produced variant when the result type is a sum type. For PrimitiveType targets, an optional behavior Calculation child defines the produced primitive value."
+			description="A pure operation that produces a value of a specific type. Constructors, parsers, planners, evaluators, transitions, formatters, and other deterministic operations all use this concept. The producesVariant trait identifies the produced variant when the result type is a sum type. WrappedValueBinding binds the carried value when the selected variant uses wrapsType. For PrimitiveType targets, an optional behavior Calculation child defines the produced primitive value."
 			entityEligibility=$MustBeEntity
 			id=paperhat:domain:codeSpecification:ConstructionOperation
 			name="ConstructionOperation"
@@ -438,6 +604,8 @@
 				<AllowsChildConcept conceptSelector="OperationParameter" />
 
 				<AllowsChildConcept conceptSelector="ConstantBinding" />
+
+				<AllowsChildConcept conceptSelector="WrappedValueBinding" max=1 />
 
 				<AllowsChildConcept conceptSelector="Precondition" />
 
@@ -493,6 +661,24 @@
 				<RequiresTrait name="targetField" />
 
 				<RequiresTrait name="boundConstant" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Binds an operation parameter or a named constant to the wrapped value of the produced variant during construction."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:WrappedValueBinding
+			name="WrappedValueBinding"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<AllowsTrait name="sourceParameter" />
+
+				<AllowsTrait name="boundConstant" />
 			</TraitRules>
 		</ConceptDefinition>
 
@@ -677,6 +863,346 @@
 		</ConceptDefinition>
 
 		[END: Validation Rules]
+
+		[GROUP: Value Surfaces]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="One library-owned authorable value family. It binds one semantic target type, one canonical rendering operation, and one or more accepted surface forms, each with its own construction operation and parse contract."
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:codeSpecification:ValueSurfaceDefinition
+			name="ValueSurfaceDefinition"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="targetType" />
+
+				<RequiresTrait name="canonicalRenderingOperation" />
+
+				<RequiresTrait name="surfaceStatus" />
+
+				<AllowsTrait name="description" />
+
+				<AllowsTrait name="longDescription" />
+
+				<AllowsTrait name="specSection" />
+
+				<AllowsTrait name="specRequirement" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="DispatchContract" min=1 max=1 />
+
+				<RequiresChildConcept conceptSelector="AcceptedSurfaceForm" min=1 />
+
+				<AllowsChildConcept conceptSelector="SurfacePayloadField" />
+
+				<AllowsChildConcept conceptSelector="SurfaceLoweringContract" />
+
+				<RequiresChildConcept conceptSelector="SurfaceAcceptanceCase" min=1 />
+
+				<AllowsChildConcept conceptSelector="SurfaceRejectionCase" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="The machine-readable entry contract used by a host-language parser to route input to one imported value surface definition."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:DispatchContract
+			name="DispatchContract"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="dispatchKind" />
+
+				<RequiresTrait name="precedence" />
+
+				<RequiresTrait name="terminationModel" />
+
+				<RequiresTrait name="longestMatchPolicy" />
+
+				<AllowsTrait name="starterLiteral" />
+
+				<AllowsTrait name="starterDelimiter" />
+
+				<AllowsTrait name="reservedKeyword" />
+
+				<AllowsTrait name="bareTokenClass" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="One accepted spelling family for a value surface definition. Each accepted form binds one construction operation, one exact grammar, zero or more payload captures, and one parse binding."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:AcceptedSurfaceForm
+			name="AcceptedSurfaceForm"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="canonical" />
+
+				<RequiresTrait name="constructionOperation" />
+
+				<AllowsTrait name="description" />
+
+				<AllowsTrait name="specSection" />
+
+				<AllowsTrait name="specRequirement" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="grammar:Grammar" min=1 max=1 />
+
+				<AllowsChildConcept conceptSelector="SurfacePayloadCapture" />
+
+				<RequiresChildConcept conceptSelector="SurfaceParseBinding" min=1 max=1 />
+
+				<AllowsChildConcept conceptSelector="behavior:Validation" max=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="One typed payload component captured from an accepted surface form."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:SurfacePayloadField
+			name="SurfacePayloadField"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="position" />
+
+				<RequiresTrait name="valueType" />
+
+				<AllowsTrait name="description" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="One mapping from a grammar capture symbol to a declared typed payload field. An optional capture construction operation converts the raw capture text before the payload field is exposed to argument binding."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:SurfacePayloadCapture
+			name="SurfacePayloadCapture"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="payloadField" />
+
+				<RequiresTrait name="captureSymbol" />
+
+				<AllowsTrait name="captureConstructionOperation" />
+
+				<AllowsTrait name="description" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="The deterministic mapping from typed surface payload fields to constructor-operation arguments."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:SurfaceParseBinding
+			name="SurfaceParseBinding"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="SurfaceArgumentBinding" min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="One binding that supplies exactly one constructor-operation parameter from one payload field, one constant, or one computed expression over payload fields."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:SurfaceArgumentBinding
+			name="SurfaceArgumentBinding"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="parameter" />
+
+				<AllowsTrait name="payloadField" />
+
+				<AllowsTrait name="boundConstant" />
+
+				<AllowsTrait name="description" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="behavior:Calculation" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="The exact lowering contract from the semantic value to a language-neutral payload shape used by IR or RDF lowering."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:SurfaceLoweringContract
+			name="SurfaceLoweringContract"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="loweringKind" />
+
+				<AllowsTrait name="payloadOperation" />
+
+				<AllowsTrait name="datatypeIri" />
+
+				<AllowsTrait name="description" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="behavior:Calculation" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="An exact conformance case for one accepted input spelling of a value surface definition."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:SurfaceAcceptanceCase
+			name="SurfaceAcceptanceCase"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="testName" />
+
+				<AllowsTrait name="description" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="InputSpelling" min=1 max=1 />
+
+				<RequiresChildConcept conceptSelector="ExpectedCanonicalSpelling" min=1 max=1 />
+
+				<AllowsChildConcept conceptSelector="ExpectedSurfacePayloadValue" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="An exact conformance case for one rejected input spelling of a value surface definition."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:SurfaceRejectionCase
+			name="SurfaceRejectionCase"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="testName" />
+
+				<RequiresTrait name="expectedDiagnostic" />
+
+				<AllowsTrait name="expectedFailureContaining" />
+
+				<AllowsTrait name="description" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="InputSpelling" min=1 max=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="One exact authored input spelling for a surface acceptance or rejection case."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:InputSpelling
+			name="InputSpelling"
+		>
+			<ContentRules>
+				<AllowsContentOrChildren whitespaceMode=$Preformatted />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="TextByScalars" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="The exact canonical spelling expected from canonical rendering of an accepted surface input."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:ExpectedCanonicalSpelling
+			name="ExpectedCanonicalSpelling"
+		>
+			<ContentRules>
+				<AllowsContentOrChildren whitespaceMode=$Preformatted />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="TextByScalars" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="One exact expected payload value captured for a named surface payload field."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:ExpectedSurfacePayloadValue
+			name="ExpectedSurfacePayloadValue"
+		>
+			<ContentRules>
+				<AllowsContentOrChildren whitespaceMode=$Preformatted />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="payloadField" />
+
+				<AllowsTrait name="description" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="TextByScalars" max=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Value Surfaces]
 
 		[GROUP: Test Cases]
 
@@ -1199,6 +1725,40 @@
 		/>
 
 		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:codeSpecification:trait:referencedType
+			isReferenceTrait=true
+			name="referencedType"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:referencedTypeParameter
+			name="referencedTypeParameter"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:codeSpecification:trait:constructorType
+			isReferenceTrait=true
+			name="constructorType"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:codeSpecification:trait:typeRole
+			name="typeRole"
+			priority=$Primary
+		>
+			<AllowedValues>
+				<ValueIsOneOf values="$ValueType,$DiagnosticType,$WrappedType,$ProducesType,$BelongsToType,$ReturnType,$AppliesToType" />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
 			defaultValueType=$List<$EnumeratedToken>
 			id=paperhat:domain:codeSpecification:trait:capabilities
 			name="capabilities"
@@ -1211,6 +1771,17 @@
 			name="representationKind"
 			priority=$Primary
 		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:codeSpecification:trait:collectionKind
+			name="collectionKind"
+			priority=$Primary
+		>
+			<AllowedValues>
+				<ValueIsOneOf values="$List" />
+			</AllowedValues>
+		</TraitDefinition>
 
 
 		<TraitDefinition
@@ -1364,6 +1935,13 @@
 			defaultValueType=$LookupToken
 			id=paperhat:domain:codeSpecification:trait:boundConstant
 			name="boundConstant"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:sourceParameter
+			name="sourceParameter"
 			priority=$Primary
 		/>
 
@@ -1533,9 +2111,196 @@
 			name="targetLibrary"
 			priority=$Primary
 		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:codeSpecification:trait:targetType
+			isReferenceTrait=true
+			name="targetType"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:constructionOperation
+			name="constructionOperation"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:canonicalRenderingOperation
+			name="canonicalRenderingOperation"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:codeSpecification:trait:surfaceStatus
+			name="surfaceStatus"
+			priority=$Primary
+		>
+			<AllowedValues>
+				<ValueIsOneOf values="$Current,$AcceptedLegacy" />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:codeSpecification:trait:dispatchKind
+			name="dispatchKind"
+			priority=$Primary
+		>
+			<AllowedValues>
+				<ValueIsOneOf values="$FixedKeywordPrefix,$SigilPrefix,$BalancedDelimiter,$BareTokenPattern" />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$NonNegativeInteger
+			id=paperhat:domain:codeSpecification:trait:precedence
+			name="precedence"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:codeSpecification:trait:terminationModel
+			name="terminationModel"
+			priority=$Primary
+		>
+			<AllowedValues>
+				<ValueIsOneOf values="$BalancedDelimiter,$BareTokenBoundary,$SlashDelimited,$GrammarDefined" />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:codeSpecification:trait:longestMatchPolicy
+			name="longestMatchPolicy"
+			priority=$Primary
+		>
+			<AllowedValues>
+				<ValueIsOneOf values="$NotApplicable,$PreferLongestStarter,$PreferLongestRecognizedMatch" />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:starterLiteral
+			name="starterLiteral"
+			priority=$Secondary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:starterDelimiter
+			name="starterDelimiter"
+			priority=$Secondary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:reservedKeyword
+			name="reservedKeyword"
+			priority=$Secondary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:bareTokenClass
+			name="bareTokenClass"
+			priority=$Secondary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Boolean
+			id=paperhat:domain:codeSpecification:trait:canonical
+			name="canonical"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:codeSpecification:trait:loweringKind
+			name="loweringKind"
+			priority=$Primary
+		>
+			<AllowedValues>
+				<ValueIsOneOf values="$ScalarTypedLiteral,$StructuredGraph,$CustomPayload" />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:payloadOperation
+			name="payloadOperation"
+			priority=$Secondary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:codeSpecification:trait:datatypeIri
+			name="datatypeIri"
+			priority=$Secondary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:payloadField
+			name="payloadField"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:codeSpecification:trait:captureSymbol
+			name="captureSymbol"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:captureConstructionOperation
+			name="captureConstructionOperation"
+			priority=$Secondary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:parameter
+			name="parameter"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:expectedDiagnostic
+			name="expectedDiagnostic"
+			priority=$Primary
+		/>
 	</TraitDefinitions>
 
 	<EnumeratedValueSets>
+		<EnumeratedValueSet
+			id=paperhat:domain:codeSpecification:set:TypeRole
+			name="TypeRole"
+		>
+			<Member description="The principal value type of a semantic site." value="ValueType" />
+
+			<Member description="The diagnostic type declared at the specification root." value="DiagnosticType" />
+
+			<Member description="The wrapped payload type of a sum-type variant." value="WrappedType" />
+
+			<Member description="The type produced by a construction operation." value="ProducesType" />
+
+			<Member description="The receiver type of an accessor operation." value="BelongsToType" />
+
+			<Member description="The return type of an accessor operation." value="ReturnType" />
+
+			<Member description="The validated target type of a validation rule." value="AppliesToType" />
+		</EnumeratedValueSet>
+
 		<EnumeratedValueSet
 			id=paperhat:domain:codeSpecification:set:Capability
 			name="Capability"
@@ -1598,6 +2363,63 @@
 
 			<Member description="The requirement prohibits behavior." value="MustNot" />
 		</EnumeratedValueSet>
+
+		<EnumeratedValueSet
+			id=paperhat:domain:codeSpecification:set:SurfaceStatus
+			name="SurfaceStatus"
+		>
+			<Member description="The surface family is current and supported." value="Current" />
+
+			<Member description="The surface family remains accepted for compatibility but is not the preferred current family." value="AcceptedLegacy" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet
+			id=paperhat:domain:codeSpecification:set:DispatchKind
+			name="DispatchKind"
+		>
+			<Member description="Dispatch uses a fixed keyword prefix." value="FixedKeywordPrefix" />
+
+			<Member description="Dispatch uses a sigil or other fixed leading marker." value="SigilPrefix" />
+
+			<Member description="Dispatch uses a balanced delimiter family." value="BalancedDelimiter" />
+
+			<Member description="Dispatch uses a bare-token starter class." value="BareTokenPattern" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet
+			id=paperhat:domain:codeSpecification:set:TerminationModel
+			name="TerminationModel"
+		>
+			<Member description="The value ends at the matching closing delimiter." value="BalancedDelimiter" />
+
+			<Member description="The value ends at the bare-token boundary defined by the host language." value="BareTokenBoundary" />
+
+			<Member description="The value ends at the closing slash-delimited boundary." value="SlashDelimited" />
+
+			<Member description="The value end is determined by the accepted surface grammar." value="GrammarDefined" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet
+			id=paperhat:domain:codeSpecification:set:LongestMatchPolicy
+			name="LongestMatchPolicy"
+		>
+			<Member description="No longest-match rule applies to this dispatch family." value="NotApplicable" />
+
+			<Member description="Competing dispatch starters are resolved by the longest starter." value="PreferLongestStarter" />
+
+			<Member description="Competing recognized forms are resolved by the longest recognized match." value="PreferLongestRecognizedMatch" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet
+			id=paperhat:domain:codeSpecification:set:LoweringKind
+			name="LoweringKind"
+		>
+			<Member description="The semantic value lowers to one scalar typed literal." value="ScalarTypedLiteral" />
+
+			<Member description="The semantic value lowers to one structured graph payload." value="StructuredGraph" />
+
+			<Member description="The semantic value lowers through one custom payload operation or calculation." value="CustomPayload" />
+		</EnumeratedValueSet>
 	</EnumeratedValueSets>
 
 	<ConstraintDefinitions>
@@ -1623,6 +2445,185 @@
 						</AllOf>
 					</Rule>
 				</Not>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:type-expression-has-one-form
+			title="A type expression uses exactly one expression form"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="TypeExpression" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ChildConstraint conceptSelector="NamedTypeReference" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="TypeParameterReference" type=$ForbidsChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="TypeApplication" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ChildConstraint conceptSelector="NamedTypeReference" type=$ForbidsChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="TypeParameterReference" type=$RequiresChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="TypeApplication" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ChildConstraint conceptSelector="NamedTypeReference" type=$ForbidsChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="TypeParameterReference" type=$ForbidsChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="TypeApplication" type=$RequiresChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:named-type-reference-targets-declared-type
+			title="A named type reference targets one declared type"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="NamedTypeReference" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="ProductType" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="PrimitiveType" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="CollectionType" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="SumType" />
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:type-application-constructor-targets-declared-type
+			title="A type application uses one declared type constructor"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="TypeApplication" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="ProductType" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="CollectionType" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="SumType" />
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:field-has-one-type-source
+			title="A field uses either legacy type traits or one structured type expression"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Field" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<AllOf>
+							<Rule>
+								<TraitExists trait="valueType" />
+							</Rule>
+							<Rule>
+								<ChildConstraint conceptSelector="TypeSlot" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+					<Rule>
+						<AllOf>
+							<Rule>
+								<TraitMissing trait="valueType" />
+							</Rule>
+							<Rule>
+								<TraitMissing trait="elementType" />
+							</Rule>
+							<Rule>
+								<ChildConstraint conceptSelector="TypeSlot" type=$RequiresChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:field-type-slot-role
+			title="A structured field type uses the ValueType role"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Field" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<ChildConstraint conceptSelector="TypeSlot" type=$ForbidsChildConcept />
+					</Rule>
+
+					<Rule>
+						<OnPathForAll>
+							<ChildPath conceptSelector="TypeSlot" />
+
+							<Rule>
+								<TraitEquals trait="typeRole" value=$ValueType />
+							</Rule>
+						</OnPathForAll>
+					</Rule>
+				</AnyOf>
 			</Rule>
 		</ConstraintDefinition>
 
@@ -1849,6 +2850,390 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:value-surface-target-type-targets-declared-type
+			title="A value surface definition targets one declared type"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ValueSurfaceDefinition" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="ProductType" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="PrimitiveType" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="CollectionType" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="SumType" />
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:value-surface-has-exactly-one-canonical-form
+			title="A value surface definition has exactly one canonical accepted form"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ValueSurfaceDefinition" />
+			</Targets>
+
+			<Rule>
+				<OnPathCount minCount=1 maxCount=1>
+					<ChildPath conceptSelector="AcceptedSurfaceForm" />
+
+					<Rule>
+						<TraitEquals trait="canonical" value=true />
+					</Rule>
+				</OnPathCount>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:surface-argument-binding-has-exactly-one-source
+			title="A surface argument binding uses exactly one source"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="SurfaceArgumentBinding" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<AllOf>
+							<Rule>
+								<TraitExists trait="payloadField" />
+							</Rule>
+
+							<Rule>
+								<TraitMissing trait="boundConstant" />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="behavior:Calculation" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<TraitMissing trait="payloadField" />
+							</Rule>
+
+							<Rule>
+								<TraitExists trait="boundConstant" />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="behavior:Calculation" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<TraitMissing trait="payloadField" />
+							</Rule>
+
+							<Rule>
+								<TraitMissing trait="boundConstant" />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="behavior:Calculation" type=$RequiresChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:input-spelling-has-one-text-source
+			title="An input spelling uses either content or one TextByScalars child"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="InputSpelling" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ContentConstraint type=$ContentRequired />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="TextByScalars" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ContentConstraint type=$ForbidsContent />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="TextByScalars" type=$RequiresChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:expected-canonical-spelling-has-one-text-source
+			title="An expected canonical spelling uses either content or one TextByScalars child"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ExpectedCanonicalSpelling" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ContentConstraint type=$ContentRequired />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="TextByScalars" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ContentConstraint type=$ForbidsContent />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="TextByScalars" type=$RequiresChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:expected-surface-payload-has-one-text-source
+			title="An expected surface payload value uses either content or one TextByScalars child"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ExpectedSurfacePayloadValue" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ContentConstraint type=$ContentRequired />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="TextByScalars" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ContentConstraint type=$ForbidsContent />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="TextByScalars" type=$RequiresChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:surface-lowering-scalar-typed-literal-shape
+			title="A scalar typed-literal lowering requires datatypeIri and forbids payload decomposition hooks"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="SurfaceLoweringContract" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<Not>
+							<Rule>
+								<TraitEquals trait="loweringKind" value=$ScalarTypedLiteral />
+							</Rule>
+						</Not>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<TraitEquals trait="loweringKind" value=$ScalarTypedLiteral />
+							</Rule>
+
+							<Rule>
+								<TraitExists trait="datatypeIri" />
+							</Rule>
+
+							<Rule>
+								<TraitMissing trait="payloadOperation" />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="behavior:Calculation" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:surface-lowering-structured-graph-shape
+			title="A structured-graph lowering forbids datatypeIri and payload decomposition hooks"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="SurfaceLoweringContract" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<Not>
+							<Rule>
+								<TraitEquals trait="loweringKind" value=$StructuredGraph />
+							</Rule>
+						</Not>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<TraitEquals trait="loweringKind" value=$StructuredGraph />
+							</Rule>
+
+							<Rule>
+								<TraitMissing trait="datatypeIri" />
+							</Rule>
+
+							<Rule>
+								<TraitMissing trait="payloadOperation" />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="behavior:Calculation" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:surface-lowering-custom-payload-shape
+			title="A custom-payload lowering requires one payload hook and forbids datatypeIri"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="SurfaceLoweringContract" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<Not>
+							<Rule>
+								<TraitEquals trait="loweringKind" value=$CustomPayload />
+							</Rule>
+						</Not>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<TraitEquals trait="loweringKind" value=$CustomPayload />
+							</Rule>
+
+							<Rule>
+								<TraitMissing trait="datatypeIri" />
+							</Rule>
+
+							<Rule>
+								<AnyOf>
+									<Rule>
+										<TraitExists trait="payloadOperation" />
+									</Rule>
+
+									<Rule>
+										<ChildConstraint conceptSelector="behavior:Calculation" type=$RequiresChildConcept />
+									</Rule>
+								</AnyOf>
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:wrapped-value-binding-has-one-source
+			title="A wrapped-value binding uses either one source parameter or one bound constant"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="WrappedValueBinding" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<AllOf>
+							<Rule>
+								<TraitExists trait="sourceParameter" />
+							</Rule>
+
+							<Rule>
+								<TraitMissing trait="boundConstant" />
+							</Rule>
+						</AllOf>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<TraitMissing trait="sourceParameter" />
+							</Rule>
+
+							<Rule>
+								<TraitExists trait="boundConstant" />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
 			id=paperhat:domain:codeSpecification:operation-conformance-has-one-expected
 			title="An operation conformance case expects either one success value or one diagnostic value"
 		>
@@ -1918,7 +3303,62 @@
 							</Rule>
 
 							<Rule>
+								<ChildConstraint conceptSelector="WrappedValueBinding" type=$ForbidsChildConcept />
+							</Rule>
+
+							<Rule>
 								<ChildConstraint conceptSelector="ValueMapping" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:wrapped-value-construction-shape
+			title="A wrapped-value construction operation uses variant-bound direct binding"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ConstructionOperation" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<Not>
+							<Rule>
+								<ChildConstraint conceptSelector="WrappedValueBinding" type=$RequiresChildConcept />
+							</Rule>
+						</Not>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<TraitExists trait="producesVariant" />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="ConstantBinding" type=$ForbidsChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="ValueMapping" type=$ForbidsChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="behavior:Calculation" type=$ForbidsChildConcept />
+							</Rule>
+
+							<Rule>
+								<OnPathForAll>
+									<ChildPath conceptSelector="OperationParameter" />
+
+									<Rule>
+										<TraitMissing trait="mapsToField" />
+									</Rule>
+								</OnPathForAll>
 							</Rule>
 						</AllOf>
 					</Rule>

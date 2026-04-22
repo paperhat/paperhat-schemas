@@ -199,6 +199,10 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | accessor-arm-returns-one | AccessorArm | An accessor arm returns either a field or a constant, not both. |
 | value-surface-target-type-targets-declared-type | ValueSurfaceDefinition | A value surface definition targets one declared type. |
 | value-surface-has-exactly-one-canonical-form | ValueSurfaceDefinition | A value surface definition has exactly one canonical accepted form. |
+| value-surface-payload-field-positions-are-unique | ValueSurfaceDefinition | A value surface definition uses each payload-field position at most once. |
+| accepted-surface-form-payload-fields-are-unique | AcceptedSurfaceForm | An accepted surface form binds each payload field at most once. |
+| surface-parse-binding-parameters-are-unique | SurfaceParseBinding | A surface parse binding binds each constructor parameter at most once. |
+| surface-acceptance-payload-fields-are-unique | SurfaceAcceptanceCase | A surface acceptance case expects each payload field at most once. |
 | surface-argument-binding-has-exactly-one-source | SurfaceArgumentBinding | A surface argument binding uses exactly one source: a payload field, a bound constant, or one calculation child. |
 | input-spelling-has-one-text-source | InputSpelling | An input spelling uses either content or one `TextByScalars` child. |
 | expected-canonical-spelling-has-one-text-source | ExpectedCanonicalSpelling | An expected canonical spelling uses either content or one `TextByScalars` child. |

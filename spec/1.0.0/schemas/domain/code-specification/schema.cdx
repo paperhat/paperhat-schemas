@@ -2898,6 +2898,66 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:value-surface-payload-field-positions-are-unique
+			title="A value surface definition uses each payload-field position at most once"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ValueSurfaceDefinition" />
+			</Targets>
+
+			<Rule>
+				<CollectionAllowsDuplicates allowed=false keyTrait="position">
+					<ChildPath conceptSelector="SurfacePayloadField" />
+				</CollectionAllowsDuplicates>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:accepted-surface-form-payload-fields-are-unique
+			title="An accepted surface form binds each payload field at most once"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AcceptedSurfaceForm" />
+			</Targets>
+
+			<Rule>
+				<CollectionAllowsDuplicates allowed=false keyTrait="payloadField">
+					<ChildPath conceptSelector="SurfacePayloadCapture" />
+				</CollectionAllowsDuplicates>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:surface-parse-binding-parameters-are-unique
+			title="A surface parse binding binds each constructor parameter at most once"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="SurfaceParseBinding" />
+			</Targets>
+
+			<Rule>
+				<CollectionAllowsDuplicates allowed=false keyTrait="parameter">
+					<ChildPath conceptSelector="SurfaceArgumentBinding" />
+				</CollectionAllowsDuplicates>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:surface-acceptance-payload-fields-are-unique
+			title="A surface acceptance case expects each payload field at most once"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="SurfaceAcceptanceCase" />
+			</Targets>
+
+			<Rule>
+				<CollectionAllowsDuplicates allowed=false keyTrait="payloadField">
+					<ChildPath conceptSelector="ExpectedSurfacePayloadValue" />
+				</CollectionAllowsDuplicates>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
 			id=paperhat:domain:codeSpecification:surface-argument-binding-has-exactly-one-source
 			title="A surface argument binding uses exactly one source"
 		>

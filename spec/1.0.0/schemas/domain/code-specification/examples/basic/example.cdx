@@ -5,28 +5,48 @@
 	description="Defines a color channel as a named wrapper around a normalized floating-point value."
 >
 	<ProductType
+		id=urn:paperhat:color-spec#type/NormalizedValue
 		name="NormalizedValue"
 		exported=true
 		description="A floating-point value clamped to the range [0.0, 1.0]."
 		capabilities=[$Equality, $Hashing, $Cloning, $CanonicalOrdering, $Debugging]
 	>
-		<Field name="value" valueType=urn:paperhat:common-spec#type/Float256 position=0 exported=true />
+		<Field name="value" position=0 exported=true>
+			<TypeSlot typeRole=$ValueType>
+				<TypeExpression>
+					<NamedTypeReference referencedType=urn:paperhat:common-spec#type/Float256 />
+				</TypeExpression>
+			</TypeSlot>
+		</Field>
 
 		<CanonicalOrderingRule strategy=$DelegateToField delegateField=~value />
 	</ProductType>
 
 	<SumType
+		id=urn:paperhat:color-spec#type/ChannelKind
 		name="ChannelKind"
 		exported=true
 		description="Discriminates between named and indexed color channels."
 		capabilities=[$Equality, $Hashing, $Cloning, $CanonicalOrdering, $Debugging]
 	>
 		<Variant name="Named" position=0>
-			<Field name="label" valueType=urn:paperhat:text-spec#type/NonEmptyText position=0 />
+			<Field name="label" position=0>
+				<TypeSlot typeRole=$ValueType>
+					<TypeExpression>
+						<NamedTypeReference referencedType=urn:paperhat:text-spec#type/NonEmptyText />
+					</TypeExpression>
+				</TypeSlot>
+			</Field>
 		</Variant>
 
 		<Variant name="Indexed" position=1>
-			<Field name="index" valueType=urn:paperhat:numeric-spec#type/NonNegativeInteger position=0 />
+			<Field name="index" position=0>
+				<TypeSlot typeRole=$ValueType>
+					<TypeExpression>
+						<NamedTypeReference referencedType=urn:paperhat:numeric-spec#type/NonNegativeInteger />
+					</TypeExpression>
+				</TypeSlot>
+			</Field>
 		</Variant>
 
 		<CanonicalOrderingRule strategy=$VariantThenFieldComparison>
@@ -41,6 +61,7 @@
 	</SumType>
 
 	<SumType
+		id=urn:paperhat:color-spec#type/ChannelSelector
 		name="ChannelSelector"
 		exported=true
 		description="Selects a color channel by wrapped name or wrapped index."
@@ -52,6 +73,147 @@
 
 		<CanonicalOrderingRule strategy=$VariantThenFieldComparison />
 	</SumType>
+
+	<CollectionType
+		id=urn:paperhat:color-spec#type/SelectorSequence
+		name="SelectorSequence"
+		exported=true
+		collectionKind=$List
+		description="A generic ordered sequence of selectors or selector-derived values."
+		capabilities=[$Equality, $Cloning, $CanonicalOrdering, $Debugging]
+	>
+		<TypeParameter name="Item" />
+	</CollectionType>
+
+	<ProductType
+		id=urn:paperhat:color-spec#type/Palette
+		name="Palette"
+		exported=true
+		description="A palette whose selector history is kept as an ordered sequence."
+		capabilities=[$Equality, $Cloning, $CanonicalOrdering, $Debugging]
+	>
+		<Field name="selectorHistory" position=0>
+			<TypeSlot typeRole=$ValueType>
+				<TypeExpression>
+					<TypeApplication constructorType=urn:paperhat:color-spec#type/SelectorSequence>
+						<TypeArgument position=0>
+							<TypeExpression>
+								<NamedTypeReference referencedType=urn:paperhat:color-spec#type/ChannelSelector />
+							</TypeExpression>
+						</TypeArgument>
+					</TypeApplication>
+				</TypeExpression>
+			</TypeSlot>
+		</Field>
+
+		<CanonicalOrderingRule strategy=$DelegateToField delegateField=~selectorHistory />
+	</ProductType>
+
+	<ProductType
+		id=urn:paperhat:color-spec#type/PaletteLedger
+		name="PaletteLedger"
+		exported=true
+		description="A ledger proving nested collection type application."
+		capabilities=[$Equality, $Cloning, $CanonicalOrdering, $Debugging]
+	>
+		<Field name="selectorHistoryBatches" position=0>
+			<TypeSlot typeRole=$ValueType>
+				<TypeExpression>
+					<TypeApplication constructorType=urn:paperhat:color-spec#type/SelectorSequence>
+						<TypeArgument position=0>
+							<TypeExpression>
+								<TypeApplication constructorType=urn:paperhat:color-spec#type/SelectorSequence>
+									<TypeArgument position=0>
+										<TypeExpression>
+											<NamedTypeReference referencedType=urn:paperhat:color-spec#type/ChannelSelector />
+										</TypeExpression>
+									</TypeArgument>
+								</TypeApplication>
+							</TypeExpression>
+						</TypeArgument>
+					</TypeApplication>
+				</TypeExpression>
+			</TypeSlot>
+		</Field>
+
+		<CanonicalOrderingRule strategy=$DelegateToField delegateField=~selectorHistoryBatches />
+	</ProductType>
+
+	<ProductType
+		id=urn:paperhat:color-spec#type/Pair
+		name="Pair"
+		exported=true
+		description="A generic pair proving type-parameter references and two-argument application."
+		capabilities=[$Equality, $Cloning, $CanonicalOrdering, $Debugging]
+	>
+		<TypeParameter name="LeftItem" />
+
+		<TypeParameter name="RightItem" />
+
+		<Field name="left" position=0>
+			<TypeSlot typeRole=$ValueType>
+				<TypeExpression>
+					<TypeParameterReference referencedTypeParameter=~LeftItem />
+				</TypeExpression>
+			</TypeSlot>
+		</Field>
+
+		<Field name="right" position=1>
+			<TypeSlot typeRole=$ValueType>
+				<TypeExpression>
+					<TypeParameterReference referencedTypeParameter=~RightItem />
+				</TypeExpression>
+			</TypeSlot>
+		</Field>
+
+		<CanonicalOrderingRule strategy=$FieldByFieldComparison>
+			<ComparisonStep compareField=~left position=0 />
+
+			<ComparisonStep compareField=~right position=1 />
+		</CanonicalOrderingRule>
+	</ProductType>
+
+	<ProductType
+		id=urn:paperhat:color-spec#type/NamedIndexedPairHolder
+		name="NamedIndexedPairHolder"
+		exported=true
+		description="A holder proving two-argument type application."
+		capabilities=[$Equality, $Cloning, $CanonicalOrdering, $Debugging]
+	>
+		<Field name="pair" position=0>
+			<TypeSlot typeRole=$ValueType>
+				<TypeExpression>
+					<TypeApplication constructorType=urn:paperhat:color-spec#type/Pair>
+						<TypeArgument position=0>
+							<TypeExpression>
+								<NamedTypeReference referencedType=urn:paperhat:text-spec#type/NonEmptyText />
+							</TypeExpression>
+						</TypeArgument>
+
+						<TypeArgument position=1>
+							<TypeExpression>
+								<NamedTypeReference referencedType=urn:paperhat:numeric-spec#type/NonNegativeInteger />
+							</TypeExpression>
+						</TypeArgument>
+					</TypeApplication>
+				</TypeExpression>
+			</TypeSlot>
+		</Field>
+
+		<CanonicalOrderingRule strategy=$DelegateToField delegateField=~pair />
+	</ProductType>
+
+	<ConstructionOperation
+		name="channel_selector_by_name"
+		exported=true
+		producesType=urn:paperhat:color-spec#type/ChannelSelector
+		producesVariant=~ByName
+		description="Wraps a non-empty channel label as the ByName selector variant."
+	>
+		<OperationParameter name="label" valueType=urn:paperhat:text-spec#type/NonEmptyText position=0 />
+
+		<WrappedValueBinding sourceParameter=~label />
+	</ConstructionOperation>
 
 	<NamedConstant
 		name="ZERO"
@@ -67,6 +229,14 @@
 		valueType=urn:paperhat:common-spec#type/Float256
 		value="1.0"
 		description="The maximum normalized value."
+	/>
+
+	<NamedConstant
+		name="CHANNEL_PREFIX"
+		exported=true
+		valueType=urn:paperhat:text-spec#type/NonEmptyText
+		value="channel"
+		description="The display prefix used for indexed channels."
 	/>
 
 	<ConstructionOperation

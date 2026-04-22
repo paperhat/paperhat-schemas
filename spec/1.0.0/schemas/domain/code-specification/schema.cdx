@@ -2123,6 +2123,7 @@
 		<TraitDefinition
 			defaultValueType=$LookupToken
 			id=paperhat:domain:codeSpecification:trait:constructionOperation
+			isReferenceTrait=true
 			name="constructionOperation"
 			priority=$Primary
 		/>
@@ -2130,6 +2131,7 @@
 		<TraitDefinition
 			defaultValueType=$LookupToken
 			id=paperhat:domain:codeSpecification:trait:canonicalRenderingOperation
+			isReferenceTrait=true
 			name="canonicalRenderingOperation"
 			priority=$Primary
 		/>
@@ -2234,6 +2236,7 @@
 		<TraitDefinition
 			defaultValueType=$LookupToken
 			id=paperhat:domain:codeSpecification:trait:payloadOperation
+			isReferenceTrait=true
 			name="payloadOperation"
 			priority=$Secondary
 		/>
@@ -2248,6 +2251,7 @@
 		<TraitDefinition
 			defaultValueType=$LookupToken
 			id=paperhat:domain:codeSpecification:trait:payloadField
+			isReferenceTrait=true
 			name="payloadField"
 			priority=$Primary
 		/>
@@ -2262,6 +2266,7 @@
 		<TraitDefinition
 			defaultValueType=$LookupToken
 			id=paperhat:domain:codeSpecification:trait:captureConstructionOperation
+			isReferenceTrait=true
 			name="captureConstructionOperation"
 			priority=$Secondary
 		/>
@@ -2269,6 +2274,7 @@
 		<TraitDefinition
 			defaultValueType=$LookupToken
 			id=paperhat:domain:codeSpecification:trait:parameter
+			isReferenceTrait=true
 			name="parameter"
 			priority=$Primary
 		/>
@@ -2860,21 +2866,197 @@
 			<Rule>
 				<AnyOf>
 					<Rule>
-						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="ProductType" />
+						<ReferenceConstraint traitName="targetType" type=$ReferenceTargetsConcept conceptSelector="ProductType" />
 					</Rule>
 
 					<Rule>
-						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="PrimitiveType" />
+						<ReferenceConstraint traitName="targetType" type=$ReferenceTargetsConcept conceptSelector="PrimitiveType" />
 					</Rule>
 
 					<Rule>
-						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="CollectionType" />
+						<ReferenceConstraint traitName="targetType" type=$ReferenceTargetsConcept conceptSelector="CollectionType" />
 					</Rule>
 
 					<Rule>
-						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="SumType" />
+						<ReferenceConstraint traitName="targetType" type=$ReferenceTargetsConcept conceptSelector="SumType" />
 					</Rule>
 				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:value-surface-rendering-operation-targets-construction-operation
+			title="A value surface definition uses one declared canonical rendering operation"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ValueSurfaceDefinition" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint
+					conceptSelector="ConstructionOperation"
+					traitName="canonicalRenderingOperation"
+					type=$ReferenceTargetsConcept
+				/>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:accepted-surface-form-construction-operation-targets-construction-operation
+			title="An accepted surface form uses one declared construction operation"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AcceptedSurfaceForm" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint
+					conceptSelector="ConstructionOperation"
+					traitName="constructionOperation"
+					type=$ReferenceTargetsConcept
+				/>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:surface-payload-capture-payload-field-targets-declared-payload-field
+			title="A surface payload capture targets one declared surface payload field"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="SurfacePayloadCapture" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint
+					conceptSelector="SurfacePayloadField"
+					traitName="payloadField"
+					type=$ReferenceTargetsConcept
+				/>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:surface-payload-capture-construction-operation-targets-construction-operation
+			title="A surface payload capture conversion operation targets one declared construction operation"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="SurfacePayloadCapture" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<TraitMissing trait="captureConstructionOperation" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint
+							conceptSelector="ConstructionOperation"
+							traitName="captureConstructionOperation"
+							type=$ReferenceTargetsConcept
+						/>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:surface-argument-binding-parameter-targets-operation-parameter
+			title="A surface argument binding targets one declared operation parameter"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="SurfaceArgumentBinding" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint
+					conceptSelector="OperationParameter"
+					traitName="parameter"
+					type=$ReferenceTargetsConcept
+				/>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:surface-argument-binding-payload-field-targets-declared-payload-field
+			title="A surface argument binding payload field targets one declared surface payload field"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="SurfaceArgumentBinding" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<TraitMissing trait="payloadField" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint
+							conceptSelector="SurfacePayloadField"
+							traitName="payloadField"
+							type=$ReferenceTargetsConcept
+						/>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:surface-lowering-contract-payload-operation-targets-operation
+			title="A surface lowering contract payload operation targets one declared operation"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="SurfaceLoweringContract" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<TraitMissing trait="payloadOperation" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint
+							conceptSelector="ConstructionOperation"
+							traitName="payloadOperation"
+							type=$ReferenceTargetsConcept
+						/>
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint
+							conceptSelector="AccessorOperation"
+							traitName="payloadOperation"
+							type=$ReferenceTargetsConcept
+						/>
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint
+							conceptSelector="UniformAccessorOperation"
+							traitName="payloadOperation"
+							type=$ReferenceTargetsConcept
+						/>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:expected-surface-payload-value-payload-field-targets-declared-payload-field
+			title="An expected surface payload value targets one declared surface payload field"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ExpectedSurfacePayloadValue" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint
+					conceptSelector="SurfacePayloadField"
+					traitName="payloadField"
+					type=$ReferenceTargetsConcept
+				/>
 			</Rule>
 		</ConstraintDefinition>
 

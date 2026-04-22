@@ -1,6 +1,6 @@
 <DomainPackageManifest
 	author="Paperhat"
-	closureHash="21eb95ab91e56973aca447ce7c68b22cfe6db11fe3b59221718c16511933f197"
+	closureHash="2c0c5b6b7ad4f848ed7f6271243564160443fd548949aff35439f48f7db28b55"
 	copyright="Copyright 2026 Paperhat"
 	description="Schema for authoring code specifications in Codex. A code specification is the single normative source for any Paperhat product: libraries, applications, foundries, language processors, stores, solvers, and interfaces. It defines types, operations, library-owned value-surface contracts, formal surface grammars, and exact conformance cases. Generates human-readable documentation through Lexis and executable implementations in every target language through Nexus."
 	license="Apache-2.0"

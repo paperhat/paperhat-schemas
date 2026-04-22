@@ -198,15 +198,23 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | field-type-slot-role | Field | A structured field type uses the `ValueType` role. |
 | accessor-arm-returns-one | AccessorArm | An accessor arm returns either a field or a constant, not both. |
 | value-surface-target-type-targets-declared-type | ValueSurfaceDefinition | A value surface definition targets one declared type. |
+| value-surface-rendering-operation-targets-construction-operation | ValueSurfaceDefinition | A value surface definition uses one declared canonical rendering operation. |
 | value-surface-has-exactly-one-canonical-form | ValueSurfaceDefinition | A value surface definition has exactly one canonical accepted form. |
+| accepted-surface-form-construction-operation-targets-construction-operation | AcceptedSurfaceForm | An accepted surface form uses one declared construction operation. |
 | value-surface-payload-field-positions-are-unique | ValueSurfaceDefinition | A value surface definition uses each payload-field position at most once. |
 | accepted-surface-form-payload-fields-are-unique | AcceptedSurfaceForm | An accepted surface form binds each payload field at most once. |
+| surface-payload-capture-payload-field-targets-declared-payload-field | SurfacePayloadCapture | A surface payload capture targets one declared surface payload field. |
+| surface-payload-capture-construction-operation-targets-construction-operation | SurfacePayloadCapture | A surface payload capture conversion operation targets one declared construction operation. |
 | surface-parse-binding-parameters-are-unique | SurfaceParseBinding | A surface parse binding binds each constructor parameter at most once. |
+| surface-argument-binding-parameter-targets-operation-parameter | SurfaceArgumentBinding | A surface argument binding targets one declared operation parameter. |
+| surface-argument-binding-payload-field-targets-declared-payload-field | SurfaceArgumentBinding | A surface argument binding payload field targets one declared surface payload field. |
 | surface-acceptance-payload-fields-are-unique | SurfaceAcceptanceCase | A surface acceptance case expects each payload field at most once. |
+| expected-surface-payload-value-payload-field-targets-declared-payload-field | ExpectedSurfacePayloadValue | An expected surface payload value targets one declared surface payload field. |
 | surface-argument-binding-has-exactly-one-source | SurfaceArgumentBinding | A surface argument binding uses exactly one source: a payload field, a bound constant, or one calculation child. |
 | input-spelling-has-one-text-source | InputSpelling | An input spelling uses either content or one `TextByScalars` child. |
 | expected-canonical-spelling-has-one-text-source | ExpectedCanonicalSpelling | An expected canonical spelling uses either content or one `TextByScalars` child. |
 | expected-surface-payload-has-one-text-source | ExpectedSurfacePayloadValue | An expected surface payload value uses either content or one `TextByScalars` child. |
+| surface-lowering-contract-payload-operation-targets-operation | SurfaceLoweringContract | A surface lowering contract payload operation targets one declared operation. |
 | surface-lowering-scalar-typed-literal-shape | SurfaceLoweringContract | A scalar typed-literal lowering requires `datatypeIri` and forbids payload decomposition hooks. |
 | surface-lowering-structured-graph-shape | SurfaceLoweringContract | A structured-graph lowering forbids `datatypeIri` and payload decomposition hooks. |
 | surface-lowering-custom-payload-shape | SurfaceLoweringContract | A custom-payload lowering requires one payload hook and forbids `datatypeIri`. |

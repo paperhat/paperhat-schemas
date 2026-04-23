@@ -25,7 +25,7 @@ Use Behavior Expression Schema concepts inside `<Calculation>`, `<Validation>`, 
 | Trigonometry | Full set: `Sine` through `ArcCotangent`, hyperbolic variants, angle conversions. |
 | Comparison | `IsEqualTo`, `IsNotEqualTo`, `IsLessThan`, `IsGreaterThan`, `IsLessThanOrEqualTo`, `IsGreaterThanOrEqualTo`. |
 | Logic | `And`, `Or`, `Not`, `Ternary`. |
-| Type Guards | `IsAbsent`, `IsPresent`, `IsInteger`, `IsNumber`, `IsText`, `IsList`, `IsBoolean`. |
+| Type Guards | `IsAbsent`, `IsPresent`, `IsInteger`, `IsNumber`, `IsText`, `IsList`, `IsBoolean`, `IsVariant`. |
 | Text Operations | Length, case, trim, pad, search, replace, split, pattern matching, validation (`IsValidEmail`, `IsValidUrl`, `IsValidUuid`). |
 | Temporal | Construction (`MakePlainDate`, `MakePlainTime`), decomposition (`Year`, `Month`, `Day`), arithmetic, comparison, calendar, formatting, parsing, type guards. |
 | Statistics | Central tendency, dispersion, position, correlation. |

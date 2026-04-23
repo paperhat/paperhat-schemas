@@ -1810,6 +1810,22 @@
 			</ChildRules>
 		</ConceptDefinition>
 
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:behavior:expression:IsVariant
+			key=~isVariant
+			name="IsVariant"
+		>
+			<TraitRules>
+				<RequiresTrait name="variant" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Referent" max=1 min=1 />
+			</ChildRules>
+		</ConceptDefinition>
+
 		[END: Type Guards]
 
 		[GROUP: Text Operations - Basic]
@@ -5608,6 +5624,14 @@
 			defaultValueType=$Integer
 			id=paperhat:behavior:expression:trait:n
 			name="n"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:behavior:expression:trait:variant
+			isReferenceTrait=true
+			name="variant"
 			priority=$Primary
 		/>
 

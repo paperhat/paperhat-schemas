@@ -591,6 +591,8 @@
 
 				<AllowsTrait name="diagnosticVariant" />
 
+				<AllowsTrait name="diagnosticVariants" />
+
 				<AllowsTrait name="description" />
 
 				<AllowsTrait name="longDescription" />
@@ -1893,6 +1895,13 @@
 			defaultValueType=$LookupToken
 			id=paperhat:domain:codeSpecification:trait:diagnosticVariant
 			name="diagnosticVariant"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$List<$LookupToken>
+			id=paperhat:domain:codeSpecification:trait:diagnosticVariants
+			name="diagnosticVariants"
 			priority=$Primary
 		/>
 
@@ -3601,6 +3610,75 @@
 										<TraitMissing trait="mapsToField" />
 									</Rule>
 								</OnPathForAll>
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:construction-operation-diagnostic-contract
+			title="A construction operation declares diagnostics only when fallible and uses one diagnostic contract style"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ConstructionOperation" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<AllOf>
+							<Rule>
+								<AnyOf>
+									<Rule>
+										<TraitMissing trait="fallible" />
+									</Rule>
+
+									<Rule>
+										<TraitEquals trait="fallible" value=false />
+									</Rule>
+								</AnyOf>
+							</Rule>
+
+							<Rule>
+								<TraitMissing trait="diagnosticVariant" />
+							</Rule>
+
+							<Rule>
+								<TraitMissing trait="diagnosticVariants" />
+							</Rule>
+						</AllOf>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<TraitEquals trait="fallible" value=true />
+							</Rule>
+
+							<Rule>
+								<TraitExists trait="diagnosticVariant" />
+							</Rule>
+
+							<Rule>
+								<TraitMissing trait="diagnosticVariants" />
+							</Rule>
+						</AllOf>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<TraitEquals trait="fallible" value=true />
+							</Rule>
+
+							<Rule>
+								<TraitMissing trait="diagnosticVariant" />
+							</Rule>
+
+							<Rule>
+								<TraitExists trait="diagnosticVariants" />
 							</Rule>
 						</AllOf>
 					</Rule>

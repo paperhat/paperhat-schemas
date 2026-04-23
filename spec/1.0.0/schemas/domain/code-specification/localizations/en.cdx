@@ -185,6 +185,10 @@
 		The diagnostic variant returned by a fallible operation or exact diagnostic expectation.
 	</TraitLocalization>
 
+	<TraitLocalization identifier="diagnosticVariants" label="Diagnostic Variants" labelOther="Diagnostic Variants">
+		The exhaustive diagnostic variants returned by a fallible construction operation that can emit more than one diagnostic variant.
+	</TraitLocalization>
+
 	<TraitLocalization identifier="diagnosticType" label="Diagnostic Type" labelOther="Diagnostic Types">
 		Canonical type identifier of the diagnostic type associated with the specification.
 	</TraitLocalization>

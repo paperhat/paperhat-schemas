@@ -11,7 +11,7 @@
 	<SchemaImports>
 		<SchemaImport namespace="work" reference=urn:cdx:sha256:73fd6fb17a3965067bade5d1790cf53346eac1d840f51ccec11ac7ba21ce66f0 />
 
-		<SchemaImport namespace="desc" reference=urn:cdx:sha256:aedb0f8af35a38f088a3e99cb0297df7c0a252cdb58cf3072a2d20103e23c3e8 />
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:a83c22466ae563559a998dfb4977c4b1c56d53cb1bc2963859bc60059949afce />
 
 		<SchemaImport namespace="summary" reference=urn:cdx:sha256:76e655e3f54495277ba821aa12360b3f5bd2cca1799992d3223137560acc4944 />
 

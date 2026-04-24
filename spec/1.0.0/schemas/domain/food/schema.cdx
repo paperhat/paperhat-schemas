@@ -9,7 +9,7 @@
 	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="desc" reference=urn:cdx:sha256:aedb0f8af35a38f088a3e99cb0297df7c0a252cdb58cf3072a2d20103e23c3e8 />
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:a83c22466ae563559a998dfb4977c4b1c56d53cb1bc2963859bc60059949afce />
 
 		<SchemaImport namespace="nutrition" reference=urn:cdx:sha256:4bf13c758d3521e569545d4451b451a2f7c97e8f77b60da2f6dc17ce675ce63b />
 

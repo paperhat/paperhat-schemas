@@ -13,7 +13,7 @@
 
 		<SchemaImport namespace="rubric" reference=urn:cdx:sha256:4b43d55619ba6560d6ff3c7e55b5fe8c70e195061438fca63b34db25a806b607 />
 
-		<SchemaImport namespace="desc" reference=urn:cdx:sha256:aedb0f8af35a38f088a3e99cb0297df7c0a252cdb58cf3072a2d20103e23c3e8 />
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:a83c22466ae563559a998dfb4977c4b1c56d53cb1bc2963859bc60059949afce />
 
 		<SchemaImport namespace="list" reference=urn:cdx:sha256:d121178b869452797377ede05fb08319b0c0ed5bcfff2fcc9cc1c56e911a4666 />
 

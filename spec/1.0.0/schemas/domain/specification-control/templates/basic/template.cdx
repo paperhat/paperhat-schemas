@@ -1,0 +1,10 @@
+[A small, dependency-aware specification-authoring packet.]
+<Packet packetId="example-001" targetSpecification="paperhat-example" ownerSection="Example Section" state=$Proposed>
+	<DependencyEdge edgeKind=$MustReread sourceKey="example-001" targetKey="Dependent Section" />
+
+	<OpenIssueEntry issueKey="open-001" summary="Describe the unresolved issue here." issueStatus=$Open />
+
+	<TerminologyEntry identifier="ExampleTerm" canonicalLabel="Example Term" definitionLocation="Section 1" />
+
+	<BannedTokenList listName="stale terms" tokens="old term; retired term" />
+</Packet>

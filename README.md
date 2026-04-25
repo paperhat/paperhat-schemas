@@ -120,3 +120,13 @@ Compatibility location still present inside Lexis:
 - `/Users/guy/Workspace/@paperhat/specifications/applications/lexis-spec/manifest.cdx`
 
 The canonical source is this repository.
+
+## Closure Refresh
+
+Refresh SchemaImport references and manifest closure hashes with the local repository tool:
+
+```bash
+python3 tools/refresh_repository_closure.py
+```
+
+This command iterates SchemaImport normalization to a fixed point, runs manifest normalization, reruns both sanctioned checks, and fails if any drift remains.

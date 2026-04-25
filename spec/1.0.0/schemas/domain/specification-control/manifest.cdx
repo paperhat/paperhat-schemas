@@ -1,0 +1,12 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="017d53fec0494c839b12ade1c1dec7841c2aaad4427703511f1c8e226157d6c7"
+	copyright="Copyright 2026 Paperhat"
+	description="Coordinates small, dependency-aware specification-authoring packets and their control metadata without restating normative specification semantics."
+	license="Apache-2.0"
+	packageName="paperhat-specification-control"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+/>

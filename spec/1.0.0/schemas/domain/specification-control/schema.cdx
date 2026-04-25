@@ -1,0 +1,371 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description="Coordinates small, dependency-aware specification-authoring packets and their control metadata without restating normative specification semantics."
+	id=paperhat:domain:specification-control
+	namespace="specificationControl"
+	title="Specification Control Schema"
+	version="1.0.0"
+	versionScheme=$SemanticVersion
+>
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:specification-control:PacketRegistry
+			name="PacketRegistry"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<AllowsTrait name="targetSpecification" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="PacketEntry" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:specification-control:PacketEntry
+			name="PacketEntry"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="packetId" />
+
+				<RequiresTrait name="targetSpecification" />
+
+				<RequiresTrait name="ownerSection" />
+
+				<RequiresTrait name="constructs" />
+
+				<RequiresTrait name="state" />
+
+				<AllowsTrait name="authorStatus" />
+
+				<AllowsTrait name="auditorStatus" />
+
+				<AllowsTrait name="packetDocumentReference" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:specification-control:Packet
+			name="Packet"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="packetId" />
+
+				<RequiresTrait name="targetSpecification" />
+
+				<RequiresTrait name="ownerSection" />
+
+				<RequiresTrait name="state" />
+
+				<AllowsTrait name="invariants" />
+
+				<AllowsTrait name="completionChecks" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="DependencyEdge" />
+
+				<AllowsChildConcept conceptSelector="OpenIssueEntry" />
+
+				<AllowsChildConcept conceptSelector="TerminologyEntry" />
+
+				<AllowsChildConcept conceptSelector="BannedTokenList" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:specification-control:DependencyEdge
+			name="DependencyEdge"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="sourceKey" />
+
+				<RequiresTrait name="targetKey" />
+
+				<RequiresTrait name="edgeKind" />
+
+				<AllowsTrait name="rationale" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:specification-control:OpenIssueEntry
+			name="OpenIssueEntry"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="issueKey" />
+
+				<RequiresTrait name="summary" />
+
+				<RequiresTrait name="issueStatus" />
+
+				<AllowsTrait name="affectedConstructs" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:specification-control:BannedTokenList
+			name="BannedTokenList"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="listName" />
+
+				<RequiresTrait name="tokens" />
+
+				<AllowsTrait name="appliesTo" />
+
+				<AllowsTrait name="appliesToPaths" />
+
+				<AllowsTrait name="rationale" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:specification-control:TerminologyEntry
+			name="TerminologyEntry"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="identifier" />
+
+				<RequiresTrait name="canonicalLabel" />
+
+				<RequiresTrait name="definitionLocation" />
+
+				<AllowsTrait name="forbiddenSynonyms" />
+
+				<AllowsTrait name="usedBy" />
+			</TraitRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-control:trait:appliesTo
+			name="appliesTo"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-control:trait:appliesToPaths
+			name="appliesToPaths"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-control:trait:affectedConstructs
+			name="affectedConstructs"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:specification-control:trait:auditorStatus
+			name="auditorStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:specification-control:trait:authorStatus
+			name="authorStatus"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-control:trait:canonicalLabel
+			name="canonicalLabel"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-control:trait:completionChecks
+			name="completionChecks"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-control:trait:constructs
+			name="constructs"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-control:trait:definitionLocation
+			name="definitionLocation"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:specification-control:trait:edgeKind
+			name="edgeKind"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$MustReread] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-control:trait:forbiddenSynonyms
+			name="forbiddenSynonyms"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-control:trait:identifier
+			name="identifier"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-control:trait:invariants
+			name="invariants"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-control:trait:issueKey
+			name="issueKey"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:specification-control:trait:issueStatus
+			name="issueStatus"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Open, $Resolved] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-control:trait:listName
+			name="listName"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-control:trait:name
+			name="name"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-control:trait:ownerSection
+			name="ownerSection"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-control:trait:packetDocumentReference
+			name="packetDocumentReference"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-control:trait:packetId
+			name="packetId"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-control:trait:rationale
+			name="rationale"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:specification-control:trait:state
+			name="state"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Proposed, $InProgress, $Completed] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-control:trait:sourceKey
+			name="sourceKey"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-control:trait:summary
+			name="summary"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-control:trait:targetKey
+			name="targetKey"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-control:trait:targetSpecification
+			name="targetSpecification"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-control:trait:tokens
+			name="tokens"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:specification-control:trait:usedBy
+			name="usedBy"
+		/>
+	</TraitDefinitions>
+</Schema>

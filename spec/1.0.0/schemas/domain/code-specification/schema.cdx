@@ -24,7 +24,7 @@
 	<SchemaImports>
 		<SchemaImport namespace="behavior" reference=urn:cdx:sha256:f813c39f718cd391002edb875ab4a91a78927d7b52700adbdef99c328602168f />
 
-		<SchemaImport namespace="grammar" reference=urn:cdx:sha256:43dd9da8d0bc551c24ca53aaa8ffe65c99f9cb7d7f87c2f043db5596690c5277 />
+		<SchemaImport namespace="grammar" reference=urn:cdx:sha256:d566fe0a79d0db6d9cab37cef1595820e0552b66a18a71fc21659f1a9077f239 />
 	</SchemaImports>
 
 	<ConceptDefinitions>

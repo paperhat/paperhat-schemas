@@ -1,0 +1,123 @@
+<LocalizationBundle
+	schema=paperhat:domain:specification-control
+	schemaVersion="1.0.0"
+	language=language-tag("en")
+>
+	<ConceptLocalization identifier="PacketRegistry" label="Packet Registry" labelOther="Packet Registries" />
+
+	<ConceptLocalization identifier="PacketEntry" label="Packet Entry" labelOther="Packet Entries" />
+
+	<ConceptLocalization identifier="Packet" label="Packet" labelOther="Packets" />
+
+	<ConceptLocalization identifier="DependencyEdge" label="Dependency Edge" labelOther="Dependency Edges" />
+
+	<ConceptLocalization identifier="OpenIssueEntry" label="Open Issue Entry" labelOther="Open Issue Entries" />
+
+	<ConceptLocalization identifier="BannedTokenList" label="Banned Token List" labelOther="Banned Token Lists" />
+
+	<ConceptLocalization identifier="TerminologyEntry" label="Terminology Entry" labelOther="Terminology Entries" />
+
+	<TraitLocalization identifier="affectedConstructs" label="Affected Constructs" labelOther="Affected Constructs">
+		Constructs affected by the open issue.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="auditorStatus" label="Auditor Status" labelOther="Auditor Statuses">
+		The current audit state recorded for the packet entry.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="authorStatus" label="Author Status" labelOther="Author Statuses">
+		The current authoring state recorded for the packet entry.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="canonicalLabel" label="Canonical Label" labelOther="Canonical Labels">
+		The one approved label for the terminology entry.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="completionChecks" label="Completion Checks" labelOther="Completion Checks">
+		The checks that must pass before the packet closes.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="constructs" label="Constructs" labelOther="Constructs">
+		The constructs owned or affected by the packet entry.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="definitionLocation" label="Definition Location" labelOther="Definition Locations">
+		The location where the canonical term is defined.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="edgeKind" label="Edge Kind" labelOther="Edge Kinds">
+		The type of control dependency represented by the edge.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="forbiddenSynonyms" label="Forbidden Synonyms" labelOther="Forbidden Synonyms">
+		Synonyms that must not be used for the terminology entry.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="identifier" label="Identifier" labelOther="Identifiers">
+		The stable identifier for the terminology entry.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="invariants" label="Invariants" labelOther="Invariants">
+		The capabilities, terms, or constraints that the packet must preserve.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="issueKey" label="Issue Key" labelOther="Issue Keys">
+		The stable key for the open issue entry.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="issueStatus" label="Issue Status" labelOther="Issue Statuses">
+		The current resolution state of the open issue.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="listName" label="List Name" labelOther="List Names">
+		The name of the banned token list.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="name" label="Name" labelOther="Names">
+		The registry name.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="ownerSection" label="Owner Section" labelOther="Owner Sections">
+		The section that normatively owns the packet.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="packetDocumentReference" label="Packet Document Reference" labelOther="Packet Document References">
+		The reference that points from a registry entry to its detailed packet document.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="packetId" label="Packet ID" labelOther="Packet IDs">
+		The stable identifier for the packet or packet entry.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="rationale" label="Rationale" labelOther="Rationales">
+		The explanation for a dependency edge or banned token list.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="state" label="State" labelOther="States">
+		The current lifecycle state of the packet or packet entry.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="sourceKey" label="Source Key" labelOther="Source Keys">
+		The source side of the dependency edge.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="summary" label="Summary" labelOther="Summaries">
+		The summary of the open issue entry.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="targetKey" label="Target Key" labelOther="Target Keys">
+		The target side of the dependency edge.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="targetSpecification" label="Target Specification" labelOther="Target Specifications">
+		The specification governed by the packet or registry.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="tokens" label="Tokens" labelOther="Tokens">
+		The banned tokens or phrases recorded by the list.
+	</TraitLocalization>
+
+	<TraitLocalization identifier="usedBy" label="Used By" labelOther="Used By">
+		The constructs or packets that use the terminology entry.
+	</TraitLocalization>
+</LocalizationBundle>

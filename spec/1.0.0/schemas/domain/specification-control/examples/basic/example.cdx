@@ -1,0 +1,33 @@
+<Packet
+	id=urn:paperhat:example:specification-control:packet:001
+	packetId="rdf-001"
+	targetSpecification="paperhat-rdf"
+	ownerSection="IRI lowering"
+	state=$InProgress
+	invariants="Preserve canonical IRI identity; do not invent new lowering behavior."
+	completionChecks="Update the owner section, reread dependent lowering rules, and clear stale tokens."
+>
+	<DependencyEdge edgeKind=$MustReread sourceKey="rdf-001" targetKey="IRI canonical ordering" />
+
+	<OpenIssueEntry
+		issueKey="rdf-open-001"
+		summary="Canonical ordering rule location not yet finalized."
+		issueStatus=$Open
+		affectedConstructs="IriNode, CanonicalOrderingRule"
+	/>
+
+	<TerminologyEntry
+		identifier="IriNode"
+		canonicalLabel="IRI Node"
+		definitionLocation="Section 4.2"
+		forbiddenSynonyms="IRI reference node, URI node"
+		usedBy="rdf-001"
+	/>
+
+	<BannedTokenList
+		listName="rdf-001 stale terms"
+		appliesTo="IRI lowering"
+		tokens="URI node; IRI reference node"
+		rationale="The packet standardizes one canonical label before dependent rereads."
+	/>
+</Packet>

@@ -17,7 +17,7 @@
 		<SchemaImport namespace="admonition" reference=urn:cdx:sha256:24041a98e7ab5fec737fe6081c6e2c80d24ca49630d81ab51b4c61e09b4b6373 />
 		<SchemaImport namespace="cite" reference=urn:cdx:sha256:6058646e95877f9292e5993af7003b794905476837e718a47a99daade4b8f53e />
 		<SchemaImport namespace="code" reference=urn:cdx:sha256:f55db71c90dd92321f6f59683139642e85b0d60b26704c8f510159a36858ca0f />
-		<SchemaImport namespace="desc" reference=urn:cdx:sha256:a83c22466ae563559a998dfb4977c4b1c56d53cb1bc2963859bc60059949afce />
+		<SchemaImport namespace="desc" reference=urn:cdx:sha256:aedb0f8af35a38f088a3e99cb0297df7c0a252cdb58cf3072a2d20103e23c3e8 />
 		<SchemaImport namespace="docmeta" reference=urn:cdx:sha256:a44cca2beec670d2c38b4b429c67aefc5d5b556bbb88758a4928f13dca0cfdf0 />
 		<SchemaImport namespace="example" reference=urn:cdx:sha256:c4ba0affdc8cb2255c6b69ff4d58f2fd015f046bcb35a5a0c456fd00997019ea />
 		<SchemaImport namespace="figure" reference=urn:cdx:sha256:d081a2b49d09efbef4995a0df247d208952762a0724b1e2de32e6d4af15f1eec />

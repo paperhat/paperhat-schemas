@@ -1,6 +1,6 @@
 <ViewPackageManifest
 	author="Paperhat"
-	closureHash="769677a7dfb3f82f066e00d0c5fde27462bf716751fc6ac2b86d4261a5b74b4a"
+	closureHash="a31c29786585fb0d58c197bc408f5c76e2edbf503dcc3020e18f0f8c0965872a"
 	copyright="Copyright 2026 Paperhat"
 	description="View-family schema package for deterministic semantic projection definitions."
 	license="Apache-2.0"
@@ -12,7 +12,7 @@
 >
 	<PackageDependency
 		packageName="behavior-expression-schema"
-		closureHash="7efe15d0e2c8e3e7f0a0633e51630485b59b674a562f17937a5d850c5fd89310"
+		closureHash="5748324852b2f4ee41b869b54591b78177f5abe7269ae5439e002fa1babfb277"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 

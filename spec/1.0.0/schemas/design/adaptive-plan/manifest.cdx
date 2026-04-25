@@ -1,6 +1,6 @@
 <DesignPackageManifest
 	author="Paperhat"
-	closureHash="ebc1767594520772f210393b856427fbc2aacdbeb218b7545d63d8cb7fbf80ba"
+	closureHash="027aa83613110b4fe47c1e07a663a51f35f35ade9630816514c0245dc90437d2"
 	copyright="Copyright 2026 Paperhat"
 	description="Design-family schema for the compiled adaptive plan — the self-contained artifact that the pipeline produces from design annotations and the foundry consumes as its sole semantic input."
 	license="Apache-2.0"
@@ -12,7 +12,7 @@
 >
 	<PackageDependency
 		packageName="behavior-expression-schema"
-		closureHash="ca64ed906d54a6c2d16789515d96832f3db4b69016485e9f2d3a514201f77b8e"
+		closureHash="5c976814cbbeb59757582bf7edaa3d510709ea73619ae0629e0948b3a134e29c"
 		versionRange=">=1.0.0 <2.0.0"
 	/>
 

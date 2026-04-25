@@ -5603,6 +5603,61 @@
 
 		[END: Operation Composition]
 
+		[GROUP: Value Construction]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Constructs a value of the specified target type from per-field value bindings. The targetType trait identifies the type of the constructed value (typically a ProductType). Each FieldBinding child binds one named field of that type to a value expression. The foundry generates a typed value-construction expression for the target type."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:behavior:expression:Construct
+			key=~construct
+			name="Construct"
+		>
+			<TraitRules>
+				<RequiresTrait name="targetType" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="FieldBinding" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Binds one named field of an enclosing Construct's target type to a value expression. The field trait identifies the bound field by key. The local child expressions evaluate to the field value."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:behavior:expression:FieldBinding
+			key=~fieldBinding
+			name="FieldBinding"
+		>
+			<TraitRules>
+				<RequiresTrait name="field" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Accesses a named field of a value produced by a child expression. Distinct from Field, which reads from the current node or from a named operation parameter via the for trait. FieldOf takes the source value as a child expression rather than from context, enabling chained field access on the result of an InvokeOperation, a nested FieldOf, or any other value-producing expression."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:behavior:expression:FieldOf
+			key=~fieldOf
+			name="FieldOf"
+		>
+			<TraitRules>
+				<RequiresTrait name="name" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsLocalChildren />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Value Construction]
+
 	</ConceptDefinitions>
 
 	<TraitDefinitions>
@@ -5968,6 +6023,24 @@
 		/>
 
 		[END: Operation Composition Traits]
+
+		[GROUP: Value Construction Traits]
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:behavior:expression:trait:targetType
+			name="targetType"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:behavior:expression:trait:field
+			name="field"
+			priority=$Primary
+		/>
+
+		[END: Value Construction Traits]
 
 	</TraitDefinitions>
 

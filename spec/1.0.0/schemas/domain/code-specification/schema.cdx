@@ -22,7 +22,7 @@
 	versionScheme=$SemanticVersion
 >
 	<SchemaImports>
-		<SchemaImport namespace="behavior" reference=urn:cdx:sha256:f813c39f718cd391002edb875ab4a91a78927d7b52700adbdef99c328602168f />
+		<SchemaImport namespace="behavior" reference=urn:cdx:sha256:c42deeb3ba7c6052ffc422b9397c22530994966bb78fafbcde82cf9e36312c48 />
 
 		<SchemaImport namespace="grammar" reference=urn:cdx:sha256:d566fe0a79d0db6d9cab37cef1595820e0552b66a18a71fc21659f1a9077f239 />
 	</SchemaImports>
@@ -569,7 +569,7 @@
 
 		<ConceptDefinition
 			conceptKind=$Semantic
-			description="A pure operation that produces a value of a specific type. Constructors, parsers, planners, evaluators, transitions, formatters, and other deterministic operations all use this concept. The producesVariant trait identifies the produced variant when the result type is a sum type. WrappedValueBinding binds the carried value when the selected variant uses wrapsType. For PrimitiveType targets, an optional behavior Calculation child defines the produced primitive value."
+			description="A pure operation that produces a value of a specific type. Constructors, planners, evaluators, transitions, formatters, and other deterministic operations all use this concept. Parse operations governed by a syntactic grammar use ParseOperation instead. The producesVariant trait identifies the produced variant when the result type is a sum type. WrappedValueBinding binds the carried value when the selected variant uses wrapsType. For PrimitiveType targets, an optional behavior Calculation child defines the produced primitive value."
 			entityEligibility=$MustBeEntity
 			id=paperhat:domain:codeSpecification:ConstructionOperation
 			name="ConstructionOperation"
@@ -745,6 +745,54 @@
 		</ConceptDefinition>
 
 		[END: Construction Operations]
+
+		[GROUP: Parse Operations]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A pure operation that parses an input document representing a syntax-governed surface into a typed value. Bound by structural reference to a grammar element (grammarReference), to a diagnostic-family enumeration sum type (failureFamilyType), and to a source-line-number product type (sourceLineNumberType) so a foundry generates a parser whose accepted document set, rejected document set, diagnostic vocabulary, and line-number contract are pinned by structural reference. For compositional parse operations that wrap or post-process the result of another parse operation, an optional behavior:Calculation child expresses the composition by invoking the wrapped operation via behavior:InvokeOperation."
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:codeSpecification:ParseOperation
+			name="ParseOperation"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+
+				<RequiresTrait name="exported" />
+
+				<RequiresTrait name="producesType" />
+
+				<RequiresTrait name="grammarReference" />
+
+				<RequiresTrait name="failureFamilyType" />
+
+				<RequiresTrait name="sourceLineNumberType" />
+
+				<RequiresTrait name="fallible" />
+
+				<RequiresTrait name="diagnosticVariant" />
+
+				<AllowsTrait name="description" />
+
+				<AllowsTrait name="longDescription" />
+
+				<AllowsTrait name="specRequirement" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="OperationParameter" />
+
+				<AllowsChildConcept conceptSelector="behavior:Calculation" max=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		[END: Parse Operations]
 
 		[GROUP: Accessor Operations]
 
@@ -2292,6 +2340,27 @@
 			defaultValueType=$LookupToken
 			id=paperhat:domain:codeSpecification:trait:expectedDiagnostic
 			name="expectedDiagnostic"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:grammarReference
+			name="grammarReference"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:codeSpecification:trait:failureFamilyType
+			name="failureFamilyType"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Iri
+			id=paperhat:domain:codeSpecification:trait:sourceLineNumberType
+			name="sourceLineNumberType"
 			priority=$Primary
 		/>
 	</TraitDefinitions>

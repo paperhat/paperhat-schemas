@@ -5582,6 +5582,27 @@
 
 		[END: Angle Normalization]
 
+		[GROUP: Operation Composition]
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="Invokes another exported operation by key reference and yields its result. Each Argument child binds one of the invoked operation's parameters to a value expression formed from the calling scope. For fallible invoked operations, the calling expression propagates the diagnostic on rejection. The foundry generates a typed call to the referenced operation."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:behavior:expression:InvokeOperation
+			key=~invokeOperation
+			name="InvokeOperation"
+		>
+			<TraitRules>
+				<RequiresTrait name="operation" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="Argument" />
+			</ChildRules>
+		</ConceptDefinition>
+
+		[END: Operation Composition]
+
 	</ConceptDefinitions>
 
 	<TraitDefinitions>
@@ -5936,6 +5957,17 @@
 		/>
 
 		[END: Range Traits]
+
+		[GROUP: Operation Composition Traits]
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:behavior:expression:trait:operation
+			name="operation"
+			priority=$Primary
+		/>
+
+		[END: Operation Composition Traits]
 
 	</TraitDefinitions>
 

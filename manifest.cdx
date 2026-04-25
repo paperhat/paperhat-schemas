@@ -1,6 +1,6 @@
 <LexisRepositoryManifest
 	author="Paperhat"
-	closureHash="83d571804f3b82ac7638ed24048ce4733bd46bb51a9e5d13024b69d7d90d2507"
+	closureHash="8350cebd5f63f40f0a9d71b9078b51ac629a7d9fb8ab9bbb687bd4451787563c"
 	copyright="Copyright 2026 Paperhat"
 	description="Paperhat schema repository. Contains universal schema packages, behavior definitions, and reference vocabularies consumed by Paperhat systems."
 	license="Apache-2.0"

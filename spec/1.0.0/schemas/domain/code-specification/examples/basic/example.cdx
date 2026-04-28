@@ -11,7 +11,7 @@
 		description="A floating-point value clamped to the range [0.0, 1.0]."
 		capabilities=[$Equality, $Hashing, $Cloning, $CanonicalOrdering, $Debugging]
 	>
-		<Field name="value" position=0 exported=true>
+		<Field name="value" key=~value position=0 exported=true>
 			<TypeSlot typeRole=$ValueType>
 				<TypeExpression>
 					<NamedTypeReference referencedType=urn:paperhat:common-spec#type/Float256 />
@@ -30,7 +30,7 @@
 		capabilities=[$Equality, $Hashing, $Cloning, $CanonicalOrdering, $Debugging]
 	>
 		<Variant name="Named" position=0>
-			<Field name="label" position=0>
+			<Field name="label" key=~label position=0>
 				<TypeSlot typeRole=$ValueType>
 					<TypeExpression>
 						<NamedTypeReference referencedType=urn:paperhat:text-spec#type/NonEmptyText />
@@ -40,7 +40,7 @@
 		</Variant>
 
 		<Variant name="Indexed" position=1>
-			<Field name="index" position=0>
+			<Field name="index" key=~index position=0>
 				<TypeSlot typeRole=$ValueType>
 					<TypeExpression>
 						<NamedTypeReference referencedType=urn:paperhat:numeric-spec#type/NonNegativeInteger />
@@ -92,7 +92,7 @@
 		description="A palette whose selector history is kept as an ordered sequence."
 		capabilities=[$Equality, $Cloning, $CanonicalOrdering, $Debugging]
 	>
-		<Field name="selectorHistory" position=0>
+		<Field name="selectorHistory" key=~selectorHistory position=0>
 			<TypeSlot typeRole=$ValueType>
 				<TypeExpression>
 					<TypeApplication constructorType=urn:paperhat:color-spec#type/SelectorSequence>
@@ -116,7 +116,7 @@
 		description="A ledger proving nested collection type application."
 		capabilities=[$Equality, $Cloning, $CanonicalOrdering, $Debugging]
 	>
-		<Field name="selectorHistoryBatches" position=0>
+		<Field name="selectorHistoryBatches" key=~selectorHistoryBatches position=0>
 			<TypeSlot typeRole=$ValueType>
 				<TypeExpression>
 					<TypeApplication constructorType=urn:paperhat:color-spec#type/SelectorSequence>
@@ -150,7 +150,7 @@
 
 		<TypeParameter name="RightItem" />
 
-		<Field name="left" position=0>
+		<Field name="left" key=~left position=0>
 			<TypeSlot typeRole=$ValueType>
 				<TypeExpression>
 					<TypeParameterReference referencedTypeParameter=~LeftItem />
@@ -158,7 +158,7 @@
 			</TypeSlot>
 		</Field>
 
-		<Field name="right" position=1>
+		<Field name="right" key=~right position=1>
 			<TypeSlot typeRole=$ValueType>
 				<TypeExpression>
 					<TypeParameterReference referencedTypeParameter=~RightItem />
@@ -180,7 +180,7 @@
 		description="A holder proving two-argument type application."
 		capabilities=[$Equality, $Cloning, $CanonicalOrdering, $Debugging]
 	>
-		<Field name="pair" position=0>
+		<Field name="pair" key=~pair position=0>
 			<TypeSlot typeRole=$ValueType>
 				<TypeExpression>
 					<TypeApplication constructorType=urn:paperhat:color-spec#type/Pair>
@@ -204,6 +204,7 @@
 	</ProductType>
 
 	<ConstructionOperation
+		id=urn:paperhat:color-spec#operation/channel_selector_by_name
 		name="channel_selector_by_name"
 		exported=true
 		producesType=urn:paperhat:color-spec#type/ChannelSelector
@@ -216,6 +217,7 @@
 	</ConstructionOperation>
 
 	<NamedConstant
+		id=urn:paperhat:color-spec#constant/ZERO
 		name="ZERO"
 		exported=true
 		valueType=urn:paperhat:common-spec#type/Float256
@@ -224,6 +226,7 @@
 	/>
 
 	<NamedConstant
+		id=urn:paperhat:color-spec#constant/ONE
 		name="ONE"
 		exported=true
 		valueType=urn:paperhat:common-spec#type/Float256
@@ -232,6 +235,7 @@
 	/>
 
 	<NamedConstant
+		id=urn:paperhat:color-spec#constant/CHANNEL_PREFIX
 		name="CHANNEL_PREFIX"
 		exported=true
 		valueType=urn:paperhat:text-spec#type/NonEmptyText
@@ -240,23 +244,25 @@
 	/>
 
 	<ConstructionOperation
+		id=urn:paperhat:color-spec#operation/normalized_value
 		name="normalized_value"
 		exported=true
 		producesType=urn:paperhat:color-spec#type/NormalizedValue
 		description="Constructs a NormalizedValue from a raw floating-point input, rejecting values outside [0.0, 1.0]."
 	>
-		<OperationParameter name="raw" valueType=urn:paperhat:common-spec#type/Float256 position=0 mapsToField=~value />
+		<OperationParameter name="raw" key=~raw valueType=urn:paperhat:common-spec#type/Float256 position=0 mapsToField=~value />
 
 		<Precondition validationRule=~in_unit_range appliesToParameter=~raw failureMessage="Value is outside the normalized range [0.0, 1.0]." />
 	</ConstructionOperation>
 
-	<grammar:Grammar key=~normalizedValueSurface notation=$Custom startSymbol="normalized_value">
-		<grammar:ProductionRule key=~normalizedValueRule ruleName="normalized_value" isStart=true>
+	<grammar:Grammar id=urn:paperhat:color-spec#grammar/normalizedValueSurface key=~normalizedValueSurface notation=$Custom startSymbol="normalized_value">
+		<grammar:ProductionRule id=urn:paperhat:color-spec#productionRule/normalizedValueRule key=~normalizedValueRule ruleName="normalized_value" isStart=true>
 			normalized_value ::= Float256
 		</grammar:ProductionRule>
 	</grammar:Grammar>
 
 	<AccessorOperation
+		id=urn:paperhat:color-spec#accessor/channel_label
 		name="channel_label"
 		exported=true
 		returnType=urn:paperhat:text-spec#type/NonEmptyText
@@ -269,6 +275,7 @@
 	</AccessorOperation>
 
 	<ValidationRule
+		id=urn:paperhat:color-spec#validation/in_unit_range
 		name="in_unit_range"
 		appliesToType=urn:paperhat:common-spec#type/Float256
 		validationPattern="^(0(\\.[0-9]+)?|1(\\.0+)?)$"

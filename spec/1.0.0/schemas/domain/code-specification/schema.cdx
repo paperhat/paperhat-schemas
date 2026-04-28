@@ -70,6 +70,8 @@
 
 				<AllowsChildConcept conceptSelector="ConstructionOperation" />
 
+				<AllowsChildConcept conceptSelector="ParseOperation" />
+
 				<AllowsChildConcept conceptSelector="AccessorOperation" />
 
 				<AllowsChildConcept conceptSelector="UniformAccessorOperation" />
@@ -771,8 +773,6 @@
 				<RequiresTrait name="failureFamilyType" />
 
 				<RequiresTrait name="sourceLineNumberType" />
-
-				<RequiresTrait name="fallible" />
 
 				<RequiresTrait name="diagnosticVariant" />
 

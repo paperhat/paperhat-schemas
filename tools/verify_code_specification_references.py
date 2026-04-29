@@ -68,6 +68,7 @@ WORKSPACE_DOCUMENT_ROOTS = (
 PROBLEM_STATUSES = frozenset(
     {
         "ambiguous",
+        "cross_file_duplicate_id",
         "duplicate_id",
         "duplicate_key",
         "external_or_missing",
@@ -121,6 +122,7 @@ class Candidate:
     id_value: str
     key_value: str
     name_value: str
+    file: str = ""
 
 
 @dataclasses.dataclass(frozen=True)
@@ -448,7 +450,7 @@ def relative_path(path: Path, workspace_root: Path) -> str:
         return str(path)
 
 
-def make_candidate(element: Element) -> Candidate:
+def make_candidate(element: Element, file_text: str = "") -> Candidate:
     """Create a candidate record from an element."""
 
     return Candidate(
@@ -458,11 +460,13 @@ def make_candidate(element: Element) -> Candidate:
         id_value=element.attributes.get("id", ""),
         key_value=element.attributes.get("key", ""),
         name_value=element.attributes.get("name", ""),
+        file=file_text,
     )
 
 
 def index_candidates(
     elements: list[Element],
+    file_text: str = "",
 ) -> tuple[dict[str, list[Candidate]], dict[str, list[Candidate]]]:
     """Index local id and key candidates."""
 
@@ -470,7 +474,7 @@ def index_candidates(
     key_candidates: dict[str, list[Candidate]] = collections.defaultdict(list)
 
     for element in elements:
-        candidate = make_candidate(element)
+        candidate = make_candidate(element, file_text=file_text)
         if candidate.id_value:
             id_candidates[candidate.id_value].append(candidate)
         if candidate.key_value:
@@ -493,6 +497,8 @@ def format_candidate(candidate: Candidate) -> str:
         f"concept={candidate.concept}",
         f"path={format_path(candidate.path)}",
     ]
+    if candidate.file:
+        parts.insert(0, f"file={candidate.file}")
     if candidate.id_value:
         parts.append(f"id={candidate.id_value}")
     if candidate.key_value:
@@ -590,6 +596,7 @@ def classify_reference_member(
     policy: tuple[str, ...] | None,
     id_candidates: dict[str, list[Candidate]],
     key_candidates: dict[str, list[Candidate]],
+    workspace_id_candidates: dict[str, list[Candidate]],
 ) -> tuple[str, list[Candidate], str]:
     """Classify one reference member and return evidence."""
 
@@ -599,8 +606,27 @@ def classify_reference_member(
         candidates = key_candidates.get(member, [])
         evidence_rule = "lookup token resolves by exact key equality"
     elif member.startswith("urn:"):
-        candidates = id_candidates.get(member, [])
-        evidence_rule = "IRI resolves by exact id equality"
+        local_candidates = id_candidates.get(member, [])
+        workspace_candidates = workspace_id_candidates.get(member, [])
+        workspace_files = {
+            candidate.file for candidate in workspace_candidates if candidate.file
+        }
+        if len(workspace_files) > 1:
+            return (
+                "cross_file_duplicate_id",
+                workspace_candidates,
+                "IRI resolves to duplicate workspace ids",
+            )
+        if local_candidates:
+            candidates = local_candidates
+            evidence_rule = "IRI resolves by exact id equality"
+        else:
+            candidates = workspace_candidates
+            evidence_rule = (
+                "IRI resolves by workspace id equality"
+                if workspace_candidates
+                else "IRI resolves by exact id equality"
+            )
     else:
         return "invalid_reference_value", [], "reference value is not a lookup token or IRI"
 
@@ -627,6 +653,7 @@ def reference_rows_for_file(
     reference_traits: frozenset[str],
     policies: dict[str, tuple[str, ...]],
     slice_policies: dict[tuple[str, str], SlicePolicy],
+    workspace_id_candidates: dict[str, list[Candidate]],
 ) -> list[ReportRow]:
     """Build reference evidence rows for one file."""
 
@@ -672,6 +699,7 @@ def reference_rows_for_file(
                     policy=policy,
                     id_candidates=id_candidates,
                     key_candidates=key_candidates,
+                    workspace_id_candidates=workspace_id_candidates,
                 )
                 rows.append(
                     ReportRow(
@@ -694,6 +722,58 @@ def reference_rows_for_file(
                     )
                 )
 
+    return rows
+
+
+def index_workspace_id_candidates(
+    file_elements: dict[Path, list[Element]],
+    workspace_root: Path,
+) -> dict[str, list[Candidate]]:
+    """Index id candidates across all selected CodeSpecification files."""
+
+    id_candidates: dict[str, list[Candidate]] = collections.defaultdict(list)
+    for file_path, elements in file_elements.items():
+        if not elements or elements[0].concept != "CodeSpecification":
+            continue
+        file_text = relative_path(file_path, workspace_root)
+        file_id_candidates, _ = index_candidates(elements, file_text=file_text)
+        for id_value, candidates in file_id_candidates.items():
+            id_candidates[id_value].extend(candidates)
+    return dict(id_candidates)
+
+
+def cross_file_duplicate_id_rows(
+    workspace_root: Path,
+    workspace_id_candidates: dict[str, list[Candidate]],
+) -> list[ReportRow]:
+    """Build rows for id values declared by multiple workspace documents."""
+
+    rows: list[ReportRow] = []
+    for id_value, candidates in sorted(workspace_id_candidates.items()):
+        candidate_files = {candidate.file for candidate in candidates if candidate.file}
+        if len(candidate_files) < 2:
+            continue
+        first_candidate = candidates[0]
+        rows.append(
+            ReportRow(
+                record_type="identity",
+                status="cross_file_duplicate_id",
+                slice_name="",
+                file=first_candidate.file or relative_path(Path("."), workspace_root),
+                line=first_candidate.line,
+                path=format_path(first_candidate.path),
+                holder_concept=first_candidate.concept,
+                trait="id",
+                value=id_value,
+                member=id_value,
+                target_policy="<not-applicable>",
+                candidate_count=len(candidates),
+                candidates=" | ".join(
+                    format_candidate(candidate) for candidate in candidates
+                ),
+                evidence_rule="id values must be unique across workspace documents",
+            )
+        )
     return rows
 
 
@@ -804,10 +884,11 @@ def rows_for_file(
     reference_traits: frozenset[str],
     policies: dict[str, tuple[str, ...]],
     slice_policies: dict[tuple[str, str], SlicePolicy],
+    workspace_id_candidates: dict[str, list[Candidate]],
+    elements: list[Element],
 ) -> list[ReportRow]:
     """Build all verifier rows for one file."""
 
-    elements = parse_elements(read_text(file_path))
     if not elements or elements[0].concept != "CodeSpecification":
         return []
     return [
@@ -824,6 +905,7 @@ def rows_for_file(
             reference_traits=reference_traits,
             policies=policies,
             slice_policies=slice_policies,
+            workspace_id_candidates=workspace_id_candidates,
         ),
     ]
 
@@ -941,8 +1023,22 @@ def main() -> int:
     else:
         files = discover_code_specification_files(workspace_root)
 
-    all_rows: list[ReportRow] = []
-    for file_path in files:
+    file_elements = {
+        file_path: parse_elements(read_text(file_path))
+        for file_path in files
+    }
+    workspace_id_candidates = index_workspace_id_candidates(
+        file_elements=file_elements,
+        workspace_root=workspace_root,
+    )
+
+    all_rows: list[ReportRow] = [
+        *cross_file_duplicate_id_rows(
+            workspace_root=workspace_root,
+            workspace_id_candidates=workspace_id_candidates,
+        )
+    ]
+    for file_path, elements in file_elements.items():
         all_rows.extend(
             rows_for_file(
                 file_path=file_path,
@@ -951,6 +1047,8 @@ def main() -> int:
                 reference_traits=reference_traits,
                 policies=policies,
                 slice_policies=slice_policies,
+                workspace_id_candidates=workspace_id_candidates,
+                elements=elements,
             )
         )
 

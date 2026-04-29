@@ -49,6 +49,39 @@ class VerifyCodeSpecificationReferencesTest(unittest.TestCase):
                 text=True,
             )
 
+    def run_tool_in_workspace(
+        self,
+        files: dict[str, str],
+        *extra_arguments: str,
+    ) -> subprocess.CompletedProcess[str]:
+        """Run the verifier against a temporary multi-document workspace."""
+
+        with tempfile.TemporaryDirectory(prefix="code_reference_workspace_") as directory:
+            workspace_root = Path(directory)
+            for relative_path, document_text in files.items():
+                document_path = workspace_root / relative_path
+                document_path.parent.mkdir(parents=True, exist_ok=True)
+                document_path.write_text(document_text, encoding="utf-8")
+            command = [
+                "python3",
+                "-B",
+                str(self.tool_path),
+                "--workspace-root",
+                str(workspace_root),
+                "--schema-root",
+                str(
+                    self.workspace_root
+                    / "schemas/paperhat-schemas/spec/1.0.0/schemas"
+                ),
+                *extra_arguments,
+            ]
+            return subprocess.run(
+                command,
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+
     def test_default_discovery_only_reads_current_document_roots(self) -> None:
         """Default discovery must include only the current document roots."""
 
@@ -136,6 +169,95 @@ class VerifyCodeSpecificationReferencesTest(unittest.TestCase):
         self.assertIn("resolved_without_target_policy", result.stdout)
         self.assertIn("lookup token resolves by exact key equality", result.stdout)
         self.assertIn("line=", result.stdout)
+
+    def test_cross_file_id_target_resolves_with_evidence(self) -> None:
+        """A URN reference can resolve to an id declared in another in-scope file."""
+
+        files = {
+            "specifications/source/spec/1.0.0/index.cdx": """<CodeSpecification>
+\t<ProductType id=urn:test#type/Local key=~local name="Local">
+\t\t<Field key=~external name="external" valueType=urn:test#type/External />
+\t</ProductType>
+</CodeSpecification>
+""",
+            "specifications/provider/spec/1.0.0/index.cdx": """<CodeSpecification>
+\t<ProductType id=urn:test#type/External key=~external name="External" />
+</CodeSpecification>
+""",
+        }
+
+        result = self.run_tool_in_workspace(files, "--show", "references")
+
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("resolved_without_target_policy", result.stdout)
+        self.assertIn("urn:test#type/External", result.stdout)
+        self.assertIn("IRI resolves by workspace id equality", result.stdout)
+
+    def test_cross_file_id_miss_remains_external_or_missing(self) -> None:
+        """A URN with no local or workspace id candidate remains external or missing."""
+
+        files = {
+            "specifications/source/spec/1.0.0/index.cdx": """<CodeSpecification>
+\t<ProductType id=urn:test#type/Local key=~local name="Local">
+\t\t<Field key=~missing name="missing" valueType=urn:test#type/Missing />
+\t</ProductType>
+</CodeSpecification>
+""",
+            "specifications/provider/spec/1.0.0/index.cdx": """<CodeSpecification>
+\t<ProductType id=urn:test#type/External key=~external name="External" />
+</CodeSpecification>
+""",
+        }
+
+        result = self.run_tool_in_workspace(files, "--show", "problems")
+
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("external_or_missing", result.stdout)
+        self.assertIn("urn:test#type/Missing", result.stdout)
+
+    def test_cross_file_duplicate_id_is_reported(self) -> None:
+        """Duplicate ids across files must surface as their own diagnostic."""
+
+        files = {
+            "specifications/first/spec/1.0.0/index.cdx": """<CodeSpecification>
+\t<ProductType id=urn:test#type/Duplicate key=~first name="First" />
+</CodeSpecification>
+""",
+            "specifications/second/spec/1.0.0/index.cdx": """<CodeSpecification>
+\t<ProductType id=urn:test#type/Duplicate key=~second name="Second" />
+</CodeSpecification>
+""",
+        }
+
+        result = self.run_tool_in_workspace(
+            files,
+            "--show",
+            "identity",
+            "--fail-on",
+            "cross_file_duplicate_id",
+        )
+
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("cross_file_duplicate_id", result.stdout)
+        self.assertIn("urn:test#type/Duplicate", result.stdout)
+        self.assertIn("id values must be unique across workspace documents", result.stdout)
+
+    def test_in_file_id_target_resolution_is_unchanged(self) -> None:
+        """A local URN hit must keep using the existing per-file id evidence."""
+
+        document_text = """<CodeSpecification>
+\t<ProductType id=urn:test#type/Sample key=~sample name="Sample">
+\t\t<Field key=~value name="value" valueType=urn:test#type/Sample />
+\t</ProductType>
+</CodeSpecification>
+"""
+
+        result = self.run_tool(document_text, "--show", "references")
+
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("resolved_without_target_policy", result.stdout)
+        self.assertIn("IRI resolves by exact id equality", result.stdout)
+        self.assertNotIn("IRI resolves by workspace id equality", result.stdout)
 
     def test_duplicate_key_makes_reference_ambiguous(self) -> None:
         """Duplicate keys must prevent deterministic reference resolution."""

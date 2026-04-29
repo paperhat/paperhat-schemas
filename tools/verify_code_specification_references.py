@@ -17,10 +17,7 @@ ATTRIBUTE_PATTERN = re.compile(
     r"(?:\"([^\"]*)\"|`([^`]*)`|(\[[^\]]*\])|([^\s>]+))",
     re.DOTALL,
 )
-TAG_PATTERN = re.compile(
-    r"<(/?)([A-Za-z_][A-Za-z0-9_:.-]*)([^<>]*?)(/?)>",
-    re.DOTALL,
-)
+TAG_HEAD_PATTERN = re.compile(r"/?([A-Za-z_][A-Za-z0-9_:.-]*)")
 
 CODE_SPECIFICATION_REFERENCE_TRAITS = frozenset(
     {
@@ -302,18 +299,64 @@ def parse_attributes(attribute_text: str) -> dict[str, str]:
     return attributes
 
 
+def find_tag_end(text: str, start: int) -> int | None:
+    """Find the closing delimiter for a tag without inspecting delimited values."""
+
+    delimiter = ""
+    index = start + 1
+    while index < len(text):
+        character = text[index]
+        if delimiter:
+            if character == delimiter:
+                delimiter = ""
+            index += 1
+            continue
+        if character == '"':
+            delimiter = '"'
+        elif character == "`":
+            delimiter = "`"
+        elif character == "[":
+            delimiter = "]"
+        elif character == ">":
+            return index
+        index += 1
+    return None
+
+
+def iter_tags(text: str):
+    """Yield Codex start and close tags while respecting delimited values."""
+
+    search_index = 0
+    while True:
+        start = text.find("<", search_index)
+        if start == -1:
+            return
+        head_match = TAG_HEAD_PATTERN.match(text, start + 1)
+        if head_match is None:
+            search_index = start + 1
+            continue
+        tag_end = find_tag_end(text, start)
+        if tag_end is None:
+            return
+        attribute_text = text[head_match.end() : tag_end]
+        yield (
+            text[start + 1] == "/",
+            head_match.group(1),
+            attribute_text,
+            start,
+        )
+        search_index = tag_end + 1
+
+
 def parse_elements(text: str) -> list[Element]:
     """Parse start tags and their concept paths from a Codex document."""
 
     stack: list[Element] = []
     elements: list[Element] = []
 
-    for match in TAG_PATTERN.finditer(text):
-        is_closing = bool(match.group(1))
-        concept = match.group(2)
-        attribute_text = match.group(3)
-        is_self_closing = bool(match.group(4)) or attribute_text.rstrip().endswith("/")
-        line = text.count("\n", 0, match.start()) + 1
+    for is_closing, concept, attribute_text, start in iter_tags(text):
+        is_self_closing = attribute_text.rstrip().endswith("/")
+        line = text.count("\n", 0, start) + 1
 
         if is_closing:
             while stack:

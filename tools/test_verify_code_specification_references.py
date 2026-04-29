@@ -3,7 +3,9 @@
 
 from __future__ import annotations
 
+import importlib.util
 import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -21,6 +23,16 @@ class VerifyCodeSpecificationReferencesTest(unittest.TestCase):
         )
         if not cls.tool_path.is_file():
             raise AssertionError(f"Missing verifier tool: {cls.tool_path}")
+        module_spec = importlib.util.spec_from_file_location(
+            "verify_code_specification_references_under_test",
+            cls.tool_path,
+        )
+        if module_spec is None or module_spec.loader is None:
+            raise AssertionError(f"Could not load verifier tool: {cls.tool_path}")
+        verifier_module = importlib.util.module_from_spec(module_spec)
+        sys.modules[module_spec.name] = verifier_module
+        module_spec.loader.exec_module(verifier_module)
+        cls.verifier = verifier_module
 
     def run_tool(
         self,
@@ -258,6 +270,62 @@ class VerifyCodeSpecificationReferencesTest(unittest.TestCase):
         self.assertIn("resolved_without_target_policy", result.stdout)
         self.assertIn("IRI resolves by exact id equality", result.stdout)
         self.assertNotIn("IRI resolves by workspace id equality", result.stdout)
+
+    def test_parser_indexes_ids_after_delimited_attribute_angle_brackets(self) -> None:
+        """Delimited attribute values must not desynchronize element parsing."""
+
+        document_text = """<CodeSpecification>
+\t<ProductType
+\t\tid=urn:test#type/LessThanTrigger
+\t\tkey=~lessThanTrigger
+\t\tname="LessThanTrigger"
+\t\tdescription="A quoted range expression 0 <= h < 360."
+\t>
+\t\t<Field key=~lessThanField name="value" />
+\t</ProductType>
+
+\t<ProductType id=urn:test#type/AfterLessThan key=~afterLessThan name="AfterLessThan" />
+
+\t<ProductType
+\t\tid=urn:test#type/GreaterThanTrigger
+\t\tkey=~greaterThanTrigger
+\t\tname="GreaterThanTrigger"
+\t\tdescription=`A backticked comparison x > y.`
+\t>
+\t\t<Field key=~greaterThanField name="value" />
+\t</ProductType>
+
+\t<ProductType id=urn:test#type/AfterGreaterThan key=~afterGreaterThan name="AfterGreaterThan" />
+
+\t<ProductType
+\t\tid=urn:test#type/BracketedValue
+\t\tkey=~bracketedValue
+\t\tname="BracketedValue"
+\t\tcapabilities=[$Equality, $Hashing]
+\t/>
+
+\t<ProductType id=urn:test#type/AfterBracketed key=~afterBracketed name="AfterBracketed" />
+</CodeSpecification>
+"""
+
+        elements = self.verifier.parse_elements(document_text)
+        id_candidates, _ = self.verifier.index_candidates(elements)
+
+        expected_ids = (
+            "urn:test#type/LessThanTrigger",
+            "urn:test#type/AfterLessThan",
+            "urn:test#type/GreaterThanTrigger",
+            "urn:test#type/AfterGreaterThan",
+            "urn:test#type/BracketedValue",
+            "urn:test#type/AfterBracketed",
+        )
+        for id_value in expected_ids:
+            with self.subTest(id_value=id_value):
+                self.assertIn(id_value, id_candidates)
+                self.assertEqual(
+                    id_candidates[id_value][0].path[0],
+                    "CodeSpecification",
+                )
 
     def test_duplicate_key_makes_reference_ambiguous(self) -> None:
         """Duplicate keys must prevent deterministic reference resolution."""

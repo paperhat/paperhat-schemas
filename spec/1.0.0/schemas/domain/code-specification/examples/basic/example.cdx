@@ -33,7 +33,7 @@
 			<Field name="label" key=~label position=0>
 				<TypeSlot typeRole=$ValueType>
 					<TypeExpression>
-						<NamedTypeReference referencedType=urn:paperhat:text-spec#type/NonEmptyText />
+						<NamedTypeReference referencedType=urn:paperhat:text-spec#type/Text />
 					</TypeExpression>
 				</TypeSlot>
 			</Field>
@@ -43,7 +43,7 @@
 			<Field name="index" key=~index position=0>
 				<TypeSlot typeRole=$ValueType>
 					<TypeExpression>
-						<NamedTypeReference referencedType=urn:paperhat:numeric-spec#type/NonNegativeInteger />
+						<NamedTypeReference referencedType=urn:paperhat:numeric-spec#type/Integer />
 					</TypeExpression>
 				</TypeSlot>
 			</Field>
@@ -67,9 +67,9 @@
 		description="Selects a color channel by wrapped name or wrapped index."
 		capabilities=[$Equality, $Hashing, $Cloning, $CanonicalOrdering, $Debugging]
 	>
-		<Variant name="ByName" position=0 wrapsType=urn:paperhat:text-spec#type/NonEmptyText />
+		<Variant name="ByName" position=0 wrapsType=urn:paperhat:text-spec#type/Text />
 
-		<Variant name="ByIndex" position=1 wrapsType=urn:paperhat:numeric-spec#type/NonNegativeInteger />
+		<Variant name="ByIndex" position=1 wrapsType=urn:paperhat:numeric-spec#type/Integer />
 
 		<CanonicalOrderingRule strategy=$VariantThenFieldComparison />
 	</SumType>
@@ -186,13 +186,13 @@
 					<TypeApplication constructorType=urn:paperhat:color-spec#type/Pair>
 						<TypeArgument position=0>
 							<TypeExpression>
-								<NamedTypeReference referencedType=urn:paperhat:text-spec#type/NonEmptyText />
+								<NamedTypeReference referencedType=urn:paperhat:text-spec#type/Text />
 							</TypeExpression>
 						</TypeArgument>
 
 						<TypeArgument position=1>
 							<TypeExpression>
-								<NamedTypeReference referencedType=urn:paperhat:numeric-spec#type/NonNegativeInteger />
+								<NamedTypeReference referencedType=urn:paperhat:numeric-spec#type/Integer />
 							</TypeExpression>
 						</TypeArgument>
 					</TypeApplication>
@@ -211,7 +211,7 @@
 		producesVariant=~ByName
 		description="Wraps a non-empty channel label as the ByName selector variant."
 	>
-		<OperationParameter name="label" valueType=urn:paperhat:text-spec#type/NonEmptyText position=0 />
+		<OperationParameter name="label" valueType=urn:paperhat:text-spec#type/Text position=0 />
 
 		<WrappedValueBinding sourceParameter=~label />
 	</ConstructionOperation>
@@ -238,7 +238,7 @@
 		id=urn:paperhat:color-spec#constant/CHANNEL_PREFIX
 		name="CHANNEL_PREFIX"
 		exported=true
-		valueType=urn:paperhat:text-spec#type/NonEmptyText
+		valueType=urn:paperhat:text-spec#type/Text
 		value="channel"
 		description="The display prefix used for indexed channels."
 	/>
@@ -265,7 +265,7 @@
 		id=urn:paperhat:color-spec#accessor/channel_label
 		name="channel_label"
 		exported=true
-		returnType=urn:paperhat:text-spec#type/NonEmptyText
+		returnType=urn:paperhat:text-spec#type/Text
 		belongsToType=urn:paperhat:color-spec#type/ChannelKind
 		description="Returns the display label for any channel kind."
 	>

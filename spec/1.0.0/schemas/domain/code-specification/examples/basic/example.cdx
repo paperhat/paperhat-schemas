@@ -14,7 +14,7 @@
 		<Field name="value" key=~value position=0 exported=true>
 			<TypeSlot typeRole=$ValueType>
 				<TypeExpression>
-					<NamedTypeReference referencedType=urn:paperhat:common-spec#type/Float256 />
+					<NamedTypeReference referencedType=urn:paperhat:precision-spec#type/Float256 />
 				</TypeExpression>
 			</TypeSlot>
 		</Field>
@@ -220,7 +220,7 @@
 		id=urn:paperhat:color-spec#constant/ZERO
 		name="ZERO"
 		exported=true
-		valueType=urn:paperhat:common-spec#type/Float256
+		valueType=urn:paperhat:precision-spec#type/Float256
 		value="0.0"
 		description="The minimum normalized value."
 	/>
@@ -229,7 +229,7 @@
 		id=urn:paperhat:color-spec#constant/ONE
 		name="ONE"
 		exported=true
-		valueType=urn:paperhat:common-spec#type/Float256
+		valueType=urn:paperhat:precision-spec#type/Float256
 		value="1.0"
 		description="The maximum normalized value."
 	/>
@@ -250,7 +250,7 @@
 		producesType=urn:paperhat:color-spec#type/NormalizedValue
 		description="Constructs a NormalizedValue from a raw floating-point input, rejecting values outside [0.0, 1.0]."
 	>
-		<OperationParameter name="raw" key=~raw valueType=urn:paperhat:common-spec#type/Float256 position=0 mapsToField=~value />
+		<OperationParameter name="raw" key=~raw valueType=urn:paperhat:precision-spec#type/Float256 position=0 mapsToField=~value />
 
 		<Precondition validationRule=~in_unit_range appliesToParameter=~raw failureMessage="Value is outside the normalized range [0.0, 1.0]." />
 	</ConstructionOperation>
@@ -277,7 +277,7 @@
 	<ValidationRule
 		id=urn:paperhat:color-spec#validation/in_unit_range
 		name="in_unit_range"
-		appliesToType=urn:paperhat:common-spec#type/Float256
+		appliesToType=urn:paperhat:precision-spec#type/Float256
 		validationPattern="^(0(\\.[0-9]+)?|1(\\.0+)?)$"
 	/>
 
@@ -290,7 +290,7 @@
 	<OperationConformanceCase testName="normalized_value_exact_result" operation=~normalized_value>
 		<OperationArgument
 			position=0
-			valueType=urn:paperhat:common-spec#type/Float256
+			valueType=urn:paperhat:precision-spec#type/Float256
 			bodyMode=$content
 		>
 			0.5

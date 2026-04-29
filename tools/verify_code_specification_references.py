@@ -59,6 +59,12 @@ CODE_SPECIFICATION_REFERENCE_TRAITS = frozenset(
     }
 )
 
+WORKSPACE_DOCUMENT_ROOTS = (
+    "implementations",
+    "schemas/paperhat-schemas",
+    "specifications",
+)
+
 PROBLEM_STATUSES = frozenset(
     {
         "ambiguous",
@@ -76,6 +82,7 @@ PROBLEM_STATUSES = frozenset(
 REPORT_COLUMNS = (
     "record_type",
     "status",
+    "slice",
     "file",
     "line",
     "path",
@@ -125,11 +132,27 @@ class ConceptDefinition:
 
 
 @dataclasses.dataclass(frozen=True)
+class SlicePolicy:
+    """One explicit reference slice target policy."""
+
+    holder_concept: str
+    trait: str
+    target_concepts: tuple[str, ...]
+
+    @property
+    def name(self) -> str:
+        """Return the stable slice name."""
+
+        return f"{self.holder_concept}:{self.trait}"
+
+
+@dataclasses.dataclass(frozen=True)
 class ReportRow:
     """One machine-readable verifier row."""
 
     record_type: str
     status: str
+    slice_name: str
     file: str
     line: int
     path: str
@@ -148,6 +171,7 @@ class ReportRow:
         values = [
             self.record_type,
             self.status,
+            self.slice_name,
             self.file,
             str(self.line),
             self.path,
@@ -198,8 +222,25 @@ def parse_arguments() -> argparse.Namespace:
         help="Specific CodeSpecification file to inspect. Can be repeated.",
     )
     parser.add_argument(
+        "--slice",
+        action="append",
+        default=[],
+        help=(
+            "Reference slice in HolderConcept:trait=TargetConcept[,TargetConcept] "
+            "form. Can be repeated."
+        ),
+    )
+    parser.add_argument(
+        "--gate-slice",
+        action="store_true",
+        help=(
+            "Fail unless every declared slice has at least one row and every "
+            "selected reference row resolves to one declared target concept."
+        ),
+    )
+    parser.add_argument(
         "--show",
-        choices=("all", "identity", "problems", "references", "summary"),
+        choices=("all", "identity", "problems", "references", "slice", "summary"),
         default="problems",
         help="Rows to emit.",
     )
@@ -367,7 +408,7 @@ def load_explicit_reference_policies(
 
 
 def discover_code_specification_files(workspace_root: Path) -> list[Path]:
-    """Find CodeSpecification documents under the workspace."""
+    """Find CodeSpecification documents under in-scope workspace roots."""
 
     ignored_parts = {
         ".git",
@@ -377,17 +418,24 @@ def discover_code_specification_files(workspace_root: Path) -> list[Path]:
         ".venv",
     }
     files: list[Path] = []
-    for path in sorted(workspace_root.rglob("*.cdx")):
-        relative_parts = path.resolve().relative_to(workspace_root).parts
-        directory_parts = relative_parts[:-1]
-        if any(part in ignored_parts or part.startswith(".") for part in directory_parts):
+    for root_name in WORKSPACE_DOCUMENT_ROOTS:
+        document_root = workspace_root / root_name
+        if not document_root.is_dir():
             continue
-        try:
-            text = read_text(path)
-        except UnicodeDecodeError:
-            continue
-        if re.search(r"<CodeSpecification\b", text):
-            files.append(path)
+        for path in sorted(document_root.rglob("*.cdx")):
+            relative_parts = path.resolve().relative_to(workspace_root).parts
+            directory_parts = relative_parts[:-1]
+            if any(
+                part in ignored_parts or part.startswith(".")
+                for part in directory_parts
+            ):
+                continue
+            try:
+                text = read_text(path)
+            except UnicodeDecodeError:
+                continue
+            if re.search(r"<CodeSpecification\b", text):
+                files.append(path)
     return files
 
 
@@ -474,6 +522,69 @@ def target_policy_text(policy: tuple[str, ...] | None) -> str:
     return ",".join(policy)
 
 
+def parse_slice_policy(
+    raw_value: str,
+    reference_traits: frozenset[str],
+    concept_definitions: dict[str, ConceptDefinition],
+) -> SlicePolicy:
+    """Parse one explicit slice policy."""
+
+    if "=" not in raw_value:
+        raise VerificationError(f"Slice is missing '=': {raw_value}")
+    holder_and_trait, target_text = raw_value.split("=", 1)
+    if ":" not in holder_and_trait:
+        raise VerificationError(f"Slice is missing holder-trait separator: {raw_value}")
+    holder_concept, trait = holder_and_trait.rsplit(":", 1)
+    holder_concept = holder_concept.strip()
+    trait = trait.strip()
+    target_concepts = tuple(
+        target.strip() for target in target_text.split(",") if target.strip()
+    )
+
+    if not holder_concept:
+        raise VerificationError(f"Slice holder concept is empty: {raw_value}")
+    if not trait:
+        raise VerificationError(f"Slice trait is empty: {raw_value}")
+    if trait not in reference_traits:
+        raise VerificationError(f"Slice trait is not a reference trait: {trait}")
+    if holder_concept not in concept_definitions:
+        raise VerificationError(f"Slice holder concept is not declared: {holder_concept}")
+    if not target_concepts:
+        raise VerificationError(f"Slice has no target concepts: {raw_value}")
+    for target_concept in target_concepts:
+        if target_concept not in concept_definitions:
+            raise VerificationError(
+                f"Slice target concept is not declared: {target_concept}"
+            )
+
+    return SlicePolicy(
+        holder_concept=holder_concept,
+        trait=trait,
+        target_concepts=target_concepts,
+    )
+
+
+def parse_slice_policies(
+    raw_values: list[str],
+    reference_traits: frozenset[str],
+    concept_definitions: dict[str, ConceptDefinition],
+) -> dict[tuple[str, str], SlicePolicy]:
+    """Parse all explicit slice policies."""
+
+    policies: dict[tuple[str, str], SlicePolicy] = {}
+    for raw_value in raw_values:
+        policy = parse_slice_policy(
+            raw_value=raw_value,
+            reference_traits=reference_traits,
+            concept_definitions=concept_definitions,
+        )
+        key = (policy.holder_concept, policy.trait)
+        if key in policies:
+            raise VerificationError(f"Duplicate slice policy: {policy.name}")
+        policies[key] = policy
+    return policies
+
+
 def classify_reference_member(
     member: str,
     policy: tuple[str, ...] | None,
@@ -515,6 +626,7 @@ def reference_rows_for_file(
     elements: list[Element],
     reference_traits: frozenset[str],
     policies: dict[str, tuple[str, ...]],
+    slice_policies: dict[tuple[str, str], SlicePolicy],
 ) -> list[ReportRow]:
     """Build reference evidence rows for one file."""
 
@@ -527,12 +639,19 @@ def reference_rows_for_file(
             if trait_name not in reference_traits:
                 continue
             members = split_reference_members(value)
-            policy = policies.get(trait_name)
+            slice_policy = slice_policies.get((element.concept, trait_name))
+            if slice_policy is None:
+                policy = policies.get(trait_name)
+                slice_name = ""
+            else:
+                policy = slice_policy.target_concepts
+                slice_name = slice_policy.name
             if not members:
                 rows.append(
                     ReportRow(
                         record_type="reference",
                         status="unresolved",
+                        slice_name=slice_name,
                         file=file_text,
                         line=element.line,
                         path=format_path(element.path),
@@ -558,6 +677,7 @@ def reference_rows_for_file(
                     ReportRow(
                         record_type="reference",
                         status=status,
+                        slice_name=slice_name,
                         file=file_text,
                         line=element.line,
                         path=format_path(element.path),
@@ -596,6 +716,7 @@ def duplicate_rows_for_file(
             ReportRow(
                 record_type="identity",
                 status=status,
+                slice_name="",
                 file=file_text,
                 line=first_candidate.line,
                 path=format_path(first_candidate.path),
@@ -639,6 +760,7 @@ def identity_rows_for_file(
                 ReportRow(
                     record_type="identity",
                     status="missing_id",
+                    slice_name="",
                     file=file_text,
                     line=element.line,
                     path=format_path(element.path),
@@ -657,6 +779,7 @@ def identity_rows_for_file(
                 ReportRow(
                     record_type="identity",
                     status="forbidden_id",
+                    slice_name="",
                     file=file_text,
                     line=element.line,
                     path=format_path(element.path),
@@ -680,6 +803,7 @@ def rows_for_file(
     concept_definitions: dict[str, ConceptDefinition],
     reference_traits: frozenset[str],
     policies: dict[str, tuple[str, ...]],
+    slice_policies: dict[tuple[str, str], SlicePolicy],
 ) -> list[ReportRow]:
     """Build all verifier rows for one file."""
 
@@ -699,6 +823,7 @@ def rows_for_file(
             elements=elements,
             reference_traits=reference_traits,
             policies=policies,
+            slice_policies=slice_policies,
         ),
     ]
 
@@ -729,11 +854,50 @@ def filter_rows(rows: list[ReportRow], show: str) -> list[ReportRow]:
         return [row for row in rows if row.record_type == "identity"]
     if show == "references":
         return [row for row in rows if row.record_type == "reference"]
+    if show == "slice":
+        return [row for row in rows if row.slice_name]
     if show == "problems":
         return [row for row in rows if row.status in PROBLEM_STATUSES]
     if show == "summary":
         return []
     raise VerificationError(f"Unsupported show mode: {show}")
+
+
+def slice_gate_failures(
+    rows: list[ReportRow],
+    slice_policies: dict[tuple[str, str], SlicePolicy],
+) -> list[str]:
+    """Return slice gate failure messages."""
+
+    failures: list[str] = []
+    if not slice_policies:
+        return ["no slice policies were declared"]
+
+    rows_by_slice: dict[str, list[ReportRow]] = collections.defaultdict(list)
+    for row in rows:
+        if row.slice_name:
+            rows_by_slice[row.slice_name].append(row)
+
+    for policy in slice_policies.values():
+        slice_rows = rows_by_slice.get(policy.name, [])
+        if not slice_rows:
+            failures.append(f"{policy.name}: no reference rows inspected")
+            continue
+        for row in slice_rows:
+            if row.status != "resolved":
+                failures.append(
+                    f"{policy.name}: {row.file}:{row.line} {row.trait} "
+                    f"{row.member} status={row.status}"
+                )
+
+    return failures
+
+
+def emit_slice_gate_failures(failures: list[str]) -> None:
+    """Emit slice gate failures to standard error."""
+
+    for failure in failures:
+        print(f"SLICE_GATE_FAILED\t{failure}", file=sys.stderr)
 
 
 def emit_rows(rows: list[ReportRow]) -> None:
@@ -766,6 +930,11 @@ def main() -> int:
     reference_traits = frozenset(
         sorted(CODE_SPECIFICATION_REFERENCE_TRAITS | frozenset(policies))
     )
+    slice_policies = parse_slice_policies(
+        raw_values=arguments.slice,
+        reference_traits=reference_traits,
+        concept_definitions=concept_definitions,
+    )
 
     if arguments.file:
         files = [path.resolve() for path in arguments.file]
@@ -781,6 +950,7 @@ def main() -> int:
                 concept_definitions=concept_definitions,
                 reference_traits=reference_traits,
                 policies=policies,
+                slice_policies=slice_policies,
             )
         )
 
@@ -792,6 +962,11 @@ def main() -> int:
     fail_on_statuses = parse_fail_on(arguments.fail_on)
     if any(row.status in fail_on_statuses for row in all_rows):
         return 1
+    if arguments.gate_slice:
+        failures = slice_gate_failures(all_rows, slice_policies)
+        if failures:
+            emit_slice_gate_failures(failures)
+            return 1
     return 0
 
 

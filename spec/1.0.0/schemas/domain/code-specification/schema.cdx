@@ -2648,6 +2648,405 @@
 		</ConstraintDefinition>
 
 		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:accessor-arm-returns-field-targets-field
+			title="An accessor arm return-field reference targets one declared field"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AccessorArm" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<TraitMissing trait="returnsField" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint
+							conceptSelector="Field"
+							traitName="returnsField"
+							type=$ReferenceTargetsConcept
+						/>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:canonical-ordering-rule-delegate-field-targets-field
+			title="A canonical ordering rule delegation targets one declared field"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="CanonicalOrderingRule" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<TraitMissing trait="delegateField" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint
+							conceptSelector="Field"
+							traitName="delegateField"
+							type=$ReferenceTargetsConcept
+						/>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:code-specification-diagnostic-type-targets-sum-type
+			title="A code specification diagnostic type targets one declared sum type"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="CodeSpecification" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<TraitMissing trait="diagnosticType" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint
+							conceptSelector="SumType"
+							traitName="diagnosticType"
+							type=$ReferenceTargetsConcept
+						/>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:comparison-step-compare-field-targets-field
+			title="A comparison step compares one declared field"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ComparisonStep" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint
+					conceptSelector="Field"
+					traitName="compareField"
+					type=$ReferenceTargetsConcept
+				/>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:constant-binding-bound-constant-targets-named-constant
+			title="A constant binding binds one declared named constant"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ConstantBinding" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint
+					conceptSelector="NamedConstant"
+					traitName="boundConstant"
+					type=$ReferenceTargetsConcept
+				/>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:constant-binding-target-field-targets-field
+			title="A constant binding target field targets one declared field"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ConstantBinding" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint
+					conceptSelector="Field"
+					traitName="targetField"
+					type=$ReferenceTargetsConcept
+				/>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:construction-operation-spec-requirement-targets-normative-requirement
+			title="A construction operation requirement reference targets one declared normative requirement"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ConstructionOperation" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<TraitMissing trait="specRequirement" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint
+							conceptSelector="NormativeRequirement"
+							traitName="specRequirement"
+							type=$ReferenceTargetsConcept
+						/>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:operation-parameter-maps-to-field-targets-field
+			title="An operation parameter field mapping targets one declared field"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="OperationParameter" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<TraitMissing trait="mapsToField" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint
+							conceptSelector="Field"
+							traitName="mapsToField"
+							type=$ReferenceTargetsConcept
+						/>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:parse-operation-diagnostic-variant-targets-variant
+			title="A parse operation diagnostic variant targets one declared variant"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ParseOperation" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint
+					conceptSelector="Variant"
+					traitName="diagnosticVariant"
+					type=$ReferenceTargetsConcept
+				/>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:parse-operation-failure-family-type-targets-sum-type
+			title="A parse operation failure family type targets one declared sum type"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ParseOperation" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint
+					conceptSelector="SumType"
+					traitName="failureFamilyType"
+					type=$ReferenceTargetsConcept
+				/>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:parse-operation-grammar-reference-targets-grammar
+			title="A parse operation grammar reference targets one declared grammar"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ParseOperation" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint
+					conceptSelector="grammar:Grammar"
+					traitName="grammarReference"
+					type=$ReferenceTargetsConcept
+				/>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:parse-operation-produces-type-targets-declared-type
+			title="A parse operation produced type targets one declared type"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ParseOperation" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<ReferenceConstraint
+							conceptSelector="ProductType"
+							traitName="producesType"
+							type=$ReferenceTargetsConcept
+						/>
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint
+							conceptSelector="PrimitiveType"
+							traitName="producesType"
+							type=$ReferenceTargetsConcept
+						/>
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint
+							conceptSelector="CollectionType"
+							traitName="producesType"
+							type=$ReferenceTargetsConcept
+						/>
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint
+							conceptSelector="SumType"
+							traitName="producesType"
+							type=$ReferenceTargetsConcept
+						/>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:parse-operation-source-line-number-type-targets-declared-type
+			title="A parse operation source line number type targets one declared product type"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ParseOperation" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint
+					conceptSelector="ProductType"
+					traitName="sourceLineNumberType"
+					type=$ReferenceTargetsConcept
+				/>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:precondition-applies-to-parameter-targets-operation-parameter
+			title="A precondition applies to one declared operation parameter"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="Precondition" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint
+					conceptSelector="OperationParameter"
+					traitName="appliesToParameter"
+					type=$ReferenceTargetsConcept
+				/>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:prohibition-precondition-parameter-to-check-targets-operation-parameter
+			title="A prohibition precondition checks one declared operation parameter"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ProhibitionPrecondition" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint
+					conceptSelector="OperationParameter"
+					traitName="parameterToCheck"
+					type=$ReferenceTargetsConcept
+				/>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:prohibition-precondition-prohibited-constant-targets-named-constant
+			title="A prohibition precondition prohibits one declared named constant"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ProhibitionPrecondition" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint
+					conceptSelector="NamedConstant"
+					traitName="prohibitedConstant"
+					type=$ReferenceTargetsConcept
+				/>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:surface-rejection-case-expected-diagnostic-targets-variant
+			title="A surface rejection case expected diagnostic targets one declared variant"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="SurfaceRejectionCase" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint
+					conceptSelector="Variant"
+					traitName="expectedDiagnostic"
+					type=$ReferenceTargetsConcept
+				/>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:validation-rule-spec-requirement-targets-normative-requirement
+			title="A validation rule requirement reference targets one declared normative requirement"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ValidationRule" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<TraitMissing trait="specRequirement" />
+					</Rule>
+
+					<Rule>
+						<ReferenceConstraint
+							conceptSelector="NormativeRequirement"
+							traitName="specRequirement"
+							type=$ReferenceTargetsConcept
+						/>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:value-mapping-target-field-targets-field
+			title="A value mapping target field targets one declared field"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ValueMapping" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint
+					conceptSelector="Field"
+					traitName="targetField"
+					type=$ReferenceTargetsConcept
+				/>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
 			id=paperhat:domain:codeSpecification:field-has-one-type-source
 			title="A field uses either legacy type traits or one structured type expression"
 		>

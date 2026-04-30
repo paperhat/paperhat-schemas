@@ -29,7 +29,7 @@
 		description="Discriminates between named and indexed color channels."
 		capabilities=[$Equality, $Hashing, $Cloning, $CanonicalOrdering, $Debugging]
 	>
-		<Variant name="Named" position=0>
+		<Variant name="Named" key=~named position=0>
 			<Field name="label" key=~label position=0>
 				<TypeSlot typeRole=$ValueType>
 					<TypeExpression>
@@ -39,7 +39,7 @@
 			</Field>
 		</Variant>
 
-		<Variant name="Indexed" position=1>
+		<Variant name="Indexed" key=~indexed position=1>
 			<Field name="index" key=~index position=0>
 				<TypeSlot typeRole=$ValueType>
 					<TypeExpression>
@@ -50,11 +50,11 @@
 		</Variant>
 
 		<CanonicalOrderingRule strategy=$VariantThenFieldComparison>
-			<WithinVariantRule forVariant=~Named>
+			<WithinVariantRule forVariant=~named>
 				<ComparisonStep compareField=~label position=0 />
 			</WithinVariantRule>
 
-			<WithinVariantRule forVariant=~Indexed>
+			<WithinVariantRule forVariant=~indexed>
 				<ComparisonStep compareField=~index position=0 />
 			</WithinVariantRule>
 		</CanonicalOrderingRule>
@@ -67,7 +67,7 @@
 		description="Selects a color channel by wrapped name or wrapped index."
 		capabilities=[$Equality, $Hashing, $Cloning, $CanonicalOrdering, $Debugging]
 	>
-		<Variant name="ByName" position=0 wrapsType=urn:paperhat:text-spec#type/Text />
+		<Variant name="ByName" key=~byName position=0 wrapsType=urn:paperhat:text-spec#type/Text />
 
 		<Variant name="ByIndex" position=1 wrapsType=urn:paperhat:numeric-spec#type/Integer />
 
@@ -146,14 +146,14 @@
 		description="A generic pair proving type-parameter references and two-argument application."
 		capabilities=[$Equality, $Cloning, $CanonicalOrdering, $Debugging]
 	>
-		<TypeParameter name="LeftItem" />
+		<TypeParameter name="LeftItem" key=~leftItem />
 
-		<TypeParameter name="RightItem" />
+		<TypeParameter name="RightItem" key=~rightItem />
 
 		<Field name="left" key=~left position=0>
 			<TypeSlot typeRole=$ValueType>
 				<TypeExpression>
-					<TypeParameterReference referencedTypeParameter=~LeftItem />
+					<TypeParameterReference referencedTypeParameter=~leftItem />
 				</TypeExpression>
 			</TypeSlot>
 		</Field>
@@ -161,7 +161,7 @@
 		<Field name="right" key=~right position=1>
 			<TypeSlot typeRole=$ValueType>
 				<TypeExpression>
-					<TypeParameterReference referencedTypeParameter=~RightItem />
+					<TypeParameterReference referencedTypeParameter=~rightItem />
 				</TypeExpression>
 			</TypeSlot>
 		</Field>
@@ -208,7 +208,7 @@
 		name="channel_selector_by_name"
 		exported=true
 		producesType=urn:paperhat:color-spec#type/ChannelSelector
-		producesVariant=~ByName
+		producesVariant=~byName
 		description="Wraps a non-empty channel label as the ByName selector variant."
 	>
 		<OperationParameter name="label" valueType=urn:paperhat:text-spec#type/Text position=0 />
@@ -236,6 +236,7 @@
 
 	<NamedConstant
 		id=urn:paperhat:color-spec#constant/CHANNEL_PREFIX
+		key=~channelPrefix
 		name="CHANNEL_PREFIX"
 		exported=true
 		valueType=urn:paperhat:text-spec#type/Text
@@ -245,6 +246,7 @@
 
 	<ConstructionOperation
 		id=urn:paperhat:color-spec#operation/normalized_value
+		key=~normalizedValue
 		name="normalized_value"
 		exported=true
 		producesType=urn:paperhat:color-spec#type/NormalizedValue
@@ -252,7 +254,7 @@
 	>
 		<OperationParameter name="raw" key=~raw valueType=urn:paperhat:precision-spec#type/Float256 position=0 mapsToField=~value />
 
-		<Precondition validationRule=~in_unit_range appliesToParameter=~raw failureMessage="Value is outside the normalized range [0.0, 1.0]." />
+		<Precondition validationRule=~inUnitRange appliesToParameter=~raw failureMessage="Value is outside the normalized range [0.0, 1.0]." />
 	</ConstructionOperation>
 
 	<grammar:Grammar id=urn:paperhat:color-spec#grammar/normalizedValueSurface key=~normalizedValueSurface notation=$Custom startSymbol="normalized_value">
@@ -269,25 +271,26 @@
 		belongsToType=urn:paperhat:color-spec#type/ChannelKind
 		description="Returns the display label for any channel kind."
 	>
-		<AccessorArm forVariant=~Named returnsField=~label />
+		<AccessorArm forVariant=~named returnsField=~label />
 
-		<AccessorArm forVariant=~Indexed returnsConstant=~CHANNEL_PREFIX />
+		<AccessorArm forVariant=~indexed returnsConstant=~channelPrefix />
 	</AccessorOperation>
 
 	<ValidationRule
 		id=urn:paperhat:color-spec#validation/in_unit_range
+		key=~inUnitRange
 		name="in_unit_range"
 		appliesToType=urn:paperhat:precision-spec#type/Float256
 		validationPattern="^(0(\\.[0-9]+)?|1(\\.0+)?)$"
 	/>
 
-	<ConstructionTestCase testName="construct_valid_normalized_value" operation=~normalized_value>
+	<ConstructionTestCase testName="construct_valid_normalized_value" operation=~normalizedValue>
 		<TestArgument value="0.5" position=0 />
 
 		<ExpectedAccessorResult accessor=~value expectedValue="0.5" />
 	</ConstructionTestCase>
 
-	<OperationConformanceCase testName="normalized_value_exact_result" operation=~normalized_value>
+	<OperationConformanceCase testName="normalized_value_exact_result" operation=~normalizedValue>
 		<OperationArgument
 			position=0
 			valueType=urn:paperhat:precision-spec#type/Float256
@@ -304,16 +307,16 @@
 		</ExpectedOperationValue>
 	</OperationConformanceCase>
 
-	<RejectionTestCase testName="reject_negative_normalized_value" operation=~normalized_value expectedFailureContaining="outside the normalized range">
+	<RejectionTestCase testName="reject_negative_normalized_value" operation=~normalizedValue expectedFailureContaining="outside the normalized range">
 		<TestArgument value="-0.1" position=0 />
 	</RejectionTestCase>
 
 	<OrderingTestCase testName="normalized_value_ordering">
-		<TestValue role=$Lesser operation=~normalized_value>
+		<TestValue role=$Lesser operation=~normalizedValue>
 			<TestArgument value="0.25" position=0 />
 		</TestValue>
 
-		<TestValue role=$Greater operation=~normalized_value>
+		<TestValue role=$Greater operation=~normalizedValue>
 			<TestArgument value="0.75" position=0 />
 		</TestValue>
 	</OrderingTestCase>

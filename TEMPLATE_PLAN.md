@@ -448,11 +448,11 @@ The Verification Block below uses the form defined in `## Verification Block`.
   expected output shape: Two-character status codes followed by repository-relative file paths, one per line; output may be empty.
   acceptance criterion: Every output line names a path inside the editable scope declared by Phase 0; any path outside that scope must have been explicitly accepted by the planner before the next phase step proceeds.
 
-- command: `rg --files schemas/paperhat-schemas/spec/1.0.0/schemas`
+- command: `find schemas/paperhat-schemas/spec/1.0.0/schemas -type f -path '*/templates/*/template.cdx'`
   purpose: Generate the current template corpus file list.
   step: Step 4 (Generate a current template corpus file list).
-  expected output shape: One workspace-relative file path per line.
-  acceptance criterion: TODO(recommendation #10) — the listed command lists every schema file, not just templates, so it does not satisfy Step 4. The replacement command must restrict output to `*/templates/*/template.cdx`; the criterion will then be that every output line ends with `/template.cdx` and the line count equals the count returned by an independent `find` against the same scope.
+  expected output shape: One workspace-relative file path per line, each path ending in `/templates/<variant>/template.cdx`.
+  acceptance criterion: (a) Every output line matches the literal pattern `*/templates/*/template.cdx` (one variant directory between `templates/` and `template.cdx`, exactly one path per template directory); and (b) the line count equals the count returned by the cross-check command `find schemas/paperhat-schemas/spec/1.0.0/schemas -type f -name template.cdx | wc -l`. If the two counts disagree, some `template.cdx` exists outside the expected `*/templates/*/template.cdx` shape and Phase 0 must report the deviation in its Grounded Findings before continuing.
 
 ### Open Verification Items
 

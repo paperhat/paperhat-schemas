@@ -405,12 +405,11 @@ Edits are out of scope for every path except
 4. Generate a current template corpus file list from
    `schemas/paperhat-schemas/spec/1.0.0/schemas`.
 5. Audit the current template corpus for:
-   - top-level annotations before template content
-   - multiple top-level concepts
-   - missing entity identity
-   - hard-coded identity that must vary per use
-   - references to identity that must be bound consistently at instantiation
-   - prose instructions that must become structured template data
+   - concept instances declaring an `id` trait whose value is a literal IRI rather than a parameter
+   - concept instances missing an `id` trait whose Concept is governed by `MustBeEntity`
+   - annotations preceding the root Concept
+   - documents with multiple top-level Concepts
+   - prose-only `instructions` traits
 6. Read current Codex processor entry points for parsing, value parsing,
    identity validation, schema validation, canonicalization, command dispatch,
    and import resolution.
@@ -461,14 +460,20 @@ are met. They are listed here, not in the block, because the
 `## Verification Block` discipline requires concrete `command:` and `step:`
 fields:
 
-- Step 5 audit commands. The audit categories at TEMPLATE_PLAN.md Step 5
-  are stated as conclusions ("hard-coded identity that must vary per use",
-  "references to identity that must be bound consistently at
-  instantiation") rather than as neutral observables. Concrete commands
-  cannot be written until the categories are rewritten as observables.
-  Recommendation #11 is responsible for that rewrite. Until it lands,
-  Phase 0 has no Step 5 verification block; Step 5 evidence will be
-  captured in the Phase 0 report's Grounded Findings section directly.
+- Step 5 audit commands. The Step 5 categories are now neutral
+  observables (rewritten by recommendation #11). Concrete enumeration
+  still requires Codex-aware tooling that can parse `template.cdx`
+  files for concept structure, `id` trait values, schema bindings to
+  `MustBeEntity`, top-level Concept counts, annotation position
+  relative to the root Concept, and `instructions` trait kinds. Those
+  observations cannot be expressed as one-line shell commands; they
+  invoke the Codex CLI per the Codex CLI evidence gate (Governance
+  §G2, which Phase 0 invokes for `.cdx` reads even though Phase 0
+  Batch Invariants forbid `.cdx` edits). The Phase 0 executor will
+  invoke the Codex CLI per category and record findings directly in
+  the Phase 0 report's Grounded Findings section; per-category
+  Verification Block entries are written into the report rather than
+  into this template plan.
 - Closure verification. The closure refresh command
   (`python3 -B …/tools/refresh_repository_closure.py`) was previously
   listed but has no aligned Phase 0 step: Phase 0's Batch Invariants

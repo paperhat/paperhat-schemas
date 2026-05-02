@@ -63,6 +63,22 @@ The plan as a whole has no read scope; reads are governed per phase.
 - Schema package template updates must wait until the Codex template semantics
   are specified.
 
+## Current-Turn Evidence Rule
+
+Any file count, file path, specification line, or command output cited
+anywhere in `TEMPLATE_PLAN.md` MUST be regenerated in the current revision
+and cited as `(file:line)` for files or `(command, run YYYY-MM-DD)` for
+command output. Stale numbers in checklists are forbidden.
+
+The rule binds the Problem Statement, the Current Evidence Seed, every
+phase opener, every phase report (including the report header, every
+Grounded Finding, every Verification Block output, every evidence table,
+and every Progress Checklist item), and every artifact under
+`schemas/paperhat-schemas/phases/`. It applies to revisions of
+`TEMPLATE_PLAN.md` itself: any edit that introduces a new factual claim
+about repository state or specification content MUST carry its citation
+in the same revision.
+
 ## Phase Artifacts
 
 Each executed phase produces a phase report. Reports are normative: they are
@@ -263,6 +279,8 @@ audit.
 
 Status: draft for hostile audit.
 
+This phase is bound by `## Current-Turn Evidence Rule`.
+
 ### Purpose
 
 Create the current-source evidence baseline needed before designing or editing
@@ -420,6 +438,8 @@ Phase 0 additions:
 
 Status: not yet expanded. The phase will be specified after Phases 1 and 2
 pass hostile audit.
+
+This phase is bound by `## Current-Turn Evidence Rule`.
 
 ### Candidate Deliverables
 

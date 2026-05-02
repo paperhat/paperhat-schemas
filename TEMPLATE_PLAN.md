@@ -34,23 +34,15 @@ file count, file list, diagnostic, processor behavior, or specification claim.
 
 ## Working Boundaries
 
-Current edit scope:
+Plan-wide editable scope:
 
 - `schemas/paperhat-schemas/TEMPLATE_PLAN.md`
 
-Current read scope for preparatory planning:
-
-- `AGENTS.md`
-- `LLM_SESSION_PROTOCOL.md`
-- `SPEC_AUTHORING_PROTOCOL.md`
-- `schemas/paperhat-schemas/TEMPLATE_PLAN.md`
-- `specifications/languages/codex-spec/spec/1.0.0/index.cdx`
-- `schemas/paperhat-schemas/spec/1.0.0/schemas/**/templates/**/template.cdx`
-  discovery by current command
-
-Current out-of-scope edit paths:
-
-- every file other than `schemas/paperhat-schemas/TEMPLATE_PLAN.md`
+Every other path is out of scope for plan-wide edits. Each phase declares
+its own In-Scope Path Fence and Out-Of-Scope Path Fence in its phase
+specification; a phase fence may expand the editable scope for the
+duration of that phase's execution and may declare its own read scope.
+The plan as a whole has no read scope; reads are governed per phase.
 
 ## Cross-Phase Invariants
 

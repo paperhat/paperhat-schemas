@@ -149,6 +149,52 @@ fields in this order:
   `TODO(recommendation #N)` marker on the affected field, so the
   misalignment is visible until that recommendation is applied.
 
+## Hostile Audit Template
+
+Every phase's `### Hostile Audit Checklist` consists of:
+
+1. The Universal Hostile Audit Questions defined below, in their full
+   present-tense form.
+2. Phase-specific additions appended after the universal questions.
+
+A phase that determines a Universal Hostile Audit Question is vacuously
+satisfied by its own Batch Invariants must mark that question
+`N/A — <invariant citation>` rather than omit it. The full universal list
+must remain visible so reviewers can see what was excluded and why.
+
+### Universal Hostile Audit Questions
+
+The phase fails its hostile audit if the answer to any of these questions
+is yes:
+
+- Does the phase use remembered file lists, prior command output,
+  summaries, memory entries, or any other evidence not regenerated in the
+  current turn?
+- Does the phase assert Codex behavior, schema constraint, processor
+  behavior, or specification requirement without a current `file:line`
+  citation against the governing source?
+- Does the phase treat processor code, generated `*.md` projections,
+  `CHECK_RESULTS.json`, prior plans, or memory entries as normative
+  design authority?
+- Does the phase propose `.cdx` edits without running the Codex CLI
+  evidence gate on every affected `.cdx` file?
+- Does the phase make a design decision that pre-empts a later phase or
+  substitutes for evidence the phase has not yet gathered?
+- Does the phase contain a Verification Block command whose acceptance
+  criterion cannot be evaluated by reading the command's output alone?
+- Does the phase contain a finding that lacks a current `file:line` or
+  current command citation?
+- Does the phase read or edit a path outside its declared In-Scope Path
+  Fence, or edit a path inside its declared Out-Of-Scope Path Fence?
+- Does the phase advance to the next phase without explicit human
+  approval?
+
+### Phase-Specific Additions
+
+Each phase appends additional questions targeting the work specific to
+that phase. Phase-specific additions follow the same present-tense form
+and the same yes-fails convention.
+
 ## Phase Sequence
 
 The plan is built and executed in small reviewed batches. Only Phase 0 is
@@ -294,18 +340,23 @@ The Verification Block below uses the form defined in `## Verification Block`.
 
 ### Hostile Audit Checklist
 
-The Phase 0 hostile audit must fail the phase if any answer is yes:
+This checklist applies the Universal Hostile Audit Questions defined in
+`## Hostile Audit Template` plus the Phase 0 additions below. The phase
+fails its hostile audit if any answer is yes.
 
-- Did the phase use remembered file lists or prior command output?
-- Did the phase omit any generated template corpus file?
-- Did the phase treat processor code as normative design authority?
-- Did the phase assert Codex behavior without current specification citation?
-- Did the phase propose `.cdx` edits without Codex CLI evidence?
-- Did the phase design syntax before completing the corpus and specification
-  audits?
-- Did the phase leave any template problem category without file and line
-  evidence?
-- Did the phase advance to Phase 1 without explicit human approval?
+The Universal Hostile Audit Questions all apply to Phase 0 except:
+
+- "Does the phase propose `.cdx` edits without running the Codex CLI
+  evidence gate on every affected `.cdx` file?" — N/A: Phase 0 Batch
+  Invariants forbid `.cdx` edits, template corpus edits, and Codex
+  processor edits.
+
+Phase 0 additions:
+
+- Does the phase omit any `template.cdx` file present in the current
+  repository from the generated template corpus list?
+- Does the phase leave any template problem category named in Step 5
+  without current `file:line` evidence?
 
 ## Phase 3. Template Semantic Model
 

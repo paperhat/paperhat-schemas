@@ -61,6 +61,62 @@ Current out-of-scope edit paths:
 - Schema package template updates must wait until the Codex template semantics
   are specified.
 
+## Phase Artifacts
+
+Each executed phase produces a phase report. Reports are normative: they are
+the evidence that a phase met its Definition Of Done.
+
+### Report Path Convention
+
+A phase report must live at exactly one of the following locations, declared
+in the phase's Definition Of Done before evidence collection begins:
+
+1. `schemas/paperhat-schemas/phases/phase-<number>/report.md` — a per-phase
+   directory that may also hold generated artifacts. Required for any phase
+   whose evidence includes a generated file list, an evidence table that
+   would inflate the plan file, processor entry-point citations, or a
+   command transcript.
+2. `schemas/paperhat-schemas/TEMPLATE_PLAN.md`, as an appendix titled
+   `## Phase <number> Report. <name>` placed immediately after the phase's
+   specification section. Permitted only when the report contains no
+   generated artifacts.
+
+### Report Header
+
+Every phase report must begin with three lines before any section:
+
+- phase number and name
+- ISO 8601 date the report was finalized
+- the `schemas/paperhat-schemas` commit hash at the start of evidence
+  collection
+
+### Report Body
+
+The report body must use the Required Report Form defined in
+`schemas/paperhat-schemas/TEMPLATE_PLAN_PLAN.md` (15 sections). Sections that
+do not apply must say `NONE` with a current-evidence reason; sections must
+not be omitted or reordered.
+
+### Generated Artifacts
+
+When a phase uses path 1, all generated artifacts referenced by the report
+must live in the same `phases/phase-<number>/` directory. Recommended
+filenames:
+
+- `corpus-list.txt` — generated file inventory
+- `evidence-table.md` — observation-to-specification mapping
+- `commands.log` — verbatim command output transcripts
+- `processor-evidence.md` — processor entry-point citations
+
+When a phase uses path 2, no generated artifacts are permitted; if any are
+needed, the phase must switch to path 1 before evidence collection begins.
+
+### Stable Paths
+
+Once committed, a report path and any path-1 artifact path must not be
+renamed. Revisions must happen by editing the existing files and appending a
+`## Revision History` section that cites the prior commit hash.
+
 ## Phase Sequence
 
 The plan is built and executed in small reviewed batches. Only Phase 0 is

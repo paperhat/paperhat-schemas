@@ -403,6 +403,24 @@ fields:
   edits (recommendation #9 will scope it accordingly). Phase 0 does not
   invoke the closure refresh.
 
+### Current Evidence Snapshot
+
+The rows below were verified on 2026-05-02 (plan authorship). On the day
+Phase 0 is reviewed or executed, every row MUST be re-run and the result
+recorded in the Phase 0 report's Grounded Findings; the authorship-time
+value is a baseline, not a fact carried forward. Staleness is visible
+because each row carries an explicit citation command or path.
+
+| Claim | Source-citation |
+|---|---|
+| Template corpus under `schemas/paperhat-schemas/spec/1.0.0/schemas` contains N `template.cdx` files (authorship-time baseline: N = 174). | `find /Users/guy/Workspace/@paperhat/schemas/paperhat-schemas/spec/1.0.0/schemas -type f -name template.cdx \| wc -l` |
+| Codex specification's root-Concept, id-trait, id-IRI, and no-synthesis rules bind every concrete document. | `specifications/languages/codex-spec/spec/1.0.0/index.cdx:13238`, `:12874`, `:12894`, `:12904` (re-run via `sed -n` to confirm each line still matches the seed wording). |
+
+If a row's citation re-run produces a different current value or wording,
+Phase 0 MUST cite the new value in its report and update the seed and
+this Snapshot table in the same revision (per `## Current-Turn Evidence
+Rule`).
+
 ### Progress Checklist
 
 - [ ] `diagnostics.md` has been read for Phase 0 diagnostic planning.

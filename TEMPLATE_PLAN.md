@@ -285,6 +285,9 @@ Edits are out of scope for every path except
 
 Phase 0 is accepted only when:
 
+- The phase report path is `schemas/paperhat-schemas/phases/phase-0/report.md`
+  (path 1 per `## Phase Artifacts`); all generated artifacts live in
+  `schemas/paperhat-schemas/phases/phase-0/`.
 - Every required source is listed with `READ` status in the report.
 - The template corpus file list is generated in the current phase.
 - Every audited template finding cites current file and line evidence.

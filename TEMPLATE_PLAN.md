@@ -117,6 +117,46 @@ Once committed, a report path and any path-1 artifact path must not be
 renamed. Revisions must happen by editing the existing files and appending a
 `## Revision History` section that cites the prior commit hash.
 
+## Verification Block
+
+Each phase's `### Verification Commands` section must use the Verification
+Block form below. Prose lists are not permitted.
+
+### Block Form
+
+For every command the phase requires, the phase must include the following
+fields in this order:
+
+- `command:` — the exact shell command with all flags and paths; no
+  variables, no ellipses, no "current equivalents of" hedging. If the
+  command depends on a previously-generated artifact, that artifact's path
+  is named here.
+- `purpose:` — one sentence stating what the command verifies.
+- `step:` — the phase step number or Definition Of Done bullet this command
+  serves. A command with no upstream step or DoD bullet is forbidden;
+  either add the step or remove the command.
+- `expected output shape:` — what a successful run looks like in concrete
+  terms (line count bound, prefix, presence of token, absence of token,
+  exit status, stat counts). Not a summary; a recognizable shape that the
+  acceptance criterion can be evaluated against.
+- `acceptance criterion:` — the predicate that, if true of the actual
+  output, passes the check. The criterion must be evaluable by reading the
+  command output alone, without further interpretation.
+
+### Block Discipline
+
+- The phase's Verification Block must list every command needed to
+  discharge the Definition Of Done; commands not listed in the block are
+  not part of the phase's verification surface.
+- A command whose acceptance criterion cannot be written without
+  hand-waving signals a mis-scoped command; either narrow the command or
+  narrow the step.
+- Working directory is the workspace root
+  (`/Users/guy/Workspace/@paperhat`) unless the block declares otherwise.
+- A command pending a separate fix may be left in the block with a
+  `TODO(recommendation #N)` marker on the affected field, so the
+  misalignment is visible until that recommendation is applied.
+
 ## Phase Sequence
 
 The plan is built and executed in small reviewed batches. Only Phase 0 is
@@ -221,13 +261,31 @@ Phase 0 is accepted only when:
 
 ### Verification Commands
 
-Phase 0 must choose final commands from current reads, but it must include
-current equivalents of:
+The Verification Block below uses the form defined in `## Verification Block`.
 
-- `git -C schemas/paperhat-schemas status --short`
-- `rg --files schemas/paperhat-schemas/spec/1.0.0/schemas`
-- targeted current searches over the generated template corpus list
-- `python3 -B /Users/guy/Workspace/@paperhat/schemas/paperhat-schemas/tools/refresh_repository_closure.py`
+- command: `git -C schemas/paperhat-schemas status --short`
+  purpose: Identify any dirty paths in the schemas repository before and after edits.
+  step: Phase 0 Batch Invariants (no unrelated paths edited; only `TEMPLATE_PLAN.md` is editable).
+  expected output shape: Two-character status codes followed by repository-relative file paths, one per line; output may be empty.
+  acceptance criterion: Every output line names a path inside the editable scope declared by Phase 0; any path outside that scope must have been explicitly accepted by the planner before the next phase step proceeds.
+
+- command: `rg --files schemas/paperhat-schemas/spec/1.0.0/schemas`
+  purpose: Generate the current template corpus file list.
+  step: Step 4 (Generate a current template corpus file list).
+  expected output shape: One workspace-relative file path per line.
+  acceptance criterion: TODO(recommendation #10) — the listed command lists every schema file, not just templates, so it does not satisfy Step 4. The replacement command must restrict output to `*/templates/*/template.cdx`; the criterion will then be that every output line ends with `/template.cdx` and the line count equals the count returned by an independent `find` against the same scope.
+
+- command: TODO(recommendation #11)
+  purpose: Audit the generated template corpus for the categories named in Step 5.
+  step: Step 5 (audit current template corpus).
+  expected output shape: TODO(recommendation #11) — depends on the rewritten neutral-observable categories.
+  acceptance criterion: TODO(recommendation #11).
+
+- command: `python3 -B /Users/guy/Workspace/@paperhat/schemas/paperhat-schemas/tools/refresh_repository_closure.py`
+  purpose: Verify schema closure has no drift after schema or manifest edits.
+  step: TODO(recommendation #9) — Phase 0 Batch Invariants forbid the `.cdx`, manifest, and schema-import edits this command exists to verify; the command does not align with any Phase 0 step or Definition Of Done bullet.
+  expected output shape: Plain text ending with `No SchemaImport reference drift detected.` and `No manifest normalization drift detected.` when no drift exists.
+  acceptance criterion: TODO(recommendation #9) — the command must be removed from Phase 0; closure-neutral edits do not require closure verification.
 
 ### Progress Checklist
 

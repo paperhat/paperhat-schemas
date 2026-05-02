@@ -94,10 +94,38 @@ Every phase report must begin with three lines before any section:
 
 ### Report Body
 
-The report body must use the Required Report Form defined in
-`schemas/paperhat-schemas/TEMPLATE_PLAN_PLAN.md` (15 sections). Sections that
-do not apply must say `NONE` with a current-evidence reason; sections must
-not be omitted or reordered.
+The report body must use the union of the following sections, in this order.
+Sections that do not apply must say `NONE` with a current-evidence reason;
+sections must not be omitted or reordered.
+
+From `LLM_SESSION_PROTOCOL.md` §Required Output Structure:
+
+1. Source Inventory
+2. Authority Map
+3. Blocking Conditions
+4. Grounded Findings
+5. Inferences
+6. Open Items
+
+For substantial edit batches, also from `LLM_SESSION_PROTOCOL.md`
+§Required Output Structure:
+
+7. Batch Invariants — before edits
+8. Consequence Sweep — after edits
+
+From `LLM_SESSION_PROTOCOL.md` §Completion Report Contract:
+
+9. Proof Bundle
+10. Bespoke Logic Remaining
+11. Underspecified Areas
+12. Unresolved Contradictions
+13. Sources Accounted For
+
+For phases that touch `.cdx` files, also from `SPEC_AUTHORING_PROTOCOL.md`
+§Completion Report Contract:
+
+14. Codex CLI Evidence
+15. Missing Conformance Coverage
 
 ### Generated Artifacts
 

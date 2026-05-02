@@ -3,9 +3,14 @@
 ## Problem Statement
 
 The Codex specification requires every concrete document to declare exactly one
-root Concept and every Entity to declare exactly one `id` trait whose value is
-an IRI Value, and forbids Codex-conforming tools from synthesizing identity.
-The 174 `template.cdx` files currently under
+root Concept (`specifications/languages/codex-spec/spec/1.0.0/index.cdx:13238`)
+and every Entity to declare exactly one `id` trait
+(`specifications/languages/codex-spec/spec/1.0.0/index.cdx:12874`) whose value
+is an IRI Value
+(`specifications/languages/codex-spec/spec/1.0.0/index.cdx:12894`), and forbids
+Codex-conforming tools from synthesizing identity
+(`specifications/languages/codex-spec/spec/1.0.0/index.cdx:12904`). The
+`template.cdx` files currently under
 `schemas/paperhat-schemas/spec/1.0.0/schemas` cannot satisfy those rules as
 concrete documents — they carry placeholder identifiers, omit required
 identity, declare top-level annotations before the root, or otherwise depend on
@@ -18,19 +23,24 @@ weakening concrete-document identity.
 
 ## Current Evidence Seed
 
-Current preparatory reads and commands for this plan revision show:
+Citations below are evidence as of plan authorship. They are reproduced for
+context only. Every later phase MUST regenerate its own current evidence
+before using any file count, file list, diagnostic, processor behavior, or
+specification claim:
 
-- Current discovery under `schemas/paperhat-schemas/spec/1.0.0/schemas`
-  finds 174 `templates/*/template.cdx` files.
-- The current Codex specification requires every concrete document to have
-  exactly one root concept.
-- The current Codex specification requires each entity to have exactly one
-  `id` trait whose value is an IRI.
-- The current Codex specification forbids Codex-conforming tools from
-  synthesizing an `id` trait.
-
-Every later phase must regenerate its own current evidence before using any
-file count, file list, diagnostic, processor behavior, or specification claim.
+- `find /Users/guy/Workspace/@paperhat/schemas/paperhat-schemas/spec/1.0.0/schemas -type f -name template.cdx | wc -l`
+  returned 174 on 2026-05-02.
+- The Codex specification requires every concrete document to declare
+  exactly one root Concept
+  (`specifications/languages/codex-spec/spec/1.0.0/index.cdx:13238`).
+- The Codex specification requires every Entity to declare exactly one
+  `id` trait
+  (`specifications/languages/codex-spec/spec/1.0.0/index.cdx:12874`).
+- The value of an `id` trait must be an IRI Value
+  (`specifications/languages/codex-spec/spec/1.0.0/index.cdx:12894`).
+- The Codex specification forbids Codex-conforming tools from synthesizing
+  an `id` trait
+  (`specifications/languages/codex-spec/spec/1.0.0/index.cdx:12904`).
 
 ## Working Boundaries
 

@@ -347,8 +347,6 @@ fields:
 
 ### Progress Checklist
 
-- [x] Current template corpus discovery counted 174 `template.cdx` files.
-- [x] Current Codex root and identity constraints were read for seed evidence.
 - [ ] `diagnostics.md` has been read for Phase 0 diagnostic planning.
 - [ ] Current template corpus file list has been generated and preserved in the
       Phase 0 report.

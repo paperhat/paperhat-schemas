@@ -145,9 +145,15 @@ fields in this order:
   narrow the step.
 - Working directory is the workspace root
   (`/Users/guy/Workspace/@paperhat`) unless the block declares otherwise.
-- A command pending a separate fix may be left in the block with a
-  `TODO(recommendation #N)` marker on the affected field, so the
-  misalignment is visible until that recommendation is applied.
+- The `command:` and `step:` fields must always be concrete: a real shell
+  command and a real Phase step or DoD bullet, respectively. A block whose
+  command or step is unknown must not be listed in the Verification Block;
+  track it under the phase's `### Open Verification Items` section until
+  both fields can be filled.
+- A `TODO(<reason>)` marker may attach to the `purpose:`,
+  `expected output shape:`, or `acceptance criterion:` field when those
+  fields depend on a separate forthcoming fix; the marker keeps the
+  outstanding work visible until the fix lands.
 
 ## Hostile Audit Template
 
@@ -316,17 +322,28 @@ The Verification Block below uses the form defined in `## Verification Block`.
   expected output shape: One workspace-relative file path per line.
   acceptance criterion: TODO(recommendation #10) — the listed command lists every schema file, not just templates, so it does not satisfy Step 4. The replacement command must restrict output to `*/templates/*/template.cdx`; the criterion will then be that every output line ends with `/template.cdx` and the line count equals the count returned by an independent `find` against the same scope.
 
-- command: TODO(recommendation #11)
-  purpose: Audit the generated template corpus for the categories named in Step 5.
-  step: Step 5 (audit current template corpus).
-  expected output shape: TODO(recommendation #11) — depends on the rewritten neutral-observable categories.
-  acceptance criterion: TODO(recommendation #11).
+### Open Verification Items
 
-- command: `python3 -B /Users/guy/Workspace/@paperhat/schemas/paperhat-schemas/tools/refresh_repository_closure.py`
-  purpose: Verify schema closure has no drift after schema or manifest edits.
-  step: TODO(recommendation #9) — Phase 0 Batch Invariants forbid the `.cdx`, manifest, and schema-import edits this command exists to verify; the command does not align with any Phase 0 step or Definition Of Done bullet.
-  expected output shape: Plain text ending with `No SchemaImport reference drift detected.` and `No manifest normalization drift detected.` when no drift exists.
-  acceptance criterion: TODO(recommendation #9) — the command must be removed from Phase 0; closure-neutral edits do not require closure verification.
+These items belong in Phase 0's Verification Block once their preconditions
+are met. They are listed here, not in the block, because the
+`## Verification Block` discipline requires concrete `command:` and `step:`
+fields:
+
+- Step 5 audit commands. The audit categories at TEMPLATE_PLAN.md Step 5
+  are stated as conclusions ("hard-coded identity that must vary per use",
+  "references to identity that must be bound consistently at
+  instantiation") rather than as neutral observables. Concrete commands
+  cannot be written until the categories are rewritten as observables.
+  Recommendation #11 is responsible for that rewrite. Until it lands,
+  Phase 0 has no Step 5 verification block; Step 5 evidence will be
+  captured in the Phase 0 report's Grounded Findings section directly.
+- Closure verification. The closure refresh command
+  (`python3 -B …/tools/refresh_repository_closure.py`) was previously
+  listed but has no aligned Phase 0 step: Phase 0's Batch Invariants
+  forbid the `.cdx`, manifest, and schema-import edits this command
+  exists to verify. The command belongs in phases that perform those
+  edits (recommendation #9 will scope it accordingly). Phase 0 does not
+  invoke the closure refresh.
 
 ### Progress Checklist
 

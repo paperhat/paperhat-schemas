@@ -63,6 +63,80 @@ The plan as a whole has no read scope; reads are governed per phase.
 - Schema package template updates must wait until the Codex template semantics
   are specified.
 
+## Governance
+
+Three workspace-level gates apply to phases that touch implementation code,
+`.cdx` files, or schema-package files. This section names each gate once with
+its normative source; later phases reference the gate by label (G1, G2, G3)
+instead of restating it.
+
+### G1. Implementation evidence is evidence-only
+
+`AGENTS.md:21`: "Treat existing Rust repositories under
+`/Users/guy/Workspace/@paperhat/implementations/` as temporary maintenance
+surfaces, not normative design sources for specifications, schemas, foundries,
+diagnostics, or generated implementations."
+
+`AGENTS.md:64-65` extends the same evidence-only status to generated `*.md`
+projections, `CHECK_RESULTS.json`, `specifications/**/plans/`, memory entries,
+summaries, and prior answers; design-authority citation, following, reliance,
+or use of those sources is forbidden.
+
+A phase that reads files under `implementations/` (or any other source listed
+in `AGENTS.md:64-65`) MUST label its findings about those sources
+"evidence-only" in the phase report and MUST NOT cite them as normative design
+authority for the work the phase produces.
+
+### G2. Codex CLI evidence gate for `.cdx` edits
+
+`AGENTS.md:7`: ".cdx edit plans require the Codex CLI evidence gate in
+`/Users/guy/Workspace/@paperhat/SPEC_AUTHORING_PROTOCOL.md`; .cdx edit plans
+that bypass that gate are forbidden."
+
+`SPEC_AUTHORING_PROTOCOL.md:92` defines `### Gate 0: Codex CLI Evidence`:
+before drafting instructions that edit a `.cdx` file, or before directly
+editing a `.cdx` file, run the real Codex CLI on every `.cdx` file the prompt
+or edit touches; include the literal Codex CLI output in the edit plan or
+completion report; address every reported diagnostic. The Python verifier,
+regex output, prior answer, memory entry, or summarized diagnostic list is
+NOT a substitute for Codex CLI evidence.
+
+A phase that plans `.cdx` edits MUST run the Codex CLI on every affected
+`.cdx` file before the edit plan is drafted, MUST include the literal output
+in the phase report's `Codex CLI Evidence` section (per `## Phase Artifacts`
+§Report Body item 14), and MUST NOT bypass the gate on the basis of any
+adjacent evidence.
+
+### G3. Closure-hash refresh after schema-package edits
+
+`AGENTS.md:35`: "After edits under
+`/Users/guy/Workspace/@paperhat/schemas/paperhat-schemas/`, run `python3 -B
+/Users/guy/Workspace/@paperhat/schemas/paperhat-schemas/tools/refresh_repository_closure.py`
+instead of hand-editing `closureHash` or `SchemaImport reference` digests."
+
+A phase that edits any file under `schemas/paperhat-schemas/` MUST run the
+closure refresh tool after every edit, MUST include the tool's output in the
+phase report (a no-drift output for closure-neutral edits, or the actual drift
+output otherwise), and MUST NOT hand-edit `closureHash` values or
+`SchemaImport reference` digests.
+
+### Phase invocation map
+
+| Phase | Gates that apply |
+|---|---|
+| Phase 0. Evidence Baseline And Scope Lock | none — Batch Invariants forbid `.cdx`, schema-package, and processor edits |
+| Phase 1. Template Corpus Audit | none expected (audit-only); G3 if any closure-affecting edit appears |
+| Phase 2. Codex Specification Surface Audit | none expected (read-only audit) |
+| Phase 3. Template Semantic Model | none expected (design only); downstream phases inherit |
+| Phase 4. Codex Specification Edit Plan | G2 (the phase plans `.cdx` edits to the Codex specification) |
+| Phase 5. Bootstrap Schema Edit Plan | G2 (if `.cdx` edits), G3 (if any schema-package file is touched) |
+| Phase 6. Processor Implementation Plan | G1 (processor implementation work is evidence-only for the specifications it implements) |
+| Phase 7. Schema Package Template Update Plan | G2 (the phase edits `.cdx` template files), G3 (the phase edits schema-package files) |
+| Phase 8. Conformance And Completion Proof Plan | none expected (verification only); cite evidence sources but do not invoke gates |
+
+Each phase's Definition Of Done MUST list the applicable gates and prove
+satisfaction in the phase report.
+
 ## Current-Turn Evidence Rule
 
 Any file count, file path, specification line, or command output cited

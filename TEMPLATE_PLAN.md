@@ -215,8 +215,10 @@ is yes:
   summaries, memory entries, or any other evidence not regenerated in the
   current turn?
 - Does the phase assert Codex behavior, schema constraint, processor
-  behavior, or specification requirement without a current `file:line`
-  citation against the governing source?
+  behavior, specification requirement, verifier behavior, command
+  behavior, acceptance criterion, or completion status without a current
+  `file:line` citation against the governing source? (Per
+  `LLM_SESSION_PROTOCOL.md` §Citation Rules.)
 - Does the phase treat processor code, generated `*.md` projections,
   `CHECK_RESULTS.json`, prior plans, or memory entries as normative
   design authority?

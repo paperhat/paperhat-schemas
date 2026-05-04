@@ -23,11 +23,7 @@ Vocabulary packages are reference token sets, not authoring schemas. They requir
 
 ### Template Policy
 
-Schema package templates remain `.cdx` sources. The retired `.tcdx` migration
-path is not the roadmap direction. Template cleanup should proceed through a
-first-class Codex template design so that templates remain parseable,
-canonicalizable, and validatable through Codex rather than through a parallel
-file-extension pipeline.
+Schema package templates remain `.cdx` sources.
 
 ### Hash Policy
 
@@ -855,12 +851,6 @@ All currently committed domain packages are complete (6/6 artifacts). The Stage 
 ## Vocabulary Packages
 
 All 21 vocabulary packages are complete per the amended Package Completeness Definition (4 artifacts: manifest.cdx, vocabulary.cdx, README.md, localizations/en.cdx). No vocabulary package gaps remain.
-
-## Template Inventory
-
-`TEMPLATE_PLAN.md` is retained as an inventory-only note for the current
-template corpus. It is not a migration plan and does not authorize `.tcdx`
-renames or a separate template-processing pipeline.
 
 ## Behavior Packages (0 incomplete)
 

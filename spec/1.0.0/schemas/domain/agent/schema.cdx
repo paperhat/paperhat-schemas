@@ -43,6 +43,21 @@
 				<AllowsChildConcept conceptSelector="VerificationGate" />
 				<AllowsChildConcept conceptSelector="AgentPathFence" />
 				<AllowsChildConcept conceptSelector="AgentSection" />
+				<AllowsChildConcept conceptSelector="ProjectDescription" />
+				<AllowsChildConcept conceptSelector="ArchitectureOverview" />
+				<AllowsChildConcept conceptSelector="OutputFormat" />
+				<AllowsChildConcept conceptSelector="SecurityRequirements" />
+				<AllowsChildConcept conceptSelector="CodingConventions" />
+				<AllowsChildConcept conceptSelector="TestingFramework" />
+				<AllowsChildConcept conceptSelector="AgentRole" />
+				<AllowsChildConcept conceptSelector="TechStack" />
+				<AllowsChildConcept conceptSelector="CommandSet" />
+				<AllowsChildConcept conceptSelector="DirectoryLayout" />
+				<AllowsChildConcept conceptSelector="Workflow" />
+				<AllowsChildConcept conceptSelector="Glossary" />
+				<AllowsChildConcept conceptSelector="McpConfiguration" />
+				<AllowsChildConcept conceptSelector="CodeBlock" />
+				<AllowsChildConcept conceptSelector="MermaidDiagram" />
 				<AllowsChildConcept conceptSelector="grammar:Grammar" />
 			</ChildRules>
 
@@ -165,6 +180,358 @@
 		</ConceptDefinition>
 
 		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:agent:ProjectDescription
+			name="ProjectDescription"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:agent:ArchitectureOverview
+			name="ArchitectureOverview"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:agent:OutputFormat
+			name="OutputFormat"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:agent:SecurityRequirements
+			name="SecurityRequirements"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="AgentRequirement" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:agent:CodingConventions
+			name="CodingConventions"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
+				<RequiresChildConcept conceptSelector="AgentRequirement" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:agent:TestingFramework
+			name="TestingFramework"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:agent:AgentRole
+			name="AgentRole"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="role" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:agent:TechStack
+			name="TechStack"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Technology" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:agent:Technology
+			name="Technology"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+				<RequiresTrait name="kind" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:agent:CommandSet
+			name="CommandSet"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="kind" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="Command" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:agent:Command
+			name="Command"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="invocation" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:agent:DirectoryLayout
+			name="DirectoryLayout"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="DirectoryEntry" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:agent:DirectoryEntry
+			name="DirectoryEntry"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+				<RequiresTrait name="kind" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:agent:Workflow
+			name="Workflow"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="WorkflowStep" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$ValueLike
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:agent:WorkflowStep
+			name="WorkflowStep"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="order" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:agent:Glossary
+			name="Glossary"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="GlossaryEntry" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$ValueLike
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:agent:GlossaryEntry
+			name="GlossaryEntry"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="term" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:agent:McpConfiguration
+			name="McpConfiguration"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="McpServer" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:agent:McpServer
+			name="McpServer"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+				<RequiresTrait name="serverType" />
+				<RequiresTrait name="scope" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$ValueLike
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:agent:CodeBlock
+			name="CodeBlock"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="language" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$ValueLike
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:agent:MermaidDiagram
+			name="MermaidDiagram"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="diagramType" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
 			conceptKind=$Structural
 			entityEligibility=$MustNotBeEntity
 			id=paperhat:domain:agent:RequiredClause
@@ -210,6 +577,82 @@
 			defaultValueType=$Text
 			id=paperhat:domain:agent:trait:toolName
 			name="toolName"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:agent:trait:role
+			name="role"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:agent:trait:kind
+			name="kind"
+		>
+			<AllowedValues>
+				<EnumeratedConstraint set="TechnologyKind" />
+				<EnumeratedConstraint set="CommandKind" />
+				<EnumeratedConstraint set="DirectoryEntryKind" />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:agent:trait:version
+			name="version"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:agent:trait:invocation
+			name="invocation"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:agent:trait:description
+			name="description"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=paperhat:domain:agent:trait:order
+			name="order"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:agent:trait:term
+			name="term"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:agent:trait:serverType
+			name="serverType"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:agent:trait:scope
+			name="scope"
+		>
+			<AllowedValues>
+				<EnumeratedConstraint set="McpServerScope" />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:agent:trait:language
+			name="language"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:agent:trait:diagramType
+			name="diagramType"
 		/>
 
 		<TraitDefinition

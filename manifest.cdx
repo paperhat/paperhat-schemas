@@ -1,6 +1,6 @@
 <LexisRepositoryManifest
 	author="Paperhat"
-	closureHash="c92eecac93407b4519cc7aeeb06b642d99e67694b0774f7d10f077c2455e4463"
+	closureHash="dd95069bc32bd6d4ffbe138ced297014b14e7d9ffdc80c55df9b109dd0ac05ca"
 	copyright="Copyright 2026 Paperhat"
 	description="Paperhat schema repository. Contains universal schema packages, behavior definitions, and reference vocabularies consumed by Paperhat systems."
 	license="Apache-2.0"
@@ -12,6 +12,8 @@
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-accessibility" packagePath="spec/1.0.0/schemas/domain/accessibility" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-admonition" packagePath="spec/1.0.0/schemas/domain/admonition" />
+
+	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-agent" packagePath="spec/1.0.0/schemas/domain/agent" />
 
 	<RepositoryPackageEntry packageFamily="domain" packageName="paperhat-argumentation" packagePath="spec/1.0.0/schemas/domain/argumentation" />
 

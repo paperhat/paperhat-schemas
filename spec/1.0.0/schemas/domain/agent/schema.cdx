@@ -1,0 +1,471 @@
+<Schema
+	authoringMode=$SimplifiedMode
+	compatibilityClass=$Initial
+	description=`
+		Hardened Agent Governance Schema.
+		
+		Evaluation Rules:
+		1. Highest precedence wins.
+		2. OutOfScope shadows InScope on precedence tie.
+		3. No match defaults to OutOfScope.
+		4. Root, Literal, and Prefix are anchored to the directory containing the defining .agents file.
+		5. Glob is the only mode allowed to express anywhere or recursive matches (**).
+	`
+	id=paperhat:domain:agent
+	namespace="agent"
+	title="Agent Schema"
+	version="1.0.0"
+	versionScheme=$SemanticVersion
+>
+	<SchemaImports>
+		<SchemaImport namespace="text" reference=urn:cdx:sha256:56710936ccb873445f40c284809a6753878a18a19c1a0a56e43de8c8075ec4fc />
+		<SchemaImport namespace="grammar" reference=urn:cdx:sha256:c2b442c61ab57e513cc69fddd3141d58b1ee829561301f5835e246875476996d />
+	</SchemaImports>
+
+	<ConceptDefinitions>
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:agent:AgentFile
+			name="AgentFile"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="name" />
+				<RequiresTrait name="targetFileKind" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="AgentCapability" />
+				<AllowsChildConcept conceptSelector="VerificationGate" />
+				<AllowsChildConcept conceptSelector="AgentPathFence" />
+				<AllowsChildConcept conceptSelector="AgentSection" />
+				<AllowsChildConcept conceptSelector="grammar:Grammar" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:agent:AgentCapability
+			name="AgentCapability"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="toolName" />
+				<RequiresTrait name="accessLevel" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:agent:VerificationGate
+			name="VerificationGate"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="checkCommand" />
+				<RequiresTrait name="failurePolicy" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:agent:AgentPathFence
+			name="AgentPathFence"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="pathKind" />
+				<RequiresTrait name="precedence" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="AgentPath" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$ValueLike
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:agent:AgentPath
+			name="AgentPath"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="matchMode" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:agent:AgentSection
+			name="AgentSection"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+				<RequiresTrait name="title" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="text:Paragraph" />
+				<RequiresChildConcept conceptSelector="AgentRequirement" min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:agent:AgentRequirement
+			name="AgentRequirement"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+				<RequiresTrait name="modality" />
+			</TraitRules>
+
+			<ChildRules>
+				<RequiresChildConcept conceptSelector="RequiredClause" max=1 min=1 />
+				<RequiresChildConcept conceptSelector="ForbiddenClause" max=1 min=1 />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:agent:RequiredClause
+			name="RequiredClause"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:agent:ForbiddenClause
+			name="ForbiddenClause"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+		</ConceptDefinition>
+	</ConceptDefinitions>
+
+	<TraitDefinitions>
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:agent:trait:name
+			name="name"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:agent:trait:key
+			name="key"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:agent:trait:title
+			name="title"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:agent:trait:toolName
+			name="toolName"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Text
+			id=paperhat:domain:agent:trait:checkCommand
+			name="checkCommand"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$Integer
+			id=paperhat:domain:agent:trait:precedence
+			name="precedence"
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:agent:trait:targetFileKind
+			name="targetFileKind"
+		>
+			<AllowedValues>
+				<EnumeratedConstraint set="TargetFileKind" />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:agent:trait:pathKind
+			name="pathKind"
+		>
+			<AllowedValues>
+				<EnumeratedConstraint set="PathFenceKind" />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:agent:trait:matchMode
+			name="matchMode"
+		>
+			<AllowedValues>
+				<EnumeratedConstraint set="PathMatchMode" />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:agent:trait:accessLevel
+			name="accessLevel"
+		>
+			<AllowedValues>
+				<EnumeratedConstraint set="AccessLevel" />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:agent:trait:failurePolicy
+			name="failurePolicy"
+		>
+			<AllowedValues>
+				<EnumeratedConstraint set="FailurePolicy" />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:agent:trait:modality
+			name="modality"
+		>
+			<AllowedValues>
+				<EnumeratedConstraint set="RequirementModality" />
+			</AllowedValues>
+		</TraitDefinition>
+	</TraitDefinitions>
+
+	<EnumeratedValueSets>
+		<EnumeratedValueSet
+			id=paperhat:domain:agent:set:TargetFileKind
+			name="TargetFileKind"
+		>
+			<Member value="AgentsMd" />
+			<Member value="ClaudeMd" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet
+			id=paperhat:domain:agent:set:PathFenceKind
+			name="PathFenceKind"
+		>
+			<Member value="InScope" />
+			<Member value="OutOfScope" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet
+			id=paperhat:domain:agent:set:PathMatchMode
+			name="PathMatchMode"
+		>
+			<Member value="Root" />
+			<Member value="Literal" />
+			<Member value="Prefix" />
+			<Member value="Glob" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet
+			id=paperhat:domain:agent:set:AccessLevel
+			name="AccessLevel"
+		>
+			<Member value="Read" />
+			<Member value="Write" />
+			<Member value="Execute" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet
+			id=paperhat:domain:agent:set:FailurePolicy
+			name="FailurePolicy"
+		>
+			<Member value="Block" />
+			<Member value="Warn" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet
+			id=paperhat:domain:agent:set:RequirementModality
+			name="RequirementModality"
+		>
+			<Member value="Must" />
+			<Member value="MustNot" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet
+			id=paperhat:domain:agent:set:DirectoryEntryKind
+			name="DirectoryEntryKind"
+		>
+			<Member value="Directory" />
+			<Member value="File" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet
+			id=paperhat:domain:agent:set:TechnologyKind
+			name="TechnologyKind"
+		>
+			<Member value="Language" />
+			<Member value="Framework" />
+			<Member value="Runtime" />
+			<Member value="Tool" />
+			<Member value="Library" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet
+			id=paperhat:domain:agent:set:CommandKind
+			name="CommandKind"
+		>
+			<Member value="Build" />
+			<Member value="Test" />
+			<Member value="Validate" />
+			<Member value="Run" />
+			<Member value="Lint" />
+			<Member value="Forbidden" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet
+			id=paperhat:domain:agent:set:McpServerScope
+			name="McpServerScope"
+		>
+			<Member value="Project" />
+			<Member value="User" />
+		</EnumeratedValueSet>
+	</EnumeratedValueSets>
+
+	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=paperhat:domain:agent:path-normalization
+			title="Path Normalization Rules"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AgentPath" />
+			</Targets>
+			<Rule>
+				<AllOf>
+					<PatternConstraint message="Leading slash is forbidden." pattern="^[^/]" />
+					<PatternConstraint message="Parent directory segments (..) are forbidden." pattern="^(?!\.\./)" />
+					<PatternConstraint message="Repeated slashes are forbidden." pattern="^(?!.*//)" />
+				</AllOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:agent:match-mode-root
+			title="Root Match Mode Rules"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AgentPath" />
+			</Targets>
+			<Rule>
+				<When>
+					<TraitEquals name="matchMode" value=$Root />
+					<Then>
+						<PatternConstraint message="Root path content must be exactly '.'" pattern="^\.$" />
+					</Then>
+				</When>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:agent:match-mode-literal
+			title="Literal Match Mode Rules"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AgentPath" />
+			</Targets>
+			<Rule>
+				<When>
+					<TraitEquals name="matchMode" value=$Literal />
+					<Then>
+						<AllOf>
+							<PatternConstraint message="Literal paths must not end with a slash." pattern="[^/]$" />
+							<PatternConstraint message="Wildcards are forbidden in literal mode." pattern="^[^*?]*$" />
+						</AllOf>
+					</Then>
+				</When>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:agent:match-mode-prefix
+			title="Prefix Match Mode Rules"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AgentPath" />
+			</Targets>
+			<Rule>
+				<When>
+					<TraitEquals name="matchMode" value=$Prefix />
+					<Then>
+						<AllOf>
+							<PatternConstraint message="Prefix paths must end with a slash." pattern="/$" />
+							<PatternConstraint message="Wildcards are forbidden in prefix mode." pattern="^[^*?]*$" />
+						</AllOf>
+					</Then>
+				</When>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:agent:match-mode-glob
+			title="Glob Match Mode Rules"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AgentPath" />
+			</Targets>
+			<Rule>
+				<When>
+					<TraitEquals name="matchMode" value=$Glob />
+					<Then>
+						<PatternConstraint message="Glob pattern must use only allowed tokens (*, ?, **)." pattern="^[a-zA-Z0-9._/\\*\\?]*$" />
+					</Then>
+				</When>
+			</Rule>
+		</ConstraintDefinition>
+	</ConstraintDefinitions>
+</Schema>

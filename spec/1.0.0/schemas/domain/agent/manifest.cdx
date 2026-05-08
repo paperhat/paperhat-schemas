@@ -1,0 +1,18 @@
+<DomainPackageManifest
+	author="Paperhat"
+	closureHash="2ad572a955c0034e3fcfa89289f002705425e34fe89ec5c697fc3fcb18df9b47"
+	copyright="Copyright 2026 Paperhat"
+	description="Schema for authoring agent instruction source files with fragments, sections, and paired requirements."
+	license="Apache-2.0"
+	packageName="paperhat-agent"
+	packageVersion="1.0.0"
+	primaryDocument="schema.cdx"
+	requiredCodexVersion=">=1.0.0 <2.0.0"
+	requiredLexisVersion=">=1.0.0 <2.0.0"
+>
+	<PackageDependency
+		packageName="paperhat-text"
+		closureHash="cd2819edcdfd0f1f6506ced617b55588e882dad2c30665ede6355cd9b9b3a805"
+		versionRange=">=1.0.0 <2.0.0"
+	/>
+</DomainPackageManifest>

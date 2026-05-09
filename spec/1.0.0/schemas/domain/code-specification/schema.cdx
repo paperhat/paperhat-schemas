@@ -62,6 +62,8 @@
 
 				<AllowsChildConcept conceptSelector="PrimitiveType" />
 
+				<AllowsChildConcept conceptSelector="PrimitiveTypeArchetype" />
+
 				<AllowsChildConcept conceptSelector="CollectionType" />
 
 				<AllowsChildConcept conceptSelector="SumType" />
@@ -177,7 +179,137 @@
 				<AllowsTrait name="capabilities" />
 			</TraitRules>
 
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="CanonicalOrderingRule" max=1 />
+
+				<AllowsChildConcept conceptSelector="PrimitiveTypeArchetypeUse" max=1 />
+			</ChildRules>
+
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			description="A reusable primitive type archetype that declares parameterized reusable fragments for primitive validation, construction, rendering, surface contracts, and conformance scaffolding. Applying an archetype does not change the concrete type identity of the consuming PrimitiveType."
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:codeSpecification:PrimitiveTypeArchetype
+			name="PrimitiveTypeArchetype"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="name" />
+
+				<AllowsTrait name="description" />
+
+				<AllowsTrait name="longDescription" />
+
+				<AllowsTrait name="specSection" />
+
+				<AllowsTrait name="specRequirement" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="ArchetypeParameter" />
+
+				<AllowsChildConcept conceptSelector="ArchetypeFragment" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Applies one primitive type archetype to one concrete PrimitiveType while preserving the PrimitiveType's own nominal identity and declaration."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:PrimitiveTypeArchetypeUse
+			name="PrimitiveTypeArchetypeUse"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="archetype" />
+
+				<AllowsTrait name="description" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="ArchetypeArgument" />
+			</ChildRules>
+
+			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Declares one named substitution parameter exposed by a primitive type archetype. `{parameterName}` placeholders are replaced using arguments supplied by PrimitiveTypeArchetypeUse."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:ArchetypeParameter
+			name="ArchetypeParameter"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="name" />
+
+				<AllowsTrait name="argumentValueType" />
+
+				<AllowsTrait name="description" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="Supplies one argument value for one declared archetype parameter when applying a primitive type archetype."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:ArchetypeArgument
+			name="ArchetypeArgument"
+		>
+			<ContentRules>
+				<ForbidsContent />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="archetypeParameter" />
+
+				<RequiresTrait name="value" />
+
+				<AllowsTrait name="description" />
+			</TraitRules>
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Structural
+			description="One pre-materialization archetype fragment template. Archetype fragments are not concrete declarations until placeholder substitution materializes them under CodeSpecification."
+			entityEligibility=$MustNotBeEntity
+			id=paperhat:domain:codeSpecification:ArchetypeFragment
+			name="ArchetypeFragment"
+		>
+			<ContentRules>
+				<AllowsContentOrChildren whitespaceMode=$Preformatted />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+
+				<RequiresTrait name="fragmentConcept" />
+
+				<AllowsTrait name="description" />
+			</TraitRules>
+
+			<ChildRules>
+				<AllowsChildConcept conceptSelector="TextByScalars" max=1 />
+			</ChildRules>
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -1883,7 +2015,6 @@
 			priority=$Primary
 		/>
 
-
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
 			id=paperhat:domain:codeSpecification:trait:strategy
@@ -1891,7 +2022,45 @@
 			priority=$Primary
 		>
 			<AllowedValues>
-				<ValueIsOneOf values="$FieldByFieldComparison,$VariantThenFieldComparison,$DelegateToField" />
+				<ValueIsOneOf values="$FieldByFieldComparison,$VariantThenFieldComparison,$DelegateToField,$PrimitiveCanonicalComparison" />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:archetype
+			isReferenceTrait=true
+			name="archetype"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:codeSpecification:trait:argumentValueType
+			name="argumentValueType"
+			priority=$Secondary
+		>
+			<AllowedValues>
+				<ValueIsOneOf values="$Text,$LookupToken,$Iri,$RegularExpression,$NonNegativeInteger,$Boolean" />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$LookupToken
+			id=paperhat:domain:codeSpecification:trait:archetypeParameter
+			isReferenceTrait=true
+			name="archetypeParameter"
+			priority=$Primary
+		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:codeSpecification:trait:fragmentConcept
+			name="fragmentConcept"
+			priority=$Primary
+		>
+			<AllowedValues>
+				<ValueIsOneOf values="$ValidationRule,$ConstructionOperation,$ValueSurfaceDefinition,$OperationConformanceCase,$RejectionTestCase,$InequalityTestCase,$OrderingTestCase" />
 			</AllowedValues>
 		</TraitDefinition>
 
@@ -2424,6 +2593,44 @@
 			<Member description="Compare variant position first; within the same variant, compare fields for fielded variants, wrapped values for wrapped variants, and treat unit variants as equal." value="VariantThenFieldComparison" />
 
 			<Member description="Delegate the entire comparison to a single field." value="DelegateToField" />
+
+			<Member description="Apply primitive-family canonical comparison semantics defined for the concrete primitive type." value="PrimitiveCanonicalComparison" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet
+			id=paperhat:domain:codeSpecification:set:ArchetypeArgumentValueType
+			name="ArchetypeArgumentValueType"
+		>
+			<Member description="The archetype argument is interpreted as Text." value="Text" />
+
+			<Member description="The archetype argument is interpreted as LookupToken." value="LookupToken" />
+
+			<Member description="The archetype argument is interpreted as Iri." value="Iri" />
+
+			<Member description="The archetype argument is interpreted as RegularExpression." value="RegularExpression" />
+
+			<Member description="The archetype argument is interpreted as NonNegativeInteger." value="NonNegativeInteger" />
+
+			<Member description="The archetype argument is interpreted as Boolean." value="Boolean" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet
+			id=paperhat:domain:codeSpecification:set:ArchetypeFragmentConcept
+			name="ArchetypeFragmentConcept"
+		>
+			<Member description="A pre-materialization ValidationRule fragment template." value="ValidationRule" />
+
+			<Member description="A pre-materialization ConstructionOperation fragment template." value="ConstructionOperation" />
+
+			<Member description="A pre-materialization ValueSurfaceDefinition fragment template." value="ValueSurfaceDefinition" />
+
+			<Member description="A pre-materialization OperationConformanceCase fragment template." value="OperationConformanceCase" />
+
+			<Member description="A pre-materialization RejectionTestCase fragment template." value="RejectionTestCase" />
+
+			<Member description="A pre-materialization InequalityTestCase fragment template." value="InequalityTestCase" />
+
+			<Member description="A pre-materialization OrderingTestCase fragment template." value="OrderingTestCase" />
 		</EnumeratedValueSet>
 
 		<EnumeratedValueSet
@@ -2617,6 +2824,135 @@
 
 					<Rule>
 						<ReferenceConstraint type=$ReferenceTargetsConcept conceptSelector="SumType" />
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:primitive-type-archetype-use-targets-declared-archetype
+			title="A primitive type archetype use targets one declared primitive type archetype"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="PrimitiveTypeArchetypeUse" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint
+					conceptSelector="PrimitiveTypeArchetype"
+					traitName="archetype"
+					type=$ReferenceTargetsConcept
+				/>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:archetype-argument-targets-declared-parameter
+			title="An archetype argument targets one declared archetype parameter"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ArchetypeArgument" />
+			</Targets>
+
+			<Rule>
+				<ReferenceConstraint
+					conceptSelector="ArchetypeParameter"
+					traitName="archetypeParameter"
+					type=$ReferenceTargetsConcept
+				/>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:primitive-type-archetype-parameter-keys-are-unique
+			title="A primitive type archetype uses each archetype-parameter key at most once"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="PrimitiveTypeArchetype" />
+			</Targets>
+
+			<Rule>
+				<CollectionAllowsDuplicates allowed=false keyTrait="key">
+					<ChildPath conceptSelector="ArchetypeParameter" />
+				</CollectionAllowsDuplicates>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:primitive-type-archetype-use-argument-keys-are-unique
+			title="A primitive type archetype use binds each archetype parameter at most once"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="PrimitiveTypeArchetypeUse" />
+			</Targets>
+
+			<Rule>
+				<CollectionAllowsDuplicates allowed=false keyTrait="archetypeParameter">
+					<ChildPath conceptSelector="ArchetypeArgument" />
+				</CollectionAllowsDuplicates>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:primitive-type-archetype-fragment-keys-are-unique
+			title="A primitive type archetype uses each archetype-fragment key at most once"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="PrimitiveTypeArchetype" />
+			</Targets>
+
+			<Rule>
+				<CollectionAllowsDuplicates allowed=false keyTrait="key">
+					<ChildPath conceptSelector="ArchetypeFragment" />
+				</CollectionAllowsDuplicates>
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:archetype-fragment-only-valid-under-primitive-type-archetype
+			title="An archetype fragment is valid only under PrimitiveTypeArchetype"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ArchetypeFragment" />
+			</Targets>
+
+			<Rule>
+				<ContextConstraint contextSelector="PrimitiveTypeArchetype" type=$OnlyValidUnderContext />
+			</Rule>
+		</ConstraintDefinition>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:archetype-fragment-has-one-template-source
+			title="An archetype fragment uses either content or one TextByScalars child"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="ArchetypeFragment" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ContentConstraint type=$ContentRequired />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="TextByScalars" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ContentConstraint type=$ForbidsContent />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="TextByScalars" type=$RequiresChildConcept />
+							</Rule>
+						</AllOf>
 					</Rule>
 				</AnyOf>
 			</Rule>
@@ -4268,5 +4604,46 @@
 				</AnyOf>
 			</Rule>
 		</ConstraintDefinition>
-	</ConstraintDefinitions>
-</Schema>
+
+		<ConstraintDefinition
+			id=paperhat:domain:codeSpecification:primitive-canonical-comparison-ordering-shape
+			title="PrimitiveCanonicalComparison applies only to primitive-type canonical ordering"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="CanonicalOrderingRule" />
+			</Targets>
+
+			<Rule>
+				<AnyOf>
+					<Rule>
+						<Not>
+							<Rule>
+								<TraitEquals trait="strategy" value=$PrimitiveCanonicalComparison />
+							</Rule>
+						</Not>
+					</Rule>
+
+					<Rule>
+						<AllOf>
+							<Rule>
+								<ContextConstraint contextSelector="PrimitiveType" type=$OnlyValidUnderContext />
+							</Rule>
+
+							<Rule>
+								<TraitMissing trait="delegateField" />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="ComparisonStep" type=$ForbidsChildConcept />
+							</Rule>
+
+							<Rule>
+								<ChildConstraint conceptSelector="WithinVariantRule" type=$ForbidsChildConcept />
+							</Rule>
+						</AllOf>
+					</Rule>
+				</AnyOf>
+			</Rule>
+		</ConstraintDefinition>
+		</ConstraintDefinitions>
+	</Schema>

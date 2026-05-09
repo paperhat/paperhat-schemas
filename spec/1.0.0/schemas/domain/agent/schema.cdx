@@ -973,7 +973,7 @@
 					</When>
 					<Then>
 						<Rule>
-							<ValueMatchesPattern pattern="^[a-zA-Z0-9._/*?]*$" />
+							<ValueMatchesPattern pattern="^[a-zA-Z0-9._/*?-]*$" />
 						</Rule>
 					</Then>
 				</ConditionalConstraint>

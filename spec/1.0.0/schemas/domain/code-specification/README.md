@@ -12,9 +12,14 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 
 | Concept | Kind | Entity | Content | Children | Description |
 |---|---|---|---|---|---|
-| CodeSpecification | Semantic | MustNotBeEntity | ForbidsContent | ProductType, PrimitiveType, CollectionType, SumType, NamedConstant, ConstructionOperation, ParseOperation, AccessorOperation, UniformAccessorOperation, ValidationRule, ValueSurfaceDefinition, grammar:Grammar, ConstructionTestCase, RejectionTestCase, InequalityTestCase, OrderingTestCase, OperationConformanceCase, InteropModule, ModuleDescription, NormativeRequirement, TermDefinition, ExternalReference | Root container for a complete code specification. |
+| CodeSpecification | Semantic | MustNotBeEntity | ForbidsContent | ProductType, PrimitiveType, PrimitiveTypeArchetype, CollectionType, SumType, NamedConstant, ConstructionOperation, ParseOperation, AccessorOperation, UniformAccessorOperation, ValidationRule, ValueSurfaceDefinition, grammar:Grammar, ConstructionTestCase, RejectionTestCase, InequalityTestCase, OrderingTestCase, OperationConformanceCase, InteropModule, ModuleDescription, NormativeRequirement, TermDefinition, ExternalReference | Root container for a complete code specification. |
 | ProductType | Semantic | MustBeEntity | ForbidsContent | Field (1+), CanonicalOrderingRule (0–1), TypeParameter (0+) | A type whose instances carry all fields simultaneously. Projected as a struct in Rust, a record in Haskell. |
-| PrimitiveType | Semantic | MustBeEntity | ForbidsContent | — | An atomic type whose instances are indivisible values rather than records or variants. Projected as a native atomic value according to `representationKind`. |
+| PrimitiveType | Semantic | MustBeEntity | ForbidsContent | CanonicalOrderingRule (0–1), PrimitiveTypeArchetypeUse (0–1) | An atomic type whose instances are indivisible values rather than records or variants. Projected as a native atomic value according to `representationKind`. |
+| PrimitiveTypeArchetype | Semantic | MustBeEntity | ForbidsContent | ArchetypeParameter (0+), ArchetypeFragment (0+) | Reusable primitive-type authoring archetype. It declares a stable lookup `key` because `PrimitiveTypeArchetypeUse` references archetypes. Archetype-contained fragments are pre-materialization templates, not concrete declarations. Applying an archetype does not replace or alias the consuming `PrimitiveType`. |
+| PrimitiveTypeArchetypeUse | Structural | MustNotBeEntity | ForbidsContent | ArchetypeArgument (0+) | Applies one declared primitive archetype to one concrete `PrimitiveType` while preserving concrete type identity. |
+| ArchetypeParameter | Structural | MustNotBeEntity | ForbidsContent | — | Declares one named archetype parameter available as `{parameterName}` during archetype materialization. |
+| ArchetypeArgument | Structural | MustNotBeEntity | ForbidsContent | — | Supplies one argument value for one declared archetype parameter. |
+| ArchetypeFragment | Structural | MustNotBeEntity | AllowsContentOrChildren (Preformatted) | TextByScalars (0–1) | One pre-materialization fragment template tagged by `fragmentConcept`. Placeholder substitution materializes concrete declarations from this template. |
 | CollectionType | Semantic | MustBeEntity | ForbidsContent | TypeParameter (0+) | A collection type constructor identified by a canonical type IRI. Structured type sites apply the constructor through `TypeApplication`. Legacy field and operation-parameter sites still use `elementType`. Projected according to `collectionKind`. |
 | SumType | Semantic | MustBeEntity | ForbidsContent | Variant (1+), CanonicalOrderingRule (0–1), TypeParameter (0+) | A type whose instances carry exactly one variant at a time. Projected as an enum in Rust, a data type in Haskell. |
 | Variant | Semantic | MustNotBeEntity | ForbidsContent | Field (0+) | A variant of a sum type. Carries either named fields or wraps a single unnamed value. |
@@ -27,7 +32,7 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | TypeApplication | Structural | MustNotBeEntity | ForbidsContent | TypeArgument (1+) | An application of one declared type constructor to one or more ordered type arguments. |
 | TypeArgument | Structural | MustNotBeEntity | ForbidsContent | TypeExpression (1) | One ordered type argument supplied to a type application. |
 | NamedConstant | Semantic | MustBeEntity | ForbidsContent | — | A named constant value with a canonical type identifier. |
-| CanonicalOrderingRule | Structural | MustNotBeEntity | ForbidsContent | ComparisonStep (0+), WithinVariantRule (0+) | Defines the canonical total ordering for a type. For sum types, same-variant comparison uses field-order rules for fielded variants, wrapped-value comparison for wrapped variants, and equality for unit variants. |
+| CanonicalOrderingRule | Structural | MustNotBeEntity | ForbidsContent | ComparisonStep (0+), WithinVariantRule (0+) | Defines the canonical total ordering for a type. Product, sum, and primitive types each use strategy-constrained ordering shapes. |
 | WithinVariantRule | Structural | MustNotBeEntity | ForbidsContent | ComparisonStep (1+) | Defines the field comparison order within one field-bearing variant of a sum type. |
 | ComparisonStep | Semantic | MustNotBeEntity | ForbidsContent | — | A single step in a comparison chain: compare the values of a specific field. |
 | ConstructionOperation | Semantic | MustBeEntity | ForbidsContent | OperationParameter (0+), ConstantBinding (0+), WrappedValueBinding (0–1), Precondition (0+), ProhibitionPrecondition (0–1), ValueMapping (0–1), behavior:Calculation (0–1) | A pure operation that produces a value of a specific type. Constructors, planners, evaluators, transitions, formatters, and other deterministic operations all use this concept. `producesVariant` identifies the produced variant when the result type is a sum type. `WrappedValueBinding` binds the carried value when the selected variant uses `wrapsType`. For `PrimitiveType` targets, an optional `behavior:Calculation` child defines the produced primitive value. A fallible construction operation declares either one `diagnosticVariant` or one exhaustive `diagnosticVariants` list. |
@@ -107,10 +112,14 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | `collectionKind` | `$EnumeratedToken` | Primary | Collection-family category for a collection type authority. |
 | `specSection` | `$Text` | Secondary | Section reference within the governing specification. |
 | `specRequirement` | `$LookupToken` | Secondary | Requirement identifier within the governing specification. |
-| `strategy` | `$EnumeratedToken` | Primary | Ordering strategy. `FieldByFieldComparison` and `DelegateToField` apply to product types. `VariantThenFieldComparison` applies to sum types. |
+| `strategy` | `$EnumeratedToken` | Primary | Ordering strategy. `FieldByFieldComparison` and `DelegateToField` apply to product types. `VariantThenFieldComparison` applies to sum types. `PrimitiveCanonicalComparison` applies to primitive types. |
 | `delegateField` | `$LookupToken` | Primary | The field to delegate comparison to when strategy is DelegateToField. |
 | `compareField` | `$LookupToken` | Primary | The field whose values are compared in this comparison step. |
 | `forVariant` | `$LookupToken` | Primary | The variant this rule or arm applies to. |
+| `archetype` | `$LookupToken` | Primary | The primitive archetype key applied by `PrimitiveTypeArchetypeUse`. |
+| `argumentValueType` | `$EnumeratedToken` | Secondary | Declared value interpretation for one archetype parameter. If omitted, argument values are interpreted as Text. |
+| `archetypeParameter` | `$LookupToken` | Primary | The declared archetype parameter targeted by one archetype argument. |
+| `fragmentConcept` | `$EnumeratedToken` | Primary | The concrete declaration family represented by an archetype fragment template (for example ValidationRule or ConstructionOperation). |
 | `producesType` | `$Iri` | Primary | Canonical type identifier of the type this operation produces. |
 | `producesVariant` | `$LookupToken` | Primary | The produced variant when the result type is a sum type. |
 | `fallible` | `$Boolean` | Primary | Whether the operation returns a diagnostic result instead of total success. |
@@ -179,7 +188,9 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | Capability | Equality, Hashing, Cloning, CanonicalOrdering, Debugging | Type-level capabilities that a product type, collection type, or sum type declares. |
 | PrimitiveRepresentationKind | Boolean, Text, Integer, NonNegativeInteger, Decimal | Primitive representation categories for atomic types. |
 | CollectionKind | List | Collection-family categories currently supported by the schema. |
-| OrderingStrategy | FieldByFieldComparison, VariantThenFieldComparison, DelegateToField | Strategies for defining the canonical total ordering of a type. |
+| OrderingStrategy | FieldByFieldComparison, VariantThenFieldComparison, DelegateToField, PrimitiveCanonicalComparison | Strategies for defining the canonical total ordering of a type. |
+| ArchetypeArgumentValueType | Text, LookupToken, Iri, RegularExpression, NonNegativeInteger, Boolean | Declared value interpretation for archetype-argument substitution. |
+| ArchetypeFragmentConcept | ValidationRule, ConstructionOperation, ValueSurfaceDefinition, OperationConformanceCase, RejectionTestCase, InequalityTestCase, OrderingTestCase | Concrete declaration families that archetype fragments can materialize. |
 | TestValueRole | Left, Right, Lesser, Greater | The role a test value plays in a comparison or inequality test case. |
 | Modality | Must, MustNot | The normative modality of a requirement. |
 | SurfaceStatus | Current, AcceptedLegacy | Lifecycle status for a value surface family. |
@@ -195,6 +206,13 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | variant-fields-or-wraps | Variant | A variant carries either named fields or wraps a single type, not both. |
 | type-expression-has-one-form | TypeExpression | A type expression uses exactly one expression form. |
 | named-type-reference-targets-declared-type | NamedTypeReference | A named type reference targets one declared type. |
+| primitive-type-archetype-use-targets-declared-archetype | PrimitiveTypeArchetypeUse | A primitive type archetype use targets one declared primitive type archetype. |
+| archetype-argument-targets-declared-parameter | ArchetypeArgument | An archetype argument targets one declared archetype parameter. |
+| primitive-type-archetype-parameter-keys-are-unique | PrimitiveTypeArchetype | A primitive type archetype uses each archetype-parameter key at most once. |
+| primitive-type-archetype-use-argument-keys-are-unique | PrimitiveTypeArchetypeUse | A primitive type archetype use binds each archetype parameter at most once. |
+| primitive-type-archetype-fragment-keys-are-unique | PrimitiveTypeArchetype | A primitive type archetype uses each archetype-fragment key at most once. |
+| archetype-fragment-only-valid-under-primitive-type-archetype | ArchetypeFragment | An archetype fragment is valid only under PrimitiveTypeArchetype. |
+| archetype-fragment-has-one-template-source | ArchetypeFragment | An archetype fragment uses either preformatted content or one TextByScalars child. |
 | type-application-constructor-targets-declared-type | TypeApplication | A type application uses one declared type constructor. |
 | field-has-one-type-source | Field | A field uses either legacy type traits or one structured type expression. |
 | field-type-slot-role | Field | A structured field type uses the `ValueType` role. |
@@ -228,12 +246,14 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | field-by-field-ordering-shape | CanonicalOrderingRule | `FieldByFieldComparison` is valid only under `ProductType`, must not use `delegateField`, and must not contain `WithinVariantRule`. |
 | variant-then-field-ordering-shape | CanonicalOrderingRule | `VariantThenFieldComparison` is valid only under `SumType`, must not use `delegateField`, and must not contain top-level `ComparisonStep` children. |
 | delegate-ordering-shape | CanonicalOrderingRule | `DelegateToField` is valid only under `ProductType`, requires `delegateField`, and must not contain `ComparisonStep` or `WithinVariantRule`. |
+| primitive-canonical-comparison-ordering-shape | CanonicalOrderingRule | `PrimitiveCanonicalComparison` is valid only under `PrimitiveType`, must not use `delegateField`, and must not contain `ComparisonStep` or `WithinVariantRule`. |
 
 ## Design Decisions
 
 - CodeSpecification is MustNotBeEntity because it is a root document container, not a referenceable entity. The types, operations, and constants within it are the entities.
 - ProductType and SumType are separate concepts rather than one type with a discriminator trait. The structural differences (variants, field exclusivity, ordering semantics) are fundamental, not parametric.
 - PrimitiveType exists separately from ProductType and SumType because atomic values are not records or tagged alternatives. Primitive construction is calculation-based and carries an explicit `representationKind` so host-language lowering remains exact.
+- PrimitiveType now allows an optional CanonicalOrderingRule so primitive families with non-default ordering semantics can declare canonical ordering explicitly rather than relying on product or sum ordering constructs.
 - CollectionType exists separately from ProductType, PrimitiveType, and SumType because collection constructors such as `List` are neither records, atomic scalars, nor tagged alternatives. Collection constructors declare their own type parameters. Structured type sites apply them through `TypeApplication`. Legacy field and operation-parameter sites still use `elementType`.
 - TypeExpression, NamedTypeReference, TypeParameterReference, TypeApplication, and TypeArgument exist to model recursive applied types structurally rather than through stringly-typed conventions. This supports nested collections and multi-argument generic applications.
 - TypeParameter exists for product types, collection types, and sum types because generic type constructors appear in all three families.
@@ -251,7 +271,14 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 - Test cases are first-class schema concepts, not external artifacts. This ensures that the specification and its tests are always co-located, versioned together, and processable by the same foundry pipeline.
 - OperationConformanceCase exists alongside the constructor-focused legacy test cases because parser, formatter, planner, evaluator, and transition operations require exact typed arguments and exact structured outcomes that simple accessor assertions cannot express without guesswork.
 - Canonical operation-conformance fragments use one uniform encoding rule: product values use the product tag, complex fields use field-named child wrappers, sum values use variant tags, wrapped variants contain the wrapped child fragment, and ordered list fields contain ordered child fragments inside one field-named wrapper.
-- CanonicalOrderingRule supports three strategies to cover the common patterns: field-by-field comparison for product types, variant-then-field comparison for sum types, and single-field delegation for one named product field. For wrapped sum variants, `VariantThenFieldComparison` compares the wrapped values directly after variant-position comparison.
+- CanonicalOrderingRule supports four strategies to cover common ordering patterns: field-by-field comparison for product types, variant-then-field comparison for sum types, single-field delegation for one named product field, and primitive canonical comparison for primitive types. For wrapped sum variants, `VariantThenFieldComparison` compares the wrapped values directly after variant-position comparison.
+- CanonicalOrderingRule also supports `PrimitiveCanonicalComparison` for primitive types whose canonical ordering semantics cannot be represented as product-field or sum-variant comparison.
+- PrimitiveTypeArchetype exists to reduce duplicated primitive authoring structure while preserving concrete nominal type identity. A concrete type remains authored as `PrimitiveType` with its own `id`, `key`, `name`, representation, and capability declaration.
+- PrimitiveTypeArchetypeUse applies one archetype to one concrete PrimitiveType. This is an authoring-time materialization mechanism, not a runtime alias mechanism and not a second-class type form.
+- Archetype substitution semantics are explicit: each `ArchetypeParameter` declares a placeholder name, each `ArchetypeArgument` binds one value for one parameter, and materialization performs literal replacement of `{parameterName}` in archetype-fragment templates.
+- Materialization boundary is explicit: `ArchetypeFragment` nodes under `PrimitiveTypeArchetype` are pre-materialization templates and are not interpreted as concrete ValidationRule/ConstructionOperation/ValueSurfaceDefinition/test declarations by themselves.
+- Pre-materialization validation applies to archetype structure only (archetype references, parameter/argument binding, fragment placement, and fragment template-source shape). Post-materialization validation applies normal concrete reference and shape constraints to emitted top-level concrete declarations.
+- Archetype arguments are interpreted as Text unless the parameter declares `argumentValueType`.
 - WrappedValueBinding exists separately from field-targeted bindings because wrapped-variant construction binds the carried value of a variant, not a named field.
 - InteropModule uses `conditionalOn` as a text string rather than a structured language enum. The set of target languages is open-ended and foundry-specific; the schema does not enumerate it.
 - AccessorArm enforces a mutual exclusion constraint: it returns either a field or a constant, never both. This is enforced at the schema level through the `accessor-arm-returns-one` constraint rather than through separate concept types.

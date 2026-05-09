@@ -203,6 +203,176 @@
 		<CanonicalOrderingRule strategy=$DelegateToField delegateField=~pair />
 	</ProductType>
 
+	<PrimitiveTypeArchetype
+		id=urn:paperhat:color-spec#archetype/SemverComponentPrimitive
+		key=~semverComponentPrimitiveArchetype
+		name="SemverComponentPrimitive"
+		description="Reusable primitive archetype fragment scaffold for SemVer-style components."
+	>
+		<ArchetypeParameter
+			key=~surfaceKeyword
+			name="surfaceKeyword"
+			argumentValueType=$Text
+			description="Surface keyword prefix (for example major-version, minor-version)."
+		/>
+
+		<ArchetypeParameter
+			key=~concreteTypeIri
+			name="concreteTypeIri"
+			argumentValueType=$Iri
+			description="Concrete nominal primitive type IRI materialized from this archetype."
+		/>
+
+		<ArchetypeParameter
+			key=~validationRuleKey
+			name="validationRuleKey"
+			argumentValueType=$LookupToken
+			description="Lookup key for the concrete validation rule emitted by this archetype."
+		/>
+
+		<ArchetypeParameter
+			key=~constructOperationKey
+			name="constructOperationKey"
+			argumentValueType=$LookupToken
+			description="Lookup key for the concrete construct operation emitted by this archetype."
+		/>
+
+		<ArchetypeParameter
+			key=~renderOperationKey
+			name="renderOperationKey"
+			argumentValueType=$LookupToken
+			description="Lookup key for the concrete render operation emitted by this archetype."
+		/>
+
+		<ArchetypeParameter
+			key=~surfaceDefinitionKey
+			name="surfaceDefinitionKey"
+			argumentValueType=$LookupToken
+			description="Lookup key for the concrete value-surface definition emitted by this archetype."
+		/>
+
+		<ArchetypeParameter
+			key=~failureNoun
+			name="failureNoun"
+			argumentValueType=$Text
+			description="Type-specific noun used in failure messages."
+		/>
+
+		<ArchetypeParameter
+			key=~canonicalPlaceholder
+			name="canonicalPlaceholder"
+			argumentValueType=$Text
+			description="Canonical placeholder wording used in render descriptions."
+		/>
+
+		<ArchetypeFragment
+			key=~validationRuleFragmentTemplate
+			fragmentConcept=$ValidationRule
+			description="Archetype fragment template for validation-rule materialization."
+		>
+			key={validationRuleKey}
+			name="{surfaceKeyword}NumericIdentifier"
+			appliesToType=urn:paperhat:text-spec#type/Text
+			validationPattern=regular-expression/^(0|[1-9][0-9]*)$/
+		</ArchetypeFragment>
+
+		<ArchetypeFragment
+			key=~constructOperationFragmentTemplate
+			fragmentConcept=$ConstructionOperation
+			description="Archetype fragment template for construct-operation materialization."
+		>
+			key={constructOperationKey}
+			name="construct{failureNoun}"
+			producesType={concreteTypeIri}
+			precondition.validationRule={validationRuleKey}
+		</ArchetypeFragment>
+
+		<ArchetypeFragment
+			key=~renderOperationFragmentTemplate
+			fragmentConcept=$ConstructionOperation
+			description="Archetype fragment template for render-operation materialization."
+		>
+			key={renderOperationKey}
+			name="render{failureNoun}Surface"
+			producesType=urn:paperhat:text-spec#type/Text
+			parameter.valueType={concreteTypeIri}
+			render.description="{surfaceKeyword}({canonicalPlaceholder})"
+		</ArchetypeFragment>
+
+		<ArchetypeFragment
+			key=~valueSurfaceFragmentTemplate
+			fragmentConcept=$ValueSurfaceDefinition
+			description="Archetype fragment template for value-surface materialization."
+		>
+			key={surfaceDefinitionKey}
+			name="{surfaceKeyword}FunctionSurface"
+			targetType={concreteTypeIri}
+			canonicalRenderingOperation={renderOperationKey}
+			starterLiteral="{surfaceKeyword}("
+			constructionOperation={constructOperationKey}
+		</ArchetypeFragment>
+	</PrimitiveTypeArchetype>
+
+	<PrimitiveType
+		id=urn:paperhat:color-spec#type/NamedChannelMajorVersion
+		key=~namedChannelMajorVersion
+		name="NamedChannelMajorVersion"
+		exported=true
+		representationKind=$NonNegativeInteger
+		description="Concrete nominal major-version component type."
+		capabilities=[$Equality, $Hashing, $Cloning, $CanonicalOrdering, $Debugging]
+	>
+		<CanonicalOrderingRule strategy=$PrimitiveCanonicalComparison />
+
+		<PrimitiveTypeArchetypeUse archetype=~semverComponentPrimitiveArchetype>
+			<ArchetypeArgument archetypeParameter=~surfaceKeyword value="major-version" />
+
+			<ArchetypeArgument archetypeParameter=~concreteTypeIri value="urn:paperhat:color-spec#type/NamedChannelMajorVersion" />
+
+			<ArchetypeArgument archetypeParameter=~validationRuleKey value="~majorVersionNumericIdentifier" />
+
+			<ArchetypeArgument archetypeParameter=~constructOperationKey value="~constructMajorVersion" />
+
+			<ArchetypeArgument archetypeParameter=~renderOperationKey value="~renderMajorVersionSurface" />
+
+			<ArchetypeArgument archetypeParameter=~surfaceDefinitionKey value="~majorVersionFunctionSurface" />
+
+			<ArchetypeArgument archetypeParameter=~failureNoun value="MajorVersion" />
+
+			<ArchetypeArgument archetypeParameter=~canonicalPlaceholder value="canonical-major" />
+		</PrimitiveTypeArchetypeUse>
+	</PrimitiveType>
+
+	<PrimitiveType
+		id=urn:paperhat:color-spec#type/NamedChannelMinorVersion
+		key=~namedChannelMinorVersion
+		name="NamedChannelMinorVersion"
+		exported=true
+		representationKind=$NonNegativeInteger
+		description="Concrete nominal minor-version component type."
+		capabilities=[$Equality, $Hashing, $Cloning, $CanonicalOrdering, $Debugging]
+	>
+		<CanonicalOrderingRule strategy=$PrimitiveCanonicalComparison />
+
+		<PrimitiveTypeArchetypeUse archetype=~semverComponentPrimitiveArchetype>
+			<ArchetypeArgument archetypeParameter=~surfaceKeyword value="minor-version" />
+
+			<ArchetypeArgument archetypeParameter=~concreteTypeIri value="urn:paperhat:color-spec#type/NamedChannelMinorVersion" />
+
+			<ArchetypeArgument archetypeParameter=~validationRuleKey value="~minorVersionNumericIdentifier" />
+
+			<ArchetypeArgument archetypeParameter=~constructOperationKey value="~constructMinorVersion" />
+
+			<ArchetypeArgument archetypeParameter=~renderOperationKey value="~renderMinorVersionSurface" />
+
+			<ArchetypeArgument archetypeParameter=~surfaceDefinitionKey value="~minorVersionFunctionSurface" />
+
+			<ArchetypeArgument archetypeParameter=~failureNoun value="MinorVersion" />
+
+			<ArchetypeArgument archetypeParameter=~canonicalPlaceholder value="canonical-minor" />
+		</PrimitiveTypeArchetypeUse>
+	</PrimitiveType>
+
 	<ConstructionOperation
 		id=urn:paperhat:color-spec#operation/channel_selector_by_name
 		name="channel_selector_by_name"

@@ -43,19 +43,19 @@
 				<AllowsChildConcept conceptSelector="VerificationGate" />
 				<AllowsChildConcept conceptSelector="AgentPathFence" />
 				<AllowsChildConcept conceptSelector="AgentSection" />
-				<AllowsChildConcept conceptSelector="ProjectDescription" />
-				<AllowsChildConcept conceptSelector="ArchitectureOverview" />
-				<AllowsChildConcept conceptSelector="OutputFormat" />
-				<AllowsChildConcept conceptSelector="SecurityRequirements" />
-				<AllowsChildConcept conceptSelector="CodingConventions" />
-				<AllowsChildConcept conceptSelector="TestingFramework" />
-				<AllowsChildConcept conceptSelector="AgentRole" />
-				<AllowsChildConcept conceptSelector="TechStack" />
+				<AllowsChildConcept conceptSelector="ProjectDescription" max=1 />
+				<AllowsChildConcept conceptSelector="ArchitectureOverview" max=1 />
+				<AllowsChildConcept conceptSelector="OutputFormat" max=1 />
+				<AllowsChildConcept conceptSelector="SecurityRequirements" max=1 />
+				<AllowsChildConcept conceptSelector="CodingConventions" max=1 />
+				<AllowsChildConcept conceptSelector="TestingFramework" max=1 />
+				<AllowsChildConcept conceptSelector="AgentRole" max=1 />
+				<AllowsChildConcept conceptSelector="TechStack" max=1 />
 				<AllowsChildConcept conceptSelector="CommandSet" />
-				<AllowsChildConcept conceptSelector="DirectoryLayout" />
+				<AllowsChildConcept conceptSelector="DirectoryLayout" max=1 />
 				<AllowsChildConcept conceptSelector="Workflow" />
-				<AllowsChildConcept conceptSelector="Glossary" />
-				<AllowsChildConcept conceptSelector="McpConfiguration" />
+				<AllowsChildConcept conceptSelector="Glossary" max=1 />
+				<AllowsChildConcept conceptSelector="McpConfiguration" max=1 />
 				<AllowsChildConcept conceptSelector="CodeBlock" />
 				<AllowsChildConcept conceptSelector="MermaidDiagram" />
 				<AllowsChildConcept conceptSelector="grammar:Grammar" />

@@ -150,7 +150,8 @@
 
 			<ChildRules>
 				<AllowsChildConcept conceptSelector="text:Paragraph" />
-				<RequiresChildConcept conceptSelector="AgentRequirement" min=1 />
+				<AllowsChildConcept conceptSelector="AgentRequirement" />
+				<AllowsChildConcept conceptSelector="AgentSymmetricRequirement" />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
@@ -159,8 +160,8 @@
 		<ConceptDefinition
 			conceptKind=$Semantic
 			entityEligibility=$MustBeEntity
-			id=paperhat:domain:agent:AgentRequirement
-			name="AgentRequirement"
+			id=paperhat:domain:agent:AgentSymmetricRequirement
+			name="AgentSymmetricRequirement"
 		>
 			<ContentRules>
 				<ForbidsContent />
@@ -177,6 +178,22 @@
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
+		</ConceptDefinition>
+
+		<ConceptDefinition
+			conceptKind=$Semantic
+			entityEligibility=$MustBeEntity
+			id=paperhat:domain:agent:AgentRequirement
+			name="AgentRequirement"
+		>
+			<ContentRules>
+				<RequiresContent whitespaceMode=$Flow />
+			</ContentRules>
+
+			<TraitRules>
+				<RequiresTrait name="key" />
+				<RequiresTrait name="modality" />
+			</TraitRules>
 		</ConceptDefinition>
 
 		<ConceptDefinition
@@ -241,7 +258,8 @@
 			</ContentRules>
 
 			<ChildRules>
-				<RequiresChildConcept conceptSelector="AgentRequirement" min=1 />
+				<AllowsChildConcept conceptSelector="AgentRequirement" />
+				<AllowsChildConcept conceptSelector="AgentSymmetricRequirement" />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
@@ -259,7 +277,8 @@
 
 			<ChildRules>
 				<AllowsChildConcept conceptSelector="text:Paragraph" />
-				<RequiresChildConcept conceptSelector="AgentRequirement" min=1 />
+				<AllowsChildConcept conceptSelector="AgentRequirement" />
+				<AllowsChildConcept conceptSelector="AgentSymmetricRequirement" />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
@@ -821,6 +840,18 @@
 	</EnumeratedValueSets>
 
 	<ConstraintDefinitions>
+		<ConstraintDefinition
+			id=paperhat:domain:agent:agent-capability-tool-name-unique
+			title="Agent Capability Tool Name Uniqueness"
+		>
+			<Targets>
+				<TargetConcept conceptSelector="AgentCapability" />
+			</Targets>
+			<Rule>
+				<UniqueConstraint scope="AgentFile" trait="toolName" />
+			</Rule>
+		</ConstraintDefinition>
+
 		<ConstraintDefinition
 			id=paperhat:domain:agent:path-normalization
 			title="Path Normalization Rules"

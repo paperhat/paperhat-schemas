@@ -830,9 +830,15 @@
 			</Targets>
 			<Rule>
 				<AllOf>
-					<PatternConstraint message="Leading slash is forbidden." pattern="^[^/]" />
-					<PatternConstraint message="Parent directory segments (..) are forbidden." pattern="^(?!\.\./)" />
-					<PatternConstraint message="Repeated slashes are forbidden." pattern="^(?!.*//)" />
+					<Rule>
+						<ValueMatchesPattern pattern="^[^/]" />
+					</Rule>
+					<Rule>
+						<ValueMatchesPattern pattern="^(?!\.\./)" />
+					</Rule>
+					<Rule>
+						<ValueMatchesPattern pattern="^(?!.*//)" />
+					</Rule>
 				</AllOf>
 			</Rule>
 		</ConstraintDefinition>
@@ -845,12 +851,18 @@
 				<TargetConcept conceptSelector="AgentPath" />
 			</Targets>
 			<Rule>
-				<When>
-					<TraitEquals name="matchMode" value=$Root />
+				<ConditionalConstraint>
+					<When>
+						<Rule>
+							<TraitEquals trait="matchMode" value=$Root />
+						</Rule>
+					</When>
 					<Then>
-						<PatternConstraint message="Root path content must be exactly '.'" pattern="^\.$" />
+						<Rule>
+							<ValueMatchesPattern pattern="^\.$" />
+						</Rule>
 					</Then>
-				</When>
+				</ConditionalConstraint>
 			</Rule>
 		</ConstraintDefinition>
 
@@ -862,15 +874,25 @@
 				<TargetConcept conceptSelector="AgentPath" />
 			</Targets>
 			<Rule>
-				<When>
-					<TraitEquals name="matchMode" value=$Literal />
+				<ConditionalConstraint>
+					<When>
+						<Rule>
+							<TraitEquals trait="matchMode" value=$Literal />
+						</Rule>
+					</When>
 					<Then>
-						<AllOf>
-							<PatternConstraint message="Literal paths must not end with a slash." pattern="[^/]$" />
-							<PatternConstraint message="Wildcards are forbidden in literal mode." pattern="^[^*?]*$" />
-						</AllOf>
+						<Rule>
+							<AllOf>
+								<Rule>
+									<ValueMatchesPattern pattern="[^/]$" />
+								</Rule>
+								<Rule>
+									<ValueMatchesPattern pattern="^[^*?]*$" />
+								</Rule>
+							</AllOf>
+						</Rule>
 					</Then>
-				</When>
+				</ConditionalConstraint>
 			</Rule>
 		</ConstraintDefinition>
 
@@ -882,15 +904,25 @@
 				<TargetConcept conceptSelector="AgentPath" />
 			</Targets>
 			<Rule>
-				<When>
-					<TraitEquals name="matchMode" value=$Prefix />
+				<ConditionalConstraint>
+					<When>
+						<Rule>
+							<TraitEquals trait="matchMode" value=$Prefix />
+						</Rule>
+					</When>
 					<Then>
-						<AllOf>
-							<PatternConstraint message="Prefix paths must end with a slash." pattern="/$" />
-							<PatternConstraint message="Wildcards are forbidden in prefix mode." pattern="^[^*?]*$" />
-						</AllOf>
+						<Rule>
+							<AllOf>
+								<Rule>
+									<ValueMatchesPattern pattern="/$" />
+								</Rule>
+								<Rule>
+									<ValueMatchesPattern pattern="^[^*?]*$" />
+								</Rule>
+							</AllOf>
+						</Rule>
 					</Then>
-				</When>
+				</ConditionalConstraint>
 			</Rule>
 		</ConstraintDefinition>
 
@@ -902,12 +934,18 @@
 				<TargetConcept conceptSelector="AgentPath" />
 			</Targets>
 			<Rule>
-				<When>
-					<TraitEquals name="matchMode" value=$Glob />
+				<ConditionalConstraint>
+					<When>
+						<Rule>
+							<TraitEquals trait="matchMode" value=$Glob />
+						</Rule>
+					</When>
 					<Then>
-						<PatternConstraint message="Glob pattern must use only allowed tokens (*, ?, **)." pattern="^[a-zA-Z0-9._/\\*\\?]*$" />
+						<Rule>
+							<ValueMatchesPattern pattern="^[a-zA-Z0-9._/*?]*$" />
+						</Rule>
 					</Then>
-				</When>
+				</ConditionalConstraint>
 			</Rule>
 		</ConstraintDefinition>
 	</ConstraintDefinitions>

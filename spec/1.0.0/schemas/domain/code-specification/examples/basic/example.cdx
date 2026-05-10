@@ -270,10 +270,15 @@
 			fragmentConcept=$ValidationRule
 			description="Archetype fragment template for validation-rule materialization."
 		>
-			key={validationRuleKey}
-			name="{surfaceKeyword}NumericIdentifier"
-			appliesToType=urn:paperhat:text-spec#type/Text
-			validationPattern=regular-expression/^(0|[1-9][0-9]*)$/
+			<ArchetypeFragmentNode materializesConcept=$ValidationRule>
+				<ArchetypeFragmentTrait traitName="key" valueTemplate="{validationRuleKey}" />
+
+				<ArchetypeFragmentTrait traitName="name" valueTemplate="{surfaceKeyword}NumericIdentifier" />
+
+				<ArchetypeFragmentTrait traitName="appliesToType" valueTemplate="urn:paperhat:text-spec#type/Text" />
+
+				<ArchetypeFragmentTrait traitName="validationPattern" valueTemplate="regular-expression/^(0|[1-9][0-9]*)$/" />
+			</ArchetypeFragmentNode>
 		</ArchetypeFragment>
 
 		<ArchetypeFragment
@@ -281,10 +286,31 @@
 			fragmentConcept=$ConstructionOperation
 			description="Archetype fragment template for construct-operation materialization."
 		>
-			key={constructOperationKey}
-			name="construct{failureNoun}"
-			producesType={concreteTypeIri}
-			precondition.validationRule={validationRuleKey}
+			<ArchetypeFragmentNode materializesConcept=$ConstructionOperation>
+				<ArchetypeFragmentTrait traitName="key" valueTemplate="{constructOperationKey}" />
+
+				<ArchetypeFragmentTrait traitName="name" valueTemplate="construct{failureNoun}" />
+
+				<ArchetypeFragmentTrait traitName="producesType" valueTemplate="{concreteTypeIri}" />
+
+				<ArchetypeFragmentNode materializesConcept=$OperationParameter>
+					<ArchetypeFragmentTrait traitName="key" valueTemplate="~constructValue" />
+
+					<ArchetypeFragmentTrait traitName="name" valueTemplate="value" />
+
+					<ArchetypeFragmentTrait traitName="position" valueTemplate="0" />
+
+					<ArchetypeFragmentTrait traitName="valueType" valueTemplate="urn:paperhat:text-spec#type/Text" />
+				</ArchetypeFragmentNode>
+
+				<ArchetypeFragmentNode materializesConcept=$Precondition>
+					<ArchetypeFragmentTrait traitName="validationRule" valueTemplate="{validationRuleKey}" />
+
+					<ArchetypeFragmentTrait traitName="appliesToParameter" valueTemplate="~constructValue" />
+
+					<ArchetypeFragmentTrait traitName="failureMessage" valueTemplate="{failureNoun} input does not satisfy {surfaceKeyword} numeric identifier rules." />
+				</ArchetypeFragmentNode>
+			</ArchetypeFragmentNode>
 		</ArchetypeFragment>
 
 		<ArchetypeFragment
@@ -292,11 +318,23 @@
 			fragmentConcept=$ConstructionOperation
 			description="Archetype fragment template for render-operation materialization."
 		>
-			key={renderOperationKey}
-			name="render{failureNoun}Surface"
-			producesType=urn:paperhat:text-spec#type/Text
-			parameter.valueType={concreteTypeIri}
-			render.description="{surfaceKeyword}({canonicalPlaceholder})"
+			<ArchetypeFragmentNode materializesConcept=$ConstructionOperation>
+				<ArchetypeFragmentTrait traitName="key" valueTemplate="{renderOperationKey}" />
+
+				<ArchetypeFragmentTrait traitName="name" valueTemplate="render{failureNoun}Surface" />
+
+				<ArchetypeFragmentTrait traitName="producesType" valueTemplate="urn:paperhat:text-spec#type/Text" />
+
+				<ArchetypeFragmentNode materializesConcept=$OperationParameter>
+					<ArchetypeFragmentTrait traitName="key" valueTemplate="~renderValue" />
+
+					<ArchetypeFragmentTrait traitName="name" valueTemplate="value" />
+
+					<ArchetypeFragmentTrait traitName="position" valueTemplate="0" />
+
+					<ArchetypeFragmentTrait traitName="valueType" valueTemplate="{concreteTypeIri}" />
+				</ArchetypeFragmentNode>
+			</ArchetypeFragmentNode>
 		</ArchetypeFragment>
 
 		<ArchetypeFragment
@@ -304,12 +342,37 @@
 			fragmentConcept=$ValueSurfaceDefinition
 			description="Archetype fragment template for value-surface materialization."
 		>
-			key={surfaceDefinitionKey}
-			name="{surfaceKeyword}FunctionSurface"
-			targetType={concreteTypeIri}
-			canonicalRenderingOperation={renderOperationKey}
-			starterLiteral="{surfaceKeyword}("
-			constructionOperation={constructOperationKey}
+			<ArchetypeFragmentNode materializesConcept=$ValueSurfaceDefinition>
+				<ArchetypeFragmentTrait traitName="key" valueTemplate="{surfaceDefinitionKey}" />
+
+				<ArchetypeFragmentTrait traitName="name" valueTemplate="{surfaceKeyword}FunctionSurface" />
+
+				<ArchetypeFragmentTrait traitName="targetType" valueTemplate="{concreteTypeIri}" />
+
+				<ArchetypeFragmentTrait traitName="canonicalRenderingOperation" valueTemplate="{renderOperationKey}" />
+
+				<ArchetypeFragmentTrait traitName="surfaceStatus" valueTemplate="$Current" />
+
+				<ArchetypeFragmentNode materializesConcept=$DispatchContract>
+					<ArchetypeFragmentTrait traitName="dispatchKind" valueTemplate="$FixedKeywordPrefix" />
+
+					<ArchetypeFragmentTrait traitName="precedence" valueTemplate="0" />
+
+					<ArchetypeFragmentTrait traitName="terminationModel" valueTemplate="$BalancedDelimiter" />
+
+					<ArchetypeFragmentTrait traitName="longestMatchPolicy" valueTemplate="$NotApplicable" />
+
+					<ArchetypeFragmentTrait traitName="starterLiteral" valueTemplate="{surfaceKeyword}(" />
+				</ArchetypeFragmentNode>
+
+				<ArchetypeFragmentNode materializesConcept=$AcceptedSurfaceForm>
+					<ArchetypeFragmentTrait traitName="name" valueTemplate="keywordParenthesized" />
+
+					<ArchetypeFragmentTrait traitName="canonical" valueTemplate="true" />
+
+					<ArchetypeFragmentTrait traitName="constructionOperation" valueTemplate="{constructOperationKey}" />
+				</ArchetypeFragmentNode>
+			</ArchetypeFragmentNode>
 		</ArchetypeFragment>
 	</PrimitiveTypeArchetype>
 

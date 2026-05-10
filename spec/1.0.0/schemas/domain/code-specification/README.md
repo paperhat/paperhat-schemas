@@ -19,7 +19,10 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | PrimitiveTypeArchetypeUse | Structural | MustNotBeEntity | ForbidsContent | ArchetypeArgument (0+) | Applies one declared primitive archetype to one concrete `PrimitiveType` while preserving concrete type identity. |
 | ArchetypeParameter | Structural | MustNotBeEntity | ForbidsContent | — | Declares one named archetype parameter available as `{parameterName}` during archetype materialization. |
 | ArchetypeArgument | Structural | MustNotBeEntity | ForbidsContent | — | Supplies one argument value for one declared archetype parameter. |
-| ArchetypeFragment | Structural | MustNotBeEntity | AllowsContentOrChildren (Preformatted) | TextByScalars (0–1) | One pre-materialization fragment template tagged by `fragmentConcept`. Placeholder substitution materializes concrete declarations from this template. |
+| ArchetypeFragment | Structural | MustNotBeEntity | ForbidsContent | ArchetypeFragmentNode (1) | One pre-materialization fragment template tagged by `fragmentConcept`. Placeholder substitution materializes concrete declarations from this structured template. |
+| ArchetypeFragmentNode | Structural | MustNotBeEntity | ForbidsContent | ArchetypeFragmentTrait (0+), ArchetypeFragmentContent (0–1), ArchetypeFragmentNode (0+) | One template node that declares the concrete concept to materialize through `materializesConcept`, plus nested child-node templates. |
+| ArchetypeFragmentTrait | Structural | MustNotBeEntity | ForbidsContent | — | One placeholder-capable trait assignment template on an archetype fragment node. |
+| ArchetypeFragmentContent | Structural | MustNotBeEntity | AllowsContentOrChildren (Preformatted) | TextByScalars (0–1) | Placeholder-capable content template for nodes whose concrete concepts allow content. |
 | CollectionType | Semantic | MustBeEntity | ForbidsContent | TypeParameter (0+) | A collection type constructor identified by a canonical type IRI. Structured type sites apply the constructor through `TypeApplication`. Legacy field and operation-parameter sites still use `elementType`. Projected according to `collectionKind`. |
 | SumType | Semantic | MustBeEntity | ForbidsContent | Variant (1+), CanonicalOrderingRule (0–1), TypeParameter (0+) | A type whose instances carry exactly one variant at a time. Projected as an enum in Rust, a data type in Haskell. |
 | Variant | Semantic | MustNotBeEntity | ForbidsContent | Field (0+) | A variant of a sum type. Carries either named fields or wraps a single unnamed value. |
@@ -119,7 +122,10 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | `archetype` | `$LookupToken` | Primary | The primitive archetype key applied by `PrimitiveTypeArchetypeUse`. |
 | `argumentValueType` | `$EnumeratedToken` | Secondary | Declared value interpretation for one archetype parameter. If omitted, argument values are interpreted as Text. |
 | `archetypeParameter` | `$LookupToken` | Primary | The declared archetype parameter targeted by one archetype argument. |
-| `fragmentConcept` | `$EnumeratedToken` | Primary | The concrete declaration family represented by an archetype fragment template (for example ValidationRule or ConstructionOperation). |
+| `fragmentConcept` | `$EnumeratedToken` | Primary | The top-level concrete declaration family represented by an archetype fragment template. |
+| `materializesConcept` | `$EnumeratedToken` | Primary | The concrete code-specification concept emitted by one archetype fragment node template. |
+| `traitName` | `$Text` | Primary | The concrete trait name assigned by an archetype fragment trait template. |
+| `valueTemplate` | `$Text` | Primary | The placeholder-capable value template assigned to one concrete trait during materialization. |
 | `producesType` | `$Iri` | Primary | Canonical type identifier of the type this operation produces. |
 | `producesVariant` | `$LookupToken` | Primary | The produced variant when the result type is a sum type. |
 | `fallible` | `$Boolean` | Primary | Whether the operation returns a diagnostic result instead of total success. |
@@ -191,6 +197,7 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | OrderingStrategy | FieldByFieldComparison, VariantThenFieldComparison, DelegateToField, PrimitiveCanonicalComparison | Strategies for defining the canonical total ordering of a type. |
 | ArchetypeArgumentValueType | Text, LookupToken, Iri, RegularExpression, NonNegativeInteger, Boolean | Declared value interpretation for archetype-argument substitution. |
 | ArchetypeFragmentConcept | ValidationRule, ConstructionOperation, ValueSurfaceDefinition, OperationConformanceCase, RejectionTestCase, InequalityTestCase, OrderingTestCase | Concrete declaration families that archetype fragments can materialize. |
+| ArchetypeFragmentNodeConcept | ValidationRule, ConstructionOperation, OperationParameter, Precondition, ValueSurfaceDefinition, DispatchContract, AcceptedSurfaceForm, OperationConformanceCase, RejectionTestCase, InequalityTestCase, OrderingTestCase | Concrete concepts that one archetype fragment node can materialize. |
 | TestValueRole | Left, Right, Lesser, Greater | The role a test value plays in a comparison or inequality test case. |
 | Modality | Must, MustNot | The normative modality of a requirement. |
 | SurfaceStatus | Current, AcceptedLegacy | Lifecycle status for a value surface family. |
@@ -212,7 +219,11 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 | primitive-type-archetype-use-argument-keys-are-unique | PrimitiveTypeArchetypeUse | A primitive type archetype use binds each archetype parameter at most once. |
 | primitive-type-archetype-fragment-keys-are-unique | PrimitiveTypeArchetype | A primitive type archetype uses each archetype-fragment key at most once. |
 | archetype-fragment-only-valid-under-primitive-type-archetype | ArchetypeFragment | An archetype fragment is valid only under PrimitiveTypeArchetype. |
-| archetype-fragment-has-one-template-source | ArchetypeFragment | An archetype fragment uses either preformatted content or one TextByScalars child. |
+| archetype-fragment-node-context-is-valid | ArchetypeFragmentNode | An archetype fragment node is valid only under ArchetypeFragment or another ArchetypeFragmentNode. |
+| archetype-fragment-trait-only-valid-under-node | ArchetypeFragmentTrait | An archetype fragment trait is valid only under ArchetypeFragmentNode. |
+| archetype-fragment-content-only-valid-under-node | ArchetypeFragmentContent | An archetype fragment content node is valid only under ArchetypeFragmentNode. |
+| archetype-fragment-node-trait-names-are-unique | ArchetypeFragmentNode | An archetype fragment node uses each trait name at most once. |
+| archetype-fragment-content-has-one-template-source | ArchetypeFragmentContent | An archetype fragment content node uses either preformatted content or one TextByScalars child. |
 | type-application-constructor-targets-declared-type | TypeApplication | A type application uses one declared type constructor. |
 | field-has-one-type-source | Field | A field uses either legacy type traits or one structured type expression. |
 | field-type-slot-role | Field | A structured field type uses the `ValueType` role. |
@@ -275,9 +286,10 @@ Defines a language-agnostic schema for authoring code specifications in Codex. A
 - CanonicalOrderingRule also supports `PrimitiveCanonicalComparison` for primitive types whose canonical ordering semantics cannot be represented as product-field or sum-variant comparison.
 - PrimitiveTypeArchetype exists to reduce duplicated primitive authoring structure while preserving concrete nominal type identity. A concrete type remains authored as `PrimitiveType` with its own `id`, `key`, `name`, representation, and capability declaration.
 - PrimitiveTypeArchetypeUse applies one archetype to one concrete PrimitiveType. This is an authoring-time materialization mechanism, not a runtime alias mechanism and not a second-class type form.
-- Archetype substitution semantics are explicit: each `ArchetypeParameter` declares a placeholder name, each `ArchetypeArgument` binds one value for one parameter, and materialization performs literal replacement of `{parameterName}` in archetype-fragment templates.
-- Materialization boundary is explicit: `ArchetypeFragment` nodes under `PrimitiveTypeArchetype` are pre-materialization templates and are not interpreted as concrete ValidationRule/ConstructionOperation/ValueSurfaceDefinition/test declarations by themselves.
-- Pre-materialization validation applies to archetype structure only (archetype references, parameter/argument binding, fragment placement, and fragment template-source shape). Post-materialization validation applies normal concrete reference and shape constraints to emitted top-level concrete declarations.
+- Archetype substitution semantics are explicit: each `ArchetypeParameter` declares a placeholder name, each `ArchetypeArgument` binds one value for one parameter, and materialization performs literal replacement of `{parameterName}` in `ArchetypeFragmentTrait.valueTemplate` values and `ArchetypeFragmentContent` content templates.
+- Materialization boundary is explicit: `ArchetypeFragment` templates under `PrimitiveTypeArchetype` are pre-materialization templates and are not interpreted as concrete ValidationRule/ConstructionOperation/ValueSurfaceDefinition/test declarations by themselves.
+- The normative representation is structural (`ArchetypeFragmentNode`, `ArchetypeFragmentTrait`, `ArchetypeFragmentContent`), not an arbitrary text mini-language.
+- Pre-materialization validation applies to archetype structure only (archetype references, parameter/argument binding, fragment placement, node/trait/content shape). Post-materialization validation applies normal concrete reference and shape constraints to emitted top-level concrete declarations.
 - Archetype arguments are interpreted as Text unless the parameter declares `argumentValueType`.
 - WrappedValueBinding exists separately from field-targeted bindings because wrapped-variant construction binds the carried value of a variant, not a named field.
 - InteropModule uses `conditionalOn` as a text string rather than a structured language enum. The set of target languages is open-ended and foundry-specific; the schema does not enumerate it.

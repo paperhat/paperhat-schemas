@@ -47,6 +47,12 @@
 				<RequiresTrait name="specbase:title" />
 
 				<RequiresTrait name="specbase:version" />
+
+				<AllowsTrait name="specbase:authorityStatus" />
+
+				<AllowsTrait name="specbase:lifecycleStatus" />
+
+				<AllowsTrait name="specbase:issueStatus" />
 			</TraitRules>
 
 			<ContentRules>

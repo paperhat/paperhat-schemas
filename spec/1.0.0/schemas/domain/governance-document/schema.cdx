@@ -66,6 +66,12 @@
 				<AllowsTrait name="specbase:supersedes" />
 
 				<AllowsTrait name="specbase:obsoletes" />
+
+				<AllowsTrait name="specbase:authorityStatus" />
+
+				<AllowsTrait name="specbase:lifecycleStatus" />
+
+				<AllowsTrait name="specbase:issueStatus" />
 			</TraitRules>
 
 			<ContentRules>

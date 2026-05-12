@@ -348,6 +348,16 @@
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:specification-foundation:trait:authorityStatus
+			name="authorityStatus"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Normative, $Informative, $NonAuthoritative] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
 			id=paperhat:domain:specification-foundation:trait:conformance
 			name="conformance"
 		>
@@ -407,6 +417,26 @@
 			id=paperhat:domain:specification-foundation:trait:locked
 			name="locked"
 		/>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:specification-foundation:trait:issueStatus
+			name="issueStatus"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$NoKnownIssues, $HasOpenIssues, $Blocked] />
+			</AllowedValues>
+		</TraitDefinition>
+
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:specification-foundation:trait:lifecycleStatus
+			name="lifecycleStatus"
+		>
+			<AllowedValues>
+				<ValueIsOneOf values=[$Draft, $InProgress, $Review, $Current, $Deprecated, $Superseded] />
+			</AllowedValues>
+		</TraitDefinition>
 
 		<TraitDefinition
 			defaultValueType=$EnumeratedToken
@@ -566,6 +596,45 @@
 			<Member value="Answered" />
 
 			<Member value="Deferred" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet
+			id=paperhat:domain:specification-foundation:set:DocumentAuthorityStatus
+			name="DocumentAuthorityStatus"
+		>
+			<Member value="Normative" />
+
+			<Member value="Informative" />
+
+			<Member value="NonAuthoritative" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet
+			id=paperhat:domain:specification-foundation:set:DocumentLifecycleStatus
+			name="DocumentLifecycleStatus"
+		>
+			<Member value="Draft" />
+
+			<Member value="InProgress" />
+
+			<Member value="Review" />
+
+			<Member value="Current" />
+
+			<Member value="Deprecated" />
+
+			<Member value="Superseded" />
+		</EnumeratedValueSet>
+
+		<EnumeratedValueSet
+			id=paperhat:domain:specification-foundation:set:DocumentIssueStatus
+			name="DocumentIssueStatus"
+		>
+			<Member value="NoKnownIssues" />
+
+			<Member value="HasOpenIssues" />
+
+			<Member value="Blocked" />
 		</EnumeratedValueSet>
 	</EnumeratedValueSets>
 

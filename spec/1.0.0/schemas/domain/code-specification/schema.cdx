@@ -46,6 +46,9 @@
 				<AllowsTrait name="longDescription" />
 				<AllowsTrait name="diagnosticType" />
 				<AllowsTrait name="contentTransformer" />
+				<AllowsTrait name="authorityStatus" />
+				<AllowsTrait name="lifecycleStatus" />
+				<AllowsTrait name="issueStatus" />
 			</TraitRules>
 			<ChildRules>
 				<AllowsChildConcept conceptSelector="ProductType" />
@@ -2097,6 +2100,36 @@
 			name="sourceLineNumberType"
 			priority=$Primary
 		/>
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:codeSpecification:trait:authorityStatus
+			name="authorityStatus"
+			priority=$Secondary
+		>
+			<AllowedValues>
+				<ValueIsOneOf values="$Normative,$Informative,$NonAuthoritative" />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:codeSpecification:trait:lifecycleStatus
+			name="lifecycleStatus"
+			priority=$Secondary
+		>
+			<AllowedValues>
+				<ValueIsOneOf values="$Draft,$InProgress,$Review,$Current,$Deprecated,$Superseded" />
+			</AllowedValues>
+		</TraitDefinition>
+		<TraitDefinition
+			defaultValueType=$EnumeratedToken
+			id=paperhat:domain:codeSpecification:trait:issueStatus
+			name="issueStatus"
+			priority=$Secondary
+		>
+			<AllowedValues>
+				<ValueIsOneOf values="$NoKnownIssues,$HasOpenIssues,$Blocked" />
+			</AllowedValues>
+		</TraitDefinition>
 	</TraitDefinitions>
 	<EnumeratedValueSets>
 		<EnumeratedValueSet
@@ -2235,6 +2268,33 @@
 			<Member description="The semantic value lowers to one scalar typed literal." value="ScalarTypedLiteral" />
 			<Member description="The semantic value lowers to one structured graph payload." value="StructuredGraph" />
 			<Member description="The semantic value lowers through one custom payload operation or calculation." value="CustomPayload" />
+		</EnumeratedValueSet>
+		<EnumeratedValueSet
+			id=paperhat:domain:codeSpecification:set:DocumentAuthorityStatus
+			name="DocumentAuthorityStatus"
+		>
+			<Member description="The document is normative for its domain." value="Normative" />
+			<Member description="The document is informative; it does not impose requirements." value="Informative" />
+			<Member description="The document is not authoritative; it is exploratory, illustrative, or unowned." value="NonAuthoritative" />
+		</EnumeratedValueSet>
+		<EnumeratedValueSet
+			id=paperhat:domain:codeSpecification:set:DocumentLifecycleStatus
+			name="DocumentLifecycleStatus"
+		>
+			<Member description="The document is an initial draft, not yet under active work." value="Draft" />
+			<Member description="The document is actively being authored." value="InProgress" />
+			<Member description="The document is in review prior to publication." value="Review" />
+			<Member description="The document is the currently published, in-effect version." value="Current" />
+			<Member description="The document is deprecated and will be removed." value="Deprecated" />
+			<Member description="The document has been superseded by a successor." value="Superseded" />
+		</EnumeratedValueSet>
+		<EnumeratedValueSet
+			id=paperhat:domain:codeSpecification:set:DocumentIssueStatus
+			name="DocumentIssueStatus"
+		>
+			<Member description="No open issues are known against the document." value="NoKnownIssues" />
+			<Member description="The document is known to carry open issues that callers should consider." value="HasOpenIssues" />
+			<Member description="The document is blocked: an unresolved issue prevents it from being usable as authored." value="Blocked" />
 		</EnumeratedValueSet>
 	</EnumeratedValueSets>
 	<ConstraintDefinitions>

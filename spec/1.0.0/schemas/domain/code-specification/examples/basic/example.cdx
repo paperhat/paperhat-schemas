@@ -1,6 +1,6 @@
 <CodeSpecification
 	title="Color Channel Specification"
-	version=semantic-version("1.0.0")
+	version=1.0.0
 	license="Apache-2.0"
 	description="Defines a color channel as a named wrapper around a normalized floating-point value."
 >
@@ -514,7 +514,7 @@
 		key=~inUnitRange
 		name="in_unit_range"
 		appliesToType=urn:paperhat:precision-spec#type/Float256
-		validationPattern="^(0(\\.[0-9]+)?|1(\\.0+)?)$"
+		validationPattern=regular-expression/^(0(\.[0-9]+)?|1(\.0+)?)$/
 	/>
 
 	<ConstructionTestCase testName="construct_valid_normalized_value" operation=~normalizedValue>
@@ -536,7 +536,7 @@
 			valueType=urn:paperhat:color-spec#type/NormalizedValue
 			bodyMode=$content
 		>
-			<NormalizedValue value=0.5 />
+			0.5
 		</ExpectedOperationValue>
 	</OperationConformanceCase>
 

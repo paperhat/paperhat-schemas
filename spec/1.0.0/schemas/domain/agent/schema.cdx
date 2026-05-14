@@ -151,30 +151,6 @@
 			<ChildRules>
 				<AllowsChildConcept conceptSelector="text:Paragraph" />
 				<AllowsChildConcept conceptSelector="AgentRequirement" />
-				<AllowsChildConcept conceptSelector="AgentSymmetricRequirement" />
-			</ChildRules>
-
-			<CollectionRules allowsDuplicates=true ordering=$Ordered />
-		</ConceptDefinition>
-
-		<ConceptDefinition
-			conceptKind=$Semantic
-			entityEligibility=$MustBeEntity
-			id=paperhat:domain:agent:AgentSymmetricRequirement
-			name="AgentSymmetricRequirement"
-		>
-			<ContentRules>
-				<ForbidsContent />
-			</ContentRules>
-
-			<TraitRules>
-				<RequiresTrait name="key" />
-				<RequiresTrait name="modality" />
-			</TraitRules>
-
-			<ChildRules>
-				<RequiresChildConcept conceptSelector="RequiredClause" max=1 min=1 />
-				<RequiresChildConcept conceptSelector="ForbiddenClause" max=1 min=1 />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
@@ -259,7 +235,6 @@
 
 			<ChildRules>
 				<AllowsChildConcept conceptSelector="AgentRequirement" />
-				<AllowsChildConcept conceptSelector="AgentSymmetricRequirement" />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
@@ -278,7 +253,6 @@
 			<ChildRules>
 				<AllowsChildConcept conceptSelector="text:Paragraph" />
 				<AllowsChildConcept conceptSelector="AgentRequirement" />
-				<AllowsChildConcept conceptSelector="AgentSymmetricRequirement" />
 			</ChildRules>
 
 			<CollectionRules allowsDuplicates=true ordering=$Ordered />
@@ -550,27 +524,6 @@
 			</TraitRules>
 		</ConceptDefinition>
 
-		<ConceptDefinition
-			conceptKind=$Structural
-			entityEligibility=$MustNotBeEntity
-			id=paperhat:domain:agent:RequiredClause
-			name="RequiredClause"
-		>
-			<ContentRules>
-				<RequiresContent whitespaceMode=$Flow />
-			</ContentRules>
-		</ConceptDefinition>
-
-		<ConceptDefinition
-			conceptKind=$Structural
-			entityEligibility=$MustNotBeEntity
-			id=paperhat:domain:agent:ForbiddenClause
-			name="ForbiddenClause"
-		>
-			<ContentRules>
-				<RequiresContent whitespaceMode=$Flow />
-			</ContentRules>
-		</ConceptDefinition>
 	</ConceptDefinitions>
 
 	<TraitDefinitions>

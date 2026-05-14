@@ -1559,7 +1559,7 @@
 			priority=$Primary
 		>
 			<AllowedValues>
-				<ValueIsOneOf values="$ValueType,$DiagnosticType,$WrappedType,$ProducesType,$BelongsToType,$ReturnType,$AppliesToType" />
+				<ValueIsOneOf values=[$ValueType, $DiagnosticType, $WrappedType, $ProducesType, $BelongsToType, $ReturnType, $AppliesToType] />
 			</AllowedValues>
 		</TraitDefinition>
 		<TraitDefinition
@@ -1581,7 +1581,7 @@
 			priority=$Primary
 		>
 			<AllowedValues>
-				<ValueIsOneOf values="$List" />
+				<ValueIsOneOf values=[$List] />
 			</AllowedValues>
 		</TraitDefinition>
 
@@ -1634,7 +1634,7 @@
 			priority=$Primary
 		>
 			<AllowedValues>
-				<ValueIsOneOf values="$FieldByFieldComparison,$VariantThenFieldComparison,$DelegateToField,$PrimitiveCanonicalComparison" />
+				<ValueIsOneOf values=[$FieldByFieldComparison, $VariantThenFieldComparison, $DelegateToField, $PrimitiveCanonicalComparison] />
 			</AllowedValues>
 		</TraitDefinition>
 		<TraitDefinition
@@ -1651,7 +1651,7 @@
 			priority=$Secondary
 		>
 			<AllowedValues>
-				<ValueIsOneOf values="$Text,$LookupToken,$Iri,$RegularExpression,$NonNegativeInteger,$Boolean" />
+				<ValueIsOneOf values=[$Text, $LookupToken, $Iri, $RegularExpression, $NonNegativeInteger, $Boolean] />
 			</AllowedValues>
 		</TraitDefinition>
 		<TraitDefinition
@@ -1668,7 +1668,7 @@
 			priority=$Primary
 		>
 			<AllowedValues>
-				<ValueIsOneOf values="$ValidationRule,$ConstructionOperation,$ValueSurfaceDefinition,$OperationConformanceCase,$RejectionTestCase,$InequalityTestCase,$OrderingTestCase" />
+				<ValueIsOneOf values=[$ValidationRule, $ConstructionOperation, $ValueSurfaceDefinition, $OperationConformanceCase, $RejectionTestCase, $InequalityTestCase, $OrderingTestCase] />
 			</AllowedValues>
 		</TraitDefinition>
 		<TraitDefinition
@@ -1678,7 +1678,7 @@
 			priority=$Primary
 		>
 			<AllowedValues>
-				<ValueIsOneOf values="$ValidationRule,$ConstructionOperation,$OperationParameter,$Precondition,$ValueSurfaceDefinition,$DispatchContract,$AcceptedSurfaceForm,$OperationConformanceCase,$RejectionTestCase,$InequalityTestCase,$OrderingTestCase" />
+				<ValueIsOneOf values=[$ValidationRule, $ConstructionOperation, $OperationParameter, $Precondition, $ValueSurfaceDefinition, $DispatchContract, $AcceptedSurfaceForm, $OperationConformanceCase, $RejectionTestCase, $InequalityTestCase, $OrderingTestCase] />
 			</AllowedValues>
 		</TraitDefinition>
 		<TraitDefinition
@@ -1957,7 +1957,7 @@
 			priority=$Primary
 		>
 			<AllowedValues>
-				<ValueIsOneOf values="$Current,$AcceptedLegacy" />
+				<ValueIsOneOf values=[$Current, $AcceptedLegacy] />
 			</AllowedValues>
 		</TraitDefinition>
 		<TraitDefinition
@@ -1967,7 +1967,7 @@
 			priority=$Primary
 		>
 			<AllowedValues>
-				<ValueIsOneOf values="$FixedKeywordPrefix,$SigilPrefix,$BalancedDelimiter,$BareTokenPattern" />
+				<ValueIsOneOf values=[$FixedKeywordPrefix, $SigilPrefix, $BalancedDelimiter, $BareTokenPattern] />
 			</AllowedValues>
 		</TraitDefinition>
 		<TraitDefinition
@@ -1983,7 +1983,7 @@
 			priority=$Primary
 		>
 			<AllowedValues>
-				<ValueIsOneOf values="$BalancedDelimiter,$BareTokenBoundary,$SlashDelimited,$GrammarDefined" />
+				<ValueIsOneOf values=[$BalancedDelimiter, $BareTokenBoundary, $SlashDelimited, $GrammarDefined] />
 			</AllowedValues>
 		</TraitDefinition>
 		<TraitDefinition
@@ -1993,7 +1993,7 @@
 			priority=$Primary
 		>
 			<AllowedValues>
-				<ValueIsOneOf values="$NotApplicable,$PreferLongestStarter,$PreferLongestRecognizedMatch" />
+				<ValueIsOneOf values=[$NotApplicable, $PreferLongestStarter, $PreferLongestRecognizedMatch] />
 			</AllowedValues>
 		</TraitDefinition>
 		<TraitDefinition
@@ -2033,7 +2033,7 @@
 			priority=$Primary
 		>
 			<AllowedValues>
-				<ValueIsOneOf values="$ScalarTypedLiteral,$StructuredGraph,$CustomPayload" />
+				<ValueIsOneOf values=[$ScalarTypedLiteral, $StructuredGraph, $CustomPayload] />
 			</AllowedValues>
 		</TraitDefinition>
 		<TraitDefinition
@@ -2107,7 +2107,7 @@
 			priority=$Secondary
 		>
 			<AllowedValues>
-				<ValueIsOneOf values="$Normative,$Informative,$NonAuthoritative" />
+				<ValueIsOneOf values=[$Normative, $Informative, $NonAuthoritative] />
 			</AllowedValues>
 		</TraitDefinition>
 		<TraitDefinition
@@ -2117,7 +2117,7 @@
 			priority=$Secondary
 		>
 			<AllowedValues>
-				<ValueIsOneOf values="$Draft,$InProgress,$Review,$Current,$Deprecated,$Superseded" />
+				<ValueIsOneOf values=[$Draft, $InProgress, $Review, $Current, $Deprecated, $Superseded] />
 			</AllowedValues>
 		</TraitDefinition>
 		<TraitDefinition
@@ -2127,7 +2127,7 @@
 			priority=$Secondary
 		>
 			<AllowedValues>
-				<ValueIsOneOf values="$NoKnownIssues,$HasOpenIssues,$Blocked" />
+				<ValueIsOneOf values=[$NoKnownIssues, $HasOpenIssues, $Blocked] />
 			</AllowedValues>
 		</TraitDefinition>
 	</TraitDefinitions>
